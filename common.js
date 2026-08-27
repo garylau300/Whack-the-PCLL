@@ -414,7 +414,10 @@
     } else {
       if (ref.body) body += `<p>${escapeHtml(ref.body)}</p>`;
       if (ref.bullets) body += `<ul>${ref.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+      if (ref.statutes) body += statuteBoxHtml(ref.statutes);
       if (ref.diagrams) body += ref.diagrams.map((d) => processDiagramHtml(d)).join('');
+      if (ref.legalIssues) body += legalIssuesHtml(ref.legalIssues);
+      if (ref.warnings) body += warningBoxHtml(ref.warnings);
       if (ref.checkboxes) body += `<ul>${ref.checkboxes.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
       if (ref.fields) body += `<p class="muted">Fields: ${ref.fields.map(escapeHtml).join(', ')}</p>`;
     }
@@ -440,10 +443,33 @@
     return `${title}<div class="process-diagram">${steps}</div>`;
   }
 
-  // One `fullNotes` entry can mix any of these structured shapes alongside
-  // (or instead of) a plain `body` paragraph — lets courseDetails.js pick
-  // whichever shape (bullets/table/diagram/Q&A) actually fits that note's
-  // content instead of forcing everything into prose.
+  // A callout for compliance-critical facts (statutory deadlines, offences,
+  // consequences of non-compliance) — deliberately distinct from a plain
+  // bullet so the reader's eye catches it while skimming.
+  function warningBoxHtml(items) {
+    if (!items || !items.length) return '';
+    return `<div class="law-callout law-callout--warning">
+      <div class="law-callout-head"><span aria-hidden="true">&#9888;</span> Important</div>
+      <ul>${items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>
+    </div>`;
+  }
+
+  // A quoted-provision box — for a statute section or case-law principle
+  // quoted (approximately) verbatim, with its citation. `cite` names the
+  // source (e.g. "s4 Partnership Ordinance (Cap. 38)" or "Lord Hoffmann").
+  function statuteBoxHtml(items) {
+    if (!items || !items.length) return '';
+    return items.map((s) => `<blockquote class="law-callout law-callout--quote">
+      <p>${escapeHtml(s.text)}</p>
+      ${s.cite ? `<cite>&mdash; ${escapeHtml(s.cite)}</cite>` : ''}
+    </blockquote>`).join('');
+  }
+
+  // One `fullNotes`/legal-issue-note entry can mix any of these structured
+  // shapes alongside (or instead of) a plain `body` paragraph — lets
+  // courseDetails.js pick whichever shape (bullets/table/diagram/Q&A/quoted
+  // provision/warning) actually fits that note's content instead of forcing
+  // everything into prose.
   function fullNoteBodyHtml(n) {
     let html = '';
     if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
@@ -451,12 +477,31 @@
     if (n.bulletGroups) {
       html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`).join('');
     }
+    if (n.statutes) html += statuteBoxHtml(n.statutes);
     if (n.table) {
       html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
     if (n.diagram) html += processDiagramHtml(n.diagram);
     if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${escapeHtml(p.q)}</dt><dd>${escapeHtml(p.a)}</dd>`).join('')}</dl>`;
+    if (n.warnings) html += warningBoxHtml(n.warnings);
     return html;
+  }
+
+  // Groups fullNotes-style entries under a numbered legal issue (e.g.
+  // "1. Types of Business Vehicles") — one top-level collapsible per issue,
+  // with its notes rendered directly underneath (no further nested
+  // collapsing) so expanding one issue shows everything in it at once.
+  function legalIssueHtml(issue) {
+    const notesHtml = (issue.notes || []).map((n) => `<div class="legal-issue-note">
+      <h4>${escapeHtml(n.heading)}</h4>
+      ${fullNoteBodyHtml(n)}
+    </div>`).join('');
+    return `<details class="detail-content legal-issue"><summary>${escapeHtml(issue.number)}. ${escapeHtml(issue.heading)}</summary>${notesHtml}</details>`;
+  }
+
+  function legalIssuesHtml(issues) {
+    if (!issues || !issues.length) return '';
+    return issues.map(legalIssueHtml).join('');
   }
 
   // Parses `{{answer}}` markers out of a cloze item's template text into a
@@ -558,7 +603,7 @@
         <details class="detail-content"><summary>${escapeHtml(ex.title)}</summary>
           ${ex.factPattern ? `<p>${escapeHtml(ex.factPattern)}</p>` : ''}
           ${ex.questions ? `<ul>${ex.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>` : ''}
-          ${ex.questionGroups ? ex.questionGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>`).join('') : ''}
+          ${ex.questionGroups ? ex.questionGroups.map((g, i) => `<h4>${i + 1}. ${escapeHtml(g.heading)}</h4><ul>${g.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>`).join('') : ''}
         </details>`).join('');
     }
 
@@ -566,7 +611,12 @@
     html += listSection('During / After', sessionDetail.duringAfter);
     html += clozeSectionHtml(sessionDetail.cloze);
 
-    if (sessionDetail.fullNotes) {
+    // legalIssues (numbered, grouped-by-issue) is the current format;
+    // fullNotes (a flat list) is kept as a fallback for any session not yet
+    // migrated to the richer shape.
+    if (sessionDetail.legalIssues) {
+      html += legalIssuesHtml(sessionDetail.legalIssues);
+    } else if (sessionDetail.fullNotes) {
       html += `<details class="detail-content"><summary>Full Lecture Notes</summary>${sessionDetail.fullNotes.map((n) => `
         <details><summary>${escapeHtml(n.heading)}</summary>${fullNoteBodyHtml(n)}</details>`).join('')}</details>`;
     }

@@ -253,6 +253,10 @@ window.COURSE_DETAILS = {
             ],
           },
         ],
+        warnings: [
+          'Mediation is voluntary — but an unreasonable refusal to mediate can result in an adverse costs order, even for the party who ultimately wins at trial.',
+          'A defence to counterclaim is due within 28 days of service — miss it and you are treated as disputing nothing in the counterclaim.',
+        ],
       },
       undertakingForm: {
         title: 'Undertaking Form (Standardised Clients Interviewing Exercise)',
@@ -325,117 +329,156 @@ window.COURSE_DETAILS = {
             ],
           },
         ],
-        fullNotes: [
+        legalIssues: [
           {
-            heading: 'Course objectives & design strategy',
-            bullets: [
-              'Two strands taught together: (1) civil procedure rules, and (2) civil litigation drafting/problem-solving skills.',
-              'Delivered through LGs, SGs, video recordings, and review/Q&A sessions.',
-              'Procedure rules: taught via LG in week one, then practised via SG later.',
-              'Skills sequencing: interviewing and drafting an LBA are taught early; drafting of pleadings, affidavits, summonses and orders comes progressively later.',
-              'Two realistic case files (Contract and Negligence) run throughout the course so you see how procedural rules and skills apply at different stages of real litigation — both available on Moodle from day one.',
-            ],
-          },
-          {
-            heading: 'What a "Skills Guide" is for',
-            bullets: [
-              'A skills guide sets out criteria for a skill, guidance on performing it, and criteria for assessing it.',
-              "It's meant to be applied flexibly across different problems, not as a rigid checklist for one situation — use it to guide your own drafting and for self-assessment, with minimal reliance on precedents or sample answers.",
-            ],
-          },
-          {
-            heading: '5-level case analysis model',
-            table: {
-              headers: ['Level', 'Focus', 'Why it matters'],
-              rows: [
-                ['1', 'Area of law', 'Frames which body of law governs the problem'],
-                ['2', 'Cause of action / remedy', 'What the client can actually claim'],
-                ['3', 'Legal ingredients', 'The elements that support the cause of action'],
-                ['4', 'Material facts', 'The facts needed for each ingredient — drives pleadings'],
-                ['5', 'Evidence', 'What proves each material fact, and how — drives affidavits'],
-              ],
-            },
-            bullets: ['Useful for assessing merits, deciding what further evidence is needed, drafting pleadings (Level 4), and preparing affidavits (Level 5).'],
-          },
-          {
-            heading: 'Case Analysis, Research, Problem Solving & Fact Management',
-            bullets: [
-              'The hardest transition in the course is from theoretical recall to practical analysis, investigation and application — these skills are used together throughout, not learned in isolation.',
-              "Build the habit of preparing, for every case (whether or not an exercise expressly asks for it): a Dramatis Personae (list of people involved), a Chronology of Events, a succinct summary of the client's case, and a Skeletal Plan for any drafting.",
-            ],
-          },
-          {
-            heading: 'Conducting claims, LBAs, interviewing, pleadings, affidavits, summonses',
-            table: {
-              headers: ['Stage', 'What you learn', 'Format / notes'],
-              rows: [
-                ['LG', 'The overall litigation picture', 'Plus textbook reading'],
-                ['SG homework', 'Draft a Letter Before Action, in groups', ''],
-                ['LG2 + SG2', 'Interviewing skills', 'Compulsory interviewing exercise at SG2 — up to 5% of the aggregate, happens once, marks carry to any supplementary exam'],
-                ['SG', 'Draft pleadings using the 5-level model, not precedents', 'Tutor feedback plus sample drafts provided'],
-                ['SG', 'Draft affidavits', 'First affidavit: oral review. Second: individual written feedback. Ex-parte affidavits raise full-and-frank-disclosure duties.'],
-                ['SG', 'Draft summonses / orders', 'Taught alongside affidavits, once affidavit skills are covered'],
-              ],
-            },
-          },
-          {
-            heading: 'Professionalism & written assessments',
-            bulletGroups: [
+            number: '1',
+            heading: 'Course Structure & Learning Methodology',
+            notes: [
               {
-                heading: 'Conduct expected of you',
-                items: [
-                  'Be punctual, treat others with courtesy, prepare thoroughly.',
-                  'Notify your tutor in advance of any inability to attend an SG or submit on time.',
+                heading: 'Course objectives & design strategy',
+                bullets: [
+                  'Two strands taught together: (1) civil procedure rules, and (2) civil litigation drafting/problem-solving skills.',
+                  'Delivered through LGs, SGs, video recordings, and review/Q&A sessions.',
+                  'Procedure rules: taught via LG in week one, then practised via SG later.',
+                  'Skills sequencing: interviewing and drafting an LBA are taught early; drafting of pleadings, affidavits, summonses and orders comes progressively later.',
+                  'Two realistic case files (Contract and Negligence) run throughout the course so you see how procedural rules and skills apply at different stages of real litigation — both available on Moodle from day one.',
+                ],
+              },
+              {
+                heading: 'What a "Skills Guide" is for',
+                bullets: [
+                  'A skills guide sets out criteria for a skill, guidance on performing it, and criteria for assessing it.',
+                  "It's meant to be applied flexibly across different problems, not as a rigid checklist for one situation — use it to guide your own drafting and for self-assessment, with minimal reliance on precedents or sample answers.",
                 ],
               },
             ],
-            table: {
-              headers: ['Component', 'Weight', 'Covers'],
-              rows: [
-                ['Knowledge paper', '47.5%', 'Problem questions on procedure & case analysis'],
-                ['Drafting paper', '47.5%', 'Drafting / planning questions'],
-                ['Interviewing exercise', 'up to 5%', 'Standardised Client Interview — happens once, see SG2'],
-              ],
-            },
-            bullets: [
-              'Pass mark: at least 50% in aggregate across both papers plus the interviewing exercise — not necessarily 50% on each paper individually.',
-              'Re-examination (if allowed) only requires re-sitting a paper scored below 50%; the other paper’s mark carries over.',
+          },
+          {
+            number: '2',
+            heading: 'Case Analysis Method',
+            notes: [
+              {
+                heading: '5-level case analysis model',
+                table: {
+                  headers: ['Level', 'Focus', 'Why it matters'],
+                  rows: [
+                    ['1', 'Area of law', 'Frames which body of law governs the problem'],
+                    ['2', 'Cause of action / remedy', 'What the client can actually claim'],
+                    ['3', 'Legal ingredients', 'The elements that support the cause of action'],
+                    ['4', 'Material facts', 'The facts needed for each ingredient — drives pleadings'],
+                    ['5', 'Evidence', 'What proves each material fact, and how — drives affidavits'],
+                  ],
+                },
+                bullets: ['Useful for assessing merits, deciding what further evidence is needed, drafting pleadings (Level 4), and preparing affidavits (Level 5).'],
+              },
+              {
+                heading: 'Case Analysis, Research, Problem Solving & Fact Management',
+                bullets: [
+                  'The hardest transition in the course is from theoretical recall to practical analysis, investigation and application — these skills are used together throughout, not learned in isolation.',
+                  "Build the habit of preparing, for every case (whether or not an exercise expressly asks for it): a Dramatis Personae (list of people involved), a Chronology of Events, a succinct summary of the client's case, and a Skeletal Plan for any drafting.",
+                ],
+              },
             ],
           },
           {
-            heading: 'Civil Advocacy split, materials & submission requirements',
-            bullets: [
-              'PCLL8010 = 70% Civil Litigation + 30% Civil Advocacy.',
-              'Course materials (Case Files, LG outlines, SG activity plans) are on Moodle and set out what to prepare before each class.',
-              'Submissions: soft copy via Moodle, with name and group number in the top-left corner.',
-              'A completed pro forma declaration must be the front page of the same document — assignments without it are not marked.',
+            number: '3',
+            heading: 'The Litigation Skills Curriculum',
+            notes: [
+              {
+                heading: 'Conducting claims, LBAs, interviewing, pleadings, affidavits, summonses',
+                table: {
+                  headers: ['Stage', 'What you learn', 'Format / notes'],
+                  rows: [
+                    ['LG', 'The overall litigation picture', 'Plus textbook reading'],
+                    ['SG homework', 'Draft a Letter Before Action, in groups', ''],
+                    ['LG2 + SG2', 'Interviewing skills', 'Compulsory interviewing exercise at SG2 — up to 5% of the aggregate, happens once, marks carry to any supplementary exam'],
+                    ['SG', 'Draft pleadings using the 5-level model, not precedents', 'Tutor feedback plus sample drafts provided'],
+                    ['SG', 'Draft affidavits', 'First affidavit: oral review. Second: individual written feedback. Ex-parte affidavits raise full-and-frank-disclosure duties.'],
+                    ['SG', 'Draft summonses / orders', 'Taught alongside affidavits, once affidavit skills are covered'],
+                  ],
+                },
+              },
             ],
           },
           {
-            heading: 'Part 1B — PG-FLAP explained in depth',
-            bullets: [
-              'Problem solving is central to legal competence: solving problems satisfactorily, lawfully, ethically — drawing on knowledge, skills and professional attitude.',
-              'To solve legal problems you draw on Knowledge (legal and non-legal; substantive, transactional, procedural), Skills (core and specialised), and Attitudes (professionalism, dedication, self-motivation).',
-              'Two basic types of legal problem: Blocking Conflict (foreseeing and avoiding conflict — non-contentious) vs Playing Out Conflict (conflict already exists, contentious, litigation anticipated).',
+            number: '4',
+            heading: 'Assessment & Professional Conduct',
+            notes: [
+              {
+                heading: 'Professionalism & written assessments',
+                bulletGroups: [
+                  {
+                    heading: 'Conduct expected of you',
+                    items: [
+                      'Be punctual, treat others with courtesy, prepare thoroughly.',
+                      'Notify your tutor in advance of any inability to attend an SG or submit on time.',
+                    ],
+                  },
+                ],
+                table: {
+                  headers: ['Component', 'Weight', 'Covers'],
+                  rows: [
+                    ['Knowledge paper', '47.5%', 'Problem questions on procedure & case analysis'],
+                    ['Drafting paper', '47.5%', 'Drafting / planning questions'],
+                    ['Interviewing exercise', 'up to 5%', 'Standardised Client Interview — happens once, see SG2'],
+                  ],
+                },
+                warnings: [
+                  'Pass mark: at least 50% in aggregate across both papers plus the interviewing exercise — not necessarily 50% on each paper individually.',
+                  'Re-examination (if allowed) only requires re-sitting a paper scored below 50%; the other paper’s mark carries over.',
+                ],
+              },
+              {
+                heading: 'Civil Advocacy split, materials & submission requirements',
+                bullets: [
+                  'PCLL8010 = 70% Civil Litigation + 30% Civil Advocacy.',
+                  'Course materials (Case Files, LG outlines, SG activity plans) are on Moodle and set out what to prepare before each class.',
+                  'Submissions: soft copy via Moodle, with name and group number in the top-left corner.',
+                ],
+                warnings: ['A completed pro forma declaration must be the front page of the same document — assignments without it are not marked.'],
+              },
             ],
-            diagram: {
-              title: 'PG-FLAP — the 5-stage process model',
-              steps: [
-                { label: 'Problem / goal identification', detail: "What does the client want or need? What's the obstacle? The problem itself can change as you learn more." },
-                { label: 'Fact investigation', detail: 'Via interviews, correspondence, document analysis — iterating as new legal issues surface, and considering what further information or searches are needed.' },
-                { label: 'Legal issue identification & assessment', detail: 'Research the issues, then assess the merits.' },
-                { label: 'Advice & decision-making', detail: 'Develop and evaluate options (sue, settle, mediate, negotiate, admit fault, withdraw, or continue/renegotiate); weigh non-legal factors too (peace of mind, cost in time and money); choose client-centred (client decides) or lawyer-centred (you recommend).' },
-                { label: 'Planning & implementation', detail: 'A concrete action plan: who does what, when, how.' },
-              ],
-            },
           },
           {
-            heading: 'Letter Before Action — Q&A',
-            qa: [
-              { q: 'Is an LBA legally required before starting proceedings?', a: 'No general rule requires it — the exception is personal injury claims (PD18.1). But the court’s costs discretion (O.62 rr.5(1)(e)/5(2)(d)) can penalise unreasonable pre-action conduct, so send one unless there’s a risk the defendant will dissipate assets.' },
-              { q: 'Who can send one, and is there a required form?', a: 'Anyone can send an LBA — there is no standard form or specific content requirement (see the Skills Guide).' },
-              { q: 'Is there a fixed response time, or a consequence for silence?', a: 'No fixed response time, though 14–28 days is reasonable; there is no formal consequence for the recipient staying silent.' },
-              { q: 'What is it actually for?', a: 'To save costs if liability isn’t disputed or settlement is possible, iron out issues, and test the waters.' },
+            number: '5',
+            heading: 'Legal Problem Solving (PG-FLAP)',
+            notes: [
+              {
+                heading: 'Part 1B — PG-FLAP explained in depth',
+                bullets: [
+                  'Problem solving is central to legal competence: solving problems satisfactorily, lawfully, ethically — drawing on knowledge, skills and professional attitude.',
+                  'To solve legal problems you draw on Knowledge (legal and non-legal; substantive, transactional, procedural), Skills (core and specialised), and Attitudes (professionalism, dedication, self-motivation).',
+                  'Two basic types of legal problem: Blocking Conflict (foreseeing and avoiding conflict — non-contentious) vs Playing Out Conflict (conflict already exists, contentious, litigation anticipated).',
+                ],
+                diagram: {
+                  title: 'PG-FLAP — the 5-stage process model',
+                  steps: [
+                    { label: 'Problem / goal identification', detail: "What does the client want or need? What's the obstacle? The problem itself can change as you learn more." },
+                    { label: 'Fact investigation', detail: 'Via interviews, correspondence, document analysis — iterating as new legal issues surface, and considering what further information or searches are needed.' },
+                    { label: 'Legal issue identification & assessment', detail: 'Research the issues, then assess the merits.' },
+                    { label: 'Advice & decision-making', detail: 'Develop and evaluate options (sue, settle, mediate, negotiate, admit fault, withdraw, or continue/renegotiate); weigh non-legal factors too (peace of mind, cost in time and money); choose client-centred (client decides) or lawyer-centred (you recommend).' },
+                    { label: 'Planning & implementation', detail: 'A concrete action plan: who does what, when, how.' },
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            number: '6',
+            heading: 'Letters Before Action',
+            notes: [
+              {
+                heading: 'Letter Before Action — Q&A',
+                bullets: [
+                  'The Court\'s discretion as to costs takes into account the conduct of all the parties, both before and during the proceedings (O.62 r.5(1)(e) and r.5(2)(d), Rules of the High Court (Cap. 4A)) — this is why unreasonably skipping an LBA can be penalised in costs even though sending one is not itself mandatory.',
+                ],
+                qa: [
+                  { q: 'Is an LBA legally required before starting proceedings?', a: 'No general rule requires it — the exception is personal injury claims (PD18.1). But the court’s costs discretion (above) can penalise unreasonable pre-action conduct, so send one unless there’s a risk the defendant will dissipate assets.' },
+                  { q: 'Who can send one, and is there a required form?', a: 'Anyone can send an LBA — there is no standard form or specific content requirement (see the Skills Guide).' },
+                  { q: 'Is there a fixed response time, or a consequence for silence?', a: 'No fixed response time, though 14–28 days is reasonable; there is no formal consequence for the recipient staying silent.' },
+                  { q: 'What is it actually for?', a: 'To save costs if liability isn’t disputed or settlement is possible, iron out issues, and test the waters.' },
+                ],
+              },
             ],
           },
         ],
@@ -568,6 +611,464 @@ window.COURSE_DETAILS = {
         ],
         referenceIds: ['undertakingForm'],
         assessmentRef: 'assessment-interview',
+      },
+    },
+  },
+
+  PCLL8020: {
+    name: 'Corporate and Commercial Transactions',
+
+    materials: [
+      '"Acquisition of Shares and Businesses in Hong Kong" (2nd Edition) by Jessica Y K Young — Chapters 1, 8-11',
+      '"Law of Companies in Hong Kong" (4th Edition) by Stefan H C Lo and Charles Z Qu',
+      'Companies Ordinance (Cap. 622 of the laws of Hong Kong)',
+    ],
+
+    references: {
+      documentAnalysis: {
+        title: 'Reading Material — Document Analysis: An Introduction',
+        body: 'A 5-step method for working out what a document — a statute, a judgment, or a contract — actually means and requires. Document analysis is essential to both Corporate Practice (applying the Companies Ordinance and companies\' articles) and Drafting Commercial Agreements (using precedents critically instead of copying them blind).',
+        diagrams: [
+          {
+            title: 'The 5 steps of document analysis',
+            steps: [
+              { label: 'Identify the document / provision', detail: 'What type of document is it? Different rules apply to different types — e.g. guarantees and exclusion clauses are construed strictly against whoever seeks to rely on them (contra proferentem).' },
+              { label: 'Read carefully & analyse', detail: 'Read the FULL provision to its full stop — don\'t skip provisos, exceptions or qualifications. Note whether the words are permissive or mandatory, and whether a list is exhaustive.' },
+              { label: 'Identify the interpretation rules', detail: 'As expressly provided in the document itself, and as provided by law.' },
+              { label: 'Apply those rules', detail: 'Apply the relevant rules of interpretation to the provision, bearing in mind the "business commonsense" approach.' },
+              { label: 'Check context & consistency', detail: 'Check the meaning you\'ve reached against the context of the whole document and its other provisions.' },
+            ],
+          },
+        ],
+        legalIssues: [
+          {
+            number: '1',
+            heading: 'Identifying the Document',
+            notes: [
+              {
+                heading: 'What are you looking at?',
+                bullets: [
+                  'Identify the type of document/provision — different rules of interpretation can apply depending on the type (e.g. guarantees and exclusion clauses are construed strictly against the party relying on them).',
+                  'Identify what the document comprises: is another document incorporated by reference (e.g. a sales order incorporating the seller\'s standard terms)? Has the document been amended or supplemented since execution — if so, that amending document must be reviewed too.',
+                ],
+              },
+              {
+                heading: 'Basic structure of a typical commercial agreement',
+                table: {
+                  headers: ['Part', 'Content'],
+                  rows: [
+                    ['Introduction', '"THIS AGREEMENT … 20XX:"'],
+                    ['Parties clause', 'Sets out the parties to the agreement'],
+                    ['Recitals ("WHEREAS…")', 'Background to the agreement — not necessarily binding, but a useful aid to resolving ambiguity'],
+                    ['Body / text', 'Definitions & Interpretation, then Core/Substantive Provisions, then Boilerplate Provisions'],
+                    ['Schedules / Appendices', 'Not every agreement has them — check whether they form an integral, binding part'],
+                    ['Testimonium', '"IN WITNESS OF WHICH … written above"'],
+                    ['Execution / Attestation', '"SIGNED by … in the presence of …"'],
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            number: '2',
+            heading: 'Reading the Provision Carefully',
+            notes: [
+              {
+                heading: 'Words and expressions',
+                bullets: [
+                  'Are the words permissive ("may" / "shall be entitled to") or mandatory ("shall" / "obliged to")? Permissive words simply confer a choice; mandatory words impose an obligation — breach of which is prima facie a breach of contract.',
+                  'Is a list exhaustive? If something is defined to "mean" B, C and D, the list is exhaustive; if defined to "include" p, q, r and s, it is not — other things (e.g. t) may still be included.',
+                  'Has the expression already been legally defined — by the courts (e.g. "best endeavours" vs. "reasonable endeavours" have distinct judicially-settled meanings), or by statute (e.g. "deal as a consumer" under the Control of Exemption Clauses Ordinance, Cap. 71)?',
+                ],
+              },
+              {
+                heading: 'Worked example — a restrictive covenant',
+                body: "An employment contract prohibits an employee, without the employer's express written consent, from acting as advocate for gain, giving legal advice to anyone but the employer, or drawing up legal documents for anyone but the employer — PROVIDED THAT this does not prohibit drafting wills for the employee's immediate family.",
+                bullets: [
+                  "This is a single main sentence with a general exception (the proviso). Free legal advice given to friends/relatives on a no-liability basis falls outside clause (b)'s prohibition on its own wording (\"other than\"); drafting a will for an immediate family member falls within clause (c) but is saved by the proviso.",
+                  'Lesson: read to the full stop, then work out exactly which words in the sentence a given fact pattern actually engages — the same fact can be caught by one sub-clause and saved by a different one\'s proviso.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '3',
+            heading: 'Reading the Whole Document',
+            notes: [
+              {
+                heading: 'Context beyond the single clause',
+                bullets: [
+                  'Check whether the agreement\'s Schedules/Appendices/Exhibits are engaged — e.g. a clause may reference services "more particularly set out in the Schedule"; missing the Schedule is a grave omission.',
+                  'Watch for clauses that expressly affect one another: "subject to Clause 3" (Clause 3 prevails on inconsistency), "notwithstanding Clause 5" (the clause containing this wording prevails instead), "without prejudice to Clause 6" (neither overrides the other).',
+                  'Check whether another document has been incorporated by reference — e.g. a bank fixed-deposit slip stating that its "General Terms and Conditions" apply pulls in the whole of that separate booklet, not just the slip itself.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '4',
+            heading: 'Rules of Document Interpretation',
+            notes: [
+              {
+                heading: 'The general test',
+                statutes: [
+                  { text: 'Interpretation is the ascertainment of the meaning which the document would convey to a reasonable person having all the background knowledge which would reasonably have been available to the parties in the situation in which they were at the time of the contract.', cite: 'Lord Hoffmann\'s first principle, Investors Compensation Scheme Ltd v West Bromwich Building Society [1998] 1 WLR 896, 912–913' },
+                ],
+                bullets: [
+                  'Courts try to give effect to the parties\' intention, usually taking the natural and ordinary meaning of the words — but where an expression is unclear, they look at the document as a whole and the factual matrix, objectively (not the parties\' subjective intentions or pre-contractual negotiations).',
+                  'Courts favour an interpretation that makes business commonsense, and will not adopt a literal but uncommercial reading unless the words cannot reasonably bear any other meaning.',
+                ],
+              },
+              {
+                heading: 'Common drafting conventions',
+                table: {
+                  headers: ['Expression', 'Meaning'],
+                  rows: [
+                    ['"References to Clauses/Schedules"', 'Refer to clauses/schedules of this agreement, not any other document'],
+                    ['"References to a statute/document"', 'Mean that statute/document as amended and supplemented from time to time, up to the date of interpretation'],
+                    ['"References to a party"', 'Include that party\'s personal representatives — the agreement doesn\'t automatically end if an individual party dies'],
+                    ['"Words importing a gender"', 'Include every gender — "he" can also mean "she"/"it"/"they"'],
+                  ],
+                },
+              },
+              {
+                heading: 'Canons of construction',
+                table: {
+                  headers: ['Canon', 'Meaning'],
+                  rows: [
+                    ['Ejusdem generis', 'General words following two or more specific words are restricted to the same category as those specific words'],
+                    ['Noscitur a sociis', 'General words are limited by reference to the subject matter/context in which they are used'],
+                    ['Contra proferentem', 'Guarantees and exclusion clauses are construed narrowly — any ambiguity is resolved against the party seeking to rely on the clause'],
+                  ],
+                },
+                bullets: [
+                  'Contra proferentem illustration: a guarantee of "all bank loans which Bank may from time to time lend to D" does not cover past loans, other liabilities D owes the Bank outside a bank loan (e.g. under D\'s own guarantee for a third party\'s debts), or D\'s foreign-exchange dealings — only bank loans made after the guarantee, construed narrowly against the party relying on it.',
+                ],
+              },
+              {
+                heading: 'Express terms, special conditions, and statutory intervention',
+                bullets: [
+                  'Express terms normally override implied terms — but for terms implied by statute, always check whether contracting out is actually permitted.',
+                  'Special/specific conditions normally override general conditions where the two are inconsistent.',
+                ],
+                statutes: [
+                  { text: 'A person cannot by reference to any contract term or to a notice given to persons generally or to particular persons exclude or restrict his liability for death or personal injury resulting from negligence.', cite: 's7(1), Control of Exemption Clauses Ordinance (Cap. 71)' },
+                ],
+                warnings: [
+                  'Other statutes commonly imply terms into contracts that a clause may not always be free to exclude — check the Sale of Goods Ordinance (Cap. 26) and the Supply of Services (Implied Terms) Ordinance (Cap. 457) before assuming an exclusion clause is effective.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '5',
+            heading: 'Computation of Time',
+            notes: [
+              {
+                heading: 'Common time expressions',
+                table: {
+                  headers: ['Expression', 'Meaning'],
+                  rows: [
+                    ['"day"', 'A 24-hour period, midnight to midnight'],
+                    ['"business day"', 'No universally accepted meaning — check for an applicable custom or usage'],
+                    ['"month"', 'Lunar or calendar? In commercial contexts, usually calendar'],
+                    ['"lunar month"', 'A 28-day period'],
+                    ['"calendar month"', '30 or 31 days depending on the starting month (28, or 29 in a leap year, if it starts in February)'],
+                    ['"year"', '12 consecutive calendar months'],
+                  ],
+                },
+              },
+              {
+                heading: '"Within X days" — included or excluded?',
+                bullets: [
+                  '"Within X days [after/of] a specified event": the specified day is usually EXCLUDED — the period starts the day after.',
+                  '"Within X days commencing on the happening of a specified event": the specified day is usually INCLUDED — the period starts that same day.',
+                  'There is no absolute rule for a stated date range (e.g. "from 13 January to 20 January") — always specify expressly whether both dates are included or excluded when drafting, and check the agreement\'s own Interpretation clause first if you\'re construing someone else\'s.',
+                  'Absent an express term, an established custom or usage can settle the question — e.g. banking custom charges loan interest from (and including) the advance date to (but excluding) the repayment date.',
+                  'For time-related provisions in an ordinance (rather than a contract), the general computation rule is set out in s71 of the Interpretation and General Clauses Ordinance (Cap. 1).',
+                ],
+              },
+            ],
+          },
+          {
+            number: '6',
+            heading: 'Boilerplate Provisions',
+            notes: [
+              {
+                heading: 'What boilerplate does',
+                bullets: [
+                  'Boilerplate clauses deal with how the contract operates, as opposed to substantive clauses, which deal with the parties\' rights and obligations in the transaction itself — but boilerplate can still modify the substantive clauses\' effect, operation and enforcement.',
+                ],
+                table: {
+                  headers: ['Clause', 'What it does'],
+                  rows: [
+                    ['Notices', 'Specifies how/where notices must be given — a notice is only valid if given to the correct party, at the correct address, in the correct manner; may also deem receipt after a set period'],
+                    ['Entire agreement', 'Confines the contract to what\'s written, excluding pre-contractual statements and preventing an oral collateral contract from arising'],
+                    ['Counterparts', 'Lets the parties sign separate copies (not the same document), each an original, which together constitute one agreement'],
+                    ['Waiver', 'A party\'s failure or delay to exercise a right doesn\'t itself waive that right or any other'],
+                    ['Further assurance', 'Requires the parties to do whatever else is needed to give effect to the agreement — may be paired with a power of attorney, which then requires the agreement to be executed as a deed'],
+                    ['Costs and expenses', 'Allocates who bears the costs of negotiating/preparing/executing the agreement — always check what needs to be covered (e.g. lenders often also want administration/enforcement costs included)'],
+                    ['Governing law & jurisdiction', 'States which law governs the agreement and which courts have jurisdiction'],
+                    ['Severability', 'If a clause is unlawful/unenforceable, it is cut out and disregarded, leaving the rest of the agreement to operate on its own — courts will not re-draft the agreement to make it work'],
+                  ],
+                },
+              },
+              {
+                heading: 'Entire agreement clauses and misrepresentation',
+                warnings: [
+                  'An "entire agreement" clause that restricts a party\'s rights or remedies can itself amount to an exclusion clause under the Control of Exemption Clauses Ordinance (Cap. 71).',
+                  'A "non-reliance" clause (acknowledging no pre-contractual representations were made or relied on) does not automatically exclude liability for fraudulent misrepresentation — see Thomas Witter Ltd v TBP Industries Ltd [1996] 2 All ER 573.',
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    },
+
+    sessions: {
+      LG1: {
+        kind: 'LG',
+        date: '2026-09-01',
+        time: '09:00-11:00',
+        mode: 'Face-to-face',
+        authors: ['Stephane Hui Bon Hoa', 'Charmaine Yip'],
+        objectives: [
+          'Introduce the Corporate and Commercial Transactions course.',
+          'Discuss the main types of business vehicles used in Hong Kong.',
+          'Provide a brief overview of Hong Kong companies.',
+          'Introduce the mechanics and related legislative provisions governing transfers of businesses in Hong Kong.',
+        ],
+        topicsCovered: [
+          'Main types of business vehicles: sole proprietorships, partnerships, companies',
+          'Considerations as to which business vehicle to choose/use',
+          'The Hong Kong regime on registration of businesses',
+          'Transfers of businesses',
+        ],
+        prep: {
+          readings: ['"Acquisition of Shares and Businesses in Hong Kong" (2nd ed.), Chapters 1, 8-11', '"Law of Companies in Hong Kong" (4th ed.)'],
+        },
+        keyTakeaways: [
+          'Sole proprietorships and general partnerships have no separate legal personality from their owners; companies do.',
+          'Every Hong Kong business, of any form, must register with the Business Registration Office within 1 month of commencing business.',
+          'Transferring a business is not the same transaction as transferring the shares in the company that owns it — the two engage completely different rules.',
+        ],
+        legalIssues: [
+          {
+            number: '1',
+            heading: 'Sole Proprietorships & Partnerships',
+            notes: [
+              {
+                heading: 'Sole proprietorships',
+                bullets: [
+                  'A sole proprietorship is a business entity, not a legal entity with its own distinct legal personality.',
+                  'The sole proprietor (owner) is a natural person.',
+                  'There is no distinction between the sole proprietor and the business: the proprietor is entitled to all of the business\'s profits, and is personally liable for all of its debts.',
+                ],
+              },
+              {
+                heading: 'Partnerships — nature and types',
+                statutes: [
+                  { text: 'Partnership is the relation which subsists between persons carrying on a business in common with a view of profit.', cite: 's3, Partnership Ordinance (Cap. 38)' },
+                ],
+                bullets: [
+                  'Also a business entity, not a separate legal person.',
+                  'Three main types in Hong Kong: general partnerships, limited partnerships, and limited liability partnerships.',
+                  'Relevant legislation: the Partnership Ordinance (Cap. 38), the Limited Partnership Ordinance (Cap. 37), and the Legal Practitioners Ordinance (Cap. 159, for law firms specifically).',
+                ],
+                table: {
+                  headers: ['Topic', 'Partnership Ordinance provision'],
+                  rows: [
+                    ['Creation of a partnership', 's4'],
+                    ['Partnership agreements', 'ss21 and 26'],
+                    ['Partnership property', 'ss22 and 23'],
+                    ['Partners\' liability to third parties', 'ss7, 11, 12 and 19'],
+                    ['Partners\' duties (fiduciary good faith, honesty, loyalty)', 's31'],
+                    ['Duty not to compete with the firm', 's32'],
+                    ['Dissolution / end of partnership', 'ss34-37'],
+                  ],
+                },
+                warnings: [
+                  'In a general partnership, each partner is personally liable, without limit, for the firm\'s debts — this exposure is one of the main reasons clients choose to incorporate instead.',
+                ],
+              },
+              {
+                heading: 'Limited partnerships',
+                bullets: [
+                  'A separate regime from general partnerships, under the Limited Partnership Ordinance (Cap. 37) — allowing at least one partner to enjoy limited liability, provided they don\'t take part in managing the business.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '2',
+            heading: 'Companies',
+            notes: [
+              {
+                heading: 'Separate legal personality',
+                statutes: [
+                  { text: 'The company is at law a different person altogether from the subscribers to the memorandum; and, though it may be that after incorporation the business is precisely the same as it was before, and the same persons are managers, and the same hands receive the profits, the company is not in law the agent of the subscribers or trustee for them.', cite: 'Lord Macnaghten, Salomon v A Salomon & Co Ltd [1897] AC 22' },
+                ],
+                bullets: [
+                  'Companies are legal entities existing and operating in their own right, separate from their owners (members).',
+                  'Members enjoy limited liability.',
+                  'Various types exist: private and public companies, companies limited by shares, and companies limited by guarantee.',
+                  'Hong Kong company law was substantially rewritten in the early 2010s, producing the current Companies Ordinance.',
+                ],
+              },
+              {
+                heading: 'Private companies limited by shares',
+                bullets: [
+                  'The most common vehicle for Hong Kong private businesses.',
+                  'Primarily governed by the Companies Ordinance (Cap. 622), with winding up and related matters governed by the Companies (Winding Up and Miscellaneous Provisions) Ordinance (Cap. 32).',
+                ],
+              },
+            ],
+          },
+          {
+            number: '3',
+            heading: 'Choosing & Registering a Business Vehicle',
+            notes: [
+              {
+                heading: 'Considerations in choosing a vehicle',
+                bullets: [
+                  'The nature and size of the business to be established.',
+                  'Who will participate, and how.',
+                  'Reporting requirements attached to the vehicle.',
+                  'The applicable Hong Kong profits tax rates.',
+                ],
+              },
+              {
+                heading: 'Business registration',
+                bullets: [
+                  'Applies to all Hong Kong businesses, regardless of form.',
+                  'A "one-stop registration" process is available for newly incorporated companies.',
+                  'Fees/levies are payable for business registration and branch registration certificates.',
+                ],
+                warnings: [
+                  'Register with the Business Registration Office within 1 month of commencing business (Business Registration Ordinance, Cap. 310) — this applies regardless of the vehicle\'s form. Failure to register is an offence, punishable by a fine and up to 1 year\'s imprisonment.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '4',
+            heading: 'Transfers of Businesses',
+            notes: [
+              {
+                heading: 'Asset transfer vs. share transfer',
+                bullets: [
+                  'A transfer of the assets constituting a business is a different transaction from a transfer of shares in the company that owns the business — they engage different rules and different protections.',
+                ],
+              },
+              {
+                heading: 'Protection of creditors on a business transfer',
+                bullets: [
+                  'The Transfer of Businesses (Protection of Creditors) Ordinance (Cap. 49) governs a transferee\'s exposure to a transferred business\'s existing debts and obligations, protecting the creditors to whom that business owes money.',
+                  'Operates through a "notice" regime.',
+                ],
+                table: {
+                  headers: ['Topic', 'TBO provision'],
+                  rows: [
+                    ['Exceptions to the regime', 's3'],
+                    ['Prescribed notice contents & publication', 's5'],
+                    ['Timing of notice, and when it becomes "complete"', 's4'],
+                    ['Indemnity', 's6'],
+                    ['Limitation of transferee liability', 's8'],
+                    ['Time limit to institute proceedings', 's9'],
+                  ],
+                },
+                warnings: [
+                  'Missing the TBO notice regime can expose a transferee to the transferred business\'s existing debts and obligations — always check s3 for exceptions before assuming the regime applies.',
+                  'Proceedings under the TBO are themselves subject to their own statutory time limit (s9) — this is separate from the limitation period for the underlying debt.',
+                ],
+              },
+            ],
+          },
+        ],
+        cloze: [
+          { text: 'A sole proprietorship has {{no}} separate legal personality from its owner — the proprietor is personally entitled to all profits and liable for all debts.' },
+          { text: 'Hong Kong recognises three types of partnership: general partnerships, {{limited partnerships}}, and {{limited liability partnerships}}.' },
+          { text: 'Under the Partnership Ordinance, partners owe each other fiduciary duties of {{good faith}}, honesty and loyalty, and must not {{compete}} with the firm.' },
+          { text: 'In {{Salomon v Salomon}}, the House of Lords held that a validly incorporated company is a {{separate legal person}} from its members, even where one person controls the whole enterprise.' },
+          { text: 'A Hong Kong private company limited by shares is primarily governed by the {{Companies Ordinance}} (Cap. 622).' },
+          { text: 'Every Hong Kong business, regardless of form, must register with the Business Registration Office within {{1 month}} of commencing business.' },
+          { text: 'The Transfer of Businesses (Protection of Creditors) Ordinance protects a transferred business\'s {{creditors}} by regulating the transferee\'s exposure to its debts.' },
+          { text: 'Transferring a company\'s shares and transferring the business\'s underlying {{assets}} are different transactions, engaging different rules.' },
+        ],
+        referenceIds: [],
+      },
+
+      SG1: {
+        kind: 'SG',
+        date: '2026-09-07/08',
+        time: 'Refer to timetable',
+        skills: 'Company Law & Corporate Practice',
+        objectives: [
+          'Introduce basic company law concepts and corporate transactions involving Hong Kong private companies limited by shares.',
+          'Understand and explore the procedural steps and documentary requirements for establishing a company.',
+        ],
+        prepChecklist: [
+          { id: 'read-doc-analysis', label: 'Read the "Document Analysis" reading material' },
+          { id: 'review-lg2-5b', label: 'Review the LG2-4, 5A and 5B materials' },
+          { id: 'prepare-ex1', label: 'Prepare Exercise 1: foundational corporate practice questions' },
+          { id: 'prepare-ex2', label: 'Prepare Exercise 2: the company establishment scenario' },
+          { id: 'bring-co', label: 'Bring easy access to the Companies Ordinance (Cap. 622) to class' },
+        ],
+        exercises: [
+          {
+            id: 'ex1',
+            title: 'Exercise 1 — Foundational Corporate Practice Concepts',
+            questionGroups: [
+              {
+                heading: 'Constitution',
+                questions: [
+                  'Briefly explain what the constitution of a Hong Kong private company limited by shares is under the Companies Ordinance, and describe what purpose it serves.',
+                  'Is a company free to choose its own constitution?',
+                ],
+              },
+              {
+                heading: 'Directors',
+                questions: [
+                  'Describe the roles and powers of a company\'s directors.',
+                  'What are relevant considerations to take into account when deciding who can serve as a director of a Hong Kong private company?',
+                ],
+              },
+              {
+                heading: 'Shareholders',
+                questions: [
+                  'Describe the roles, rights and powers of a company\'s shareholders.',
+                  'How does one determine who is the registered owner of shares?',
+                ],
+              },
+              {
+                heading: 'Transfers & Allotments of Shares',
+                questions: [
+                  'Highlight the differences between a transfer and an allotment of shares.',
+                  'Briefly describe the sequence of steps in effecting a transaction involving a transfer of shares.',
+                ],
+              },
+            ],
+          },
+          {
+            id: 'ex2',
+            title: 'Exercise 2 — Company Establishment Exercise',
+            factPattern: 'Stephanie and her sister Jessie set up PCLL Investments Limited, a Hong Kong private company limited by shares, a few years ago — originally to invest in property, though it ended up holding a modest securities portfolio instead. Jessie is now relocating to Europe and wants to unwind her involvement by the end of the month, offering Stephanie the Company as a gift. Stephanie wants: (1) the Company held in her name only, and (2) to become its sole director, replacing the company secretary with a new third-party provider, Mitch Secretaries Limited. Stephanie provides you with the Company\'s Annual Return (NAR1) and Articles of Association.',
+            questions: [
+              'Identify the parties who must perform each step.',
+              'Place the steps in the correct sequence.',
+              'For each step, address any stamp duty implications and/or corporate reporting requirements.',
+              'List and explain any follow-up questions or additional documents you would need to request from Stephanie, Jessie, or the Company.',
+            ],
+          },
+        ],
+        cloze: [
+          { text: "A company's articles of association are part of its {{constitution}} under the Companies Ordinance." },
+          { text: 'Companies may adopt the {{Model Articles}} set out in the Companies (Model Articles) Notice (Cap. 622H) as their constitution.' },
+          { text: 'A {{transfer}} of shares moves existing shares between holders; an {{allotment}} creates and issues new shares.' },
+          { text: 'The registered owner of shares is whoever is entered in the company\'s {{register of members}} — not necessarily whoever holds the share certificate.' },
+        ],
+        referenceIds: ['documentAnalysis'],
       },
     },
   },

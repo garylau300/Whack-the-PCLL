@@ -513,6 +513,37 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .qa-list dt:first-child { margin-top: 0; }
 .qa-list dd { margin: 2px 0 0; color: var(--text-muted); }
 
+/* Warning callout (fullNotes'/reference's `warnings` shape) — compliance
+   deadlines, offences, consequences: a distinct red-toned box so it reads
+   as "don't miss this" while skimming, not just another bullet. */
+.law-callout { margin: 10px 0; padding: 10px 12px; border-radius: var(--radius); font-size: 0.85rem; }
+.law-callout--warning {
+  background: color-mix(in srgb, var(--now-line) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--now-line) 45%, var(--border));
+  border-left: 4px solid var(--now-line);
+}
+.law-callout-head { font-weight: 700; color: var(--now-line-text); margin-bottom: 4px; }
+.law-callout--warning ul { margin: 0; padding-left: 18px; }
+.law-callout--warning li { margin: 2px 0; }
+
+/* Quote callout (fullNotes'/reference's `statutes` shape) — a statute
+   section or case-law principle quoted (approximately) verbatim, with its
+   citation right-aligned underneath like a real pull-quote. */
+.law-callout--quote {
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  font-style: italic;
+}
+.law-callout--quote p { margin: 0 0 4px; }
+.law-callout--quote cite { display: block; font-style: normal; font-size: 0.78rem; color: var(--text-muted); text-align: right; }
+
+/* A numbered legal-issue group (fullNotes' `legalIssues` shape) — one
+   collapsible per issue; its notes render directly underneath with a
+   left rule, not as further nested collapsibles. */
+.legal-issue-note { margin: 10px 0 10px 4px; padding-left: 10px; border-left: 2px solid var(--border); }
+.legal-issue-note h4 { margin-top: 0; }
+
 /* A numbered step flow (fullNotes' `diagram` shape) — wraps to a vertical
    stack on narrow screens since it's just a wrapping flex row. */
 .process-diagram-title { font-weight: 600; font-size: 0.82rem; margin: 6px 0; }
