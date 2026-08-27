@@ -15,7 +15,7 @@
     return `<tr class="pre-recorded">
       <td class="col-date">Pre-recorded<span class="wk-tag">Wk ${weekNumber}</span></td>
       <td class="col-time">${escapeHtml(when)}</td>
-      <td class="col-no"></td>
+      <td class="col-no">${escapeHtml(entry.no || '')}</td>
       <td class="col-topic">${escapeHtml(entry.topic || '')}</td>
       <td class="col-venue">Moodle</td>
       <td class="col-who">${escapeHtml(entry.instructor || '')}</td>

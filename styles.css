@@ -395,7 +395,7 @@ a.event-card:hover {
 .dash-section h2 { font-size: 0.95rem; font-weight: 700; margin: 0 0 10px; }
 .dash-list { display: flex; flex-direction: column; gap: 10px; }
 
-.todo-list, .watch-list {
+.todo-list, .watch-list, .video-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -403,7 +403,7 @@ a.event-card:hover {
   flex-direction: column;
   gap: 8px;
 }
-.todo-list li, .watch-list li {
+.todo-list li, .watch-list li, .video-list li {
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent-2);
@@ -413,7 +413,9 @@ a.event-card:hover {
   line-height: 1.4;
 }
 .watch-list li { border-left-color: var(--now-line); }
-.watch-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
+.watch-list li.muted, .video-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
+.video-list li { border-left-color: var(--accent); }
+.video-list .video-when { margin-top: 4px; font-size: 0.78rem; color: var(--text-muted); }
 
 .week-strip {
   display: grid;

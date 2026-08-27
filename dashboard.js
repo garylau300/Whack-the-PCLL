@@ -4,12 +4,16 @@
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, fetchTimetable, loadMyElectives,
-    eventIsFilteredOut, initElectiveSettings,
+    eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
   const ADVOCACY_CODES = new Set(['PCLL8051', 'PCLL8104', 'PCLL8014']);
   const WATCH_RE = /assessment|exam\b|provisional|hand in|deadline|separate notice|holiday|court attendance/i;
+  // Targets "before", not "after" — that's the actual watch-by deadline
+  // ("...after LG8 and before LG9" should resolve to LG9, not LG8). The
+  // reference isn't always an LG — some are "to be watched before SG3".
+  const DEADLINE_RE = /before\s+(?:CCT\s+)?((?:LG|SG)\s*\d+[A-Za-z]?)/i;
 
   const $ = (id) => document.getElementById(id);
 
@@ -130,6 +134,48 @@
     }).join('');
   }
 
+  // Cross-references a pre-recorded entry's "before LGx" hint against this
+  // week's actual live sessions, so "watch when the time comes" can point at
+  // a real day instead of just repeating the raw sheet text.
+  function resolvePreRecordedTiming(entry, week) {
+    const m = DEADLINE_RE.exec(entry.when || '');
+    if (!m) return null;
+    const targetNo = m[1].replace(/\s+/g, '').toUpperCase();
+    for (const day of week.days) {
+      for (const ev of day.events || []) {
+        if (ev.code === entry.code && ev.no && ev.no.replace(/\s+/g, '').toUpperCase() === targetNo) {
+          return { date: day.date, day: day.day };
+        }
+      }
+    }
+    return null;
+  }
+
+  function renderPreRecordedList(week, myElectives) {
+    const today = todayISO();
+    const entries = (week.preRecorded || []).filter((e) => !eventIsFilteredOut({ code: e.code }, myElectives));
+    const items = entries.map((entry) => {
+      const name = (timetable.meta.courses || {})[entry.code] || ELECTIVE_NAMES[entry.code] || '';
+      const label = `${entry.code}${name ? ' · ' + name : ''}${entry.no ? ' — ' + entry.no : ''}`;
+      const timing = resolvePreRecordedTiming(entry, week);
+      let when;
+      if (timing) {
+        const passed = timing.date && timing.date < today;
+        when = passed ? `Was due before ${timing.day} (passed)` : `Watch before ${timing.day}`;
+      } else {
+        when = entry.when ? entry.when[0].toUpperCase() + entry.when.slice(1) : 'No specific timing given';
+      }
+      return `<li>
+        <strong>${escapeHtml(label)}</strong>
+        <div>${escapeHtml(entry.topic || '')}</div>
+        <div class="video-when">🎥 ${escapeHtml(when)}</div>
+      </li>`;
+    });
+    $('preRecordedList').innerHTML = items.length
+      ? items.join('')
+      : '<li class="muted">Nothing to pre-watch this week.</li>';
+  }
+
   function legalSkillsKeyFor(code) {
     if (!code) return null;
     if (ADVOCACY_CODES.has(code)) return 'ADVOCACY';
@@ -160,6 +206,7 @@
     renderHero(ctx, ownEvents);
     renderClasses(ownEvents, ctx.day ? ctx.day.date : null);
     renderTodo(ctx, ownEvents);
+    renderPreRecordedList(ctx.week, myElectives);
     renderWatchList(ctx.week);
     renderWeekStrip(ctx.week, myElectives);
     renderLegalSkill(ownEvents);
