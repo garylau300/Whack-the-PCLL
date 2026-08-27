@@ -1,37 +1,9 @@
 (() => {
   'use strict';
 
-  const COURSE_COLORS = {
-    PCLL8010: '#2b6cb0', // Civil Litigation
-    PCLL8020: '#2f855a', // Corp & Com Transactions
-    PCLL8030: '#b7791f', // Property Transactions
-    PCLL8040: '#6b46c1', // Professional Practice & Management
-    PCLL8050: '#c53030', // Criminal Litigation
-    PCLL8051: '#dd6b20', // Criminal Advocacy
-    PCLL8104: '#3182ce', // Civil Advocacy
-    PCLL8014: '#3182ce', // Civil Advocacy
-  };
-  const DEFAULT_COLOR = '#4a5568';
-  const ELECTIVE_CODES = [
-    'PCLL8100', 'PCLL8101', 'PCLL8102', 'PCLL8103', 'PCLL8105', 'PCLL8107',
-    'PCLL8108', 'PCLL8109', 'PCLL8110', 'PCLL8111', 'PCLL8112', 'PCLL8113',
-  ];
-  const ELECTIVE_NAMES = {
-    PCLL8100: 'Trial Advocacy',
-    PCLL8101: 'Commercial Dispute Resolution',
-    PCLL8102: 'Personal Injury Litigation',
-    PCLL8103: 'Matrimonial Practice and Procedure',
-    PCLL8105: 'Drafting Commercial Agreements',
-    PCLL8107: 'Listed Companies',
-    PCLL8108: 'China Practice',
-    PCLL8109: 'Wills, Trusts and Estate Planning',
-    PCLL8110: 'Use of Chinese in Legal Practice',
-    PCLL8111: 'Financial Regulations and Practice',
-    PCLL8112: 'Employment Law and Practice',
-    PCLL8113: 'Property Practice',
-  };
+  const { ELECTIVE_CODES, ELECTIVE_NAMES, todayISO, fmtShort, fmtLong, eventCardHtml, initTheme } = window.PCLL;
+
   const ELECTIVES_KEY = 'pcll.myElectives';
-  const THEME_KEY = 'pcll.theme';
 
   let timetable = null;
   let activeWeekIndex = 0;
@@ -39,11 +11,6 @@
   let viewMode = 'grid'; // 'grid' | 'day'
 
   const $ = (id) => document.getElementById(id);
-
-  function todayISO() {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-  }
 
   function loadMyElectives() {
     try {
@@ -106,76 +73,11 @@
     });
   }
 
-  function fmtShort(iso) {
-    const d = new Date(iso + 'T00:00:00Z');
-    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
-  }
-
-  function fmtLong(iso) {
-    const d = new Date(iso + 'T00:00:00Z');
-    return d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' });
-  }
-
-  function fmtTime(hhmm) {
-    if (!hhmm) return '';
-    const [h, m] = hhmm.split(':').map(Number);
-    const period = h >= 12 ? 'pm' : 'am';
-    const h12 = h % 12 === 0 ? 12 : h % 12;
-    return m === 0 ? `${h12}${period}` : `${h12}:${String(m).padStart(2, '0')}${period}`;
-  }
-
   function renderWeekRange(week) {
     const days = week.days.filter((d) => d.date);
     const el = $('weekRange');
     if (!days.length) { el.textContent = `Week ${week.week}`; return; }
     el.textContent = `Week ${week.week} · ${fmtShort(days[0].date)} – ${fmtShort(days[days.length - 1].date)}, ${new Date(days[0].date + 'T00:00:00Z').getUTCFullYear()}`;
-  }
-
-  function eventCardHtml(ev, myElectives, dateIso) {
-    const color = COURSE_COLORS[ev.code] || DEFAULT_COLOR;
-    const timeText = ev.start ? `${fmtTime(ev.start)}${ev.end ? '–' + fmtTime(ev.end) : ''}` : (ev.timeLabel || 'Time TBC');
-    const codeName = ev.code ? (ELECTIVE_NAMES[ev.code] || '') : '';
-    const isOtherGroup = ev.scope === 'other-group';
-
-    const fields = [];
-    if (ev.no) fields.push(field('No.', ev.no + (ev.part ? ` (${ev.part})` : '')));
-    else if (ev.part) fields.push(field('Section', ev.part));
-    if (ev.topic) fields.push(field('Topic', ev.topic));
-    if (ev.venue) fields.push(field('Venue', ev.venue));
-    if (ev.instructor) fields.push(field('Instructor', ev.instructor));
-    const fieldsHtml = fields.join('');
-
-    const otherGroupsHtml = ev.otherGroups && ev.otherGroups.length
-      ? `<div class="other-groups">${ev.otherGroups.map((g) => escapeHtml(g)).join('<br>')}</div>`
-      : '';
-
-    const mineBadge = ev.scope === 'group' ? '<span class="mine-badge">Your group</span>' : '';
-    const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge">Not your group</span>' : '';
-    const now = isHappeningNow(ev, dateIso);
-    return `<div class="event-card${now ? ' now' : ''}${isOtherGroup ? ' other-group' : ''}" style="--course-color:${color}">
-      <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
-      <div class="fields">${fieldsHtml}</div>
-      ${otherGroupsHtml}
-      ${mineBadge}${otherGroupBadge}
-    </div>`;
-  }
-
-  function field(label, value) {
-    return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
-  }
-
-  function isHappeningNow(ev, dateIso) {
-    if (!ev.start || !ev.end) return false;
-    if (dateIso && dateIso !== todayISO()) return false;
-    const now = new Date();
-    const nowMin = now.getHours() * 60 + now.getMinutes();
-    const [sh, sm] = ev.start.split(':').map(Number);
-    const [eh, em] = ev.end.split(':').map(Number);
-    return nowMin >= sh * 60 + sm && nowMin <= eh * 60 + em;
-  }
-
-  function escapeHtml(s) {
-    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
   function renderGridView(week) {
@@ -190,7 +92,7 @@
       col.innerHTML = `
         <div class="day-col-head">${day.day}${day.date ? `<span class="date">${fmtShort(day.date)}</span>` : ''}</div>
         <div class="day-col-body">
-          ${events.length ? events.map((ev) => eventCardHtml(ev, myElectives, day.date)).join('') : '<div class="empty-day">No sessions</div>'}
+          ${events.length ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('') : '<div class="empty-day">No sessions</div>'}
         </div>`;
       grid.appendChild(col);
     }
@@ -204,7 +106,7 @@
     $('dayViewLabel').innerHTML = `${day.day}${day.date ? `<span class="date">${fmtLong(day.date)}</span>` : ''}`;
     const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
     $('dayViewBody').innerHTML = events.length
-      ? events.map((ev) => eventCardHtml(ev, myElectives, day.date)).join('')
+      ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('')
       : '<div class="empty-day">No sessions</div>';
   }
 
@@ -272,31 +174,8 @@
     }
   }
 
-  function effectiveTheme() {
-    const explicit = document.documentElement.dataset.theme;
-    if (explicit === 'light' || explicit === 'dark') return explicit;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function updateThemeButton() {
-    $('themeBtn').textContent = effectiveTheme() === 'dark' ? '☀️' : '🌙';
-  }
-
-  function setTheme(theme) {
-    document.documentElement.dataset.theme = theme;
-    try { localStorage.setItem(THEME_KEY, theme); } catch { /* no-op */ }
-    updateThemeButton();
-  }
-
-  function initTheme() {
-    updateThemeButton();
-    $('themeBtn').addEventListener('click', () => {
-      setTheme(effectiveTheme() === 'dark' ? 'light' : 'dark');
-    });
-  }
-
   function init() {
-    initTheme();
+    initTheme($('themeBtn'));
     $('prevWeek').addEventListener('click', () => selectWeek(activeWeekIndex - 1));
     $('nextWeek').addEventListener('click', () => selectWeek(activeWeekIndex + 1));
     $('prevDay').addEventListener('click', () => { activeDayIndex = Math.max(0, activeDayIndex - 1); render(); });

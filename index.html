@@ -8,15 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <script>
-    // Applied before paint so there's no flash of the wrong theme.
-    (function () {
-      try {
-        var saved = localStorage.getItem('pcll.theme');
-        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
-      } catch (e) { /* localStorage unavailable */ }
-    })();
-  </script>
+  <script src="common.js"></script>
 </head>
 <body>
   <header class="topbar">

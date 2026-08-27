@@ -72,6 +72,9 @@ body {
   border-radius: 999px;
 }
 .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255,255,255,0.12);
   border: none;
   color: white;
@@ -80,6 +83,7 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .icon-btn:hover { background: rgba(255,255,255,0.22); }
 
@@ -189,12 +193,28 @@ body {
 .empty-day { color: var(--text-muted); font-size: 0.8rem; padding: 8px; text-align: center; }
 
 .event-card {
+  display: block;
   border-radius: 8px;
   padding: 8px 10px;
   border-left: 4px solid var(--course-color, var(--accent));
   background: color-mix(in srgb, var(--course-color, var(--accent)) var(--card-tint), var(--surface));
   font-size: 0.8rem;
   line-height: 1.35;
+  color: inherit;
+  text-decoration: none;
+}
+a.event-card { cursor: pointer; transition: box-shadow 0.1s ease, transform 0.1s ease; }
+a.event-card:hover {
+  box-shadow: 0 0 0 1px var(--course-color, var(--accent)), 0 2px 8px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+.event-card .event-date {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  margin-bottom: 3px;
 }
 .event-card .time {
   font-weight: 700;
@@ -322,3 +342,41 @@ body {
 .elective-list { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
 .elective-row { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
 .elective-row label { flex: 1; }
+
+.course-app { max-width: 900px; padding: 16px 12px 24px; margin: 0 auto; }
+
+.course-section { margin-bottom: 24px; }
+.course-section h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.session-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; white-space: nowrap; }
+.session-table th,
+.session-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.session-table td.col-topic { white-space: normal; min-width: 220px; }
+.session-table th {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.session-table tbody tr:last-child td { border-bottom: none; }
+.session-table .wk-tag { display: block; font-size: 0.68rem; color: var(--text-muted); font-weight: 400; }
+.session-table tr.mine td { background: color-mix(in srgb, var(--accent-2) 12%, var(--surface)); }
+.session-table tr.mine td.col-date { box-shadow: inset 3px 0 0 var(--accent-2); }
+.session-table tr.other-group td { color: var(--text-muted); opacity: 0.65; }
+.session-table tr.now td { background: var(--today); }

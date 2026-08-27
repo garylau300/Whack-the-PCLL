@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course — Whack the PCLL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-title">
+      <a href="index.html" class="icon-btn back-link" aria-label="Back to timetable">←</a>
+      <h1 id="courseTitle">Course</h1>
+    </div>
+    <div class="topbar-controls">
+      <button id="themeBtn" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main id="app" class="course-app">
+    <div id="status" class="status">Loading sessions…</div>
+
+    <!-- One of several course-detail sections (assessment methods, course
+         materials, etc. to follow) — kept compact since it won't be alone. -->
+    <section class="course-section" id="sessionsSection" hidden>
+      <h2>Sessions</h2>
+      <div class="table-scroll">
+        <table class="session-table">
+          <thead>
+            <tr><th>Date</th><th>Time</th><th>No.</th><th>Topic</th><th>Venue</th><th>Who</th></tr>
+          </thead>
+          <tbody id="sessionTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="syncStatus">—</span>
+  </footer>
+
+  <script src="course.js"></script>
+</body>
+</html>

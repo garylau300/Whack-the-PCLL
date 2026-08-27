@@ -25,7 +25,16 @@ stale, no redeploy needed when the sheet changes.
   now" button (or `/api/timetable?fresh=1`) to force an immediate re-sync.
 - `index.html` / `styles.css` / `app.js` render the data: a week grid, a
   mobile day view, and a settings panel to filter elective sessions once you
-  know your 3 choices (saved in your browser only).
+  know your 3 choices (saved in your browser only). Shared rendering (event
+  cards, date/time formatting, the light/dark toggle) lives in `common.js`,
+  loaded by every page. Light is the default theme; dark only applies once a
+  visitor explicitly toggles it (persisted per-browser).
+- Any session with a course code is clickable, linking to `course.html?code=`
+  that course — a per-course page (`course.js`) listing every session for it
+  across the whole programme as a compact table (Date / Time / No. / Topic /
+  Venue / Who), with the same "your group" / "other group" highlighting. It's
+  built as one `<section class="course-section">` among others still to come
+  (assessment methods, course materials).
 
 ## Running locally
 

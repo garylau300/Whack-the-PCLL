@@ -1,0 +1,157 @@
+// Shared across index.html (app.js) and course.html (course.js): course
+// metadata, date/time formatting, the event-card renderer, and the theme
+// toggle. Exposed as window.PCLL rather than ES modules, to keep this a
+// zero-build static site (plain <script> tags, no bundler).
+// Applied immediately (this file is loaded synchronously in <head>, before
+// the stylesheet) so there's no flash of the wrong theme. Light is the
+// default — dark only applies once the visitor has explicitly chosen it.
+(function () {
+  try {
+    const saved = localStorage.getItem('pcll.theme');
+    document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
+  } catch (e) {
+    document.documentElement.dataset.theme = 'light';
+  }
+})();
+
+(() => {
+  'use strict';
+
+  const COURSE_COLORS = {
+    PCLL8010: '#2b6cb0', // Civil Litigation
+    PCLL8020: '#2f855a', // Corp & Com Transactions
+    PCLL8030: '#b7791f', // Property Transactions
+    PCLL8040: '#6b46c1', // Professional Practice & Management
+    PCLL8050: '#c53030', // Criminal Litigation
+    PCLL8051: '#dd6b20', // Criminal Advocacy
+    PCLL8104: '#3182ce', // Civil Advocacy
+    PCLL8014: '#3182ce', // Civil Advocacy
+  };
+  const DEFAULT_COLOR = '#4a5568';
+  const ELECTIVE_CODES = [
+    'PCLL8100', 'PCLL8101', 'PCLL8102', 'PCLL8103', 'PCLL8105', 'PCLL8107',
+    'PCLL8108', 'PCLL8109', 'PCLL8110', 'PCLL8111', 'PCLL8112', 'PCLL8113',
+  ];
+  const ELECTIVE_NAMES = {
+    PCLL8100: 'Trial Advocacy',
+    PCLL8101: 'Commercial Dispute Resolution',
+    PCLL8102: 'Personal Injury Litigation',
+    PCLL8103: 'Matrimonial Practice and Procedure',
+    PCLL8105: 'Drafting Commercial Agreements',
+    PCLL8107: 'Listed Companies',
+    PCLL8108: 'China Practice',
+    PCLL8109: 'Wills, Trusts and Estate Planning',
+    PCLL8110: 'Use of Chinese in Legal Practice',
+    PCLL8111: 'Financial Regulations and Practice',
+    PCLL8112: 'Employment Law and Practice',
+    PCLL8113: 'Property Practice',
+  };
+  const THEME_KEY = 'pcll.theme';
+
+  function todayISO() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  function fmtShort(iso) {
+    const d = new Date(iso + 'T00:00:00Z');
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
+  }
+
+  function fmtLong(iso) {
+    const d = new Date(iso + 'T00:00:00Z');
+    return d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  }
+
+  function fmtTime(hhmm) {
+    if (!hhmm) return '';
+    const [h, m] = hhmm.split(':').map(Number);
+    const period = h >= 12 ? 'pm' : 'am';
+    const h12 = h % 12 === 0 ? 12 : h % 12;
+    return m === 0 ? `${h12}${period}` : `${h12}:${String(m).padStart(2, '0')}${period}`;
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function field(label, value) {
+    return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
+  }
+
+  function isHappeningNow(ev, dateIso) {
+    if (!ev.start || !ev.end) return false;
+    if (dateIso && dateIso !== todayISO()) return false;
+    const now = new Date();
+    const nowMin = now.getHours() * 60 + now.getMinutes();
+    const [sh, sm] = ev.start.split(':').map(Number);
+    const [eh, em] = ev.end.split(':').map(Number);
+    return nowMin >= sh * 60 + sm && nowMin <= eh * 60 + em;
+  }
+
+  // opts: { dateIso, linkable = true, dateHeading }
+  // - dateIso: this event's own date, for the "happening now" check.
+  // - linkable: wrap the card in a link to that course's page (skipped when
+  //   already on that course's own page, or when there's no code to link).
+  // - dateHeading: e.g. "Monday, September 1" — shown atop the card when
+  //   sessions from different days are listed together (the course page).
+  function eventCardHtml(ev, opts = {}) {
+    const { dateIso, linkable = true, dateHeading } = opts;
+    const color = COURSE_COLORS[ev.code] || DEFAULT_COLOR;
+    const timeText = ev.start ? `${fmtTime(ev.start)}${ev.end ? '–' + fmtTime(ev.end) : ''}` : (ev.timeLabel || 'Time TBC');
+    const codeName = ev.code ? (ELECTIVE_NAMES[ev.code] || '') : '';
+    const isOtherGroup = ev.scope === 'other-group';
+
+    const fields = [];
+    if (ev.no) fields.push(field('No.', ev.no + (ev.part ? ` (${ev.part})` : '')));
+    else if (ev.part) fields.push(field('Section', ev.part));
+    if (ev.topic) fields.push(field('Topic', ev.topic));
+    if (ev.venue) fields.push(field('Venue', ev.venue));
+    if (ev.instructor) fields.push(field('Who', ev.instructor));
+    const fieldsHtml = fields.join('');
+
+    const otherGroupsHtml = ev.otherGroups && ev.otherGroups.length
+      ? `<div class="other-groups">${ev.otherGroups.map((g) => escapeHtml(g)).join('<br>')}</div>`
+      : '';
+
+    const mineBadge = ev.scope === 'group' ? '<span class="mine-badge">Your group</span>' : '';
+    const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge">Not your group</span>' : '';
+    const dateHeadingHtml = dateHeading ? `<div class="event-date">${escapeHtml(dateHeading)}</div>` : '';
+    const now = isHappeningNow(ev, dateIso);
+
+    const tag = linkable && ev.code ? 'a' : 'div';
+    const hrefAttr = linkable && ev.code ? ` href="course.html?code=${encodeURIComponent(ev.code)}"` : '';
+
+    return `<${tag} class="event-card${now ? ' now' : ''}${isOtherGroup ? ' other-group' : ''}" style="--course-color:${color}"${hrefAttr}>
+      ${dateHeadingHtml}
+      <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
+      <div class="fields">${fieldsHtml}</div>
+      ${otherGroupsHtml}
+      ${mineBadge}${otherGroupBadge}
+    </${tag}>`;
+  }
+
+  function effectiveTheme() {
+    const explicit = document.documentElement.dataset.theme;
+    return explicit === 'dark' ? 'dark' : 'light';
+  }
+
+  function setTheme(theme, btn) {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem(THEME_KEY, theme); } catch { /* no-op */ }
+    if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  }
+
+  // Call once per page with the theme toggle button element.
+  function initTheme(btn) {
+    if (!btn) return;
+    btn.textContent = effectiveTheme() === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => setTheme(effectiveTheme() === 'dark' ? 'light' : 'dark', btn));
+  }
+
+  window.PCLL = {
+    COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
+    todayISO, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
+    eventCardHtml, effectiveTheme, setTheme, initTheme,
+  };
+})();
