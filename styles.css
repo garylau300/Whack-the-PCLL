@@ -380,6 +380,8 @@ a.event-card:hover {
 .session-table tr.mine td.col-date { box-shadow: inset 3px 0 0 var(--accent-2); }
 .session-table tr.other-group td { color: var(--text-muted); opacity: 0.65; }
 .session-table tr.now td { background: var(--today); }
+.session-table tr.pre-recorded td { font-style: italic; color: var(--text-muted); }
+.session-table tr.pre-recorded td.col-date::before { content: "🎥 "; font-style: normal; }
 
 /* Dashboard (index.html) */
 .dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }

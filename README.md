@@ -35,8 +35,11 @@ stale, no redeploy needed when the sheet changes.
 - Any session with a course code is clickable, linking to `course.html?code=`
   that course — a per-course page (`course.js`) listing every session for it
   across the whole programme as a compact table (Date / Time / No. / Topic /
-  Venue / Who), with the same "your group" / "other group" highlighting. It's
-  built as one `<section class="course-section">` among others still to come
+  Venue / Who), with the same "your group" / "other group" highlighting, plus
+  that course's pre-recorded LGs interleaved in by week (each sheet lists
+  these above the "Week N" row — `extractPreRecorded` in
+  `lib/parseTimetable.js` pulls the code, topic, watch-before/after hint, and
+  instructor out of them). It's built as one `<section class="course-section">` among others still to come
   (assessment methods, course materials).
 - Shared rendering (event cards, date/time formatting, the elective-filter
   settings panel, the light/dark toggle) lives in `common.js`, loaded by
