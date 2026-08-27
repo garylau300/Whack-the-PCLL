@@ -5,7 +5,7 @@
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
-    COURSE_COLORS, DEFAULT_COLOR,
+    COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
@@ -85,7 +85,7 @@
     } else if (ownEvents.length === 0) {
       items.push('No sessions today — a good day to get ahead on reading and pre-recorded LGs.');
     } else {
-      if (ownEvents.some((e) => e.scope === 'group')) {
+      if (ownEvents.some(isMyGroupSession)) {
         items.push('Review the SG Activity Plan(s) on Moodle before today’s small-group session(s) — attendance is compulsory and it assumes you’ve already prepared.');
       }
       if (ownEvents.some((e) => /assessment|exam\b|hand in/i.test(`${e.no || ''} ${e.topic || ''}`))) {

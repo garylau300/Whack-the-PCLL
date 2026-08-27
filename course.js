@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, loadTimetable, ICONS } = window.PCLL;
+  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession, initTheme, loadTimetable, ICONS } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
   const code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
@@ -27,7 +27,7 @@
     const no = ev.no ? ev.no + (ev.part ? ` (${ev.part})` : '') : (ev.part || '');
     const now = isHappeningNow(ev, dateIso);
     const rowClass = [
-      ev.scope === 'group' ? 'mine' : '',
+      isMyGroupSession(ev) ? 'mine' : '',
       ev.scope === 'other-group' ? 'other-group' : '',
       now ? 'now' : '',
     ].filter(Boolean).join(' ');

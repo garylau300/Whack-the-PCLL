@@ -205,6 +205,15 @@
     }
   }
 
+  // scope: 'group' means this SG session is confirmed to include the
+  // student's group — either an explicit Gp N/M line matched it, or (see
+  // lib/parseTimetable.js) it's the sole, uncontested occurrence of that SG
+  // number this week. Named wrapper so every "is this actually mine" check
+  // reads the same way at every call site.
+  function isMyGroupSession(ev) {
+    return ev.scope === 'group';
+  }
+
   function isHappeningNow(ev, dateIso) {
     if (!ev.start || !ev.end) return false;
     if (dateIso && dateIso !== todayISO()) return false;
@@ -240,7 +249,7 @@
       ? `<div class="other-groups">${ev.otherGroups.map((g) => escapeHtml(g)).join('<br>')}</div>`
       : '';
 
-    const mineBadge = ev.scope === 'group' ? '<span class="mine-badge">Your group</span>' : '';
+    const mineBadge = isMyGroupSession(ev) ? '<span class="mine-badge">Your group</span>' : '';
     const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge">Not your group</span>' : '';
     const dateHeadingHtml = dateHeading ? `<div class="event-date">${escapeHtml(dateHeading)}</div>` : '';
     const now = isHappeningNow(ev, dateIso);
@@ -284,7 +293,7 @@
 
   window.PCLL = {
     ICONS, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
+    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,
   };
