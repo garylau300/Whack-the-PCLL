@@ -49,6 +49,15 @@
   const THEME_KEY = 'pcll.theme';
   const ELECTIVES_KEY = 'pcll.myElectives';
 
+  // Inline SVG (stroke="currentColor") instead of emoji — crisp at any size,
+  // matches text color in both themes, no font/platform glyph variance.
+  const ICONS = {
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>',
+    refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+  };
+
   function loadMyElectives() {
     try {
       return new Set(JSON.parse(localStorage.getItem(ELECTIVES_KEY) || '[]'));
@@ -94,11 +103,11 @@
     }
     settingsBtn.addEventListener('click', () => {
       renderList();
-      panel.hidden = false;
+      panel.classList.add('open');
     });
-    closeBtn.addEventListener('click', () => { panel.hidden = true; });
+    closeBtn.addEventListener('click', () => { panel.classList.remove('open'); });
     panel.addEventListener('click', (e) => {
-      if (e.target === panel) panel.hidden = true;
+      if (e.target === panel) panel.classList.remove('open');
     });
   }
 
@@ -257,18 +266,25 @@
   function setTheme(theme, btn) {
     document.documentElement.dataset.theme = theme;
     try { localStorage.setItem(THEME_KEY, theme); } catch { /* no-op */ }
-    if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    if (btn) {
+      btn.innerHTML = theme === 'dark' ? ICONS.sun : ICONS.moon;
+      // Restart the pop-in keyframe on every switch (removing then
+      // re-adding the class in the same tick wouldn't retrigger it).
+      btn.classList.remove('icon-pop');
+      void btn.offsetWidth;
+      btn.classList.add('icon-pop');
+    }
   }
 
   // Call once per page with the theme toggle button element.
   function initTheme(btn) {
     if (!btn) return;
-    btn.textContent = effectiveTheme() === 'dark' ? '☀️' : '🌙';
+    btn.innerHTML = effectiveTheme() === 'dark' ? ICONS.sun : ICONS.moon;
     btn.addEventListener('click', () => setTheme(effectiveTheme() === 'dark' ? 'light' : 'dark', btn));
   }
 
   window.PCLL = {
-    COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
+    ICONS, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,

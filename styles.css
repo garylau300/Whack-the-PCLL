@@ -48,6 +48,24 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Crossfade the theme switch on surfaces that don't already declare their
+   own (more specific) transition — added directly into each existing rule
+   below where one's already declared, since a second `transition:` shorthand
+   would just reset the first rather than merge with it. */
+.week-nav, .day-col-head, .table-scroll {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .topbar {
@@ -63,14 +81,6 @@ body {
 }
 .topbar-title { display: flex; align-items: baseline; gap: 10px; }
 .topbar h1 { font-size: 1.1rem; margin: 0; font-weight: 600; }
-.group-badge {
-  background: var(--accent-2);
-  color: #1a1d24;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
 .icon-btn {
   display: inline-flex;
   align-items: center;
@@ -84,8 +94,16 @@ body {
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 .icon-btn:hover { background: rgba(255,255,255,0.22); }
+.icon-btn:active { transform: scale(0.92); }
+.icon-btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.icon-btn.icon-pop svg { animation: iconPop 0.3s ease; }
+@keyframes iconPop {
+  0% { transform: scale(0.5) rotate(-30deg); opacity: 0.3; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
 
 .week-nav {
   display: flex;
@@ -114,7 +132,10 @@ body {
   font-size: 0.82rem;
   cursor: pointer;
   white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
+.week-pill:hover { border-color: var(--accent); transform: translateY(-1px); }
+.week-pill:active { transform: translateY(0) scale(0.96); }
 .week-pill.active {
   background: var(--accent);
   color: white;
@@ -132,7 +153,11 @@ body {
   cursor: pointer;
   width: 34px;
   flex: 0 0 auto;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, transform 0.1s ease;
 }
+.nav-arrow:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.nav-arrow:active { transform: scale(0.9); }
 
 .view-toolbar {
   display: flex;
@@ -150,6 +175,7 @@ body {
   font-size: 0.82rem;
   cursor: pointer;
   color: var(--text-muted);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 .toggle-btn.active { background: var(--accent); color: white; }
 
@@ -169,6 +195,25 @@ body {
 .status.error .spinner { display: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Re-plays whenever [hidden] toggles off, since animations reset while an
+   element is display:none — a lightweight way to signal "new content" on
+   every load/refresh/week-switch without extra JS bookkeeping. */
+#dashboardBody, #weekGrid, #dayView, #sessionsSection {
+  animation: fadeIn 0.35s ease both;
+}
+
+.refresh-icon { width: 14px; height: 14px; margin-right: 4px; vertical-align: -2px; transition: transform 0.2s ease; }
+.refresh-icon.spinning { animation: spin 0.7s linear infinite; }
+
 .week-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(220px, 1fr));
@@ -186,6 +231,8 @@ body {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  animation: fadeInUp 0.3s ease both;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .day-col.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(176,141,87,0.25); }
 .day-col-head {
@@ -213,12 +260,14 @@ body {
   line-height: 1.35;
   color: inherit;
   text-decoration: none;
+  animation: fadeInUp 0.3s ease both;
 }
-a.event-card { cursor: pointer; transition: box-shadow 0.1s ease, transform 0.1s ease; }
+a.event-card { cursor: pointer; transition: box-shadow 0.15s ease, transform 0.15s ease; }
 a.event-card:hover {
-  box-shadow: 0 0 0 1px var(--course-color, var(--accent)), 0 2px 8px rgba(0,0,0,0.12);
-  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px var(--course-color, var(--accent)), 0 4px 12px rgba(0,0,0,0.14);
+  transform: translateY(-2px);
 }
+a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .event-card .event-date {
   font-size: 0.68rem;
   font-weight: 700;
@@ -279,7 +328,11 @@ a.event-card:hover {
 }
 .event-card .mine-badge { color: var(--accent-2-text); background: var(--accent-2); }
 .event-card .other-group-badge { color: var(--text-muted); background: var(--border); }
-.event-card.now { outline: 2px solid var(--now-line); }
+.event-card.now { outline: 2px solid var(--now-line); animation: fadeInUp 0.3s ease both, nowPulse 2.2s ease-in-out infinite; }
+@keyframes nowPulse {
+  0%, 100% { outline-color: var(--now-line); }
+  50% { outline-color: color-mix(in srgb, var(--now-line) 40%, transparent); }
+}
 
 /* Small-group sessions for a group other than the student's — de-emphasized
    rather than hidden, so the student still sees a session is happening. */
@@ -324,11 +377,22 @@ a.event-card:hover {
 .settings-panel {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0);
   display: flex;
   align-items: flex-end;
   justify-content: center;
   z-index: 30;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, background-color 0.25s ease, visibility 0s linear 0.25s;
+}
+.settings-panel.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  background: rgba(0,0,0,0.4);
+  transition: opacity 0.25s ease, background-color 0.25s ease;
 }
 @media (min-width: 640px) {
   .settings-panel { align-items: center; }
@@ -341,9 +405,13 @@ a.event-card:hover {
   max-width: 480px;
   max-height: 80vh;
   overflow-y: auto;
+  transform: translateY(24px);
+  transition: transform 0.25s ease;
 }
+.settings-panel.open .settings-card { transform: translateY(0); }
 @media (min-width: 640px) {
-  .settings-card { border-radius: var(--radius); }
+  .settings-card { border-radius: var(--radius); transform: translateY(0) scale(0.96); }
+  .settings-panel.open .settings-card { transform: translateY(0) scale(1); }
 }
 .settings-head { display: flex; justify-content: space-between; align-items: center; }
 .settings-head h2 { margin: 0; font-size: 1.1rem; }
@@ -376,6 +444,7 @@ a.event-card:hover {
   padding: 8px 10px;
   text-align: left;
   border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease;
 }
 .session-table td.col-topic { white-space: normal; min-width: 220px; }
 .session-table th {
@@ -386,23 +455,30 @@ a.event-card:hover {
   font-weight: 700;
 }
 .session-table tbody tr:last-child td { border-bottom: none; }
+.session-table tbody tr { animation: fadeIn 0.25s ease both; }
+.session-table tbody tr:hover td { background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
 .session-table .wk-tag { display: block; font-size: 0.68rem; color: var(--text-muted); font-weight: 400; }
 .session-table tr.mine td { background: color-mix(in srgb, var(--accent-2) 12%, var(--surface)); }
 .session-table tr.mine td.col-date { box-shadow: inset 3px 0 0 var(--accent-2); }
 .session-table tr.other-group td { color: var(--text-muted); opacity: 0.65; }
 .session-table tr.now td { background: var(--today); }
 .session-table tr.pre-recorded td { font-style: italic; color: var(--text-muted); }
-.session-table tr.pre-recorded td.col-date::before { content: "🎥 "; font-style: normal; }
+.session-table tr.pre-recorded td.col-date svg { width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; }
 
 /* Dashboard (index.html) */
 .dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }
 
-.hero { padding: 18px 4px 8px; }
+.hero { padding: 18px 4px 8px; animation: fadeInUp 0.35s ease both; }
 .hero-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
 .hero-summary { font-size: 1.3rem; font-weight: 700; margin: 4px 0; }
 .hero-week { font-size: 0.8rem; color: var(--text-muted); }
 
-.dash-section { margin-bottom: 26px; }
+.dash-section { margin-bottom: 26px; animation: fadeInUp 0.35s ease both; }
+.dash-section:nth-of-type(2) { animation-delay: 0.04s; }
+.dash-section:nth-of-type(3) { animation-delay: 0.08s; }
+.dash-section:nth-of-type(4) { animation-delay: 0.12s; }
+.dash-section:nth-of-type(5) { animation-delay: 0.16s; }
+.dash-section:nth-of-type(6) { animation-delay: 0.2s; }
 .dash-section h2 { font-size: 0.95rem; font-weight: 700; margin: 0 0 10px; }
 .dash-list { display: flex; flex-direction: column; gap: 10px; }
 
@@ -422,11 +498,26 @@ a.event-card:hover {
   padding: 10px 12px;
   font-size: 0.85rem;
   line-height: 1.4;
+  animation: fadeInUp 0.3s ease both;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.todo-list li:hover, .watch-list li:hover, .video-list li:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
 }
 .watch-list li { border-left-color: var(--now-line); }
 .watch-list li.muted, .video-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
+.watch-list li.muted:hover, .video-list li.muted:hover { box-shadow: none; transform: none; }
 .video-list li { border-left-color: var(--accent); }
-.video-list .video-when { margin-top: 4px; font-size: 0.78rem; color: var(--text-muted); }
+.video-list .video-when {
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.video-list .video-when svg { width: 13px; height: 13px; flex: 0 0 auto; }
 
 .week-strip {
   display: grid;
@@ -446,9 +537,11 @@ a.event-card:hover {
   padding: 8px 4px;
   text-decoration: none;
   color: inherit;
+  animation: fadeInUp 0.3s ease both;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
 .week-strip-day.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(176,141,87,0.25); }
-.week-strip-day:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.week-strip-day:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform: translateY(-2px); }
 .wsd-day { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
 .wsd-date { font-size: 0.8rem; font-weight: 600; margin: 2px 0; }
 .wsd-count { font-size: 0.7rem; color: var(--text-muted); }
@@ -460,6 +553,7 @@ a.event-card:hover {
   border-left: 4px solid var(--accent);
   border-radius: 8px;
   padding: 14px;
+  animation: fadeInUp 0.3s ease both;
 }
 .legal-skill-tag {
   display: inline-block;

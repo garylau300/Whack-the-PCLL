@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, loadTimetable } = window.PCLL;
+  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, loadTimetable, ICONS } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
   const code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
@@ -13,7 +13,7 @@
   function preRecordedRowHtml(entry, weekNumber) {
     const when = entry.when ? entry.when[0].toUpperCase() + entry.when.slice(1) : 'No specific timing given';
     return `<tr class="pre-recorded">
-      <td class="col-date">Pre-recorded<span class="wk-tag">Wk ${weekNumber}</span></td>
+      <td class="col-date">${ICONS.play}Pre-recorded<span class="wk-tag">Wk ${weekNumber}</span></td>
       <td class="col-time">${escapeHtml(when)}</td>
       <td class="col-no">${escapeHtml(entry.no || '')}</td>
       <td class="col-topic">${escapeHtml(entry.topic || '')}</td>

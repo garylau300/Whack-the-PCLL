@@ -152,7 +152,12 @@
       listEl: $('electiveList'),
       onChange: render,
     });
-    $('refreshBtn').addEventListener('click', () => load(true));
+    $('refreshBtn').addEventListener('click', async () => {
+      const icon = $('refreshBtn').querySelector('.refresh-icon');
+      if (icon) icon.classList.add('spinning');
+      await load(true);
+      if (icon) icon.classList.remove('spinning');
+    });
 
     // Default to day view on narrow screens.
     if (window.matchMedia('(max-width: 640px)').matches) {

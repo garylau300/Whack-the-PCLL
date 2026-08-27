@@ -4,7 +4,7 @@
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
-    eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES,
+    eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
@@ -168,7 +168,7 @@
       return `<li>
         <strong>${escapeHtml(label)}</strong>
         <div>${escapeHtml(entry.topic || '')}</div>
-        <div class="video-when">🎥 ${escapeHtml(when)}</div>
+        <div class="video-when">${ICONS.play}${escapeHtml(when)}</div>
       </li>`;
     });
     $('preRecordedList').innerHTML = items.length
@@ -243,7 +243,12 @@
       listEl: $('electiveList'),
       onChange: render,
     });
-    $('refreshBtn').addEventListener('click', () => load(true));
+    $('refreshBtn').addEventListener('click', async () => {
+      const icon = $('refreshBtn').querySelector('.refresh-icon');
+      if (icon) icon.classList.add('spinning');
+      await load(true);
+      if (icon) icon.classList.remove('spinning');
+    });
     load(false);
   }
 
