@@ -79,6 +79,102 @@
     return !myElectives.has(ev.code);
   }
 
+  // Generalizes the loadMyElectives/saveMyElectives pattern with a
+  // parameterized storage key, so any new "persisted checklist" (homework,
+  // per-SG prep steps, ...) shares one read/write implementation instead of
+  // growing its own fixed-key pair.
+  function loadCheckedIds(storageKey) {
+    try {
+      return new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveCheckedIds(storageKey, set) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify([...set]));
+    } catch {
+      /* localStorage unavailable — checking just won't persist */
+    }
+  }
+
+  // One canonical key-builder per checklist kind, so every page that reads
+  // or writes a given checklist agrees on where it lives.
+  function hwChecklistKey(code) { return `pcll.checklist.${code}`; }
+  function sgPrepChecklistKey(code, sessionKey) { return `pcll.sgPrep.${code}.${sessionKey}`; }
+
+  // Pure renderer: items -> checklist row markup. No event wiring (same
+  // spirit as eventCardHtml/field) — pair with wireChecklist() below.
+  function checklistHtml(items, checkedSet) {
+    return items.map((item) => {
+      const checked = checkedSet.has(item.id);
+      return `<label class="checklist-item${checked ? ' checked' : ''}">
+        <input type="checkbox" data-id="${escapeHtml(item.id)}" ${checked ? 'checked' : ''} />
+        <span class="checklist-label">${escapeHtml(item.label)}</span>
+        ${item.meta ? `<span class="checklist-meta">${escapeHtml(item.meta)}</span>` : ''}
+      </label>`;
+    }).join('');
+  }
+
+  // Delegated change-listener for a checklistHtml() container: toggles the
+  // clicked item's id in the persisted Set and calls onChange() so the page
+  // can re-render (e.g. to refresh "done" styling or due-date labels).
+  function wireChecklist(containerEl, storageKey, onChange) {
+    containerEl.addEventListener('change', (e) => {
+      const input = e.target.closest('input[type=checkbox][data-id]');
+      if (!input) return;
+      const set = loadCheckedIds(storageKey);
+      if (input.checked) set.add(input.dataset.id);
+      else set.delete(input.dataset.id);
+      saveCheckedIds(storageKey, set);
+      if (onChange) onChange();
+    });
+  }
+
+  // Flattens every course's `deadlines` array (from courseDetails.js) into
+  // Map<isoDate, entry[]> — the single place "which dates have something
+  // due" logic lives. app.js (timetable day-badges) and dashboard.js
+  // (Upcoming Deadlines) both build this once and read the same shape,
+  // rather than each re-deriving due dates from homework/assessments.
+  function buildDeadlinesIndex(courseDetails) {
+    const index = new Map();
+    for (const course of Object.values(courseDetails || {})) {
+      for (const d of course.deadlines || []) {
+        if (!index.has(d.date)) index.set(d.date, []);
+        index.get(d.date).push(d);
+      }
+    }
+    return index;
+  }
+
+  // The single "is it done" check for a homework/todo-kind deadline —
+  // course.js's checklist, the timetable's day-badges, and the dashboard's
+  // deadlines list all call this instead of separately re-deriving
+  // completion, so ticking a box on the course page makes the same item
+  // disappear everywhere else too (each page reads localStorage fresh on
+  // its own load).
+  function isDeadlineDone(deadline) {
+    if (deadline.kind !== 'homework' && deadline.kind !== 'todo') return false;
+    return loadCheckedIds(hwChecklistKey(deadline.courseCode)).has(deadline.refId);
+  }
+
+  function daysUntil(iso) {
+    const today = todayISO();
+    const a = new Date(today + 'T00:00:00Z');
+    const b = new Date(iso + 'T00:00:00Z');
+    return Math.round((b - a) / 86400000);
+  }
+
+  // Small pill renderer for a list of deadline entries — used by the
+  // timetable's day-header/day-view badges and the dashboard's deadlines
+  // list. Callers filter out isDeadlineDone() entries before passing the
+  // list in, so a completed item stops showing up as a day-badge too.
+  function deadlineChipsHtml(deadlines) {
+    if (!deadlines || !deadlines.length) return '';
+    return deadlines.map((d) => `<span class="deadline-chip deadline-chip--${d.kind}" title="${escapeHtml(d.title)}">${escapeHtml(d.title)}</span>`).join('');
+  }
+
   // Wires up the settings gear/panel/checkboxes shared by every page that
   // has one. `onChange` is called after any elective is ticked/unticked, so
   // the page can re-render with the new filter applied.
@@ -296,5 +392,8 @@
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,
+    loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
+    checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
+    deadlineChipsHtml, daysUntil,
   };
 })();

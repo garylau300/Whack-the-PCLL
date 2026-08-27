@@ -11,6 +11,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="styles.css" />
   <script src="common.js"></script>
+  <script src="courseDetails.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -26,10 +27,38 @@
   <main id="app" class="course-app">
     <div id="status" class="status"><div class="spinner"></div>Loading sessions…</div>
 
-    <!-- One of several course-detail sections (assessment methods, course
-         materials, etc. to follow) — kept compact since it won't be alone. -->
+    <!-- Populated only when courseDetails.js has an entry for this course
+         code — every section below stays hidden otherwise. -->
+    <section class="course-section" id="courseInfoSection" hidden>
+      <h2>Course Info</h2>
+      <p id="courseDescription" class="course-description"></p>
+      <div id="coordinatorList" class="coordinator-list"></div>
+      <details class="detail-content">
+        <summary>Learning Outcomes</summary>
+        <ul id="learningOutcomesList"></ul>
+      </details>
+      <div id="attendanceInfo" class="attendance-info"></div>
+    </section>
+
+    <section class="course-section" id="assessmentSection" hidden>
+      <h2>Assessment</h2>
+      <div class="table-scroll">
+        <table class="session-table">
+          <thead><tr><th>Assessment</th><th>Weight</th><th>Date</th></tr></thead>
+          <tbody id="assessmentTableBody"></tbody>
+        </table>
+      </div>
+      <ul id="assessmentNotesList" class="assessment-notes"></ul>
+    </section>
+
+    <section class="course-section" id="homeworkSection" hidden>
+      <h2>Homework &amp; To-Dos</h2>
+      <div id="homeworkChecklist" class="checklist"></div>
+    </section>
+
     <section class="course-section" id="sessionsSection" hidden>
       <h2>Sessions</h2>
+      <p class="settings-hint small">Click a session for its full lecture outline / activity plan, where available.</p>
       <div class="table-scroll">
         <table class="session-table">
           <thead>
@@ -39,11 +68,30 @@
         </table>
       </div>
     </section>
+
+    <section class="course-section" id="materialsSection" hidden>
+      <h2>Materials &amp; Policies</h2>
+      <ul id="materialsList" class="materials-list"></ul>
+      <details class="detail-content">
+        <summary>AI &amp; Plagiarism Policy</summary>
+        <p id="aiPolicyText"></p>
+      </details>
+    </section>
   </main>
 
   <footer class="footer">
     <span id="syncStatus">—</span>
   </footer>
+
+  <div id="sessionModal" class="settings-panel session-modal">
+    <div class="settings-card session-modal-card">
+      <div class="settings-head">
+        <h2 id="sessionModalTitle">Session</h2>
+        <button id="closeSessionModal" class="icon-btn" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div id="sessionModalBody" class="session-modal-body detail-content"></div>
+    </div>
+  </div>
 
   <script src="course.js"></script>
 </body>

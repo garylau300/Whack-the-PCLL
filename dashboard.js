@@ -6,8 +6,13 @@
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
     COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession,
+    buildDeadlinesIndex, isDeadlineDone, daysUntil,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
+
+  // Independent of the (async) timetable fetch, so it's ready before first
+  // render.
+  const deadlinesIndex = buildDeadlinesIndex(window.COURSE_DETAILS || {});
 
   const ADVOCACY_CODES = new Set(['PCLL8051', 'PCLL8014']);
   const WATCH_RE = /assessment|exam\b|provisional|hand in|deadline|separate notice|holiday|court attendance/i;
@@ -177,6 +182,28 @@
       : '<li class="muted">Nothing to pre-watch this week.</li>';
   }
 
+  // Absolute-date deadlines (homework due dates, the Undertaking Form, the
+  // interviewing exercise) — independent of which timetable week is
+  // "current", so a fixed rolling window from real today rather than
+  // ctx.week is what decides what shows here. A couple of days' overdue
+  // grace plus a week ahead; anything checked off (isDeadlineDone) is
+  // dropped so ticking the box on the course page stops the nagging here
+  // too, not just there.
+  function renderDeadlines() {
+    const all = [...deadlinesIndex.values()].flat();
+    const upcoming = all
+      .filter((d) => !isDeadlineDone(d) && daysUntil(d.date) >= -2 && daysUntil(d.date) <= 7)
+      .sort((a, b) => (a.date + (a.time || '')).localeCompare(b.date + (b.time || '')));
+    const items = upcoming.map((d) => {
+      const days = daysUntil(d.date);
+      const when = days < 0 ? `Overdue by ${-days}d` : days === 0 ? 'Due today' : `Due in ${days}d`;
+      return `<li><strong>${escapeHtml(when)}</strong> — ${escapeHtml(d.title)}</li>`;
+    });
+    $('deadlinesList').innerHTML = items.length
+      ? items.join('')
+      : '<li class="muted">Nothing due in the next week.</li>';
+  }
+
   // A quick-nav chip per course — every code in meta.courses (core courses
   // plus every elective, whether or not the student's picked it yet), minus
   // electives ruled out once they have picked their 3 (same filter as every
@@ -227,6 +254,7 @@
     renderClasses(ownEvents, ctx.day ? ctx.day.date : null);
     renderTodo(ctx, ownEvents);
     renderPreRecordedList(ctx.week, myElectives);
+    renderDeadlines();
     renderWatchList(ctx.week);
     renderWeekStrip(ctx.week, myElectives);
     renderLegalSkill(ownEvents);

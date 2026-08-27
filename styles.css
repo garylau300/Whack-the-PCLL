@@ -464,6 +464,65 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .session-table tr.now td { background: var(--today); }
 .session-table tr.pre-recorded td { font-style: italic; color: var(--text-muted); }
 .session-table tr.pre-recorded td.col-date svg { width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; }
+.session-table tbody tr[data-idx] { cursor: pointer; }
+.session-table tbody tr[data-idx]:focus-visible td { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Course-page session detail modal — a size modifier layered on the
+   existing .settings-panel/.settings-card open/close transition. */
+.session-modal-card { max-width: 640px; }
+@media (min-width: 640px) {
+  .session-modal-card { max-height: 85vh; }
+}
+.session-modal-body h3 { font-size: 0.85rem; font-weight: 700; margin: 14px 0 6px; }
+.session-modal-body h3:first-child { margin-top: 0; }
+
+.course-description { font-size: 0.88rem; line-height: 1.5; margin: 4px 0 12px; }
+.coordinator-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
+.coordinator-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.82rem; min-width: 180px; }
+.instructor-line { font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 8px; }
+.assessment-notes { margin: 8px 0 0; padding-left: 18px; font-size: 0.82rem; color: var(--text-muted); }
+.activity-list { margin: 6px 0; padding-left: 18px; }
+.reference-block { margin: 10px 0; padding-top: 8px; border-top: 1px dashed var(--border); }
+.reference-block h4 { margin: 0 0 6px; font-size: 0.85rem; }
+.reference-section { margin-bottom: 8px; }
+
+/* .session-meta reuses the .field/.field-label/.field-value shape already
+   defined for .event-card, outside of a card context. */
+.session-meta .field, .attendance-info .field { display: flex; gap: 5px; color: var(--text); margin-bottom: 2px; }
+.session-meta .field-label, .attendance-info .field-label {
+  flex: 0 0 auto; min-width: 90px; font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-muted);
+}
+.session-meta .field-value, .attendance-info .field-value { flex: 1; }
+
+/* <details> only ever appears in this course-detail content — safe to
+   style plainly rather than scoping every selector. */
+details { border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 12px; margin: 8px 0; }
+details details { margin: 6px 0 6px 4px; }
+summary { cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+summary::marker { color: var(--text-muted); }
+
+.checklist { display: flex; flex-direction: column; gap: 6px; }
+.checklist-item {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent-2);
+  border-radius: 8px; padding: 8px 10px; font-size: 0.85rem; cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.checklist-item input[type=checkbox] { flex: 0 0 auto; }
+.checklist-label { flex: 1; }
+.checklist-meta { font-size: 0.72rem; color: var(--text-muted); flex: 0 0 auto; white-space: nowrap; }
+.checklist-item.checked { border-left-color: var(--border); }
+.checklist-item.checked .checklist-label { text-decoration: line-through; color: var(--text-muted); }
+
+.deadline-chip {
+  display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 8px;
+  border-radius: 999px; margin: 2px 4px 2px 0; white-space: normal;
+}
+.deadline-chip--homework, .deadline-chip--todo { background: var(--accent-2); color: var(--accent-2-text); }
+.deadline-chip--assessment { background: color-mix(in srgb, var(--now-line) 20%, var(--surface)); color: var(--now-line); }
+.day-col-head .deadline-chip { margin-top: 4px; }
+.day-deadline-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; animation: fadeIn 0.25s ease both; }
 
 /* Dashboard (index.html) */
 .dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }
@@ -482,7 +541,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .dash-section h2 { font-size: 0.95rem; font-weight: 700; margin: 0 0 10px; }
 .dash-list { display: flex; flex-direction: column; gap: 10px; }
 
-.todo-list, .watch-list, .video-list {
+.todo-list, .watch-list, .video-list, .deadline-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -490,7 +549,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   flex-direction: column;
   gap: 8px;
 }
-.todo-list li, .watch-list li, .video-list li {
+.todo-list li, .watch-list li, .video-list li, .deadline-list li {
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent-2);
@@ -501,13 +560,13 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   animation: fadeInUp 0.3s ease both;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
-.todo-list li:hover, .watch-list li:hover, .video-list li:hover {
+.todo-list li:hover, .watch-list li:hover, .video-list li:hover, .deadline-list li:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transform: translateY(-1px);
 }
 .watch-list li { border-left-color: var(--now-line); }
-.watch-list li.muted, .video-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
-.watch-list li.muted:hover, .video-list li.muted:hover { box-shadow: none; transform: none; }
+.watch-list li.muted, .video-list li.muted, .deadline-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
+.watch-list li.muted:hover, .video-list li.muted:hover, .deadline-list li.muted:hover { box-shadow: none; transform: none; }
 .video-list li { border-left-color: var(--accent); }
 .video-list .video-when {
   margin-top: 4px;

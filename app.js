@@ -4,7 +4,15 @@
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, eventCardHtml, initTheme,
     loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
+    buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone,
   } = window.PCLL;
+
+  // Doesn't depend on the (async) timetable fetch, so it's ready before the
+  // first render — a single Map lookup per day thereafter, never a scan.
+  const deadlinesIndex = buildDeadlinesIndex(window.COURSE_DETAILS || {});
+  function dayDeadlineChips(dateIso) {
+    return deadlineChipsHtml((deadlinesIndex.get(dateIso) || []).filter((d) => !isDeadlineDone(d)));
+  }
 
   let timetable = null;
   let activeWeekIndex = 0;
@@ -50,7 +58,7 @@
       col.className = 'day-col' + (day.date === today ? ' is-today' : '');
       const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
       col.innerHTML = `
-        <div class="day-col-head">${day.day}${day.date ? `<span class="date">${fmtShort(day.date)}</span>` : ''}</div>
+        <div class="day-col-head">${day.day}${day.date ? `<span class="date">${fmtShort(day.date)}</span>` : ''}${day.date ? dayDeadlineChips(day.date) : ''}</div>
         <div class="day-col-body">
           ${events.length ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('') : '<div class="empty-day">No sessions</div>'}
         </div>`;
@@ -64,6 +72,7 @@
     const day = days[activeDayIndex];
     const myElectives = loadMyElectives();
     $('dayViewLabel').innerHTML = `${day.day}${day.date ? `<span class="date">${fmtLong(day.date)}</span>` : ''}`;
+    $('dayViewDeadlines').innerHTML = day.date ? dayDeadlineChips(day.date) : '';
     const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
     $('dayViewBody').innerHTML = events.length
       ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('')
