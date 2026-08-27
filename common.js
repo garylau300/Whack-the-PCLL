@@ -374,6 +374,160 @@
     return nowMin >= sh * 60 + sm && nowMin <= eh * 60 + em;
   }
 
+  // Builds the URL for a session's own page (session.html) from the raw
+  // event — `no` + `date` locate it again once there, `start` is an extra
+  // disambiguator for the rare case two of a course's events land on the
+  // same date with the same (or no) session number.
+  function sessionHref(ev, dateIso) {
+    const params = new URLSearchParams({ code: ev.code || '', no: ev.no || '', date: dateIso || '' });
+    if (ev.start) params.set('start', ev.start);
+    return `session.html?${params.toString()}`;
+  }
+
+  // "LG1A" -> "LG1", "SG4" -> "SG4" — the key courseDetails.js's `sessions`
+  // map uses (no trailing letter; see sessionPartLetter for that).
+  function sessionKeyFor(no) {
+    const m = /^(LG|SG)\s*(\d+)/i.exec(no || '');
+    return m ? (m[1] + m[2]).toUpperCase() : null;
+  }
+
+  // "LG1A" -> "A", "LG4" -> null — matched against a session's own
+  // `parts[].partLetter`, NOT the unrelated `ev.part` field (that one is the
+  // half-cohort A/B split used for scope resolution, and is null for these).
+  function sessionPartLetter(no) {
+    const m = /^(LG|SG)\s*\d+([A-Za-z])/i.exec(no || '');
+    return m ? m[2].toUpperCase() : null;
+  }
+
+  function listSection(heading, items) {
+    if (!items || !items.length) return '';
+    return `<h3>${escapeHtml(heading)}</h3><ul>${items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`;
+  }
+
+  function referenceHtml(ref) {
+    if (!ref) return '';
+    let body = `<h4>${escapeHtml(ref.title)}</h4>`;
+    if (ref.external) {
+      body += `<p class="muted">${escapeHtml(ref.note || '')}</p>`;
+    } else if (ref.sections) {
+      body += ref.sections.map((s) => `<div class="reference-section"><strong>${escapeHtml(s.heading)}</strong><ul>${s.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul></div>`).join('');
+    } else {
+      if (ref.body) body += `<p>${escapeHtml(ref.body)}</p>`;
+      if (ref.checkboxes) body += `<ul>${ref.checkboxes.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
+      if (ref.fields) body += `<p class="muted">Fields: ${ref.fields.map(escapeHtml).join(', ')}</p>`;
+    }
+    return `<div class="reference-block">${body}</div>`;
+  }
+
+  function resolveDeadlineFromDetails(details, deadlineId) {
+    return deadlineId && details && (details.deadlines || []).find((d) => d.id === deadlineId);
+  }
+
+  // Full write-up for one session (lecture outline, prep checklist, fact
+  // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries —
+  // shared so the course page's session table (which links out to
+  // session.html via sessionHref) and session.html itself render identically.
+  function sessionDetailHtml(sessionDetail, ev, code, details) {
+    const partLetter = sessionPartLetter(ev.no);
+    const matchedPart = sessionDetail.parts && sessionDetail.parts.find((p) => p.partLetter === partLetter);
+    const partsToShow = matchedPart ? [matchedPart] : (sessionDetail.parts || []);
+
+    let html = '<div class="session-meta">' + [
+      sessionDetail.date ? field('Date', sessionDetail.date) : '',
+      sessionDetail.time ? field('Time', sessionDetail.time) : '',
+      sessionDetail.mode ? field('Format', sessionDetail.mode) : '',
+      sessionDetail.skills ? field('Skills', sessionDetail.skills) : '',
+    ].join('') + '</div>';
+
+    for (const p of partsToShow) {
+      if (sessionDetail.parts) html += `<h3>${escapeHtml(p.title)}</h3>`;
+      if (p.instructor) {
+        html += `<p class="instructor-line">${escapeHtml(p.instructor.name)} &middot; <a href="mailto:${escapeHtml(p.instructor.email)}">${escapeHtml(p.instructor.email)}</a> &middot; ${escapeHtml(p.instructor.hours)}</p>`;
+      }
+      html += listSection('Learning Objectives', p.objectives);
+    }
+    if (!sessionDetail.parts && sessionDetail.objectives) html += listSection('Objectives', sessionDetail.objectives);
+
+    if (sessionDetail.compulsory) html += `<p class="muted"><strong>Compulsory.</strong> ${escapeHtml(sessionDetail.weight || '')}</p>`;
+    if (sessionDetail.swapProcedure) html += `<p class="muted">${escapeHtml(sessionDetail.swapProcedure)}</p>`;
+
+    html += listSection('Topics Covered', sessionDetail.topicsCovered);
+
+    if (sessionDetail.prepChecklist) {
+      html += `<h3>Preparation Before Class</h3><div class="checklist" data-prep-checklist></div>`;
+    } else if (sessionDetail.prep) {
+      html += listSection('Readings', sessionDetail.prep.readings);
+      html += listSection('Pre-lecture Activities', (sessionDetail.prep.activities || []).map((a) => `${a.title} — ${a.instructions}`));
+    }
+
+    if (sessionDetail.factPattern) {
+      const fp = sessionDetail.factPattern;
+      html += `<h3>Fact Pattern</h3><div class="session-meta">${[
+        fp.client ? field('Client', fp.client) : '',
+        fp.role ? field('Your Role', fp.role) : '',
+        fp.instructingPartner ? field('Instructing Partner', fp.instructingPartner) : '',
+        fp.documents ? field('Documents', fp.documents.join(', ')) : '',
+      ].join('')}</div>${fp.note ? `<p class="muted">${escapeHtml(fp.note)}</p>` : ''}`;
+    }
+
+    if (sessionDetail.activities) {
+      html += `<h3>Activities</h3><ul class="activity-list">${sessionDetail.activities.map((a) => {
+        const deadline = resolveDeadlineFromDetails(details, a.deadlineId);
+        return `<li>${escapeHtml(a.title)}${deadline ? deadlineChipsHtml([deadline]) : ''}</li>`;
+      }).join('')}</ul>`;
+    }
+
+    if (sessionDetail.exercises) {
+      html += sessionDetail.exercises.map((ex) => `
+        <details class="detail-content"><summary>${escapeHtml(ex.title)}</summary>
+          ${ex.factPattern ? `<p>${escapeHtml(ex.factPattern)}</p>` : ''}
+          ${ex.questions ? `<ul>${ex.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>` : ''}
+        </details>`).join('');
+    }
+
+    html += listSection('Key Takeaways', sessionDetail.keyTakeaways);
+    html += listSection('During / After', sessionDetail.duringAfter);
+
+    if (sessionDetail.fullNotes) {
+      html += `<details class="detail-content"><summary>Full Lecture Notes</summary>${sessionDetail.fullNotes.map((n) => `
+        <details><summary>${escapeHtml(n.heading)}</summary><p>${escapeHtml(n.body)}</p></details>`).join('')}</details>`;
+    }
+
+    if (sessionDetail.referenceIds && sessionDetail.referenceIds.length) {
+      html += `<details class="detail-content"><summary>Reference Materials</summary>${sessionDetail.referenceIds.map((id) => referenceHtml(details.references[id])).join('')}</details>`;
+    }
+
+    return html;
+  }
+
+  function sessionFallbackHtml(ev, dateIso, weekNumber, dayName) {
+    const timeText = ev.start ? `${fmtTime(ev.start)}${ev.end ? '–' + fmtTime(ev.end) : ''}` : (ev.timeLabel || 'TBC');
+    const dateLabel = dateIso ? fmtShort(dateIso) : (dayName || '');
+    const fields = [field('Date', `${dateLabel} (Wk ${weekNumber})`), field('Time', timeText)];
+    if (ev.venue) fields.push(field('Venue', ev.venue));
+    if (ev.instructor) fields.push(field('Who', ev.instructor));
+    if (ev.topic) fields.push(field('Topic', ev.topic));
+    return `<div class="session-meta">${fields.join('')}</div><p class="muted">No detailed materials uploaded for this session yet.</p>`;
+  }
+
+  function renderPrepChecklist(container, sessionDetail, prepKey) {
+    if (!container) return;
+    container.innerHTML = checklistHtml(sessionDetail.prepChecklist, loadCheckedIds(prepKey));
+  }
+
+  // After bodyEl.innerHTML has been set from sessionDetailHtml(), wires up
+  // the prep checklist it may contain (the [data-prep-checklist]
+  // placeholder) — shared so course.js and session.js don't each duplicate
+  // this glue.
+  function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
+    if (!sessionDetail || !sessionDetail.prepChecklist) return;
+    const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
+    const container = bodyEl.querySelector('[data-prep-checklist]');
+    const render = () => renderPrepChecklist(container, sessionDetail, prepKey);
+    render();
+    wireChecklist(container, prepKey, render);
+  }
+
   // opts: { dateIso, linkable = true, dateHeading }
   // - dateIso: this event's own date, for the "happening now" check.
   // - linkable: wrap the card in a link to that course's page (skipped when
@@ -409,7 +563,11 @@
     const nowTagHtml = now ? '<span class="now-tag tag-chip">Now</span>' : '';
 
     const tag = linkable && ev.code ? 'a' : 'div';
-    const hrefAttr = linkable && ev.code ? ` href="course.html?code=${encodeURIComponent(ev.code)}"` : '';
+    // A numbered session (LG/SG) links straight to its own page; anything
+    // else (no session number to key off) falls back to the course page.
+    const hrefAttr = linkable && ev.code
+      ? ` href="${ev.no ? escapeHtml(sessionHref(ev, dateIso)) : `course.html?code=${encodeURIComponent(ev.code)}`}"`
+      : '';
 
     return `<${tag} class="event-card${now ? ' now' : ''}${isOtherGroup ? ' other-group' : ''}" style="--course-color:${color}"${hrefAttr}>
       ${dateHeadingHtml}
@@ -453,5 +611,6 @@
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil,
+    sessionHref, sessionKeyFor, sessionPartLetter, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
   };
 })();

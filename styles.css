@@ -475,16 +475,19 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .session-table tr.pre-recorded td { font-style: italic; color: var(--text-muted); }
 .session-table tr.pre-recorded td.col-date svg { width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; }
 .session-table tbody tr[data-idx] { cursor: pointer; }
-.session-table tbody tr[data-idx]:focus-visible td { outline: 2px solid var(--accent-text); outline-offset: -2px; }
+.session-table tbody tr:focus-within td { outline: 2px solid var(--accent-text); outline-offset: -2px; }
+/* The row's own real link (see course.js rowHtml) — inherit the row's text
+   color instead of looking like a conventional blue hyperlink, since the
+   whole row is clickable and the link is just how that's implemented. */
+.row-link { display: block; color: inherit; text-decoration: none; }
+.row-link:hover, .row-link:focus-visible { text-decoration: underline; }
 
-/* Course-page session detail modal — a size modifier layered on the
-   existing .settings-panel/.settings-card open/close transition. */
-.session-modal-card { max-width: 640px; }
-@media (min-width: 640px) {
-  .session-modal-card { max-height: 85vh; }
-}
-.session-modal-body h3 { font-size: 0.85rem; font-weight: 700; margin: 14px 0 6px; }
-.session-modal-body h3:first-child { margin-top: 0; }
+/* session.html's session-detail page — shares its content layout with what
+   used to be the course-page session modal. */
+.session-subtitle { margin: 4px 0 14px; font-size: 0.85rem; }
+.session-subtitle a { color: var(--accent-text); }
+.session-detail-body h3 { font-size: 0.85rem; font-weight: 700; margin: 14px 0 6px; }
+.session-detail-body h3:first-child { margin-top: 0; }
 
 .course-description { font-size: 0.88rem; line-height: 1.5; margin: 4px 0 12px; }
 .coordinator-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
