@@ -31,7 +31,7 @@ window.LEGAL_SKILLS = {
     { type: 'IRAC Reminder', text: "Bail applications: Issue = should bail be granted, Rule = the statutory presumption and recognised factors (flight risk, further offences, witness interference), Application = this client's ties/record/offence severity, Conclusion = conditions that answer the prosecution's actual objections, not generic ones." },
     { type: 'Skill Tip', text: "Draft a plea in mitigation around the sentencing guideline's own stated factors, in its own language — a judge should be able to tick your mitigation off against the framework they're already using." },
   ],
-  ADVOCACY: [ // Criminal/Civil Advocacy (PCLL8051, PCLL8104/PCLL8014)
+  ADVOCACY: [ // Criminal/Civil Advocacy (PCLL8051, PCLL8014)
     { type: 'Socratic Question', text: "Your witness just contradicted their own statement under cross-examination. Do you re-examine on it immediately, or save it for closing — and why?" },
     { type: 'IRAC Reminder', text: "Structure oral submissions like IRAC out loud: the issue for the court first, then the rule, then apply it to these facts, then land the conclusion — judges lose patience with advocates who lead with facts and bury the point." },
     { type: 'Skill Tip', text: "Never ask a cross-examination question you don't already know the answer to — if you're not sure, that's a question for submissions, not for the witness." },

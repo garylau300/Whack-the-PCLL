@@ -24,7 +24,6 @@
     PCLL8040: '#6b46c1', // Professional Practice & Management
     PCLL8050: '#c53030', // Criminal Litigation
     PCLL8051: '#dd6b20', // Criminal Advocacy
-    PCLL8104: '#3182ce', // Civil Advocacy
     PCLL8014: '#3182ce', // Civil Advocacy
   };
   const DEFAULT_COLOR = '#4a5568';

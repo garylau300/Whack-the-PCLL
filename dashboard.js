@@ -9,7 +9,7 @@
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
-  const ADVOCACY_CODES = new Set(['PCLL8051', 'PCLL8104', 'PCLL8014']);
+  const ADVOCACY_CODES = new Set(['PCLL8051', 'PCLL8014']);
   const WATCH_RE = /assessment|exam\b|provisional|hand in|deadline|separate notice|holiday|court attendance/i;
   // Targets "before", not "after" — that's the actual watch-by deadline
   // ("...after LG8 and before LG9" should resolve to LG9, not LG8). The

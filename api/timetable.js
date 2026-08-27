@@ -14,8 +14,7 @@ const COURSES = {
   PCLL8040: 'Professional Practice & Management',
   PCLL8050: 'Criminal Litigation',
   PCLL8051: 'Criminal Advocacy',
-  PCLL8104: 'Civil Advocacy',
-  PCLL8014: 'Civil Advocacy',
+  PCLL8014: 'Civil Advocacy', // sheet also types this "PCLL8104" some weeks — normalized in lib/parseTimetable.js
   PCLL8100: 'Trial Advocacy',
   PCLL8101: 'Commercial Dispute Resolution',
   PCLL8102: 'Personal Injury Litigation',
