@@ -31,6 +31,7 @@
     PCLL8113: 'Property Practice',
   };
   const ELECTIVES_KEY = 'pcll.myElectives';
+  const THEME_KEY = 'pcll.theme';
 
   let timetable = null;
   let activeWeekIndex = 0;
@@ -130,7 +131,7 @@
     el.textContent = `Week ${week.week} · ${fmtShort(days[0].date)} – ${fmtShort(days[days.length - 1].date)}, ${new Date(days[0].date + 'T00:00:00Z').getUTCFullYear()}`;
   }
 
-  function eventCardHtml(ev, myElectives) {
+  function eventCardHtml(ev, myElectives, dateIso) {
     const color = COURSE_COLORS[ev.code] || DEFAULT_COLOR;
     const timeText = ev.start ? `${fmtTime(ev.start)}${ev.end ? '–' + fmtTime(ev.end) : ''}` : (ev.timeLabel || 'Time TBC');
     const codeName = ev.code ? (ELECTIVE_NAMES[ev.code] || '') : '';
@@ -139,9 +140,9 @@
       .join('');
     const detailHtml = ev.detail ? `<div>${escapeHtml(ev.detail)}</div>` : '';
     const mineBadge = ev.scope === 'group' ? '<span class="mine-badge">Your group</span>' : '';
-    const now = isHappeningNow(ev);
+    const now = isHappeningNow(ev, dateIso);
     return `<div class="event-card${now ? ' now' : ''}" style="--course-color:${color}">
-      <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag">${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
+      <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
       <div class="lines">${linesHtml}${detailHtml}</div>
       ${mineBadge}
     </div>`;
@@ -173,7 +174,7 @@
       col.innerHTML = `
         <div class="day-col-head">${day.day}${day.date ? `<span class="date">${fmtShort(day.date)}</span>` : ''}</div>
         <div class="day-col-body">
-          ${events.length ? events.map((ev) => eventCardHtml(ev, myElectives)).join('') : '<div class="empty-day">No sessions</div>'}
+          ${events.length ? events.map((ev) => eventCardHtml(ev, myElectives, day.date)).join('') : '<div class="empty-day">No sessions</div>'}
         </div>`;
       grid.appendChild(col);
     }
@@ -187,7 +188,7 @@
     $('dayViewLabel').innerHTML = `${day.day}${day.date ? `<span class="date">${fmtLong(day.date)}</span>` : ''}`;
     const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
     $('dayViewBody').innerHTML = events.length
-      ? events.map((ev) => eventCardHtml(ev, myElectives)).join('')
+      ? events.map((ev) => eventCardHtml(ev, myElectives, day.date)).join('')
       : '<div class="empty-day">No sessions</div>';
   }
 
@@ -255,7 +256,31 @@
     }
   }
 
+  function effectiveTheme() {
+    const explicit = document.documentElement.dataset.theme;
+    if (explicit === 'light' || explicit === 'dark') return explicit;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateThemeButton() {
+    $('themeBtn').textContent = effectiveTheme() === 'dark' ? '☀️' : '🌙';
+  }
+
+  function setTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem(THEME_KEY, theme); } catch { /* no-op */ }
+    updateThemeButton();
+  }
+
+  function initTheme() {
+    updateThemeButton();
+    $('themeBtn').addEventListener('click', () => {
+      setTheme(effectiveTheme() === 'dark' ? 'light' : 'dark');
+    });
+  }
+
   function init() {
+    initTheme();
     $('prevWeek').addEventListener('click', () => selectWeek(activeWeekIndex - 1));
     $('nextWeek').addEventListener('click', () => selectWeek(activeWeekIndex + 1));
     $('prevDay').addEventListener('click', () => { activeDayIndex = Math.max(0, activeDayIndex - 1); render(); });

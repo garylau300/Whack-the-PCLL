@@ -4,7 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PCLL Timetable — Group 11</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Applied before paint so there's no flash of the wrong theme.
+    (function () {
+      try {
+        var saved = localStorage.getItem('pcll.theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (e) { /* localStorage unavailable */ }
+    })();
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -13,6 +25,7 @@
       <span class="group-badge">Group 11</span>
     </div>
     <div class="topbar-controls">
+      <button id="themeBtn" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">🌙</button>
       <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
     </div>
   </header>
