@@ -135,17 +135,33 @@
     const color = COURSE_COLORS[ev.code] || DEFAULT_COLOR;
     const timeText = ev.start ? `${fmtTime(ev.start)}${ev.end ? '–' + fmtTime(ev.end) : ''}` : (ev.timeLabel || 'Time TBC');
     const codeName = ev.code ? (ELECTIVE_NAMES[ev.code] || '') : '';
-    const linesHtml = (ev.lines || [])
-      .map((l) => `<div>${escapeHtml(l)}</div>`)
-      .join('');
-    const detailHtml = ev.detail ? `<div>${escapeHtml(ev.detail)}</div>` : '';
+    const isOtherGroup = ev.scope === 'other-group';
+
+    const fields = [];
+    if (ev.no) fields.push(field('No.', ev.no + (ev.part ? ` (${ev.part})` : '')));
+    else if (ev.part) fields.push(field('Section', ev.part));
+    if (ev.topic) fields.push(field('Topic', ev.topic));
+    if (ev.venue) fields.push(field('Venue', ev.venue));
+    if (ev.instructor) fields.push(field('Instructor', ev.instructor));
+    const fieldsHtml = fields.join('');
+
+    const otherGroupsHtml = ev.otherGroups && ev.otherGroups.length
+      ? `<div class="other-groups">${ev.otherGroups.map((g) => escapeHtml(g)).join('<br>')}</div>`
+      : '';
+
     const mineBadge = ev.scope === 'group' ? '<span class="mine-badge">Your group</span>' : '';
+    const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge">Not your group</span>' : '';
     const now = isHappeningNow(ev, dateIso);
-    return `<div class="event-card${now ? ' now' : ''}" style="--course-color:${color}">
+    return `<div class="event-card${now ? ' now' : ''}${isOtherGroup ? ' other-group' : ''}" style="--course-color:${color}">
       <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
-      <div class="lines">${linesHtml}${detailHtml}</div>
-      ${mineBadge}
+      <div class="fields">${fieldsHtml}</div>
+      ${otherGroupsHtml}
+      ${mineBadge}${otherGroupBadge}
     </div>`;
+  }
+
+  function field(label, value) {
+    return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
   }
 
   function isHappeningNow(ev, dateIso) {

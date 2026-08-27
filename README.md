@@ -1,4 +1,4 @@
-# PCLL Study Portal — Timetable (Group 11)
+# Whack the PCLL — Timetable (Group 11)
 
 An interactive timetable for HKU's PCLL programme, built for Group 11. It's a
 zero-build static site backed by one Vercel serverless function that parses
@@ -12,9 +12,14 @@ stale, no redeploy needed when the sheet changes.
   reader (`lib/xlsxLite.js` — avoids the `xlsx` npm package, whose registry
   build carries unpatched security advisories).
 - `lib/parseTimetable.js` walks each week's free-form layout (whole-cohort
-  webinars/LGs and small-group breakouts stacked per weekday column) and
-  resolves Group 11's specific room/instructor wherever the sheet lists every
-  group's breakout (groups pair as N / N+13, so Group 11 pairs with Group 24).
+  webinars/LGs and small-group breakouts stacked per weekday column), resolves
+  Group 11's specific room/instructor wherever the sheet lists every group's
+  breakout (groups pair as N / N+13, so Group 11 pairs with Group 24), and
+  classifies each session's free text into structured fields (No. / Topic /
+  Venue / Instructor) rather than leaving it as a raw text dump. A small-group
+  session listed for other groups (not Group 11's) is still surfaced — with
+  the full listing — but tagged `scope: "other-group"` so the UI can grey it
+  out instead of hiding it.
 - The response is cached at the edge for ~6 hours (`stale-while-revalidate`),
   so it stays fast while self-updating in the background. Use the "Refresh
   now" button (or `/api/timetable?fresh=1`) to force an immediate re-sync.

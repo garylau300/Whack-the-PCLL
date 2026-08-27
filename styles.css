@@ -218,19 +218,46 @@ body {
   background: var(--course-color, var(--accent));
   flex: 0 0 auto;
 }
-.event-card .lines { margin-top: 3px; color: var(--text); }
-.event-card .lines div { margin: 0; }
-.event-card .mine-badge {
+.event-card .fields { margin-top: 4px; display: flex; flex-direction: column; gap: 2px; }
+.event-card .field { display: flex; gap: 5px; color: var(--text); }
+.event-card .field-label {
+  flex: 0 0 auto;
+  min-width: 62px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.event-card .field-value { flex: 1; }
+.event-card .other-groups {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.event-card .mine-badge,
+.event-card .other-group-badge {
   display: inline-block;
   margin-top: 4px;
   font-size: 0.68rem;
   font-weight: 700;
-  color: var(--accent-2-text);
-  background: var(--accent-2);
   padding: 1px 6px;
   border-radius: 999px;
 }
+.event-card .mine-badge { color: var(--accent-2-text); background: var(--accent-2); }
+.event-card .other-group-badge { color: var(--text-muted); background: var(--border); }
 .event-card.now { outline: 2px solid var(--now-line); }
+
+/* Small-group sessions for a group other than the student's — de-emphasized
+   rather than hidden, so the student still sees a session is happening. */
+.event-card.other-group {
+  --course-color: var(--text-muted) !important;
+  opacity: 0.6;
+}
+.event-card.other-group .field-value,
+.event-card.other-group .course-tag { color: var(--text-muted); }
 
 .day-view { display: flex; flex-direction: column; gap: 10px; }
 .day-view-nav {
