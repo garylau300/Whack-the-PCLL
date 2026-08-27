@@ -223,8 +223,36 @@ window.COURSE_DETAILS = {
       },
       lifecycleReference: {
         title: 'Appendix A — Lifecycle of a Civil Claim',
-        external: true,
-        note: 'Separate 35-page reference document (uploaded to Moodle) — linked here as a reading item, not transcribed.',
+        body: 'A 12-step map of how a civil claim moves from first instructions through to appeal, in four stages.',
+        diagrams: [
+          {
+            title: 'The pleading stage (Steps 1–6)',
+            steps: [
+              { label: 'Pre-action', detail: 'Consider: settlement options, limitation periods, the proper court and parties, the parties\' financial position, whether further investigation is needed, and pre-action protocols (e.g. PD18.1).' },
+              { label: 'Commencing proceedings', detail: 'Four ways to start a claim: writ of summons, originating summons, originating motion, or petition.' },
+              { label: 'Service', detail: 'Formally delivering court documents to a party so they\'re made aware of the proceedings and can respond.' },
+              { label: 'Early judgment', detail: 'If relevant: apply for default judgment (the other side failed to respond), or consider summary judgment if it applies.' },
+              { label: 'Defend', detail: 'The defendant files a defence; the plaintiff may reply within 28 days (silence = deemed denial). A counterclaim needs a defence to counterclaim within 28 days of service to be disputed.' },
+              { label: 'Close of pleadings', detail: 'The formal exchange of pleadings between the parties is complete.' },
+            ],
+          },
+          {
+            title: 'Discovery & case management (Steps 7–9)',
+            steps: [
+              { label: 'Exchange of evidence', detail: 'Documentary evidence is disclosed via discovery; oral evidence via exchange of witness statements.' },
+              { label: 'Timetabling questionnaire', detail: 'Each party files a Timetabling Questionnaire (TQ) within 28 days of close of pleadings; the plaintiff takes out a Case Management Summons (CMS), or the court fixes a Case Management Conference.' },
+              { label: 'Mediation', detail: 'Parties file a Mediation Certificate and Notice at case management. Mediation is voluntary — the court can\'t compel it — but an unreasonable refusal can bring adverse costs consequences, even for the winner.' },
+            ],
+          },
+          {
+            title: 'Trial and appeal (Steps 10–12)',
+            steps: [
+              { label: 'Pre-trial review', detail: 'Shortly before trial: checks pre-trial steps are done, no outstanding issues remain, the parties have complied with case-management directions, estimates trial length, and explores settlement/mediation.' },
+              { label: 'Trial', detail: 'Once claim, defence, counterclaim and replies are all filed, the parties tender their evidence to prove their case.' },
+              { label: 'Post-trial matters & appeal', detail: 'Costs, enforcement, and appeal.' },
+            ],
+          },
+        ],
       },
       undertakingForm: {
         title: 'Undertaking Form (Standardised Clients Interviewing Exercise)',
@@ -491,6 +519,9 @@ window.COURSE_DETAILS = {
           { text: "SG1's skill focus is {{Problem Solving & Drafting Letter Before Action}}." },
           { text: 'Exercise 2 has each drafting sub-group submit its final LBA draft with a completed {{declaration}} via Moodle.' },
           { text: 'The Undertaking Form for the Interviewing Exercise must reach Mr Frederick Lo by {{5:00pm Friday 11 September 2026}} if not handed to your tutor during SG1.' },
+          { text: 'A civil claim can be commenced by one of four originating processes: writ of summons, originating summons, originating {{motion}}, or {{petition}}.' },
+          { text: 'After being served with a defence, the plaintiff may reply within {{28 days}} — if no reply is filed, the plaintiff is deemed to have {{denied}} the allegations in the defence.' },
+          { text: 'Mediation at the case-management stage is {{voluntary}} — the court cannot compel it, but an unreasonable refusal can still lead to adverse {{costs}} consequences, even for the winning party.' },
         ],
         referenceIds: ['lifecycleReference', 'lbaStudentGuide', 'skillsGuideLBA', 'undertakingForm'],
       },

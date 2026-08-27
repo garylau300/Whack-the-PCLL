@@ -414,6 +414,7 @@
     } else {
       if (ref.body) body += `<p>${escapeHtml(ref.body)}</p>`;
       if (ref.bullets) body += `<ul>${ref.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+      if (ref.diagrams) body += ref.diagrams.map((d) => processDiagramHtml(d)).join('');
       if (ref.checkboxes) body += `<ul>${ref.checkboxes.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
       if (ref.fields) body += `<p class="muted">Fields: ${ref.fields.map(escapeHtml).join(', ')}</p>`;
     }
