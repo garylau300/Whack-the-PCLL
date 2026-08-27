@@ -5,12 +5,21 @@
   --text: #1a1d24;
   --text-muted: #666d7a;
   --accent: #1e3a5f;
-  --accent-2: #b08d57;
+  --accent-2: #eab308;
   --accent-2-text: #1a1d24;
   --today: #fff7e6;
   --now-line: #d1382b;
   --card-tint: 10%;
   --radius: 10px;
+  --radius-sm: 6px;
+  /* --accent/--now-line read fine as *text* in light mode (11.5:1 / 4.9:1)
+     but --accent especially is unreadable as text in dark mode (1.4:1) —
+     these text-safe aliases resolve to the same color in light mode and get
+     a lighter dark-mode-only override below, for the handful of places
+     these colors are used as foreground text rather than a background or a
+     decorative border/tint (which stay on the base tokens, unaffected). */
+  --accent-text: var(--accent);
+  --now-line-text: var(--now-line);
 }
 
 /* Dark tokens apply either when the OS prefers dark (and the user hasn't
@@ -26,6 +35,8 @@
     --text-muted: #9aa1ad;
     --today: #2a2410;
     --card-tint: 18%;
+    --accent-text: #7ea6d9;
+    --now-line-text: #ff8a7a;
   }
 }
 :root[data-theme="dark"] {
@@ -36,6 +47,8 @@
   --text-muted: #9aa1ad;
   --today: #2a2410;
   --card-tint: 18%;
+  --accent-text: #7ea6d9;
+  --now-line-text: #ff8a7a;
 }
 
 * { box-sizing: border-box; }
@@ -72,7 +85,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 16px;
+  padding: 12px 16px;
   background: var(--accent);
   color: white;
   position: sticky;
@@ -88,8 +101,8 @@ body {
   background: rgba(255,255,255,0.12);
   border: none;
   color: white;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
@@ -98,7 +111,7 @@ body {
 }
 .icon-btn:hover { background: rgba(255,255,255,0.22); }
 .icon-btn:active { transform: scale(0.92); }
-.icon-btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+.icon-btn svg { width: 20px; height: 20px; flex: 0 0 auto; }
 .icon-btn.icon-pop svg { animation: iconPop 0.3s ease; }
 @keyframes iconPop {
   0% { transform: scale(0.5) rotate(-30deg); opacity: 0.3; }
@@ -125,7 +138,7 @@ body {
 .week-pill {
   flex: 0 0 auto;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
@@ -143,15 +156,17 @@ body {
 }
 .week-pill.current-real-week::after {
   content: " •";
-  color: var(--accent-2);
+  color: var(--text-muted);
 }
+.week-pill.active.current-real-week::after { color: white; }
 .nav-arrow {
   background: none;
   border: none;
   font-size: 1.3rem;
-  color: var(--accent);
+  color: var(--accent-text);
   cursor: pointer;
-  width: 34px;
+  width: 40px;
+  height: 40px;
   flex: 0 0 auto;
   border-radius: 8px;
   transition: background-color 0.15s ease, transform 0.1s ease;
@@ -234,7 +249,7 @@ body {
   animation: fadeInUp 0.3s ease both;
   transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.day-col.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(176,141,87,0.25); }
+.day-col.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(234,179,8,0.25); }
 .day-col-head {
   padding: 10px 12px;
   border-bottom: 1px solid var(--border);
@@ -319,12 +334,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .event-card .mine-badge,
 .event-card .other-group-badge {
-  display: inline-block;
   margin-top: 4px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 1px 6px;
-  border-radius: 999px;
 }
 .event-card .mine-badge { color: var(--accent-2-text); background: var(--accent-2); }
 .event-card .other-group-badge { color: var(--text-muted); background: var(--border); }
@@ -367,7 +377,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .link-btn {
   background: none;
   border: none;
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.78rem;
@@ -465,7 +475,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .session-table tr.pre-recorded td { font-style: italic; color: var(--text-muted); }
 .session-table tr.pre-recorded td.col-date svg { width: 12px; height: 12px; margin-right: 4px; vertical-align: -2px; }
 .session-table tbody tr[data-idx] { cursor: pointer; }
-.session-table tbody tr[data-idx]:focus-visible td { outline: 2px solid var(--accent); outline-offset: -2px; }
+.session-table tbody tr[data-idx]:focus-visible td { outline: 2px solid var(--accent-text); outline-offset: -2px; }
 
 /* Course-page session detail modal — a size modifier layered on the
    existing .settings-panel/.settings-card open/close transition. */
@@ -480,6 +490,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .coordinator-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
 .coordinator-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.82rem; min-width: 180px; }
 .instructor-line { font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 8px; }
+.coordinator-card a, .instructor-line a { color: var(--accent-text); }
 .assessment-notes { margin: 8px 0 0; padding-left: 18px; font-size: 0.82rem; color: var(--text-muted); }
 .activity-list { margin: 6px 0; padding-left: 18px; }
 .reference-block { margin: 10px 0; padding-top: 8px; border-top: 1px dashed var(--border); }
@@ -516,13 +527,24 @@ summary::marker { color: var(--text-muted); }
 .checklist-item.checked .checklist-label { text-decoration: line-through; color: var(--text-muted); }
 
 .deadline-chip {
-  display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 8px;
-  border-radius: 999px; margin: 2px 4px 2px 0; white-space: normal;
+  margin: 2px 4px 2px 0; white-space: normal;
 }
 .deadline-chip--homework, .deadline-chip--todo { background: var(--accent-2); color: var(--accent-2-text); }
-.deadline-chip--assessment { background: color-mix(in srgb, var(--now-line) 20%, var(--surface)); color: var(--now-line); }
+.deadline-chip--assessment { background: color-mix(in srgb, var(--now-line) 20%, var(--surface)); color: var(--now-line-text); }
 .day-col-head .deadline-chip { margin-top: 4px; }
 .day-deadline-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; animation: fadeIn 0.25s ease both; }
+.now-tag { color: var(--now-line-text); background: color-mix(in srgb, var(--now-line) 20%, var(--surface)); }
+.event-card .now-tag { margin-left: 6px; vertical-align: middle; }
+
+/* Shared shape/size for small inert badges/chips/tags — color and spacing
+   modifiers stay in each specific class above/below. */
+.tag-chip {
+  display: inline-block;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+}
 
 /* Dashboard (index.html) */
 .dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }
@@ -644,12 +666,12 @@ summary::marker { color: var(--text-muted); }
   animation: fadeInUp 0.3s ease both;
   transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
 }
-.week-strip-day.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(176,141,87,0.25); }
+.week-strip-day.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(234,179,8,0.25); }
 .week-strip-day:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform: translateY(-2px); }
 .wsd-day { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
 .wsd-date { font-size: 0.8rem; font-weight: 600; margin: 2px 0; }
 .wsd-count { font-size: 0.7rem; color: var(--text-muted); }
-.wsd-time { font-size: 0.7rem; color: var(--accent); font-weight: 600; margin-top: 2px; }
+.wsd-time { font-size: 0.7rem; color: var(--accent-text); font-weight: 600; margin-top: 2px; }
 
 .legal-skill-card {
   background: color-mix(in srgb, var(--accent) 8%, var(--surface));
@@ -660,15 +682,10 @@ summary::marker { color: var(--text-muted); }
   animation: fadeInUp 0.3s ease both;
 }
 .legal-skill-tag {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  color: var(--accent);
+  color: var(--accent-text);
   background: color-mix(in srgb, var(--accent) 15%, var(--surface));
-  padding: 2px 8px;
-  border-radius: 999px;
   margin-bottom: 8px;
 }
 .legal-skill-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }

@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey, sgPrepChecklistKey,
-    checklistHtml, wireChecklist, deadlineChipsHtml, daysUntil,
+    checklistHtml, wireChecklist, deadlineChipsHtml, daysUntil, initDialog,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -16,6 +16,7 @@
   // the original event without re-parsing the DOM.
   let rowsData = [];
   let homeworkChecklistWired = false;
+  let sessionModal = null;
 
   function setSyncStatus(text) {
     $('syncStatus').textContent = text;
@@ -159,7 +160,7 @@
     return `<div class="session-meta">${fields.join('')}</div><p class="muted">No detailed materials uploaded for this session yet.</p>`;
   }
 
-  function openSessionModal(idx) {
+  function openSessionModal(idx, triggerEl) {
     const entry = rowsData[idx];
     if (!entry) return;
     const { ev, dateIso, weekNumber, dayName } = entry;
@@ -175,7 +176,7 @@
       const prepKey = sgPrepChecklistKey(code, key);
       wireChecklist($('modalPrepChecklist'), prepKey, () => renderModalPrepChecklist(sessionDetail, prepKey));
     }
-    $('sessionModal').classList.add('open');
+    sessionModal.open(triggerEl);
   }
 
   function rowHtml(ev, weekNumber, dateIso, dayName, idx) {
@@ -328,19 +329,21 @@
   }
 
   function initSessionModal() {
+    sessionModal = initDialog({
+      panel: $('sessionModal'),
+      dialog: $('sessionModal').querySelector('.settings-card'),
+      closeBtn: $('closeSessionModal'),
+      labelledBy: 'sessionModalTitle',
+    });
     const tbody = $('sessionTableBody');
     tbody.addEventListener('click', (e) => {
       const tr = e.target.closest('tr[data-idx]');
-      if (tr) openSessionModal(+tr.dataset.idx);
+      if (tr) openSessionModal(+tr.dataset.idx, tr);
     });
     tbody.addEventListener('keydown', (e) => {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       const tr = e.target.closest('tr[data-idx]');
-      if (tr) { e.preventDefault(); openSessionModal(+tr.dataset.idx); }
-    });
-    $('closeSessionModal').addEventListener('click', () => $('sessionModal').classList.remove('open'));
-    $('sessionModal').addEventListener('click', (e) => {
-      if (e.target === $('sessionModal')) $('sessionModal').classList.remove('open');
+      if (tr) { e.preventDefault(); openSessionModal(+tr.dataset.idx, tr); }
     });
   }
 

@@ -239,7 +239,7 @@
     const pool = keys.length ? keys.flatMap((k) => LEGAL_SKILLS[k]) : LEGAL_SKILLS.GENERIC;
     const pick = pool[dayOfYear(new Date()) % pool.length];
     $('legalSkillCard').innerHTML = `
-      <span class="legal-skill-tag">${escapeHtml(pick.type)}</span>
+      <span class="legal-skill-tag tag-chip">${escapeHtml(pick.type)}</span>
       <p>${escapeHtml(pick.text)}</p>
     `;
   }

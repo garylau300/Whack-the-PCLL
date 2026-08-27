@@ -50,11 +50,15 @@
 
   // Inline SVG (stroke="currentColor") instead of emoji — crisp at any size,
   // matches text color in both themes, no font/platform glyph variance.
+  // aria-hidden: every one of these sits inside a control that already has
+  // its own accessible name (an aria-label on the button, or adjacent
+  // visible text), so the icon itself is purely decorative to assistive
+  // tech.
   const ICONS = {
-    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>',
-    moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
-    play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>',
-    refresh: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+    sun: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>',
+    moon: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+    play: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>',
+    refresh: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
   };
 
   function loadMyElectives() {
@@ -172,7 +176,60 @@
   // list in, so a completed item stops showing up as a day-badge too.
   function deadlineChipsHtml(deadlines) {
     if (!deadlines || !deadlines.length) return '';
-    return deadlines.map((d) => `<span class="deadline-chip deadline-chip--${d.kind}" title="${escapeHtml(d.title)}">${escapeHtml(d.title)}</span>`).join('');
+    return deadlines.map((d) => `<span class="deadline-chip tag-chip deadline-chip--${d.kind}" title="${escapeHtml(d.title)}">${escapeHtml(d.title)}</span>`).join('');
+  }
+
+  const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  // Turns a `.settings-panel`-shaped overlay into an accessible dialog:
+  // role="dialog"/aria-modal/aria-labelledby set once at wiring time;
+  // Escape closes; Tab/Shift+Tab is trapped within the dialog's currently
+  // visible focusable elements (recomputed live, since both the settings
+  // panel and the course-page session modal replace their own content via
+  // innerHTML after opening); focus moves to the close button on open and
+  // back to whatever triggered the open on close. Shared by
+  // initElectiveSettings below and course.js's session-detail modal, which
+  // were previously two independent, duplicated implementations of the same
+  // open/close-panel pattern with none of this behavior.
+  function initDialog({ panel, dialog, closeBtn, labelledBy }) {
+    dialog.setAttribute('role', 'dialog');
+    dialog.setAttribute('aria-modal', 'true');
+    dialog.setAttribute('aria-labelledby', labelledBy);
+
+    let triggerEl = null;
+
+    function focusable() {
+      return [...dialog.querySelectorAll(FOCUSABLE_SELECTOR)].filter((el) => el.offsetParent !== null);
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key !== 'Tab') return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    function open(trigger) {
+      triggerEl = trigger || document.activeElement;
+      panel.classList.add('open');
+      closeBtn.focus();
+      document.addEventListener('keydown', onKeydown);
+    }
+
+    function close() {
+      panel.classList.remove('open');
+      document.removeEventListener('keydown', onKeydown);
+      if (triggerEl) triggerEl.focus();
+    }
+
+    closeBtn.addEventListener('click', close);
+    panel.addEventListener('click', (e) => { if (e.target === panel) close(); });
+
+    return { open, close };
   }
 
   // Wires up the settings gear/panel/checkboxes shared by every page that
@@ -196,13 +253,10 @@
         });
       });
     }
+    const modal = initDialog({ panel, dialog: panel.querySelector('.settings-card'), closeBtn, labelledBy: 'settingsTitle' });
     settingsBtn.addEventListener('click', () => {
       renderList();
-      panel.classList.add('open');
-    });
-    closeBtn.addEventListener('click', () => { panel.classList.remove('open'); });
-    panel.addEventListener('click', (e) => {
-      if (e.target === panel) panel.classList.remove('open');
+      modal.open(settingsBtn);
     });
   }
 
@@ -345,17 +399,21 @@
       ? `<div class="other-groups">${ev.otherGroups.map((g) => escapeHtml(g)).join('<br>')}</div>`
       : '';
 
-    const mineBadge = isMyGroupSession(ev) ? '<span class="mine-badge">Your group</span>' : '';
-    const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge">Not your group</span>' : '';
+    const mineBadge = isMyGroupSession(ev) ? '<span class="mine-badge tag-chip">Your group</span>' : '';
+    const otherGroupBadge = isOtherGroup ? '<span class="other-group-badge tag-chip">Not your group</span>' : '';
     const dateHeadingHtml = dateHeading ? `<div class="event-date">${escapeHtml(dateHeading)}</div>` : '';
     const now = isHappeningNow(ev, dateIso);
+    // "Happening now" is also marked by a pulsing outline (.event-card.now)
+    // — this text tag is additive so the state isn't conveyed by color/
+    // animation alone (WCAG 1.4.1).
+    const nowTagHtml = now ? '<span class="now-tag tag-chip">Now</span>' : '';
 
     const tag = linkable && ev.code ? 'a' : 'div';
     const hrefAttr = linkable && ev.code ? ` href="course.html?code=${encodeURIComponent(ev.code)}"` : '';
 
     return `<${tag} class="event-card${now ? ' now' : ''}${isOtherGroup ? ' other-group' : ''}" style="--course-color:${color}"${hrefAttr}>
       ${dateHeadingHtml}
-      <span class="time">${timeText}</span>${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
+      <span class="time">${timeText}</span>${nowTagHtml}${ev.code ? `<span class="course-tag"><span class="swatch"></span>${escapeHtml(ev.code)}${codeName ? ' · ' + escapeHtml(codeName) : ''}</span>` : ''}
       <div class="fields">${fieldsHtml}</div>
       ${otherGroupsHtml}
       ${mineBadge}${otherGroupBadge}
@@ -391,7 +449,7 @@
     ICONS, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
-    loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,
+    loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil,
