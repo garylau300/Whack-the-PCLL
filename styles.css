@@ -519,6 +519,36 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .video-list .video-when svg { width: 13px; height: 13px; flex: 0 0 auto; }
 
+.course-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.course-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--course-color, var(--accent)) var(--card-tint), var(--surface));
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  animation: fadeInUp 0.3s ease both;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+.course-chip:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+  border-color: var(--course-color, var(--accent));
+}
+.course-chip:active { transform: translateY(0) scale(0.97); }
+.course-chip .swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--course-color, var(--accent));
+  flex: 0 0 auto;
+}
+
 .week-strip {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

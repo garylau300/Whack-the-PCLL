@@ -5,6 +5,7 @@
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
+    COURSE_COLORS, DEFAULT_COLOR,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
@@ -176,6 +177,24 @@
       : '<li class="muted">Nothing to pre-watch this week.</li>';
   }
 
+  // A quick-nav chip per course — every code in meta.courses (core courses
+  // plus every elective, whether or not the student's picked it yet), minus
+  // electives ruled out once they have picked their 3 (same filter as every
+  // other elective-aware list on the site).
+  function renderCourseList(myElectives) {
+    const courses = timetable.meta.courses || {};
+    const codes = Object.keys(courses)
+      .filter((code) => !eventIsFilteredOut({ code }, myElectives))
+      .sort();
+    $('courseList').innerHTML = codes.map((code) => {
+      const color = COURSE_COLORS[code] || DEFAULT_COLOR;
+      const name = courses[code] || ELECTIVE_NAMES[code] || '';
+      return `<a href="course.html?code=${encodeURIComponent(code)}" class="course-chip" style="--course-color:${color}">
+        <span class="swatch"></span>${escapeHtml(code)}${name ? ' · ' + escapeHtml(name) : ''}
+      </a>`;
+    }).join('');
+  }
+
   function legalSkillsKeyFor(code) {
     if (!code) return null;
     if (ADVOCACY_CODES.has(code)) return 'ADVOCACY';
@@ -204,6 +223,7 @@
     const ownEvents = ctx.day ? ownEventsFor(ctx.day, myElectives) : [];
 
     renderHero(ctx, ownEvents);
+    renderCourseList(myElectives);
     renderClasses(ownEvents, ctx.day ? ctx.day.date : null);
     renderTodo(ctx, ownEvents);
     renderPreRecordedList(ctx.week, myElectives);
