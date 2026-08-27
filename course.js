@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme } = window.PCLL;
+  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, fetchTimetable } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
   const code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
@@ -66,9 +66,7 @@
       return;
     }
     try {
-      const res = await fetch('/api/timetable');
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to load timetable');
+      const data = await fetchTimetable();
       renderCourse(data);
       setSyncStatus(`Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
     } catch (err) {

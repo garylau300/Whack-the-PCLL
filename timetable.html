@@ -3,58 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Whack the PCLL</title>
+  <title>Timetable — Whack the PCLL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="common.js"></script>
-  <script src="legalSkills.js"></script>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-title">
-      <h1>Whack the PCLL</h1>
+      <a href="index.html" class="icon-btn back-link" aria-label="Back to dashboard">←</a>
+      <h1>Timetable</h1>
       <span class="group-badge">Group 11</span>
     </div>
     <div class="topbar-controls">
-      <a href="timetable.html" class="icon-btn" title="Full timetable" aria-label="Full timetable">🗓</a>
       <button id="themeBtn" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">🌙</button>
       <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
     </div>
   </header>
 
-  <main id="app" class="dashboard">
-    <div id="status" class="status">Loading dashboard…</div>
+  <nav class="week-nav" id="weekNav" aria-label="Week selector">
+    <button id="prevWeek" class="nav-arrow" aria-label="Previous week">‹</button>
+    <div class="week-scroll" id="weekScroll"></div>
+    <button id="nextWeek" class="nav-arrow" aria-label="Next week">›</button>
+  </nav>
 
-    <div id="dashboardBody" hidden>
-      <section class="hero" id="hero"></section>
+  <div class="view-toolbar">
+    <div class="week-range" id="weekRange"></div>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button id="gridViewBtn" class="toggle-btn active">Week</button>
+      <button id="dayViewBtn" class="toggle-btn">Day</button>
+    </div>
+  </div>
 
-      <section class="dash-section">
-        <h2>Today's Classes</h2>
-        <div id="classesList" class="dash-list"></div>
-      </section>
-
-      <section class="dash-section">
-        <h2>What To Do Today</h2>
-        <ul id="todoList" class="todo-list"></ul>
-      </section>
-
-      <section class="dash-section">
-        <h2>This Week — Watch Out For</h2>
-        <ul id="watchList" class="watch-list"></ul>
-      </section>
-
-      <section class="dash-section">
-        <h2>This Week's Timetable</h2>
-        <div id="weekStrip" class="week-strip"></div>
-        <a href="timetable.html" class="link-btn">View full timetable →</a>
-      </section>
-
-      <section class="dash-section">
-        <h2>Legal Skill of the Day</h2>
-        <div id="legalSkillCard" class="legal-skill-card"></div>
-      </section>
+  <main id="app">
+    <div id="status" class="status">Loading timetable…</div>
+    <div id="weekGrid" class="week-grid" hidden></div>
+    <div id="dayView" class="day-view" hidden>
+      <div class="day-view-nav">
+        <button id="prevDay" class="nav-arrow">‹</button>
+        <div id="dayViewLabel" class="day-view-label"></div>
+        <button id="nextDay" class="nav-arrow">›</button>
+      </div>
+      <div id="dayViewBody" class="day-view-body"></div>
     </div>
   </main>
 
@@ -78,6 +70,6 @@
     </div>
   </div>
 
-  <script src="dashboard.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

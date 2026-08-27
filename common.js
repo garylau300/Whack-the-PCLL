@@ -47,10 +47,81 @@
     PCLL8113: 'Property Practice',
   };
   const THEME_KEY = 'pcll.theme';
+  const ELECTIVES_KEY = 'pcll.myElectives';
+
+  function loadMyElectives() {
+    try {
+      return new Set(JSON.parse(localStorage.getItem(ELECTIVES_KEY) || '[]'));
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveMyElectives(set) {
+    try {
+      localStorage.setItem(ELECTIVES_KEY, JSON.stringify([...set]));
+    } catch {
+      /* localStorage unavailable — filtering just won't persist */
+    }
+  }
+
+  function eventIsFilteredOut(ev, myElectives) {
+    if (!ev.code || !ELECTIVE_CODES.includes(ev.code)) return false;
+    if (myElectives.size === 0) return false; // nothing chosen yet -> show everything
+    return !myElectives.has(ev.code);
+  }
+
+  // Wires up the settings gear/panel/checkboxes shared by every page that
+  // has one. `onChange` is called after any elective is ticked/unticked, so
+  // the page can re-render with the new filter applied.
+  function initElectiveSettings({ settingsBtn, closeBtn, panel, listEl, onChange }) {
+    function renderList() {
+      const mine = loadMyElectives();
+      listEl.innerHTML = ELECTIVE_CODES.map((code) => `
+        <div class="elective-row">
+          <input type="checkbox" id="ec-${code}" data-code="${code}" ${mine.has(code) ? 'checked' : ''} />
+          <label for="ec-${code}">${code} — ${ELECTIVE_NAMES[code]}</label>
+        </div>`).join('');
+      listEl.querySelectorAll('input[type=checkbox]').forEach((cb) => {
+        cb.addEventListener('change', () => {
+          const set = loadMyElectives();
+          if (cb.checked) set.add(cb.dataset.code);
+          else set.delete(cb.dataset.code);
+          saveMyElectives(set);
+          if (onChange) onChange();
+        });
+      });
+    }
+    settingsBtn.addEventListener('click', () => {
+      renderList();
+      panel.hidden = false;
+    });
+    closeBtn.addEventListener('click', () => { panel.hidden = true; });
+    panel.addEventListener('click', (e) => {
+      if (e.target === panel) panel.hidden = true;
+    });
+  }
 
   function todayISO() {
     const d = new Date();
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  // The index of the week containing today, or (if today falls between
+  // weeks, e.g. a break) the most recently started week.
+  function pickCurrentWeekIndex(weeks) {
+    const today = todayISO();
+    let best = 0;
+    for (let i = 0; i < weeks.length; i++) {
+      const days = weeks[i].days.filter((d) => d.date);
+      if (!days.length) continue;
+      const first = days[0].date;
+      const last = days[days.length - 1].date;
+      if (today >= first && today <= last) return i;
+      if (today > last) best = i; // keep advancing to the most recent past week
+      if (today < first) return best; // stop at the first upcoming week
+    }
+    return best;
   }
 
   function fmtShort(iso) {
@@ -77,6 +148,13 @@
 
   function field(label, value) {
     return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
+  }
+
+  async function fetchTimetable(fresh) {
+    const res = await fetch(`/api/timetable${fresh ? '?fresh=1' : ''}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to load timetable');
+    return data;
   }
 
   function isHappeningNow(ev, dateIso) {
@@ -151,7 +229,8 @@
 
   window.PCLL = {
     COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
-    eventCardHtml, effectiveTheme, setTheme, initTheme,
+    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
+    eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable,
+    loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,
   };
 })();

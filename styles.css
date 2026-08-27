@@ -380,3 +380,82 @@ a.event-card:hover {
 .session-table tr.mine td.col-date { box-shadow: inset 3px 0 0 var(--accent-2); }
 .session-table tr.other-group td { color: var(--text-muted); opacity: 0.65; }
 .session-table tr.now td { background: var(--today); }
+
+/* Dashboard (index.html) */
+.dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }
+
+.hero { padding: 18px 4px 8px; }
+.hero-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+.hero-summary { font-size: 1.3rem; font-weight: 700; margin: 4px 0; }
+.hero-week { font-size: 0.8rem; color: var(--text-muted); }
+
+.dash-section { margin-bottom: 26px; }
+.dash-section h2 { font-size: 0.95rem; font-weight: 700; margin: 0 0 10px; }
+.dash-list { display: flex; flex-direction: column; gap: 10px; }
+
+.todo-list, .watch-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.todo-list li, .watch-list li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.watch-list li { border-left-color: var(--now-line); }
+.watch-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
+
+.week-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  .week-strip { grid-template-columns: repeat(3, 1fr); }
+}
+.week-strip-day {
+  display: block;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: inherit;
+}
+.week-strip-day.is-today { border-color: var(--accent-2); box-shadow: 0 0 0 2px rgba(176,141,87,0.25); }
+.week-strip-day:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.wsd-day { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+.wsd-date { font-size: 0.8rem; font-weight: 600; margin: 2px 0; }
+.wsd-count { font-size: 0.7rem; color: var(--text-muted); }
+.wsd-time { font-size: 0.7rem; color: var(--accent); font-weight: 600; margin-top: 2px; }
+
+.legal-skill-card {
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px;
+}
+.legal-skill-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, var(--surface));
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.legal-skill-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }

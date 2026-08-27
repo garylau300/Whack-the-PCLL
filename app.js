@@ -1,9 +1,10 @@
 (() => {
   'use strict';
 
-  const { ELECTIVE_CODES, ELECTIVE_NAMES, todayISO, fmtShort, fmtLong, eventCardHtml, initTheme } = window.PCLL;
-
-  const ELECTIVES_KEY = 'pcll.myElectives';
+  const {
+    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, eventCardHtml, initTheme,
+    fetchTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
+  } = window.PCLL;
 
   let timetable = null;
   let activeWeekIndex = 0;
@@ -11,50 +12,6 @@
   let viewMode = 'grid'; // 'grid' | 'day'
 
   const $ = (id) => document.getElementById(id);
-
-  function loadMyElectives() {
-    try {
-      return new Set(JSON.parse(localStorage.getItem(ELECTIVES_KEY) || '[]'));
-    } catch {
-      return new Set();
-    }
-  }
-
-  function saveMyElectives(set) {
-    try {
-      localStorage.setItem(ELECTIVES_KEY, JSON.stringify([...set]));
-    } catch {
-      /* localStorage unavailable — filtering just won't persist */
-    }
-  }
-
-  async function fetchTimetable(fresh) {
-    const res = await fetch(`/api/timetable${fresh ? '?fresh=1' : ''}`);
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load timetable');
-    return data;
-  }
-
-  function pickCurrentWeekIndex(weeks) {
-    const today = todayISO();
-    let best = 0;
-    for (let i = 0; i < weeks.length; i++) {
-      const days = weeks[i].days.filter((d) => d.date);
-      if (!days.length) continue;
-      const first = days[0].date;
-      const last = days[days.length - 1].date;
-      if (today >= first && today <= last) return i;
-      if (today > last) best = i; // keep advancing to the most recent past week
-      if (today < first) return best; // stop at the first upcoming week
-    }
-    return best;
-  }
-
-  function eventIsFilteredOut(ev, myElectives) {
-    if (!ev.code || !ELECTIVE_CODES.includes(ev.code)) return false;
-    if (myElectives.size === 0) return false; // nothing chosen yet -> show everything
-    return !myElectives.has(ev.code);
-  }
 
   function renderWeekPills() {
     const scroll = $('weekScroll');
@@ -134,25 +91,6 @@
     render();
   }
 
-  function renderSettings() {
-    const mine = loadMyElectives();
-    const list = $('electiveList');
-    list.innerHTML = ELECTIVE_CODES.map((code) => `
-      <div class="elective-row">
-        <input type="checkbox" id="ec-${code}" data-code="${code}" ${mine.has(code) ? 'checked' : ''} />
-        <label for="ec-${code}">${code} — ${ELECTIVE_NAMES[code]}</label>
-      </div>`).join('');
-    list.querySelectorAll('input[type=checkbox]').forEach((cb) => {
-      cb.addEventListener('change', () => {
-        const set = loadMyElectives();
-        if (cb.checked) set.add(cb.dataset.code);
-        else set.delete(cb.dataset.code);
-        saveMyElectives(set);
-        render();
-      });
-    });
-  }
-
   function setSyncStatus(text) {
     $('syncStatus').textContent = text;
   }
@@ -196,13 +134,12 @@
       $('gridViewBtn').classList.remove('active');
       render();
     });
-    $('settingsBtn').addEventListener('click', () => {
-      renderSettings();
-      $('settingsPanel').hidden = false;
-    });
-    $('closeSettings').addEventListener('click', () => { $('settingsPanel').hidden = true; });
-    $('settingsPanel').addEventListener('click', (e) => {
-      if (e.target === $('settingsPanel')) $('settingsPanel').hidden = true;
+    initElectiveSettings({
+      settingsBtn: $('settingsBtn'),
+      closeBtn: $('closeSettings'),
+      panel: $('settingsPanel'),
+      listEl: $('electiveList'),
+      onChange: render,
     });
     $('refreshBtn').addEventListener('click', () => load(true));
 

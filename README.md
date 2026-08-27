@@ -23,18 +23,33 @@ stale, no redeploy needed when the sheet changes.
 - The response is cached at the edge for ~6 hours (`stale-while-revalidate`),
   so it stays fast while self-updating in the background. Use the "Refresh
   now" button (or `/api/timetable?fresh=1`) to force an immediate re-sync.
-- `index.html` / `styles.css` / `app.js` render the data: a week grid, a
-  mobile day view, and a settings panel to filter elective sessions once you
-  know your 3 choices (saved in your browser only). Shared rendering (event
-  cards, date/time formatting, the light/dark toggle) lives in `common.js`,
-  loaded by every page. Light is the default theme; dark only applies once a
-  visitor explicitly toggles it (persisted per-browser).
+- **`index.html`** (`dashboard.js`) is the homepage: today's own classes,
+  a rule-based "what to do today" checklist, a "this week — watch out for"
+  scan across the current week for assessments/exams/hand-ins/court
+  attendance/holidays, a compact Mon–Sat strip for the week, and a
+  Legal Skill of the Day (see below). All derived client-side from the same
+  live `/api/timetable` response — no extra backend calls.
+- **`timetable.html`** (`app.js`) is the full week-grid/day-view timetable,
+  with the settings panel to filter elective sessions once you know your 3
+  choices (saved in your browser only).
 - Any session with a course code is clickable, linking to `course.html?code=`
   that course — a per-course page (`course.js`) listing every session for it
   across the whole programme as a compact table (Date / Time / No. / Topic /
   Venue / Who), with the same "your group" / "other group" highlighting. It's
   built as one `<section class="course-section">` among others still to come
   (assessment methods, course materials).
+- Shared rendering (event cards, date/time formatting, the elective-filter
+  settings panel, the light/dark toggle) lives in `common.js`, loaded by
+  every page. Light is the default theme; dark only applies once a visitor
+  explicitly toggles it (persisted per-browser).
+- `legalSkills.js` is a static, hand-written set of legal-skills tips (a
+  Socratic question, an IRAC-structure reminder, a practical skill tip per
+  PCLL core course), modeled on the categories in Anthropic's
+  [`claude-for-legal`](https://github.com/anthropics/claude-for-legal) repo —
+  specifically its `law-student` plugin. That repo is a Claude Code
+  plugin/skill marketplace (slash commands run inside a Claude session), not
+  a public API, so this content is written once rather than fetched live; the
+  dashboard picks whichever tip matches today's actual classes.
 
 ## Running locally
 
