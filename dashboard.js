@@ -3,7 +3,7 @@
 
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
-    eventCardHtml, initTheme, fetchTimetable, loadMyElectives,
+    eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
@@ -213,19 +213,25 @@
   }
 
   async function load(fresh) {
-    try {
-      setSyncStatus(fresh ? 'Refreshing…' : 'Syncing…');
-      timetable = await fetchTimetable(fresh);
-      $('status').hidden = true;
-      $('dashboardBody').hidden = false;
-      render();
-      setSyncStatus(`Last synced ${new Date(timetable.meta.syncedAt).toLocaleString()}`);
-    } catch (err) {
-      $('status').hidden = false;
-      $('status').className = 'status error';
-      $('status').textContent = 'Could not load the dashboard: ' + err.message;
-      setSyncStatus('Sync failed');
-    }
+    setSyncStatus(fresh ? 'Refreshing…' : 'Syncing…');
+    await loadTimetable({
+      fresh,
+      onData: (data, isStale) => {
+        timetable = data;
+        $('status').hidden = true;
+        $('dashboardBody').hidden = false;
+        render();
+        setSyncStatus(isStale
+          ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
+          : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
+      },
+      onError: (err) => {
+        $('status').hidden = false;
+        $('status').className = 'status error';
+        $('status').textContent = 'Could not load the dashboard: ' + err.message;
+        setSyncStatus('Sync failed');
+      },
+    });
   }
 
   function init() {

@@ -157,6 +157,46 @@
     return data;
   }
 
+  const TIMETABLE_CACHE_KEY = 'pcll.timetableCache';
+
+  function getCachedTimetable() {
+    try {
+      const raw = localStorage.getItem(TIMETABLE_CACHE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function setCachedTimetable(data) {
+    try {
+      localStorage.setItem(TIMETABLE_CACHE_KEY, JSON.stringify(data));
+    } catch {
+      /* localStorage unavailable — just skip the cache */
+    }
+  }
+
+  // Stale-while-revalidate, client-side: every page load otherwise re-pays
+  // the live sheet's fetch+parse cost (well over a second — see README) even
+  // though the data rarely changes between visits. Shows the last-cached
+  // copy instantly (if any) via `onData(data, true)`, then fetches fresh
+  // data in the background and calls `onData(data, false)` again once it
+  // lands — so navigating between pages feels instant after the first
+  // visit instead of showing a loading state every time.
+  async function loadTimetable({ fresh, onData, onError }) {
+    const cached = fresh ? null : getCachedTimetable();
+    if (cached) onData(cached, true);
+    try {
+      const data = await fetchTimetable(fresh);
+      setCachedTimetable(data);
+      onData(data, false);
+    } catch (err) {
+      if (!cached) onError(err);
+      // else: already showing cached data — a failed background refresh
+      // isn't worth surfacing as an error.
+    }
+  }
+
   function isHappeningNow(ev, dateIso) {
     if (!ev.start || !ev.end) return false;
     if (dateIso && dateIso !== todayISO()) return false;
@@ -230,7 +270,7 @@
   window.PCLL = {
     COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow,
-    eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable,
+    eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings,
   };
 })();

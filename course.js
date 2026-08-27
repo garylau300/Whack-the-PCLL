@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, fetchTimetable } = window.PCLL;
+  const { ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, initTheme, loadTimetable } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
   const code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
@@ -81,16 +81,20 @@
       $('status').textContent = 'No course specified.';
       return;
     }
-    try {
-      const data = await fetchTimetable();
-      renderCourse(data);
-      setSyncStatus(`Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
-    } catch (err) {
-      $('status').hidden = false;
-      $('status').className = 'status error';
-      $('status').textContent = 'Could not load this course: ' + err.message;
-      setSyncStatus('Sync failed');
-    }
+    await loadTimetable({
+      onData: (data, isStale) => {
+        renderCourse(data);
+        setSyncStatus(isStale
+          ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
+          : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
+      },
+      onError: (err) => {
+        $('status').hidden = false;
+        $('status').className = 'status error';
+        $('status').textContent = 'Could not load this course: ' + err.message;
+        setSyncStatus('Sync failed');
+      },
+    });
   }
 
   initTheme($('themeBtn'));

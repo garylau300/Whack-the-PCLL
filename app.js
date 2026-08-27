@@ -3,13 +3,16 @@
 
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, eventCardHtml, initTheme,
-    fetchTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
+    loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
   } = window.PCLL;
 
   let timetable = null;
   let activeWeekIndex = 0;
   let activeDayIndex = 0;
   let viewMode = 'grid'; // 'grid' | 'day'
+  let navInitialized = false; // only set the initial week once — a background
+  // stale-while-revalidate refresh shouldn't jump the user back to "today's
+  // week" if they've since navigated elsewhere
 
   const $ = (id) => document.getElementById(id);
 
@@ -96,20 +99,28 @@
   }
 
   async function load(fresh) {
-    try {
-      setSyncStatus(fresh ? 'Refreshing…' : 'Syncing…');
-      timetable = await fetchTimetable(fresh);
-      $('status').hidden = true;
-      activeWeekIndex = pickCurrentWeekIndex(timetable.weeks);
-      render();
-      const synced = new Date(timetable.meta.syncedAt);
-      setSyncStatus(`Last synced ${synced.toLocaleString()}`);
-    } catch (err) {
-      $('status').hidden = false;
-      $('status').className = 'status error';
-      $('status').textContent = 'Could not load the timetable: ' + err.message;
-      setSyncStatus('Sync failed');
-    }
+    setSyncStatus(fresh ? 'Refreshing…' : 'Syncing…');
+    await loadTimetable({
+      fresh,
+      onData: (data, isStale) => {
+        timetable = data;
+        $('status').hidden = true;
+        if (!navInitialized) {
+          activeWeekIndex = pickCurrentWeekIndex(timetable.weeks);
+          navInitialized = true;
+        }
+        render();
+        setSyncStatus(isStale
+          ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
+          : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
+      },
+      onError: (err) => {
+        $('status').hidden = false;
+        $('status').className = 'status error';
+        $('status').textContent = 'Could not load the timetable: ' + err.message;
+        setSyncStatus('Sync failed');
+      },
+    });
   }
 
   function init() {

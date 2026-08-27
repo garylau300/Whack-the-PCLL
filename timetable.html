@@ -6,7 +6,9 @@
   <title>Timetable — Whack the PCLL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="styles.css" />
   <script src="common.js"></script>
 </head>
@@ -15,7 +17,6 @@
     <div class="topbar-title">
       <a href="index.html" class="icon-btn back-link" aria-label="Back to dashboard">←</a>
       <h1>Timetable</h1>
-      <span class="group-badge">Group 11</span>
     </div>
     <div class="topbar-controls">
       <button id="themeBtn" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode">🌙</button>
@@ -38,7 +39,7 @@
   </div>
 
   <main id="app">
-    <div id="status" class="status">Loading timetable…</div>
+    <div id="status" class="status"><div class="spinner"></div>Loading timetable…</div>
     <div id="weekGrid" class="week-grid" hidden></div>
     <div id="dayView" class="day-view" hidden>
       <div class="day-view-nav">

@@ -20,9 +20,17 @@ stale, no redeploy needed when the sheet changes.
   session listed for other groups (not Group 11's) is still surfaced — with
   the full listing — but tagged `scope: "other-group"` so the UI can grey it
   out instead of hiding it.
-- The response is cached at the edge for ~6 hours (`stale-while-revalidate`),
-  so it stays fast while self-updating in the background. Use the "Refresh
-  now" button (or `/api/timetable?fresh=1`) to force an immediate re-sync.
+- The response is cached at the edge for ~6 hours (`Cache-Control:
+  s-maxage`/`stale-while-revalidate`), and `api/timetable.js` also keeps an
+  in-memory copy (with the same 6h TTL) so a warm serverless container
+  answers repeat requests without re-fetching/re-parsing the sheet at all —
+  and falls back to serving that last-known-good copy if a fetch to Google
+  Sheets ever fails, rather than erroring out. On the client, `common.js`'s
+  `loadTimetable()` mirrors the same pattern in `localStorage`: cached data
+  (if any) renders instantly, then a background fetch quietly upgrades it —
+  so navigating between pages, or reopening the site, never shows a blank
+  loading screen once it's been synced once. Use the "Refresh now" button (or
+  `/api/timetable?fresh=1`) to force an immediate re-sync end-to-end.
 - **`index.html`** (`dashboard.js`) is the homepage: today's own classes,
   a rule-based "what to do today" checklist, this week's pre-recorded videos
   (cross-referencing each one's "before LGx/SGx" hint against this week's
@@ -50,7 +58,14 @@ stale, no redeploy needed when the sheet changes.
 - Shared rendering (event cards, date/time formatting, the elective-filter
   settings panel, the light/dark toggle) lives in `common.js`, loaded by
   every page. Light is the default theme; dark only applies once a visitor
-  explicitly toggles it (persisted per-browser).
+  explicitly toggles it (persisted per-browser). There's no "Group 11" badge
+  in the UI — it's implicit throughout (the whole site is built for that one
+  group), so showing it back to the user added nothing.
+- The Google Fonts stylesheet is loaded non-render-blocking (`media="print"`
+  swapped to `all` on load, with a `<noscript>` fallback) so a slow or
+  unreachable fonts CDN can't delay first paint; each page's `#status`
+  placeholder also shows a small CSS spinner instead of bare text while the
+  first sync is in flight.
 - `legalSkills.js` is a static, hand-written set of legal-skills tips (a
   Socratic question, an IRAC-structure reminder, a practical skill tip per
   PCLL core course), modeled on the categories in Anthropic's

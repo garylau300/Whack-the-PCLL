@@ -6,7 +6,9 @@
   <title>Whack the PCLL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="styles.css" />
   <script src="common.js"></script>
   <script src="legalSkills.js"></script>
@@ -15,7 +17,6 @@
   <header class="topbar">
     <div class="topbar-title">
       <h1>Whack the PCLL</h1>
-      <span class="group-badge">Group 11</span>
     </div>
     <div class="topbar-controls">
       <a href="timetable.html" class="icon-btn" title="Full timetable" aria-label="Full timetable">🗓</a>
@@ -25,7 +26,7 @@
   </header>
 
   <main id="app" class="dashboard">
-    <div id="status" class="status">Loading dashboard…</div>
+    <div id="status" class="status"><div class="spinner"></div>Loading dashboard…</div>
 
     <div id="dashboardBody" hidden>
       <section class="hero" id="hero"></section>
