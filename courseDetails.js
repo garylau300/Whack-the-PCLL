@@ -279,32 +279,108 @@ window.COURSE_DETAILS = {
         fullNotes: [
           {
             heading: 'Course objectives & design strategy',
-            body: "The course covers (1) civil procedure rules and (2) civil litigation drafting/problem-solving skills, taught through LGs, SGs, video recordings, and review/Q&A sessions. Procedure rules are taught via LG in week one and practised via SG later; students learn interviewing skills and draft an LBA early on. Drafting of pleadings, affidavits, summonses and orders is taught progressively later in the course. Two realistic case files (Contract and Negligence) run throughout so students see how procedural rules and skills apply at different stages of real litigation — available on Moodle from the start of the course.",
+            bullets: [
+              'Two strands taught together: (1) civil procedure rules, and (2) civil litigation drafting/problem-solving skills.',
+              'Delivered through LGs, SGs, video recordings, and review/Q&A sessions.',
+              'Procedure rules: taught via LG in week one, then practised via SG later.',
+              'Skills sequencing: interviewing and drafting an LBA are taught early; drafting of pleadings, affidavits, summonses and orders comes progressively later.',
+              'Two realistic case files (Contract and Negligence) run throughout the course so you see how procedural rules and skills apply at different stages of real litigation — both available on Moodle from day one.',
+            ],
           },
           {
             heading: '5-level case analysis model',
-            body: 'A structured approach to analysing facts and problems: Level 1 — area of law; Level 2 — cause of action/remedy; Level 3 — legal ingredients supporting it; Level 4 — material facts for each ingredient; Level 5 — evidence (and method of proof) for each material fact. Useful for assessing merits, deciding what further evidence is needed, drafting pleadings (Level 4) and preparing affidavits (Level 5).',
+            table: {
+              headers: ['Level', 'Focus', 'Why it matters'],
+              rows: [
+                ['1', 'Area of law', 'Frames which body of law governs the problem'],
+                ['2', 'Cause of action / remedy', 'What the client can actually claim'],
+                ['3', 'Legal ingredients', 'The elements that support the cause of action'],
+                ['4', 'Material facts', 'The facts needed for each ingredient — drives pleadings'],
+                ['5', 'Evidence', 'What proves each material fact, and how — drives affidavits'],
+              ],
+            },
+            bullets: ['Useful for assessing merits, deciding what further evidence is needed, drafting pleadings (Level 4), and preparing affidavits (Level 5).'],
           },
           {
             heading: 'Conducting claims, LBAs, interviewing, pleadings, affidavits, summonses',
-            body: "Students first get the overall litigation picture via LG (plus textbook reading), then learn to draft an LBA in groups as SG homework; learn interviewing in LG2 with a compulsory interviewing exercise at SG2 (up to 5% of the aggregate, happens once, marks carry to any supplementary exam); learn pleadings using the 5-level model rather than precedents, with tutor feedback and sample drafts at SG; learn affidavit drafting similarly, with the first affidavit reviewed orally and the second in individual written feedback; and draft summonses/orders alongside affidavits once those skills are covered.",
+            table: {
+              headers: ['Stage', 'What you learn', 'Format / notes'],
+              rows: [
+                ['LG', 'The overall litigation picture', 'Plus textbook reading'],
+                ['SG homework', 'Draft a Letter Before Action, in groups', ''],
+                ['LG2 + SG2', 'Interviewing skills', 'Compulsory interviewing exercise at SG2 — up to 5% of the aggregate, happens once, marks carry to any supplementary exam'],
+                ['SG', 'Draft pleadings using the 5-level model, not precedents', 'Tutor feedback plus sample drafts provided'],
+                ['SG', 'Draft affidavits', 'First affidavit: oral review. Second: individual written feedback'],
+                ['SG', 'Draft summonses / orders', 'Taught alongside affidavits, once affidavit skills are covered'],
+              ],
+            },
           },
           {
             heading: 'Professionalism & written assessments',
-            body: 'Students are expected to be punctual, treat others with courtesy, prepare thoroughly, and notify their tutor in advance of any inability to attend an SG or submit on time. Written assessment is via two open-book term-end papers: Knowledge (47.5%, problem questions on procedure/case analysis) and Drafting (47.5%, drafting/planning questions). A pass requires at least 50% in aggregate across both papers plus the interviewing exercise — not necessarily 50% on each paper. Re-examination (if allowed) only requires re-sitting a paper scored below 50%, with the other paper’s mark carried over.',
+            bulletGroups: [
+              {
+                heading: 'Conduct expected of you',
+                items: [
+                  'Be punctual, treat others with courtesy, prepare thoroughly.',
+                  'Notify your tutor in advance of any inability to attend an SG or submit on time.',
+                ],
+              },
+            ],
+            table: {
+              headers: ['Component', 'Weight', 'Covers'],
+              rows: [
+                ['Knowledge paper', '47.5%', 'Problem questions on procedure & case analysis'],
+                ['Drafting paper', '47.5%', 'Drafting / planning questions'],
+                ['Interviewing exercise', 'up to 5%', 'Standardised Client Interview — happens once, see SG2'],
+              ],
+            },
+            bullets: [
+              'Pass mark: at least 50% in aggregate across both papers plus the interviewing exercise — not necessarily 50% on each paper individually.',
+              'Re-examination (if allowed) only requires re-sitting a paper scored below 50%; the other paper’s mark carries over.',
+            ],
           },
           {
             heading: 'Civil Advocacy split, materials & submission requirements',
-            body: 'PCLL8010 = 70% Civil Litigation + 30% Civil Advocacy. Course materials (Case Files, LG outlines, SG activity plans) are on Moodle and set out preparation required before each class. Submissions are soft copy via Moodle, name and group number in the top-left corner, with a completed pro forma declaration as the front page of the same document — assignments without it are not marked.',
+            bullets: [
+              'PCLL8010 = 70% Civil Litigation + 30% Civil Advocacy.',
+              'Course materials (Case Files, LG outlines, SG activity plans) are on Moodle and set out what to prepare before each class.',
+              'Submissions: soft copy via Moodle, with name and group number in the top-left corner.',
+              'A completed pro forma declaration must be the front page of the same document — assignments without it are not marked.',
+            ],
           },
           {
             heading: 'Part 1B — PG-FLAP explained in depth',
-            body: "Problem solving is central to legal competence — solving problems satisfactorily, lawfully, ethically, drawing on knowledge, skills and professional attitude. Two basic types: Blocking Conflict (foreseeing and avoiding conflict, non-contentious) vs Playing Out Conflict (conflict already exists, contentious, litigation anticipated). The 5-stage Process Model: (1) Problem/goal identification — what does the client want/need, what's the obstacle; (2) Fact investigation — via interviews, correspondence, document analysis, iterating as new legal issues surface; (3) Legal issue identification and assessment — research then assess merits; (4) Advice and decision-making — develop and evaluate options (sue/settle/mediate/negotiate/withdraw/etc.), weigh non-legal factors, choose client-centred or lawyer-centred; (5) Planning and implementation — concrete action plan: who does what, when, how.",
+            bullets: [
+              'Problem solving is central to legal competence: solving problems satisfactorily, lawfully, ethically — drawing on knowledge, skills and professional attitude.',
+              'Two basic types of legal problem: Blocking Conflict (foreseeing and avoiding conflict — non-contentious) vs Playing Out Conflict (conflict already exists, contentious, litigation anticipated).',
+            ],
+            diagram: {
+              title: 'PG-FLAP — the 5-stage process model',
+              steps: [
+                { label: 'Problem / goal identification', detail: "What does the client want or need? What's the obstacle?" },
+                { label: 'Fact investigation', detail: 'Via interviews, correspondence, document analysis — iterating as new legal issues surface.' },
+                { label: 'Legal issue identification & assessment', detail: 'Research the issues, then assess the merits.' },
+                { label: 'Advice & decision-making', detail: 'Develop and evaluate options (sue / settle / mediate / negotiate / withdraw); weigh non-legal factors; client-centred vs lawyer-centred.' },
+                { label: 'Planning & implementation', detail: 'A concrete action plan: who does what, when, how.' },
+              ],
+            },
           },
           {
             heading: 'Letter Before Action — Q&A',
-            body: 'No general rule requires sending an LBA before proceedings (exception: personal injury, PD18.1) — but the court’s costs discretion (O.62 rr.5(1)(e)/5(2)(d)) can penalise unreasonable pre-action conduct, so advise sending one unless there’s a risk the defendant will dissipate assets. Anyone can send one; no standard form or specific content requirements (see the Skills Guide); no fixed response time, though 14-28 days is reasonable, and no formal consequence for silence. Purposes: save costs if liability isn’t disputed or settlement is possible, iron out issues, and test the waters.',
+            qa: [
+              { q: 'Is an LBA legally required before starting proceedings?', a: 'No general rule requires it — the exception is personal injury claims (PD18.1). But the court’s costs discretion (O.62 rr.5(1)(e)/5(2)(d)) can penalise unreasonable pre-action conduct, so send one unless there’s a risk the defendant will dissipate assets.' },
+              { q: 'Who can send one, and is there a required form?', a: 'Anyone can send an LBA — there is no standard form or specific content requirement (see the Skills Guide).' },
+              { q: 'Is there a fixed response time, or a consequence for silence?', a: 'No fixed response time, though 14–28 days is reasonable; there is no formal consequence for the recipient staying silent.' },
+              { q: 'What is it actually for?', a: 'To save costs if liability isn’t disputed or settlement is possible, iron out issues, and test the waters.' },
+            ],
           },
+        ],
+        cloze: [
+          { text: 'The 5-stage process for legal problem solving is known by the acronym {{PG-FLAP}}: Problem/goal identification, Fact investigation, Legal issue identification and assessment, Advice and decision-making, Planning and implementation.' },
+          { text: 'The two basic types of legal problem are {{Blocking Conflict}} (non-contentious — foreseeing and avoiding conflict) and {{Playing Out Conflict}} (contentious — conflict already exists).' },
+          { text: 'In the 5-level case analysis model, Level {{4}} is the material facts for each legal ingredient (drives pleadings), and Level {{5}} is the evidence for each material fact (drives affidavits).' },
+          { text: 'An LBA is not generally required before starting proceedings, except for {{personal injury}} claims under {{PD18.1}}.' },
+          { text: 'A party who unreasonably skips an LBA risks an adverse costs order under {{O.62 rr.5(1)(e)/5(2)(d)}}.' },
         ],
         referenceIds: ['proFormaDeclaration', 'skillsGuideLBA'],
       },
@@ -333,22 +409,38 @@ window.COURSE_DETAILS = {
           {
             id: 'ex1',
             title: 'Exercise 1 — Civil Procedure Application (prep questions)',
-            questions: [
-              'Commencement of proceedings and jurisdiction:',
-              'In which court should Greenhouse commence proceedings if the claimed loss is HK$571,300? Provide your reasons.',
-              'What originating process should be used to commence the claim, and why?',
-              'Who would be the appropriate plaintiff: Greenhouse Effective Petroleum Company Limited or its sister company?',
-              'Can the defendants be sued jointly? Explain the basis of any potential joint liability.',
-              'Documents and pleadings:',
-              'When a Writ is issued, what must it be indorsed with?',
-              "What court documents should be filed to preserve Greenhouse's position if the limitation period is close to expiry but investigations are ongoing?",
-              'Standing and Evidence:',
-              "What evidence would be required to support Greenhouse's standing to sue for the repair invoice issued by its sister company?",
-              'What is the function of the written board resolution included in the case file?',
-              'Strategic and Practical Considerations:',
-              'If Inn Convenient is insured, what are the implications for the conduct of proceedings?',
-              "Why did the solicitors consider whether Inn Convenient and Michael Shu were 'worth suing' before advising their client to proceed?",
-              'Why was it important to explain the risks of cost recovery even if Greenhouse succeeded in court? What practice direction/procedural rule justifies this?',
+            questionGroups: [
+              {
+                heading: 'Commencement of proceedings and jurisdiction',
+                questions: [
+                  'In which court should Greenhouse commence proceedings if the claimed loss is HK$571,300? Provide your reasons.',
+                  'What originating process should be used to commence the claim, and why?',
+                  'Who would be the appropriate plaintiff: Greenhouse Effective Petroleum Company Limited or its sister company?',
+                  'Can the defendants be sued jointly? Explain the basis of any potential joint liability.',
+                ],
+              },
+              {
+                heading: 'Documents and pleadings',
+                questions: [
+                  'When a Writ is issued, what must it be indorsed with?',
+                  "What court documents should be filed to preserve Greenhouse's position if the limitation period is close to expiry but investigations are ongoing?",
+                ],
+              },
+              {
+                heading: 'Standing and Evidence',
+                questions: [
+                  "What evidence would be required to support Greenhouse's standing to sue for the repair invoice issued by its sister company?",
+                  'What is the function of the written board resolution included in the case file?',
+                ],
+              },
+              {
+                heading: 'Strategic and Practical Considerations',
+                questions: [
+                  'If Inn Convenient is insured, what are the implications for the conduct of proceedings?',
+                  "Why did the solicitors consider whether Inn Convenient and Michael Shu were 'worth suing' before advising their client to proceed?",
+                  'Why was it important to explain the risks of cost recovery even if Greenhouse succeeded in court? What practice direction/procedural rule justifies this?',
+                ],
+              },
             ],
           },
         ],
@@ -356,6 +448,11 @@ window.COURSE_DETAILS = {
           { title: 'Exercise 1 — Civil Procedure Application: sub-groups of 2-3 discuss selected questions; tutor role-plays the supervising partner/client and directs discussion to jurisdiction, standing, limitation, pleadings, service, evidence and strategy.' },
           { title: 'Exercise 2 — Drafting a Letter Before Action: two drafting sub-groups, one addressed to Inn Convenient Company Limited (vehicle owner), the other to Michael Shu (driver). One representative per sub-group submits the final draft with a completed declaration via Moodle.', deadlineId: 'PCLL8010-hw-sg1' },
           { title: 'Exercise 3 — Complete and hand in the Undertaking Form for the Interviewing Exercise (Appendix D).', deadlineId: 'PCLL8010-undertaking' },
+        ],
+        cloze: [
+          { text: "SG1's skill focus is {{Problem Solving & Drafting Letter Before Action}}." },
+          { text: 'Exercise 2 has each drafting sub-group submit its final LBA draft with a completed {{declaration}} via Moodle.' },
+          { text: 'The Undertaking Form for the Interviewing Exercise must reach Mr Frederick Lo by {{5:00pm Friday 11 September 2026}} if not handed to your tutor during SG1.' },
         ],
         referenceIds: ['lifecycleReference', 'lbaStudentGuide', 'skillsGuideLBA', 'undertakingForm'],
       },
@@ -387,6 +484,11 @@ window.COURSE_DETAILS = {
         duringAfter: [
           'During: ask the questions needed to represent Kenny Man in this new matter; the standardised client completes a feedback form based on the Standardised Client Interviewing Criteria.',
           'After: honour the signed Undertaking — do not discuss or share the session (or your notes) with anyone until after 10:00pm on 18 September 2026. Written feedback follows in late November/early December.',
+        ],
+        cloze: [
+          { text: 'The signed Undertaking means you must not discuss or share the interviewing session (or your notes) with anyone until after {{10:00pm on 18 September 2026}}.' },
+          { text: 'A slot-swap request must reach all 3 Course Co-ordinators AND {{Mr Frederick Lo}}, copying the other student, by {{5:00pm Tuesday 15 September 2026}}.' },
+          { text: 'The Standardised Client Interview is worth up to {{5%}} of the Civil Litigation aggregate, and only happens {{once}}.' },
         ],
         referenceIds: ['undertakingForm'],
         assessmentRef: 'assessment-interview',

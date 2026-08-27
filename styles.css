@@ -500,6 +500,59 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .reference-block h4 { margin: 0 0 6px; font-size: 0.85rem; }
 .reference-section { margin-bottom: 8px; }
 
+/* A fullNotes entry's table/bulletGroups sub-headings sit one level below
+   its own <h3>. */
+.session-detail-body h4, .reference-block h4 { font-size: 0.8rem; font-weight: 700; margin: 10px 0 4px; }
+.note-table { margin: 6px 0; font-size: 0.8rem; white-space: normal; }
+.note-table th, .note-table td { white-space: normal; }
+
+/* Q&A pairs (fullNotes' `qa` shape) — a definition list with the question
+   bold and the answer indented underneath it. */
+.qa-list { margin: 6px 0; }
+.qa-list dt { font-weight: 700; margin-top: 8px; }
+.qa-list dt:first-child { margin-top: 0; }
+.qa-list dd { margin: 2px 0 0; color: var(--text-muted); }
+
+/* A numbered step flow (fullNotes' `diagram` shape) — wraps to a vertical
+   stack on narrow screens since it's just a wrapping flex row. */
+.process-diagram-title { font-weight: 600; font-size: 0.82rem; margin: 6px 0; }
+.process-diagram { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin: 8px 0 14px; }
+.process-step {
+  flex: 1 1 150px; min-width: 130px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px; font-size: 0.78rem;
+}
+.process-step-badge {
+  display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700; margin-bottom: 6px;
+}
+.process-step-label { font-weight: 700; margin-bottom: 2px; }
+.process-step-detail { color: var(--text-muted); }
+.process-arrow { display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 1.1rem; flex: 0 0 auto; }
+@media (max-width: 640px) {
+  .process-arrow { width: 100%; transform: rotate(90deg); }
+}
+
+/* Cloze "test yourself" section — each blank is a real <button> so it's
+   keyboard-reachable and has a visible focus ring; .cloze-answer is
+   revealed (and .cloze-hidden hidden) once the blank is toggled/clicked. */
+.cloze-section { margin: 14px 0; }
+.cloze-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.cloze-head h3 { margin: 0; }
+.cloze-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.cloze-item {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 12px; font-size: 0.85rem; line-height: 1.7;
+}
+.cloze-blank {
+  display: inline-flex; align-items: center; border: none; font: inherit; font-weight: 700; cursor: pointer;
+  border-radius: 4px; padding: 0 6px; margin: 0 1px;
+  background: color-mix(in srgb, var(--accent-2) 30%, var(--surface)); color: var(--accent-2-text);
+}
+.cloze-blank .cloze-answer { display: none; }
+.cloze-blank.revealed .cloze-hidden { display: none; }
+.cloze-blank.revealed .cloze-answer { display: inline; }
+.cloze-blank.revealed { background: color-mix(in srgb, var(--now-line) 18%, var(--surface)); color: var(--now-line-text); cursor: default; }
+
 /* .session-meta reuses the .field/.field-label/.field-value shape already
    defined for .event-card, outside of a card context. */
 .session-meta .field, .attendance-info .field { display: flex; gap: 5px; color: var(--text); margin-bottom: 2px; }

@@ -423,6 +423,79 @@
     return deadlineId && details && (details.deadlines || []).find((d) => d.id === deadlineId);
   }
 
+  // Renders a numbered step-by-step flow (e.g. a 5-stage process model) as a
+  // small horizontal diagram — wraps to a vertical stack on narrow screens
+  // via CSS flex-wrap, no chart library needed.
+  function processDiagramHtml(diagram) {
+    if (!diagram || !diagram.steps || !diagram.steps.length) return '';
+    const title = diagram.title ? `<p class="process-diagram-title">${escapeHtml(diagram.title)}</p>` : '';
+    const steps = diagram.steps.map((s, i) => `
+      <div class="process-step">
+        <div class="process-step-badge">${i + 1}</div>
+        <div class="process-step-label">${escapeHtml(s.label)}</div>
+        ${s.detail ? `<div class="process-step-detail">${escapeHtml(s.detail)}</div>` : ''}
+      </div>${i < diagram.steps.length - 1 ? '<div class="process-arrow" aria-hidden="true">&#8594;</div>' : ''}`).join('');
+    return `${title}<div class="process-diagram">${steps}</div>`;
+  }
+
+  // One `fullNotes` entry can mix any of these structured shapes alongside
+  // (or instead of) a plain `body` paragraph — lets courseDetails.js pick
+  // whichever shape (bullets/table/diagram/Q&A) actually fits that note's
+  // content instead of forcing everything into prose.
+  function fullNoteBodyHtml(n) {
+    let html = '';
+    if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
+    if (n.bullets) html += `<ul>${n.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+    if (n.bulletGroups) {
+      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`).join('');
+    }
+    if (n.table) {
+      html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    }
+    if (n.diagram) html += processDiagramHtml(n.diagram);
+    if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${escapeHtml(p.q)}</dt><dd>${escapeHtml(p.a)}</dd>`).join('')}</dl>`;
+    return html;
+  }
+
+  // Parses `{{answer}}` markers out of a cloze item's template text into a
+  // click-to-reveal blank — a small memory-testing aid for a session's key
+  // legal principles, sitting alongside (not replacing) the full prose.
+  function clozeItemHtml(item) {
+    const parts = item.text.split(/(\{\{.+?\}\})/g);
+    return `<li class="cloze-item">${parts.map((part) => {
+      const m = /^\{\{(.+)\}\}$/.exec(part);
+      if (!m) return escapeHtml(part);
+      return `<button type="button" class="cloze-blank"><span class="cloze-hidden" aria-hidden="true">?</span><span class="cloze-answer">${escapeHtml(m[1])}</span></button>`;
+    }).join('')}</li>`;
+  }
+
+  function clozeSectionHtml(items) {
+    if (!items || !items.length) return '';
+    return `<div class="cloze-section">
+      <div class="cloze-head"><h3>Key Principles — Test Yourself</h3><button type="button" class="link-btn cloze-toggle-all">Reveal all</button></div>
+      <ul class="cloze-list">${items.map(clozeItemHtml).join('')}</ul>
+    </div>`;
+  }
+
+  // Delegated click handling for a rendered clozeSectionHtml() block — each
+  // blank toggles independently; the "Reveal all" button flips every blank
+  // in the section together and relabels itself based on current state.
+  function wireClozeSection(container) {
+    const section = container.querySelector('.cloze-section');
+    if (!section) return;
+    section.addEventListener('click', (e) => {
+      const toggleAll = e.target.closest('.cloze-toggle-all');
+      if (toggleAll) {
+        const anyHidden = !!section.querySelector('.cloze-blank:not(.revealed)');
+        section.querySelectorAll('.cloze-blank').forEach((b) => b.classList.toggle('revealed', anyHidden));
+        toggleAll.textContent = anyHidden ? 'Hide all' : 'Reveal all';
+        return;
+      }
+      const blank = e.target.closest('.cloze-blank');
+      if (blank) blank.classList.toggle('revealed');
+    });
+  }
+
   // Full write-up for one session (lecture outline, prep checklist, fact
   // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries —
   // shared so the course page's session table (which links out to
@@ -482,15 +555,17 @@
         <details class="detail-content"><summary>${escapeHtml(ex.title)}</summary>
           ${ex.factPattern ? `<p>${escapeHtml(ex.factPattern)}</p>` : ''}
           ${ex.questions ? `<ul>${ex.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>` : ''}
+          ${ex.questionGroups ? ex.questionGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>`).join('') : ''}
         </details>`).join('');
     }
 
     html += listSection('Key Takeaways', sessionDetail.keyTakeaways);
     html += listSection('During / After', sessionDetail.duringAfter);
+    html += clozeSectionHtml(sessionDetail.cloze);
 
     if (sessionDetail.fullNotes) {
       html += `<details class="detail-content"><summary>Full Lecture Notes</summary>${sessionDetail.fullNotes.map((n) => `
-        <details><summary>${escapeHtml(n.heading)}</summary><p>${escapeHtml(n.body)}</p></details>`).join('')}</details>`;
+        <details><summary>${escapeHtml(n.heading)}</summary>${fullNoteBodyHtml(n)}</details>`).join('')}</details>`;
     }
 
     if (sessionDetail.referenceIds && sessionDetail.referenceIds.length) {
@@ -516,16 +591,20 @@
   }
 
   // After bodyEl.innerHTML has been set from sessionDetailHtml(), wires up
-  // the prep checklist it may contain (the [data-prep-checklist]
-  // placeholder) — shared so course.js and session.js don't each duplicate
-  // this glue.
+  // whatever interactive pieces it contains — the prep checklist (the
+  // [data-prep-checklist] placeholder) and the cloze "test yourself"
+  // section — shared so course.js and session.js don't each duplicate this
+  // glue.
   function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
-    if (!sessionDetail || !sessionDetail.prepChecklist) return;
-    const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
-    const container = bodyEl.querySelector('[data-prep-checklist]');
-    const render = () => renderPrepChecklist(container, sessionDetail, prepKey);
-    render();
-    wireChecklist(container, prepKey, render);
+    if (!sessionDetail) return;
+    if (sessionDetail.prepChecklist) {
+      const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
+      const container = bodyEl.querySelector('[data-prep-checklist]');
+      const render = () => renderPrepChecklist(container, sessionDetail, prepKey);
+      render();
+      wireChecklist(container, prepKey, render);
+    }
+    if (sessionDetail.cloze) wireClozeSection(bodyEl);
   }
 
   // opts: { dateIso, linkable = true, dateHeading }
