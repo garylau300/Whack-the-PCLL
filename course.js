@@ -119,6 +119,7 @@
     if (!details || !details.materials || !details.materials.length) { section.hidden = true; return; }
     section.hidden = false;
     $('materialsList').innerHTML = details.materials.map((m) => `<li>${escapeHtml(m)}</li>`).join('');
+    $('materialsNotesList').innerHTML = (details.materialsNotes || []).map((m) => `<li class="muted">${escapeHtml(m)}</li>`).join('');
     $('aiPolicyText').textContent = details.aiPolicy || '';
   }
 

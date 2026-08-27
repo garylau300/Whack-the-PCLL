@@ -413,6 +413,7 @@
       body += ref.sections.map((s) => `<div class="reference-section"><strong>${escapeHtml(s.heading)}</strong><ul>${s.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul></div>`).join('');
     } else {
       if (ref.body) body += `<p>${escapeHtml(ref.body)}</p>`;
+      if (ref.bullets) body += `<ul>${ref.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
       if (ref.checkboxes) body += `<ul>${ref.checkboxes.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}</ul>`;
       if (ref.fields) body += `<p class="muted">Fields: ${ref.fields.map(escapeHtml).join(', ')}</p>`;
     }
@@ -510,6 +511,7 @@
       sessionDetail.time ? field('Time', sessionDetail.time) : '',
       sessionDetail.mode ? field('Format', sessionDetail.mode) : '',
       sessionDetail.skills ? field('Skills', sessionDetail.skills) : '',
+      sessionDetail.authors && sessionDetail.authors.length ? field('Author(s)', sessionDetail.authors.join(', ')) : '',
     ].join('') + '</div>';
 
     for (const p of partsToShow) {
