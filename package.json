@@ -1,0 +1,20 @@
+{
+  "name": "whack-the-pcll",
+  "version": "1.0.0",
+  "description": "PCLL study portal — live interactive timetable for Group 11",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node scripts/dev-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garylau300/Whack-the-PCLL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garylau300/Whack-the-PCLL/issues"
+  },
+  "homepage": "https://github.com/garylau300/Whack-the-PCLL#readme"
+}

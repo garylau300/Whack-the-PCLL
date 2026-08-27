@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PCLL Timetable — Group 11</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-title">
+      <h1>PCLL Timetable</h1>
+      <span class="group-badge">Group 11</span>
+    </div>
+    <div class="topbar-controls">
+      <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+    </div>
+  </header>
+
+  <nav class="week-nav" id="weekNav" aria-label="Week selector">
+    <button id="prevWeek" class="nav-arrow" aria-label="Previous week">‹</button>
+    <div class="week-scroll" id="weekScroll"></div>
+    <button id="nextWeek" class="nav-arrow" aria-label="Next week">›</button>
+  </nav>
+
+  <div class="view-toolbar">
+    <div class="week-range" id="weekRange"></div>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button id="gridViewBtn" class="toggle-btn active">Week</button>
+      <button id="dayViewBtn" class="toggle-btn">Day</button>
+    </div>
+  </div>
+
+  <main id="app">
+    <div id="status" class="status">Loading timetable…</div>
+    <div id="weekGrid" class="week-grid" hidden></div>
+    <div id="dayView" class="day-view" hidden>
+      <div class="day-view-nav">
+        <button id="prevDay" class="nav-arrow">‹</button>
+        <div id="dayViewLabel" class="day-view-label"></div>
+        <button id="nextDay" class="nav-arrow">›</button>
+      </div>
+      <div id="dayViewBody" class="day-view-body"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span id="syncStatus">—</span>
+    <button id="refreshBtn" class="link-btn">Refresh now</button>
+  </footer>
+
+  <div id="settingsPanel" class="settings-panel" hidden>
+    <div class="settings-card">
+      <div class="settings-head">
+        <h2>Settings</h2>
+        <button id="closeSettings" class="icon-btn" aria-label="Close">✕</button>
+      </div>
+      <p class="settings-hint">
+        Once you know your 3 electives, tick them here to filter elective sessions down to just yours.
+        Everything else (core courses, your small-group sessions) always shows.
+      </p>
+      <div id="electiveList" class="elective-list"></div>
+      <p class="settings-hint small">Saved on this device only.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
