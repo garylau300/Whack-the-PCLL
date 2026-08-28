@@ -81,10 +81,19 @@ body {
   }
 }
 
+/* Three columns rather than flex + an absolutely-positioned brand: the two
+   1fr side columns are equal by definition, so the middle column (the brand)
+   is exactly centered on the bar no matter how unbalanced the left title and
+   right buttons are -- and, unlike absolute positioning, the side columns
+   still reserve real space, so a long page title can never run underneath
+   the brand. A title too long for its column wraps onto another line and
+   grows the bar's height instead of being truncated. */
 .topbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "title brand controls";
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
   padding: 12px 16px;
   background: var(--accent);
   color: white;
@@ -92,25 +101,40 @@ body {
   top: 0;
   z-index: 20;
 }
-.topbar-title { display: flex; align-items: baseline; gap: 10px; }
-.topbar h1 { font-size: 1.1rem; margin: 0; font-weight: 600; }
-/* Site brand — always shown, centered independent of how wide the
-   page-specific title/back-button (left) or icon buttons (right) are.
-   Absolutely positioned within .topbar (already a positioning context via
-   position: sticky) rather than a flex/grid column, so it stays perfectly
-   centered on the bar itself regardless of how unbalanced the left/right
-   content is. On index.html (the only page with no page-specific title of
-   its own) this doubles as that page's actual <h1> — every other page
-   keeps its own dynamic <h1> (Timetable/Course/session title/etc.) as the
-   sole heading, and renders the brand as a plain aria-hidden <span>
-   instead, so there's still exactly one real heading per page. The
-   `.topbar .topbar-brand` (rather than `.topbar-brand` alone) selector is
-   needed to outrank the `.topbar h1` rule above when the brand IS an h1. */
+.topbar-title {
+  grid-area: title;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+.topbar-controls {
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: end;
+}
+/* min-width: 0 lets the h1 shrink below its longest word inside the flex
+   row, so it wraps within the column instead of forcing the column wider
+   (which would push the brand off-centre). */
+.topbar h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  min-width: 0;
+}
+/* Site brand — always shown, and always the bar's centre grid column (see
+   .topbar above for why that centres it). On index.html (the only page with
+   no page-specific title of its own) this doubles as that page's actual
+   <h1> — every other page keeps its own dynamic <h1> (Timetable/Course/
+   session title/etc.) as the sole heading, and renders the brand as a plain
+   aria-hidden <span> instead, so there's still exactly one real heading per
+   page. The `.topbar .topbar-brand` (rather than `.topbar-brand` alone)
+   selector is needed to outrank the `.topbar h1` rule above when the brand
+   IS an h1. */
 .topbar .topbar-brand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  grid-area: brand;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -119,12 +143,24 @@ body {
   font-weight: 700;
   color: #fff;
   white-space: nowrap;
-  pointer-events: none;
 }
 .topbar .topbar-brand svg {
   width: 1.1em;
   height: 1.1em;
   flex-shrink: 0;
+}
+/* Below this width the three columns leave the title too little room to wrap
+   readably (it starts breaking every couple of words), so the brand gets its
+   own centred row and the title a full-width one beneath it. */
+@media (max-width: 640px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand brand"
+      "title controls";
+    row-gap: 8px;
+  }
+  .topbar .topbar-brand { justify-self: center; }
 }
 @media (max-width: 480px) {
   .topbar .topbar-brand { font-size: 1.05rem; }

@@ -35,6 +35,23 @@
     PCLL8050: '#c53030', // Criminal Litigation
     PCLL8051: '#dd6b20', // Criminal Advocacy
     PCLL8014: '#3182ce', // Civil Advocacy
+    // Electives -- previously all fell back to DEFAULT_COLOR (flat gray),
+    // making every elective visually indistinguishable from every other and
+    // from a courseless calendar entry, on both the dashboard course list
+    // and the timetable. Each gets its own distinct hue here instead, kept
+    // out of the core courses' hues above.
+    PCLL8100: '#257e68', // Trial Advocacy
+    PCLL8101: '#23788b', // Commercial Dispute Resolution
+    PCLL8102: '#943894', // Personal Injury Litigation
+    PCLL8103: '#a13679', // Matrimonial Practice and Procedure
+    PCLL8105: '#4343b1', // Drafting Commercial Agreements
+    PCLL8107: '#224577', // Listed Companies
+    PCLL8108: '#962c46', // China Practice
+    PCLL8109: '#743d8f', // Wills, Trusts and Estate Planning
+    PCLL8110: '#5c7231', // Use of Chinese in Legal Practice
+    PCLL8111: '#246047', // Financial Regulations and Practice
+    PCLL8112: '#914930', // Employment Law and Practice
+    PCLL8113: '#776222', // Property Practice
   };
 
   const DEFAULT_COLOR = '#4a5568';

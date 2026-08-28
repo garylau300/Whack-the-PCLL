@@ -107,6 +107,20 @@ not what the code does.
   will silently see 0Γ—0. Use a `ResizeObserver` (see
   `wireLegalIssuesMindmap`) rather than a one-off call, so it self-corrects
   once the container actually gets a size.
+- **Never truncate a page title with an ellipsis — let it wrap.** The
+  `.topbar` is a three-column grid (`"title brand controls"`) so the
+  centred `.topbar-brand` always has real reserved space either side and a
+  long title can't run under it; below 640px the brand takes its own
+  centred row and the title a full-width one beneath. Keep `min-width: 0`
+  on `.topbar h1` so it wraps inside its column rather than widening the
+  column and pushing the brand off-centre.
+- **Every course gets its own colour in `COURSE_COLORS`** (`common-core.js`)
+  — electives included, not just the seven core courses. That one map is
+  the single source of truth: the dashboard course list, the timetable
+  cards and anything else colour-coded all read it via the
+  `--course-color` custom property, so they can't drift apart. Adding a
+  course means adding a hue distinct from the ones already there;
+  `DEFAULT_COLOR` is the fallback for a *courseless* calendar entry only.
 
 ## Verification workflow — do this before every commit
 
