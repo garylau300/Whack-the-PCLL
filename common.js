@@ -593,19 +593,26 @@
     return issues.map(legalIssueHtml).join('');
   }
 
-  // Positions each `.mindmap-node` button around the hub in an ellipse
-  // sized to the container's actual pixel dimensions (not percentages —
-  // that would distort the spoke angles whenever the container isn't
-  // square), and draws the connecting SVG lines to match. Below the
-  // 641px breakpoint the CSS switches `.mindmap` to a plain vertical
-  // stack (see styles.css), so positioning is skipped there — the nodes
-  // just flow normally and the spoke lines are cleared.
+  // Positions two concentric rings of `.mindmap-node` buttons around the
+  // hub, sized to the container's actual pixel dimensions (not percentages
+  // — that would distort the spoke angles whenever the container isn't
+  // square): issue nodes split the circle's 360° evenly (n issues,
+  // 360/n each), so the issue ring itself is collision-free regardless of
+  // which issues happen to be neighbours. The outer note ring's radius is
+  // then solved from the busiest issue's note count (see below) rather
+  // than fixed, since a note-heavy issue still only gets its own equal
+  // share of the circle to spread its notes across and needs to push them
+  // further out to keep them from overlapping within that fixed sector.
+  // Below the 641px breakpoint the CSS switches `.mindmap` to a plain
+  // nested vertical stack (see styles.css), so positioning is skipped
+  // there — the nodes just flow normally and the spoke lines are cleared.
   function layoutMindmap(mapEl) {
     const svg = mapEl.querySelector('.mindmap-lines');
-    const nodes = [...mapEl.querySelectorAll('.mindmap-node')];
+    const issueNodes = [...mapEl.querySelectorAll('.mindmap-node--issue')];
+    const noteNodes = [...mapEl.querySelectorAll('.mindmap-node--note')];
     const isDesktop = window.matchMedia('(min-width: 641px)').matches;
-    if (!isDesktop || !nodes.length) {
-      nodes.forEach((el) => { el.style.left = ''; el.style.top = ''; });
+    if (!isDesktop || !issueNodes.length) {
+      [...issueNodes, ...noteNodes].forEach((el) => { el.style.left = ''; el.style.top = ''; });
       svg.innerHTML = '';
       return;
     }
@@ -613,42 +620,83 @@
     if (!w || !h) return; // a hidden ancestor (e.g. a collapsed <details>) — nothing to measure yet
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
     const cx = w / 2, cy = h / 2;
-    const rx = Math.max(cx - 100, cx * 0.5);
-    const ry = Math.max(cy - 70, cy * 0.5);
-    const n = nodes.length;
+    const minDim = Math.min(w, h);
+    const n = issueNodes.length;
+    const sector = (Math.PI * 2) / n;
+    const childrenOf = issueNodes.map((_, i) => noteNodes.filter((el) => Number(el.dataset.issueIdx) === i));
+    const maxChildren = Math.max(1, ...childrenOf.map((c) => c.length));
+    const r1 = minDim * 0.27;
+    // Solve the note ring's radius from the busiest issue's note count:
+    // fitting maxChildren notes within one (equal, fixed-width) sector
+    // without overlap means pushing them out until the arc distance
+    // between adjacent notes clears their width — a denser session
+    // (more notes on its busiest issue) needs, and gets, a larger ring.
+    const spreadFrac = 0.7;
+    const spread = sector * spreadFrac;
+    const gapAngle = maxChildren > 1 ? spread / (maxChildren - 1) : spread;
+    const minGapPx = 118;
+    // Clamped below the distance to the nearest edge (less a note node's
+    // rough half-height plus margin) so a note whose angle points nearly
+    // straight up/down/sideways can't be pushed close enough to clip
+    // against the container's own overflow:hidden edge.
+    const edgeLimit = Math.min(cx, cy) - 60;
+    const r2 = Math.min(minDim * 0.47, edgeLimit, Math.max(minDim * 0.4, minGapPx / gapAngle));
     let lines = '';
-    nodes.forEach((node, i) => {
-      const angle = ((Math.PI * 2 * i) / n) - Math.PI / 2;
-      const x = cx + rx * Math.cos(angle);
-      const y = cy + ry * Math.sin(angle);
-      node.style.left = `${x}px`;
-      node.style.top = `${y}px`;
-      lines += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" class="mindmap-line" />`;
+    issueNodes.forEach((issueNode, i) => {
+      const angle = sector * i - Math.PI / 2;
+      const x1 = cx + r1 * Math.cos(angle);
+      const y1 = cy + r1 * Math.sin(angle);
+      issueNode.style.left = `${x1}px`;
+      issueNode.style.top = `${y1}px`;
+      lines += `<line x1="${cx}" y1="${cy}" x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" class="mindmap-line" />`;
+
+      const children = childrenOf[i];
+      children.forEach((noteNode, j) => {
+        const childAngle = children.length === 1 ? angle : angle - spread / 2 + (spread * j) / (children.length - 1);
+        const x2 = cx + r2 * Math.cos(childAngle);
+        const y2 = cy + r2 * Math.sin(childAngle);
+        noteNode.style.left = `${x2}px`;
+        noteNode.style.top = `${y2}px`;
+        lines += `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="mindmap-line mindmap-line--child" />`;
+      });
     });
     svg.innerHTML = lines;
   }
 
-  // A session's numbered legal issues, rendered as a hub-and-spoke mindmap
-  // instead of a stack of expandable summaries — each topic is a node
-  // around a central hub; clicking (or Enter/Space-ing) a node opens that
-  // issue's full write-up in a popup dialog rather than expanding inline.
-  // Each issue's popup content is pre-rendered into an inert <template>
-  // (cloned into the shared popup body on open) so wiring stays purely
-  // DOM-based, same spirit as wireClozeSection/wireFlashcardSection.
+  // A session's numbered legal issues, rendered as a two-level hub-and-
+  // spoke mindmap instead of a stack of expandable summaries: a central
+  // hub branches to one node per issue, and each issue node branches again
+  // to one node per note within it. Clicking (or Enter/Space-ing) an issue
+  // node opens that issue's full write-up (every note concatenated);
+  // clicking one of its note nodes opens just that note, in the same
+  // popup dialog. Every node's popup content is pre-rendered into an inert
+  // <template> (cloned into the shared popup body on open) so wiring stays
+  // purely DOM-based, same spirit as wireClozeSection/wireFlashcardSection.
   function legalIssuesMindmapHtml(issues) {
     if (!issues || !issues.length) return '';
-    const nodesHtml = issues.map((issue, i) => `<button type="button" class="mindmap-node" data-mindmap-idx="${i}" data-title="${escapeHtml(issue.number)}. ${escapeHtml(issue.heading)}" aria-haspopup="dialog">
-      <span class="mindmap-node-num" aria-hidden="true">${escapeHtml(issue.number)}</span>
-      <span class="mindmap-node-label">${escapeHtml(issue.heading)}</span>
-    </button>`).join('');
-    const templatesHtml = issues.map((issue, i) => `<template data-mindmap-body="${i}">${legalIssueNotesHtml(issue)}</template>`).join('');
+    let nodesHtml = '';
+    let templatesHtml = '';
+    issues.forEach((issue, i) => {
+      const issueTitle = `${issue.number}. ${issue.heading}`;
+      nodesHtml += `<button type="button" class="mindmap-node mindmap-node--issue" data-level="1" data-idx="${i}" data-title="${escapeHtml(issueTitle)}" aria-haspopup="dialog">
+        <span class="mindmap-node-num" aria-hidden="true">${escapeHtml(issue.number)}</span>
+        <span class="mindmap-node-label">${escapeHtml(issue.heading)}</span>
+      </button>`;
+      templatesHtml += `<template data-mindmap-body="issue-${i}">${legalIssueNotesHtml(issue)}</template>`;
+      (issue.notes || []).forEach((note, j) => {
+        nodesHtml += `<button type="button" class="mindmap-node mindmap-node--note" data-level="2" data-issue-idx="${i}" data-note-idx="${j}" data-title="${escapeHtml(issueTitle)} — ${escapeHtml(note.heading)}" aria-haspopup="dialog">
+          <span class="mindmap-node-label">${escapeHtml(note.heading)}</span>
+        </button>`;
+        templatesHtml += `<template data-mindmap-body="note-${i}-${j}"><h4>${escapeHtml(note.heading)}</h4>${fullNoteBodyHtml(note)}</template>`;
+      });
+    });
     return `<div class="mindmap-wrap">
       <div class="mindmap" data-mindmap>
         <svg class="mindmap-lines" aria-hidden="true"></svg>
         <div class="mindmap-hub"><span>Legal Issues</span></div>
         ${nodesHtml}
       </div>
-      <p class="mindmap-hint muted small">Tap a topic to open it.</p>
+      <p class="mindmap-hint muted small">Tap a topic, then a sub-topic, to open it.</p>
       <div class="mindmap-modal-panel settings-panel" data-mindmap-modal>
         <div class="settings-card mindmap-modal-card">
           <div class="settings-head">
@@ -662,10 +710,23 @@
     </div>`;
   }
 
-  // Wires one legalIssuesMindmapHtml() block: lays out the spokes (re-run
-  // on resize, since the breakpoint at 641px switches layouts entirely),
-  // and opens the shared popup dialog with the clicked node's pre-rendered
-  // template content on click.
+  // Wires one legalIssuesMindmapHtml() block: lays out both rings of
+  // spokes, and opens the shared popup dialog with the clicked node's
+  // pre-rendered template content on click — an issue node's own template
+  // (all its notes) or one of its note nodes' templates (just that note),
+  // depending on which level was clicked.
+  //
+  // Layout is driven by a ResizeObserver on the mindmap element rather
+  // than a plain one-off call plus a window `resize` listener: this
+  // function runs from wireSessionDetail, which session.js calls while
+  // `#sessionSection` is still `hidden` (it's only unhidden a few lines
+  // later, once rendering finishes) — so the container measures 0x0 at
+  // that exact moment and a one-off layoutMindmap() call would silently
+  // no-op forever, with nothing ever prompting a second attempt. A
+  // ResizeObserver instead fires as soon as the element's box actually
+  // has a size (i.e. once the section is unhidden) and again on every
+  // later resize, so it both fixes that ordering race and replaces the
+  // old resize listener in one mechanism.
   function wireLegalIssuesMindmap(container) {
     const wrap = container.querySelector('.mindmap-wrap');
     if (!wrap) return;
@@ -677,13 +738,18 @@
     const closeBtn = wrap.querySelector('.mindmap-modal-close');
     const modal = initDialog({ panel: modalPanel, dialog: modalCard, closeBtn, labelledBy: 'mindmapModalTitle' });
 
-    layoutMindmap(mapEl);
-    window.addEventListener('resize', () => layoutMindmap(mapEl));
+    if (window.ResizeObserver) {
+      new ResizeObserver(() => layoutMindmap(mapEl)).observe(mapEl);
+    } else {
+      layoutMindmap(mapEl);
+      window.addEventListener('resize', () => layoutMindmap(mapEl));
+    }
 
     mapEl.addEventListener('click', (e) => {
       const node = e.target.closest('.mindmap-node');
       if (!node) return;
-      const tpl = wrap.querySelector(`template[data-mindmap-body="${node.dataset.mindmapIdx}"]`);
+      const key = node.dataset.level === '2' ? `note-${node.dataset.issueIdx}-${node.dataset.noteIdx}` : `issue-${node.dataset.idx}`;
+      const tpl = wrap.querySelector(`template[data-mindmap-body="${key}"]`);
       modalTitle.textContent = node.dataset.title || '';
       modalBody.innerHTML = '';
       if (tpl) modalBody.appendChild(tpl.content.cloneNode(true));

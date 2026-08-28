@@ -548,20 +548,23 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
    details, e.g. Grade Descriptors) still use one collapsible per issue —
    a session's own top-level legal issues use the mindmap instead (below). */
 
-/* A session's numbered legal issues as a hub-and-spoke mindmap: a central
-   "Legal Issues" hub with one node per topic arranged in an ellipse
-   (positioned by JS — see layoutMindmap in common.js, which measures the
-   container's actual pixel size so the spoke angles aren't distorted by a
-   non-square box) and SVG lines connecting hub to node. Clicking a node
-   opens that issue's full write-up in a popup dialog instead of expanding
-   inline. Below 641px this collapses to a plain vertical stack of
-   full-width buttons (no absolute positioning, no spoke lines) — still an
-   interactive mindmap, just laid out for a narrow screen instead of a
-   two-dimensional canvas. */
+/* A session's numbered legal issues as a two-level hub-and-spoke mindmap:
+   a central "Legal Issues" hub branches to one node per issue (inner
+   ring), and each issue node branches again to one node per note within
+   it (outer ring) — positioned by JS (see layoutMindmap in common.js,
+   which measures the container's actual pixel size so the spoke angles
+   aren't distorted by a non-square box) with SVG lines hub→issue and
+   issue→note. Clicking an issue node opens its full write-up in a popup
+   dialog; clicking one of its note nodes opens just that note — either
+   way a popup, never inline expansion. Below 641px this collapses to a
+   plain nested vertical stack (issue nodes bold, their note nodes
+   indented beneath, no absolute positioning or spoke lines) — still the
+   same two-level structure and still opens the same popups, just laid
+   out for a narrow screen instead of a two-dimensional canvas. */
 .mindmap-wrap { margin: 16px 0; }
 .mindmap {
   position: relative;
-  height: 420px;
+  height: 900px;
   background: var(--bg);
   border: 1px dashed var(--border);
   border-radius: var(--radius);
@@ -569,8 +572,9 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .mindmap-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .mindmap-line { stroke: color-mix(in srgb, var(--accent) 30%, var(--border)); stroke-width: 1.5; }
+.mindmap-line--child { stroke: color-mix(in srgb, var(--accent) 16%, var(--border)); stroke-width: 1.25; }
 .mindmap-hub {
-  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3;
   width: 116px; height: 116px; border-radius: 50%;
   background: var(--accent); color: #fff;
   display: flex; align-items: center; justify-content: center; text-align: center;
@@ -578,25 +582,31 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 .mindmap-node {
-  position: absolute; transform: translate(-50%, -50%); z-index: 1;
-  max-width: 175px; padding: 9px 12px; margin: 0;
+  position: absolute; transform: translate(-50%, -50%);
+  padding: 9px 12px; margin: 0;
   background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius);
   box-shadow: 0 1px 5px rgba(0,0,0,0.1); cursor: pointer; font: inherit; text-align: center; line-height: 1.35;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
-.mindmap-node:hover, .mindmap-node:focus-visible { transform: translate(-50%, -50%) scale(1.06); border-color: var(--accent); box-shadow: 0 5px 14px rgba(0,0,0,0.18); z-index: 3; }
+.mindmap-node--issue { z-index: 2; max-width: 150px; }
+.mindmap-node--note { z-index: 1; max-width: 92px; padding: 6px 8px; background: color-mix(in srgb, var(--accent) 5%, var(--surface)); }
+.mindmap-node:hover, .mindmap-node:focus-visible { transform: translate(-50%, -50%) scale(1.06); border-color: var(--accent); box-shadow: 0 5px 14px rgba(0,0,0,0.18); z-index: 4; }
 .mindmap-node:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 .mindmap-node-num {
   display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px;
   border-radius: 50%; background: var(--accent-2); color: var(--accent-2-text); font-weight: 700; font-size: 0.68rem; margin-right: 5px;
 }
-.mindmap-node-label { font-size: 0.78rem; font-weight: 600; }
+.mindmap-node--issue .mindmap-node-label { font-size: 0.78rem; font-weight: 600; }
+.mindmap-node--note .mindmap-node-label { font-size: 0.66rem; font-weight: 500; color: var(--text-muted); line-height: 1.25; }
 .mindmap-hint { margin: 8px 2px 0; }
 @media (max-width: 640px) {
-  .mindmap { position: static; height: auto; display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px; }
+  .mindmap { position: static; height: auto; display: flex; flex-direction: column; align-items: stretch; gap: 8px; padding: 16px; }
   .mindmap-lines { display: none; }
-  .mindmap-hub { position: static; transform: none; width: auto; height: auto; border-radius: var(--radius); margin: 0 auto 2px; }
+  .mindmap-hub { position: static; transform: none; width: auto; height: auto; border-radius: var(--radius); margin: 0 auto 4px; }
   .mindmap-node { position: static; transform: none; max-width: none; width: 100%; text-align: left; }
+  .mindmap-node--issue { margin-top: 10px; }
+  .mindmap-node--issue:first-of-type { margin-top: 0; }
+  .mindmap-node--note { width: calc(100% - 18px); margin-left: 18px; }
   .mindmap-node:hover, .mindmap-node:focus-visible { transform: none; }
 }
 

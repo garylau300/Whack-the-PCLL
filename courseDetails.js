@@ -1611,7 +1611,7 @@ window.COURSE_DETAILS = {
             heading: 'Stamp Duty — Scope, Charging Heads and Computation',
             notes: [
               {
-                heading: 'Nature of the tax and its scope',
+                heading: 'Nature and scope',
                 bullets: [
                   'Stamp duty is a tax on certain instruments effecting certain transactions, prescribed by the Stamp Duty Ordinance (Cap. 117) — it is largely statute-based, so ordinary rules of statutory interpretation apply.',
                   'Without a stampable instrument, there can be no duty. The place of execution, and the domicile, nationality, residence or currency of the parties, are all irrelevant (ss4(1) and 18, SDO).',
@@ -1637,7 +1637,7 @@ window.COURSE_DETAILS = {
                 },
               },
               {
-                heading: 'Fixed vs ad valorem duty, and how the amount is computed',
+                heading: 'Fixed vs ad valorem, and computation',
                 bullets: [
                   'Fixed duty does not vary with the consideration or value (e.g. $5 under Head 2(4)); ad valorem duty varies according to the consideration or value (e.g. the rates under Head 1 and Head 2(1)) — ranging from $2 per $1,000 for Hong Kong stock up to 6.5% for conveyances/agreements for sale of residential property.',
                   'Duty is normally assessed on the consideration stated in the instrument (usually the market value), but: an instrument with nil or inadequate consideration is stamped as a voluntary disposition (s27(1) and (4)); where the sum payable is uncertain but ascertainable, duty is assessed on the maximum sum that might become payable, calculable in advance as at the date of execution (the "contingency principle"); and the Collector may refer to the property\'s value where inadequate consideration confers a substantial benefit on the transferee (ss27(4)/29F(1) and (3)).',
@@ -1653,7 +1653,7 @@ window.COURSE_DETAILS = {
                 ],
               },
               {
-                heading: 'Liability and consequences of non-compliance',
+                heading: 'Liability & non-compliance',
                 bullets: [
                   "Adjudication (s13) resolves disputes over liability and quantum; an adjudicated instrument is 'duly stamped', and mandatory adjudication in certain prescribed circumstances carries no adjudication fee.",
                   'All parties and other persons executing the instrument are jointly and severally liable for the duty, except in specific cases such as a vesting order following an order for sale or partition, and a foreclosure order (Note 2 to Head 1(1); see also s4(3)).',
