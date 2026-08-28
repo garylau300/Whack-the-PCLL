@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
+    ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, daysUntil, sessionHref,
   } = window.PCLL;
@@ -72,7 +72,6 @@
     const section = $('courseInfoSection');
     if (!details) { section.hidden = true; return; }
     section.hidden = false;
-    $('courseDescription').textContent = details.description || '';
     $('coordinatorList').innerHTML = (details.coordinators || []).map((c) => `
       <div class="coordinator-card">
         <strong>${escapeHtml(c.name)}</strong>
@@ -80,11 +79,6 @@
         <a href="mailto:${escapeHtml(c.email)}">${escapeHtml(c.email)}</a>
       </div>`).join('');
     $('learningOutcomesList').innerHTML = (details.learningOutcomes || []).map((o) => `<li>${escapeHtml(o)}</li>`).join('');
-    const a = details.attendance || {};
-    $('attendanceInfo').innerHTML = [
-      a.lectures ? field('Lectures', a.lectures) : '',
-      a.smallGroups ? field('Small Groups', a.smallGroups) : '',
-    ].join('');
   }
 
   function renderAssessments() {
@@ -120,7 +114,6 @@
     section.hidden = false;
     $('materialsList').innerHTML = details.materials.map((m) => `<li>${escapeHtml(m)}</li>`).join('');
     $('materialsNotesList').innerHTML = (details.materialsNotes || []).map((m) => `<li class="muted">${escapeHtml(m)}</li>`).join('');
-    $('aiPolicyText').textContent = details.aiPolicy || '';
   }
 
   function renderCourse(data) {

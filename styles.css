@@ -489,7 +489,6 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .session-detail-body h3 { font-size: 0.85rem; font-weight: 700; margin: 14px 0 6px; }
 .session-detail-body h3:first-child { margin-top: 0; }
 
-.course-description { font-size: 0.88rem; line-height: 1.5; margin: 4px 0 12px; }
 .coordinator-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0; }
 .coordinator-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.82rem; min-width: 180px; }
 .instructor-line { font-size: 0.8rem; color: var(--text-muted); margin: 2px 0 8px; }
@@ -627,12 +626,12 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 
 /* .session-meta reuses the .field/.field-label/.field-value shape already
    defined for .event-card, outside of a card context. */
-.session-meta .field, .attendance-info .field { display: flex; gap: 5px; color: var(--text); margin-bottom: 2px; }
-.session-meta .field-label, .attendance-info .field-label {
+.session-meta .field { display: flex; gap: 5px; color: var(--text); margin-bottom: 2px; }
+.session-meta .field-label {
   flex: 0 0 auto; min-width: 90px; font-size: 0.68rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.02em; color: var(--text-muted);
 }
-.session-meta .field-value, .attendance-info .field-value { flex: 1; }
+.session-meta .field-value { flex: 1; }
 
 /* <details> only ever appears in this course-detail content — safe to
    style plainly rather than scoping every selector. */
