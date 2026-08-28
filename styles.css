@@ -111,12 +111,20 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: #fff;
   white-space: nowrap;
   pointer-events: none;
+}
+.topbar .topbar-brand svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex-shrink: 0;
 }
 @media (max-width: 480px) {
   .topbar .topbar-brand { font-size: 1.05rem; }
