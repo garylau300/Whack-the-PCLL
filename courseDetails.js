@@ -637,7 +637,29 @@ window.COURSE_DETAILS = {
       'Companies Ordinance (Cap. 622 of the laws of Hong Kong)',
     ],
 
+    assessments: [
+      { title: 'Final Examination', weight: '100%', dateLabel: 'Date TBC' },
+    ],
+    assessmentNotes: [
+      'Unlike Civil Litigation, PCLL8020 has no coursework, interview or oral component — the entire mark comes from the Final Examination.',
+      'Syllabus for that exam: incorporating and operating a private limited company, analysing a shareholders\' agreement, interpreting a company\'s financial statements, bank financing, and the purchase of businesses and shares in a private company.',
+    ],
+
     references: {
+      gradeDescriptors: {
+        title: 'Grade Descriptors (HKU Faculty of Law)',
+        body: 'The university-wide marking bands used across every PCLL course, including this course\'s Final Examination.',
+        table: {
+          headers: ['Band', 'What it demonstrates'],
+          rows: [
+            ['Distinction (75%+)', 'Thorough understanding of the law and practice, fluently expressed, effective analytical/practical/organisational skills — even if occasionally less comprehensive or containing minor errors.'],
+            ['Credit (65-74%)', 'Good/very good skill identifying, analysing and dealing with the main issues; coherent, structured answers backed by authorities; falls short of excellence or contains some errors.'],
+            ['Solid pass (53-64%)', 'Identifies and broadly deals with some major issues; broad but still limited understanding; contains errors or confusion applying the law to the facts.'],
+            ['Borderline pass (50-52%)', 'Bare minimum of legal/practical knowledge; issues incompletely or unclearly perceived; just sufficient skills to pass.'],
+            ['Fail (below 50%)', 'Major/significant omissions of key issues, failure to identify major issues, serious mistakes of law/practice, irrelevant material, below-par handling generally.'],
+          ],
+        },
+      },
       documentAnalysis: {
         title: 'Reading Material — Document Analysis: An Introduction',
         body: 'A 5-step method for working out what a document — a statute, a judgment, or a contract — actually means and requires. Document analysis is essential to both Corporate Practice (applying the Companies Ordinance and companies\' articles) and Drafting Commercial Agreements (using precedents critically instead of copying them blind).',
@@ -1017,7 +1039,7 @@ window.COURSE_DETAILS = {
           { text: 'The Transfer of Businesses (Protection of Creditors) Ordinance protects a transferred business\'s {{creditors}} by regulating the transferee\'s exposure to its debts.' },
           { text: 'Transferring a company\'s shares and transferring the business\'s underlying {{assets}} are different transactions, engaging different rules.' },
         ],
-        referenceIds: [],
+        referenceIds: ['gradeDescriptors'],
       },
 
       SG1: {
