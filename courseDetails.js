@@ -631,21 +631,124 @@ window.COURSE_DETAILS = {
   PCLL8020: {
     name: 'Corporate and Commercial Transactions',
 
+    coordinators: [
+      { name: 'Charmaine Yip', email: 'cyiplaw@hku.hk' },
+      { name: 'Xin Fang', email: 'xfang852@hku.hk' },
+    ],
+
+    learningOutcomes: [
+      'Have a good understanding of the mechanics and issues relevant to corporate practice, shareholders\' agreements, the sale and purchase of businesses and shares in private companies, bank financing and corporate insolvency — and be able to carry out simple tasks commonly assigned to trainee and junior lawyers in these matters',
+      'Be able to analyse provisions commonly found in commercial agreements relating to those corporate-commercial transactions and explain their meaning and effect to clients',
+      'Be able to identify issues and solve problems which may arise in the course of handling those corporate-commercial transactions',
+      'Be able to review a set of simple financial statements and identify issues pertinent to corporate and commercial practice',
+      'Be more aware of the business and professional practice issues relevant to corporate and commercial practice',
+    ],
+
     materials: [
       '"Acquisition of Shares and Businesses in Hong Kong" (2nd Edition) by Jessica Y K Young — Chapters 1, 8-11',
       '"Law of Companies in Hong Kong" (4th Edition) by Stefan H C Lo and Charles Z Qu',
       'Companies Ordinance (Cap. 622 of the laws of Hong Kong)',
+      'Companies (Model Articles) Notice (Cap. 622H of the laws of Hong Kong)',
+      'Transfer of Businesses (Protection of Creditors) Ordinance (Cap. 49 of the laws of Hong Kong)',
+      'Companies (Winding Up and Miscellaneous Provisions) Ordinance (Cap. 32 of the laws of Hong Kong)',
     ],
 
     assessments: [
-      { title: 'Final Examination', weight: '100%', dateLabel: 'Date TBC' },
+      { title: 'CCT Paper I', weight: '60%', dateLabel: '28 December 2026 (Provisional)', note: '60 marks overall — Q1 Corporate Practice (28) · Q2 Shareholders\' Agreements (16) · Q3 Acquisition of Businesses and Shares (16)' },
+      { title: 'CCT Paper II', weight: '40%', dateLabel: '29 December 2026 (Provisional)', note: '40 marks overall — Q4 Bank Financing and Corporate Insolvency (28) · Q5 Financial Statements (12)' },
     ],
     assessmentNotes: [
-      'Unlike Civil Litigation, PCLL8020 has no coursework, interview or oral component — the entire mark comes from the Final Examination.',
-      'Syllabus for that exam: incorporating and operating a private limited company, analysing a shareholders\' agreement, interpreting a company\'s financial statements, bank financing, and the purchase of businesses and shares in a private company.',
+      'Unlike Civil Litigation, PCLL8020 has no coursework, interview or oral component — the entire mark comes from these two Papers, both open-book examinations conducted in-hall.',
+      'Paper I and Paper II together form one integral examination worth 100% of the CCT mark — to pass, a student must sit both Papers and score an aggregate of 50 or more out of 100 across the two combined; there is no separate 50% hurdle on each individual Paper.',
+      'A student who does not reach the aggregate 50 at the first attempt is re-examined only on whichever Paper(s) they scored below 50% on; that re-examination mark is added to their unchanged first-attempt mark on the other Paper to give a Second Attempt Aggregated Mark, which must itself reach 50 to pass.',
     ],
 
     references: {
+      courseCoverage: {
+        title: 'Course Coverage — What Each LG/SG Covers',
+        body: 'How the course\'s 13 Large Group sessions and 11 Small Group sessions divide across six topic areas.',
+        legalIssues: [
+          {
+            number: '1',
+            heading: 'Corporate Practice (LG1, LG2, LG3, LG5 · SG1-4)',
+            notes: [
+              {
+                heading: 'What each session covers',
+                bullets: [
+                  'LG1 — the different types of business vehicle available in Hong Kong, and the key provisions of the Transfer of Businesses (Protection of Creditors) Ordinance.',
+                  'LG2, LG3 and LG5 — core Hong Kong company law, including the Companies Ordinance (Cap. 622) and the Model Articles for private companies (Schedule 2, Companies (Model Articles) Notice, Cap. 622H).',
+                  'SG1-4 — corporate-practice tasks and client problems; SG4 requires a mandatory assignment submitted before class, marked with individual written feedback (does not count towards the final mark).',
+                ],
+              },
+            ],
+          },
+          {
+            number: '2',
+            heading: "Shareholders' Agreements (LG6 · SG5-6)",
+            notes: [
+              {
+                heading: 'What each session covers',
+                bullets: [
+                  "LG6 — the key provisions of a typical shareholders' agreement and their effect on a company and its shareholders.",
+                  "SG5-6 — how a shareholders' agreement affects shareholders' rights and obligations under general company law and under the company's articles.",
+                ],
+              },
+            ],
+          },
+          {
+            number: '3',
+            heading: 'Acquisition of Businesses — Asset Purchases & Share Acquisitions (LG7-8 · SG7-8)',
+            notes: [
+              {
+                heading: 'What each session covers',
+                bullets: [
+                  'LG7-8 — asset purchases (revisiting the Transfer of Businesses (Protection of Creditors) Ordinance from LG1) versus acquisitions of shares in a Hong Kong private company limited by shares, including the mechanics of a share purchase agreement.',
+                  'SG7-8 — tasks at different stages of a typical business/share purchase, and problems commonly encountered in share purchase agreements.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '4',
+            heading: 'Bank Financing and Corporate Insolvency & Liquidation (LG9-11 · SG9-10)',
+            notes: [
+              {
+                heading: 'What each session covers',
+                bullets: [
+                  'LG9-10 — company borrowings and the giving of security, enforcement of security and receivership, and the provisions of a typical facility letter and debenture.',
+                  'LG11 — modes of winding up a Hong Kong company and avoidance powers over antecedent transactions under the Companies (Winding Up and Miscellaneous Provisions) Ordinance (Cap. 32).',
+                  'SG9-10 — advising on bank-financing and corporate-insolvency issues for clients.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '5',
+            heading: 'Stamp Duty (LG4)',
+            notes: [
+              {
+                heading: 'What this session covers',
+                bullets: [
+                  'LG4 — stamp duty issues in corporate-commercial transactions. There is no dedicated SG on this topic; stamp duty issues are instead embedded, where appropriate, in the other transactions worked on across the SGs.',
+                ],
+              },
+            ],
+          },
+          {
+            number: '6',
+            heading: 'Financial Statements (LG12-13 · SG11)',
+            notes: [
+              {
+                heading: 'What each session covers',
+                bullets: [
+                  'LG12-13 — basic book-keeping and the skills of reading and understanding financial statements and their implications for corporate and commercial practice.',
+                  "SG11 — extracting a company's financial information from its financial statements and calculating financial ratios.",
+                ],
+              },
+            ],
+          },
+        ],
+      },
       gradeDescriptors: {
         title: 'Grade Descriptors (HKU Faculty of Law)',
         body: 'The university-wide marking bands used across every PCLL course, including this course\'s Final Examination.',
@@ -1039,7 +1142,7 @@ window.COURSE_DETAILS = {
           { text: 'The Transfer of Businesses (Protection of Creditors) Ordinance protects a transferred business\'s {{creditors}} by regulating the transferee\'s exposure to its debts.' },
           { text: 'Transferring a company\'s shares and transferring the business\'s underlying {{assets}} are different transactions, engaging different rules.' },
         ],
-        referenceIds: ['gradeDescriptors'],
+        referenceIds: ['courseCoverage', 'gradeDescriptors'],
       },
 
       SG1: {

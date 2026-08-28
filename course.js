@@ -72,12 +72,15 @@
     const section = $('courseInfoSection');
     if (!details) { section.hidden = true; return; }
     section.hidden = false;
-    $('coordinatorList').innerHTML = (details.coordinators || []).map((c) => `
+    $('coordinatorList').innerHTML = (details.coordinators || []).map((c) => {
+      const meta = [c.room, c.hours].filter(Boolean).map(escapeHtml).join(' &middot; ');
+      return `
       <div class="coordinator-card">
         <strong>${escapeHtml(c.name)}</strong>
-        <div class="muted">${escapeHtml(c.room)} &middot; ${escapeHtml(c.hours)}</div>
+        ${meta ? `<div class="muted">${meta}</div>` : ''}
         <a href="mailto:${escapeHtml(c.email)}">${escapeHtml(c.email)}</a>
-      </div>`).join('');
+      </div>`;
+    }).join('');
     $('learningOutcomesList').innerHTML = (details.learningOutcomes || []).map((o) => `<li>${escapeHtml(o)}</li>`).join('');
   }
 
