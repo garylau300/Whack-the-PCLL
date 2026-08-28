@@ -596,11 +596,26 @@
     }).join('')}</li>`;
   }
 
-  function clozeSectionHtml(items) {
-    if (!items || !items.length) return '';
+  // `groups` is [{ topic, items: [{text}, ...] }, ...] — each topic renders
+  // as its own labeled sub-section so a session covering several distinct
+  // legal issues doesn't dump every cloze item into one undifferentiated
+  // list. A flat array of items (the old shape) is also accepted, and
+  // treated as a single unlabeled group, so nothing else has to change in
+  // lockstep with this.
+  function asQuizGroups(groups) {
+    if (!groups || !groups.length) return [];
+    return groups[0] && groups[0].items ? groups : [{ topic: '', items: groups }];
+  }
+
+  function clozeSectionHtml(groups) {
+    const list = asQuizGroups(groups);
+    if (!list.length) return '';
     return `<div class="cloze-section">
       <div class="cloze-head"><h3>Key Principles — Test Yourself</h3><button type="button" class="link-btn cloze-toggle-all">Reveal all</button></div>
-      <ul class="cloze-list">${items.map(clozeItemHtml).join('')}</ul>
+      ${list.map((g) => `<div class="quiz-topic-group">
+        ${g.topic ? `<h4 class="quiz-topic-heading">${escapeHtml(g.topic)}</h4>` : ''}
+        <ul class="cloze-list">${g.items.map(clozeItemHtml).join('')}</ul>
+      </div>`).join('')}
     </div>`;
   }
 
@@ -633,11 +648,16 @@
     </button>`;
   }
 
-  function flashcardSectionHtml(cards) {
-    if (!cards || !cards.length) return '';
+  // Same topic-grouped shape as clozeSectionHtml — see asQuizGroups.
+  function flashcardSectionHtml(groups) {
+    const list = asQuizGroups(groups);
+    if (!list.length) return '';
     return `<div class="flashcard-section">
       <div class="cloze-head"><h3>Flashcards</h3><button type="button" class="link-btn flashcard-toggle-all">Flip all</button></div>
-      <div class="flashcard-grid">${cards.map(flashcardHtml).join('')}</div>
+      ${list.map((g, gi) => `<div class="quiz-topic-group">
+        ${g.topic ? `<h4 class="quiz-topic-heading">${escapeHtml(g.topic)}</h4>` : ''}
+        <div class="flashcard-grid">${g.items.map((c, i) => flashcardHtml(c, `${gi}-${i}`)).join('')}</div>
+      </div>`).join('')}
     </div>`;
   }
 

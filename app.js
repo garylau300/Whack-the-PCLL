@@ -136,10 +136,23 @@
     initTheme($('themeBtn'));
     $('prevWeek').addEventListener('click', () => selectWeek(activeWeekIndex - 1));
     $('nextWeek').addEventListener('click', () => selectWeek(activeWeekIndex + 1));
-    $('prevDay').addEventListener('click', () => { activeDayIndex = Math.max(0, activeDayIndex - 1); render(); });
+    $('prevDay').addEventListener('click', () => {
+      if (activeDayIndex > 0) {
+        activeDayIndex -= 1;
+      } else if (activeWeekIndex > 0) {
+        activeWeekIndex -= 1;
+        activeDayIndex = timetable.weeks[activeWeekIndex].days.length - 1;
+      }
+      render();
+    });
     $('nextDay').addEventListener('click', () => {
       const max = timetable.weeks[activeWeekIndex].days.length - 1;
-      activeDayIndex = Math.min(max, activeDayIndex + 1);
+      if (activeDayIndex < max) {
+        activeDayIndex += 1;
+      } else if (activeWeekIndex < timetable.weeks.length - 1) {
+        activeWeekIndex += 1;
+        activeDayIndex = 0;
+      }
       render();
     });
     $('gridViewBtn').addEventListener('click', () => {

@@ -583,6 +583,16 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .cloze-blank.revealed .cloze-answer { display: inline; }
 .cloze-blank.revealed { background: color-mix(in srgb, var(--now-line) 18%, var(--surface)); color: var(--now-line-text); cursor: default; }
 
+/* A labeled topic sub-section within the cloze/flashcard blocks on
+   quiz.html — groups items by legal issue instead of one flat list. */
+.quiz-topic-group { margin: 16px 0; }
+.quiz-topic-group:first-of-type { margin-top: 8px; }
+.quiz-topic-heading {
+  margin: 0 0 6px; padding-bottom: 4px; font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent-text);
+  border-bottom: 1px solid var(--border);
+}
+
 /* Session-page call-to-action linking out to that session's quiz.html —
    deliberately prominent (a card, not just a text link) since it's the
    entry point to the study-mode page the cloze/flashcards now live on. */
