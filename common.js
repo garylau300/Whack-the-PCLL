@@ -567,21 +567,128 @@
     return html;
   }
 
-  // Groups fullNotes-style entries under a numbered legal issue (e.g.
-  // "1. Types of Business Vehicles") — one top-level collapsible per issue,
-  // with its notes rendered directly underneath (no further nested
-  // collapsing) so expanding one issue shows everything in it at once.
-  function legalIssueHtml(issue) {
-    const notesHtml = (issue.notes || []).map((n) => `<div class="legal-issue-note">
+  // Shared by both the accordion (legalIssueHtml, used for reference-
+  // material appendices) and the mindmap popup body (legalIssuesMindmapHtml,
+  // used for a session's own top-level legal issues) — one issue's notes,
+  // rendered directly (no further nested collapsing) so all of an issue's
+  // content shows at once once you're looking at it.
+  function legalIssueNotesHtml(issue) {
+    return (issue.notes || []).map((n) => `<div class="legal-issue-note">
       <h4>${escapeHtml(n.heading)}</h4>
       ${fullNoteBodyHtml(n)}
     </div>`).join('');
-    return `<details class="detail-content legal-issue"><summary>${escapeHtml(issue.number)}. ${escapeHtml(issue.heading)}</summary>${notesHtml}</details>`;
+  }
+
+  // Groups fullNotes-style entries under a numbered legal issue (e.g.
+  // "1. Types of Business Vehicles") — one top-level collapsible per issue.
+  // Used for reference-material appendices (course.html's "Reference
+  // Materials" details, e.g. Grade Descriptors); a session's own top-level
+  // legal issues use the mindmap below instead.
+  function legalIssueHtml(issue) {
+    return `<details class="detail-content legal-issue"><summary>${escapeHtml(issue.number)}. ${escapeHtml(issue.heading)}</summary>${legalIssueNotesHtml(issue)}</details>`;
   }
 
   function legalIssuesHtml(issues) {
     if (!issues || !issues.length) return '';
     return issues.map(legalIssueHtml).join('');
+  }
+
+  // Positions each `.mindmap-node` button around the hub in an ellipse
+  // sized to the container's actual pixel dimensions (not percentages —
+  // that would distort the spoke angles whenever the container isn't
+  // square), and draws the connecting SVG lines to match. Below the
+  // 641px breakpoint the CSS switches `.mindmap` to a plain vertical
+  // stack (see styles.css), so positioning is skipped there — the nodes
+  // just flow normally and the spoke lines are cleared.
+  function layoutMindmap(mapEl) {
+    const svg = mapEl.querySelector('.mindmap-lines');
+    const nodes = [...mapEl.querySelectorAll('.mindmap-node')];
+    const isDesktop = window.matchMedia('(min-width: 641px)').matches;
+    if (!isDesktop || !nodes.length) {
+      nodes.forEach((el) => { el.style.left = ''; el.style.top = ''; });
+      svg.innerHTML = '';
+      return;
+    }
+    const w = mapEl.clientWidth, h = mapEl.clientHeight;
+    if (!w || !h) return; // a hidden ancestor (e.g. a collapsed <details>) — nothing to measure yet
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const cx = w / 2, cy = h / 2;
+    const rx = Math.max(cx - 100, cx * 0.5);
+    const ry = Math.max(cy - 70, cy * 0.5);
+    const n = nodes.length;
+    let lines = '';
+    nodes.forEach((node, i) => {
+      const angle = ((Math.PI * 2 * i) / n) - Math.PI / 2;
+      const x = cx + rx * Math.cos(angle);
+      const y = cy + ry * Math.sin(angle);
+      node.style.left = `${x}px`;
+      node.style.top = `${y}px`;
+      lines += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" class="mindmap-line" />`;
+    });
+    svg.innerHTML = lines;
+  }
+
+  // A session's numbered legal issues, rendered as a hub-and-spoke mindmap
+  // instead of a stack of expandable summaries — each topic is a node
+  // around a central hub; clicking (or Enter/Space-ing) a node opens that
+  // issue's full write-up in a popup dialog rather than expanding inline.
+  // Each issue's popup content is pre-rendered into an inert <template>
+  // (cloned into the shared popup body on open) so wiring stays purely
+  // DOM-based, same spirit as wireClozeSection/wireFlashcardSection.
+  function legalIssuesMindmapHtml(issues) {
+    if (!issues || !issues.length) return '';
+    const nodesHtml = issues.map((issue, i) => `<button type="button" class="mindmap-node" data-mindmap-idx="${i}" data-title="${escapeHtml(issue.number)}. ${escapeHtml(issue.heading)}" aria-haspopup="dialog">
+      <span class="mindmap-node-num" aria-hidden="true">${escapeHtml(issue.number)}</span>
+      <span class="mindmap-node-label">${escapeHtml(issue.heading)}</span>
+    </button>`).join('');
+    const templatesHtml = issues.map((issue, i) => `<template data-mindmap-body="${i}">${legalIssueNotesHtml(issue)}</template>`).join('');
+    return `<div class="mindmap-wrap">
+      <div class="mindmap" data-mindmap>
+        <svg class="mindmap-lines" aria-hidden="true"></svg>
+        <div class="mindmap-hub"><span>Legal Issues</span></div>
+        ${nodesHtml}
+      </div>
+      <p class="mindmap-hint muted small">Tap a topic to open it.</p>
+      <div class="mindmap-modal-panel settings-panel" data-mindmap-modal>
+        <div class="settings-card mindmap-modal-card">
+          <div class="settings-head">
+            <h3 id="mindmapModalTitle"></h3>
+            <button type="button" class="icon-btn mindmap-modal-close" aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+          </div>
+          <div class="mindmap-modal-body detail-content"></div>
+        </div>
+      </div>
+      <div hidden>${templatesHtml}</div>
+    </div>`;
+  }
+
+  // Wires one legalIssuesMindmapHtml() block: lays out the spokes (re-run
+  // on resize, since the breakpoint at 641px switches layouts entirely),
+  // and opens the shared popup dialog with the clicked node's pre-rendered
+  // template content on click.
+  function wireLegalIssuesMindmap(container) {
+    const wrap = container.querySelector('.mindmap-wrap');
+    if (!wrap) return;
+    const mapEl = wrap.querySelector('[data-mindmap]');
+    const modalPanel = wrap.querySelector('[data-mindmap-modal]');
+    const modalCard = modalPanel.querySelector('.mindmap-modal-card');
+    const modalBody = wrap.querySelector('.mindmap-modal-body');
+    const modalTitle = wrap.querySelector('#mindmapModalTitle');
+    const closeBtn = wrap.querySelector('.mindmap-modal-close');
+    const modal = initDialog({ panel: modalPanel, dialog: modalCard, closeBtn, labelledBy: 'mindmapModalTitle' });
+
+    layoutMindmap(mapEl);
+    window.addEventListener('resize', () => layoutMindmap(mapEl));
+
+    mapEl.addEventListener('click', (e) => {
+      const node = e.target.closest('.mindmap-node');
+      if (!node) return;
+      const tpl = wrap.querySelector(`template[data-mindmap-body="${node.dataset.mindmapIdx}"]`);
+      modalTitle.textContent = node.dataset.title || '';
+      modalBody.innerHTML = '';
+      if (tpl) modalBody.appendChild(tpl.content.cloneNode(true));
+      modal.open(node);
+    });
   }
 
   // Parses `{{answer}}` markers out of a cloze item's template text into a
@@ -747,11 +854,12 @@
     html += listSection('Key Takeaways', sessionDetail.keyTakeaways);
     html += listSection('During / After', sessionDetail.duringAfter);
 
-    // legalIssues (numbered, grouped-by-issue) is the current format;
-    // fullNotes (a flat list) is kept as a fallback for any session not yet
-    // migrated to the richer shape.
+    // legalIssues (numbered, grouped-by-issue) is the current format,
+    // rendered as an interactive mindmap (see legalIssuesMindmapHtml) rather
+    // than an expandable list; fullNotes (a flat list) is kept as a
+    // fallback for any session not yet migrated to the richer shape.
     if (sessionDetail.legalIssues) {
-      html += legalIssuesHtml(sessionDetail.legalIssues);
+      html += legalIssuesMindmapHtml(sessionDetail.legalIssues);
     } else if (sessionDetail.fullNotes) {
       html += `<details class="detail-content"><summary>Full Lecture Notes</summary>${sessionDetail.fullNotes.map((n) => `
         <details><summary>${escapeHtml(n.heading)}</summary>${fullNoteBodyHtml(n)}</details>`).join('')}</details>`;
@@ -784,6 +892,7 @@
   // placeholder) — shared so course.js and session.js don't each duplicate
   // this glue. (Cloze/flashcards live on quiz.html now, wired there instead.)
   function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
+    if (sessionDetail && sessionDetail.legalIssues) wireLegalIssuesMindmap(bodyEl);
     if (!sessionDetail || !sessionDetail.prepChecklist) return;
     const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
     const container = bodyEl.querySelector('[data-prep-checklist]');

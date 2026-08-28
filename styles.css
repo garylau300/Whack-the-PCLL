@@ -537,11 +537,75 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .law-callout--quote p { margin: 0 0 4px; }
 .law-callout--quote cite { display: block; font-style: normal; font-size: 0.78rem; color: var(--text-muted); text-align: right; }
 
-/* A numbered legal-issue group (fullNotes' `legalIssues` shape) — one
-   collapsible per issue; its notes render directly underneath with a
-   left rule, not as further nested collapsibles. */
+/* A numbered legal-issue group's notes — render directly underneath their
+   issue with a left rule, not as further nested collapsibles. Used both
+   inside the reference-material accordion (.legal-issue, below) and inside
+   a session mindmap's popup body (.mindmap-modal-body). */
 .legal-issue-note { margin: 10px 0 10px 4px; padding-left: 10px; border-left: 2px solid var(--border); }
 .legal-issue-note h4 { margin-top: 0; }
+
+/* Reference-material appendices (course.html's "Reference Materials"
+   details, e.g. Grade Descriptors) still use one collapsible per issue —
+   a session's own top-level legal issues use the mindmap instead (below). */
+
+/* A session's numbered legal issues as a hub-and-spoke mindmap: a central
+   "Legal Issues" hub with one node per topic arranged in an ellipse
+   (positioned by JS — see layoutMindmap in common.js, which measures the
+   container's actual pixel size so the spoke angles aren't distorted by a
+   non-square box) and SVG lines connecting hub to node. Clicking a node
+   opens that issue's full write-up in a popup dialog instead of expanding
+   inline. Below 641px this collapses to a plain vertical stack of
+   full-width buttons (no absolute positioning, no spoke lines) — still an
+   interactive mindmap, just laid out for a narrow screen instead of a
+   two-dimensional canvas. */
+.mindmap-wrap { margin: 16px 0; }
+.mindmap {
+  position: relative;
+  height: 420px;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.mindmap-lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.mindmap-line { stroke: color-mix(in srgb, var(--accent) 30%, var(--border)); stroke-width: 1.5; }
+.mindmap-hub {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
+  width: 116px; height: 116px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-weight: 700; font-size: 0.85rem; padding: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.mindmap-node {
+  position: absolute; transform: translate(-50%, -50%); z-index: 1;
+  max-width: 175px; padding: 9px 12px; margin: 0;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1); cursor: pointer; font: inherit; text-align: center; line-height: 1.35;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.mindmap-node:hover, .mindmap-node:focus-visible { transform: translate(-50%, -50%) scale(1.06); border-color: var(--accent); box-shadow: 0 5px 14px rgba(0,0,0,0.18); z-index: 3; }
+.mindmap-node:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.mindmap-node-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px;
+  border-radius: 50%; background: var(--accent-2); color: var(--accent-2-text); font-weight: 700; font-size: 0.68rem; margin-right: 5px;
+}
+.mindmap-node-label { font-size: 0.78rem; font-weight: 600; }
+.mindmap-hint { margin: 8px 2px 0; }
+@media (max-width: 640px) {
+  .mindmap { position: static; height: auto; display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 16px; }
+  .mindmap-lines { display: none; }
+  .mindmap-hub { position: static; transform: none; width: auto; height: auto; border-radius: var(--radius); margin: 0 auto 2px; }
+  .mindmap-node { position: static; transform: none; max-width: none; width: 100%; text-align: left; }
+  .mindmap-node:hover, .mindmap-node:focus-visible { transform: none; }
+}
+
+/* The popup a mindmap node opens — layered on the shared .settings-panel/
+   .settings-card modal system (open/close transition, mobile bottom-sheet,
+   desktop centered card) via a wider card variant for the richer content
+   (tables, quote/warning boxes) a legal issue can contain. */
+.mindmap-modal-card { max-width: 640px; }
+.mindmap-modal-body { margin-top: 6px; }
 
 /* A numbered step flow (fullNotes' `diagram` shape) — wraps to a vertical
    stack on narrow screens since it's just a wrapping flex row. */
