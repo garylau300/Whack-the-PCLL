@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
-    checklistHtml, wireChecklist, daysUntil, sessionHref,
+    checklistHtml, wireChecklist, daysUntil, sessionHref, preRecordedSessionKey,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -56,12 +56,22 @@
     </tr>`;
   }
 
-  function preRecordedRowHtml(entry, weekNumber) {
+  // Most pre-recorded entries have no dedicated session page — but where
+  // courseDetails.js documents one (matched via entry.no, or via
+  // preRecordedTopic when the timetable gives no `no` of its own — see
+  // preRecordedSessionKey), the "No." cell becomes a real link, same as a
+  // dated session's row (rowHtml above).
+  function preRecordedRowHtml(entry, weekNumber, idx) {
     const when = entry.when ? entry.when[0].toUpperCase() + entry.when.slice(1) : 'No specific timing given';
-    return `<tr class="pre-recorded">
+    const key = preRecordedSessionKey(code, entry);
+    const hasDetail = key && details && details.sessions && details.sessions[key];
+    const noCell = hasDetail
+      ? `<a class="row-link" href="${escapeHtml(sessionHref({ code: entry.code, no: key }, ''))}">${escapeHtml(entry.no || key)}</a>`
+      : escapeHtml(entry.no || '');
+    return `<tr class="pre-recorded" data-idx="${idx}">
       <td class="col-date">${ICONS.play}Pre-recorded<span class="wk-tag">Wk ${weekNumber}</span></td>
       <td class="col-time">${escapeHtml(when)}</td>
-      <td class="col-no">${escapeHtml(entry.no || '')}</td>
+      <td class="col-no">${noCell}</td>
       <td class="col-topic">${escapeHtml(entry.topic || '')}</td>
       <td class="col-venue">Moodle</td>
       <td class="col-who">${escapeHtml(entry.instructor || '')}</td>
@@ -135,7 +145,7 @@
     for (const week of data.weeks) {
       for (const entry of week.preRecorded || []) {
         if (entry.code !== code) continue;
-        rows.push(preRecordedRowHtml(entry, week.week));
+        rows.push(preRecordedRowHtml(entry, week.week, idx++));
       }
       for (const day of week.days) {
         for (const ev of day.events || []) {

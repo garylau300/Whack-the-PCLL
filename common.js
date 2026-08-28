@@ -394,11 +394,55 @@
     return `quiz.html?${sessionParams(ev, dateIso)}`;
   }
 
+  // Pre-recorded timetable entries (week.preRecorded[]) have no date/start
+  // of their own, so they can't be re-located by the dated-event search
+  // below. Most carry their own `no` (e.g. CCT's pre-recorded "LG5"); for
+  // the rest, courseDetails.js's session entry can declare a
+  // `preRecordedTopic` matching the entry's exact `topic` text, and that's
+  // used as the fallback identifier instead.
+  function findPreRecordedSession(data, code, no) {
+    const key = sessionKeyFor(no) || no;
+    const courseDetail = window.COURSE_DETAILS && window.COURSE_DETAILS[code];
+    const sessionDetail = courseDetail && courseDetail.sessions && courseDetail.sessions[key];
+    for (const week of data.weeks) {
+      for (const entry of week.preRecorded || []) {
+        if (entry.code !== code) continue;
+        if (entry.no && entry.no === no) {
+          return { ev: entry, dateIso: null, weekNumber: week.week, dayName: null };
+        }
+        if (!entry.no && sessionDetail && sessionDetail.preRecordedTopic && entry.topic === sessionDetail.preRecordedTopic) {
+          return { ev: { ...entry, no: key }, dateIso: null, weekNumber: week.week, dayName: null };
+        }
+      }
+    }
+    return null;
+  }
+
+  // Given a preRecorded entry, finds the courseDetails.js session key (if
+  // any) that documents it — either the entry's own `no`, or (when the
+  // entry has none) whichever session declares a matching
+  // `preRecordedTopic`. Used to decide whether/where a pre-recorded row on
+  // course.html should link out to.
+  function preRecordedSessionKey(code, entry) {
+    if (entry.no) return entry.no;
+    const courseDetail = window.COURSE_DETAILS && window.COURSE_DETAILS[code];
+    if (!courseDetail || !courseDetail.sessions) return null;
+    for (const [key, sessionDetail] of Object.entries(courseDetail.sessions)) {
+      if (sessionDetail.preRecordedTopic && sessionDetail.preRecordedTopic === entry.topic) return key;
+    }
+    return null;
+  }
+
   // Re-locates the event a session.html/quiz.html URL refers to inside a
   // freshly-fetched timetable — the event itself isn't in the URL, just
   // enough (code + date + session no, with start time as a tie-breaker) to
   // find it again. Returns { ev, dateIso, weekNumber, dayName } or null.
+  // A blank dateIso always means a pre-recorded entry (see sessionParams) —
+  // dated events are never linked without a date, so that case is routed
+  // straight to the pre-recorded lookup instead of matching an arbitrary
+  // dated session that happens to share the course code.
   function findSessionInTimetable(data, code, no, dateIso, start) {
+    if (!dateIso) return findPreRecordedSession(data, code, no);
     let candidates = [];
     for (const week of data.weeks) {
       for (const day of week.days) {
@@ -811,7 +855,7 @@
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil,
-    sessionHref, quizHref, findSessionInTimetable, sessionKeyFor, sessionPartLetter, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
+    sessionHref, quizHref, findSessionInTimetable, preRecordedSessionKey, sessionKeyFor, sessionPartLetter, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
   };
 })();
