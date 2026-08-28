@@ -584,6 +584,47 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .cloze-blank.revealed .cloze-answer { display: inline; }
 .cloze-blank.revealed { background: color-mix(in srgb, var(--now-line) 18%, var(--surface)); color: var(--now-line-text); cursor: default; }
 
+/* Session-page call-to-action linking out to that session's quiz.html —
+   deliberately prominent (a card, not just a text link) since it's the
+   entry point to the study-mode page the cloze/flashcards now live on. */
+.study-cta {
+  display: flex; align-items: center; gap: 12px; margin: 4px 0 16px; padding: 12px 14px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: var(--radius); text-decoration: none; color: var(--text);
+  transition: background-color 0.15s ease;
+}
+.study-cta:hover, .study-cta:focus-visible { background: color-mix(in srgb, var(--accent) 16%, var(--surface)); }
+.study-cta-icon { font-size: 1.4rem; flex: 0 0 auto; }
+.study-cta-title { display: block; font-weight: 700; font-size: 0.9rem; }
+.study-cta-sub { display: block; font-size: 0.78rem; color: var(--text-muted); }
+.study-cta-arrow { margin-left: auto; color: var(--accent-text); font-size: 1.1rem; flex: 0 0 auto; }
+
+/* Flashcards (quiz.html) — a click-to-flip card per principle, the same
+   shape/size regardless of front/back text length via a fixed min-height
+   and both faces absolutely stacked. */
+.flashcard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 8px 0 14px; }
+.flashcard {
+  display: block; width: 100%; padding: 0; border: none; background: none; cursor: pointer;
+  font: inherit; color: inherit; text-align: left; -webkit-tap-highlight-color: transparent;
+}
+.flashcard-inner {
+  display: block; position: relative; min-height: 130px; transform-style: preserve-3d;
+  transition: transform 0.5s ease; perspective: 1000px;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 12px 14px; font-size: 0.85rem; line-height: 1.5;
+}
+.flashcard-front { background: var(--surface); font-weight: 600; }
+.flashcard-back { background: color-mix(in srgb, var(--accent-2) 14%, var(--surface)); transform: rotateY(180deg); }
+.flashcard:focus-visible .flashcard-face { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .flashcard-inner { transition: none; }
+}
+
 /* .session-meta reuses the .field/.field-label/.field-value shape already
    defined for .event-card, outside of a card context. */
 .session-meta .field, .attendance-info .field { display: flex; gap: 5px; color: var(--text); margin-bottom: 2px; }

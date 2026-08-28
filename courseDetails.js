@@ -482,6 +482,14 @@ window.COURSE_DETAILS = {
             ],
           },
         ],
+        flashcards: [
+          { front: 'What are the 5 levels of the case analysis model?', back: '1. Area of law. 2. Cause of action/remedy. 3. Legal ingredients. 4. Material facts. 5. Evidence (and method of proof).' },
+          { front: 'What does the acronym PG-FLAP stand for?', back: 'Problem/goal identification, Fact investigation, Legal issue identification and assessment, Advice and decision-making, Planning and implementation.' },
+          { front: "What's the difference between Blocking Conflict and Playing Out Conflict?", back: 'Blocking Conflict: non-contentious, foreseeing and avoiding conflict. Playing Out Conflict: contentious, conflict already exists, litigation anticipated.' },
+          { front: 'Is a Letter Before Action legally required before starting proceedings?', back: 'No general rule requires it, except personal injury claims (PD18.1) — but the court\'s costs discretion can penalise unreasonable pre-action conduct (O.62 r.5(1)(e)/(2)(d)).' },
+          { front: 'What ethical duty applies specifically to ex-parte applications?', back: 'A duty of full and frank disclosure to the court.' },
+          { front: 'What four things should you prepare for every case, whether or not an exercise asks for them?', back: 'A Dramatis Personae, a Chronology of Events, a succinct case summary, and a Skeletal Plan for any drafting.' },
+        ],
         cloze: [
           { text: 'The 5-stage process for legal problem solving is known by the acronym {{PG-FLAP}}: Problem/goal identification, Fact investigation, Legal issue identification and assessment, Advice and decision-making, Planning and implementation.' },
           { text: 'The two basic types of legal problem are {{Blocking Conflict}} (non-contentious — foreseeing and avoiding conflict) and {{Playing Out Conflict}} (contentious — conflict already exists).' },
@@ -559,6 +567,14 @@ window.COURSE_DETAILS = {
           { title: 'Exercise 2 — Drafting a Letter Before Action: two drafting sub-groups, one addressed to Inn Convenient Company Limited (vehicle owner), the other to Michael Shu (driver). One representative per sub-group submits the final draft with a completed declaration via Moodle.', deadlineId: 'PCLL8010-hw-sg1' },
           { title: 'Exercise 3 — Complete and hand in the Undertaking Form for the Interviewing Exercise (Appendix D).', deadlineId: 'PCLL8010-undertaking' },
         ],
+        flashcards: [
+          { front: 'Name the four ways to commence civil proceedings.', back: 'Writ of summons, originating summons, originating motion, or petition.' },
+          { front: "What happens if a plaintiff doesn't reply to a defence within 28 days?", back: 'The plaintiff is deemed to have denied the allegations in the defence.' },
+          { front: 'Can a party be forced to mediate?', back: 'No — mediation is voluntary. But an unreasonable refusal to mediate can lead to adverse costs consequences, even for the party who wins at trial.' },
+          { front: "What's the difference between discovery and exchange of witness statements?", back: 'Discovery discloses documentary evidence; exchange of witness statements discloses oral evidence.' },
+          { front: 'When can multiple defendants be sued jointly?', back: 'Where they are jointly and severally liable for the same loss or damage.' },
+          { front: "What can a company's board resolution evidence in litigation?", back: "The company's decision to authorise legal action — supporting its standing to sue." },
+        ],
         cloze: [
           { text: 'A civil claim can be commenced by one of four originating processes: writ of summons, originating summons, originating {{motion}}, or {{petition}}.' },
           { text: 'After being served with a defence, the plaintiff may reply within {{28 days}} — if no reply is filed, the plaintiff is deemed to have {{denied}} the allegations in the defence.' },
@@ -600,6 +616,13 @@ window.COURSE_DETAILS = {
           'During: ask the questions needed to represent Kenny Man in this new matter; the standardised client completes a feedback form based on the Standardised Client Interviewing Criteria.',
           'After: honour the signed Undertaking — do not discuss or share the session (or your notes) with anyone until after 10:00pm on 18 September 2026. Written feedback follows in late November/early December.',
           'Conduct: treat the exercise seriously and professionally — misbehaviour, breaching the signed Undertaking, or not showing up without a valid reason can lead to disciplinary action.',
+        ],
+        flashcards: [
+          { front: 'What must a firm do before acting for a new client?', back: 'Carry out conflict checks and due diligence — for interviewing exercises like this one, under the Law Society\'s Practice Direction P.' },
+          { front: "When does a solicitor's duty of confidentiality to a client begin?", back: 'From the initial interview — even before a formal retainer is signed.' },
+          { front: 'What is the purpose of an initial client interview?', back: 'To obtain sufficient instructions to advise and act on the new matter — not simply to transcribe the client\'s story.' },
+          { front: "What questioning technique lets a client's account emerge in their own words?", back: 'Open questions early, narrowing to closed questions later to pin down specific facts.' },
+          { front: "Why keep a client's account separate from your own legal analysis of it?", back: 'Conflating the two risks misrepresenting what the client actually said.' },
         ],
         cloze: [
           { text: "Before acting for a new client, a firm must carry out {{conflict}} checks and due diligence — for a new instruction like Kenny Man's, this is done under the Law Society's {{Practice Direction P}}." },
@@ -986,6 +1009,14 @@ window.COURSE_DETAILS = {
             ],
           },
         ],
+        flashcards: [
+          { front: 'Does a sole proprietorship have separate legal personality from its owner?', back: 'No — there\'s no distinction between the sole proprietor and the business; the proprietor gets all the profits and is liable for all the debts.' },
+          { front: 'What are the three types of partnership recognised in Hong Kong?', back: 'General partnerships, limited partnerships, and limited liability partnerships.' },
+          { front: 'What duty do partners owe each other under s31 of the Partnership Ordinance?', back: 'Fiduciary duties of good faith, honesty and loyalty.' },
+          { front: 'What did Salomon v Salomon establish?', back: 'A validly incorporated company is a separate legal person from its members, distinct from the individuals who subscribed to its memorandum, even where one person controls the whole enterprise.' },
+          { front: "What's the difference between transferring a business's assets and transferring its shares?", back: 'They are different transactions engaging entirely different rules — one transfers what the company owns, the other transfers ownership of the company itself.' },
+          { front: 'What does the Transfer of Businesses (Protection of Creditors) Ordinance protect?', back: "The creditors of a business being transferred, by regulating the transferee's exposure to the business's existing debts and obligations." },
+        ],
         cloze: [
           { text: 'A sole proprietorship has {{no}} separate legal personality from its owner — the proprietor is personally entitled to all profits and liable for all debts.' },
           { text: 'Hong Kong recognises three types of partnership: general partnerships, {{limited partnerships}}, and {{limited liability partnerships}}.' },
@@ -1061,6 +1092,15 @@ window.COURSE_DETAILS = {
               'List and explain any follow-up questions or additional documents you would need to request from Stephanie, Jessie, or the Company.',
             ],
           },
+        ],
+        flashcards: [
+          { front: "What's the difference between a transfer and an allotment of shares?", back: 'A transfer moves existing shares between holders; an allotment creates and issues new shares.' },
+          { front: 'Who is treated as the registered owner of shares?', back: "Whoever is entered in the company's register of members — not necessarily whoever holds the share certificate." },
+          { front: "State Lord Hoffmann's general test for contractual interpretation.", back: 'The meaning the document would convey to a reasonable person with all the background knowledge reasonably available to the parties at the time of the contract.' },
+          { front: 'What does the contra proferentem rule do?', back: "Construes guarantees and exclusion clauses narrowly — any ambiguity is resolved against the party seeking to rely on the clause." },
+          { front: 'Under s7(1) of the Control of Exemption Clauses Ordinance, what can never be excluded?', back: 'Liability for death or personal injury resulting from negligence.' },
+          { front: '"Within 7 days after delivery" vs "within 7 days commencing on delivery" — which excludes the delivery day?', back: '"After" excludes it (the period starts the next day); "commencing on" includes it (the period starts that same day).' },
+          { front: "What's the difference between ejusdem generis and noscitur a sociis?", back: 'Ejusdem generis restricts general words following specific words to the same category as those words. Noscitur a sociis limits general words by the subject matter/context they appear in.' },
         ],
         cloze: [
           { text: "A company's articles of association are part of its {{constitution}} under the Companies Ordinance." },

@@ -2,9 +2,9 @@
   'use strict';
 
   const {
-    ELECTIVE_NAMES, initTheme, loadTimetable,
-    sessionKeyFor, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
-    quizHref, findSessionInTimetable,
+    ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref,
+    findSessionInTimetable, flashcardSectionHtml, wireFlashcardSection,
+    clozeSectionHtml, wireClozeSection,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -15,15 +15,13 @@
   const start = params.get('start') || '';
   const details = (window.COURSE_DETAILS && window.COURSE_DETAILS[code]) || null;
 
-  if (code) $('backLink').href = `course.html?code=${encodeURIComponent(code)}`;
-
   function setSyncStatus(text) {
     $('syncStatus').textContent = text;
   }
 
-  function renderSession(data) {
+  function renderQuiz(data) {
     const entry = findSessionInTimetable(data, code, no, dateIso, start);
-    const section = $('sessionSection');
+    const section = $('quizSection');
     if (!entry) {
       section.hidden = true;
       $('status').hidden = false;
@@ -31,31 +29,32 @@
       $('status').textContent = 'Could not find this session — it may have moved. Check the course page instead.';
       return;
     }
-    const { ev, dateIso: foundDate, weekNumber, dayName } = entry;
+    const { ev, dateIso: foundDate } = entry;
+    $('backLink').href = sessionHref(ev, foundDate);
 
     const courseName = code ? (data.meta.courses[code] || ELECTIVE_NAMES[code] || '') : '';
     $('courseLink').textContent = courseName ? `${code} · ${courseName}` : code;
     $('courseLink').href = `course.html?code=${encodeURIComponent(code)}`;
 
-    const heading = `${ev.no ? ev.no + ' — ' : ''}${ev.topic || 'Session'}`;
+    const heading = `${ev.no ? ev.no + ' — ' : ''}Quiz & Flashcards`;
     document.title = `${heading} — Whack the PCLL`;
-    $('sessionTitle').textContent = heading;
+    $('quizTitle').textContent = heading;
 
     const key = sessionKeyFor(ev.no);
     const sessionDetail = details && details.sessions && key && details.sessions[key];
-    const bodyEl = $('sessionBody');
-    bodyEl.innerHTML = sessionDetail
-      ? sessionDetailHtml(sessionDetail, ev, code, details)
-      : sessionFallbackHtml(ev, foundDate, weekNumber, dayName);
-    wireSessionDetail(bodyEl, sessionDetail, code, ev);
 
-    const studyLink = $('studyLink');
-    if (sessionDetail && (sessionDetail.cloze || sessionDetail.flashcards)) {
-      studyLink.href = quizHref(ev, foundDate);
-      studyLink.hidden = false;
-    } else {
-      studyLink.hidden = true;
+    if (!sessionDetail || (!sessionDetail.cloze && !sessionDetail.flashcards)) {
+      section.hidden = true;
+      $('status').hidden = false;
+      $('status').className = 'status';
+      $('status').textContent = 'No quiz or flashcards for this session yet.';
+      return;
     }
+
+    const bodyEl = $('quizBody');
+    bodyEl.innerHTML = flashcardSectionHtml(sessionDetail.flashcards) + clozeSectionHtml(sessionDetail.cloze);
+    wireFlashcardSection(bodyEl);
+    wireClozeSection(bodyEl);
 
     $('status').hidden = true;
     section.hidden = false;
@@ -69,7 +68,7 @@
     }
     await loadTimetable({
       onData: (data, isStale) => {
-        renderSession(data);
+        renderQuiz(data);
         setSyncStatus(isStale
           ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
           : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);
@@ -77,7 +76,7 @@
       onError: (err) => {
         $('status').hidden = false;
         $('status').className = 'status error';
-        $('status').textContent = 'Could not load this session: ' + err.message;
+        $('status').textContent = 'Could not load this quiz: ' + err.message;
         setSyncStatus('Sync failed');
       },
     });

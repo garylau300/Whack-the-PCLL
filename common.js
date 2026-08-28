@@ -374,14 +374,50 @@
     return nowMin >= sh * 60 + sm && nowMin <= eh * 60 + em;
   }
 
-  // Builds the URL for a session's own page (session.html) from the raw
-  // event — `no` + `date` locate it again once there, `start` is an extra
-  // disambiguator for the rare case two of a course's events land on the
-  // same date with the same (or no) session number.
-  function sessionHref(ev, dateIso) {
+  // Shared by sessionHref/quizHref below — `no` + `date` locate the event
+  // again once there, `start` is an extra disambiguator for the rare case
+  // two of a course's events land on the same date with the same (or no)
+  // session number.
+  function sessionParams(ev, dateIso) {
     const params = new URLSearchParams({ code: ev.code || '', no: ev.no || '', date: dateIso || '' });
     if (ev.start) params.set('start', ev.start);
-    return `session.html?${params.toString()}`;
+    return params;
+  }
+
+  // Builds the URL for a session's own page (session.html) from the raw event.
+  function sessionHref(ev, dateIso) {
+    return `session.html?${sessionParams(ev, dateIso)}`;
+  }
+
+  // Builds the URL for that same session's quiz/flashcards page (quiz.html).
+  function quizHref(ev, dateIso) {
+    return `quiz.html?${sessionParams(ev, dateIso)}`;
+  }
+
+  // Re-locates the event a session.html/quiz.html URL refers to inside a
+  // freshly-fetched timetable — the event itself isn't in the URL, just
+  // enough (code + date + session no, with start time as a tie-breaker) to
+  // find it again. Returns { ev, dateIso, weekNumber, dayName } or null.
+  function findSessionInTimetable(data, code, no, dateIso, start) {
+    let candidates = [];
+    for (const week of data.weeks) {
+      for (const day of week.days) {
+        if (dateIso && day.date !== dateIso) continue;
+        for (const ev of day.events || []) {
+          if (ev.code !== code) continue;
+          candidates.push({ ev, dateIso: day.date, weekNumber: week.week, dayName: day.day });
+        }
+      }
+    }
+    if (candidates.length > 1) {
+      const byNo = candidates.filter((c) => (c.ev.no || '') === no);
+      if (byNo.length) candidates = byNo;
+    }
+    if (candidates.length > 1 && start) {
+      const byStart = candidates.filter((c) => c.ev.start === start);
+      if (byStart.length) candidates = byStart;
+    }
+    return candidates[0] || null;
   }
 
   // "LG1A" -> "LG1", "SG4" -> "SG4" — the key courseDetails.js's `sessions`
@@ -543,6 +579,43 @@
     });
   }
 
+  // A single click-to-flip flashcard: `card` is { front, back }.
+  function flashcardHtml(card, i) {
+    return `<button type="button" class="flashcard" data-idx="${i}" aria-label="Flashcard — click to flip">
+      <span class="flashcard-inner">
+        <span class="flashcard-face flashcard-front">${escapeHtml(card.front)}</span>
+        <span class="flashcard-face flashcard-back">${escapeHtml(card.back)}</span>
+      </span>
+    </button>`;
+  }
+
+  function flashcardSectionHtml(cards) {
+    if (!cards || !cards.length) return '';
+    return `<div class="flashcard-section">
+      <div class="cloze-head"><h3>Flashcards</h3><button type="button" class="link-btn flashcard-toggle-all">Flip all</button></div>
+      <div class="flashcard-grid">${cards.map(flashcardHtml).join('')}</div>
+    </div>`;
+  }
+
+  // Delegated click handling for a rendered flashcardSectionHtml() block —
+  // same "each toggles independently, one button flips them all together"
+  // pattern as wireClozeSection.
+  function wireFlashcardSection(container) {
+    const section = container.querySelector('.flashcard-section');
+    if (!section) return;
+    section.addEventListener('click', (e) => {
+      const toggleAll = e.target.closest('.flashcard-toggle-all');
+      if (toggleAll) {
+        const anyUnflipped = !!section.querySelector('.flashcard:not(.flipped)');
+        section.querySelectorAll('.flashcard').forEach((c) => c.classList.toggle('flipped', anyUnflipped));
+        toggleAll.textContent = anyUnflipped ? 'Unflip all' : 'Flip all';
+        return;
+      }
+      const card = e.target.closest('.flashcard');
+      if (card) card.classList.toggle('flipped');
+    });
+  }
+
   // Full write-up for one session (lecture outline, prep checklist, fact
   // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries —
   // shared so the course page's session table (which links out to
@@ -609,7 +682,6 @@
 
     html += listSection('Key Takeaways', sessionDetail.keyTakeaways);
     html += listSection('During / After', sessionDetail.duringAfter);
-    html += clozeSectionHtml(sessionDetail.cloze);
 
     // legalIssues (numbered, grouped-by-issue) is the current format;
     // fullNotes (a flat list) is kept as a fallback for any session not yet
@@ -644,20 +716,16 @@
   }
 
   // After bodyEl.innerHTML has been set from sessionDetailHtml(), wires up
-  // whatever interactive pieces it contains — the prep checklist (the
-  // [data-prep-checklist] placeholder) and the cloze "test yourself"
-  // section — shared so course.js and session.js don't each duplicate this
-  // glue.
+  // the prep checklist it may contain (the [data-prep-checklist]
+  // placeholder) — shared so course.js and session.js don't each duplicate
+  // this glue. (Cloze/flashcards live on quiz.html now, wired there instead.)
   function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
-    if (!sessionDetail) return;
-    if (sessionDetail.prepChecklist) {
-      const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
-      const container = bodyEl.querySelector('[data-prep-checklist]');
-      const render = () => renderPrepChecklist(container, sessionDetail, prepKey);
-      render();
-      wireChecklist(container, prepKey, render);
-    }
-    if (sessionDetail.cloze) wireClozeSection(bodyEl);
+    if (!sessionDetail || !sessionDetail.prepChecklist) return;
+    const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
+    const container = bodyEl.querySelector('[data-prep-checklist]');
+    const render = () => renderPrepChecklist(container, sessionDetail, prepKey);
+    render();
+    wireChecklist(container, prepKey, render);
   }
 
   // opts: { dateIso, linkable = true, dateHeading }
@@ -743,6 +811,7 @@
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil,
-    sessionHref, sessionKeyFor, sessionPartLetter, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
+    sessionHref, quizHref, findSessionInTimetable, sessionKeyFor, sessionPartLetter, sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
+    clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
   };
 })();
