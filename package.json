@@ -4,7 +4,11 @@
   "description": "PCLL study portal — live interactive timetable for Group 11",
   "main": "index.js",
   "scripts": {
-    "dev": "node scripts/dev-server.js"
+    "dev": "node scripts/dev-server.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "for f in $(git ls-files '*.js'); do node --check \"$f\" || exit 1; done"
   },
   "repository": {
     "type": "git",
@@ -16,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/garylau300/Whack-the-PCLL/issues"
   },
-  "homepage": "https://github.com/garylau300/Whack-the-PCLL#readme"
+  "homepage": "https://github.com/garylau300/Whack-the-PCLL#readme",
+  "devDependencies": {
+    "eslint": "^10.9.1",
+    "prettier": "^3.9.6"
+  }
 }

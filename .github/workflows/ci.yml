@@ -1,0 +1,49 @@
+name: CI
+
+# Deliberately lightweight -- this is a zero-build static site with no
+# automated browser tests yet (see CLAUDE.md's "known gaps" section), so
+# there's no build step to run here. What this catches: a JS syntax error,
+# an obvious bug ESLint's default rules flag (undeclared globals, stray
+# `var`, an unused variable), and a CSS file with unbalanced braces --
+# each of these has actually broken a page in this repo's history, and none
+# of them require a browser to detect.
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  lint-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Syntax-check every tracked .js file
+        run: npm run check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Check styles.css brace balance
+        run: |
+          node -e "
+            const fs = require('fs');
+            const css = fs.readFileSync('styles.css', 'utf8');
+            let depth = 0;
+            for (const ch of css) {
+              if (ch === '{') depth++;
+              if (ch === '}') depth--;
+            }
+            if (depth !== 0) {
+              console.error('styles.css braces are unbalanced (net depth ' + depth + ')');
+              process.exit(1);
+            }
+            console.log('styles.css braces balanced');
+          "

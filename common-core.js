@@ -19,7 +19,7 @@
   try {
     const saved = localStorage.getItem('pcll.theme');
     document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
-  } catch (e) {
+  } catch {
     document.documentElement.dataset.theme = 'light';
   }
 })();

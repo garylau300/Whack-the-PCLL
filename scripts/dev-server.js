@@ -43,7 +43,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  let filePath = path.join(ROOT, url.pathname === '/' ? 'index.html' : url.pathname);
+  const filePath = path.join(ROOT, url.pathname === '/' ? 'index.html' : url.pathname);
   if (!filePath.startsWith(ROOT)) { res.writeHead(403); res.end('Forbidden'); return; }
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404); res.end('Not found'); return; }

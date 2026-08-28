@@ -27,7 +27,6 @@
   function renderWeekPills() {
     const scroll = $('weekScroll');
     scroll.innerHTML = '';
-    const today = todayISO();
     const currentIdx = pickCurrentWeekIndex(timetable.weeks);
     timetable.weeks.forEach((w, i) => {
       const btn = document.createElement('button');
