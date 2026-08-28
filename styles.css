@@ -94,6 +94,33 @@ body {
 }
 .topbar-title { display: flex; align-items: baseline; gap: 10px; }
 .topbar h1 { font-size: 1.1rem; margin: 0; font-weight: 600; }
+/* Site brand — always shown, centered independent of how wide the
+   page-specific title/back-button (left) or icon buttons (right) are.
+   Absolutely positioned within .topbar (already a positioning context via
+   position: sticky) rather than a flex/grid column, so it stays perfectly
+   centered on the bar itself regardless of how unbalanced the left/right
+   content is. On index.html (the only page with no page-specific title of
+   its own) this doubles as that page's actual <h1> — every other page
+   keeps its own dynamic <h1> (Timetable/Course/session title/etc.) as the
+   sole heading, and renders the brand as a plain aria-hidden <span>
+   instead, so there's still exactly one real heading per page. The
+   `.topbar .topbar-brand` (rather than `.topbar-brand` alone) selector is
+   needed to outrank the `.topbar h1` rule above when the brand IS an h1. */
+.topbar .topbar-brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  pointer-events: none;
+}
+@media (max-width: 480px) {
+  .topbar .topbar-brand { font-size: 1.05rem; }
+}
 .icon-btn {
   display: inline-flex;
   align-items: center;
