@@ -148,6 +148,61 @@ body {
   width: 1.1em;
   height: 1.1em;
   flex-shrink: 0;
+  /* the swung head and the impact sparks both reach past the 24x24 box */
+  overflow: visible;
+}
+
+/* The brand hammer actually hammers the wordmark: wind up, a fast strike,
+   a bounce off the impact, then a beat's rest before the next swing. Three
+   parts share one 1.6s cycle so they read as a single hit rather than three
+   loops that happen to overlap -- the head swings, sparks flash at the
+   moment of contact, and "Whack the PCLL" takes a jolt on that same frame.
+   The head pivots at the grip end of the handle (5,19 in the icon's own
+   viewBox units, hence transform-box: view-box).
+
+   Every track deliberately starts AND ends at its rest value. The global
+   prefers-reduced-motion rule near the top of this file collapses animations
+   to a single 0.001ms run, which snaps an element to its final keyframe --
+   so ending at rest is what leaves those users an upright, un-rotated
+   hammer and no stray sparks, rather than one frozen mid-swing. */
+.brand-hammer {
+  transform-box: view-box;
+  transform-origin: 5px 19px;
+  animation: brandSwing 1.6s infinite;
+}
+.brand-spark {
+  transform-box: view-box;
+  transform-origin: 21px 17.6px;
+  opacity: 0;
+  animation: brandSpark 1.6s infinite;
+}
+.topbar .topbar-brand .brand-text {
+  display: inline-block;
+  animation: brandJolt 1.6s infinite;
+}
+
+@keyframes brandSwing {
+  0% { transform: rotate(0deg); animation-timing-function: ease-out; }
+  20% { transform: rotate(-24deg); animation-timing-function: ease-in; }
+  30% { transform: rotate(-24deg); animation-timing-function: cubic-bezier(0.7, 0, 0.9, 0.5); }
+  38% { transform: rotate(12deg); animation-timing-function: ease-out; }
+  45% { transform: rotate(3deg); }
+  52% { transform: rotate(8deg); animation-timing-function: ease-in-out; }
+  64% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes brandSpark {
+  0%, 36% { opacity: 0; transform: scale(0.4); }
+  40% { opacity: 1; transform: scale(1); }
+  56% { opacity: 0; transform: scale(1.4); }
+  100% { opacity: 0; transform: scale(0.4); }
+}
+@keyframes brandJolt {
+  0%, 36% { transform: translateY(0); }
+  40% { transform: translateY(1.5px); }
+  48% { transform: translateY(0); }
+  52% { transform: translateY(0.6px); }
+  58%, 100% { transform: translateY(0); }
 }
 /* Below this width the three columns leave the title too little room to wrap
    readably (it starts breaking every couple of words), so the brand gets its

@@ -114,6 +114,12 @@ not what the code does.
   centred row and the title a full-width one beneath. Keep `min-width: 0`
   on `.topbar h1` so it wraps inside its column rather than widening the
   column and pushing the brand off-centre.
+- **A looping animation's keyframes must start *and* end at the resting
+  pose.** The global `prefers-reduced-motion` rule near the top of
+  `styles.css` collapses every animation to a single 0.001ms run, which
+  snaps the element to its *final* keyframe — so a loop ending mid-motion
+  leaves reduced-motion users staring at a frozen half-swing. The brand
+  hammer (`brandSwing`/`brandSpark`/`brandJolt`) is the worked example.
 - **Every course gets its own colour in `COURSE_COLORS`** (`common-core.js`)
   — electives included, not just the seven core courses. That one map is
   the single source of truth: the dashboard course list, the timetable
