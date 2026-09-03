@@ -388,6 +388,24 @@ body {
 }
 .day-col.is-today .day-col-head { background: var(--today); }
 .day-col-head .date { display: block; font-weight: 400; color: var(--text-muted); font-size: 0.75rem; }
+.day-col-head .date.day-jump {
+  font: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.day-col-head .date.day-jump:hover,
+.day-col-head .date.day-jump:focus-visible {
+  color: var(--accent-text);
+  text-decoration: underline;
+}
+.day-col-head .date.day-jump:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
 .day-col-body { padding: 8px; display: flex; flex-direction: column; gap: 8px; min-height: 60px; }
 .empty-day { color: var(--text-muted); font-size: 0.8rem; padding: 8px; text-align: center; }
 

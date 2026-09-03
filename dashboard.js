@@ -131,7 +131,8 @@
       const events = ownEventsFor(day, myElectives);
       const isToday = day.date === today;
       const firstTime = events.length && events[0].start ? fmtTime(events[0].start) : null;
-      return `<a href="timetable.html" class="week-strip-day${isToday ? ' is-today' : ''}">
+      const href = day.date ? `timetable.html?date=${encodeURIComponent(day.date)}` : 'timetable.html';
+      return `<a href="${href}" class="week-strip-day${isToday ? ' is-today' : ''}">
         <div class="wsd-day">${escapeHtml(day.day.slice(0, 3))}</div>
         <div class="wsd-date">${day.date ? escapeHtml(fmtShort(day.date)) : ''}</div>
         <div class="wsd-count">${events.length ? `${events.length} class${events.length === 1 ? '' : 'es'}` : 'Free'}</div>

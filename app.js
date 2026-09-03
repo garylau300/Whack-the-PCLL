@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, eventCardHtml, initTheme,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, eventCardHtml, initTheme,
     loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
     buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone,
   } = window.PCLL;
@@ -57,7 +57,7 @@
       col.className = 'day-col' + (day.date === today ? ' is-today' : '');
       const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
       col.innerHTML = `
-        <div class="day-col-head">${day.day}${day.date ? `<span class="date">${fmtShort(day.date)}</span>` : ''}${day.date ? dayDeadlineChips(day.date) : ''}</div>
+        <div class="day-col-head">${day.day}${day.date ? `<button type="button" class="date day-jump" data-date="${day.date}">${fmtShort(day.date)}</button>` : ''}${day.date ? dayDeadlineChips(day.date) : ''}</div>
         <div class="day-col-body">
           ${events.length ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('') : '<div class="empty-day">No sessions</div>'}
         </div>`;
@@ -65,12 +65,32 @@
     }
   }
 
+  // Jumps straight to a specific date's day view -- used both by clicking a
+  // date header in the week grid, and by a `?date=` link into this page
+  // (e.g. from the dashboard's week strip), so either path lands on that
+  // exact day rather than always the current week's first day.
+  function jumpToDay(dateIso) {
+    const found = findDateIndex(timetable.weeks, dateIso);
+    if (!found) return;
+    activeWeekIndex = found.week;
+    activeDayIndex = found.day;
+    viewMode = 'day';
+    $('dayViewBtn').classList.add('active');
+    $('gridViewBtn').classList.remove('active');
+    render();
+  }
+
   function renderDayView(week) {
     const days = week.days;
     if (activeDayIndex >= days.length) activeDayIndex = 0;
     const day = days[activeDayIndex];
     const myElectives = loadMyElectives();
-    $('dayViewLabel').innerHTML = `${day.day}${day.date ? `<span class="date">${fmtLong(day.date)}</span>` : ''}`;
+    // day.day already supplies the weekday as its own bold heading line, so
+    // the muted subline below it skips the weekday fmtLong() would repeat.
+    const dateSub = day.date
+      ? new Date(day.date + 'T00:00:00Z').toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+      : '';
+    $('dayViewLabel').innerHTML = `${day.day}${dateSub ? `<span class="date">${dateSub}</span>` : ''}`;
     $('dayViewDeadlines').innerHTML = day.date ? dayDeadlineChips(day.date) : '';
     const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
     $('dayViewBody').innerHTML = events.length
@@ -114,7 +134,17 @@
         timetable = data;
         $('status').hidden = true;
         if (!navInitialized) {
-          activeWeekIndex = pickCurrentWeekIndex(timetable.weeks);
+          const requestedDate = new URLSearchParams(location.search).get('date');
+          const found = requestedDate && findDateIndex(timetable.weeks, requestedDate);
+          if (found) {
+            activeWeekIndex = found.week;
+            activeDayIndex = found.day;
+            viewMode = 'day';
+            $('dayViewBtn').classList.add('active');
+            $('gridViewBtn').classList.remove('active');
+          } else {
+            activeWeekIndex = pickCurrentWeekIndex(timetable.weeks);
+          }
           navInitialized = true;
         }
         render();
@@ -165,6 +195,12 @@
       $('dayViewBtn').classList.add('active');
       $('gridViewBtn').classList.remove('active');
       render();
+    });
+    // Delegated on the grid container (not re-bound per column) since
+    // renderGridView replaces its children wholesale on every render.
+    $('weekGrid').addEventListener('click', (e) => {
+      const btn = e.target.closest('.day-jump');
+      if (btn) jumpToDay(btn.dataset.date);
     });
     initElectiveSettings({
       settingsBtn: $('settingsBtn'),

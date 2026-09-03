@@ -315,6 +315,19 @@
     return best;
   }
 
+  // Locates an arbitrary date within a timetable's week/day structure -- used
+  // to jump straight to a specific day (e.g. from a `?date=` link elsewhere
+  // on the site) instead of always landing on the current week.
+  function findDateIndex(weeks, dateIso) {
+    for (let w = 0; w < weeks.length; w++) {
+      const days = weeks[w].days;
+      for (let d = 0; d < days.length; d++) {
+        if (days[d].date === dateIso) return { week: w, day: d };
+      }
+    }
+    return null;
+  }
+
   function fmtShort(iso) {
     const d = new Date(iso + 'T00:00:00Z');
     return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
@@ -589,7 +602,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
