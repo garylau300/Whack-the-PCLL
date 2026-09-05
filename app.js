@@ -4,7 +4,7 @@
   const {
     todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, eventCardHtml, initTheme,
     loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
-    buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone,
+    buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone, emptyStateHtml,
   } = window.PCLL;
 
   // Doesn't depend on the (async) timetable fetch, so it's ready before the
@@ -95,7 +95,7 @@
     const events = (day.events || []).filter((ev) => !eventIsFilteredOut(ev, myElectives));
     $('dayViewBody').innerHTML = events.length
       ? events.map((ev) => eventCardHtml(ev, { dateIso: day.date })).join('')
-      : '<div class="empty-day">No sessions</div>';
+      : emptyStateHtml('No sessions — a free day.');
   }
 
   function render() {

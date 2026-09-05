@@ -127,6 +127,22 @@ not what the code does.
   `--course-color` custom property, so they can't drift apart. Adding a
   course means adding a hue distinct from the ones already there;
   `DEFAULT_COLOR` is the fallback for a *courseless* calendar entry only.
+- **The site's mascot is a raccoon** (`RACCOON.relaxed`/`RACCOON.celebrate`
+  in `common-core.js`, colored via `--raccoon-*` custom properties, not
+  `currentColor` — it's a multi-part illustration, not a single-tone icon).
+  Two poses, two jobs, don't blur them: `emptyStateHtml(message)` (relaxed,
+  sleepy) for a "nothing scheduled, relax" moment — the dashboard's empty
+  "Today's Classes" and the timetable's empty day view both use it, but a
+  narrow week-grid column doesn't (the illustration doesn't fit a ~180px
+  cell; that one stays plain `.empty-day` text). `checklistCompleteHtml(message)`
+  (celebrating, arms up) fires when every item in a checklist is checked —
+  course.js's homework list and the session prep checklist in
+  common-session.js both append it into the same container the checklist
+  renders into, computed fresh on every render (`checked.size === items.length`),
+  so it appears and disappears with the checked state rather than being
+  its own tracked flag. Don't invent a new "completion" concept (e.g. for
+  quiz/flashcards) just to hang the mascot off it — only wire it to a
+  completion state that already exists in the data.
 
 ## Verification workflow — do this before every commit
 

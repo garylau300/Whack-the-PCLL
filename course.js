@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
-    checklistHtml, wireChecklist, daysUntil, sessionHref, preRecordedSessionKey,
+    checklistHtml, wireChecklist, checklistCompleteHtml, daysUntil, sessionHref, preRecordedSessionKey,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -114,7 +114,9 @@
       const deadline = resolveDeadline(h.deadlineId);
       return { id: h.id, label: h.title, meta: dueLabel(deadline, checked.has(h.id)) };
     });
-    $('homeworkChecklist').innerHTML = checklistHtml(checklistItems, checked);
+    const allDone = checklistItems.every((it) => checked.has(it.id));
+    $('homeworkChecklist').innerHTML = checklistHtml(checklistItems, checked)
+      + (allDone ? checklistCompleteHtml('All caught up on this course — nice work!') : '');
     if (!homeworkChecklistWired) {
       wireChecklist($('homeworkChecklist'), hwChecklistKey(code), renderHomeworkSection);
       homeworkChecklistWired = true;

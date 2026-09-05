@@ -5,7 +5,7 @@
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
-    COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession,
+    COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession, emptyStateHtml,
     buildDeadlinesIndex, isDeadlineDone, daysUntil,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
@@ -76,7 +76,7 @@
     const list = $('classesList');
     list.innerHTML = ownEvents.length
       ? ownEvents.map((ev) => eventCardHtml(ev, { dateIso })).join('')
-      : '<div class="empty-day">No classes today.</div>';
+      : emptyStateHtml('No classes today — a clear day.');
   }
 
   function renderTodo(ctx, ownEvents) {

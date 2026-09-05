@@ -14,7 +14,8 @@
 
   const {
     escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
-    sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, loadCheckedIds, deadlineChipsHtml,
+    sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
+    loadCheckedIds, deadlineChipsHtml,
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
 
@@ -279,7 +280,11 @@
 
   function renderPrepChecklist(container, sessionDetail, prepKey) {
     if (!container) return;
-    container.innerHTML = checklistHtml(sessionDetail.prepChecklist, loadCheckedIds(prepKey));
+    const items = sessionDetail.prepChecklist;
+    const checked = loadCheckedIds(prepKey);
+    const allDone = items.length > 0 && items.every((it) => checked.has(it.id));
+    container.innerHTML = checklistHtml(items, checked)
+      + (allDone ? checklistCompleteHtml("Prepped and ready — you've got this.") : '');
   }
 
   // After bodyEl.innerHTML has been set from sessionDetailHtml(), wires up

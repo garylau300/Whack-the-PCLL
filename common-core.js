@@ -93,6 +93,33 @@
     refresh: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
   };
 
+  // The site's mascot -- used at "nothing to worry about" empty states
+  // (relaxed) and "you finished everything" checklist-complete moments
+  // (celebrate). Colors come from --raccoon-* custom properties (styles.css)
+  // rather than currentColor, since it's a multi-part illustration, not a
+  // single-tone icon -- same reasoning as course colors having their own
+  // custom property instead of inheriting text color.
+  const RACCOON = {
+    relaxed: '<svg class="raccoon-icon raccoon-relaxed" aria-hidden="true" viewBox="0 0 100 100"><path d="M62 80c11 1 18-6 16-15-1-6 2-10 7-12" fill="none" stroke="var(--raccoon-fur)" stroke-width="13" stroke-linecap="round"/><path d="M62 80c11 1 18-6 16-15-1-6 2-10 7-12" fill="none" stroke="var(--raccoon-mask)" stroke-width="13" stroke-linecap="butt" stroke-dasharray="6 8" stroke-dashoffset="1"/><ellipse cx="43" cy="80" rx="22" ry="15" fill="var(--raccoon-fur)"/><ellipse cx="32" cy="93" rx="8" ry="5" fill="var(--raccoon-fur-dark)"/><ellipse cx="54" cy="93" rx="8" ry="5" fill="var(--raccoon-fur-dark)"/><ellipse cx="30" cy="72" rx="8" ry="6.5" fill="var(--raccoon-fur)"/><ellipse cx="56" cy="72" rx="8" ry="6.5" fill="var(--raccoon-fur)"/><path d="M26 68q1.5 -3 3 0M31 67q1.5 -3.2 3 0M36 68q1.5 -3 3 0" stroke="var(--raccoon-fur-dark)" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M52 68q1.5 -3 3 0M57 67q1.5 -3.2 3 0M62 68q1.5 -3 3 0" stroke="var(--raccoon-fur-dark)" stroke-width="1.3" fill="none" stroke-linecap="round"/><circle cx="43" cy="46" r="32" fill="var(--raccoon-fur)"/><circle cx="17" cy="24" r="10" fill="var(--raccoon-fur)"/><circle cx="69" cy="24" r="10" fill="var(--raccoon-fur)"/><circle cx="17" cy="25" r="5.5" fill="var(--raccoon-mask)"/><circle cx="69" cy="25" r="5.5" fill="var(--raccoon-mask)"/><path d="M15 40c-1-10 8-18 16-17 7 1 11 6 12 11 1-5 5-10 12-11 8-1 17 7 16 17 -1 8-9 13-17 12-6-1-9-5-11-9-2 4-5 8-11 9-8 1-16-4-17-12Z" fill="var(--raccoon-mask)"/><ellipse cx="18" cy="54" rx="5" ry="3.5" fill="var(--raccoon-blush)" opacity="0.7"/><ellipse cx="68" cy="54" rx="5" ry="3.5" fill="var(--raccoon-blush)" opacity="0.7"/><ellipse cx="43" cy="55" rx="14" ry="10" fill="var(--raccoon-muzzle)"/><path d="M27 39q5 5 10 0" fill="none" stroke="var(--raccoon-muzzle)" stroke-width="3" stroke-linecap="round"/><path d="M49 39q5 5 10 0" fill="none" stroke="var(--raccoon-muzzle)" stroke-width="3" stroke-linecap="round"/><ellipse cx="43" cy="56" rx="3.4" ry="2.6" fill="var(--raccoon-mask)"/><path d="M43 58v3" stroke="var(--raccoon-mask)" stroke-width="1.6" stroke-linecap="round"/><text x="80" y="18" font-size="14" font-weight="800" fill="var(--raccoon-fur-dark)" font-family="inherit">z</text><text x="89" y="8" font-size="10" font-weight="800" fill="var(--raccoon-fur-dark)" font-family="inherit">z</text></svg>',
+    celebrate: '<svg class="raccoon-icon raccoon-celebrate" aria-hidden="true" viewBox="0 0 100 100"><path d="M62 82c12 2 20-5 18-15-1-7 2-12 8-15" fill="none" stroke="var(--raccoon-fur)" stroke-width="13" stroke-linecap="round"/><path d="M62 82c12 2 20-5 18-15-1-7 2-12 8-15" fill="none" stroke="var(--raccoon-mask)" stroke-width="13" stroke-linecap="butt" stroke-dasharray="6 8" stroke-dashoffset="1"/><path d="M27 76C10 70 0 54 4 36" fill="none" stroke="var(--raccoon-fur)" stroke-width="10" stroke-linecap="round"/><path d="M57 76c17-6 27-22 23-40" fill="none" stroke="var(--raccoon-fur)" stroke-width="10" stroke-linecap="round"/><ellipse cx="5" cy="32" rx="8" ry="7" fill="var(--raccoon-fur)"/><ellipse cx="82" cy="34" rx="8" ry="7" fill="var(--raccoon-fur)"/><path d="M1 27q1.5 -3 3 0M6 26q1.5 -3.2 3 0M11 27q1.5 -3 3 0" stroke="var(--raccoon-fur-dark)" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M78 29q1.5 -3 3 0M83 28q1.5 -3.2 3 0M88 29q1.5 -3 3 0" stroke="var(--raccoon-fur-dark)" stroke-width="1.3" fill="none" stroke-linecap="round"/><ellipse cx="42" cy="80" rx="21" ry="15" fill="var(--raccoon-fur)"/><ellipse cx="32" cy="93" rx="7.5" ry="5" fill="var(--raccoon-fur-dark)"/><ellipse cx="52" cy="93" rx="7.5" ry="5" fill="var(--raccoon-fur-dark)"/><circle cx="42" cy="45" r="31" fill="var(--raccoon-fur)"/><circle cx="18" cy="23" r="9.5" fill="var(--raccoon-fur)"/><circle cx="66" cy="23" r="9.5" fill="var(--raccoon-fur)"/><circle cx="18" cy="24" r="5.2" fill="var(--raccoon-mask)"/><circle cx="66" cy="24" r="5.2" fill="var(--raccoon-mask)"/><path d="M14 39c-1-10 8-17 16-16 7 1 10 6 11 10 1-4 4-9 11-10 8-1 17 6 16 16 -1 8-9 12-16 11-6-1-9-5-11-8-2 3-5 7-11 8-7 1-15-3-16-11Z" fill="var(--raccoon-mask)"/><ellipse cx="17" cy="52" rx="5" ry="3.5" fill="var(--raccoon-blush)" opacity="0.75"/><ellipse cx="67" cy="52" rx="5" ry="3.5" fill="var(--raccoon-blush)" opacity="0.75"/><ellipse cx="42" cy="54" rx="14" ry="10" fill="var(--raccoon-muzzle)"/><path d="M25 37q6 -7 12 0" fill="none" stroke="var(--raccoon-muzzle)" stroke-width="3.4" stroke-linecap="round"/><path d="M47 37q6 -7 12 0" fill="none" stroke="var(--raccoon-muzzle)" stroke-width="3.4" stroke-linecap="round"/><ellipse cx="42" cy="54" rx="3.4" ry="2.6" fill="var(--raccoon-mask)"/><path d="M34 58q8 8 16 0" fill="none" stroke="var(--raccoon-mask)" stroke-width="2.2" stroke-linecap="round"/><path d="M88 20l2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="var(--raccoon-fur-dark)" opacity="0.9"/><path d="M6 14l1.4 3.4 3.4 1.4-3.4 1.4L6 23.6l-1.4-3.4L1.2 18.8l3.4-1.4Z" fill="var(--raccoon-fur-dark)" opacity="0.8"/></svg>',
+  };
+
+  // A relaxed-raccoon empty state, e.g. "no sessions today" -- reused
+  // wherever the timetable already shows an <div class="empty-day">-style
+  // message, so a free day reads as "nothing to worry about" rather than
+  // just a bare sentence.
+  function emptyStateHtml(message) {
+    return `<div class="empty-state">${RACCOON.relaxed}<p>${escapeHtml(message)}</p></div>`;
+  }
+
+  // A celebrating-raccoon banner for "you checked everything off" moments
+  // (a course's homework list, a session's prep checklist) -- callers
+  // decide when to show it (all items checked) since that depends on
+  // storage keys/shapes RACCOON itself doesn't know about.
+  function checklistCompleteHtml(message) {
+    return `<div class="checklist-complete">${RACCOON.celebrate}<p>${escapeHtml(message)}</p></div>`;
+  }
+
   function loadMyElectives() {
     try {
       return new Set(JSON.parse(localStorage.getItem(ELECTIVES_KEY) || '[]'));
@@ -601,7 +628,7 @@
   }
 
   window.PCLL = Object.assign(window.PCLL || {}, {
-    ICONS, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
+    ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
