@@ -143,6 +143,31 @@ not what the code does.
   its own tracked flag. Don't invent a new "completion" concept (e.g. for
   quiz/flashcards) just to hang the mascot off it — only wire it to a
   completion state that already exists in the data.
+- **Countdown wording lives in one place: `dueCountdownText(dateIso, done)`**
+  (`common-core.js`) — "Overdue by Nd" / "Due today" / "Due in Nd" / "Done".
+  Course.js's checklist meta and the dashboard's Upcoming Deadlines list
+  both call it; don't reinstate either's old inline copy of this logic.
+  `countdownBadgeHtml(dateIso, done)` wraps that same text in a colored
+  `.countdown-badge` chip (urgency ramp: overdue/today red, soon/week amber,
+  later/done neutral) for a prominent context — currently just the
+  dashboard's deadlines list. The homework checklist's compact meta line
+  deliberately stays plain text via `dueCountdownText` directly, not the
+  badge: `checklistHtml`'s `item.meta` field is HTML-escaped as plain text
+  (only one caller today), so passing badge markup through it would render
+  literal `<span>` tags rather than a chip — don't wire the badge in there
+  without first giving `checklistHtml` a separate "trusted HTML" field.
+- **Course progress is date-driven, not attendance-driven** —
+  `courseSessionProgress(weeks, code)` (`common-core.js`) counts how many
+  of a course's calendar events (in the live timetable, not courseDetails)
+  fall on or before today, out of the total found anywhere in the data.
+  It's "how far into the syllabus calendar you are," which the site can
+  honestly compute — there's no way to know who actually attended or did
+  the reading, so don't relabel this as attendance/completion anywhere it's
+  shown (the dashboard course-chip percentage, the course page's
+  `#courseProgress` bar via `progressBarHtml(pct)`). Shows for every course
+  with at least one scheduled session regardless of whether courseDetails.js
+  has an entry for it — unlike most of course.html's sections, it isn't
+  gated on authored content.
 
 ## Verification workflow — do this before every commit
 

@@ -6,7 +6,8 @@
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
     COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession, emptyStateHtml,
-    buildDeadlinesIndex, isDeadlineDone, daysUntil,
+    buildDeadlinesIndex, isDeadlineDone, daysUntil, countdownBadgeHtml,
+    courseSessionProgress,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
@@ -53,7 +54,7 @@
     const dateLabel = fmtLong(ctx.today);
     let summary;
     if (!ctx.day) {
-      if (isBeforeTerm(ctx)) summary = `Term starts ${fmtLong(ctx.first.date)}.`;
+      if (isBeforeTerm(ctx)) summary = `Term starts ${fmtLong(ctx.first.date)} — in ${daysUntil(ctx.first.date)} day${daysUntil(ctx.first.date) === 1 ? '' : 's'}.`;
       else if (isAfterTerm(ctx)) summary = 'The programme has concluded — well done.';
       else summary = 'No classes on the books today.';
     } else if (ownEvents.length === 0) {
@@ -195,11 +196,7 @@
     const upcoming = all
       .filter((d) => !isDeadlineDone(d) && daysUntil(d.date) >= -2 && daysUntil(d.date) <= 7)
       .sort((a, b) => (a.date + (a.time || '')).localeCompare(b.date + (b.time || '')));
-    const items = upcoming.map((d) => {
-      const days = daysUntil(d.date);
-      const when = days < 0 ? `Overdue by ${-days}d` : days === 0 ? 'Due today' : `Due in ${days}d`;
-      return `<li><strong>${escapeHtml(when)}</strong> — ${escapeHtml(d.title)}</li>`;
-    });
+    const items = upcoming.map((d) => `<li>${countdownBadgeHtml(d.date, false)} ${escapeHtml(d.title)}</li>`);
     $('deadlinesList').innerHTML = items.length
       ? items.join('')
       : '<li class="muted">Nothing due in the next week.</li>';
@@ -217,8 +214,10 @@
     $('courseList').innerHTML = codes.map((code) => {
       const color = COURSE_COLORS[code] || DEFAULT_COLOR;
       const name = courses[code] || ELECTIVE_NAMES[code] || '';
+      const progress = courseSessionProgress(timetable.weeks, code);
       return `<a href="course.html?code=${encodeURIComponent(code)}" class="course-chip" style="--course-color:${color}">
         <span class="swatch"></span>${escapeHtml(code)}${name ? ' · ' + escapeHtml(name) : ''}
+        ${progress.total ? `<span class="course-chip-progress">${progress.pct}%</span>` : ''}
       </a>`;
     }).join('');
   }

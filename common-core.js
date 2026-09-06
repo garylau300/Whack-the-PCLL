@@ -230,6 +230,64 @@
     return Math.round((b - a) / 86400000);
   }
 
+  // The single "Overdue by Nd / Due today / Due in Nd" wording -- a
+  // checklist item's compact meta text (course.js) and the dashboard's
+  // Upcoming Deadlines list both render this, and shouldn't drift apart.
+  function dueCountdownText(dateIso, done) {
+    if (done) return 'Done';
+    const days = daysUntil(dateIso);
+    if (days < 0) return `Overdue by ${-days}d`;
+    if (days === 0) return 'Due today';
+    return `Due in ${days}d`;
+  }
+
+  function daysUntilUrgency(days) {
+    if (days < 0) return 'overdue';
+    if (days === 0) return 'today';
+    if (days <= 3) return 'soon';
+    if (days <= 7) return 'week';
+    return 'later';
+  }
+
+  // A colored countdown chip for a prominent (not dense-checklist-row)
+  // context -- currently just the dashboard's Upcoming Deadlines list.
+  function countdownBadgeHtml(dateIso, done) {
+    const urgency = done ? 'done' : daysUntilUrgency(daysUntil(dateIso));
+    return `<span class="countdown-badge tag-chip countdown-badge--${urgency}">${escapeHtml(dueCountdownText(dateIso, done))}</span>`;
+  }
+
+  // A course's date-driven progress through its own scheduled sessions --
+  // how many of its LG/SG calendar events fall on or before today, out of
+  // the total found anywhere in the timetable. This is NOT an attendance
+  // or completion metric (the app has no way to know who actually showed
+  // up or did the reading) -- purely "how far into the syllabus calendar
+  // you are," which is honestly computable from data the site already has.
+  function courseSessionProgress(weeks, code) {
+    const today = todayISO();
+    let total = 0;
+    let done = 0;
+    for (const week of weeks) {
+      for (const day of week.days) {
+        if (!day.date) continue;
+        for (const ev of day.events || []) {
+          if (ev.code !== code) continue;
+          total++;
+          if (day.date <= today) done++;
+        }
+      }
+    }
+    return { done, total, pct: total ? Math.round((done / total) * 100) : 0 };
+  }
+
+  // Bare fill-bar markup, shared by the course page's progress card and the
+  // dashboard's course-chip percentage -- callers set --course-color on an
+  // ancestor element (same custom property .course-chip/.event-card already
+  // use) so the fill picks up that course's color for free.
+  function progressBarHtml(pct) {
+    const clamped = Math.max(0, Math.min(100, pct));
+    return `<div class="progress-bar"><div class="progress-bar-fill" style="width:${clamped}%"></div></div>`;
+  }
+
   // Small pill renderer for a list of deadline entries — used by the
   // timetable's day-header/day-view badges and the dashboard's deadlines
   // list. Callers filter out isDeadlineDone() entries before passing the
@@ -634,7 +692,7 @@
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
-    deadlineChipsHtml, daysUntil,
+    deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
     sessionHref, quizHref, findSessionInTimetable, preRecordedSessionKey, sessionKeyFor, sessionPartLetter,
   });
 })();

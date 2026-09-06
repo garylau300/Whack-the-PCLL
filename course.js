@@ -4,7 +4,8 @@
   const {
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
-    checklistHtml, wireChecklist, checklistCompleteHtml, daysUntil, sessionHref, preRecordedSessionKey,
+    checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
+    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -22,12 +23,7 @@
   }
 
   function dueLabel(deadline, done) {
-    if (!deadline) return '';
-    if (done) return 'Done';
-    const days = daysUntil(deadline.date);
-    if (days < 0) return `Overdue by ${-days}d`;
-    if (days === 0) return 'Due today';
-    return `Due in ${days}d`;
+    return deadline ? dueCountdownText(deadline.date, done) : '';
   }
 
   // Each row's "No." cell is a real link to that session's own page
@@ -94,6 +90,24 @@
     $('learningOutcomesList').innerHTML = (details.learningOutcomes || []).map((o) => `<li>${escapeHtml(o)}</li>`).join('');
   }
 
+  // Date-driven, not attendance-driven -- see courseSessionProgress's own
+  // comment in common-core.js for why. Shown for every course that has at
+  // least one scheduled session in the timetable, whether or not
+  // courseDetails.js has an entry for it (unlike the sections above, this
+  // doesn't depend on authored content).
+  function renderProgress(weeks) {
+    const progress = courseSessionProgress(weeks, code);
+    const container = $('courseProgress');
+    if (!progress.total) { container.hidden = true; return; }
+    container.hidden = false;
+    const color = COURSE_COLORS[code] || DEFAULT_COLOR;
+    container.style.setProperty('--course-color', color);
+    container.innerHTML = `
+      ${progressBarHtml(progress.pct)}
+      <p class="course-progress-label"><strong>${progress.pct}%</strong> through the course — ${progress.done} of ${progress.total} sessions so far</p>
+    `;
+  }
+
   function renderAssessments() {
     const section = $('assessmentSection');
     if (!details || !details.assessments || !details.assessments.length) { section.hidden = true; return; }
@@ -138,6 +152,7 @@
     $('courseTitle').textContent = heading;
 
     renderCourseInfo();
+    renderProgress(data.weeks);
     renderAssessments();
     renderHomeworkSection();
     renderMaterials();

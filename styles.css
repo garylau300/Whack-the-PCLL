@@ -632,6 +632,20 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   margin: 0 0 10px;
 }
 
+.course-progress {
+  margin-bottom: 24px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.course-progress-label {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.course-progress-label strong { color: var(--text); }
+
 .table-scroll {
   overflow-x: auto;
   border: 1px solid var(--border);
@@ -961,6 +975,36 @@ summary::marker { color: var(--text-muted); }
   padding: 2px 8px;
 }
 
+/* Countdown urgency ramp: overdue/today read as urgent (same red used for
+   deadline-chip--assessment/now-tag), soon a warm amber, week/later calmer
+   -- so "how worried should I be" is visible at a glance, not just the
+   number. */
+.countdown-badge { white-space: nowrap; flex: 0 0 auto; }
+.countdown-badge--overdue, .countdown-badge--today {
+  background: color-mix(in srgb, var(--now-line) 20%, var(--surface));
+  color: var(--now-line-text);
+}
+.countdown-badge--soon { background: var(--accent-2); color: var(--accent-2-text); }
+.countdown-badge--week { background: color-mix(in srgb, var(--accent-2) 28%, var(--surface)); color: var(--text); }
+.countdown-badge--later, .countdown-badge--done {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.progress-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--course-color, var(--accent));
+  transition: width 0.3s ease;
+}
+
 /* Dashboard (index.html) */
 .dashboard { max-width: 720px; padding: 16px 12px 24px; margin: 0 auto; }
 
@@ -1004,6 +1048,7 @@ summary::marker { color: var(--text-muted); }
 .watch-list li { border-left-color: var(--now-line); }
 .watch-list li.muted, .video-list li.muted, .deadline-list li.muted { border-left-color: var(--border); color: var(--text-muted); }
 .watch-list li.muted:hover, .video-list li.muted:hover, .deadline-list li.muted:hover { box-shadow: none; transform: none; }
+.deadline-list li { display: flex; align-items: center; gap: 8px; }
 .video-list li { border-left-color: var(--accent); }
 .video-list .video-when {
   margin-top: 4px;
@@ -1058,6 +1103,14 @@ summary::marker { color: var(--text-muted); }
   border-radius: 2px;
   background: var(--course-color, var(--accent));
   flex: 0 0 auto;
+}
+.course-chip-progress {
+  margin-left: auto;
+  padding-left: 6px;
+  flex: 0 0 auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--course-color, var(--accent));
 }
 
 .week-strip {
