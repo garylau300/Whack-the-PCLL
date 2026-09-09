@@ -44,9 +44,9 @@ window.COURSE_DETAILS.PCLL8010 = {
     {
       title: 'Standardised Client Interview Assessment',
       weight: '5%',
-      dateLabel: '17 or 18 September 2026',
-      note: 'Allocation posted to Moodle',
-      deadlineIds: ['PCLL8010-interview-1', 'PCLL8010-interview-2'],
+      dateLabel: '18 September 2026, 10:00–10:30am',
+      note: 'Venue: CCT310',
+      deadlineIds: ['PCLL8010-interview'],
     },
     { title: 'Final Examination — Knowledge', weight: '47.5%', dateLabel: '8 January 2027 (Provisional)' },
     { title: 'Final Examination — Drafting', weight: '47.5%', dateLabel: '9 January 2027 (Provisional)' },
@@ -68,8 +68,7 @@ window.COURSE_DETAILS.PCLL8010 = {
     { id: 'PCLL8010-hw-sg7', courseCode: 'PCLL8010', kind: 'homework', refId: 'hw-sg7', date: '2026-11-17', title: 'Draft Affirmation & Order due (SG7 homework)' },
     { id: 'PCLL8010-hw-sg8', courseCode: 'PCLL8010', kind: 'homework', refId: 'hw-sg8', date: '2026-12-01', title: 'Draft Affidavit (Mareva) due (SG8 homework)' },
     { id: 'PCLL8010-undertaking', courseCode: 'PCLL8010', kind: 'todo', refId: 'todo-undertaking', date: '2026-09-11', time: '17:00', title: 'Undertaking Form deadline (if not handed in at SG1)' },
-    { id: 'PCLL8010-interview-1', courseCode: 'PCLL8010', kind: 'assessment', refId: 'assessment-interview', date: '2026-09-17', title: 'Standardised Client Interview — check your allocated slot' },
-    { id: 'PCLL8010-interview-2', courseCode: 'PCLL8010', kind: 'assessment', refId: 'assessment-interview', date: '2026-09-18', title: 'Standardised Client Interview — check your allocated slot' },
+    { id: 'PCLL8010-interview', courseCode: 'PCLL8010', kind: 'assessment', refId: 'assessment-interview', date: '2026-09-18', time: '10:00', title: 'Standardised Client Interview Assessment — CCT310, 10:00–10:30am' },
   ],
 
   homework: [

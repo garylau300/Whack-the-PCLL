@@ -4,7 +4,7 @@
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
     eventCardHtml, initTheme, loadTimetable, loadMyElectives,
-    eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ICONS,
+    eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ELECTIVE_CODES, ICONS,
     COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession, emptyStateHtml,
     buildDeadlinesIndex, isDeadlineDone, daysUntil, countdownBadgeHtml,
     courseSessionProgress,
@@ -202,14 +202,18 @@
       : '<li class="muted">Nothing due in the next week.</li>';
   }
 
-  // A quick-nav chip per course — every code in meta.courses (core courses
-  // plus every elective, whether or not the student's picked it yet), minus
-  // electives ruled out once they have picked their 3 (same filter as every
-  // other elective-aware list on the site).
-  function renderCourseList(myElectives) {
+  // A quick-nav chip per core course only -- electives are deliberately
+  // left off this list (there are 12 of them, most not yet picked, and
+  // this widget is a "your courses" browse list rather than a schedule, so
+  // there's no "actually happening" reason to show one here the way there
+  // is in Today's Classes/deadlines/etc). Those other, schedule-driven
+  // sections still use eventIsFilteredOut (myElectives-aware) as before --
+  // this list just never shows an elective at all, regardless of pick
+  // status.
+  function renderCourseList() {
     const courses = timetable.meta.courses || {};
     const codes = Object.keys(courses)
-      .filter((code) => !eventIsFilteredOut({ code }, myElectives))
+      .filter((code) => !ELECTIVE_CODES.includes(code))
       .sort();
     $('courseList').innerHTML = codes.map((code) => {
       const color = COURSE_COLORS[code] || DEFAULT_COLOR;
@@ -250,7 +254,7 @@
     const ownEvents = ctx.day ? ownEventsFor(ctx.day, myElectives) : [];
 
     renderHero(ctx, ownEvents);
-    renderCourseList(myElectives);
+    renderCourseList();
     renderClasses(ownEvents, ctx.day ? ctx.day.date : null);
     renderTodo(ctx, ownEvents);
     renderPreRecordedList(ctx.week, myElectives);
