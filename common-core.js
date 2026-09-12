@@ -604,6 +604,35 @@
     return candidates[0] || null;
   }
 
+  // Indexes a course's timetable entries by the courseDetails.js session key
+  // they document, so anything holding a session key (a courseDetails entry,
+  // an exam-notes cross-reference) can build a real session/quiz/issue URL
+  // for it. First occurrence of a key wins — a session taught in A/B halves
+  // or repeated for two SG groups is one courseDetails entry, and either
+  // event re-locates it.
+  //
+  // A pre-recorded entry is indexed with `dateIso: null`, which is not a
+  // missing date but the genuine value sessionParams/findSessionInTimetable
+  // use to mean "pre-recorded" — so those sessions are linkable too.
+  function sessionEventsByKey(data, code) {
+    const byKey = new Map();
+    for (const week of data.weeks) {
+      for (const entry of week.preRecorded || []) {
+        if (entry.code !== code) continue;
+        const key = preRecordedSessionKey(code, entry);
+        if (key && !byKey.has(key)) byKey.set(key, { ev: { ...entry, no: entry.no || key }, dateIso: null });
+      }
+      for (const day of week.days) {
+        for (const ev of day.events || []) {
+          if (ev.code !== code) continue;
+          const key = sessionKeyFor(ev.no);
+          if (key && !byKey.has(key)) byKey.set(key, { ev, dateIso: day.date });
+        }
+      }
+    }
+    return byKey;
+  }
+
   // "LG1A" -> "LG1", "SG4" -> "SG4" — the key courseDetails.js's `sessions`
   // map uses (no trailing letter; see sessionPartLetter for that).
   function sessionKeyFor(no) {
@@ -702,6 +731,6 @@
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
-    sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionKeyFor, sessionPartLetter,
+    sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionEventsByKey, sessionKeyFor, sessionPartLetter,
   });
 })();

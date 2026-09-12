@@ -15,7 +15,7 @@
   const {
     escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
     sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
-    loadCheckedIds, deadlineChipsHtml, issueHref,
+    loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey,
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
 
@@ -214,6 +214,37 @@
     return `<h3>Exam Notes by Issue Type</h3>${intro}<ol class="exam-issue-index">${cards}</ol>`;
   }
 
+  // Renders an issue type's cross-references to issue types taught in OTHER
+  // sessions of the same course — the reason Corporate Practice can be split
+  // across LG2/LG3/LG5 at all without each page pretending the rest of the
+  // topic doesn't exist.
+  //
+  //   crossRefs: [{ session: 'LG3', issue: 'share-transfer', label: '...' }]
+  //
+  // `session` is a courseDetails.js session key and `issue` an issue type's
+  // `id` within it. A reference only becomes a link once BOTH resolve — the
+  // target session has a timetable entry AND still declares that issue id —
+  // otherwise it degrades to the plain label, because a cross-reference
+  // pointing at a renamed or deleted issue must not render as a dead link.
+  // That needs the timetable, which is why this lives here rather than in
+  // examIssueSectionsHtml (common-content.js knows nothing about events).
+  function examCrossRefsHtml(issue, data, code, details) {
+    const refs = issue.crossRefs || [];
+    if (!refs.length || !data) return '';
+    const byKey = sessionEventsByKey(data, code);
+    const sessions = (details && details.sessions) || {};
+    const items = refs.map((ref) => {
+      const found = byKey.get(ref.session);
+      const target = sessions[ref.session];
+      const issueTypes = (target && target.examNotes && target.examNotes.issueTypes) || [];
+      const targetIssue = issueTypes.find((t) => t.id === ref.issue);
+      const text = `${escapeHtml(ref.session)} — ${escapeHtml(ref.label || (targetIssue && targetIssue.title) || ref.issue)}`;
+      if (!found || !targetIssue) return `<li>${text}</li>`;
+      return `<li><a href="${escapeHtml(issueHref(found.ev, found.dateIso, targetIssue.id))}">${text}</a></li>`;
+    }).join('');
+    return `<section class="exam-section exam-section--crossrefs"><h3>Related Issue Types</h3><ul class="exam-crossrefs">${items}</ul></section>`;
+  }
+
   // Full write-up for one session (lecture outline, prep checklist, fact
   // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries.
   // `dateIso` is needed only to build issue.html links for the exam-notes
@@ -339,6 +370,6 @@
   }
 
   window.PCLL = Object.assign(window.PCLL || {}, {
-    sessionDetailHtml, sessionFallbackHtml, wireSessionDetail,
+    sessionDetailHtml, sessionFallbackHtml, wireSessionDetail, examCrossRefsHtml,
   });
 })();

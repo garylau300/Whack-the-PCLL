@@ -61,6 +61,23 @@ not what the code does.
   `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). Only
   six sessions predate `examNotes` and they're deliberately left as they
   are — a new format alongside them, not a migration.
+- **One course topic can span several sessions.** CCT's Corporate Practice
+  is the worked example: the outline covers LG2, LG3 and LG5 as one body of
+  law, so it's authored as `examNotes` on each of those three sessions
+  rather than duplicated, with `crossRefs` tying them together. A
+  `crossRefs` entry is `{ session, issue, label }` — a courseDetails session
+  key plus an issue type's `id` within it — rendered by `examCrossRefsHtml`
+  in `common-session.js`, which needs the live timetable (hence session, not
+  content layer). A ref only becomes a link once *both* halves resolve; a
+  ref pointing at a renamed or deleted issue degrades to plain text rather
+  than a dead link, so **renaming an issue `id` silently downgrades every
+  ref to it** — grep for the old id when you rename one.
+- **`sessionEventsByKey(data, code)`** (`common-core.js`) is the one way to
+  go from a courseDetails session key back to a linkable timetable event.
+  Both `course.js`'s exam roll-up and `examCrossRefsHtml` use it, so a
+  pre-recorded session (CCT's LG5) is linkable from both: it's indexed with
+  `dateIso: null`, which is not a missing date but the value
+  `sessionParams`/`findSessionInTimetable` use to mean "pre-recorded".
 
 ## Course-content authoring rules
 

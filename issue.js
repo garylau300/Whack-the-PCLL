@@ -3,7 +3,7 @@
 
   const {
     ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref, issueHref,
-    findSessionInTimetable, examIssueSectionsHtml,
+    findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -96,7 +96,7 @@
       summaryEl.hidden = true;
     }
 
-    $('issueBody').innerHTML = examIssueSectionsHtml(issue);
+    $('issueBody').innerHTML = examIssueSectionsHtml(issue) + examCrossRefsHtml(issue, data, code, details);
     renderNav(issueTypes, index, ev, foundDate);
 
     $('status').hidden = true;

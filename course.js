@@ -5,7 +5,7 @@
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
-    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionKeyFor,
+    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -146,12 +146,10 @@
   }
 
   // Rolls every session's exam-notes issue types up into one course-level
-  // index, grouped by the session that teaches them. `eventsByKey` comes from
-  // renderCourse's existing walk of the timetable: an issue type's link needs
-  // the real event (code/no/date/start) to be re-locatable, so a session key
-  // that never matched a dated event is skipped rather than linked with a
-  // blank date — a blank date means "pre-recorded" to findSessionInTimetable
-  // and must not be faked.
+  // index, grouped by the session that teaches them. `eventsByKey` is
+  // sessionEventsByKey(data, code): an issue type's link needs the real event
+  // (code/no/date/start) to be re-locatable, so a session key that matched no
+  // timetable entry at all is skipped rather than linked to nothing.
   function renderExamIndex(eventsByKey) {
     const section = $('examIndexSection');
     const sessions = (details && details.sessions) || {};
@@ -187,10 +185,6 @@
     renderMaterials();
 
     const rows = [];
-    // Session key -> the first dated event that is that session, collected in
-    // the same pass that builds the table rows; renderExamIndex needs it to
-    // build issue.html links.
-    const eventsByKey = new Map();
     let idx = 0;
     for (const week of data.weeks) {
       for (const entry of week.preRecorded || []) {
@@ -200,13 +194,11 @@
       for (const day of week.days) {
         for (const ev of day.events || []) {
           if (ev.code !== code) continue;
-          const key = sessionKeyFor(ev.no);
-          if (key && !eventsByKey.has(key)) eventsByKey.set(key, { ev, dateIso: day.date });
           rows.push(rowHtml(ev, week.week, day.date, day.day, idx++));
         }
       }
     }
-    renderExamIndex(eventsByKey);
+    renderExamIndex(sessionEventsByKey(data, code));
 
     $('status').hidden = true;
     const section = $('sessionsSection');

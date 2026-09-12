@@ -961,6 +961,22 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   border-left: 3px solid color-mix(in srgb, var(--accent-2) 60%, var(--border));
 }
 
+/* Cross-references to issue types in other sessions of the same course -- the
+   seam that lets one topic (e.g. Corporate Practice) span several lectures
+   without each page pretending the rest of it doesn't exist. A ref whose
+   target no longer resolves renders as plain text, so it must read correctly
+   without the link styling too. */
+.exam-crossrefs { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.exam-crossrefs li {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface));
+  font-size: 0.88rem;
+}
+.exam-crossrefs a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
+.exam-crossrefs a:hover, .exam-crossrefs a:focus-visible { text-decoration: underline; }
+
 .issue-nav {
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
   margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
