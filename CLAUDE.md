@@ -98,7 +98,39 @@ not what the code does.
   sentence that still cites the specific section/paragraph number instead
   of a quote box.
 - **Mark section/paragraph numbers whenever appropriate** — in bullets,
-  table rows, wherever a specific provision is being described.
+  table rows, wherever a specific provision is being described. **Cite to
+  the subsection**, not the section: `MA64(4)`, not `MA64`; `s151(2)`, not
+  `s151`. A bare section number usually means the provision was taken from
+  an outline rather than read, and outlines routinely omit the deadline,
+  threshold or exception that decides the answer.
+- **Read the provision, don't paraphrase a course outline's paraphrase.**
+  Outlines cite provisions; they rarely reproduce them. Where to get the
+  real text:
+  - **Model Articles (Cap. 622H Sch. 2)** — all 84 articles are reproduced
+    in the Companies Registry's `AA_Sample_B.pdf`
+    (https://www.cr.gov.hk/en/companies_ordinance/docs/AA_Sample_B.pdf).
+    `pdftotext -layout` extracts it cleanly, and it is current (it carries
+    the 2023 virtual-meeting amendments at MA35(4)(b)(ii), MA38(6),
+    MA39(1A)).
+  - **Companies Ordinance (Cap. 622)** — a consolidated PDF is fetchable
+    with `curl` (too big for WebFetch's 10 MB cap). The one used so far
+    consolidates to **1 Aug 2019**, so it is reliable for stable sections
+    but *not* for anything the 2023 Companies (Amendment) Ordinance touched
+    (s583A, s547(1), s584, the virtual/hybrid meeting regime) — take those
+    from the course outline instead.
+  - **e-Legislation cannot be WebFetched** — it is a JS single-page app and
+    returns only its loading shell, for the HTML and `.pdf` URLs alike.
+    Don't waste calls on it.
+  - The **course outline still governs scope**: it decides what is
+    examinable, and italicised/unexaminable topics stay out however
+    interesting the statute is.
+- **Verify every `statutes` quote box mechanically before committing.**
+  `scratchpad/quotecheck.py` walks every quote box in a courseDetails file
+  and greps its full normalised text against the extracted sources. An
+  elided quote (`... (e) ...`) will not match and should be re-cut to quote
+  one contiguous limb instead. Likewise `scratchpad/tblcheck.js` catches a
+  `table` whose rows and `headers` have drifted out of step — easy to do
+  when widening a two-column table to three.
 - **`warnings` are for compliance-critical facts only** — a statutory
   deadline with real legal consequences, an offence/penalty, disciplinary
   risk. Not a stand-in for a `statutes` quote box, and not for routine
