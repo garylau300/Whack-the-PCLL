@@ -5,7 +5,7 @@
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
-    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml,
+    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionKeyFor,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -145,6 +145,35 @@
     $('materialsNotesList').innerHTML = (details.materialsNotes || []).map((m) => `<li class="muted">${escapeHtml(m)}</li>`).join('');
   }
 
+  // Rolls every session's exam-notes issue types up into one course-level
+  // index, grouped by the session that teaches them. `eventsByKey` comes from
+  // renderCourse's existing walk of the timetable: an issue type's link needs
+  // the real event (code/no/date/start) to be re-locatable, so a session key
+  // that never matched a dated event is skipped rather than linked with a
+  // blank date — a blank date means "pre-recorded" to findSessionInTimetable
+  // and must not be faked.
+  function renderExamIndex(eventsByKey) {
+    const section = $('examIndexSection');
+    const sessions = (details && details.sessions) || {};
+    const groups = Object.keys(sessions).map((key) => {
+      const found = eventsByKey.get(key);
+      const issueTypes = (sessions[key].examNotes && sessions[key].examNotes.issueTypes) || [];
+      if (!found || !issueTypes.length) return '';
+      const cards = issueTypes.map((issue, i) => `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(found.ev, found.dateIso, issue.id))}">
+        <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
+        <span class="exam-issue-main">
+          <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
+          ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
+        </span>
+        <span class="exam-issue-arrow" aria-hidden="true">&#8594;</span>
+      </a></li>`).join('');
+      return `<h3 class="exam-index-session">${escapeHtml(key)}</h3><ol class="exam-issue-index">${cards}</ol>`;
+    }).join('');
+    if (!groups) { section.hidden = true; return; }
+    section.hidden = false;
+    $('examIndexBody').innerHTML = groups;
+  }
+
   function renderCourse(data) {
     const name = data.meta.courses[code] || ELECTIVE_NAMES[code] || '';
     const heading = name ? `${code} · ${name}` : code || 'Unknown course';
@@ -158,6 +187,10 @@
     renderMaterials();
 
     const rows = [];
+    // Session key -> the first dated event that is that session, collected in
+    // the same pass that builds the table rows; renderExamIndex needs it to
+    // build issue.html links.
+    const eventsByKey = new Map();
     let idx = 0;
     for (const week of data.weeks) {
       for (const entry of week.preRecorded || []) {
@@ -167,10 +200,13 @@
       for (const day of week.days) {
         for (const ev of day.events || []) {
           if (ev.code !== code) continue;
+          const key = sessionKeyFor(ev.no);
+          if (key && !eventsByKey.has(key)) eventsByKey.set(key, { ev, dateIso: day.date });
           rows.push(rowHtml(ev, week.week, day.date, day.day, idx++));
         }
       }
     }
+    renderExamIndex(eventsByKey);
 
     $('status').hidden = true;
     const section = $('sessionsSection');

@@ -58,6 +58,61 @@
     return `${title}<div class="process-diagram">${steps}</div>`;
   }
 
+  // A branching decision flow — the sibling of processDiagramHtml above, for
+  // "how do I answer this?" rather than "what are the stages of X?".
+  // `diagram` is linear and horizontal; this is vertical and can fork, so it
+  // stays readable however long it gets (which is also why it needs no
+  // narrow-screen special case — it's already a stack).
+  //
+  //   flowchart: {
+  //     title: 'Optional heading',
+  //     steps: [
+  //       { id: 'liq',                       // only needed if a branch gotos it
+  //         label: 'Is the claim for a liquidated sum?',
+  //         detail: 'Optional one-liner.',
+  //         points: ['Optional sub-bullets'],
+  //         branches: [
+  //           { condition: 'Yes', then: 'O.14 is open', goto: 'def' },
+  //           { condition: 'No',  then: 'Consider O.14A instead' },
+  //         ] },
+  //     ],
+  //   }
+  //
+  // A `goto` resolves to the CURRENT display position of the step with that
+  // id ("→ Step 4: Defence"), so inserting a step never breaks a reference
+  // the way an authored step number would. It renders as plain text, never
+  // an <a href="#id">: a flowchart can sit inside a mindmap popup <template>
+  // that gets cloneNode'd, and DOM ids would then collide. An unresolvable
+  // goto degrades to just the `then` text rather than throwing.
+  function flowchartHtml(fc) {
+    if (!fc || !fc.steps || !fc.steps.length) return '';
+    const positionOf = new Map(fc.steps.map((s, i) => [s.id, i + 1]));
+    const title = fc.title ? `<p class="exam-flow-title">${escapeHtml(fc.title)}</p>` : '';
+    const steps = fc.steps.map((s, i) => {
+      const points = (s.points || []).length
+        ? `<ul class="exam-flow-points">${s.points.map((p) => `<li>${escapeHtml(p)}</li>`).join('')}</ul>`
+        : '';
+      const branches = (s.branches || []).length
+        ? `<ul class="exam-flow-branches">${s.branches.map((b) => {
+          const target = b.goto && positionOf.get(b.goto);
+          const targetStep = target && fc.steps[target - 1];
+          const jump = targetStep
+            ? `<span class="exam-flow-goto">&#8594; Step ${target}: ${escapeHtml(targetStep.label)}</span>`
+            : '';
+          return `<li class="exam-flow-branch"><strong class="exam-flow-cond">${escapeHtml(b.condition)}</strong>${b.then ? ` — ${escapeHtml(b.then)}` : ''}${jump}</li>`;
+        }).join('')}</ul>`
+        : '';
+      const decision = (s.branches || []).length ? ' exam-flow-step--decision' : '';
+      return `<li class="exam-flow-step${decision}">
+        <span class="exam-flow-num" aria-hidden="true">${i + 1}</span>
+        <span class="exam-flow-label">${escapeHtml(s.label)}</span>
+        ${s.detail ? `<span class="exam-flow-detail">${escapeHtml(s.detail)}</span>` : ''}
+        ${points}${branches}
+      </li>`;
+    }).join('');
+    return `${title}<ol class="exam-flow">${steps}</ol>`;
+  }
+
   // A callout for compliance-critical facts (statutory deadlines, offences,
   // consequences of non-compliance) — deliberately distinct from a plain
   // bullet so the reader's eye catches it while skimming.
@@ -80,11 +135,15 @@
     </blockquote>`).join('');
   }
 
-  // One `fullNotes`/legal-issue-note entry can mix any of these structured
-  // shapes alongside (or instead of) a plain `body` paragraph — lets
-  // courseDetails.js pick whichever shape (bullets/table/diagram/Q&A/quoted
-  // provision/warning) actually fits that note's content instead of forcing
+  // One `fullNotes`/legal-issue-note entry — and one exam-notes section (see
+  // examIssueSectionsHtml below) — can mix any of these structured shapes
+  // alongside (or instead of) a plain `body` paragraph, so courseDetails.js
+  // picks whichever shape (bullets/table/diagram/flowchart/Q&A/quoted
+  // provision/warning) actually fits the content instead of forcing
   // everything into prose.
+  //
+  // This function is the single source of truth for the vocabulary. Emission
+  // order is fixed here, NOT by the order keys are authored in.
   function fullNoteBodyHtml(n) {
     let html = '';
     if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
@@ -97,6 +156,7 @@
       html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
     if (n.diagram) html += processDiagramHtml(n.diagram);
+    if (n.flowchart) html += flowchartHtml(n.flowchart);
     if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${escapeHtml(p.q)}</dt><dd>${escapeHtml(p.a)}</dd>`).join('')}</dl>`;
     if (n.warnings) html += warningBoxHtml(n.warnings);
     return html;
@@ -126,6 +186,58 @@
   function legalIssuesHtml(issues) {
     if (!issues || !issues.length) return '';
     return issues.map(legalIssueHtml).join('');
+  }
+
+  // The fixed running order of an exam-notes issue type, and the only place
+  // these headings are defined. Order is the order you'd actually work a
+  // question: spot it -> work it -> work it well -> write it -> don't blow
+  // it -> look it up. `notes` is the catch-all and stays last.
+  const EXAM_SECTIONS = [
+    { key: 'triggers', heading: 'Issue Triggers' },
+    { key: 'answering', heading: 'Answering Flowchart' },
+    { key: 'lookOut', heading: 'Things to Look Out For' },
+    { key: 'skills', heading: 'Answering Skills' },
+    { key: 'skeleton', heading: 'Model Answer Skeleton' },
+    { key: 'mistakes', heading: 'Common Mistakes' },
+    { key: 'authorities', heading: 'Key Law & Authorities' },
+  ];
+
+  // Renders one exam-notes issue type — the body of an issue.html sub-page.
+  //
+  //   examNotes: {
+  //     intro: 'Optional line above the index on the session page.',
+  //     issueTypes: [{
+  //       id: 'summary-judgment',        // URL slug: stable, authored, never derived
+  //       title: 'Summary judgment (O.14)',
+  //       summary: 'One line for the index card.',
+  //       weighting: 'Commonly 15-20 marks',   // ONLY if a course document says so
+  //       // Every section below is optional, and each one's value is a plain
+  //       // fullNoteBodyHtml object -- so a section can be bullets, a table, a
+  //       // flowchart, quoted provisions, or any mix, whichever the content
+  //       // actually needs. The section heading supplies the framing, which is
+  //       // why none of these needed their own bespoke shape.
+  //       triggers:    { bullets: [...] },
+  //       answering:   { flowchart: { steps: [...] } },
+  //       lookOut:     { bullets: [...] },
+  //       skills:      { bulletGroups: [...] },
+  //       skeleton:    { bulletGroups: [...] },
+  //       mistakes:    { bullets: [...] },
+  //       authorities: { table: {...}, statutes: [...] },
+  //       notes: [{ heading: 'Anything else', bullets: [...] }],   // catch-all, last
+  //     }],
+  //   }
+  function examIssueSectionsHtml(issue) {
+    if (!issue) return '';
+    let html = EXAM_SECTIONS.map(({ key, heading }) => {
+      const body = issue[key] && fullNoteBodyHtml(issue[key]);
+      if (!body) return '';
+      return `<section class="exam-section exam-section--${key}"><h3>${escapeHtml(heading)}</h3>${body}</section>`;
+    }).join('');
+    if (issue.notes && issue.notes.length) {
+      html += `<section class="exam-section exam-section--notes"><h3>Further Notes</h3>${issue.notes.map((n) => `
+        <div class="legal-issue-note"><h4>${escapeHtml(n.heading)}</h4>${fullNoteBodyHtml(n)}</div>`).join('')}</section>`;
+    }
+    return html;
   }
 
   // Parses `{{answer}}` markers out of a cloze item's template text into a
@@ -226,6 +338,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml,
+    examIssueSectionsHtml,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
   });
 })();

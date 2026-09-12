@@ -302,13 +302,13 @@
   // Turns a `.settings-panel`-shaped overlay into an accessible dialog:
   // role="dialog"/aria-modal/aria-labelledby set once at wiring time;
   // Escape closes; Tab/Shift+Tab is trapped within the dialog's currently
-  // visible focusable elements (recomputed live, since both the settings
-  // panel and the course-page session modal replace their own content via
-  // innerHTML after opening); focus moves to the close button on open and
-  // back to whatever triggered the open on close. Shared by
-  // initElectiveSettings below and course.js's session-detail modal, which
-  // were previously two independent, duplicated implementations of the same
-  // open/close-panel pattern with none of this behavior.
+  // visible focusable elements (recomputed live, since a dialog may replace
+  // its own content via innerHTML after opening, as the mindmap popup does);
+  // focus moves to the close button on open and back to whatever triggered
+  // the open on close. Shared by initElectiveSettings below and the legal-
+  // issue mindmap popup in common-session.js, which were previously two
+  // independent, duplicated implementations of the same open/close-panel
+  // pattern with none of this behavior.
   function initDialog({ panel, dialog, closeBtn, labelledBy }) {
     dialog.setAttribute('role', 'dialog');
     dialog.setAttribute('aria-modal', 'true');
@@ -525,6 +525,15 @@
     return `quiz.html?${sessionParams(ev, dateIso)}`;
   }
 
+  // Builds the URL for one exam-notes issue type within that session
+  // (issue.html) — the same session params plus which issue type, so the
+  // page can re-locate the event exactly the way session.html/quiz.html do.
+  function issueHref(ev, dateIso, issueId) {
+    const params = sessionParams(ev, dateIso);
+    params.set('issue', issueId || '');
+    return `issue.html?${params}`;
+  }
+
   // Pre-recorded timetable entries (week.preRecorded[]) have no date/start
   // of their own, so they can't be re-located by the dated-event search
   // below. Most carry their own `no` (e.g. CCT's pre-recorded "LG5"); for
@@ -693,6 +702,6 @@
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
-    sessionHref, quizHref, findSessionInTimetable, preRecordedSessionKey, sessionKeyFor, sessionPartLetter,
+    sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionKeyFor, sessionPartLetter,
   });
 })();

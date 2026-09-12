@@ -4,18 +4,18 @@
 // the required load order.
 //
 // Ties the content vocabulary (common-content.js) and a session's own
-// numbered legal issues together into the full session-page renderer:
-// the mindmap (hub -> issue nodes -> note nodes, each opening a popup
-// instead of expanding inline) and sessionDetailHtml/wireSessionDetail,
-// which course.js's session table and session.html itself both call so
-// the two render identically.
+// substantive notes together into the full session-page renderer:
+// sessionDetailHtml/wireSessionDetail, called only by session.js, plus the
+// two note formats those can emit — the exam-notes issue-type index (the
+// current format, linking out to issue.html sub-pages) and the legacy
+// mindmap (hub -> issue nodes -> note nodes, each opening a popup).
 (() => {
   'use strict';
 
   const {
     escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
     sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
-    loadCheckedIds, deadlineChipsHtml,
+    loadCheckedIds, deadlineChipsHtml, issueHref,
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
 
@@ -183,11 +183,43 @@
     });
   }
 
+  // The index of a session's exam-notes issue types — a plain ordered list of
+  // links out to issue.html, deliberately not a mindmap, modal or accordion:
+  // each issue type is a real addressable page (see CLAUDE.md). Because it's
+  // only links there's nothing for wireSessionDetail to wire, and nothing
+  // measures the DOM — so this sidesteps the hidden-container/ResizeObserver
+  // problem the mindmap has to work around.
+  function examNotesIndexHtml(examNotes, ev, dateIso) {
+    const issues = (examNotes && examNotes.issueTypes) || [];
+    if (!issues.length) return '';
+    const intro = examNotes.intro ? `<p class="muted">${escapeHtml(examNotes.intro)}</p>` : '';
+    const cards = issues.map((issue, i) => {
+      const tags = [
+        issue.answering && 'Flowchart',
+        issue.skeleton && 'Skeleton',
+        issue.authorities && 'Authorities',
+      ].filter(Boolean);
+      return `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(ev, dateIso, issue.id))}">
+        <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
+        <span class="exam-issue-main">
+          <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
+          ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
+          ${issue.weighting || tags.length ? `<span class="exam-issue-tags">${
+            (issue.weighting ? [issue.weighting] : []).concat(tags).map((t) => `<span class="tag-chip exam-issue-tag">${escapeHtml(t)}</span>`).join('')
+          }</span>` : ''}
+        </span>
+        <span class="exam-issue-arrow" aria-hidden="true">&#8594;</span>
+      </a></li>`;
+    }).join('');
+    return `<h3>Exam Notes by Issue Type</h3>${intro}<ol class="exam-issue-index">${cards}</ol>`;
+  }
+
   // Full write-up for one session (lecture outline, prep checklist, fact
-  // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries —
-  // shared so the course page's session table (which links out to
-  // session.html via sessionHref) and session.html itself render identically.
-  function sessionDetailHtml(sessionDetail, ev, code, details) {
+  // pattern, etc.) sourced from courseDetails.js's `sessions[key]` entries.
+  // `dateIso` is needed only to build issue.html links for the exam-notes
+  // index — it's the date the event was found on, which the caller already
+  // holds and the URL can't be rebuilt without.
+  function sessionDetailHtml(sessionDetail, ev, code, details, dateIso) {
     const partLetter = sessionPartLetter(ev.no);
     const matchedPart = sessionDetail.parts && sessionDetail.parts.find((p) => p.partLetter === partLetter);
     const partsToShow = matchedPart ? [matchedPart] : (sessionDetail.parts || []);
@@ -250,11 +282,15 @@
     html += listSection('Key Takeaways', sessionDetail.keyTakeaways);
     html += listSection('During / After', sessionDetail.duringAfter);
 
-    // legalIssues (numbered, grouped-by-issue) is the current format,
-    // rendered as an interactive mindmap (see legalIssuesMindmapHtml) rather
-    // than an expandable list; fullNotes (a flat list) is kept as a
-    // fallback for any session not yet migrated to the richer shape.
-    if (sessionDetail.legalIssues) {
+    // Three note formats, newest first. examNotes (exam-oriented, organised
+    // by issue type, each its own issue.html sub-page) is what newly authored
+    // sessions use. legalIssues (numbered, grouped-by-issue, rendered as the
+    // mindmap) and fullNotes (a flat list) are kept for sessions authored
+    // before the change — nothing already written needs migrating for the new
+    // format to work alongside it.
+    if (sessionDetail.examNotes) {
+      html += examNotesIndexHtml(sessionDetail.examNotes, ev, dateIso);
+    } else if (sessionDetail.legalIssues) {
       html += legalIssuesMindmapHtml(sessionDetail.legalIssues);
     } else if (sessionDetail.fullNotes) {
       html += `<details class="detail-content"><summary>Full Lecture Notes</summary>${sessionDetail.fullNotes.map((n) => `
@@ -288,9 +324,10 @@
   }
 
   // After bodyEl.innerHTML has been set from sessionDetailHtml(), wires up
-  // the prep checklist it may contain (the [data-prep-checklist]
-  // placeholder) — shared so course.js and session.js don't each duplicate
-  // this glue. (Cloze/flashcards live on quiz.html now, wired there instead.)
+  // the mindmap (legacy sessions only) and the prep checklist it may contain
+  // (the [data-prep-checklist] placeholder). The exam-notes index needs no
+  // wiring at all — it's plain links. (Cloze/flashcards live on quiz.html
+  // now, wired there instead.)
   function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
     if (sessionDetail && sessionDetail.legalIssues) wireLegalIssuesMindmap(bodyEl);
     if (!sessionDetail || !sessionDetail.prepChecklist) return;

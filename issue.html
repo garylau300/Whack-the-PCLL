@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Issue Type — Whack the PCLL</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231e3a5f'/><g transform='translate(1.9 1.9) scale(0.84)' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 19 12.5 11.5'/><rect x='9' y='8' width='10' height='4.2' rx='1.2' transform='rotate(45 14 10.1)'/></g></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="common-core.js"></script>
+  <script src="common-content.js"></script>
+  <script src="common-session.js"></script>
+  <script src="courseDetails/PCLL8010.js"></script>
+  <script src="courseDetails/PCLL8020.js"></script>
+  <script src="courseDetails/PCLL8030.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-title">
+      <a id="backLink" href="session.html" class="icon-btn back-link" aria-label="Back to session"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></a>
+      <h1 id="issueTitle">Issue Type</h1>
+    </div>
+    <span class="topbar-brand" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="brand-hammer"><path d="M5 19 12.5 11.5"/><rect x="9" y="8" width="10" height="4.2" rx="1.2" transform="rotate(45 14 10.1)"/></g><g class="brand-spark" stroke-width="1.5"><path d="M20.4 14.9 21.7 13.5"/><path d="M21.5 17.7 23.3 17.6"/><path d="M20.6 20.4 21.9 21.8"/></g></svg><span class="brand-text">Whack the PCLL</span></span>
+    <div class="topbar-controls">
+      <button id="themeBtn" class="icon-btn" title="Toggle light/dark mode" aria-label="Toggle light/dark mode"></button>
+    </div>
+  </header>
+
+  <main id="app" class="course-app">
+    <div id="status" class="status"><div class="spinner"></div>Loading…</div>
+
+    <section class="course-section" id="issueSection" hidden>
+      <p class="session-subtitle muted">
+        <a id="courseLink" href="course.html">Course</a>
+        <span aria-hidden="true"> &middot; </span>
+        <a id="sessionLink" href="session.html">Session</a>
+      </p>
+      <p id="issueSummary" class="muted" hidden></p>
+      <div id="issueBody" class="session-detail-body detail-content"></div>
+      <nav class="issue-nav" id="issueNav" aria-label="Other issue types" hidden>
+        <a id="issuePrev" class="issue-nav-link" href="#" hidden></a>
+        <a id="issueUp" class="issue-nav-link issue-nav-link--up" href="#">All issue types</a>
+        <a id="issueNext" class="issue-nav-link issue-nav-link--next" href="#" hidden></a>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="syncStatus">—</span>
+  </footer>
+
+  <script src="issue.js"></script>
+</body>
+</html>

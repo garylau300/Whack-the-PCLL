@@ -43,17 +43,24 @@ not what the code does.
 - `courseDetails/PCLL8010.js`, `PCLL8020.js`, `PCLL8030.js` — one file per
   course, each extends the same `window.COURSE_DETAILS`. Adding a new
   course means a new file under `courseDetails/` plus a new `<script>` tag
-  on every HTML page that currently loads the other three (course.html,
-  index.html, quiz.html, session.html, timetable.html).
+  on every HTML page that currently loads the other three — **six pages**:
+  course.html, index.html, issue.html, quiz.html, session.html,
+  timetable.html.
 - Session entries are keyed by `"LG"`/`"SG"` + number, **no trailing
   letter** (`"LG1"`, not `"LG1A"`) — `sessionKeyFor`/`sessionPartLetter` in
   `common-core.js` resolve the `"A"`/`"B"` part from the live timetable
   event's own `no` field, not from `courseDetails`.
-- Data shapes a session's `legalIssues`/reference notes can use —
-  `bullets`, `bulletGroups`, `table`, `diagram`, `qa`, `statutes`,
-  `warnings` — are documented where they're rendered:
-  `fullNoteBodyHtml` in `common-content.js`. That's the single source of
-  truth; don't duplicate the schema here where it can drift out of sync.
+- Data shapes a session's notes can use — `bullets`, `bulletGroups`,
+  `table`, `diagram`, `flowchart`, `qa`, `statutes`, `warnings` — are
+  documented where they're rendered: `fullNoteBodyHtml` in
+  `common-content.js`. That's the single source of truth; don't duplicate
+  the schema here where it can drift out of sync. The same goes for the
+  `examNotes` shape, documented on `examIssueSectionsHtml` in that file.
+- **A session has three possible note formats, and `sessionDetailHtml`
+  picks the first one authored**, in this order: `examNotes` (current),
+  `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). Only
+  six sessions predate `examNotes` and they're deliberately left as they
+  are — a new format alongside them, not a migration.
 
 ## Course-content authoring rules
 
@@ -96,7 +103,29 @@ not what the code does.
   mindmap can't measure its own layout while a collapsed ancestor
   `<details>` hides it — don't convert those without solving that first.
 - Quiz/flashcards for a session live on a dedicated `quiz.html` page (not
-  inline on `session.html`), reached via the `.study-cta` button.
+  inline on `session.html`), reached via the `.study-cta` button. They are
+  optional: `session.js` hides the button when a session authors neither
+  `cloze` nor `flashcards`, so an exam-notes session can simply omit them.
+- **Exam notes are the format for newly authored sessions**, organised by
+  the issue types that come up as exam questions. Each issue type is its
+  own addressable page (`issue.html?code=…&no=…&date=…&start=…&issue=<id>`,
+  built by `issueHref`), reached from a plain ordered list of links on
+  session.html and from the course-wide roll-up on course.html. Not a
+  mindmap, not a modal, not an accordion — and because it's only links,
+  there is nothing for `wireSessionDetail` to wire and nothing measuring
+  the DOM. Sections run in one fixed order defined by `EXAM_SECTIONS` in
+  `common-content.js`; each section's authored value is just a
+  `fullNoteBodyHtml` object, so a section can be bullets, a table, a
+  flowchart or any mix — don't add bespoke per-section shapes.
+- **`flowchart` vs `diagram`** — `diagram` is the linear, horizontal,
+  auto-numbered step chain; `flowchart` is the vertical branching one for
+  "how do I answer this?". Keep them separate; don't bolt branching onto
+  `diagram`. A flowchart branch's `goto` resolves to *display text* naming
+  the target step, never an `<a href="#id">`: a flowchart can be cloned out
+  of a mindmap popup `<template>`, and DOM ids would collide.
+- **"Be careful" material belongs in an issue type's `lookOut` or
+  `mistakes` section, not in `warnings`.** `warnings` stays reserved for
+  compliance-critical facts so that red callout keeps its force.
 - Every modal/popup on the site (settings panel, mindmap popup) is wired
   through the shared `initDialog` helper in `common-core.js` (focus trap,
   Escape-to-close, focus-restore-to-trigger) — don't hand-roll another

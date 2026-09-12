@@ -45,7 +45,7 @@
     const sessionDetail = details && details.sessions && key && details.sessions[key];
     const bodyEl = $('sessionBody');
     bodyEl.innerHTML = sessionDetail
-      ? sessionDetailHtml(sessionDetail, ev, code, details)
+      ? sessionDetailHtml(sessionDetail, ev, code, details, foundDate)
       : sessionFallbackHtml(ev, foundDate, weekNumber, dayName);
     wireSessionDetail(bodyEl, sessionDetail, code, ev);
 

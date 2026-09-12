@@ -840,6 +840,40 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   .process-arrow { width: 100%; transform: rotate(90deg); }
 }
 
+/* Answering flowchart — the branching sibling of .process-diagram above.
+   Vertical by construction (a decision flow has no length ceiling, and an
+   exam flowchart is read top-down), which is also why it needs no
+   narrow-screen rule: it's already a stack. The left rail carries the eye
+   down the sequence; branches indent under the step that forks. */
+.exam-flow-title { font-weight: 600; font-size: 0.82rem; margin: 10px 0 6px; }
+/* padding-left and the badge's negative offset are deliberately equal, so the
+   badge lands exactly on the list's left border box: it sits over the rail
+   like a timeline node without ever poking outside the container (which, at
+   a phone width, would mean clipping against the viewport). */
+.exam-flow {
+  list-style: none; margin: 8px 0 14px; padding: 0 0 0 34px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+}
+.exam-flow-step { position: relative; margin-bottom: 14px; font-size: 0.82rem; }
+.exam-flow-step:last-child { margin-bottom: 0; }
+.exam-flow-num {
+  position: absolute; left: -34px; top: 0;
+  display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700;
+}
+.exam-flow-step--decision .exam-flow-num { background: var(--accent-2); color: var(--accent-2-text); }
+.exam-flow-label { display: block; font-weight: 700; }
+.exam-flow-detail { display: block; color: var(--text-muted); margin-top: 2px; }
+.exam-flow-points { margin: 4px 0 0; padding-left: 18px; color: var(--text-muted); }
+.exam-flow-branches { list-style: none; margin: 6px 0 0; padding: 0 0 0 14px; }
+.exam-flow-branch {
+  margin: 4px 0; padding: 6px 10px; border-radius: var(--radius-sm);
+  border-left: 2px solid color-mix(in srgb, var(--accent-2) 55%, var(--border));
+  background: color-mix(in srgb, var(--accent-2) 8%, var(--surface));
+}
+.exam-flow-cond { font-weight: 700; }
+.exam-flow-goto { display: block; margin-top: 2px; color: var(--accent-text); font-weight: 600; }
+
 /* Cloze "test yourself" section — each blank is a real <button> so it's
    keyboard-reachable and has a visible focus ring; .cloze-answer is
    revealed (and .cloze-hidden hidden) once the blank is toggled/clicked. */
@@ -886,6 +920,55 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .study-cta-title { display: block; font-weight: 700; font-size: 0.9rem; }
 .study-cta-sub { display: block; font-size: 0.78rem; color: var(--text-muted); }
 .study-cta-arrow { margin-left: auto; color: var(--accent-text); font-size: 1.1rem; flex: 0 0 auto; }
+
+/* Exam-notes issue-type index — the list of an issue type's own sub-pages,
+   on session.html and rolled up per course on course.html. A single-column
+   ordered stack rather than a grid: these are long legal phrases with a
+   summary under them, and the sequence is numbered, so columns would both
+   wrap badly and scramble the reading order. Left plainer than .study-cta
+   above deliberately — seven cards as loud as the CTA would drown it. */
+.exam-issue-index { list-style: none; margin: 8px 0 16px; padding: 0; display: grid; gap: 8px; }
+.exam-index-session { margin: 16px 0 0; font-size: 0.85rem; }
+.exam-issue-card {
+  display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  text-decoration: none; color: var(--text);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.exam-issue-card:hover, .exam-issue-card:focus-visible {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+.exam-issue-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
+  flex: 0 0 auto; border-radius: 50%; background: var(--accent-2); color: var(--accent-2-text);
+  font-size: 0.72rem; font-weight: 700;
+}
+.exam-issue-main { min-width: 0; flex: 1; }
+.exam-issue-title { display: block; font-weight: 700; font-size: 0.85rem; }
+.exam-issue-summary { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.exam-issue-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.exam-issue-tag { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+.exam-issue-arrow { color: var(--accent-text); font-size: 1.1rem; flex: 0 0 auto; }
+
+/* One section of an issue-type page (issue.html). The two "be careful"
+   sections get a tinted left rule -- amber, NOT --now-line, which stays
+   reserved for the compliance warnings box so that signal keeps its force. */
+.exam-section { margin: 0 0 20px; }
+.exam-section h3 { margin-bottom: 6px; }
+.exam-section--lookOut, .exam-section--mistakes {
+  padding-left: 12px;
+  border-left: 3px solid color-mix(in srgb, var(--accent-2) 60%, var(--border));
+}
+
+.issue-nav {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
+}
+.issue-nav-link { font-size: 0.82rem; color: var(--accent-text); text-decoration: none; font-weight: 600; }
+.issue-nav-link:hover, .issue-nav-link:focus-visible { text-decoration: underline; }
+.issue-nav-link--up { color: var(--text-muted); }
+.issue-nav-link--next { margin-left: auto; text-align: right; }
 
 /* Flashcards (quiz.html) — a click-to-flip card per principle, the same
    shape/size regardless of front/back text length via a fixed min-height
