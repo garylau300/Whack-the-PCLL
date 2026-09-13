@@ -1917,6 +1917,8 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
               { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
               { session: 'LG2', issue: 'executing-documents', label: 'Executing corporate documents' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'hong-kong-stock', label: 'Is it Hong Kong stock at all?' },
             ],
           },
 
@@ -2085,6 +2087,8 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
               { session: 'LG3', issue: 'shareholder-decision-making', label: 'Getting a valid shareholders\' approval' },
               { session: 'LG2', issue: 'directors-interests', label: 'Director\'s interest in a transaction' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
             ],
           },
 
@@ -2203,6 +2207,8 @@ window.COURSE_DETAILS.PCLL8020 = {
             crossRefs: [
               { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
               { session: 'LG3', issue: 'corporate-maintenance', label: 'Registers and Companies Registry filings' },
+              { session: 'LG4', issue: 'nominee-exemption', label: 'Nominee arrangements: the s27(5) exemption' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
             ],
           },
 
@@ -2637,6 +2643,8 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
               { session: 'LG2', issue: 'board-decision-making', label: 'Getting a valid Board decision' },
               { session: 'LG2', issue: 'executing-documents', label: 'Executing corporate documents' },
+              { session: 'LG4', issue: 'hong-kong-stock', label: 'Is it Hong Kong stock at all?' },
+              { session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
               { session: 'LG5', issue: 'allotment-or-transfer', label: 'Worked example: allotment or transfer?' },
             ],
           },
@@ -2820,6 +2828,10 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG3', issue: 'corporate-maintenance', label: 'Registers and Companies Registry filings' },
               { session: 'LG2', issue: 'board-decision-making', label: 'Getting a valid Board decision' },
               { session: 'LG2', issue: 'executing-documents', label: 'Executing corporate documents' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
               { session: 'LG5', issue: 'allotment-or-transfer', label: 'Worked example: allotment or transfer?' },
             ],
           },
@@ -2965,6 +2977,1183 @@ window.COURSE_DETAILS.PCLL8020 = {
         ],
       },
     },
+    LG4: {
+      kind: 'LG',
+      date: '2026-09-04',
+      time: '13:00-15:30',
+      mode: 'ZOOM',
+      authors: ['Stephane Hui Bon Hoa', 'Charmaine Yip'],
+      objectives: [
+        'Introduce and explain the Hong Kong stamping regime governing transfers of shares.',
+        'Discuss the exemptions and reliefs from stamping requirements relating to share transfers.',
+      ],
+      topicsCovered: [
+        'Stamping of Hong Kong stock; the meaning of "Hong Kong stock"',
+        'Sale or purchase of Hong Kong stock (s19); contract notes; charging heads 2(1) and 2(4)',
+        'Deemed consideration under s24(1) second limb and s24(3)',
+        'Transfers operating as a voluntary disposition (s27(4)); charging head 2(3); mandatory adjudication',
+        'Exemptions and reliefs: nominee shareholding arrangements (s27(5)); intra-group transfers (s45)',
+        'Time limits and methods of stamping',
+        'Consequences of non-stamping and late stamping; tax evasion and avoidance',
+      ],
+      prep: {
+        readings: [
+          'LG4 reading materials — excerpts from "A Guide to the Hong Kong Stamp Duty Ordinance" (Professor Wilson Chow)',
+          'Stamp Office Interpretation and Practice Note No. 3 (September 1998) on the operation of s24 SDO',
+          'Stamp Office Stamping Procedures and Explanatory Notes (October 2022) on s45 SDO intra-group relief',
+          'The relevant provisions of the Stamp Duty Ordinance (Cap. 117)',
+          '"Acquisition of Shares and Businesses in Hong Kong" (2nd ed.), paras 1.041-1.070, 1.084-1.089, 5.034-5.041',
+        ],
+      },
+      keyTakeaways: [
+        'Stamp duty is a tax on INSTRUMENTS that evidence certain transactions — if no provision of the SDO says a document is stampable, it is not stampable.',
+        'The whole analysis is an order of questions: is it Hong Kong stock, is there a sale or purchase, what is the stampable consideration (including anything deemed), and how does that compare with the value of the shares?',
+        'Contract notes and the instrument of transfer are charged separately and under different heads — head 2(1) on each note, head 2(4) or head 2(3) on the instrument.',
+        'An exemption or relief is never automatic: s27(5) needs the circumstances set out in the instrument and the Stamp Office satisfied, and s45 needs adjudication plus a statutory declaration — and can be withdrawn afterwards.',
+      ],
+      examNotes: {
+        intro: 'Stamping is the other half of every share transfer question, and it is examined as part of Q1 Corporate Practice. Work it as one ordered chain — Hong Kong stock, then sale or purchase, then stampable consideration against value, then the head — and only then reach for an exemption or relief. Unless otherwise stated, all section and charging-head references on these pages are to the Stamp Duty Ordinance (Cap. 117).',
+        issueTypes: [
+          {
+            id: 'hong-kong-stock',
+            title: 'Is it Hong Kong stock at all?',
+            summary: 'The gateway question — stamp duty on a share transfer only bites on "Hong Kong stock", and loan capital is outside "stock" entirely.',
+            triggers: {
+              bullets: [
+                'Any share transfer question: this is the first thing to establish, and it is sometimes the whole answer.',
+                'The target is an offshore-incorporated company — then it turns on where the register of members is kept.',
+                'The thing being transferred is a shareholder\'s loan, a debenture or other loan capital rather than shares.',
+                'The transaction is an allotment of new shares rather than a transfer of existing ones.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Is there stampable Hong Kong stock?',
+                steps: [
+                  {
+                    id: 'instrument',
+                    label: 'Start from the right premise: stamp duty is a tax on instruments',
+                    points: [
+                      'It is a tax, on certain instruments, that evidence certain transactions.',
+                      'If no provision of the SDO says a document is stampable, the document is NOT stampable. Do not reason from the transaction to a charge; reason from the charging provision to the instrument.',
+                      'In corporate transactions the charge falls on instruments evidencing a transfer of Hong Kong stock.',
+                    ],
+                  },
+                  {
+                    id: 'stock',
+                    label: 'Is it "stock" (s2(1))?',
+                    detail: 'The s2(1) definition of "stock" EXCLUDES loan capital. So a shareholder\'s loan, and an assignment of it, is not stock and is not stampable per se — though it can still be swept in as deemed consideration for the share transfer (see Deemed consideration).',
+                  },
+                  {
+                    id: 'hkstock',
+                    label: 'Is it "Hong Kong stock" (s2(1))?',
+                    points: [
+                      'The definition reads: "stock the transfer of which is required to be registered in Hong Kong".',
+                      'So the test is about where the register must be kept, not where the company was incorporated or where the parties are.',
+                    ],
+                  },
+                  {
+                    id: 'apply',
+                    label: 'Apply it to the company in front of you',
+                    branches: [
+                      { condition: 'Hong Kong incorporated company', then: 'Yes — the register of members must be kept in Hong Kong: s628 CO, s654 CO and s3 of the Companies (Company Records) Regulation (Cap. 622I)' },
+                      { condition: 'Listed company', then: 'Yes — the HKEx Listing Rules require a Hong Kong register' },
+                      { condition: 'Unlisted offshore company', then: 'It depends — ask whether the company in fact keeps a share register in Hong Kong' },
+                    ],
+                  },
+                  {
+                    id: 'allot',
+                    label: 'Finally, check it is a transfer and not an allotment',
+                    detail: '"Sale or purchase" in s19(16) expressly EXCLUDES an allotment of shares, so there is no head 2(1) charge on an allotment — and no stamp duty at all under s19(16) (see the LG3 allotment page, which makes the same point from the company-law side).',
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The definition is "required to be registered in Hong Kong" — an offshore company that happens to keep a duplicate register somewhere is not the test; ask what is required, and whether it in fact maintains a Hong Kong register.',
+                '"Stock" excludes loan capital. That is why an assignment of a shareholder\'s loan is not stampable per se — a point the LG3 funding notes make and s24 then partly takes back.',
+                'A company can be offshore-incorporated and still hold Hong Kong stock, and a Hong Kong company\'s shares are Hong Kong stock however foreign the parties are.',
+                'Nothing here depends on the transferee, the consideration or the documents — get the gateway right before any of that.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Open every stamping answer by stating, in one sentence, that the shares are Hong Kong stock and why — register kept in Hong Kong, under s628 CO and s3 Cap. 622I for a Hong Kong company.',
+                'If the facts give you an offshore target, say expressly that you would need to know where its register of members is kept, and that the answer turns on it.',
+                'Separate the share transfer from any loan assignment at the outset, then deal with the loan under s24 rather than as stock.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the place of incorporation, or the residence of the parties, as the test.',
+                'Charging stamp duty on the assignment of a shareholder\'s loan as if it were stock.',
+                'Applying head 2(1) to an allotment of new shares — s19(16) excludes it.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Meaning of "Hong Kong stock"', 's2(1) SDO', '"stock the transfer of which is required to be registered in Hong Kong"'],
+                  ['Meaning of "stock"', 's2(1) SDO', 'The definition excludes loan capital'],
+                  ['Hong Kong company must keep its register here', 's628 CO, s654 CO, s3 Companies (Company Records) Regulation (Cap. 622I)', 'Company records, including the register of members, are kept in Hong Kong — which is what makes the shares Hong Kong stock'],
+                  ['Listed companies', 'HKEx Listing Rules', 'Require a Hong Kong register'],
+                  ['Allotments are outside "sale or purchase"', 's19(16) SDO', 'The definition excludes an allotment of shares'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+              { session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
+            ],
+          },
+
+          {
+            id: 'which-charging-head',
+            title: 'Which charging head applies?',
+            summary: 'The order of analysis that decides everything else — and the three heads it routes to.',
+            triggers: {
+              bullets: [
+                'Any question asking you to calculate stamp duty, or to explain the basis of charge.',
+                'Facts giving you both a price and a net asset value — the comparison between them is the whole point.',
+                'A transfer for nil or nominal consideration, or at a stated price well below the company\'s worth.',
+                'A question that asks what documents must be stamped, and under which head each falls.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'The order of analysis',
+                steps: [
+                  {
+                    id: 'stock',
+                    label: '1. Is it Hong Kong stock?',
+                    detail: 'If not, there is no charge on a share transfer at all. See the gateway page.',
+                  },
+                  {
+                    id: 'sp',
+                    label: '2. Is there a sale or purchase — does consideration of some value pass?',
+                    branches: [
+                      { condition: 'Yes — consideration passes, so a beneficial interest in the stock passes for value', then: 'Contract notes are required under s19(1)', goto: 'consid' },
+                      { condition: 'No — a gift, or no consideration at all', then: 'No contract notes; go straight to the voluntary-disposition analysis', goto: 'vd' },
+                    ],
+                  },
+                  {
+                    id: 'consid',
+                    label: '3. Work out the STAMPABLE CONSIDERATION',
+                    points: [
+                      'The consideration paid by the transferee for the transfer of the shares: cash, or the value of any non-cash consideration.',
+                      'Then ask whether anything must be ADDED as deemed consideration under s24 — a payment of money the transfer is subject to (s24(1) second limb), or indebtedness of the target the transferee takes on (s24(3)).',
+                      'No deeming can arise unless a beneficial interest in the shares passes, i.e. some consideration passes in the underlying share transaction. Allotments, gifts and changes to nominee arrangements therefore trigger no deeming.',
+                    ],
+                  },
+                  {
+                    id: 'value',
+                    label: '4. Compare the stampable consideration with the VALUE of the shares',
+                    branches: [
+                      { condition: 'Consideration is at least the value of the shares', then: 'An ordinary sale: head 2(1) on the notes and head 2(4) on the instrument', goto: 'heads' },
+                      { condition: 'Consideration is less than the value AND the Stamp Office considers a substantial benefit is conferred on the transferee', then: 'The transfer operates as a voluntary disposition under s27(4)', goto: 'vd' },
+                    ],
+                  },
+                  {
+                    id: 'vd',
+                    label: 'Voluntary disposition route',
+                    detail: 'Head 2(3): ad valorem duty on the VALUE of the shares, plus the fixed duty — and adjudication is mandatory under s27(3). See the voluntary-disposition page.',
+                  },
+                  {
+                    id: 'heads',
+                    label: 'Apply the heads to the right documents',
+                    points: [
+                      'Head 2(1) is charged on EACH contract note — the bought note and the sold note.',
+                      'Head 2(4) is the fixed duty on the instrument of transfer, for a transfer of any other kind.',
+                      'Head 2(3) replaces that pairing where the transfer operates as a voluntary disposition.',
+                      'Where the duty calculated includes a fraction of $1, round the duty UP to the nearest $1.',
+                    ],
+                  },
+                  {
+                    id: 'relief',
+                    label: '5. Only now, ask whether an exemption or relief applies',
+                    points: [
+                      's27(5) — nominee arrangements and the other listed transfers: the ad valorem duty is exempted, leaving the fixed duty under head 2(4).',
+                      's45 — intra-group transfers between associated bodies corporate: relieves the duty payable under heads 2(1) and 2(3).',
+                      'Neither is automatic. Each has conditions, evidence and (for s45) adjudication.',
+                    ],
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Charging head', 'What it charges', 'Rate'],
+                rows: [
+                  ['Head 2(1)', 'Contract note for the sale or purchase of any Hong Kong stock — charged on every sold note and every bought note', '0.1% of the amount of the consideration or of its value, per note (so 0.2% in aggregate across the pair)'],
+                  ['Head 2(3)', 'Transfer operating as a voluntary disposition inter vivos', '$5 + 0.2% of the value of the stock'],
+                  ['Head 2(4)', 'Transfer of any other kind — the instrument of transfer on an ordinary sale', '$5 fixed duty, per instrument of transfer'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Head 2(1) is charged at 0.1% on EACH note, not 0.2% once. A summary that says "0.2%" is giving you the aggregate across the bought and sold notes — say which you mean and show the arithmetic.',
+                'Consideration and value are different numbers and both are needed: the comparison between them is what selects head 2(1)+2(4) or head 2(3).',
+                'Deemed consideration is added BEFORE the comparison with value — a transfer that looks undervalued on its face price may not be once s24 is applied.',
+                'But deemed consideration does not displace s27: if the deemed consideration is still below the value of the stock, s27(4) can apply anyway and duty is charged on value (Stamp Office IPN No. 3, para. 22).',
+                'Exemptions and reliefs come last. Working out the head first is what tells you what the relief is relieving.',
+                'Round the duty up to the nearest $1 where it comes out with a fraction of a dollar.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Write the answer in the order of the chain and label the steps — it shows the examiner the method and stops you jumping to a head.',
+                'Set the two figures side by side: stampable consideration (including anything deemed) against the value of the shares, then state which is greater and therefore which head applies.',
+                'Deal with the documents separately: so much on each contract note under head 2(1), so much on the instrument of transfer under head 2(4) or 2(3).',
+                'Do the arithmetic on the page and round up to the nearest dollar at the end.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Charging 0.2% on a single contract note, or charging head 2(1) once for the transaction rather than on each note.',
+                'Charging both head 2(3) and head 2(4) on the same instrument — head 2(3) already includes its own fixed $5.',
+                'Comparing the face price with value while ignoring s24 deemed consideration.',
+                'Applying an exemption before establishing what the charge would otherwise be.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Charge on contract notes', 'Head 2(1), Schedule 1 SDO', '0.1% of the amount of the consideration or of its value on every sold note and every bought note'],
+                  ['Charge on a voluntary disposition', 'Head 2(3), Schedule 1 SDO', '$5 plus 0.2% of the value of the stock'],
+                  ['Charge on any other transfer', 'Head 2(4), Schedule 1 SDO', '$5 fixed duty per instrument of transfer'],
+                  ['Rounding', 'Schedule 1 SDO', 'Where the duty calculated includes a fraction of $1, round the duty up to the nearest $1'],
+                  ['Deeming only where a beneficial interest passes', 's24(1), s24(3) SDO', 'No deemed consideration arises unless a beneficial interest in the stock passes — so not on allotments, gifts or nominee changes'],
+                  ['s24 does not displace s27', 'Stamp Office IPN No. 3, para. 22', 's24 only supplies a formula for determining consideration; where the deemed consideration is still below the value of the stock, s27(4) and (1) may still apply and duty is charged on value'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'hong-kong-stock', label: 'Is it Hong Kong stock at all?' },
+              { session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG4', issue: 'nominee-exemption', label: 'Nominee arrangements: the s27(5) exemption' },
+              { session: 'LG4', issue: 'intra-group-relief', label: 'Intra-group relief under s45' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
+            ],
+          },
+          {
+            id: 'sale-or-purchase',
+            title: 'Sale or purchase: contract notes and s19',
+            summary: 'What counts as a sale or purchase, the three things s19(1) requires, and what a contract note must contain.',
+            triggers: {
+              bullets: [
+                'Shares change hands and any consideration of value passes — that is a sale or purchase, and contract notes follow.',
+                'A share-for-share swap or other exchange, rather than a cash price.',
+                'A gift or a nominee change — then there is NO sale or purchase, and no contract notes.',
+                'The question asks which documents must be prepared, executed and stamped.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Is there a sale or purchase, and what does s19 then require?',
+                steps: [
+                  {
+                    id: 'test',
+                    label: 'Apply the s19(16) definition of "sale or purchase"',
+                    points: [
+                      'It INCLUDES a disposal or acquisition for valuable consideration — i.e. consideration of some value passes.',
+                      'It EXCLUDES an allotment of shares.',
+                      'It COVERS an exchange, for example a share-for-share swap.',
+                      'Practically: a sale or purchase is where beneficial interest in the stock passes for value.',
+                    ],
+                  },
+                  {
+                    id: 's19',
+                    label: 'If yes, s19(1) imposes three obligations on the person effecting it',
+                    points: [
+                      'Make and execute a contract note.',
+                      'Cause the contract note to be stamped.',
+                      'Cause an endorsement to be made on the instrument of transfer, to the effect that stamp duty has been paid on the contract note.',
+                    ],
+                  },
+                  {
+                    id: 'notes',
+                    label: 'Identify the documents and what each is for',
+                    points: [
+                      'A bought note and a sold note (together, the contract notes) — required where a sale or purchase is effected, i.e. where consideration passes (s19(1)).',
+                      'The instrument of transfer (the "share transfer") — the document that must be duly stamped to be a "proper instrument of transfer" for the target\'s Board to register the change of registered ownership (s150 CO).',
+                      'Contract notes are an SDO requirement; the Board requires only the duly stamped instrument of transfer.',
+                    ],
+                  },
+                  {
+                    id: 'contents',
+                    label: 'Check the contract note contains the required particulars',
+                    points: [
+                      'Whether the person effecting the sale or purchase acts as principal or agent and, if as agent, the name of the principal.',
+                      'The date of the transaction and of the making of the contract note.',
+                      'The quantity and description of the Hong Kong stock.',
+                      'The price per unit and the amount of the consideration — or, on an exchange, particulars of the property for which the stock is exchanged.',
+                      'The date of settlement.',
+                      'There is no prescribed format; these are the particulars the SDO requires.',
+                    ],
+                  },
+                  {
+                    id: 'charge',
+                    label: 'Then apply the heads',
+                    points: [
+                      'Head 2(1): 0.1% of the amount of the consideration or of its value, on every sold note and every bought note.',
+                      'Head 2(4): $5 fixed duty on the instrument of transfer, as a transfer of any other kind.',
+                      'Contract notes are stamped by reference to the price paid — but if the price is below market value as at the date of the sale and purchase or transfer, duty is assessed on the market value instead.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'No consideration, no contract notes. A gift needs none — the Stamp Office says so expressly — and neither does a nominee change.',
+                'An exchange is still a sale or purchase: a share-for-share swap is caught, and the contract note records particulars of the property exchanged rather than a price.',
+                's19(1) has three limbs and the third is the one people forget: the endorsement on the instrument of transfer evidencing that duty was paid on the contract note.',
+                'Even on an ordinary sale, the price does not automatically govern: duty is assessed on market value if the price is below it.',
+                'Allotments are outside s19(16) altogether — the company issues new shares, nobody disposes of anything.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'State the s19(16) conclusion explicitly ("consideration of value passes, so this is a sale or purchase") before listing documents — the documents follow from it.',
+                'List the s19(1) obligations as three separate steps with the actor named, rather than as "contract notes are needed".',
+                'Distinguish what the SDO requires from what the Board requires: notes for the Stamp Office, a duly stamped instrument for the company.',
+                'On a gift or nominee change, say expressly that no contract notes are required and why.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Preparing contract notes for a gift or a nominee-to-nominee transfer.',
+                'Stopping at "make and execute a contract note" and omitting the stamping and endorsement limbs of s19(1).',
+                'Treating a share swap as outside the charge because no cash moves.',
+                'Assuming the stated price is necessarily the base for duty.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Meaning of "sale or purchase"', 's19(16) SDO', 'Includes a disposal or acquisition for valuable consideration; excludes an allotment of shares; covers an exchange such as a share swap'],
+                  ['The three obligations', 's19(1) SDO', 'Make and execute a contract note; cause it to be stamped; cause an endorsement on the instrument of transfer evidencing that duty has been paid on the note'],
+                  ['Required particulars of a contract note', 's19 SDO (per Stamp Office PN, Stamping of Share Transfer)', 'Principal or agent (and the principal\'s name); dates of the transaction and of the note; quantity and description of the stock; price per unit and amount of consideration, or particulars of the property exchanged; date of settlement'],
+                  ['Charge on the notes', 'Head 2(1), Schedule 1 SDO', '0.1% of the consideration or its value on every sold note and every bought note'],
+                  ['Charge on the instrument', 'Head 2(4), Schedule 1 SDO', '$5 per instrument of transfer, as a transfer of any other kind'],
+                  ['No contract notes on a gift', 'Stamp Office PN, Stamping of Share Transfer, para. 3', 'Contract notes are NOT required when transferring shares as a gift; the instrument is then chargeable to $5 each plus the full ad valorem duty on the value of the shares'],
+                  ['Price below market value', 'Stamp Office PN, Stamping of Share Transfer, para. 2', 'Notes are stamped by reference to the price paid; if that is below market value at the date of the sale and purchase or transfer, duty is assessed on market value'],
+                  ['Proper instrument of transfer for registration', 's150(1) CO', 'The company must not register a transfer without one — which means duly stamped'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+            ],
+          },
+
+          {
+            id: 'deemed-consideration',
+            title: 'Deemed consideration under s24',
+            summary: 'When a payment the transfer is subject to, or indebtedness the transferee takes on, is added to the stampable consideration.',
+            triggers: {
+              bullets: [
+                'A shareholder\'s loan is being assigned alongside the shares, and the buyer pays for the assignment.',
+                'The buyer undertakes, guarantees or procures that the target will repay a debt — anything that makes them answerable for the target\'s indebtedness.',
+                'The buyer pays a third party at the seller\'s direction, or pays someone other than the seller.',
+                'The price for the shares looks low against net asset value, and there is another money flow in the facts.',
+                'Any question that gives you both a share price and a loan figure. That pairing is the s24 signal.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Is anything deemed to be part of the consideration?',
+                steps: [
+                  {
+                    id: 'gate',
+                    label: 'Gate: does a beneficial interest in the stock pass?',
+                    detail: 'There is no deeming unless a beneficial interest in the shares passes — i.e. some consideration passes in the underlying share transaction. Allotments, gifts and changes to nominee arrangements therefore trigger no deeming at all.',
+                  },
+                  {
+                    id: 's241',
+                    label: 's24(1) second limb — the transfer is subject to a payment of money or transfer of stock',
+                    points: [
+                      'The transaction must be subject, either certainly or contingently, to the payment or transfer of any money or stock.',
+                      'It applies whether or not that payment or transfer constitutes a charge or incumbrance on the interest passing.',
+                      'The money or stock is then deemed to be the whole or part of the consideration by reference to which the contract note is chargeable.',
+                      'The classic case: shares transferred at an agreed price while the target\'s indebtedness to the seller is assigned to the buyer — the transfer is subject to payment of the sum for the assignment, and that sum is deemed part of the consideration.',
+                    ],
+                  },
+                  {
+                    id: 'integral',
+                    label: 'But test whether it is INTEGRAL to the share transaction',
+                    points: [
+                      'For s24(1) to apply, the payment or transfer must form an integral part of the transaction effecting the transfer of the stock.',
+                      'If the payment is independent of the share sale, it falls outside s24(1) — and independent dealings in debts (assignments of debts and the like) are not themselves chargeable in Hong Kong.',
+                      'So genuinely separate, mutually unconditional transactions are outside the section — but it is a question of fact.',
+                    ],
+                  },
+                  {
+                    id: 'whopays',
+                    label: 'Do not be distracted by who pays and who receives',
+                    points: [
+                      'The section does not say by whom or to whom the money is paid. The obligation would normally be the purchaser\'s, but it may be performed indirectly — e.g. the purchaser instructs a related person to pay.',
+                      'The purchaser need not assume personal liability for making the payment.',
+                      'The recipient can be the vendor, or indeed any other person — including a third-party creditor of the vendor.',
+                    ],
+                  },
+                  {
+                    id: 's243',
+                    label: 's24(3) — the transferee incurs liability for the target\'s indebtedness',
+                    points: [
+                      'Where, by virtue of or in connection with a transaction whereby a beneficial interest in shares passes, any liability is incurred by the transferee in respect of any indebtedness of the body corporate, the transaction is deemed to be subject to the payment of an amount of money EQUAL TO THAT INDEBTEDNESS — in addition to any other payment of money or transfer of shares it is subject to.',
+                      'Examples: the purchaser undertaking to procure the target to repay its debts at a later date; the purchaser guaranteeing the target\'s debts.',
+                      'It catches a purchaser who re-finances, guarantees, or otherwise assumes liability for the company\'s debt, where the arrangement will allow the debt actually to be repaid.',
+                      'A provision requiring the transferee to provide the funds on default is prima facie evidence that such a liability has been incurred.',
+                      's24(3) can only apply to a transfer of shares — never to a conveyance of immovable property.',
+                    ],
+                  },
+                  {
+                    id: 'quantum',
+                    label: 'Then note the difference in QUANTUM — this is the examinable distinction',
+                    points: [
+                      'Under s24(1): the deemed amount is what is actually paid for the assignment, which may differ from (and be less than) the face value of the debt.',
+                      'Under s24(3): the deemed amount is the full amount of the indebtedness incurred, with no account taken of whether the debt is likely to be repaid or is a bad debt.',
+                      'So the same commercial outcome can attract very different duty depending on how the parties document it.',
+                    ],
+                  },
+                  {
+                    id: 'still27',
+                    label: 'Finally, remember s24 does not oust s27',
+                    detail: 's24 merely supplies a formula for determining the consideration. If the deemed consideration is still below the value of the stock, s27(4) and (1) can still apply and duty is charged on the value of the stock instead.',
+                  },
+                  {
+                    id: 'disclose',
+                    label: 'And disclose',
+                    detail: 's11 requires all the facts and circumstances affecting liability to duty, or its amount, to be fully and truly set forth in the instrument. Where s24 may apply, the parties must give full details of the transaction, and the Stamp Office may make enquiries before stamping.',
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The quantum difference is the point of most s24 questions: s24(1) deems the sum PAID for the loan assignment; s24(3) deems the FULL indebtedness. Get the two the wrong way round and the figure is wrong.',
+                'A bad or doubtful debt makes no difference under s24(3) — the amount is the indebtedness incurred, not its value.',
+                '"Either certainly or contingently" means a contingent obligation is enough; a guarantee that may never be called still counts.',
+                'The "integral part" limitation is the only real escape route — but the transactions must genuinely be independent, and the Stamp Office treats a default-funding provision as prima facie evidence of s24(3) liability.',
+                'An agreement to cause the company to convert the vendor\'s loan into equity is NOT within s24(3): the liability must relate to an arrangement allowing the debt actually to be repaid.',
+                'A payment to a third party at the vendor\'s direction (discharging the vendor\'s own debt) is still a "payment of money" within s24(1).',
+                'The assignment of a shareholder\'s loan is not itself stampable — s24 does not make it stampable, it makes the sum part of the consideration for the SHARE transfer.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify every money flow in the facts, then ask of each: is the share transfer subject to it, and is it integral to the share transaction?',
+                'Name the limb you are applying — s24(1) second limb or s24(3) — and then state the deemed amount on that limb\'s own measure.',
+                'Add the deemed consideration to the stated price to get the stampable consideration, then run the comparison against value before choosing a head.',
+                'Where the facts could be documented either way (assignment for value, or an undertaking to procure repayment), say what the duty difference would be — that is the advice the client actually wants.',
+                'Close with the s11 disclosure duty and what would be lodged with the Stamp Office to evidence the deemed consideration.',
+              ],
+            },
+            skeleton: {
+              table: {
+                headers: ['Arrangement', 'Limb', 'Deemed consideration'],
+                rows: [
+                  ['Buyer pays the seller for an assignment of the shareholder\'s loan, as an integral part of the share sale', 's24(1) second limb', 'The amount actually paid for the assignment (which may be less than the face value of the loan)'],
+                  ['Buyer undertakes to procure the target to repay the loan, or guarantees it', 's24(3)', 'The full amount of the target\'s indebtedness, regardless of whether it is likely to be repaid'],
+                  ['Buyer pays a third party to discharge a debt owed by the seller, at the seller\'s direction', 's24(1) second limb', 'The amount of that payment'],
+                  ['Buyer undertakes to lend to the target so it can repay the seller\'s loan', 's24(1) second limb', 'The amount of the agreed loan — the injection is a "payment of money"; the use of the money is irrelevant'],
+                  ['Loan assigned to a third party in a genuinely independent transaction', 'Neither', 'Nothing deemed — but it is a question of fact whether the dealings really are independent'],
+                  ['Buyer agrees to cause the target to convert the seller\'s loan into equity', 'Neither', 'Outside s24(3): the arrangement does not allow the debt actually to be repaid'],
+                ],
+              },
+            },
+            mistakes: {
+              bullets: [
+                'Using the face value of the loan where the buyer merely paid a lower sum for its assignment (that is the s24(1) measure, not the face value).',
+                'Using the amount paid where the buyer instead guaranteed or undertook to procure repayment (s24(3) takes the full indebtedness).',
+                'Discounting a bad debt under s24(3).',
+                'Treating the loan assignment itself as the stampable instrument.',
+                'Concluding "no deeming" because the buyer did not personally promise to pay, when the payment was simply routed through a related person.',
+                'Forgetting that after adding deemed consideration you must still compare against value for s27(4).',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'In the case of … any transaction whereby a beneficial interest in Hong Kong stock passes, where … transaction is subject either certainly or contingently to the payment or transfer of any money or stock, whether or not being or constituting a charge or incumbrance upon the… interest… passing,  the… money or stock is to be deemed the whole or part, as the case may be, of the consideration by reference to which the ... contract note is chargeable with stamp duty.', cite: 's24(1), Stamp Duty Ordinance (Cap. 117) — second limb, as set out in the LG4 slides' },
+                { text: 'Where, by virtue of or in connection with any transaction whereby a beneficial interest in shares in a body corporate passes, any liability is incurred by the transferee in respect of any indebtedness of the body corporate, the transaction shall, in addition to any other payment of money or transfer of shares to which it is subject, be deemed to be subject to the payment of an amount of money equal to the amount of such indebtedness.', cite: 's24(3), Stamp Duty Ordinance (Cap. 117)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Purpose of s24', 'Stamp Office IPN No. 3, para. 4', 'An anti-avoidance measure aimed at "disguised consideration" and at "disguised equity" where a shareholder\'s loan finances a company with a small issued capital'],
+                  ['Integral-part limitation', 'IPN No. 3, para. 11(a)', 'The payment or transfer must form an integral part of the transaction effecting the transfer; an independent payment is outside s24(1), and independent dealings in debts are not chargeable in Hong Kong'],
+                  ['Who pays and who receives', 'IPN No. 3, para. 9(c)', 'The obligation would normally be the purchaser\'s but may be performed indirectly; the purchaser need not assume personal liability; the recipient may be the vendor or any other person'],
+                  ['Certain or contingent; charge or incumbrance', 'IPN No. 3, para. 9(a)-(b)', 'The subsection applies whether or not the payment constitutes a charge or incumbrance, and irrespective of whether the liability is certain or contingent'],
+                  ['Measure under s24(1)', 'IPN No. 3, para. 10 and example (e)', 'The actual amount paid for the assignment, not the face value of the loan'],
+                  ['Measure under s24(3)', 'IPN No. 3, para. 18', 'The amount of the indebtedness incurred; no account is taken of whether the debt is likely to be repaid or is a bad debt'],
+                  ['Scope of s24(3)', 'IPN No. 3, paras 17 and 20', 'Catches a transferee who re-finances, guarantees or otherwise assumes liability where the arrangement allows the debt actually to be repaid; can only apply to a transfer of shares'],
+                  ['Conversion of the loan to equity', 'IPN No. 3, example (i)', 'An agreement to cause the company to convert the vendor shareholder\'s loan into equity does not come within s24(3)'],
+                  ['s24 does not oust s27', 'IPN No. 3, para. 22', 'Where the deemed consideration is still below the value of the stock, s27(4) and (1) may apply and duty is based on value'],
+                  ['Disclosure', 's11 SDO; IPN No. 3, para. 23', 'All facts and circumstances affecting liability or amount must be fully and truly set forth in the instrument; the Stamp Office may make enquiries before stamping'],
+                  ['Cannot be e-stamped', 'Stamp Office PN, e-Stamping of Share Transfer Instruments, para. 4', 'Instruments where indebtedness incurred is taken as whole or part of the consideration cannot be submitted through e-Stamping; they must go to the Stamp Office'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG4', issue: 'non-stamping-and-avoidance', label: 'Non-stamping, penalties, evasion and avoidance' },
+              { session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG5', issue: 'practice-scenarios', label: 'The two practice scenarios' },
+            ],
+          },
+          {
+            id: 'voluntary-disposition',
+            title: 'Transfers operating as a voluntary disposition',
+            summary: 'Gifts and undervalue transfers — the two-part s27(4) test, head 2(3), and mandatory adjudication.',
+            triggers: {
+              bullets: [
+                'Shares are given away, or transferred for a nominal or discounted price.',
+                'A transfer between family members, or into or out of a holding structure, with no real price.',
+                'The stampable consideration (after any s24 deeming) still comes out below net asset value.',
+                'The question asks what evidence the Stamp Office would want on value.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Does the transfer operate as a voluntary disposition?',
+                steps: [
+                  {
+                    id: 'normal',
+                    label: 'Start from the normal rule',
+                    detail: 'Ad valorem duty is charged on the amount or value of the stampable consideration. s27(4) displaces that where the consideration is inadequate.',
+                  },
+                  {
+                    id: 'test',
+                    label: 'Apply the two-part s27(4) test — BOTH limbs are required',
+                    points: [
+                      'First: the stampable consideration is LESS THAN THE VALUE of the shares being transferred.',
+                      'Second: the Stamp Office is of opinion that, by reason of the inadequacy of the consideration or other circumstances, the transfer confers a SUBSTANTIAL BENEFIT ON THE TRANSFEREE.',
+                      'If both are satisfied, the transfer operates as a voluntary disposition under s27(4).',
+                      'Typical examples: gifts (no consideration at all), and transactions at a discounted price.',
+                    ],
+                  },
+                  {
+                    id: 'value',
+                    label: 'Establish the value of the shares, and how you would evidence it',
+                    points: [
+                      'Unlisted shares: net asset value per the financial accounts.',
+                      'If the company owns landed property wherever situated: a completed Schedule of Landed Properties (form IRSD102).',
+                      'Listed shares: the closing price — normally the closing price on the Stock Exchange on the last trading day preceding the date of the sale and purchase or transfer.',
+                      'Shares in newly incorporated companies: a certificate of no business commenced and a certificate of no landed property acquired.',
+                    ],
+                  },
+                  {
+                    id: 'charge',
+                    label: 'If s27(4) applies, charge under head 2(3)',
+                    points: [
+                      'Head 2(3): $5 plus ad valorem duty at 0.2% on the VALUE of the shares (not the consideration).',
+                      'That single head covers the instrument — do not add head 2(4) on top; the $5 is already in head 2(3).',
+                      'No contract notes are required, because a gift is not a sale or purchase.',
+                    ],
+                  },
+                  {
+                    id: 'adj',
+                    label: 'Adjudication is mandatory',
+                    points: [
+                      's27(3) — adjudication is required for a transfer operating as a voluntary disposition.',
+                      'But no $50 adjudication fee is payable: s13(1B).',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                's27(4) has TWO limbs. Inadequate consideration alone is not enough — the Stamp Office must also be of opinion that a substantial benefit is conferred on the transferee.',
+                'Head 2(3) charges 0.2% on the VALUE of the shares passing, not on the consideration. That is the whole point of the head.',
+                'Head 2(3) already includes the $5. Charging head 2(4) as well double-counts.',
+                'Adjudication is mandatory under s27(3), but free — s13(1B) removes the $50 fee. Say both.',
+                'Run s24 BEFORE s27: deemed consideration may lift the stampable consideration up to or above value, taking the transfer out of s27(4) altogether. And if it does not, s27(4) still applies on top (IPN No. 3, para. 22).',
+                'A transfer at an undervalue is not automatically a voluntary disposition, and a gift is not the only way in — a discounted price can qualify.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Apply both limbs expressly and in order, naming the figures: consideration of X against value of Y, and then why a substantial benefit is conferred.',
+                'Say how you would establish value on these facts and what you would lodge — accounts, IRSD102, or the certificates for a new company.',
+                'Compute the duty on the page: 0.2% of value, plus $5, rounded up to the nearest dollar.',
+                'State that adjudication is mandatory and that no fee is payable, with both provisions.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Charging 0.2% on the consideration rather than on the value of the shares.',
+                'Adding head 2(4)\'s $5 to head 2(3), which already contains it.',
+                'Preparing contract notes for a gift.',
+                'Treating any undervalue as automatically within s27(4) without the substantial-benefit limb.',
+                'Forgetting the mandatory adjudication under s27(3), or asserting a $50 fee that s13(1B) removes.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Voluntary disposition test', 's27(4) SDO', 'Consideration less than the value of the shares AND, in the Stamp Office\'s opinion, by reason of the inadequacy of consideration or other circumstances, a substantial benefit is conferred on the transferee'],
+                  ['Charge', 'Head 2(3), Schedule 1 SDO', '$5 plus ad valorem duty of 0.2% on the value of the stock'],
+                  ['Mandatory adjudication', 's27(3) SDO', 'Adjudication is required for a transfer operating as a voluntary disposition'],
+                  ['No adjudication fee', 's13(1B) SDO', 'No $50 fee is payable on that adjudication'],
+                  ['Valuing unlisted shares', 'Stamp Office PN, Stamping of Share Transfer, para. 2', 'The value is ascertained from the latest accounts of the company; further information may be requested'],
+                  ['Valuing listed shares', 'Stamp Office PN, Stamping of Share Transfer, para. 2', 'Normally the closing price on the Stock Exchange on the last trading day preceding the date of the sale and purchase or transfer'],
+                  ['Landed property', 'Form IRSD102', 'A Schedule of Landed Properties is required where the company (or a subsidiary) holds landed property or rights to acquire it'],
+                  ['Gifts: documents and charge', 'Stamp Office PN, Stamping of Share Transfer, para. 3', 'No contract notes; the instrument of transfer is chargeable to $5 each plus the full ad valorem duty by reference to the value of the shares'],
+                  ['s24 does not oust s27', 'Stamp Office IPN No. 3, para. 22', 'Where deemed consideration is still below the value of the stock, s27(4) and (1) may apply and duty is based on value'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'nominee-exemption', label: 'Nominee arrangements: the s27(5) exemption' },
+              { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG5', issue: 'allotment-or-transfer', label: 'Worked example: allotment or transfer?' },
+            ],
+          },
+
+          {
+            id: 'nominee-exemption',
+            title: 'Nominee arrangements: the s27(5) exemption',
+            summary: 'Setting up, changing and unwinding a nominee holding — and why the declaration of trust must be adjudicated at the time.',
+            triggers: {
+              bullets: [
+                'A nominee is being appointed, replaced, or is transferring back to the beneficial owner.',
+                'The facts mention a declaration of trust, and whether it was adjudicated.',
+                'Registered ownership is moving but the facts say the beneficial owner is unchanged.',
+                'A liquidator distributes assets in specie, or a transfer is made to secure repayment of a loan.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Does the s27(5) exemption apply, and what is left to pay?',
+                steps: [
+                  {
+                    id: 'which',
+                    label: 'Identify which s27(5) transfer this is',
+                    points: [
+                      'A transfer to effectuate the appointment of a new trustee — which includes a nominee-to-nominee transfer.',
+                      'A transfer to a beneficiary by a trustee — i.e. the nominee transferring back to the beneficial owner.',
+                      'A transfer under which no beneficial interest passes, e.g. a distribution of assets in specie in a liquidation.',
+                      'A transfer for the purpose of securing a repayment of a loan.',
+                    ],
+                  },
+                  {
+                    id: 'effect',
+                    label: 'What the exemption does',
+                    points: [
+                      'The AD VALOREM duty is exempted — not the fixed duty.',
+                      'So the instrument still bears $5 under head 2(4) as a transfer of any other kind.',
+                      'No contract notes are needed, because a nominee change is not a sale or purchase (no consideration passes).',
+                    ],
+                  },
+                  {
+                    id: 'setforth',
+                    label: 'Meet the condition: the circumstances must be set forth in the instrument',
+                    detail: 'The circumstances must be set out in the transfer document — in practice, endorsed on the back of the instrument of transfer. This is a condition of the exemption, not an optional extra.',
+                  },
+                  {
+                    id: 'evidence',
+                    label: 'Satisfy the Stamp Office on the evidence — this is where answers turn',
+                    points: [
+                      'You must satisfy the Stamp Office that the original nominee arrangement was established when the nominee received registered ownership.',
+                      'That is what the declaration of trust proves — provided it was adjudicated as not stampable AT THE TIME OF EXECUTION.',
+                      'The Stamp Office requires supporting documentary evidence to ensure there is no effective transfer of a beneficial interest which would attract ad valorem duty.',
+                      'If the declaration of trust was never sighted by the Stamp Office, the exemption is unlikely to be accepted — and the transfer will be stamped as a voluntary disposition under s27(4) at head 2(3) instead.',
+                    ],
+                  },
+                  {
+                    id: 'setup',
+                    label: 'Note the position when the arrangement is first set up',
+                    points: [
+                      'The declaration of trust is not per se stampable.',
+                      'If the nominee arrangement is set up some time AFTER the beneficial owner acquired the shares, an instrument of transfer is needed to change the registered ownership — so head 2(4) applies and $5 fixed duty is payable per instrument.',
+                    ],
+                  },
+                  {
+                    id: 'blank',
+                    label: 'Remember the mechanics of the change itself',
+                    detail: 'The instrument of transfer endorsed in blank by the nominee, held by the beneficial owner, is what allows the change: the transferor is pre-filled and the new nominee or the beneficiary is filled in as transferee — no need to go back to the outgoing nominee.',
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The exemption removes only the ad valorem duty. The $5 under head 2(4) remains — so the answer is never "no stamp duty".',
+                'The whole exemption can fail on evidence. An unadjudicated declaration of trust is the classic trap: the arrangement may be perfectly genuine, but the Stamp Office is unlikely to be satisfied years later, and the transfer is then stamped at 0.2% of value plus $5 under head 2(3).',
+                'That is precisely why the Law Society advised presenting the declaration for adjudication at the time of execution — to obviate the burden-of-proof problem when the transfer to the beneficiary happens, often many years later.',
+                'The circumstances must be SET FORTH in the transfer document. Omitting the endorsement forfeits the exemption however good the underlying facts.',
+                'Setting up a nominee arrangement after acquisition still costs $5 per instrument of transfer — "not stampable" applies to the declaration of trust, not to the transfer.',
+                'No contract notes at any stage of a nominee change: nothing is being sold.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Name which of the four s27(5) limbs you are in before discussing the charge.',
+                'Deal with evidence explicitly: was the declaration of trust adjudicated at execution, and if not, say plainly that the exemption is likely to be refused and quantify the head 2(3) consequence.',
+                'Give both figures where the outcome is uncertain — $5 if the exemption is allowed, 0.2% of value plus $5 if it is not. That is the real advice.',
+                'Mention the endorsement of circumstances on the instrument as a step, with the actor.',
+              ],
+            },
+            skeleton: {
+              table: {
+                headers: ['Step in the arrangement', 'Documents', 'Stamp duty'],
+                rows: [
+                  ['Setting up the nominee arrangement after the beneficial owner already holds the shares', 'Declaration of trust executed by the nominee (adjudicate now, as not stampable); instrument of transfer to put the nominee on the register; share certificate in the nominee\'s name; instrument of transfer endorsed in blank by the nominee', 'Declaration of trust not per se stampable; $5 per instrument of transfer under head 2(4)'],
+                  ['Changing nominee (nominee to new nominee)', 'Use the instrument of transfer endorsed in blank — transferor pre-filled, new nominee filled in as transferee; circumstances set forth on the back', 'No contract notes (no consideration). Ad valorem exempted under s27(5) if the Stamp Office is satisfied; $5 under head 2(4)'],
+                  ['Nominee transferring back to the beneficial owner', 'As above, with the beneficiary as transferee', 'Same: ad valorem exempted under s27(5) if satisfied; $5 under head 2(4)'],
+                  ['Either change, where the declaration of trust was never adjudicated', 'Same documents, but the evidence is missing', 'Exemption unlikely to be accepted; stamped as a voluntary disposition under s27(4) — head 2(3), 0.2% of the value of the shares plus $5'],
+                ],
+              },
+            },
+            mistakes: {
+              bullets: [
+                'Saying a nominee change attracts no stamp duty at all — the $5 fixed duty survives the exemption.',
+                'Assuming the exemption applies because the arrangement is genuine, without asking whether the declaration of trust was adjudicated.',
+                'Omitting the requirement to set the circumstances forth in the instrument.',
+                'Preparing contract notes, or treating the change as a sale or purchase.',
+                'Saying the declaration of trust "must be stamped" — it is not per se stampable; it is lodged to be adjudicated as not stampable.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'although stamp duty is no longer payable on Declarations of Trusts, they will probably find it desirable to present the same to the Stamp Office for adjudication thereon at the time of execution so as to obviate the problem of burden of proof which might otherwise be caused when execution of a transfer deed from the trustee to the beneficiary takes place subsequently (not infrequently many years later) and production of supporting evidence is difficult because of the lapse of time.', cite: 'The Law Society of Hong Kong, Circular 83-65 (cited in the course materials as circular no. 65/83), 15 August 1983 — "Declaration of Trust - Stamp Duty"' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['The exempt transfers', 's27(5) SDO', 'Transfers effectuating the appointment of a new trustee (including nominee to nominee); to a beneficiary by a trustee; under which no beneficial interest passes (e.g. distribution in specie in a liquidation); and for the purpose of securing repayment of a loan'],
+                  ['What is exempted', 's27(5) SDO', 'The ad valorem duty only — the fixed duty under head 2(4) remains'],
+                  ['Condition', 's27(5) SDO', 'The circumstances must be set forth in the transfer document, in practice endorsed on the instrument of transfer'],
+                  ['Why the Stamp Office wants the declaration of trust', 'Law Society Circular 83-65', 'It usually requires supporting documentary evidence to ensure there is no effective transfer of a beneficial interest that would attract ad valorem duty'],
+                  ['Declaration of trust itself', 'Law Society Circular 83-65', 'Stamp duty is no longer payable on declarations of trust; present for adjudication at the time of execution'],
+                  ['Setting up after acquisition', 'LG4 slides', 'An instrument of transfer is needed to change registered ownership, so head 2(4) applies — $5 per instrument'],
+                  ['Other exemptions in the same family', 's44 SDO', 'Gifts to tax-exempt institutions'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'intra-group-relief', label: 'Intra-group relief under s45' },
+              { session: 'LG3', issue: 'share-ownership-nominee', label: 'Registered, beneficial and nominee ownership' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+            ],
+          },
+
+          {
+            id: 'intra-group-relief',
+            title: 'Intra-group relief under s45',
+            summary: 'Transfers between associated bodies corporate — the 90% test, the three disqualifying conditions, and withdrawal within two years.',
+            triggers: {
+              bullets: [
+                'Shares or property move between two companies in the same corporate group.',
+                'The facts give you percentage shareholdings in a chain or a common parent — do the arithmetic.',
+                'The transferee is sold out of the group not long after an intra-group transfer.',
+                'Companies are commonly owned by an individual rather than by a body corporate.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Is s45 relief available, and will it stick?',
+                steps: [
+                  {
+                    id: 'scope',
+                    label: 'Check the transaction is within s45',
+                    points: [
+                      'It applies to instruments conveying a beneficial interest in immovable property, or transferring a beneficial interest in Hong Kong stock, from one associated body corporate to another — and to contract notes for a sale or purchase of Hong Kong stock between associated bodies corporate.',
+                      'It relieves the duty payable under head 2(1) and head 2(3) (s45(1)).',
+                      'The transfer can go either way between the associated companies.',
+                      'The companies are not limited to Hong Kong incorporated companies.',
+                    ],
+                  },
+                  {
+                    id: 'assoc',
+                    label: 'Apply the "associated bodies corporate" test',
+                    points: [
+                      'One is beneficial owner of NOT LESS THAN 90% of the issued share capital of the other; OR a third such body is beneficial owner of not less than 90% of the issued share capital of each.',
+                      'Not less than 90% means 90% or more.',
+                      'Schedule 3 contains the rules for determining beneficial interest.',
+                      'Companies commonly owned by INDIVIDUALS are out of scope — the common owner must be a body corporate.',
+                    ],
+                  },
+                  {
+                    id: 'chain',
+                    label: 'For a chain, multiply — do not just read the top figure',
+                    points: [
+                      'Vertical: if A Co owns 95% of B Co and B Co owns 91% of C Co, then A-B are associated and B-C are associated, but A and C are NOT (95% × 91% = 86.45%, below 90%).',
+                      'Horizontal: if A Co owns 90% of B Co and 90% of C Co, then A, B and C are all associated with one another.',
+                    ],
+                  },
+                  {
+                    id: 'conditions',
+                    label: 'Check none of the s45(4) disqualifying conditions applies',
+                    points: [
+                      'The transaction must not be in pursuance of or in connection with an arrangement whereby consideration was provided or received by a person outside the group (s45(4)(a)).',
+                      'Nor one whereby the beneficial interest had previously been transferred from outside the group (s45(4)(b)).',
+                      'Nor one whereby the transferor and transferee were to cease to be associated by reason of a change in the beneficial ownership percentage of the transferee (s45(4)(c)).',
+                    ],
+                  },
+                  {
+                    id: 'why',
+                    label: 'Understand why s45(4)(c) is there — it explains the whole relief',
+                    detail: 'The relief exists to permit the internal administration of corporate groups: associated bodies corporate are regarded as so closely related that an intra-group transfer is only a change in nominal ownership. If the transferee is to leave the group, the asset leaves with it, so the relief should never have been available.',
+                  },
+                  {
+                    id: 'apply',
+                    label: 'Apply for the relief properly',
+                    points: [
+                      'The applicant must show that the conditions for relief are fulfilled.',
+                      'Adjudication is required (s45(3)) — but no $50 fee is payable (s13(1B)).',
+                      'Support it with a statutory declaration confirming the relief conditions are met.',
+                      'And remember s11: full disclosure of the facts and circumstances.',
+                      'See the Stamp Office Stamping Procedures and Explanatory Notes (October 2022) for the procedure.',
+                    ],
+                  },
+                  {
+                    id: 'withdraw',
+                    label: 'Then watch the two-year withdrawal rule (s45(5A))',
+                    points: [
+                      'If the transferor and transferee cease to be associated within 2 YEARS after the date of the transfer — i.e. the transferee leaves the corporate group, as described in s45(4)(c) — any relief previously claimed is deemed withdrawn.',
+                      'The transferor and transferee must notify the Stamp Office within 30 days of the cessation.',
+                      'They are JOINTLY AND SEVERALLY liable to pay the stamp duty that would have been chargeable, within 30 days of the cessation.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'In a chain, multiply the percentages. 95% × 91% = 86.45%, so the top and bottom companies are not associated even though each link is.',
+                'Individuals do not count. Two companies wholly owned by the same person are NOT associated bodies corporate — the common owner must be a body corporate.',
+                's45(4)(c) and s45(5A) are different provisions doing different jobs: (4)(c) denies relief at the outset where the arrangement contemplates the transferee leaving; (5A) withdraws relief already granted when the transferee in fact leaves within 2 years.',
+                'The two-year clock runs from the date of the TRANSFER, and the 30-day clocks run from the date of CESSATION. Keep them apart.',
+                'Liability on withdrawal is joint and several, and it falls on both the transferor and the transferee — including a transferee that has by then left the group.',
+                's45 relieves heads 2(1) and 2(3). It does not relieve the fixed duty under head 2(4).',
+                'Relief is never automatic: it must be applied for, adjudicated and supported by a statutory declaration.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Draw the group structure and write the percentage on each link, then state which pairs are associated and which are not, with the multiplication shown.',
+                'Work the s45(4) conditions one by one against the facts rather than asserting that relief is available.',
+                'Where the facts hint at a later sale, deal with s45(5A) expressly: what is withdrawn, who must notify, within what period, and who pays.',
+                'Set out the application mechanics — adjudication under s45(3), no fee under s13(1B), statutory declaration, s11 disclosure.',
+              ],
+            },
+            skeleton: {
+              table: {
+                headers: ['Structure', 'Associated?', 'Why'],
+                rows: [
+                  ['A Co owns 90% of B Co', 'A and B: yes', 'One is beneficial owner of not less than 90% of the issued share capital of the other'],
+                  ['A Co owns 95% of B Co; B Co owns 91% of C Co', 'A-B yes; B-C yes; A-C no', 'Each link is 90% or more, but A\'s indirect interest in C is 95% × 91% = 86.45%, which is below 90%'],
+                  ['A Co owns 90% of B Co and 90% of C Co', 'A, B and C: all associated', 'A third body corporate is beneficial owner of not less than 90% of the issued share capital of each'],
+                  ['An individual owns 100% of B Co and 100% of C Co', 'B and C: no', 'The common beneficial owner must be a body corporate; companies commonly owned by individuals are out of scope'],
+                ],
+              },
+            },
+            mistakes: {
+              bullets: [
+                'Reading a chain as associated end-to-end without multiplying the percentages.',
+                'Treating two companies owned by the same individual as associated.',
+                'Confusing s45(4)(c) (relief denied) with s45(5A) (relief withdrawn).',
+                'Running the 2-year period from the cessation, or the 30-day periods from the transfer.',
+                'Claiming relief without adjudication and a statutory declaration, or asserting a $50 fee that s13(1B) removes.',
+                'Saying no duty at all is payable, when head 2(4) is unaffected.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: '… any instrument as respects which it is shown to the satisfaction of the Collector that the effect thereof is to convey a beneficial interest in immovable property, or to transfer a beneficial interest in Hong Kong stock, from one associated body corporate to another, and also applies to any instrument that is a contract note in respect of a sale or purchase of Hong Kong stock made between one associated body corporate and another, where in each case the bodies are associated, that is to say, one is beneficial owner of not less than 90 per cent of the issued share capital of the other, or a third such body is beneficial owner of not less than 90 per cent of the issued share capital of each', cite: 's45(2), Stamp Duty Ordinance (Cap. 117)' },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['What is relieved', 's45(1) SDO', 'The duty payable under head 2(1) and head 2(3)'],
+                  ['Associated bodies corporate', 's45(2) SDO; Schedule 3', 'One beneficially owns not less than 90% of the issued share capital of the other, or a third body corporate owns not less than 90% of each; Schedule 3 governs determination of beneficial interest'],
+                  ['Disqualifying arrangements', 's45(4)(a)-(c) SDO', 'Consideration provided or received from outside the group; beneficial interest previously transferred from outside the group; or the parties ceasing to be associated by reason of a change in the transferee\'s beneficial ownership percentage'],
+                  ['Adjudication required', 's45(3) SDO', 'The relief must be adjudicated'],
+                  ['No adjudication fee', 's13(1B) SDO', 'No $50 fee is payable'],
+                  ['Full disclosure', 's11 SDO', 'All facts and circumstances affecting liability or amount must be fully and truly set forth'],
+                  ['Withdrawal of relief', 's45(5A) SDO', 'Cessation of association within 2 years after the date of the transfer deems the relief withdrawn; the parties must notify the Stamp Office within 30 days and are jointly and severally liable to pay the duty that would have been chargeable, within 30 days of the cessation'],
+                  ['Procedure', 'Stamp Office Stamping Procedures and Explanatory Notes (October 2022)', 'Sets out how to apply for s45 relief, including the statutory declaration confirming the conditions are met'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'nominee-exemption', label: 'Nominee arrangements: the s27(5) exemption' },
+              { session: 'LG4', issue: 'non-stamping-and-avoidance', label: 'Non-stamping, penalties, evasion and avoidance' },
+              { session: 'LG3', issue: 'share-ownership-nominee', label: 'Registered, beneficial and nominee ownership' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+            ],
+          },
+          {
+            id: 'time-limits-and-methods',
+            title: 'Time limits, methods and what to lodge',
+            summary: 'The three stamping deadlines, how to stamp, and the documents the Stamp Office needs to assess consideration against value.',
+            triggers: {
+              bullets: [
+                'The question asks when documents must be stamped, or gives you a transaction completing on a stated date.',
+                'The transaction is executed or effected outside Hong Kong.',
+                'The question asks what is presented to the Stamp Office — a standing part of LG5 Scenario II.',
+                'There is deemed consideration, a share swap, or a consideration subject to adjustment, so e-stamping may not be open.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'When, how and with what',
+                steps: [
+                  {
+                    id: 'when',
+                    label: 'Identify the document, then read its deadline',
+                    points: [
+                      'Contract note for the sale or purchase of any Hong Kong stock (head 2(1)): 2 days after the sale or purchase if effected in Hong Kong; 30 days if effected elsewhere.',
+                      'Transfer operating as a voluntary disposition inter vivos (head 2(3)): 7 days after execution; 30 days if executed outside Hong Kong.',
+                      'Transfer of any other kind (head 2(4)): BEFORE execution if executed in Hong Kong; 30 days after execution if executed outside Hong Kong.',
+                    ],
+                  },
+                  {
+                    id: 'trigger',
+                    label: 'Note what each clock runs from — they are not the same event',
+                    detail: 'The contract-note clock runs from the SALE OR PURCHASE; the head 2(3) and 2(4) clocks run from EXECUTION of the instrument. And head 2(4) is the odd one: stamping is due before execution, not after it.',
+                  },
+                  {
+                    id: 'how',
+                    label: 'Choose a method of stamping',
+                    points: [
+                      'Manual stamping — presenting the stampable documents to the Stamp Office, in person or by post, with the supporting documents.',
+                      'e-stamping — available for off-exchange stock transactions since December 2019, on an individual or bulk basis (up to 5,000 instruments), without presenting the originals; a stamp certificate is generated on successful payment.',
+                      'But some instruments cannot be e-stamped and must go to the Stamp Office: share transfers involving derivatives or a share swap, where indebtedness incurred is taken as whole or part of the consideration (i.e. s24(3) cases), or where the consideration is subject to adjustment.',
+                    ],
+                  },
+                  {
+                    id: 'what',
+                    label: 'Lodge what the Stamp Office needs to assess the duty',
+                    points: [
+                      'The documents requiring stamping themselves — the instrument of transfer and any contract notes.',
+                      'Evidence of value: the articles of association (if the company has been incorporated for less than 18 months) or the latest annual return (form NAR1) if 18 months or more; the latest return of allotment (form NSC1) for any increase in share capital not yet reflected.',
+                      'A certified copy of the sale and purchase agreement if there is one, or a signed confirmation from the vendor or purchaser that none exists.',
+                      'A statement whether the company and its subsidiaries hold any investments, landed property or rights to acquire landed property, with form IRSD102 if so.',
+                      'If the company has commenced business: the latest audited accounts; and management accounts certified by a director, CPA or solicitor if the audited accounts are not made up to a date within 6 months before the transfer — those management accounts running to a date within 3 months before the transfer.',
+                      'A certified copy of the directors\' resolution for any dividends paid or payable after the end date of the latest audited accounts.',
+                      'For a recently incorporated company that has not commenced business and has no audited accounts: a written confirmation by a director, CPA or solicitor with a copy of the certificate of incorporation.',
+                      'Documents evidencing any deemed consideration — the executed loan assignment, or the transferee\'s undertaking or guarantee.',
+                      'If relying on an exemption or relief: the supporting evidence, e.g. a declaration of trust adjudicated as not stampable for an existing nominee arrangement.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Head 2(4) stamping is due BEFORE execution where the instrument is executed in Hong Kong. It is the only one of the three that runs backwards, and it is easy to state wrongly.',
+                'The contract-note deadline is 2 days and runs from the sale or purchase, not from execution of the instrument of transfer.',
+                'Every deadline becomes 30 days where the relevant act happens outside Hong Kong — an easy mark if the facts put a party overseas.',
+                'A s24(3) transfer cannot be e-stamped: indebtedness taken as consideration is on the excluded list, so the answer is manual presentation to the Stamp Office.',
+                'The accounts requirement has two limbs with different windows: audited accounts within 6 months of the transfer, failing which certified management accounts made up to within 3 months of it.',
+                'Which company document you lodge depends on age: articles if incorporated under 18 months, otherwise the latest NAR1.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Answer document by document, giving each its own head, deadline and trigger event — a single "within 30 days" covers nothing accurately.',
+                'Where a party or the execution is offshore, say so and apply the 30-day limb expressly.',
+                'When asked what is presented to the Stamp Office, give a real list tied to the facts: the instruments, the accounts or NAR1, IRSD102 if there is property, and the documents evidencing any deemed consideration or claimed exemption.',
+                'If the transaction has deemed consideration, note that e-stamping is unavailable and say why.',
+              ],
+            },
+            skeleton: {
+              table: {
+                headers: ['Document', 'Time for stamping (in Hong Kong)', 'If effected / executed outside Hong Kong'],
+                rows: [
+                  ['Contract note for sale or purchase of Hong Kong stock (head 2(1))', '2 days after the sale or purchase', '30 days after the sale or purchase'],
+                  ['Transfer operating as a voluntary disposition inter vivos (head 2(3))', '7 days after execution', '30 days after execution'],
+                  ['Transfer of any other kind (head 2(4))', 'Before execution', '30 days after execution'],
+                ],
+              },
+            },
+            mistakes: {
+              bullets: [
+                'Saying the instrument of transfer on an ordinary sale is stamped within some period after execution — head 2(4) requires stamping before execution.',
+                'Running the contract-note clock from execution of the transfer rather than from the sale or purchase.',
+                'Assuming e-stamping is always available.',
+                'Listing "the financial statements" without saying which, or ignoring the audited/management accounts windows.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Time limits', 'Stamp Office PN, Stamping of Share Transfer, para. 6', 'Contract note: 2 days after the sale or purchase if effected in Hong Kong, else 30 days. Voluntary disposition inter vivos: 7 days after execution, else 30 days. Transfer of any other kind: before execution, else 30 days after'],
+                  ['Methods', 'Stamp Office PN, Stamping of Share Transfer, para. 4', 'Via the internet (e-stamping), individually or in bulk up to 5,000 instruments without presenting originals; or in person or by post with supporting documents'],
+                  ['e-stamping exclusions', 'Stamp Office PN, e-Stamping of Share Transfer Instruments, para. 4', 'Share transfers involving derivatives or share swap, indebtedness incurred taken as whole or part of the consideration, or consideration subject to adjustment, cannot be e-stamped'],
+                  ['Company documents to lodge', 'Stamp Office PN, Stamping of Share Transfer, para. 5(a)-(b)', 'Articles if incorporated less than 18 months, otherwise the latest NAR1; plus the latest NSC1 for any increase in share capital not yet reflected'],
+                  ['Agreement and property', 'Stamp Office PN, Stamping of Share Transfer, para. 5(c)-(d)', 'Certified copy of the sale and purchase agreement or a signed confirmation that none exists; a statement on landed property with form IRSD102 where applicable'],
+                  ['Accounts', 'Stamp Office PN, Stamping of Share Transfer, para. 5(e)-(f)', 'Latest audited accounts; certified management accounts to a date within 3 months before the transfer if the audited accounts are not made up to within 6 months before it; dividend resolutions since the last audited accounts; for a new company, a certified written confirmation with the certificate of incorporation'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'non-stamping-and-avoidance', label: 'Non-stamping, penalties, evasion and avoidance' },
+              { session: 'LG3', issue: 'corporate-maintenance', label: 'Registers, records and Companies Registry filings' },
+              { session: 'LG5', issue: 'practice-scenarios', label: 'The two practice scenarios' },
+            ],
+          },
+
+          {
+            id: 'non-stamping-and-avoidance',
+            title: 'Non-stamping, penalties, evasion and avoidance',
+            summary: 'What an unstamped instrument cannot do, the late-stamping penalty scale, and the line between avoidance and evasion.',
+            triggers: {
+              bullets: [
+                'The instrument has not been stamped, or was stamped late.',
+                'A party wants to rely on the transfer in court, or the Board is asked to register it.',
+                'A dividend is to be paid on shares whose transfer was never stamped.',
+                'The facts disclose a series of steps with no obvious commercial purpose, inserted to reduce duty.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'What follows from not stamping — and where planning becomes evasion',
+                steps: [
+                  {
+                    id: 'evidence',
+                    label: 'Consequence 1: the instrument cannot be used as evidence',
+                    detail: 'An unstamped instrument cannot be received in evidence (s15(1)) — except in criminal proceedings, or in Inland Revenue Department proceedings to recover stamp duty.',
+                  },
+                  {
+                    id: 'register',
+                    label: 'Consequence 2: the company cannot register the transfer',
+                    detail: 'The instrument cannot be registered by the company: s15(2) SDO, and s150(1) CO requires a "proper instrument of transfer", meaning one duly stamped. So until stamping happens, nothing moves on the register — and under MA63(4) the transferor remains the holder.',
+                  },
+                  {
+                    id: 'dividend',
+                    label: 'Consequence 3: restrictions on dividend payment (s21)',
+                    points: [
+                      's21 restricts payment of dividends in respect of shares whose transfer is not duly stamped.',
+                      'That bites on registered owners, and on beneficial owners under a trust arrangement.',
+                      'But note the company-law counterpoint: a company is not bound to take notice of a trust (s634 CO), so it deals with the registered owner.',
+                    ],
+                  },
+                  {
+                    id: 'penalty',
+                    label: 'Consequence 4: penalties for late stamping (s9)',
+                    points: [
+                      'Delay not exceeding 1 month: 2 times the amount of stamp duty.',
+                      'Delay exceeding 1 month but not exceeding 2 months: 4 times the amount of stamp duty.',
+                      'Any other case: 10 times the amount of stamp duty.',
+                      'The Collector may remit the penalty wholly or in part depending on the circumstances; a request should be in writing with full explanations and supporting evidence.',
+                    ],
+                  },
+                  {
+                    id: 'evasion',
+                    label: 'Then separate evasion from avoidance',
+                    points: [
+                      'Evasion: the common law offences of cheating and defrauding the Revenue, and conspiracy to do the same.',
+                      's11 — it is an offence not to set out all the facts and circumstances affecting the liability for, and the amount of, stamp duty, with intent to defraud the Government.',
+                      'Avoidance: arrangements to pay no or less tax, but not involving fraud.',
+                    ],
+                  },
+                  {
+                    id: 'ramsay',
+                    label: 'And apply the Ramsay approach to avoidance',
+                    points: [
+                      'Rules of purposive statutory construction: look at the facts of the transaction; see whether there are pre-ordained steps in a scheme which are devoid of commercial purpose; and set those steps aside.',
+                      'Confirmed to apply to Hong Kong stamp duty cases: Collector of Stamp Revenue v Arrowtown Assets Ltd (CFA).',
+                      'The classic target is a two-step transfer through an interposed company designed to keep each link at or above the s45 threshold while the end-to-end transfer would not qualify.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The evidential bar in s15(1) has two exceptions — criminal proceedings, and IRD proceedings to recover the duty. An answer that says "cannot be used in evidence" full stop is incomplete.',
+                'The penalty is a MULTIPLE of the duty, not a percentage: 2x, 4x, then 10x. A month\'s delay is expensive; two months and a day is catastrophic.',
+                'The bands are "not exceeding 1 month", "exceeding 1 month but not exceeding 2 months", and "any other case" — so exactly one month sits in the 2x band.',
+                'Remission is discretionary and must be asked for in writing with explanations and evidence; do not present it as an entitlement.',
+                'Non-stamping is not just a tax problem: it stops registration under s150(1) CO, so the commercial transaction does not complete.',
+                'Avoidance is not an offence; evasion is. Keep the two labels apart, and reserve fraud language for s11 and the common law offences.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Give the consequences as a list of distinct legal effects — evidence, registration, dividends, penalty — rather than as one general warning.',
+                'Compute the penalty as a multiple of the duty you calculated earlier, and say which band the delay falls in.',
+                'Where a scheme is in the facts, state the Ramsay steps in order and identify which step you say is devoid of commercial purpose and would be set aside.',
+                'Tie it back to the company-law consequence: without a duly stamped instrument the Board cannot register, so the transferor remains the holder.',
+              ],
+            },
+            skeleton: {
+              table: {
+                headers: ['Stamping delay', 'Penalty'],
+                rows: [
+                  ['Not exceeding 1 month', '2 times the amount of stamp duty'],
+                  ['Exceeding 1 month but not exceeding 2 months', '4 times the amount of stamp duty'],
+                  ['Any other case', '10 times the amount of stamp duty'],
+                ],
+              },
+            },
+            mistakes: {
+              bullets: [
+                'Stating the late-stamping penalty as a percentage rather than a multiple of the duty.',
+                'Omitting the two exceptions to the s15(1) evidential bar.',
+                'Treating remission as automatic.',
+                'Calling a lawful avoidance scheme an offence, or describing evasion as merely aggressive planning.',
+                'Forgetting that the s150(1) CO registration bar is the practical consequence the client actually cares about.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Not receivable in evidence', 's15(1) SDO', 'An unstamped instrument cannot be received in evidence, except in criminal proceedings or in IRD proceedings to recover stamp duty'],
+                  ['Cannot be registered', 's15(2) SDO; s150(1) CO', 'The instrument cannot be registered by the company; the CO independently requires a proper (duly stamped) instrument of transfer'],
+                  ['Dividend restrictions', 's21 SDO; s634 CO', 'Restricts payment of dividends where the transfer is not duly stamped, as against registered owners and beneficial owners under a trust — though a company is not bound to take notice of a trust'],
+                  ['Late stamping penalty', 's9 SDO; Stamp Office PN, Stamping of Share Transfer, para. 7', '2x the duty for a delay not exceeding 1 month; 4x for more than 1 but not more than 2 months; 10x in any other case. Remission may be granted wholly or in part on written request with full explanations and supporting evidence'],
+                  ['Full and true disclosure', 's11 SDO', 'An offence not to set out all facts and circumstances affecting the liability for, and amount of, stamp duty, with intent to defraud the Government'],
+                  ['Evasion at common law', '—', 'The offences of cheating and defrauding the Revenue, and conspiracy to do the same'],
+                  ['Avoidance and purposive construction', 'Collector of Stamp Revenue v Arrowtown Assets Ltd [2004] 1 HKLRD 77, [2003] HKCU 1347 (CFA)', 'Confirms that the Ramsay approach of purposive statutory construction applies to Hong Kong stamp duty: identify pre-ordained steps devoid of commercial purpose and set them aside'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'time-limits-and-methods', label: 'Time limits, methods and what to lodge' },
+              { session: 'LG4', issue: 'intra-group-relief', label: 'Intra-group relief under s45' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
+            ],
+          },
+        ],
+      },
+    },
+
     LG5: {
       kind: 'LG',
       date: 'Pre-recorded (Week 1)',
@@ -3264,6 +4453,8 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
               { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
               { session: 'LG2', issue: 'executing-documents', label: 'Executing corporate documents' },
+              { session: 'LG4', issue: 'voluntary-disposition', label: 'Transfers operating as a voluntary disposition' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
               { session: 'LG5', issue: 'practice-scenarios', label: 'The two practice scenarios' },
             ],
           },
@@ -3299,6 +4490,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                     'The subsidiary\'s accountants value its assets net of liabilities (inclusive of the loan) at approximately HK$5,000,000.',
                     'The subsidiary adopts the Model Articles with modifications: MA7(3) replaced, and a replacement MA11(2) fixing the Board quorum at 2.',
                     'Provisions to have open: MA9-MA10 (calling a meeting and participating from anywhere), MA8 (unanimous decisions), MA25(e) (absence over 6 months), s150-s152 and MA63-MA64 (the transfer and the Board\'s discretion), MA59-MA61 (certificates), s9 LARCO (Cap. 23) with s128 (the loan assignment as a deed), s127(3)-(4) (who signs, and signing for two companies), and MA81 if a seal were in play — though the subsidiary has not adopted one.',
+                    'On the stamp duty limbs of the question, have the SDO open too: s19(1) and s19(16) (contract notes and what a sale or purchase is), s24(1) second limb (the loan being assigned "dollar-for-dollar" is the classic deemed-consideration case), heads 2(1) and 2(4) of Schedule 1, the s27(4) comparison against net asset value, and the time limits — the facts give you a HK$1,500,000 loan and a HK$5,000,000 net asset value for a reason.',
                     'The question asks you to identify the parties performing each step, put the steps in the correct sequence, address stamp duty implications and corporate reporting for each step, and — where duty is payable — explain the basis of charge, calculate the amount, and describe what is presented to the Stamp Office. It also limits the documents to the transfer-related ones required by law.',
                   ],
                 },
@@ -3329,6 +4521,9 @@ window.COURSE_DETAILS.PCLL8020 = {
               { session: 'LG2', issue: 'executing-documents', label: 'Executing corporate documents' },
               { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
               { session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
+              { session: 'LG4', issue: 'deemed-consideration', label: 'Deemed consideration under s24' },
+              { session: 'LG4', issue: 'which-charging-head', label: 'Which charging head applies?' },
+              { session: 'LG4', issue: 'time-limits-and-methods', label: 'Time limits, methods and what to lodge' },
             ],
           },
         ],
