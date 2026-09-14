@@ -216,7 +216,13 @@
   //       // flowchart, quoted provisions, or any mix, whichever the content
   //       // actually needs. The section heading supplies the framing, which is
   //       // why none of these needed their own bespoke shape.
-  //       triggers:    { bullets: [...] },
+  //       triggers:    { bullets: [...], routes: [...] },
+  //         // `routes` turns the trigger list into a router: each entry is
+  //         // { when, session, issue, label } -- the fact pattern, and the
+  //         // issue type that actually answers it. Resolved into links by
+  //         // examTriggerRoutesHtml in common-session.js and passed back in
+  //         // via this function's `extras` argument. Same resolution rules as
+  //         // crossRefs: a link only where both halves resolve.
   //       answering:   { flowchart: { steps: [...] } },
   //       lookOut:     { bullets: [...] },
   //       skills:      { bulletGroups: [...] },
@@ -226,12 +232,21 @@
   //       notes: [{ heading: 'Anything else', bullets: [...] }],   // catch-all, last
   //     }],
   //   }
-  function examIssueSectionsHtml(issue) {
+  // `extras` is an optional `{ sectionKey: html }` map whose value is appended
+  // INSIDE that section, after its authored body. It exists so the session
+  // layer can inject content it alone can build -- resolved cross-links need
+  // the live timetable, and common-content.js knows nothing about events --
+  // without either duplicating the section chrome or inverting the
+  // core -> content -> session dependency direction. A section with only an
+  // extra and no authored body still renders.
+  function examIssueSectionsHtml(issue, extras) {
     if (!issue) return '';
+    const extra = extras || {};
     let html = EXAM_SECTIONS.map(({ key, heading }) => {
-      const body = issue[key] && fullNoteBodyHtml(issue[key]);
-      if (!body) return '';
-      return `<section class="exam-section exam-section--${key}"><h3>${escapeHtml(heading)}</h3>${body}</section>`;
+      const body = (issue[key] && fullNoteBodyHtml(issue[key])) || '';
+      const added = extra[key] || '';
+      if (!body && !added) return '';
+      return `<section class="exam-section exam-section--${key}"><h3>${escapeHtml(heading)}</h3>${body}${added}</section>`;
     }).join('');
     if (issue.notes && issue.notes.length) {
       html += `<section class="exam-section exam-section--notes"><h3>Further Notes</h3>${issue.notes.map((n) => `

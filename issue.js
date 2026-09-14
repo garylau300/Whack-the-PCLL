@@ -3,7 +3,7 @@
 
   const {
     ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref, issueHref,
-    findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml,
+    findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -96,7 +96,9 @@
       summaryEl.hidden = true;
     }
 
-    $('issueBody').innerHTML = examIssueSectionsHtml(issue) + examCrossRefsHtml(issue, data, code, details);
+    $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
+      triggers: examTriggerRoutesHtml(issue, data, code, details),
+    }) + examCrossRefsHtml(issue, data, code, details);
     renderNav(issueTypes, index, ev, foundDate);
 
     $('status').hidden = true;

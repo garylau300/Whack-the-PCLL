@@ -72,6 +72,24 @@ not what the code does.
   ref pointing at a renamed or deleted issue degrades to plain text rather
   than a dead link, so **renaming an issue `id` silently downgrades every
   ref to it** — grep for the old id when you rename one.
+- **An issue type's `triggers` has two halves.** `bullets` say "these facts
+  mean you are on the right page"; `routes` say "these neighbouring facts
+  mean you are on the WRONG page, and here is the right one". A `routes`
+  entry is `{ when, session, issue, label }` — the same `{session, issue,
+  label}` shape as `crossRefs` plus the fact pattern — resolved by
+  `examTriggerRoutesHtml` in `common-session.js` and injected into the
+  triggers section through `examIssueSectionsHtml`'s `extras` argument.
+  That argument exists only so the session layer can put resolved links
+  inside a section the content layer renders, without `common-content.js`
+  learning about the timetable (core → content → session still holds).
+  Both renderers resolve through `resolveIssueRef`, so the
+  degrade-to-plain-text rule is implemented once.
+- **Never repeat the session in a `label`.** `resolveIssueRef` prepends
+  `"<session> — "` itself, so `label: 'LG4 — Amending pleadings'` renders as
+  "LG4 — LG4 — Amending pleadings". Write the bare title. This applies to
+  `crossRefs` and `routes` alike, and cross-session refs are where it goes
+  wrong — both verification scripts now assert no rendered link text matches
+  `(LG|SG)\d+ — (LG|SG)\d+ —`.
 - **`sessionEventsByKey(data, code)`** (`common-core.js`) is the one way to
   go from a courseDetails session key back to a linkable timetable event.
   Both `course.js`'s exam roll-up and `examCrossRefsHtml` use it, so a

@@ -977,6 +977,29 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-crossrefs a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
 .exam-crossrefs a:hover, .exam-crossrefs a:focus-visible { text-decoration: underline; }
 
+/* Trigger routing (issue.html) — the "wrong page, try this one" half of the
+   Issue Triggers section. Deliberately lighter than .exam-crossrefs: these
+   are inline redirects while reading, not the page's own related-topics
+   list, so they get a left rule rather than a full card. Each row is the
+   fact pattern followed by the issue type that answers it; the row wraps to
+   two lines on a narrow screen rather than truncating either half. */
+.exam-route-heading {
+  margin: 14px 0 8px; font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted);
+}
+.exam-trigger-routes { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.exam-trigger-routes li {
+  display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline;
+  padding: 6px 0 6px 10px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  font-size: 0.86rem;
+}
+.exam-route-when { color: var(--text-muted); }
+.exam-route-when::after { content: ' \2192'; color: var(--accent-text); font-weight: 700; }
+.exam-trigger-routes a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
+.exam-trigger-routes a:hover, .exam-trigger-routes a:focus-visible { text-decoration: underline; }
+.exam-route-to { color: var(--text-muted); font-weight: 600; }
+
 .issue-nav {
   display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
   margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);

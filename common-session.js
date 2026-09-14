@@ -228,21 +228,53 @@
   // pointing at a renamed or deleted issue must not render as a dead link.
   // That needs the timetable, which is why this lives here rather than in
   // examIssueSectionsHtml (common-content.js knows nothing about events).
+  // Resolves one `{ session, issue, label }` reference against the live
+  // timetable and the authored notes, returning `{ text, href }` where href
+  // is null unless BOTH halves resolved. Shared by the two renderers below so
+  // the degrade-to-plain-text rule can only be implemented once.
+  function resolveIssueRef(ref, byKey, sessions) {
+    const found = byKey.get(ref.session);
+    const target = sessions[ref.session];
+    const issueTypes = (target && target.examNotes && target.examNotes.issueTypes) || [];
+    const targetIssue = issueTypes.find((t) => t.id === ref.issue);
+    const text = `${escapeHtml(ref.session)} — ${escapeHtml(ref.label || (targetIssue && targetIssue.title) || ref.issue)}`;
+    if (!found || !targetIssue) return { text, href: null };
+    return { text, href: issueHref(found.ev, found.dateIso, targetIssue.id) };
+  }
+
   function examCrossRefsHtml(issue, data, code, details) {
     const refs = issue.crossRefs || [];
     if (!refs.length || !data) return '';
     const byKey = sessionEventsByKey(data, code);
     const sessions = (details && details.sessions) || {};
     const items = refs.map((ref) => {
-      const found = byKey.get(ref.session);
-      const target = sessions[ref.session];
-      const issueTypes = (target && target.examNotes && target.examNotes.issueTypes) || [];
-      const targetIssue = issueTypes.find((t) => t.id === ref.issue);
-      const text = `${escapeHtml(ref.session)} — ${escapeHtml(ref.label || (targetIssue && targetIssue.title) || ref.issue)}`;
-      if (!found || !targetIssue) return `<li>${text}</li>`;
-      return `<li><a href="${escapeHtml(issueHref(found.ev, found.dateIso, targetIssue.id))}">${text}</a></li>`;
+      const { text, href } = resolveIssueRef(ref, byKey, sessions);
+      if (!href) return `<li>${text}</li>`;
+      return `<li><a href="${escapeHtml(href)}">${text}</a></li>`;
     }).join('');
     return `<section class="exam-section exam-section--crossrefs"><h3>Related Issue Types</h3><ul class="exam-crossrefs">${items}</ul></section>`;
+  }
+
+  // The routing half of an issue type's "Issue Triggers" section. A trigger
+  // list says "these facts mean you are on this page"; a route says "these
+  // neighbouring facts mean you are on the WRONG page, and here is the right
+  // one". Authored as `triggers.routes`, each entry `{ when, session, issue,
+  // label }`. Returned as a fragment rather than a section because it is
+  // injected into the triggers section through examIssueSectionsHtml's
+  // `extras` argument -- it belongs under that heading, not beside it.
+  // Degrades to plain text on an unresolved ref, exactly as crossRefs does.
+  function examTriggerRoutesHtml(issue, data, code, details) {
+    const routes = (issue.triggers && issue.triggers.routes) || [];
+    if (!routes.length || !data) return '';
+    const byKey = sessionEventsByKey(data, code);
+    const sessions = (details && details.sessions) || {};
+    const items = routes.map((route) => {
+      const { text, href } = resolveIssueRef(route, byKey, sessions);
+      const when = `<span class="exam-route-when">${escapeHtml(route.when)}</span>`;
+      const to = href ? `<a href="${escapeHtml(href)}">${text}</a>` : `<span class="exam-route-to">${text}</span>`;
+      return `<li>${when}${to}</li>`;
+    }).join('');
+    return `<h4 class="exam-route-heading">But if the real question is…</h4><ul class="exam-trigger-routes">${items}</ul>`;
   }
 
   // Full write-up for one session (lecture outline, prep checklist, fact
@@ -371,5 +403,6 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     sessionDetailHtml, sessionFallbackHtml, wireSessionDetail, examCrossRefsHtml,
+    examTriggerRoutesHtml,
   });
 })();
