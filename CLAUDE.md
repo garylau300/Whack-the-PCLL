@@ -118,9 +118,22 @@ not what the code does.
     but *not* for anything the 2023 Companies (Amendment) Ordinance touched
     (s583A, s547(1), s584, the virtual/hybrid meeting regime) — take those
     from the course outline instead.
+  - **Rules of the High Court (Cap. 4A)** — WIPO Lex mirrors the full
+    consolidated text as a single HTML page
+    (https://wipolex-res.wipo.int/edocs/lexdocs/laws/en/hk/hk038en.html),
+    fetchable with `curl` and flattened with a strip-tags pass. It carries
+    the CJR amendments (O.1A, O.18 rr.12A and 20A, O.41A), and the latest
+    amendment in it is **L.N. 163 of 2013** — so treat ~2013 as its cutoff
+    and take anything later from the course materials. The Civil Justice
+    Reform consultation PDF at
+    https://www.civiljustice.hk/rp/documents/Annex_A.pdf also reproduces
+    O.41A, but as a *redlined draft* (strikethroughs survive extraction as
+    inline text, e.g. "(4)(6)") — usable for understanding, **never for a
+    quote box**.
   - **e-Legislation cannot be WebFetched** — it is a JS single-page app and
     returns only its loading shell, for the HTML and `.pdf` URLs alike.
-    Don't waste calls on it.
+    `curl` on `!en.pdf` also returns the HTML shell, not a PDF. HKLII is
+    the same. Don't waste calls on either.
   - The **course outline still governs scope**: it decides what is
     examinable, and italicised/unexaminable topics stay out however
     interesting the statute is.

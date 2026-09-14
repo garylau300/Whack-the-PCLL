@@ -1978,6 +1978,1820 @@ window.COURSE_DETAILS.PCLL8010 = {
       },
     },
 
+    LG4: {
+      kind: 'LG',
+      date: '2026-09-08',
+      time: '09:00-11:00',
+      mode: 'Face-to-face',
+      authors: ['Alfred Cheng', 'Julienne Jen', 'Ophelia Chan'],
+      objectives: [
+        'Define pleadings and explain their purpose and importance.',
+        'Outline and apply the procedural timelines relevant to pleadings.',
+        'Describe the formal requirements for drafting pleadings.',
+        'Demonstrate an understanding of the substantive drafting requirements of pleadings.',
+        'Distinguish when further and better particulars may be requested, and the procedural steps involved.',
+        'Explain the amendment process for pleadings.',
+        'Recognise the grounds for striking out pleadings.',
+      ],
+      topicsCovered: [
+        'What pleadings are, and why they matter (Poon Hau Kei; Aktieselskabet Dansk Skibsfinansiering)',
+        'Chronology and procedural timelines; filing and serving (O.18 rr.1-5A, r.20)',
+        'Formal requirements (O.18 r.6) and the Statement of Truth (O.18 r.20A, O.41A)',
+        'Substantive requirements: material facts not evidence (O.18 r.7), points of law (O.18 r.11), matters pleaded specifically (O.18 r.8) and particulars (O.18 r.12)',
+        'Further and better particulars (O.18 rr.12(3)-(7))',
+        'Statement of claim, defence, counterclaim and reply (O.18 rr.13-18; O.15 rr.2-3)',
+        'Amendment of pleadings (O.20) and striking out (O.18 r.19)',
+      ],
+      prep: {
+        readings: [
+          'The LG4 Lecture Outline and the Lecture Notes attached to it',
+          'RHC O.18, O.20 and O.41A themselves',
+          'Julienne Jen, "Hong Kong Civil Court Practice" (LexisNexis, 2026) — the "Blue Book" — O.18 [5029]-[5933], O.20 [6469]-[6591] and [6798]-[6838], O.41A [5018]-[5107] and [5128]-[5139.2] (online)',
+          'Eric TM Cheung et al, "Civil Procedure in Hong Kong", 7th ed (LexisNexis, 2023) — the "Textbook" — chapter 8',
+          'Contract Case File, Bundles A & B; Negligence Case File, Bundle B',
+        ],
+      },
+      prepChecklist: [
+        { id: 'read-outline', label: 'Read the LG4 Lecture Outline and its Lecture Notes' },
+        { id: 'read-orders', label: 'Read RHC O.18, O.20 and O.41A themselves' },
+        { id: 'blue-book', label: 'Read the Blue Book paragraphs listed for O.18, O.20 and O.41A' },
+        { id: 'case-files', label: 'Review the pleadings in the Contract Case File Bundles A & B and the Negligence Case File Bundle B' },
+        { id: 'runway-defence', label: 'Study the Defence and Counterclaim of Runway Fashion Limited (Contract Case File Bundle B, pp.56-64) against the O.18 r.6 formal requirements' },
+      ],
+      keyTakeaways: [
+        'Pleadings define the real issues in dispute, and the parties are bound by their pleaded cases at trial.',
+        'Plead material facts only — not the evidence that proves them, and not legal argument.',
+        'Request further and better particulars BY LETTER first; the Court may refuse an application made without one (O.18 r.12(6)).',
+        'One amendment without leave, before the close of pleadings (O.20 r.3(1)); after that, leave is needed and the test is prejudice to the other side that costs cannot cure.',
+        'Striking out is a drastic power used sparingly, and only in plain and obvious cases.',
+      ],
+      examNotes: {
+        intro: 'Pleadings questions come in two shapes. The first is a date question: what must be served, by whom, by when, and when do the pleadings close — which then decides whether an amendment needs leave. The second is a drafting question: is this material fact or evidence, is this a point of law or legal argument, has this been pleaded specifically, is this particularised. The issue types below run in that order — the timetable first, then the formal and substantive drafting rules, then what you do about a pleading that is deficient: particulars, amendment, or striking out.',
+        issueTypes: [
+          {
+            id: 'what-pleadings-do',
+            title: 'What pleadings are and why they matter',
+            summary: 'The types of pleading, the function the cases give them, and the consequence — the parties are bound by what they plead.',
+            triggers: {
+              bullets: [
+                'A party wants to run an argument at trial that is not in its pleaded case.',
+                'A discovery request is resisted as going beyond the pleaded issues.',
+                'A pleading is so vague that the other side says it cannot know the case it has to meet.',
+                'The question asks what purpose a particular pleading serves, or which pleading comes next.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Placing the document and its function',
+                steps: [
+                  {
+                    id: 'what',
+                    label: 'Identify the document',
+                    points: [
+                      'A pleading is a formal written document in which the parties formulate their claim or defence.',
+                      'The sequence: statement of claim; defence (and counterclaim); reply (and defence to counterclaim); then, rarely and only with leave, rejoinder, surrejoinder, rebutter and surrebutter.',
+                      'Further and better particulars are also pleadings for these purposes — "pleading" in O.41A r.1 expressly includes particulars given voluntarily, on request, or under an order made under O.18 r.12(3) or (4), and any amendment to a pleading or to those particulars.',
+                      'No pleading after a reply or a defence to counterclaim may be served except with the leave of the Court: O.18 r.4.',
+                    ],
+                  },
+                  {
+                    id: 'purpose',
+                    label: 'State the purpose, with authority',
+                    points: [
+                      'The core function: to define the real issues between the parties in advance of trial (Poon Hau Kei v Hsin Cheong Construction Co Ltd (2004) 7 HKCFAR 148).',
+                      'From that follow the practical consequences (Aktieselskabet Dansk Skibsfinansiering v Wheelock Marden Co Ltd [1994] 2 HKC 264 (CA)): inform the other party of the nature of the case it has to meet; prevent surprise at trial; enable the other side to know what evidence to prepare; limit the generality of the discovery required; and tie the parties\' hands as to the cases they will run at trial.',
+                      'The last of those is the one that decides most problem questions: a party is bound by its pleaded case.',
+                    ],
+                  },
+                  {
+                    id: 'consequence',
+                    label: 'Work out the consequence on the facts',
+                    points: [
+                      'If a party wants to run an unpleaded case, the answer is not "it can be argued anyway" — it is an application to amend under O.20.',
+                      'If a pleading is deficient, the answer is a request for further and better particulars under O.18 r.12, then an application if refused.',
+                      'If the pleading is bad in principle, the answer is striking out under O.18 r.19.',
+                      'Those three routes — particulars, amendment, striking out — are the whole of what this lecture does about a defective pleading. Identify which one the facts call for.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The materials set as a student discovery task whether pleadings appear in an action begun by originating summons as well as by writ. The rules point the way: O.18 r.1 keys the statement of claim to a writ, and O.18 r.19(3) applies the striking-out rule to an originating summons and a petition "as if the summons or petition were a pleading" — which it would not need to do if they already were one. Work the answer from those provisions rather than assuming.',
+                'Particulars are pleadings. That matters twice over: they must be verified by a statement of truth (O.18 r.20A(2)), and they must satisfy the O.18 r.6 formal requirements.',
+                'Rejoinder and beyond require leave (O.18 r.4). Do not write a timetable that has them following as of right.',
+                'Limiting discovery is a purpose of pleadings, not merely a side effect — it is the answer to "why does it matter that this allegation was not pleaded?"',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Name the pleading precisely: "Defence and Counterclaim", not "the defence", where a counterclaim is included.',
+                'When asked why pleadings matter, give the Poon Hau Kei purpose first and then the Aktieselskabet Dansk Skibsfinansiering consequences — the consequences are what apply to facts.',
+                'Tie the answer to a remedy. "The allegation is unpleaded" is only half an answer; say whether the route is particulars, amendment or striking out.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating a witness statement or an affidavit as a pleading — they are separate documents with their own verification rules under O.41A.',
+                'Forgetting that further and better particulars are themselves pleadings.',
+                'Assuming a party may simply argue an unpleaded point at trial.',
+                'Listing rejoinder, surrejoinder, rebutter and surrebutter as ordinary steps rather than the rare, leave-only steps they are.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Purpose of pleadings', 'Poon Hau Kei v Hsin Cheong Construction Co Ltd (2004) 7 HKCFAR 148', 'To define the real issues between the parties in advance of trial'],
+                  ['What follows from that purpose', 'Aktieselskabet Dansk Skibsfinansiering v Wheelock Marden Co Ltd [1994] 2 HKC 264 (CA)', 'Inform the other party of the case to be met; prevent surprise; enable evidence to be prepared; limit the generality of discovery; tie the parties to the cases they will run'],
+                  ['Particulars are pleadings', 'O.41A r.1; O.18 r.20A(2)', '"Pleading" includes particulars given voluntarily, on request, or under an order under O.18 r.12(3) or (4), and any amendment to a pleading or to those particulars'],
+                  ['Later pleadings need leave', 'O.18 r.4', 'No pleading subsequent to a reply or a defence to counterclaim shall be served except with the leave of the Court'],
+                  ['Pleading any matter whenever arising', 'O.18 r.9', 'Subject to rr.7(1), 10 and 15(2), a party may plead any matter which has arisen at any time, whether before or since the issue of the writ'],
+                  ['Originating summons', 'O.18 r.19(3)', 'The striking-out rule applies, so far as applicable, to an originating summons and a petition as if it were a pleading'],
+                  ['Trial without pleadings', 'O.18 r.21(1)-(2), (4)', 'Either party may apply by summons for trial without pleadings; the Court must so order if the issues can be defined without them — but the rule does not apply to a claim for libel, slander, malicious prosecution, false imprisonment, or one based on an allegation of fraud'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+            ],
+          },
+
+          {
+            id: 'pleadings-timetable',
+            title: 'The pleadings timetable and close of pleadings',
+            summary: 'Who serves what, by when, in each of the two writ scenarios — and the date that decides whether an amendment needs leave.',
+            triggers: {
+              bullets: [
+                'The question gives a service date and asks for a deadline.',
+                'A party asks whether it is too late to amend without leave.',
+                'A defence has not been served and the plaintiff is considering judgment in default.',
+                'The writ was generally indorsed and no statement of claim has followed.',
+                'An application under O.12 r.8 is pending and the defence deadline is approaching.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Building the timetable',
+                steps: [
+                  {
+                    id: 'scenario',
+                    label: 'First: was the writ generally or specially indorsed?',
+                    points: [
+                      'GENERALLY indorsed (no statement of claim on the writ) — the plaintiff must serve a statement of claim either when the writ is served, or at any time after service but before the expiration of 14 days after that defendant gives notice of intention to defend: O.18 r.1.',
+                      'SPECIALLY indorsed (statement of claim on the writ) — no separate statement of claim is needed; O.18 r.1 applies "unless the Court gives leave to the contrary or a statement of claim is indorsed on the writ".',
+                      'Either way the defendant must acknowledge service within 14 days of being served with the writ, INCLUDING the day of service: O.12 r.5(a).',
+                    ],
+                  },
+                  {
+                    id: 'defence',
+                    label: 'Then the defence — and read the rule, because it is a "whichever is the later" test',
+                    points: [
+                      'O.18 r.2(1): a defendant who gives notice of intention to defend must serve a defence on every other party who may be affected, before the expiration of 28 days after THE TIME LIMITED FOR ACKNOWLEDGING SERVICE OF THE WRIT or after THE STATEMENT OF CLAIM IS SERVED on him, WHICHEVER IS THE LATER.',
+                      'So both dates must be computed, and the later one starts the 28 days. On a specially indorsed writ the statement of claim arrives with the writ, so the acknowledgement deadline is almost always the later; on a generally indorsed writ it can be either.',
+                      'O.18 r.2(2): if an O.14 or O.86 summons is served before the defence, r.2(1) does not apply unless leave to defend is given — and then the defence is due within 28 days after the order, or such other period specified in it.',
+                      'O.18 r.2(3): where the defendant has applied under O.12 r.8(1) or (2), r.2(1) does not apply unless the application is dismissed or no order is made — and then the defence is due within 28 days after the FINAL DETERMINATION of the application, or such other period as the Court specifies.',
+                    ],
+                  },
+                  {
+                    id: 'reply',
+                    label: 'Reply and defence to counterclaim',
+                    points: [
+                      'A reply is only required if it is needed for compliance with O.18 r.8 — i.e. to plead specifically something that would otherwise take the defendant by surprise. If no reply is served, O.18 r.14(1) applies: there is an implied joinder of issue on the defence: O.18 r.3(1).',
+                      'A plaintiff served with a counterclaim must, if it intends to defend it, serve a defence to counterclaim: O.18 r.3(2).',
+                      'Where both are served, they must be in the SAME document: O.18 r.3(3).',
+                      'Timing: a reply within 28 days after service of the defence; a defence to counterclaim within 28 days after service of the counterclaim to which it relates: O.18 r.3(4).',
+                    ],
+                  },
+                  {
+                    id: 'close',
+                    label: 'Fix the close of pleadings — this is the date that matters most',
+                    points: [
+                      'O.18 r.20(1)(a) — 14 days after service of the reply; or, if there is no reply but only a defence to counterclaim, 14 days after service of the defence to counterclaim.',
+                      'O.18 r.20(1)(b) — if NEITHER a reply nor a defence to counterclaim is served, 28 days after service of the defence.',
+                      'O.18 r.20(2) — pleadings are deemed closed at that time NOTWITHSTANDING that a request or order for particulars has been made but not complied with. An outstanding request does not hold the close of pleadings open.',
+                      'Why it matters: the right to amend once without leave runs only "before the pleadings are deemed to be closed" (O.20 r.3(1)), as does the plaintiff\'s right to amend the writ once (O.20 r.1(1)).',
+                    ],
+                  },
+                  {
+                    id: 'filing',
+                    label: 'Do not forget filing, which is separate from service',
+                    points: [
+                      '"Serving" is giving a document to another party; "filing" is submitting it to the Court.',
+                      'O.18 r.5A(1): every pleading and originating process shall be filed in the Registry WITHIN THE TIME during which it may be served on any other party — so in practice, filed and served at about the same time.',
+                      'O.18 r.5A(2): a party may apply by summons, stating the further time required, for more time to file.',
+                      'O.18 r.5A(3): a party who misses the time is not at liberty to file without the leave of the Court.',
+                      'O.18 r.5: pleadings and amended pleadings may not be served during the Summer Vacation except with leave or the consent of all parties.',
+                    ],
+                  },
+                  {
+                    id: 'compute',
+                    label: 'Compute the dates under O.3, and mind the two different counting rules',
+                    points: [
+                      'The acknowledgement period counts the day of service (O.12 r.5(a)). The 28-day periods in O.18 rr.2 and 3 do not: O.3 r.2(2) begins the period immediately after the reference date.',
+                      'Periods of 28 days are longer than 7, so O.3 r.2(5) does not exclude Saturdays, Sundays and public holidays — every day counts.',
+                      'If the last day falls when the Registry is closed, the act is in time if done on the next open day: O.3 r.4(1).',
+                    ],
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Step', 'Generally indorsed writ', 'Specially indorsed writ', 'Provision'],
+                rows: [
+                  ['Acknowledgement of service', '14 days after service, including the day of service', 'Same', 'O.12 r.5(a)'],
+                  ['Statement of claim', 'With the writ, or within 14 days after D gives notice of intention to defend', 'Not needed — it is on the writ', 'O.18 r.1'],
+                  ['Defence (and counterclaim)', '28 days after the LATER of the time limited for acknowledging service and service of the statement of claim', 'Same test; in practice 28 days after the time limited for acknowledging service', 'O.18 r.2(1)'],
+                  ['Reply and/or defence to counterclaim', '28 days after service of the defence / of the counterclaim; same document if both', 'Same', 'O.18 r.3(3)-(4)'],
+                  ['Rejoinder and beyond', 'Only with leave', 'Same', 'O.18 r.4'],
+                  ['Close of pleadings — reply served', '14 days after service of the reply (or of the defence to counterclaim if there is no reply)', 'Same', 'O.18 r.20(1)(a)'],
+                  ['Close of pleadings — no reply or defence to counterclaim', '28 days after service of the defence', 'Same', 'O.18 r.20(1)(b)'],
+                  ['Filing', 'Within the time during which the pleading may be served', 'Same', 'O.18 r.5A(1)'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'O.18 r.2(1) is a "whichever is the later" rule. Computing only one of the two dates is the commonest way to get the defence deadline wrong.',
+                'The 28 days run from the TIME LIMITED for acknowledging service, not from the date the defendant actually acknowledged. Acknowledging early does not shorten the defence period; acknowledging late does not extend it (O.12 r.6(2)).',
+                'A pending O.12 r.8 jurisdiction application suspends the defence deadline entirely, and the clock restarts on the FINAL DETERMINATION of that application: O.18 r.2(3).',
+                'An outstanding request or order for particulars does NOT postpone the close of pleadings: O.18 r.20(2). A party waiting on particulars can lose the right to amend without leave while it waits.',
+                'A reply is optional. Serving one unnecessarily changes the close of pleadings from 28 days after the defence to 14 days after the reply — which may be earlier or later; check before serving.',
+                'Where there is a counterclaim but no reply, the close of pleadings is measured from the defence to counterclaim, not from the defence: O.18 r.20(1)(a).',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Lay out the timetable as dates, not as rule numbers, and then attach the rule to each date.',
+                'For the defence, always show BOTH candidate start dates and say which is later before counting 28 days.',
+                'State the close of pleadings expressly, even when the question does not ask for it — it is the premise of any amendment answer.',
+                'Where the facts are incomplete (no service date, no acknowledgement date), say what further information is needed rather than assuming.',
+                'Use the O.3 computation rules explicitly, and remember the acknowledgement period is the one that includes the day of service.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Running the 28 days for the defence from the date of actual acknowledgement.',
+                'Counting the 28-day periods as if O.3 r.2(5) excluded weekends and holidays — it applies only to periods of 7 days or less.',
+                'Forgetting that a specially indorsed writ dispenses with a separate statement of claim.',
+                'Treating a reply as a required step.',
+                'Assuming pleadings stay open while particulars are outstanding.',
+                'Filing a pleading late without appreciating that leave is then needed: O.18 r.5A(3).',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'a defendant who gives notice of intention to defend an action must, unless the Court gives leave to the contrary, serve a defence on every other party to the action who may be affected thereby before the expiration of 28 days after the time limited for acknowledging service of the writ or after the statement of claim is served on him, whichever is the later.', cite: 'O.18 r.2(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'The pleadings in an action are deemed to be closed at the time provided by paragraph (1) notwithstanding that any request or order for particulars has been made but has not been complied with at that time.', cite: 'O.18 r.20(2), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Statement of claim', 'O.18 r.1', 'Unless the Court gives leave to the contrary or the statement of claim is indorsed on the writ, P must serve it when the writ is served, or after service but before 14 days after D gives notice of intention to defend'],
+                  ['Defence', 'O.18 r.2(1)', '28 days after the time limited for acknowledging service, or after service of the statement of claim, whichever is the later'],
+                  ['Defence where O.14 or O.86 summons served first', 'O.18 r.2(2)', 'r.2(1) does not apply unless leave to defend is given; then 28 days after the order, or as specified in it'],
+                  ['Defence where a jurisdiction challenge is pending', 'O.18 r.2(3)', 'r.2(1) does not apply unless the O.12 r.8 application is dismissed or no order made; then 28 days after its final determination, or as the Court specifies'],
+                  ['When a reply is needed', 'O.18 r.3(1)', 'Only if needed for compliance with r.8; if none is served, r.14(1) applies'],
+                  ['Defence to counterclaim', 'O.18 r.3(2)-(3)', 'Required if P intends to defend the counterclaim; a reply and a defence to counterclaim must be in the same document'],
+                  ['Timing of both', 'O.18 r.3(4)', '28 days after service of the defence, and 28 days after service of the counterclaim, respectively'],
+                  ['Later pleadings', 'O.18 r.4', 'Nothing after a reply or defence to counterclaim without leave'],
+                  ['Summer Vacation', 'O.18 r.5', 'No service of pleadings or amended pleadings except with leave or the consent of all parties'],
+                  ['Filing', 'O.18 r.5A(1)-(3)', 'File in the Registry within the time for service; apply by summons for further time; no filing out of time without leave'],
+                  ['Close of pleadings', 'O.18 r.20(1)(a)-(b)', '14 days after the reply (or the defence to counterclaim where there is no reply); otherwise 28 days after the defence'],
+                  ['Outstanding particulars', 'O.18 r.20(2)', 'Do not postpone the close of pleadings'],
+                  ['Acknowledgement of service', 'O.12 r.5(a)', '14 days after service of the writ, including the day of service'],
+                  ['Computing the 28 days', 'O.3 r.2(2), (5); O.3 r.4(1)', 'Period begins immediately after the reference date; Saturdays, Sundays and holidays are excluded only for periods of 7 days or less; a deadline falling when the Registry is closed runs to the next open day'],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'The lecture\'s worked deadline problem',
+                bullets: [
+                  'Facts as given on the slides: a generally indorsed writ issued against Bill on 16 June and sent the same day by registered post to his last known address; Bill collected it from his letter box on 19 June; a statement of claim was served on 23 June.',
+                  'Step 1 — the date of service. Service by registered post is deemed to occur on the seventh day after the writ was sent, UNLESS THE CONTRARY IS SHOWN (O.10 r.1(3)(a)). Bill had actual knowledge on 19 June, which displaces the deemed date. The date of service is 19 June.',
+                  'Step 2 — the acknowledgement deadline. 14 days after service INCLUDING the day of service (O.12 r.5(a)), giving 2 July.',
+                  'Step 3 — the defence deadline. O.18 r.2(1) takes the later of the time limited for acknowledging service (2 July) and service of the statement of claim (23 June). 2 July is later, so the 28 days run from it: 30 July.',
+                  'Note two slips in the slide itself: it gives the posting date as 15 June in the working although the fact pattern says 16 June, and it cites the acknowledgement period as "O.12 r.5(1)" where the rule is O.12 r.5(a). The method is right; check the arithmetic against the fact pattern you are actually given.',
+                  'The same structure answers the LG3 exercise on Arthur and Bill — the two are deliberately the same fact pattern with different dates.',
+                ],
+              },
+            ],
+            crossRefs: [
+              { session: 'LG3', issue: 'computing-time', label: 'LG3 — Computing time under O.3' },
+              { session: 'LG3', issue: 'acknowledgement-of-service', label: 'LG3 — Acknowledgement of service' },
+              { session: 'LG3', issue: 'contesting-jurisdiction', label: 'LG3 — Contesting jurisdiction (which suspends the defence deadline)' },
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+            ],
+          },
+
+          {
+            id: 'formal-requirements',
+            title: 'Formal requirements for a pleading',
+            summary: 'What must appear on the face of every pleading, how it is divided, how it is indorsed and signed — and the amendment colours.',
+            triggers: {
+              bullets: [
+                'The question hands you a draft pleading and asks what is wrong with it.',
+                'A pleading is about to be filed and the Registry requirements are in issue.',
+                'The pleading is an amended one and the question is how the amendments must be shown.',
+                'The party is acting in person, or the pleading was settled by counsel.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Checking a pleading for form',
+                steps: [
+                  {
+                    id: 'face',
+                    label: 'What must appear on its face: O.18 r.6(1)',
+                    points: [
+                      'The year in which the writ in the action was issued, and the number of the action — in practice the HCA [number] / [year] heading.',
+                      'The title of the action — the Court the action is in, and the names of the parties.',
+                      'The description of the pleading — "Statement of Claim", "Defence and Counterclaim", and so on.',
+                      'The date on which it was served. Practice Direction 19.1(1) makes this a requirement when the pleading is presented for filing in the Registry.',
+                      'A caution on pinpointing: the lecture outline lettered these (a) to (d). The consolidated text of the rule available for checking letters them (a), (b), (d) and (e), with no paragraph (c). Cite the requirement, and confirm the letter against the official e-Legislation text before pinning an answer to one.',
+                    ],
+                  },
+                  {
+                    id: 'body',
+                    label: 'How the body must be set out',
+                    points: [
+                      'O.18 r.6(2) — every pleading must, IF NECESSARY, be divided into paragraphs numbered consecutively, each allegation being so far as convenient contained in a separate paragraph. The "if necessary" and "so far as convenient" qualifications are in the rule; it is a standard of good drafting, not an absolute.',
+                      'O.18 r.6(3) — dates, sums and other numbers must be expressed in FIGURES and not in words. So "2 hats", not "two hats".',
+                    ],
+                  },
+                  {
+                    id: 'indorse',
+                    label: 'The indorsement: O.18 r.6(4)',
+                    points: [
+                      'Where the party sues or defends IN PERSON — indorsed with that party\'s name and address.',
+                      'In any other case — the name or firm and business address of the SOLICITOR BY WHOM IT WAS SERVED.',
+                      'And, if that solicitor is the agent of another, also the name or firm and business address of the principal. This limb is easy to miss and applies whenever agency solicitors are used.',
+                    ],
+                  },
+                  {
+                    id: 'sign',
+                    label: 'The signature: O.18 r.6(5)',
+                    points: [
+                      'Every pleading must be signed by COUNSEL, if settled by him; and if not, by the party\'s SOLICITOR, or by the PARTY if he sues or defends in person.',
+                      'The common practice of printing counsel\'s name at the end of a pleading is acceptable (Blue Book O.18 [5288]-[5291]).',
+                      'That remains so despite the addition of the statement of truth: PD 19.3(3).',
+                      'The signature under r.6(5) is a different thing from the statement of truth under O.18 r.20A. A pleading needs both.',
+                    ],
+                  },
+                  {
+                    id: 'amended',
+                    label: 'If it is an amended pleading, two further requirements',
+                    points: [
+                      'Colour: first amendments in red, second or re-amendments in green, third in violet, fourth in yellow: PD 19.1 §2.',
+                      'O.20 r.10(2) — an amended document must be INDORSED WITH A STATEMENT that it has been amended, specifying the date of amendment and the name of the Judge, master or Registrar who made the authorising order and its date; or, if no order was made, the NUMBER OF THE RULE of O.20 under which the amendment was made.',
+                      'O.20 r.10(1) — where the amendments are so numerous, or of such nature or length, that written alterations would make the document difficult or inconvenient to read, a FRESH document must be prepared (and, for a writ or originating summons, re-issued).',
+                      'And the amendment must be verified by a statement of truth: O.20 r.13(1).',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'r.6(2) says "if necessary" and "so far as convenient" — a pleading is not automatically defective because two allegations share a paragraph. Argue it as poor drafting under O.18 r.19(1)(c) rather than as a breach of r.6(2).',
+                'The figures rule in r.6(3) covers dates and sums as well as counts — "1 January 2026" and "HK$150,000", not words.',
+                'The agency limb of r.6(4) is a real requirement, not a courtesy: where the serving solicitor acts as agent, the principal\'s name and business address must appear too.',
+                'Counsel signs only if counsel settled the pleading. If counsel did not, the solicitor or the litigant in person signs — r.6(5) is a sequence, not a choice.',
+                'The r.6(5) signature and the O.41A statement of truth are separate requirements with separate signatories, and the statement of truth did not replace the signature (PD 19.3(3)).',
+                'The amendment colours are in a Practice Direction, and the indorsement naming the rule or order is in O.20 r.10(2). Both are needed; citing only the colours is half the answer.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Work a "what is wrong with this pleading" question as a checklist: heading, title, description, date of service, paragraph numbering, figures, indorsement, signature, statement of truth.',
+                'Say which defects are formal and curable and which go to substance — a missing date of service is not the same kind of problem as pleading evidence.',
+                'For an amended pleading, deal with colour, indorsement and verification as three separate points.',
+                'Use the Defence and Counterclaim of Runway Fashion Limited in the Contract Case File as the worked model of what a compliant pleading looks like.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Omitting the date of service from the face of the pleading.',
+                'Writing numbers out in words.',
+                'Indorsing only the agent solicitor\'s details where the firm acts as agent for another.',
+                'Treating the statement of truth as a substitute for the r.6(5) signature.',
+                'Showing amendments in colour but omitting the O.20 r.10(2) indorsement, or the other way round.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Every pleading must, if necessary, be divided into paragraphs numbered consecutively, each allegation being so far as convenient contained in a separate paragraph.', cite: 'O.18 r.6(2), Rules of the High Court (Cap. 4A)' },
+                { text: 'Dates, sums and other numbers must be expressed in a pleading in figures and not in words.', cite: 'O.18 r.6(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['On the face of the pleading', 'O.18 r.6(1)', 'The year the writ was issued and the action number; the title of the action; the description of the pleading; the date on which it was served'],
+                  ['Date of service on filing', 'PD 19.1(1)', 'Required when the pleading is presented for filing in the Registry'],
+                  ['Paragraphing', 'O.18 r.6(2)', 'Divided if necessary into consecutively numbered paragraphs, each allegation so far as convenient in a separate paragraph'],
+                  ['Figures', 'O.18 r.6(3)', 'Dates, sums and other numbers in figures, not words'],
+                  ['Indorsement', 'O.18 r.6(4)(a)-(b)', 'Party\'s name and address if in person; otherwise the name or firm and business address of the solicitor who served it — and, if that solicitor is the agent of another, the principal\'s name or firm and business address'],
+                  ['Signature', 'O.18 r.6(5)', 'By counsel if settled by him; if not, by the party\'s solicitor, or by the party if suing or defending in person'],
+                  ['Printed counsel name', 'Blue Book O.18 [5288]-[5291]; PD 19.3(3)', 'The common practice of printing counsel\'s name is acceptable, and remains so despite the statement of truth'],
+                  ['Amendment colours', 'PD 19.1 §2', 'First amendments red, second or re-amendments green, third violet, fourth yellow'],
+                  ['Amendment indorsement', 'O.20 r.10(2)', 'The amended document must be indorsed with a statement that it has been amended, the date, and the Judge, master or Registrar and date of the authorising order — or, if none, the rule number relied on'],
+                  ['Fresh document', 'O.20 r.10(1)', 'Required where the amendments are so numerous or of such nature or length that written alterations would make the document difficult or inconvenient to read'],
+                  ['Verification of amendments', 'O.20 r.13(1)', 'An amendment to a pleading or to the particulars of a pleading must be verified by a statement of truth'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+              { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
+            ],
+          },
+
+          {
+            id: 'statement-of-truth',
+            title: 'The statement of truth (O.41A)',
+            summary: 'Which documents need one, who may sign, in what form, and what happens if it is missing or false.',
+            triggers: {
+              bullets: [
+                'The party is a company, a partnership or a public body and the question is who signs.',
+                'A solicitor proposes to sign the statement of truth on the client\'s behalf.',
+                'A pleading has been served without a statement of truth.',
+                'An allegation in the pleading turns out to be false.',
+                'A pleading is being amended, or particulars are being given.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working an O.41A question',
+                steps: [
+                  {
+                    id: 'which',
+                    label: 'Which documents must be verified?',
+                    points: [
+                      'O.41A r.2(1): a pleading; a witness statement; an expert report; and any other document required to be verified by another rule or a practice direction.',
+                      'O.18 r.20A(1)-(2) makes the same point for pleadings and extends it to the particulars of a pleading — those given voluntarily, on a request by the other party, or under an order made under O.18 r.12(3) or (4).',
+                      'O.20 r.13(1)-(2): an amendment to a pleading, or to those particulars, must also be verified.',
+                      'O.41A r.2(2): a pleading must be verified EVEN IF it makes inconsistent alternative allegations under O.18 r.12A. Pleading in the alternative is not an excuse for not verifying.',
+                      'Exceptions: the Court may direct that verification is not needed where it is just to do so (r.2(3)), and a practice direction may so provide (r.2(4)) — but only for matters heard in a specialist list (r.2(5)).',
+                    ],
+                  },
+                  {
+                    id: 'who',
+                    label: 'Who signs?',
+                    points: [
+                      'Default (r.3(1)(b)): the party putting forward the verified document, or where appropriate his next friend or guardian ad litem; OR the legal representative of that party or next friend or guardian ad litem.',
+                      'Witness statement or expert report (r.3(1)(a)): the maker of it.',
+                      'A body of persons, CORPORATE OR UNINCORPORATE (r.3(2)): a person holding a SENIOR POSITION in the body — for a corporation, any director, manager, secretary or other similar officer (r.3(4)(a)); for an unincorporated association, the corresponding person (r.3(4)(b)); for a public body or authority, a person duly authorised by it (r.3(4)(c)).',
+                      'And that person must STATE IN THE STATEMENT OF TRUTH the office or position he holds: r.3(5).',
+                      'A partnership (r.3(6)): one of the partners, or a person having the control or management of the partnership business.',
+                      'A public officer (r.3(3)): the officer, or a person holding a senior position in the public body or authority to which the proceedings relate.',
+                      'Insurers (r.3(8)-(9)) and, if permitted by a practice direction, a non-party or two or more parties jointly (r.3(7)).',
+                    ],
+                  },
+                  {
+                    id: 'lawyer',
+                    label: 'If the legal representative signs, understand what that signature means',
+                    points: [
+                      'He must sign IN HIS OWN NAME, and must not sign only in the name of the firm to which he belongs: O.41A r.3(10).',
+                      'O.41A r.4(3): the Court treats the signature as his statement that (a) the party authorised him to sign; (b) BEFORE SIGNING he had explained to the party that in signing he would be confirming the party\'s belief that the facts stated were true; and (c) BEFORE SIGNING he had informed the party of the possible consequences if it should subsequently appear the party did not have an honest belief in their truth.',
+                      'So confirm all three in writing with the client before signing. The solicitor, not only the client, is exposed if the statement turns out to be false.',
+                    ],
+                  },
+                  {
+                    id: 'form',
+                    label: 'Get the form right',
+                    points: [
+                      'For a pleading and anything other than a witness statement or expert report, the prescribed form is: "[I believe] [the (plaintiff or as may be) believes] that the facts stated in this [name document being verified] are true.": O.41A r.5(1).',
+                      'For a witness statement or expert report the form adds the honestly-held-opinion limb: O.41A r.5(2).',
+                      'Where the statement of truth is in a SEPARATE document (r.5(3)), that document must be headed with the title of the proceedings and the action number, and must identify the document being verified in the prescribed way — for a pleading, "the [statement of claim or as may be] served on the [name of party] on [date]".',
+                      'Where a party sues by a next friend or guardian ad litem, the statement is that the NEXT FRIEND believes the facts are true: O.41A r.4(2).',
+                    ],
+                  },
+                  {
+                    id: 'missing',
+                    label: 'If it is missing',
+                    points: [
+                      'O.41A r.6(1): the Court MAY BY ORDER strike out a pleading that is not verified by a statement of truth — a discretion, not an automatic consequence. Any party may apply: r.6(2).',
+                      'O.41A r.8(1)-(2): alternatively the Court may order the person who failed to verify to do so; again, any party may apply.',
+                      'For a witness statement or expert report the consequence is different and harsher: it is NOT ADMISSIBLE in evidence unless the Court otherwise orders: O.41A r.7.',
+                    ],
+                  },
+                  {
+                    id: 'false',
+                    label: 'If it is false — and note the gatekeeping',
+                    points: [
+                      'O.41A r.9(1): proceedings for contempt of court may be brought against a person who makes, or causes to be made, a false statement in a document verified by a statement of truth WITHOUT AN HONEST BELIEF IN ITS TRUTH.',
+                      'r.9(2): proceedings may be brought ONLY (a) by the Secretary for Justice or a person aggrieved by the false statement, AND (b) with the LEAVE OF THE COURT.',
+                      'r.9(3): leave shall not be granted unless the Court is satisfied that punishment for contempt is PROPORTIONATE AND APPROPRIATE in relation to the false statement.',
+                      'r.9(4): the rule is subject to, and without prejudice to, the general law of contempt.',
+                      'Where the legal representative signed, the exposure is the legal representative\'s.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The test for a corporate signatory is a SENIOR POSITION, and r.3(4)(a) defines it — any director, manager, secretary or other similar officer. It is not "a director" only.',
+                'A senior-position signatory must state the office or position held (r.3(5)). Omitting it is a defect in the verification itself.',
+                'A solicitor who signs must sign in his own name, not the firm\'s: r.3(10).',
+                'The consequence of a missing statement of truth is a DISCRETION to strike out (r.6(1)), or an order to verify (r.8) — not automatic invalidity. Saying "the pleading is a nullity" is wrong.',
+                'Contempt under r.9 is not self-executing: it needs both a qualifying applicant and the leave of the Court, and leave requires proportionality. The outline\'s shorthand "false statement = contempt" omits both gates.',
+                'Pleading inconsistent alternatives under O.18 r.12A does not relieve the party of verifying: O.41A r.2(2).',
+                'Particulars and amendments need their own statements of truth: O.18 r.20A(2); O.20 r.13.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify the party type first — individual, corporation, unincorporated association, partnership, public body — because that decides the signatory rule.',
+                'Where a solicitor is to sign, set out the three r.4(3) confirmations as advice to be given and recorded in writing before signing.',
+                'Quote the prescribed r.5(1) wording rather than paraphrasing it; the form is prescribed.',
+                'When a statement of truth is missing, give the Court\'s two options (strike out under r.6, or order verification under r.8) rather than asserting one consequence.',
+                'On a false statement, take the r.9(2) and r.9(3) gates in order before concluding that contempt proceedings are available.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Saying a pleading without a statement of truth is automatically struck out.',
+                'Having a junior employee rather than a person holding a senior position sign for a company.',
+                'Omitting the signatory\'s office or position.',
+                'Signing in the firm name.',
+                'Treating a false statement as automatically contempt, without the Secretary for Justice or an aggrieved person and without leave.',
+                'Forgetting to verify further and better particulars, or an amendment.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A pleading must be verified by a statement of truth in accordance with this Order notwithstanding that the party has in the pleading made an allegation of fact in accordance with Order 18, rule 12A, which is inconsistent with another allegation of fact in the same pleading.', cite: 'O.41A r.2(2), Rules of the High Court (Cap. 4A)' },
+                { text: 'Where a legal representative signs a statement of truth, he shall sign in his own name, and shall not sign only in the name of the firm to which he belongs.', cite: 'O.41A r.3(10), Rules of the High Court (Cap. 4A)' },
+                { text: 'Proceedings for contempt of court may be brought against a person if he makes, or causes to be made, a false statement in a document verified by a statement of truth without an honest belief in its truth.', cite: 'O.41A r.9(1), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['What must be verified', 'O.41A r.2(1)(a)-(d)', 'A pleading; a witness statement; an expert report; any other document another rule or practice direction requires to be verified'],
+                  ['Pleadings and particulars', 'O.18 r.20A(1)-(2)', 'A pleading, and particulars given voluntarily, on request, or under an order under r.12(3) or (4)'],
+                  ['Amendments', 'O.20 r.13(1)-(2)', 'An amendment to a pleading or to those particulars must be verified'],
+                  ['Alternatives still verified', 'O.41A r.2(2)', 'Verification is required notwithstanding inconsistent alternative allegations under O.18 r.12A'],
+                  ['Dispensing with verification', 'O.41A r.2(3)-(5)', 'The Court may so direct where just; a practice direction may so provide, but only for a matter heard in a specialist list'],
+                  ['Default signatory', 'O.41A r.3(1)(b)', 'The party putting forward the document, his next friend or guardian ad litem, or their legal representative'],
+                  ['Corporate and unincorporated bodies', 'O.41A r.3(2), (4)(a)-(c), (5)', 'A person holding a senior position — any director, manager, secretary or other similar officer of a corporation; the corresponding person for an unincorporated association; a duly authorised person for a public body — who must state the office or position held'],
+                  ['Partnerships', 'O.41A r.3(6)(a)-(b)', 'One of the partners, or a person having the control or management of the partnership business'],
+                  ['Public officers', 'O.41A r.3(3)', 'The public officer, or a person holding a senior position in the public body or authority to which the proceedings relate'],
+                  ['Insurers', 'O.41A r.3(8)-(9)', 'An insurer or the Motor Insurers\' Bureau with a financial interest may sign; where several insurers act, the lead insurer\'s responsible officer may sign, stating the capacity'],
+                  ['Legal representative signs in own name', 'O.41A r.3(10)', 'Not only in the name of the firm'],
+                  ['What the statement means', 'O.41A r.4(1)-(2)', 'That the party putting forward the document believes the facts stated are true; where there is a next friend or guardian ad litem, that the next friend or guardian so believes'],
+                  ['What a lawyer\'s signature is treated as stating', 'O.41A r.4(3)(a)-(c)', 'That he was authorised; that before signing he explained that he would be confirming the party\'s belief; and that before signing he informed the party of the possible consequences of a dishonest statement'],
+                  ['The prescribed form', 'O.41A r.5(1)', '"[I believe] [the (plaintiff or as may be) believes] that the facts stated in this [name document being verified] are true."'],
+                  ['Separate document', 'O.41A r.5(3)(a)-(b)', 'Must be headed with the title of the proceedings and the action number, and identify the verified document in the prescribed form'],
+                  ['Failure to verify a pleading', 'O.41A r.6(1)-(2)', 'The Court MAY by order strike out; any party may apply'],
+                  ['Failure to verify a witness statement or expert report', 'O.41A r.7', 'Not admissible in evidence unless the Court otherwise orders'],
+                  ['Power to order verification', 'O.41A r.8(1)-(2)', 'The Court may order the person who failed to verify to do so; any party may apply'],
+                  ['False statements', 'O.41A r.9(1)-(4)', 'Contempt proceedings for a false statement made without honest belief; only by the Secretary for Justice or a person aggrieved, and only with leave; leave only if punishment is proportionate and appropriate; subject to the general law of contempt'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+              { session: 'LG4', issue: 'pleading-in-the-alternative', label: 'Pleading in the alternative' },
+              { session: 'LG4', issue: 'further-and-better-particulars', label: 'Further and better particulars' },
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+            ],
+          },
+          {
+            id: 'material-facts-not-evidence',
+            title: 'Material facts, not evidence — and points of law',
+            summary: 'The O.18 r.7 line between what goes in and what stays out, and the difference between raising a point of law and arguing one.',
+            triggers: {
+              bullets: [
+                'The question hands you a paragraph and asks whether it belongs in the pleading.',
+                'A pleading recites documents, correspondence or CCTV footage.',
+                'A pleading contains a passage of legal exposition or submission.',
+                'A party has omitted a fact and the question is whether it had to be pleaded.',
+                'A cause of action is not named anywhere in the statement of claim.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Is this paragraph properly pleaded?',
+                steps: [
+                  {
+                    id: 'rule',
+                    label: 'Start with the rule, in full',
+                    points: [
+                      'O.18 r.7(1): subject to the rest of r.7 and to rr.7A, 10, 11 and 12, every pleading must contain, AND CONTAIN ONLY, a statement in a summary form of the MATERIAL FACTS on which the party relies for his claim or defence, BUT NOT THE EVIDENCE by which those facts are to be proved, and the statement must be AS BRIEF as the nature of the case admits.',
+                      'Three separate requirements, and a question can turn on any of them: material facts, not evidence, and brevity.',
+                      'Note the opening words. r.7(1) is expressly subject to rr.7A, 10, 11 and 12 — so the points of law permitted by r.11 and the particulars required by r.12 are not exceptions smuggled in, they are carved out on the face of the rule.',
+                    ],
+                  },
+                  {
+                    id: 'material',
+                    label: 'Is it a material fact?',
+                    points: [
+                      'Material facts are the facts necessary for the purpose of formulating a COMPLETE CAUSE OF ACTION: Bruce v Odhams Press Ltd [1936] 1 All ER 287, 294 (CA).',
+                      'So run the elements of the cause of action and ask whether this fact is needed to make one of them out.',
+                      'The lecture sets as a discovery task whether failing to name a cause of action (for instance "defamation") in the statement of claim defeats it — the Textbook at [8-25] is the pointer. The Bruce v Odhams test is about facts, not labels; work the answer from that and the Textbook rather than assuming either way.',
+                    ],
+                  },
+                  {
+                    id: 'evidence',
+                    label: 'Or is it evidence?',
+                    points: [
+                      'Do not plead the evidence used to prove a material fact: Ng Kam Chuen v Attorney General [1991] 2 HKC 560.',
+                      'The lecture\'s worked contrast, in a sale of goods claim: PLEAD "The Plaintiff agreed to buy, and the Defendant agreed to sell, 100 cartons of canned dog food for $150,000 on [date]" — that is the agreement, the material fact. DO NOT plead "The Plaintiff sent a purchase order to the Defendant to place an order for..." — the purchase order is the evidence of the agreement.',
+                      'The same test with the slide examples: "A mini-bus collided into a BMW at the Victoria Dockside at 10am on 1 September" is the material fact; "Rosewood Hotel\'s CCTV recording showed that a mini-bus collided into a BMW..." is evidence of it.',
+                      'A quick way to spot it: if the sentence describes how the fact would be PROVED — a document, a recording, a witness — it is evidence.',
+                    ],
+                  },
+                  {
+                    id: 'docs',
+                    label: 'If a document or conversation is involved: O.18 r.7(2)',
+                    points: [
+                      'The EFFECT of any document, or the PURPORT of any conversation, referred to in the pleading must, IF MATERIAL, be briefly stated.',
+                      'And the PRECISE WORDS must not be stated, EXCEPT in so far as those words are themselves material — as in a libel action, where the words are the cause of action.',
+                      'The lecture\'s worked example: a warranty clause reading "Each of the Warranties shall be separate and independent and, save as expressly provided, shall not be limited by reference to any other Warranty or anything in this Agreement" is pleaded as "Each of the Warranties would constitute a separate and independent warranty (Clause 11.3)".',
+                    ],
+                  },
+                  {
+                    id: 'nonpleadable',
+                    label: 'What need NOT be pleaded: O.18 r.7(3) and r.7(4)',
+                    points: [
+                      'r.7(3): a party need not plead any fact if it is PRESUMED BY LAW to be true, or if the burden of DISPROVING it lies on the other party — UNLESS the other party has specifically denied it in his pleading. That final qualification is on the face of the rule and is easy to miss.',
+                      'Presumed fact example: s34 of the Sale of Goods Ordinance (Cap. 26), by which delivery of goods by a seller to a carrier is prima facie deemed delivery to the buyer.',
+                      'Burden example: the onus is on the defendant to prove that the plaintiff failed to mitigate — so the plaintiff need not plead mitigation.',
+                      'r.7(4): a statement that a thing has been done or an event has occurred, being a thing or event whose doing or occurrence constitutes a CONDITION PRECEDENT necessary for the party\'s case, is to be IMPLIED in his pleading.',
+                      'Practical advice from the lecture: plead the condition precedent anyway. It makes for a clearer pleading and costs nothing.',
+                    ],
+                  },
+                  {
+                    id: 'law',
+                    label: 'Points of law: permitted, but only as points',
+                    points: [
+                      'O.18 r.11: "A party may by his pleading raise any point of law." The whole rule is that one sentence.',
+                      'PERMISSIBLE, because each states a legal conclusion as a proposition: "The Defendant is negligent"; "The Defendant owes a duty of care to the Plaintiff"; "The contract contains an implied condition under s16 of the Sale of Goods Ordinance (Cap. 26)"; "D1 is vicariously liable for D2".',
+                      'NOT PERMISSIBLE, because it is ARGUMENT: "The Plaintiff submits that the Defendant\'s conduct as pleaded above constitutes an acceptance of the Plaintiff\'s offer"; "D2\'s conduct shows recklessness and therefore the Plaintiff is entitled to punitive damages".',
+                      'NOT PERMISSIBLE, because it EXPLAINS THE LAW: "For a contract to be formed, there must be offer and acceptance, as well as intention to create legal relations. As all of these elements were present, a contract was formed between P and D"; "Negligence is the failure to exercise the degree of care that a reasonably prudent person would have exercised in the same circumstances, resulting in harm or loss to another person".',
+                      'The giveaway words are "submits", "therefore", and any sentence that would be at home in a textbook.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'r.7(1) says "contain, and contain only". A pleading can be defective for containing too much as well as too little — which is what makes prolixity a striking-out ground under O.18 r.19(1)(c).',
+                'The r.7(3) exemption falls away if the other party has SPECIFICALLY DENIED the presumed fact. Once denied, plead it.',
+                'r.7(2) has two limbs. Brief statement of the effect IF MATERIAL; and no precise words UNLESS the words are themselves material. In defamation the words are the cause of action, so they are pleaded verbatim.',
+                'Raising a point of law is not the same as pleading a legal argument or explaining the law. Test each sentence: does it assert a legal conclusion, or does it reason towards one?',
+                'A pleading may plead any matter that arose at ANY time, before or since the issue of the writ (O.18 r.9) — subject to r.7(1), r.10 and r.15(2). A fact is not excluded merely because it post-dates the writ.',
+                'Brevity is a requirement of the rule, not a style preference. "As brief as the nature of the case admits" is the standard.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Take each disputed paragraph in turn and label it: material fact, evidence, point of law, or argument. Then give the rule.',
+                'For a "material fact or evidence?" question, name the cause of action and run its elements — that is what makes a fact material on the Bruce v Odhams test.',
+                'When rewriting a paragraph, show the corrected version rather than just criticising the original.',
+                'For a document, plead the effect and cite the clause number, as the lecture\'s Clause 11.3 example does.',
+                'If the answer depends on whether the other side has specifically denied a presumed fact, say so and ask for the defence.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Pleading the documents that prove the agreement instead of the agreement.',
+                'Setting out a contractual clause verbatim where its effect would do.',
+                'Writing a paragraph of legal exposition into a statement of claim.',
+                'Treating "The Defendant is negligent" as impermissible legal argument — it is a point of law and is allowed by r.11.',
+                'Omitting a presumed fact after the other side has specifically denied it.',
+                'Assuming a condition precedent must always be pleaded expressly — it is implied by r.7(4), though it is better practice to plead it.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Subject to the provisions of this rule and rules 7A, 10, 11 and 12, every pleading must contain, and contain only, a statement in a summary form of the material facts on which the party pleading relies for his claim or defence, as the case may be, but not the evidence by which those facts are to be proved, and the statement must be as brief as the nature of the case admits.', cite: 'O.18 r.7(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'Without prejudice to paragraph (1), the effect of any document or the purport of any conversation referred to in the pleading must, if material, be briefly stated, and the precise words of the document or conversation must not be stated, except in so far as those words are themselves material.', cite: 'O.18 r.7(2), Rules of the High Court (Cap. 4A)' },
+                { text: 'A party need not plead any fact if it is presumed by law to be true or the burden of disproving it lies on the other party, unless the other party has specifically denied it in his pleading.', cite: 'O.18 r.7(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Material facts only, in summary form', 'O.18 r.7(1)', 'Must contain, AND CONTAIN ONLY, a summary of the material facts, not the evidence, and as brief as the nature of the case admits — subject to rr.7A, 10, 11 and 12'],
+                  ['What "material" means', 'Bruce v Odhams Press Ltd [1936] 1 All ER 287, 294 (CA)', 'Facts necessary for the purpose of formulating a complete cause of action'],
+                  ['No evidence', 'Ng Kam Chuen v Attorney General [1991] 2 HKC 560', 'The evidence by which material facts are to be proved is not pleaded'],
+                  ['Documents and conversations', 'O.18 r.7(2)', 'Effect or purport briefly stated if material; precise words not stated unless themselves material'],
+                  ['Presumed facts and reversed burdens', 'O.18 r.7(3)', 'Need not be pleaded, unless the other party has specifically denied the fact'],
+                  ['Condition precedent', 'O.18 r.7(4)', 'A statement that the thing was done or the event occurred is to be IMPLIED in the pleading'],
+                  ['Points of law', 'O.18 r.11', '"A party may by his pleading raise any point of law."'],
+                  ['Matters arising at any time', 'O.18 r.9', 'Subject to rr.7(1), 10 and 15(2), a party may plead any matter arising at any time, before or since the issue of the writ'],
+                  ['Prolix or embarrassing pleading', 'O.18 r.19(1)(c); Blue Book O.18 [5853.2]', 'Pleading ambiguously, with irrelevant allegations, or with unnecessarily lengthy statements of fact, may prejudice, embarrass or delay the fair trial'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+              { session: 'LG4', issue: 'what-pleadings-do', label: 'What pleadings are and why they matter' },
+            ],
+          },
+
+          {
+            id: 'pleading-specifically-and-particulars',
+            title: 'Matters to be pleaded specifically, and particulars',
+            summary: 'What O.18 r.8 forces into a later pleading, what O.18 r.12(1) requires to be particularised, and the criminal-conviction rule.',
+            triggers: {
+              bullets: [
+                'A defence raises limitation, illegality, set-off, contributory negligence or failure to mitigate.',
+                'A claim alleges fraud, misrepresentation, breach of trust, wilful default or undue influence.',
+                'Exemplary or provisional damages, or interest, are claimed.',
+                'The claim alleges the other party knew or had notice of something.',
+                'A party wants to rely on a criminal conviction.',
+                'Special damages are claimed and the particulars run long.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Specificity and particulars',
+                steps: [
+                  {
+                    id: 'r8',
+                    label: 'O.18 r.8(1) — and read its two limits, because the outline\'s shorthand hides them',
+                    points: [
+                      'The rule applies only to "any pleading SUBSEQUENT TO A STATEMENT OF CLAIM" — so it bites on a defence, a reply, a defence to counterclaim, not on the statement of claim itself.',
+                      'It requires a party to plead specifically any matter, FOR EXAMPLE performance, release, any relevant statute of limitation, fraud or any fact showing illegality — the list is illustrative, not exhaustive.',
+                      'And the test is three-limbed: a matter (a) which he alleges makes any claim or defence of the opposite party NOT MAINTAINABLE; or (b) which, if not specifically pleaded, might take the opposite party BY SURPRISE; or (c) which raises ISSUES OF FACT NOT ARISING out of the preceding pleading.',
+                      'So the right question is not "is this on a list?" but "does this matter fall within limb (a), (b) or (c)?"',
+                    ],
+                  },
+                  {
+                    id: 'r8list',
+                    label: 'The matters the course expects you to plead specifically',
+                    points: [
+                      'Fraud: O.18 r.8(1), and particulars under O.18 r.12(1)(a).',
+                      'Limitation — "any relevant statute of limitation" is named in r.8(1) itself.',
+                      'Contributory negligence: Chow Wai Hung v King Rise Engineering Ltd (CACV 213/2005) at para 21.',
+                      'Set-off as a defence: SC Chow & Associates Ltd v Chow Kit Ming [1997] 2 HKC 96 (HC), and see O.18 r.17.',
+                      'Failure to mitigate damages: Master Yield Ltd v Ho Foon Yung Anesis (CACV 67/2012) at para 28 et seq.',
+                      'Exemplary or provisional damages: O.18 r.8(3) — and they must be pleaded "TOGETHER WITH THE FACTS ON WHICH THE PARTY PLEADING RELIES", which the outline\'s summary omits.',
+                      'Interest under s48 of the High Court Ordinance (or s49 of the District Court Ordinance): O.18 r.8(4), which covers a claim for interest "under section 48 of the Ordinance OR OTHERWISE" — so contractual interest is caught too.',
+                      'A defendant to an action for recovery of land must plead specifically every ground of defence; a plea of possession by himself or his tenant is not sufficient: O.18 r.8(2).',
+                    ],
+                  },
+                  {
+                    id: 'damages',
+                    label: 'Know the two damages terms the lecture defines',
+                    points: [
+                      'EXEMPLARY (punitive) damages — an award larger than what is needed to compensate for the loss suffered; the excess is punishment.',
+                      'PROVISIONAL damages — in a personal injury claim, damages assessed now on the ASSUMPTION that the claimant\'s condition will not deteriorate, leaving the claimant able to come back for further damages if it does.',
+                      'Both must be specifically pleaded with the facts relied on: O.18 r.8(3).',
+                    ],
+                  },
+                  {
+                    id: 'r12',
+                    label: 'O.18 r.12(1) — every pleading must contain the necessary particulars',
+                    points: [
+                      'The general obligation: "every pleading must contain the necessary particulars of any claim, defence or other matter pleaded". Particulars are details.',
+                      'r.12(1)(a) — particulars of any MISREPRESENTATION, FRAUD, BREACH OF TRUST, WILFUL DEFAULT or UNDUE INFLUENCE relied on.',
+                      'r.12(1)(b) — where a party alleges any CONDITION OF THE MIND of any person (a disorder or disability of mind, malice, fraudulent intention or any other condition of mind), particulars of the facts relied on — "EXCEPT KNOWLEDGE", which is carved out on the face of the rule.',
+                      'r.12(1)(c) — where a claim for damages is made AGAINST the party pleading, particulars of any facts relied on in MITIGATION of, or otherwise in relation to, the AMOUNT of damages.',
+                      'Special damages must be particularised (White Book §18/12/11) — special damage being damage that is not the natural and probable consequence of the breach, so the connection has to be spelled out. General damages need not be.',
+                      'Common situations in this course where particulars are expected: breach of contract, negligence, loss and damage, and agreements.',
+                    ],
+                  },
+                  {
+                    id: 'knowledge',
+                    label: 'Knowledge and notice are a special case: O.18 r.12(4)',
+                    points: [
+                      'Knowledge is excepted from the r.12(1)(b) automatic requirement — so there is no strict need to particularise knowledge or notice at the outset.',
+                      'But where a party alleges as a fact that a person had knowledge or notice of some fact, matter or thing, the Court MAY, on such terms as it thinks just, order that party to serve particulars — (a) where knowledge is alleged, particulars of the facts relied on; (b) where notice is alleged, particulars of the notice: O.18 r.12(4).',
+                      'Practical advice: give them anyway. It avoids an application (with its costs and delay), and you should in any event know why your client says the other side knew.',
+                      'The lecture\'s worked example of particularised knowledge is the pre-contract Zoom meeting in which the plaintiff told the defendant\'s representative about the influencer collaboration that depended on the backdrop — the facts from which knowledge is inferred, pleaded as facts.',
+                    ],
+                  },
+                  {
+                    id: 'folios',
+                    label: 'Long particulars go in a separate document: O.18 r.12(2)',
+                    points: [
+                      'Where it is necessary to give particulars of DEBT, EXPENSES OR DAMAGES and those particulars EXCEED 3 FOLIOS, they must be set out in a SEPARATE DOCUMENT referred to in the pleading.',
+                      'And the pleading must state whether that document has already been served and, if so, when — or that it is to be served with the pleading.',
+                      '"3 folios" is 216 words, counting any figure such as a price or a date as a single word (English RSC O.1 r.4; the term is not defined in the Hong Kong RHC — White Book §18/12/57).',
+                      'In a personal injuries action there is a separate obligation: the plaintiff must serve WITH the statement of claim a medical report and a statement of the special damages claimed: O.18 r.12(1A), with r.12(1B) letting the Court fix a period or make another order, and r.12(1C) defining both documents.',
+                    ],
+                  },
+                  {
+                    id: 'conviction',
+                    label: 'Relying on a criminal conviction: O.18 r.7A',
+                    points: [
+                      'Section 62(1) of the Evidence Ordinance (Cap. 8) makes the fact of a criminal conviction, if relevant to the civil proceedings, admissible to prove commission of the offence; s62(2) means that once the conviction is proved, the defendant is taken to have committed the offence and all the acts constituting it UNLESS THE CONTRARY IS PROVED — so the burden shifts.',
+                      'To use it, the party must INCLUDE IN HIS PLEADING A STATEMENT OF HIS INTENTION, with particulars of (a) the conviction and the date thereof; (b) the court which made the conviction; and (c) the issue in the proceedings to which the conviction is relevant: O.18 r.7A(1).',
+                      'O.18 r.7A(2) does the same for a finding of adultery under s63 of the Evidence Ordinance.',
+                      'O.18 r.7A(3): the opposite party must in HIS pleading make any denial of the conviction, any allegation that it was erroneous, or any denial of its relevance.',
+                      'The lecture\'s worked example pleads the defendants\' guilty pleas and convictions for driving and permitting to be driven a vehicle with defective tyres, naming the regulation, the offence provision, the magistracy and the case numbers.',
+                    ],
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Matter', 'What is required', 'Source'],
+                rows: [
+                  ['Performance, release, limitation, fraud, illegality', 'Plead specifically in a pleading subsequent to the statement of claim', 'O.18 r.8(1)'],
+                  ['Contributory negligence', 'Plead specifically', 'Chow Wai Hung v King Rise Engineering Ltd (CACV 213/2005) para 21'],
+                  ['Set-off as a defence', 'Plead specifically; may be included in the defence and set off', 'SC Chow & Associates Ltd v Chow Kit Ming [1997] 2 HKC 96; O.18 r.17'],
+                  ['Failure to mitigate', 'Plead specifically', 'Master Yield Ltd v Ho Foon Yung Anesis (CACV 67/2012) para 28 et seq'],
+                  ['Exemplary or provisional damages', 'Plead specifically TOGETHER WITH the facts relied on', 'O.18 r.8(3)'],
+                  ['Interest', 'Plead specifically — under s48 HCO (s49 DCO) or otherwise', 'O.18 r.8(4)'],
+                  ['Defence to a land recovery claim', 'Every ground pleaded specifically; bare possession is not enough', 'O.18 r.8(2)'],
+                  ['Misrepresentation, fraud, breach of trust, wilful default, undue influence', 'Particulars required', 'O.18 r.12(1)(a)'],
+                  ['Condition of mind (malice, fraudulent intention, mental disorder) — but NOT knowledge', 'Particulars of the facts relied on', 'O.18 r.12(1)(b)'],
+                  ['Mitigation or the amount of damages, where damages are claimed against you', 'Particulars of the facts relied on', 'O.18 r.12(1)(c)'],
+                  ['Knowledge or notice', 'No strict requirement at the outset; the Court may order particulars', 'O.18 r.12(4)(a)-(b)'],
+                  ['Special damages', 'Particularised; general damages need not be', 'White Book §18/12/11'],
+                  ['Particulars of debt, expenses or damages over 3 folios (216 words)', 'Separate document referred to in the pleading, stating whether and when served', 'O.18 r.12(2); White Book §18/12/57'],
+                  ['Personal injuries claim', 'Medical report and statement of special damages served WITH the statement of claim', 'O.18 r.12(1A)-(1C)'],
+                  ['Criminal conviction', 'Statement of intention plus particulars of the conviction and date, the court, and the relevant issue', 'O.18 r.7A(1); Evidence Ordinance (Cap. 8) s62'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'O.18 r.8(1) applies only to pleadings SUBSEQUENT TO a statement of claim. Do not cite it for a defect in the statement of claim itself — there, the obligation is r.12(1).',
+                'The r.8(1) list is introduced by "for example". A matter not on the list is still caught if it falls within limb (a), (b) or (c).',
+                'Exemplary and provisional damages must be pleaded WITH THE FACTS relied on, not merely claimed in the prayer: r.8(3).',
+                'Knowledge is expressly excepted from r.12(1)(b), so a pleading is not defective for omitting particulars of knowledge — but r.12(4) lets the Court order them, which is why giving them anyway is the safer course.',
+                'Special damages need particulars; general damages do not. Getting this the wrong way round is a common error.',
+                'The 3-folio threshold is a word count (216 words, figures counting as one word each), not a page count.',
+                'The r.7A conviction requirement is a pleading of INTENTION plus particulars. Pleading the conviction as a bare fact does not satisfy the rule.',
+                'Section 62(2) of the Evidence Ordinance shifts the burden: once the conviction is proved the other side must disprove the acts. That is the reason the conviction is worth pleading.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Run r.8 and r.12 as two distinct questions: must this matter be raised specifically at all, and if raised, must it be particularised?',
+                'For each item pleaded specifically, give the source — some are in the rule, some come from case law.',
+                'Draft particulars as numbered sub-paragraphs of facts, in the style of the lecture\'s negligence particulars (driving too fast in the rain when turning in, defective tyres, disregard of the warning signs, failure to brake in time, failure to stop, slow down or swerve).',
+                'For loss and damage, particularise item by item with figures and a total, as the lecture\'s replacement-pump schedule does.',
+                'Where the claim depends on the other side\'s knowledge, plead the facts from which knowledge is to be inferred — the meeting, the date, who said what — rather than asserting knowledge.',
+                'On a conviction, plead all three r.7A(1) particulars and the magistracy case number.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Citing O.18 r.8(1) against a statement of claim.',
+                'Treating the r.8(1) examples as a closed list.',
+                'Claiming exemplary damages in the prayer without pleading the facts.',
+                'Particularising general damages and leaving special damages at large.',
+                'Pleading "the Defendant knew" without the facts from which knowledge is inferred.',
+                'Setting out pages of damages particulars in the body of the pleading rather than in a separate document.',
+                'Pleading a conviction without stating the intention to rely on s62 of the Evidence Ordinance.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A party must in any pleading subsequent to a statement of claim plead specifically any matter, for example, performance, release, any relevant statute of limitation, fraud or any fact showing illegality-', cite: 'O.18 r.8(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'A claim for exemplary damages or for provisional damages must be specifically pleaded together with the facts on which the party pleading relies.', cite: 'O.18 r.8(3), Rules of the High Court (Cap. 4A)' },
+                { text: 'Where it is necessary to give particulars of debt, expenses or damages and those particulars exceed 3 folios, they must be set out in a separate document referred to in the pleading and the pleading must state whether the document has already been served, and, if so, when, or is to be served with the pleading.', cite: 'O.18 r.12(2), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Specific pleading, and its three limbs', 'O.18 r.8(1)(a)-(c)', 'In a pleading subsequent to a statement of claim: any matter alleged to make the opposite party\'s claim or defence not maintainable; or which if not pleaded might take him by surprise; or which raises issues of fact not arising out of the preceding pleading'],
+                  ['Recovery of land', 'O.18 r.8(2)', 'D must plead specifically every ground of defence; a plea of possession by himself or his tenant is not sufficient'],
+                  ['Exemplary and provisional damages', 'O.18 r.8(3)', 'Specifically pleaded together with the facts relied on'],
+                  ['Interest', 'O.18 r.8(4)', 'Any claim for interest under s48 of the Ordinance or otherwise must be pleaded specifically'],
+                  ['General duty to particularise', 'O.18 r.12(1)', 'Every pleading must contain the necessary particulars of any claim, defence or other matter pleaded'],
+                  ['Misrepresentation and equitable wrongs', 'O.18 r.12(1)(a)', 'Particulars of any misrepresentation, fraud, breach of trust, wilful default or undue influence relied on'],
+                  ['Condition of mind', 'O.18 r.12(1)(b)', 'Particulars of the facts relied on for any disorder or disability of mind, malice, fraudulent intention or other condition of mind — except knowledge'],
+                  ['Mitigation and amount', 'O.18 r.12(1)(c)', 'Where damages are claimed against the party pleading, particulars of facts relied on in mitigation of or otherwise in relation to the amount'],
+                  ['Personal injuries', 'O.18 r.12(1A)-(1C)', 'A medical report and a statement of the special damages claimed served with the statement of claim; the Court may fix a period or make another order; both terms defined'],
+                  ['Long particulars', 'O.18 r.12(2)', 'Over 3 folios, in a separate document referred to in the pleading, which must state whether and when it was served'],
+                  ['"Folio"', 'English RSC O.1 r.4; White Book §18/12/57', '216 words, any figure such as a price or a date counting as a single word; not defined in the Hong Kong RHC'],
+                  ['Knowledge and notice', 'O.18 r.12(4)(a)-(b)', 'The Court may on such terms as it thinks just order particulars of the facts relied on for knowledge, or particulars of the notice'],
+                  ['Special damages', 'White Book §18/12/11', 'Must be particularised; general damages need not be'],
+                  ['Convictions', 'O.18 r.7A(1)(a)-(c)', 'A statement of intention with particulars of the conviction and its date, the court which made it, and the issue to which it is relevant'],
+                  ['Findings of adultery', 'O.18 r.7A(2)', 'The same, for a finding of adultery under s63 of the Evidence Ordinance'],
+                  ['The opposite party\'s response', 'O.18 r.7A(3)(a)-(c)', 'Any denial of the conviction, allegation that it was erroneous, or denial of its relevance must be made in his pleading'],
+                  ['Effect of a conviction', 'Evidence Ordinance (Cap. 8) s62(1)-(2)', 'Admissible to prove commission of the offence; once proved, the person is taken to have committed the offence and all the acts constituting it unless the contrary is proved'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              { session: 'LG4', issue: 'further-and-better-particulars', label: 'Further and better particulars' },
+              { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+              { session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+            ],
+          },
+
+          {
+            id: 'further-and-better-particulars',
+            title: 'Further and better particulars',
+            summary: 'The letter first, then the application — the test, the burden, and what happens if an order is not complied with.',
+            triggers: {
+              bullets: [
+                'A pleading is vague, ambiguous or leaves the other side unable to prepare its case.',
+                'A request for particulars has been sent and refused.',
+                'A party wants particulars before serving its defence.',
+                'An order for particulars has been made and ignored.',
+                'The question asks how to respond to a badly drafted statement of claim.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'From request to order',
+                steps: [
+                  {
+                    id: 'identify',
+                    label: 'Identify the deficiency precisely',
+                    points: [
+                      'Further and better particulars are sought where the other side has failed to plead the necessary particulars of its claim, defence or other matter.',
+                      'The typical complaints: the pleading is vague and does not pin down the specific allegations; it is ambiguous and does not narrow the issues; it is uncertain, with information missing, so that the party cannot prepare its case.',
+                      'A request has to identify what is deficient, allegation by allegation. A general complaint that the pleading is inadequate will not do.',
+                    ],
+                  },
+                  {
+                    id: 'letter',
+                    label: 'Write the letter FIRST — this is the step that decides applications',
+                    points: [
+                      'O.18 r.12(6): where the applicant for an order under this rule DID NOT APPLY BY LETTER for the particulars he requires, the Court MAY REFUSE to make the order UNLESS of opinion that there were sufficient reasons for an application by letter not having been made.',
+                      'So the rule is a discretion to refuse, with an escape hatch — not an absolute bar. But do not rely on the escape hatch.',
+                      'The Court may refuse where there was no prior request by letter: Law Wing Ping v Prudential Insurance Co Ltd [2018] HKCFI 113 at paras 42-44.',
+                    ],
+                  },
+                  {
+                    id: 'apply',
+                    label: 'If refused, apply — and note who may apply',
+                    points: [
+                      'O.18 r.12(3): the Court may order a party to serve on any other party particulars of any claim, defence or other matter stated in his pleading, or in any affidavit of his ordered to stand as a pleading, or a statement of the nature of the case on which he relies — on such terms as the Court thinks just.',
+                      'O.18 r.12(3A): the Court may make an order under r.12(3) on the APPLICATION OF A PARTY OR OF ITS OWN MOTION. The own-motion power reflects the duty to identify issues early under the active case management objective in O.1A r.4(2)(b).',
+                    ],
+                  },
+                  {
+                    id: 'test',
+                    label: 'Apply the test and know who carries the burden',
+                    points: [
+                      'O.18 r.12(3B): NO ORDER shall be made under r.12(3) unless the Court is of the opinion that the order is NECESSARY either for DISPOSING FAIRLY of the cause or matter or for SAVING COSTS.',
+                      'Burden: the party seeking the particulars must show that they are not only RELEVANT but that the order is NECESSARY — Well Joint Trading Ltd v Chiu Chung Chiu (HCA 1768/2011) at para 17.',
+                      'A decision of this nature is an exercise of judicial discretion: Sunny Tadjudin v Bank of America NA (HCMP 337/2012) at para 11. That matters on appeal — the threshold for interfering is high.',
+                    ],
+                  },
+                  {
+                    id: 'timing',
+                    label: 'Timing: normally not before the defence',
+                    points: [
+                      'O.18 r.12(5): an order under this rule shall NOT be made BEFORE SERVICE OF THE DEFENCE unless, in the opinion of the Court, the order is NECESSARY OR DESIRABLE TO ENABLE THE DEFENDANT TO PLEAD, or for some other special reason.',
+                      'In practice that means a statement of claim so badly pleaded that the defendant cannot know enough about the plaintiff\'s case to draft a defence.',
+                      'Otherwise, wait: particulars are normally a post-defence exercise.',
+                      'And note the interaction with the timetable — an outstanding request or order for particulars does not postpone the close of pleadings: O.18 r.20(2).',
+                    ],
+                  },
+                  {
+                    id: 'form',
+                    label: 'Formal requirements for the particulars themselves',
+                    points: [
+                      'All the O.18 r.6 formal requirements apply, because further and better particulars are a pleading.',
+                      'Plus O.18 r.12(7): where particulars are given pursuant to a request or an order, the REQUEST OR ORDER SHALL BE INCORPORATED WITH THE PARTICULARS, each item of the particulars following immediately after the corresponding item of the request or order.',
+                      'And they must be verified by a statement of truth: O.18 r.20A(1)-(2); O.41A r.1.',
+                    ],
+                  },
+                  {
+                    id: 'noncompliance',
+                    label: 'If the order is not complied with',
+                    points: [
+                      'The party may be ordered to provide fresh responses, and such an order may be made on an "UNLESS" basis: Tenzer v Goh (HCPI 718/2011).',
+                      'The Court may refuse the party permission to adduce evidence at trial on the as-yet unparticularised pleading: Discreet Ltd v Cubiertas y Mzov SA [1998] 1 HKC 108 (CFI).',
+                      'Or the pleading may be struck out.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The letter requirement is the single most testable point. O.18 r.12(6) is a discretion to refuse, so state it as "the Court MAY refuse" and then cite Law Wing Ping for the fact that it does.',
+                'The test is NECESSARY, not merely useful or relevant: O.18 r.12(3B). Well Joint Trading makes relevance insufficient on its own.',
+                'The Court can order particulars of its OWN MOTION under r.12(3A) — an application is not the only route.',
+                'Particulars before the defence need the r.12(5) gateway: necessary or desirable to enable the defendant to plead, or some other special reason.',
+                'r.12(7) requires the request or order to be incorporated item by item. A standalone document that answers the request without reproducing it does not comply.',
+                'Waiting for particulars does not stop the pleadings closing (r.20(2)), which can cost a party its O.20 r.3(1) right to amend once without leave.',
+                'The particulars are a pleading, so they need a statement of truth of their own.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Structure the advice as a sequence: identify the deficiency, write the letter, then apply if refused.',
+                'For each item requested, say which allegation in the pleading it relates to and why the pleading as it stands does not allow the client to prepare its case.',
+                'Address necessity head on, not just relevance — that is the r.12(3B) test and the Well Joint Trading burden.',
+                'If the request is pre-defence, deal expressly with the r.12(5) gateway.',
+                'Set out the particulars in the r.12(7) format: each item of the request, then the answer immediately under it.',
+                'Where the other side has ignored an order, ask for an unless order rather than a bare fresh order.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying to the Court without first requesting by letter.',
+                'Arguing only relevance, without addressing necessity.',
+                'Seeking particulars before the defence without engaging r.12(5).',
+                'Serving particulars as a freestanding document without incorporating the request item by item.',
+                'Forgetting the statement of truth on the particulars.',
+                'Assuming the close of pleadings waits for outstanding particulars.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'No order shall be made under paragraph (3) unless the Court is of the opinion that the order is necessary either for disposing fairly of the cause or matter or for saving costs.', cite: 'O.18 r.12(3B), Rules of the High Court (Cap. 4A)' },
+                { text: 'Where the applicant for an order under this rule did not apply by letter for the particulars he requires, the Court may refuse to make the order unless of opinion that there were sufficient reasons for an application by letter not having been made.', cite: 'O.18 r.12(6), Rules of the High Court (Cap. 4A)' },
+                { text: 'Where particulars are given pursuant to a request, or order of the Court, the request or order shall be incorporated with the particulars, each item of the particulars following immediately after the corresponding item of the request or order.', cite: 'O.18 r.12(7), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['The power to order particulars', 'O.18 r.12(3)', 'The Court may order particulars of any claim, defence or other matter in a pleading, or in an affidavit ordered to stand as a pleading, or a statement of the nature of the case relied on, on such terms as it thinks just'],
+                  ['Who may set it in motion', 'O.18 r.12(3A)', 'On the application of a party or of the Court\'s own motion'],
+                  ['Active case management', 'O.1A r.4(2)(b)', 'The duty to identify the issues at an early stage underlies the own-motion power'],
+                  ['The test', 'O.18 r.12(3B)', 'Necessary either for disposing fairly of the cause or matter or for saving costs'],
+                  ['The burden', 'Well Joint Trading Ltd v Chiu Chung Chiu (HCA 1768/2011) para 17', 'The party seeking must show the particulars are not only relevant but that the order is necessary'],
+                  ['Nature of the decision', 'Sunny Tadjudin v Bank of America NA (HCMP 337/2012) para 11', 'An exercise of judicial discretion'],
+                  ['Letter first', 'O.18 r.12(6); Law Wing Ping v Prudential Insurance Co Ltd [2018] HKCFI 113 paras 42-44', 'The Court may refuse an order where no prior request by letter was made, unless there were sufficient reasons for not making one'],
+                  ['Before the defence', 'O.18 r.12(5)', 'No order before service of the defence unless necessary or desirable to enable the defendant to plead, or for some other special reason'],
+                  ['Format of the particulars', 'O.18 r.12(7)', 'The request or order must be incorporated, each item of particulars following immediately after the corresponding item'],
+                  ['Verification', 'O.18 r.20A(1)-(2); O.41A r.1', 'Particulars are a pleading and must be verified by a statement of truth'],
+                  ['Non-compliance: fresh responses', 'Tenzer v Goh (HCPI 718/2011)', 'A further order may be made, and may be on an "unless" basis'],
+                  ['Non-compliance: evidence shut out', 'Discreet Ltd v Cubiertas y Mzov SA [1998] 1 HKC 108 (CFI)', 'The party may be refused permission to adduce evidence at trial on the unparticularised pleading'],
+                  ['Close of pleadings unaffected', 'O.18 r.20(2)', 'Pleadings close notwithstanding an outstanding request or order for particulars'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+            ],
+          },
+
+          {
+            id: 'pleading-in-the-alternative',
+            title: 'Inconsistent allegations and pleading in the alternative',
+            summary: 'O.18 r.10 and O.18 r.12A do different jobs — one governs a previous pleading, the other the same pleading.',
+            triggers: {
+              bullets: [
+                'A reply says something that does not sit with the statement of claim.',
+                'A defence denies a contract was signed and, in the alternative, relies on its terms.',
+                'A party wants to run two factually inconsistent cases.',
+                'A pleading with alternatives is said not to need a statement of truth.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Which rule applies?',
+                steps: [
+                  {
+                    id: 'which',
+                    label: 'Ask first: inconsistent with a PREVIOUS pleading, or within the SAME one?',
+                    points: [
+                      'Inconsistent with a PREVIOUS pleading of his own — O.18 r.10(1): a party shall not in any pleading make any allegation of fact, OR RAISE ANY NEW GROUND OF CLAIM, inconsistent with a previous pleading of his.',
+                      'Inconsistent within the SAME pleading — O.18 r.12A: a party MAY make an allegation of fact inconsistent with another allegation of fact in the same pleading IF (a) the party has REASONABLE GROUNDS for so doing, AND (b) the allegations are MADE IN THE ALTERNATIVE.',
+                      'The outline runs these together. They are different rules with different consequences, and identifying which one is engaged is the first step.',
+                    ],
+                  },
+                  {
+                    id: 'meaning',
+                    label: 'What "inconsistent" means',
+                    points: [
+                      '"Inconsistent" means new or different — the allegations need NOT be mutually exclusive: Goldon Investment Ltd v NPH International Holdings Ltd (HCA 5457/1999, Ma J, 07.06.2002).',
+                      'That is a wide test. A reply that introduces a materially different account of the same events is caught even though both accounts could theoretically be true.',
+                    ],
+                  },
+                  {
+                    id: 'remedy',
+                    label: 'If it is inconsistent with a previous pleading, the remedy is amendment',
+                    points: [
+                      'O.18 r.10(2): paragraph (1) shall not be taken as prejudicing the right of a party to AMEND, OR APPLY FOR LEAVE TO AMEND, his previous pleading so as to plead the allegations or claims IN THE ALTERNATIVE.',
+                      'So r.10(2) is not a licence to plead the inconsistency in the later pleading. It preserves the route back: amend the EARLIER pleading under O.20 so that both versions stand there, in the alternative.',
+                      'Which puts the O.20 analysis in play — once without leave before the close of pleadings, with leave after.',
+                    ],
+                  },
+                  {
+                    id: 'goodbad',
+                    label: 'Test the alternatives against the lecture\'s two examples',
+                    points: [
+                      'PROPER alternatives, on a claim relying on a written contract: (1) the defendant had no agreement with the plaintiff based on the written contract because he did not sign it; and (2) in the alternative, he admits an agreement with the plaintiff, but based on some other written documents or made orally, so that the plaintiff\'s written contract does not bind him in the way alleged.',
+                      'IMPROPER: (1) the defendant did not sign the contract and so was not privy to it; and (2) in the alternative, even if he did sign it, the written contract contained terms the plaintiff does not rely on, such that the defendant is not liable. The vice is that the two do not answer the same question — did the defendant sign or not — and the second concedes the first away.',
+                      'The distinction to hold on to: alternatives are proper where each is a complete answer on a different factual footing; improper where the second simply contradicts the first on the very fact in issue.',
+                    ],
+                  },
+                  {
+                    id: 'verify',
+                    label: 'Alternatives still have to be verified',
+                    detail: 'O.41A r.2(2) is express: a pleading must be verified by a statement of truth notwithstanding that the party has made an allegation of fact in accordance with O.18 r.12A which is inconsistent with another allegation of fact in the same pleading. Pleading in the alternative is not a reason to leave the statement of truth off.',
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'r.10(2) is about the RIGHT TO AMEND a previous pleading. It is not the source of the "reasonable grounds and in the alternative" permission — that is r.12A, and it operates within a single pleading.',
+                '"Inconsistent" is wide: new or different is enough, and the allegations need not be mutually exclusive (Goldon Investment).',
+                'r.10(1) catches a new GROUND OF CLAIM as well as an allegation of fact.',
+                'Both r.12A limbs must be satisfied — reasonable grounds AND made in the alternative. Labelling a paragraph "in the alternative" without reasonable grounds does not save it.',
+                'Pleading in the alternative never dispenses with the statement of truth: O.41A r.2(2).',
+                'A reply that contradicts the statement of claim is the classic r.10(1) breach, and the answer is to amend the statement of claim, not to leave the reply as it stands.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Say which pleading the inconsistency is with — the same one or an earlier one — before naming a rule.',
+                'Where alternatives are proposed, state the reasonable grounds for each, and label them expressly as alternatives.',
+                'Where the inconsistency is with an earlier pleading, advise the amendment route and then run the O.20 analysis (is it before the close of pleadings?).',
+                'Test proposed alternatives by asking whether each is a complete answer on its own factual footing.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Citing O.18 r.10(2) as the authority for pleading in the alternative — that is r.12A.',
+                'Assuming "inconsistent" requires the allegations to be mutually exclusive.',
+                'Writing "in the alternative" over paragraphs that simply contradict each other on the fact in issue.',
+                'Curing an inconsistency by amending the LATER pleading when it is the earlier one that needs to carry both versions.',
+                'Omitting the statement of truth because the pleading contains alternatives.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A party shall not in any pleading make any allegation of fact, or raise any new ground of claim, inconsistent with a previous pleading of his.', cite: 'O.18 r.10(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'Paragraph (1) shall not be taken as prejudicing the right of a party to amend, or apply for leave to amend, his previous pleading so as to plead the allegations or claims in the alternative.', cite: 'O.18 r.10(2), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Inconsistency with a previous pleading', 'O.18 r.10(1)', 'No allegation of fact, and no new ground of claim, inconsistent with a previous pleading of his own'],
+                  ['The amendment route', 'O.18 r.10(2)', 'Preserves the right to amend, or apply for leave to amend, the PREVIOUS pleading so as to plead the allegations or claims in the alternative'],
+                  ['Alternatives within one pleading', 'O.18 r.12A(a)-(b)', 'Permitted if the party has reasonable grounds for so doing AND the allegations are made in the alternative'],
+                  ['What "inconsistent" means', 'Goldon Investment Ltd v NPH International Holdings Ltd (HCA 5457/1999, Ma J, 07.06.2002)', 'New or different; the allegations need not be mutually exclusive'],
+                  ['Verification unaffected', 'O.41A r.2(2)', 'A pleading must still be verified notwithstanding inconsistent alternative allegations made under O.18 r.12A'],
+                  ['Amendment mechanics', 'O.20 rr.3(1), 5(1)', 'Once without leave before the close of pleadings; otherwise with leave on such terms as may be just'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+            ],
+          },
+          {
+            id: 'statement-of-claim',
+            title: 'Drafting the statement of claim',
+            summary: 'The prayer for relief, the cause-of-action constraint tied to the writ, and the date the writ was issued.',
+            triggers: {
+              bullets: [
+                'A remedy is wanted at trial that does not appear in the statement of claim.',
+                'The statement of claim pleads a cause of action the writ never mentioned.',
+                'The claim is for personal injuries.',
+                'The question asks what is missing from a draft statement of claim.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Building the statement of claim',
+                steps: [
+                  {
+                    id: 'relief',
+                    label: 'The prayer for relief: O.18 r.15(1)',
+                    points: [
+                      'A statement of claim must state SPECIFICALLY the relief or remedy which the plaintiff claims; but COSTS NEED NOT be specifically claimed.',
+                      'In practice this is a "prayer for relief" set out at the end, and costs are included anyway.',
+                      'Why it matters: the Court CANNOT GRANT RELIEF WHICH HAS NOT BEEN CLAIMED AT ALL — Belmont Finance Corp Ltd v Williams Furniture Ltd [1979] Ch 250, [1978] 1 All ER 118.',
+                      'So go through the remedies the client actually wants — damages, a declaration, an injunction, specific performance, interest, costs — and check each appears.',
+                    ],
+                  },
+                  {
+                    id: 'causes',
+                    label: 'The cause-of-action constraint: O.18 r.15(2), and note its second limb',
+                    points: [
+                      'A statement of claim must NOT contain any allegation or claim in respect of a cause of action UNLESS that cause of action is MENTIONED IN THE WRIT, or ARISES FROM FACTS which are the same as, or include or form part of, facts giving rise to a cause of action so mentioned.',
+                      'BUT subject to that, a plaintiff MAY in his statement of claim ALTER, MODIFY OR EXTEND any claim made in the indorsement of the writ WITHOUT AMENDING THE INDORSEMENT. The outline omits this second limb, and it is what makes a generally indorsed writ workable.',
+                      'So the question on the facts is whether the new cause of action shares the factual substratum of one already in the writ. If it does, no amendment of the writ is needed; if it does not, the writ itself must be amended under O.20 r.1 or r.5.',
+                    ],
+                  },
+                  {
+                    id: 'date',
+                    label: 'The issue date: O.18 r.15(3)',
+                    points: [
+                      'Every statement of claim must BEAR ON ITS FACE a statement of the DATE ON WHICH THE WRIT IN THE ACTION WAS ISSUED.',
+                      'This is separate from, and additional to, the O.18 r.6(1) requirement to state the year the writ was issued and the action number.',
+                      'It is a small point that is easy to omit from a draft and easy to spot in an exam.',
+                    ],
+                  },
+                  {
+                    id: 'pi',
+                    label: 'If it is a personal injuries claim',
+                    points: [
+                      'The plaintiff must serve WITH the statement of claim (a) a MEDICAL REPORT and (b) a STATEMENT OF THE SPECIAL DAMAGES CLAIMED: O.18 r.12(1A).',
+                      'If they are not served with it, the Court may specify a period within which they are to be provided, or make such other order as it thinks fit — including dispensing with the requirement or staying the proceedings: O.18 r.12(1B).',
+                      'O.18 r.12(1C) defines both: the medical report must substantiate ALL the personal injuries alleged and be one the plaintiff proposes to adduce in evidence at trial; the statement of special damages must give full particulars of expenses and losses already incurred and an ESTIMATE of any future expenses and losses, including loss of earnings and of pension rights.',
+                    ],
+                  },
+                  {
+                    id: 'body',
+                    label: 'Then the body, on the ordinary rules',
+                    points: [
+                      'Material facts in summary form, not evidence, as brief as the nature of the case admits: O.18 r.7(1).',
+                      'Particulars of anything within O.18 r.12(1), and of special damages.',
+                      'Points of law may be raised (O.18 r.11) but not argued.',
+                      'Note that O.18 r.8(1) does NOT apply to a statement of claim — it governs pleadings subsequent to one.',
+                      'Formal requirements under O.18 r.6, and a statement of truth under O.18 r.20A.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Court cannot grant relief never claimed (Belmont Finance). Omitting a remedy from the prayer is not a technicality — it loses the remedy.',
+                'Costs need not be specifically claimed (r.15(1)), though they always are in practice.',
+                'r.15(2) has a second limb that lets the plaintiff alter, modify or extend a claim WITHOUT amending the writ\'s indorsement, so long as the cause of action is mentioned in the writ or shares its facts.',
+                'The r.15(3) date of issue is a separate requirement from the r.6(1) year and action number. Both appear.',
+                'O.18 r.8(1) has no application to a statement of claim — do not criticise one for failing to plead limitation or illegality specifically.',
+                'A counterclaim is treated as a statement of claim for r.15(1) and r.12(1A)-(1C): O.18 r.18(a). So a counterclaim needs its own prayer for relief.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Draft the prayer last but check it first — list the client\'s objectives and confirm each has a corresponding head of relief.',
+                'Where a new cause of action is proposed, state expressly whether it shares the facts of one mentioned in the writ, and say what follows if it does not.',
+                'Include the date of issue of the writ in the draft.',
+                'For a personal injuries claim, deal with the medical report and statement of special damages as service obligations, not optional extras.',
+                'Cross-check the statement of claim against the writ\'s indorsement before advising that no amendment is needed.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Leaving a remedy out of the prayer for relief.',
+                'Assuming the writ must be amended whenever the statement of claim says something new — r.15(2) allows alteration, modification and extension within the same facts.',
+                'Omitting the date on which the writ was issued.',
+                'Serving a personal injuries statement of claim without the medical report or the statement of special damages.',
+                'Applying O.18 r.8(1) to the statement of claim.',
+                'Forgetting that a counterclaim needs its own prayer for relief.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A statement of claim must state specifically the relief or remedy which the plaintiff claims; but costs need not be specifically claimed.', cite: 'O.18 r.15(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'Every statement of claim must bear on its face a statement of the date on which the writ in the action was issued.', cite: 'O.18 r.15(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Prayer for relief', 'O.18 r.15(1)', 'Must state specifically the relief or remedy claimed; costs need not be specifically claimed'],
+                  ['Relief not claimed cannot be granted', 'Belmont Finance Corp Ltd v Williams Furniture Ltd [1979] Ch 250, [1978] 1 All ER 118', 'The Court cannot grant relief which has not been claimed at all'],
+                  ['Causes of action', 'O.18 r.15(2)', 'No allegation or claim for a cause of action unless mentioned in the writ or arising from the same, included or overlapping facts — but subject to that, P may alter, modify or extend any claim in the indorsement WITHOUT amending it'],
+                  ['Date of issue', 'O.18 r.15(3)', 'Must bear on its face the date on which the writ was issued'],
+                  ['Personal injuries documents', 'O.18 r.12(1A)-(1B)', 'A medical report and a statement of the special damages claimed served with the statement of claim; otherwise the Court may fix a period, dispense with the requirement, or stay the proceedings'],
+                  ['What those documents must contain', 'O.18 r.12(1C)', 'A report substantiating ALL the injuries alleged which P proposes to adduce at trial; full particulars of expenses and losses already incurred plus an estimate of future ones, including loss of earnings and pension rights'],
+                  ['Counterclaim treated as a statement of claim', 'O.18 r.18(a)', 'rr.12(1A), (1B), (1C) and 15(1) apply to a counterclaim as if it were a statement of claim and the defendant making it a plaintiff'],
+                  ['Formal requirements and verification', 'O.18 r.6; O.18 r.20A', 'Apply to the statement of claim as to every pleading'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+            ],
+          },
+
+          {
+            id: 'defence-counterclaim-and-reply',
+            title: 'Defence, counterclaim and reply',
+            summary: 'The traverse rules that decide what is admitted, set-off, the counterclaim as a separate action, and joinder of issue.',
+            triggers: {
+              bullets: [
+                'A defence answers some allegations and passes over others in silence.',
+                'A defence contains a bare general denial.',
+                'The defendant has a money claim of its own against the plaintiff.',
+                'The defendant wants to bring in a third party on its counterclaim.',
+                'No reply has been served and the question is what the plaintiff is taken to have admitted.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working through the defence and what follows',
+                steps: [
+                  {
+                    id: 'traverse',
+                    label: 'The defence: start from "deemed admitted unless traversed"',
+                    points: [
+                      'O.18 r.13(1): subject to r.13(6), an allegation of fact made by a party in his pleading is DEEMED TO BE ADMITTED by the opposite party UNLESS it is TRAVERSED by that party in his pleading, or a joinder of issue under r.14 operates as a non-admission of it.',
+                      'O.18 r.13(2): subject to r.13(5), a traverse may be made either by a DENIAL or by a STATEMENT OF NON-ADMISSION, and either EXPRESSLY OR BY NECESSARY IMPLICATION.',
+                      'So the rule\'s vocabulary is "traverse", of which denial and non-admission are the two species. Using the right word is worth marks.',
+                    ],
+                  },
+                  {
+                    id: 'specific',
+                    label: 'And the traverse must be SPECIFIC',
+                    points: [
+                      'O.18 r.13(3): every allegation of fact in a statement of claim or counterclaim which the party served does not intend to admit must be SPECIFICALLY traversed in his defence or defence to counterclaim — and A GENERAL DENIAL of such allegations, OR A GENERAL STATEMENT OF NON-ADMISSION of them, IS NOT A SUFFICIENT TRAVERSE.',
+                      'That is the rule that kills the "the Defendant denies each and every allegation in the Statement of Claim" paragraph.',
+                    ],
+                  },
+                  {
+                    id: 'deny',
+                    label: 'If you deny, r.13(5) imposes two further duties',
+                    points: [
+                      'Where an allegation is traversed BY A DENIAL, the denying party must in his defence or defence to counterclaim (a) STATE HIS REASONS for doing so; and (b) if he intends to put forward a DIFFERENT VERSION OF EVENTS from the claimant\'s, STATE HIS OWN VERSION.',
+                      'Practice guidance on when to use which: ADMIT where there is really no controversy (White Book §18/13/2); DENY where it is within the defendant\'s own knowledge that the allegation is false (Blue Book O.18 [5606]); NOT ADMIT where the defendant has no knowledge of the truth of the allegation and wishes to put the plaintiff to proof (Blue Book O.18 [5606]).',
+                      'A defendant who denies must set out his POSITIVE case; otherwise he is not entitled to call evidence of fact contrary to the plaintiff\'s contention (White Book §18/13/5).',
+                    ],
+                  },
+                  {
+                    id: 'silence',
+                    label: 'Silence: r.13(6) is the qualification to the deeming rule',
+                    detail: 'A party who (a) fails to deal with an allegation but (b) has set out in his defence or defence to counterclaim the NATURE OF HIS CASE in relation to the issue to which that allegation is relevant, IS TO BE TAKEN TO REQUIRE THAT ALLEGATION TO BE PROVED. So silence is not automatically an admission where the defence has engaged with the issue — which is why r.13(1) opens "Subject to paragraph (6)".',
+                  },
+                  {
+                    id: 'setoff',
+                    label: 'Set-off: O.18 r.17',
+                    points: [
+                      'Where a claim by a defendant to a SUM OF MONEY (WHETHER OF AN ASCERTAINED AMOUNT OR NOT) is relied on AS A DEFENCE to the whole or part of the plaintiff\'s claim, it may be INCLUDED IN THE DEFENCE and set off against that claim — WHETHER OR NOT IT IS ALSO ADDED AS A COUNTERCLAIM.',
+                      'Both parenthetical limbs matter: an unliquidated cross-claim can be a set-off, and set-off and counterclaim are not alternatives — the same claim can do both jobs.',
+                      'The purpose is to avoid a multiplicity of proceedings: the plaintiff\'s claim is reduced by the defendant\'s.',
+                      'Set-off must be pleaded specifically: SC Chow & Associates Ltd v Chow Kit Ming [1997] 2 HKC 96 (HC).',
+                      'Note the related O.18 r.16: a defence of tender before action is unavailable unless and until the amount alleged to have been tendered has been paid into court under O.22.',
+                    ],
+                  },
+                  {
+                    id: 'counterclaim',
+                    label: 'Counterclaim: O.15 rr.2-3',
+                    points: [
+                      'O.15 r.2(1): a defendant who alleges he has any claim or is entitled to any relief or remedy against a plaintiff in respect of ANY MATTER (WHENEVER AND HOWEVER ARISING) may, INSTEAD OF BRINGING A SEPARATE ACTION, counterclaim — and where he does so he MUST ADD THE COUNTERCLAIM TO HIS DEFENCE. Hence one document, titled "Defence and Counterclaim", with a defence section and a counterclaim section.',
+                      'O.15 r.2(2): the joinder rule in O.15 r.1 applies to a counterclaim AS IF IT WERE A SEPARATE ACTION, the counterclaiming defendant were the plaintiff and the party against whom it is made a defendant.',
+                      'O.15 r.2(3): a counterclaim may be PROCEEDED WITH notwithstanding that judgment is given for the plaintiff on the claim, OR THAT THE ACTION IS STAYED, DISCONTINUED OR DISMISSED. The outline gives only the judgment limb.',
+                      'O.15 r.2(4): where the counterclaim is established and there is a BALANCE in favour of one party, the Court may give judgment for the balance — without affecting its discretion as to costs.',
+                      'Adding a new party: O.15 r.3(1) allows joining another person (whether or not already a party) only where the defendant alleges that person is LIABLE TO HIM ALONG WITH THE PLAINTIFF in respect of the counterclaim\'s subject matter, or claims relief RELATING TO OR CONNECTED WITH the original subject matter. It is not an at-large power.',
+                      'Mechanics for a new party: add the name to the title, issue the counterclaim out of the Registry, and serve a sealed copy with a Form No. 14 acknowledgement of service, the originating process and all other pleadings served; that person then becomes a party from the time of service: O.15 r.3(2). O.10-O.13 apply as if the counterclaim were a writ: O.15 r.3(5).',
+                      'Timing: where the person served is already a party, service must be within the O.18 r.2 period for the defence to which the counterclaim is added: O.15 r.3(3).',
+                    ],
+                  },
+                  {
+                    id: 'reply',
+                    label: 'Reply and joinder of issue: O.18 r.14',
+                    points: [
+                      'A reply is the plaintiff\'s response to the defence, and is needed only for compliance with O.18 r.8: O.18 r.3(1).',
+                      'O.18 r.14(1): if there is no reply to a defence, there is an IMPLIED JOINDER OF ISSUE on that defence.',
+                      'O.18 r.14(2): subject to r.14(3), at the close of pleadings there is an implied joinder of issue on the pleading LAST SERVED, and a party may EXPRESSLY join issue on the next preceding pleading.',
+                      'O.18 r.14(3): there can be NO joinder of issue, implied or expressed, ON A STATEMENT OF CLAIM OR COUNTERCLAIM. A defendant cannot answer a statement of claim by joinder of issue — it must plead to it.',
+                      'O.18 r.14(4): a joinder of issue operates as a NON-ADMISSION of every material allegation of fact in the pleading joined on — unless, on an EXPRESS joinder, an allegation is excepted and stated to be admitted, in which case the express joinder is a non-admission of every other allegation.',
+                    ],
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Response to an allegation', 'When to use it', 'What the rules require', 'Source'],
+                rows: [
+                  ['Admit', 'Where there is really no controversy', 'Nothing further', 'White Book §18/13/2'],
+                  ['Deny', 'Where it is within D\'s own knowledge that the allegation is false', 'State the reasons; and if a different version of events is intended, state that version', 'O.18 r.13(5)(a)-(b); Blue Book O.18 [5606]'],
+                  ['Not admit', 'Where D has no knowledge of the truth and puts P to proof', 'A traverse by statement of non-admission; must still be specific', 'O.18 r.13(2)-(3); Blue Book O.18 [5606]'],
+                  ['A general denial of everything', 'Never', 'Not a sufficient traverse — the allegations are deemed admitted', 'O.18 r.13(3)'],
+                  ['Silence, with the nature of D\'s case on the issue set out', 'Where the defence engages the issue elsewhere', 'D is taken to require the allegation to be proved', 'O.18 r.13(6)'],
+                  ['Silence, with nothing on the issue', 'Never', 'Deemed admitted', 'O.18 r.13(1)'],
+                  ['Money cross-claim used as a defence', 'Where D has a money claim, liquidated or not', 'Include in the defence and set off; may also be a counterclaim; plead specifically', 'O.18 r.17; SC Chow & Associates Ltd v Chow Kit Ming [1997] 2 HKC 96'],
+                  ['Money or other claim pursued as a claim', 'Where D wants relief, not just a reduction', 'Add the counterclaim to the defence in one document', 'O.15 r.2(1)'],
+                  ['No reply to the defence', 'Where P simply does not admit the defence', 'Implied joinder of issue — a non-admission of every material allegation', 'O.18 r.14(1), (4)'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The rule\'s word is TRAVERSE. A denial and a statement of non-admission are both traverses; the distinction between them controls what r.13(5) then requires.',
+                'A general denial or a general non-admission is NOT a sufficient traverse (r.13(3)) — so the allegations it purports to answer are deemed admitted under r.13(1).',
+                'A denial without reasons, or without D\'s own version where D has one, does not comply with r.13(5), and D who does not set out his positive case cannot call contrary evidence at trial (White Book §18/13/5).',
+                'r.13(6) is a real qualification: silence is not an admission where the defence has set out the nature of D\'s case on the relevant issue.',
+                'Set-off works for unliquidated as well as ascertained sums, and does not stop the same claim being a counterclaim too (r.17).',
+                'A counterclaim survives judgment for the plaintiff AND a stay, discontinuance or dismissal of the action: O.15 r.2(3).',
+                'O.15 r.3(1) is not an at-large joinder power — the new party must be alleged liable ALONG WITH the plaintiff on the counterclaim\'s subject matter, or the relief must relate to or be connected with the original subject matter.',
+                'There can be no joinder of issue on a statement of claim or counterclaim: O.18 r.14(3).',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Go through the statement of claim paragraph by paragraph and give each allegation one of admit, deny or not admit — that is how a defence is built and how a question about one is answered.',
+                'For every denial, write the reason and, where there is one, D\'s own version, because r.13(5) requires both.',
+                'Say expressly what is deemed admitted by any allegation the defence passes over, and check r.13(6) before concluding.',
+                'Distinguish set-off from counterclaim in terms of what each achieves: reduction of P\'s claim versus affirmative relief.',
+                'Where a third party is to be brought in on a counterclaim, deal with the O.15 r.3(1) gateway before the r.3(2) mechanics.',
+                'Where no reply is served, state the consequence in the rule\'s terms: an implied joinder of issue operating as a non-admission of every material allegation in the defence.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Opening a defence with a general denial of every allegation.',
+                'Denying without stating reasons or D\'s own version.',
+                'Treating every unanswered allegation as admitted without checking r.13(6).',
+                'Saying a set-off must be liquidated.',
+                'Putting the counterclaim in a separate document from the defence.',
+                'Assuming a counterclaim falls away if the action is discontinued or dismissed.',
+                'Joining a third party to a counterclaim without the r.3(1) connection.',
+                'Pleading a joinder of issue in answer to a statement of claim.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Every allegation of fact made in a statement of claim or counterclaim which the party on whom it is served does not intend to admit must be specifically traversed by him in his defence or defence to counterclaim, as the case may be; and a general denial of such allegations, or a general statement of non-admission of them, is not a sufficient traverse of them.', cite: 'O.18 r.13(3), Rules of the High Court (Cap. 4A)' },
+                { text: 'Where a claim by a defendant to a sum of money (whether of an ascertained amount or not) is relied on as a defence to the whole or part of a claim made by the plaintiff, it may be included in the defence and set-off against the plaintiff\'s claim, whether or not it is also added as a counterclaim.', cite: 'O.18 r.17, Rules of the High Court (Cap. 4A)' },
+                { text: 'A counterclaim may be proceeded with notwithstanding that judgment is given for the plaintiff in the action or that the action is stayed, discontinued or dismissed.', cite: 'O.15 r.2(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Deemed admission', 'O.18 r.13(1)', 'Subject to r.13(6), an allegation is deemed admitted unless traversed, or unless a joinder of issue under r.14 operates as a non-admission'],
+                  ['Forms of traverse', 'O.18 r.13(2)', 'By denial or by statement of non-admission, expressly or by necessary implication'],
+                  ['Specific traverse required', 'O.18 r.13(3)', 'A general denial or general non-admission is not a sufficient traverse'],
+                  ['Duties on denial', 'O.18 r.13(5)(a)-(b)', 'State reasons; and state D\'s own version if a different version of events is intended'],
+                  ['Silence where the case is set out', 'O.18 r.13(6)', 'D is taken to require the allegation to be proved'],
+                  ['When to admit, deny or not admit', 'White Book §18/13/2, §18/13/5; Blue Book O.18 [5606]', 'Admit where no real controversy; deny where D knows the allegation is false; not admit where D lacks knowledge — and a denying D who does not set out his positive case cannot call contrary evidence'],
+                  ['Set-off', 'O.18 r.17', 'A money claim, ascertained or not, relied on as a defence may be included in the defence and set off, whether or not also counterclaimed'],
+                  ['Tender', 'O.18 r.16', 'A defence of tender before action is not available unless and until the amount is paid into court under O.22'],
+                  ['Counterclaim must be added to the defence', 'O.15 r.2(1)', 'Any matter whenever and however arising; instead of a separate action; added to the defence'],
+                  ['Counterclaim treated as a separate action', 'O.15 r.2(2)-(3)', 'O.15 r.1 applies as if it were a separate action; it survives judgment for P and a stay, discontinuance or dismissal'],
+                  ['Judgment for the balance', 'O.15 r.2(4)', 'Where a counterclaim is established and there is a balance, the Court may give judgment for it, without affecting its costs discretion'],
+                  ['Joining a new party', 'O.15 r.3(1)', 'Only where that person is alleged liable along with P on the counterclaim\'s subject matter, or relief is claimed relating to or connected with the original subject matter'],
+                  ['Mechanics for a new party', 'O.15 r.3(2)-(3), (5)', 'Add to the title; issue out of the Registry; serve a sealed copy with Form No. 14, the originating process and all other pleadings; within the O.18 r.2 period where already a party; O.10-O.13 apply as if it were a writ'],
+                  ['Reply only when needed', 'O.18 r.3(1)', 'Required only for compliance with r.8; otherwise r.14(1) applies'],
+                  ['Joinder of issue', 'O.18 r.14(1)-(4)', 'Implied on the defence if no reply; implied on the last pleading at close of pleadings; none on a statement of claim or counterclaim; operates as a non-admission of every material allegation'],
+                  ['Counterclaim and defence to counterclaim', 'O.18 r.18(a)-(b)', 'rr.12(1A)-(1C) and 15(1) apply to a counterclaim as to a statement of claim; rr.8(2), 16 and 17 apply to a defence to counterclaim as to a defence'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+              { session: 'LG4', issue: 'pleading-in-the-alternative', label: 'Pleading in the alternative' },
+              { session: 'LG3', issue: 'serving-particular-parties', label: 'LG3 — Serving particular kinds of party (for a counterclaim against a new party)' },
+            ],
+          },
+
+          {
+            id: 'amending-pleadings',
+            title: 'Amending pleadings (O.20)',
+            summary: 'Three routes — without leave, by agreement, with leave — and the limitation-period exceptions.',
+            triggers: {
+              bullets: [
+                'New facts have come to light, or an error has been found.',
+                'The other side has applied to strike out and the pleading could be saved by amendment.',
+                'A party wants to add a new cause of action after the limitation period has run.',
+                'A party\'s name is wrong on the pleadings.',
+                'The plaintiff obtained probate after the writ was issued and wants to sue as executor.',
+                'An amendment has been made without leave and the other side objects.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Which amendment route?',
+                steps: [
+                  {
+                    id: 'why',
+                    label: 'Identify why the amendment is wanted',
+                    points: [
+                      'New facts have come to light; errors have been found; the issues at trial need to be clearly identified; or the opponent has applied to strike out and the pleading could be cured.',
+                      'The reason matters, because on a leave application the Court is deciding whether the amendment is needed to determine the real questions in controversy.',
+                    ],
+                  },
+                  {
+                    id: 'noleave',
+                    label: 'Route 1 — without leave, ONCE, before the close of pleadings',
+                    points: [
+                      'O.20 r.3(1): a party may, WITHOUT LEAVE, amend ANY PLEADING of his ONCE at any time BEFORE THE PLEADINGS ARE DEEMED TO BE CLOSED; and where he does so he must SERVE the amended pleading on the opposite party.',
+                      'The plaintiff has a parallel right to amend THE WRIT once before the close of pleadings (O.20 r.1(1)) — but NOT for adding, omitting or substituting a party, altering the capacity in which a party sues or is sued, adding or substituting a new cause of action, or amending an indorsed statement of claim, unless done before service: O.20 r.1(3)(a)-(c).',
+                      'Consequential amendments — and note the asymmetry the outline flattens. Amended statement of claim served on D: D may amend his defence, and the period is the period fixed by the rules for his defence OR 14 days after service of the amended statement of claim, WHICHEVER EXPIRES LATER (O.20 r.3(2)(a)-(b)). Amended defence served on P: P may amend his reply, and the period is simply 14 days after service of the amended defence (O.20 r.3(3)(a)-(b)) — no "whichever is later".',
+                      'O.20 r.3(4): references to a defence and a reply include a counterclaim and a defence to counterclaim. O.20 r.3(5) applies r.3(2) where an amended counterclaim is served on a non-plaintiff party.',
+                      'O.20 r.3(6): if a party who has already pleaded does not amend, he is taken to rely on his existing pleading in answer to the amended one, and O.18 r.14(2) has effect as if the amended pleading had been served when the original was.',
+                      'Costs: the costs of and occasioned by any amendment made without leave in the writ of summons or any pleading are borne by the party making the amendment, unless the Court otherwise orders: O.62 r.3(3).',
+                    ],
+                  },
+                  {
+                    id: 'disallow',
+                    label: 'The other side\'s answer to a without-leave amendment: O.20 r.4',
+                    points: [
+                      'Within 14 DAYS after service of the amended writ or pleading, that party may apply to the Court TO DISALLOW the amendment: O.20 r.4(1).',
+                      'The test is counterfactual: if an application for leave had been made under r.5 AT THE DATE the amendment was made, and leave would have been REFUSED, the Court SHALL order the amendment (or that part of it) TO BE STRUCK OUT: O.20 r.4(2).',
+                      'Any order may be on such terms as to costs or otherwise as the Court thinks just: O.20 r.4(3).',
+                    ],
+                  },
+                  {
+                    id: 'agreement',
+                    label: 'Route 2 — by agreement',
+                    points: [
+                      'O.20 r.12(1): notwithstanding the rest of O.20, ANY PLEADING in any cause or matter may, BY WRITTEN AGREEMENT between the parties, be amended AT ANY STAGE of the proceedings. In practice, a Consent Summons.',
+                      'O.20 r.12(2): the rule does NOT apply to an amendment consisting of the ADDITION, OMISSION OR SUBSTITUTION OF A PARTY. That always needs the Court.',
+                    ],
+                  },
+                  {
+                    id: 'leave',
+                    label: 'Route 3 — with leave',
+                    points: [
+                      'O.20 r.5(1): subject to O.15 rr.6, 7 and 8 and the rest of r.5, the Court may AT ANY STAGE of the proceedings allow the plaintiff to amend his WRIT, or ANY PARTY to amend his PLEADINGS, on such terms as to costs or otherwise AS MAY BE JUST and in such manner (if any) as it may direct.',
+                      'There is also the O.20 r.8 route: for the purpose of determining the real question in controversy, or correcting any defect or error, the Court may at any stage, of its OWN MOTION or on application, order a pleading or any other document to be amended: O.20 r.8(1). But r.8(1A) imposes a filter — the Court SHALL NOT order a pleading to be amended unless it is of the opinion that the order is NECESSARY either for disposing fairly of the cause or matter or for saving costs. (The same wording as the particulars test in O.18 r.12(3B).)',
+                      'Procedure: Summons + draft amended pleading + affidavit if necessary, heard before a master. The summons is worded to give leave to file and serve the amended pleading within a stated number of days, leave to the other side to amend in response thereafter, and costs.',
+                    ],
+                  },
+                  {
+                    id: 'ketteman',
+                    label: 'The discretion: "as may be just"',
+                    points: [
+                      'Ketteman v Hansel Properties Ltd [1987] AC 189 at 212F gives the principles: amendments should be made as are necessary to enable the real questions in controversy to be decided; they should not be refused solely because they result from an honest fault or mistake, since it is not the function of the court to punish parties for mistakes in the conduct of their cases; however blameworthy (short of bad faith) the failure to plead earlier, and however late the application, the Court should generally allow the amendment UNLESS IT WILL PREJUDICE THE OTHER PARTY; and there is no injustice if the other party can be COMPENSATED BY APPROPRIATE ORDERS AS TO COSTS.',
+                      'Nowadays that is read subject to the O.1A underlying objectives. So prejudice is assessed twice over: to the other party, and to the system.',
+                      'In Subba Alvin v Houng Kee (Asia) Ltd [2012] 4 HKLRD 640 leave was refused because of prejudice (i) to the other party, having to prepare a new case at a late stage; and (ii) to the whole system, since the trial dates would have to be vacated to give that party time.',
+                      'Costs on a leave application: the Court retains a discretion (Wong Wai Lung v Bondfield Development Ltd (CACV 214/2006)), but the usual order is TWO SETS — the costs of and occasioned by the amendment to the other side in any event; and the costs of the hearing to whoever wins the argument about whether leave should be granted: Lessy SARL v Pacific Star Development Ltd [1996] 2 HKC 326 (HC), per Yam J at 327B-C.',
+                    ],
+                  },
+                  {
+                    id: 'limitation',
+                    label: 'After the limitation period has expired: O.20 r.5(2)-(5)',
+                    points: [
+                      'The general position is that such an amendment will not be allowed — it would let a party get round a time bar by the back door.',
+                      'But where the application is made AFTER any relevant period of limitation CURRENT AT THE DATE OF ISSUE OF THE WRIT has expired, the Court may nevertheless grant leave IF IT THINKS IT JUST TO DO SO, in three cases: r.5(3), (4) and (5).',
+                      'r.5(3) — CORRECT THE NAME OF A PARTY, notwithstanding that the effect will be to substitute a new party, if the Court is satisfied the mistake was a GENUINE MISTAKE and was NOT MISLEADING or such as to cause any reasonable doubt as to the identity of the person intending to sue or intended to be sued. A misspelling with no doubt about identity is the paradigm.',
+                      'r.5(4) — ALTER THE CAPACITY in which a party sues, if the new capacity is one which that party HAD at the commencement of the proceedings OR HAS SINCE ACQUIRED. The worked example: obtaining a grant of probate after the writ was issued, then amending to sue as executor (White Book §20/8/18).',
+                      'r.5(5) — ADD OR SUBSTITUTE A NEW CAUSE OF ACTION, if it arises out of the SAME FACTS OR SUBSTANTIALLY THE SAME FACTS as a cause of action in respect of which relief HAS ALREADY BEEN CLAIMED IN THE ACTION BY THE PARTY APPLYING.',
+                      'The r.5(5) words are given a BROAD AND LIBERAL interpretation, and require not a complete overlap of facts but a SIGNIFICANT overlap: Leung Kin Fook v Eastern Worldwide Co Ltd (No 2) [1997] 1 HKC 524 (CA).',
+                    ],
+                  },
+                  {
+                    id: 'after',
+                    label: 'After leave is granted — two traps',
+                    points: [
+                      'O.20 r.9(1): if the party does not amend the document in accordance with the order before the expiration of the period specified in it — or, IF NO PERIOD IS SPECIFIED, 14 DAYS after the order was made — THE ORDER CEASES TO HAVE EFFECT, without prejudice to the Court\'s power to extend the period. Leave obtained is not leave banked.',
+                      'Format: colours under PD 19.1 §2 (red, then green, then violet, then yellow); the O.20 r.10(2) indorsement naming the amendment date and the order or the rule relied on; a fresh document if the amendments are too numerous or long to read as alterations (O.20 r.10(1)).',
+                      'And the amendment must be verified by a statement of truth: O.20 r.13(1)-(2).',
+                    ],
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Situation', 'Route', 'Test or limit', 'Source'],
+                rows: [
+                  ['First amendment, pleadings still open', 'Without leave', 'Once only, before the close of pleadings; must serve', 'O.20 r.3(1)'],
+                  ['First amendment of the writ, pleadings still open', 'Without leave', 'Once only; not for adding/omitting/substituting a party, altering capacity, a new cause of action, or an indorsed statement of claim, unless before service', 'O.20 r.1(1), (3)(a)-(c)'],
+                  ['Responding to an amended statement of claim', 'Without leave', 'The rules\' period for the defence or 14 days after service, whichever expires LATER', 'O.20 r.3(2)(a)-(b)'],
+                  ['Responding to an amended defence', 'Without leave', '14 days after service — no "whichever is later"', 'O.20 r.3(3)(a)-(b)'],
+                  ['Objecting to a without-leave amendment', 'Apply to disallow', 'Within 14 days; struck out if leave would have been refused at the date of amendment', 'O.20 r.4(1)-(2)'],
+                  ['Both sides agree', 'By written agreement', 'Any stage — but NOT to add, omit or substitute a party', 'O.20 r.12(1)-(2)'],
+                  ['Pleadings closed, no agreement', 'With leave', '"As may be just"; Ketteman principles; prejudice to the other party and to the system', 'O.20 r.5(1); Ketteman [1987] AC 189, 212F; Subba Alvin [2012] 4 HKLRD 640'],
+                  ['Court acting to determine the real question or correct an error', 'O.20 r.8', 'Own motion or on application — but only if necessary for disposing fairly of the matter or saving costs', 'O.20 r.8(1), (1A)'],
+                  ['Wrong name, limitation expired', 'With leave', 'Genuine mistake, not misleading, no reasonable doubt as to identity', 'O.20 r.5(3)'],
+                  ['Wrong capacity, limitation expired', 'With leave', 'The capacity was held at commencement or has since been acquired', 'O.20 r.5(4)'],
+                  ['New cause of action, limitation expired', 'With leave', 'Arises out of the same or substantially the same facts as one already relied on — significant, not complete, overlap', 'O.20 r.5(5); Leung Kin Fook (No 2) [1997] 1 HKC 524 (CA)'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The without-leave right is ONCE, and it expires at the CLOSE OF PLEADINGS — which is why the O.18 r.20 date has to be fixed first, and why an outstanding request for particulars (which does not postpone that date under r.20(2)) can cost a party the right.',
+                'The consequential-amendment periods are asymmetric: the defence gets the LATER of the rules\' period and 14 days (r.3(2)(b)); the reply gets 14 days flat (r.3(3)(b)).',
+                'Amending the WRIT without leave is narrower than amending a pleading: O.20 r.1(3) excludes parties, capacity, new causes of action and an indorsed statement of claim.',
+                'Agreement cannot add, omit or substitute a party: O.20 r.12(2).',
+                'The Ketteman test is PREJUDICE, not lateness or fault. Lateness matters only through the prejudice it causes — and, post-CJR, prejudice to the system counts too (Subba Alvin).',
+                'The limitation trigger in r.5(2) is a period "current at the DATE OF ISSUE OF THE WRIT", not at the date of the application.',
+                'r.5(5) requires the new cause of action to overlap a cause of action for which THE APPLYING PARTY has already claimed relief in the action — not merely any fact in the case.',
+                'An order granting leave CEASES TO HAVE EFFECT if the amendment is not made within the period specified, or 14 days if none: O.20 r.9(1).',
+                'Costs on a without-leave amendment fall on the amending party by default: O.62 r.3(3). On a leave application the usual order is two sets, and only the second follows the event.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Fix the close of pleadings before anything else — it decides which route is available.',
+                'Take the routes in order: without leave, by agreement, then with leave. Do not go straight to a summons if the without-leave right is still alive.',
+                'On a leave application, structure the argument as Ketteman does: is the amendment necessary to decide the real questions; what is the prejudice; can costs cure it.',
+                'Where limitation has run, identify which of r.5(3), (4) or (5) is relied on and satisfy its specific test — they are three separate gateways, not one.',
+                'Draft the summons with the three limbs the lecture models: leave to file and serve the amended pleading within a stated period; leave to the other side to amend in response; and costs.',
+                'Deal with costs expressly — two sets, and say which way each goes.',
+                'Diary the O.20 r.9(1) deadline the moment leave is granted.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying for leave when the without-leave right under r.3(1) is still available.',
+                'Treating the reply amendment period as "the later of" — it is 14 days flat.',
+                'Assuming a party can be added by consent.',
+                'Arguing lateness as a freestanding reason to refuse leave, rather than through prejudice.',
+                'Measuring the limitation period from the date of the application rather than the date of issue of the writ.',
+                'Relying on r.5(5) where the new cause of action overlaps facts in the case generally but not a cause of action for which the applicant has already claimed relief.',
+                'Obtaining leave and then missing the r.9(1) period, so that the order lapses.',
+                'Producing an amended pleading without the colour convention, the r.10(2) indorsement, or a fresh statement of truth.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A party may, without the leave of the Court, amend any pleading of his once at any time before the pleadings are deemed to be closed and, where he does so, he must serve the amended pleading on the opposite party.', cite: 'O.20 r.3(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'An amendment may be allowed under paragraph (2) notwithstanding that the effect of the amendment will be to add or substitute a new cause of action if the new cause of action arises out of the same facts or substantially the same facts as a cause of action in respect of which relief has already been claimed in the action by the party applying for leave to make the amendment.', cite: 'O.20 r.5(5), Rules of the High Court (Cap. 4A)' },
+                { text: 'The costs of and occasioned by any amendment made without leave in the writ of summons or any pleading shall be borne by the party making the amendment, unless the Court otherwise orders.', cite: 'O.62 r.3(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Amending a pleading without leave', 'O.20 r.3(1)', 'Once, at any time before the close of pleadings; the amended pleading must be served'],
+                  ['Amending the writ without leave', 'O.20 r.1(1), (3)(a)-(c)', 'Once before the close of pleadings — but not to add, omit or substitute a party, alter capacity, add or substitute a new cause of action, or amend an indorsed statement of claim, unless before service'],
+                  ['Consequential amendment of the defence', 'O.20 r.3(2)(a)-(b)', 'D may amend; the period is the rules\' period for his defence or 14 days after the amended statement of claim is served, whichever expires later'],
+                  ['Consequential amendment of the reply', 'O.20 r.3(3)(a)-(b)', 'P may amend; the period is 14 days after the amended defence is served'],
+                  ['Counterclaims', 'O.20 r.3(4)-(5)', 'References to defence and reply include counterclaim and defence to counterclaim; r.3(2) applies to an amended counterclaim served on a non-plaintiff party'],
+                  ['If the other party does not amend', 'O.20 r.3(6)', 'He is taken to rely on his existing pleading in answer to the amended one, and O.18 r.14(2) applies as if the amended pleading had been served when the original was'],
+                  ['Disallowing an amendment made without leave', 'O.20 r.4(1)-(3)', 'Apply within 14 days of service; struck out if leave would have been refused had it been sought at the date of the amendment; terms as to costs as the Court thinks just'],
+                  ['Amendment with leave', 'O.20 r.5(1)', 'At any stage, P may amend the writ and any party its pleadings, on such terms as to costs or otherwise as may be just'],
+                  ['The Court\'s own-motion power', 'O.20 r.8(1), (1A)', 'To determine the real question in controversy or correct a defect or error — but a pleading may not be ordered amended unless necessary for disposing fairly of the matter or saving costs'],
+                  ['The discretion', 'Ketteman v Hansel Properties Ltd [1987] AC 189, 212F', 'Allow amendments necessary to decide the real questions; do not refuse solely for honest fault or mistake; however blameworthy short of bad faith and however late, generally allow unless it prejudices the other party; no injustice where costs can compensate'],
+                  ['Prejudice to the system', 'Subba Alvin v Houng Kee (Asia) Ltd [2012] 4 HKLRD 640', 'Refused for prejudice to the other party preparing a new case late, and to the system in vacating trial dates'],
+                  ['Amendment by agreement', 'O.20 r.12(1)-(2)', 'Any pleading, by written agreement, at any stage — but not to add, omit or substitute a party'],
+                  ['Limitation: the trigger', 'O.20 r.5(2)', 'Where the application is made after a limitation period current at the DATE OF ISSUE OF THE WRIT has expired, leave may nevertheless be granted if the Court thinks it just'],
+                  ['Correcting a name', 'O.20 r.5(3)', 'Allowed even if the effect is to substitute a new party, if the mistake was genuine and not misleading or such as to cause reasonable doubt as to identity'],
+                  ['Altering capacity', 'O.20 r.5(4); White Book §20/8/18', 'If the new capacity was held at the commencement of proceedings or has since been acquired — e.g. probate granted after issue of the writ'],
+                  ['New cause of action', 'O.20 r.5(5); Leung Kin Fook v Eastern Worldwide Co Ltd (No 2) [1997] 1 HKC 524 (CA)', 'Same or substantially the same facts as a cause of action for which the applicant has already claimed relief; construed broadly and liberally, requiring significant not complete overlap'],
+                  ['Leave lapses if unused', 'O.20 r.9(1)-(2)', 'The order ceases to have effect unless the amendment is made within the period specified, or 14 days if none, subject to the Court\'s power to extend and to any directions'],
+                  ['Mechanics and format', 'O.20 r.10(1)-(2); PD 19.1 §2', 'A fresh document where alterations would be difficult to read; an indorsement stating the amendment, its date and the order or rule relied on; red, green, violet, yellow for successive amendments'],
+                  ['Verification', 'O.20 r.13(1)-(2)', 'Amendments to a pleading or to its particulars must be verified by a statement of truth'],
+                  ['Costs of the amendment', 'O.62 r.3(3)', 'Borne by the amending party unless the Court otherwise orders'],
+                  ['Costs on a leave application', 'Lessy SARL v Pacific Star Development Ltd [1996] 2 HKC 326 (HC), 327B-C; Wong Wai Lung v Bondfield Development Ltd (CACV 214/2006)', 'The usual order is two sets — costs of and occasioned by the amendment to the other side in any event, and costs of the hearing to the successful party — but the Court retains its discretion'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
+              { session: 'LG4', issue: 'pleading-in-the-alternative', label: 'Pleading in the alternative' },
+              { session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+            ],
+          },
+
+          {
+            id: 'striking-out',
+            title: 'Striking out a pleading (O.18 r.19)',
+            summary: 'The four grounds, the evidence rule that splits them, and the plain-and-obvious threshold.',
+            triggers: {
+              bullets: [
+                'A claim is said to be hopeless in law.',
+                'A pleading makes irrelevant allegations of dishonesty against the other side.',
+                'A pleading is so prolix or ambiguous that a fair trial would be delayed.',
+                'The same dispute has already been litigated and decided.',
+                'A pleading has been served without a statement of truth.',
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Running a strike-out',
+                steps: [
+                  {
+                    id: 'what',
+                    label: 'What striking out is',
+                    detail: 'The Court orders the removal of a pleading, or part of it, from the Court file, so that it no longer forms part of the record between the parties. Note that O.18 r.19(1) also empowers the Court to order the pleading AMENDED instead, and to order the action STAYED OR DISMISSED, or judgment entered accordingly — so the application is not all-or-nothing.',
+                  },
+                  {
+                    id: 'grounds',
+                    label: 'Identify the ground — there are four, and they are not interchangeable',
+                    points: [
+                      'r.19(1)(a) — it DISCLOSES NO REASONABLE CAUSE OF ACTION OR DEFENCE. That is: the legal basis of the claim is unarguable or almost incontestably bad, or bound to fail. It is NOT enough that there is only a slim chance of success, and there is no striking out where the legal viability of the cause of action is sensitive to the facts (Blue Book O.18 [5853]).',
+                      'r.19(1)(b) — it is SCANDALOUS, FRIVOLOUS OR VEXATIOUS. Scandalous: it makes an imputation — dishonesty, misconduct, outrageous conduct or bad faith — AND is irrelevant (Textbook §12-154); casting irrelevant aspersions on the other side\'s character. Frivolous: not capable of reasoned argument, without foundation, or cannot possibly succeed — a claim pursued though the party or its lawyers know it has no merit. Vexatious: oppressive, or brought or continued in bad faith — for instance to harass.',
+                      'r.19(1)(c) — it may PREJUDICE, EMBARRASS OR DELAY THE FAIR TRIAL of the action. Pleading ambiguously, with irrelevant allegations, with unnecessarily lengthy statements of fact, or otherwise infringing the drafting rules (Blue Book O.18 [5853.2]).',
+                      'r.19(1)(d) — it is OTHERWISE AN ABUSE OF THE PROCESS of the court. Re-litigation of matters previously decided, multiplicity of proceedings, lack of intention to proceed to trial (Blue Book O.18 [5853.3]).',
+                      'Note the word "otherwise" in (d): it signals that (a) to (c) are themselves species of abuse, so (d) catches what the first three do not.',
+                    ],
+                  },
+                  {
+                    id: 'threshold',
+                    label: 'State the threshold — it is high, and it is the answer to most questions',
+                    points: [
+                      'The power is DRASTIC, to be used SPARINGLY, and only in PLAIN AND OBVIOUS cases — a last resort: New China Hong Kong Group Ltd (in liq) v Ng Kwai Kai Kenneth [2011] HKCU 276.',
+                      'So the analysis is not "would this claim probably fail?" but "is it plain and obvious that it must?"',
+                      'Where the pleading could be cured, amendment (which r.19(1) itself permits the Court to order) is the proportionate answer, and it is the answer the underlying objectives push towards.',
+                    ],
+                  },
+                  {
+                    id: 'evidence',
+                    label: 'The evidence rule — this is what splits the procedure in two',
+                    points: [
+                      'O.18 r.19(2): NO EVIDENCE shall be admissible on an application under paragraph (1)(a). So a ground (a) application is judged BY REFERENCE TO THE PLEADINGS ALONE.',
+                      'Therefore: relying on ground (a) — issue an INTER PARTES SUMMONS WITHOUT an affidavit.',
+                      'Relying on grounds (b), (c) or (d) — issue an INTER PARTES SUMMONS TOGETHER WITH an affidavit, since evidence is admissible to show why the action cannot be maintained.',
+                      'Pleading grounds in the alternative is common, but the evidence must then be confined to the non-(a) grounds.',
+                    ],
+                  },
+                  {
+                    id: 'procedure',
+                    label: 'Procedure and timing',
+                    points: [
+                      'The Court may act on its OWN MOTION or on application, at ANY STAGE of the proceedings: O.18 r.19(1).',
+                      'Do it as promptly as possible, to avoid wasting time and costs on issues that should not be in the case.',
+                      'The applicant must WRITE TO THE RESPONDENT setting out the broad grounds of the intended application AT LEAST FIVE CLEAR WORKING DAYS before the day of the hearing: Practice Direction 19.1 §5.',
+                      'O.18 r.19(3): the rule applies, so far as applicable, to an originating summons and a petition as if it were a pleading.',
+                    ],
+                  },
+                  {
+                    id: 'sot',
+                    label: 'The separate route: no statement of truth',
+                    detail: 'A pleading not verified by a statement of truth may be struck out under O.41A r.6(1), on the application of any party (r.6(2)) — a discretion, and a different power from O.18 r.19. The alternative is an order under O.41A r.8 requiring the party to verify. Consider which is proportionate before applying to strike out.',
+                  },
+                ],
+              },
+            },
+            skeleton: {
+              table: {
+                headers: ['Ground', 'What it means', 'Evidence?', 'Source'],
+                rows: [
+                  ['No reasonable cause of action or defence', 'Legal basis unarguable or almost incontestably bad; bound to fail — but not merely a slim chance of success, and not where viability is fact-sensitive', 'NO — summons without affidavit; pleadings alone', 'O.18 r.19(1)(a), (2); Blue Book O.18 [5853]'],
+                  ['Scandalous', 'An imputation of dishonesty, misconduct, outrageous conduct or bad faith AND irrelevant', 'Yes — summons with affidavit', 'O.18 r.19(1)(b); Textbook §12-154'],
+                  ['Frivolous', 'Not capable of reasoned argument, without foundation, cannot possibly succeed', 'Yes — summons with affidavit', 'O.18 r.19(1)(b)'],
+                  ['Vexatious', 'Oppressive, or brought or continued in bad faith — e.g. to harass', 'Yes — summons with affidavit', 'O.18 r.19(1)(b)'],
+                  ['May prejudice, embarrass or delay a fair trial', 'Ambiguous pleading, irrelevant allegations, unnecessary length, breach of the drafting rules', 'Yes — summons with affidavit', 'O.18 r.19(1)(c); Blue Book O.18 [5853.2]'],
+                  ['Abuse of process', 'Re-litigation of decided matters, multiplicity of proceedings, no intention to proceed to trial', 'Yes — summons with affidavit', 'O.18 r.19(1)(d); Blue Book O.18 [5853.3]'],
+                  ['No statement of truth', 'A separate power; the Court MAY strike out, or may instead order verification', 'Application by any party', 'O.41A rr.6, 8'],
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The threshold — plain and obvious, sparingly, a last resort — is the point most answers turn on. Lead with it.',
+                'Ground (a) admits NO evidence at all (r.19(2)). Filing an affidavit on a ground (a) application is a procedural error, and it also signals that the case is really a (b)-(d) case.',
+                'Scandalous has TWO limbs: the imputation and irrelevance. A relevant allegation of dishonesty — fraud properly pleaded and particularised — is not scandalous.',
+                'r.19(1) lets the Court order the pleading AMENDED rather than struck out, and lets it stay or dismiss the action or enter judgment. Address the alternatives.',
+                'There is no striking out where the legal viability of the cause of action is sensitive to the facts (Blue Book O.18 [5853]) — that is a trial question.',
+                'PD 19.1 §5 requires a letter setting out the broad grounds at least five CLEAR WORKING days before the hearing. Missing it is its own problem.',
+                'A missing statement of truth is O.41A r.6, not O.18 r.19 — and the Court may order verification instead (r.8).',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Name the ground by its sub-paragraph and apply its own test — the four grounds have four different tests.',
+                'State the plain-and-obvious threshold early, then show why these facts meet or fall short of it.',
+                'Deal with the evidence question expressly, because it decides whether an affidavit is filed.',
+                'Where the defect is curable, say so and address why striking out rather than amendment is (or is not) proportionate.',
+                'Advise on the PD 19.1 §5 letter and its timing as part of the procedural answer.',
+                'If acting for the respondent, the first move is usually to propose an amendment that cures the defect.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Filing an affidavit in support of a ground (a) application.',
+                'Treating "the claim will probably fail" as enough.',
+                'Calling a relevant allegation of dishonesty scandalous.',
+                'Ignoring the Court\'s power under r.19(1) to order an amendment instead.',
+                'Applying to strike out without the PD 19.1 §5 letter.',
+                'Using O.18 r.19 for a missing statement of truth instead of O.41A r.6.',
+                'Delaying the application, and so wasting costs on issues that should have been removed.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'No evidence shall be admissible on an application under paragraph (1)(a).', cite: 'O.18 r.19(2), Rules of the High Court (Cap. 4A)' },
+                { text: 'This rule shall, so far as applicable, apply to an originating summons and a petition as if the summons or petition, as the case may be, were a pleading.', cite: 'O.18 r.19(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['The power', 'O.18 r.19(1)', 'The Court may, of its own motion or on application, at any stage, order struck out OR AMENDED any pleading or writ indorsement, or anything in it, on the four grounds — and may order the action stayed or dismissed or judgment entered accordingly'],
+                  ['Ground (a)', 'O.18 r.19(1)(a); Blue Book O.18 [5853]', 'Discloses no reasonable cause of action or defence: unarguable or almost incontestably bad, bound to fail; not where there is a slim chance of success, nor where legal viability is fact-sensitive'],
+                  ['Ground (b)', 'O.18 r.19(1)(b); Textbook §12-154', 'Scandalous (an imputation of dishonesty, misconduct, outrageous conduct or bad faith, AND irrelevant), frivolous (not capable of reasoned argument, without foundation, cannot possibly succeed) or vexatious (oppressive, or brought or continued in bad faith)'],
+                  ['Ground (c)', 'O.18 r.19(1)(c); Blue Book O.18 [5853.2]', 'May prejudice, embarrass or delay the fair trial — ambiguity, irrelevant allegations, undue length, infringing the drafting rules'],
+                  ['Ground (d)', 'O.18 r.19(1)(d); Blue Book O.18 [5853.3]', 'Otherwise an abuse of the process — re-litigation of decided matters, multiplicity of proceedings, no intention to proceed to trial'],
+                  ['The threshold', 'New China Hong Kong Group Ltd (in liq) v Ng Kwai Kai Kenneth [2011] HKCU 276', 'A drastic power, to be used sparingly, and only in plain and obvious cases — a last resort'],
+                  ['No evidence on ground (a)', 'O.18 r.19(2)', 'Judged by reference to the pleadings alone; inter partes summons without an affidavit'],
+                  ['Evidence on grounds (b)-(d)', 'O.18 r.19(1)(b)-(d)', 'Inter partes summons together with an affidavit showing why the action cannot be maintained'],
+                  ['Originating summonses and petitions', 'O.18 r.19(3)', 'The rule applies so far as applicable, as if the summons or petition were a pleading'],
+                  ['Advance notice', 'Practice Direction 19.1 §5', 'The applicant must write to the respondent the broad grounds of the intended application at least five clear working days before the day of the hearing'],
+                  ['Unverified pleading', 'O.41A rr.6(1)-(2), 8(1)-(2)', 'A separate power: the Court may by order strike out a pleading not verified by a statement of truth, on any party\'s application — or may instead order the person to verify it'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'amending-pleadings', label: 'Amending pleadings' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG4', issue: 'further-and-better-particulars', label: 'Further and better particulars' },
+              { session: 'LG4', issue: 'what-pleadings-do', label: 'What pleadings are and why they matter' },
+            ],
+          },
+        ],
+      },
+    },
+
     SG1: {
       kind: 'SG',
       date: '2026-09-09/10',
