@@ -787,7 +787,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       '(a) the date of service is deemed, unless the contrary is shown, to be the SEVENTH DAY (ignoring O.3 r.2(5)) after the date the copy was sent or inserted.',
                       'Because O.3 r.2(5) is expressly ignored, Saturdays, Sundays and public holidays are counted within those 7 days.',
-                      '(b) the affidavit proving due service must state (i) that in the deponent\'s opinion (or, if the deponent is P\'s solicitor or their employee, in P\'s opinion) the copy will have come to D\'s knowledge within 7 days thereafter; and (ii) for postal service, that the copy has not been returned to P through the post undelivered.',
+                      {
+                        text: '(b) the affidavit proving due service must state two things:',
+                        points: [
+                          '(i) that in the deponent\'s opinion — or, if the deponent is P\'s solicitor or their employee, in P\'s opinion — the copy will have come to D\'s knowledge within 7 days thereafter.',
+                          '(ii) for postal service, that the copy has not been returned to P through the post undelivered.',
+                        ],
+                      },
                       'If P knows D is no longer at the address, the deponent cannot honestly make that statement of belief.',
                     ],
                   },
@@ -1478,7 +1484,15 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'r.1(1)(a) — relief is sought against a person domiciled or ordinarily resident within the jurisdiction.',
                       'r.1(1)(c) — the claim is brought against a person duly served within or out of the jurisdiction, and a person out of the jurisdiction is a necessary or proper party to it.',
-                      'r.1(1)(d) — a claim to enforce, rescind, dissolve, annul or otherwise affect a contract, or for damages or other relief for its breach, where the contract (i) was made within the jurisdiction, (ii) was made by or through an agent trading or residing within the jurisdiction for a principal trading or residing out of it, (iii) is by its terms or by implication governed by Hong Kong law, or (iv) contains a term that the Court of First Instance shall have jurisdiction.',
+                      {
+                        text: 'r.1(1)(d) — a claim to enforce, rescind, dissolve, annul or otherwise affect a contract, or for damages or other relief for its breach, where the contract falls into any one of four cases:',
+                        points: [
+                          '(i) was made within the jurisdiction.',
+                          '(ii) was made by or through an agent trading or residing within the jurisdiction for a principal trading or residing out of it.',
+                          '(iii) is by its terms or by implication governed by Hong Kong law.',
+                          '(iv) contains a term that the Court of First Instance shall have jurisdiction.',
+                        ],
+                      },
                       'r.1(1)(e) — a claim in respect of a breach COMMITTED within the jurisdiction of a contract made within or out of it. This is a separate gateway from (d): read them together, because a contract made abroad but breached here comes in under (e), not (d).',
                       'r.1(1)(f) — the claim is founded on a tort AND the damage was sustained, or resulted from an act committed, within the jurisdiction.',
                       'r.1(1)(g) — the whole subject-matter of the action is land situate within the jurisdiction.',
@@ -1501,7 +1515,15 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'Make the application: ex parte, on affidavit, with full and frank disclosure',
                     points: [
                       'Ex parte to a master, supported by an affidavit. Because it is ex parte, the duty of full and frank disclosure applies.',
-                      'O.11 r.4(1) prescribes what the affidavit must state: (a) the grounds on which the application is made; (b) that in the deponent\'s belief the plaintiff has a good cause of action; (c) in what place the defendant is, or probably may be found; and (d) where the application is under r.1(1)(c), the grounds for the deponent\'s belief that there is between the plaintiff and the person already served a REAL ISSUE which the plaintiff may reasonably ask the Court to try.',
+                      {
+                        text: 'O.11 r.4(1) prescribes what the affidavit must state — four matters, and the fourth applies only to a necessary-or-proper-party application:',
+                        points: [
+                          '(a) the grounds on which the application is made.',
+                          '(b) that in the deponent\'s belief the plaintiff has a good cause of action.',
+                          '(c) in what place the defendant is, or probably may be found.',
+                          '(d) where the application is under r.1(1)(c), the grounds for the deponent\'s belief that there is between the plaintiff and the person already served a REAL ISSUE which the plaintiff may reasonably ask the Court to try.',
+                        ],
+                      },
                       'The order granting leave MUST limit a time within which the defendant to be served must acknowledge service: O.11 r.4(4). That is why the 14-day rule in O.12 r.5(a) does not apply to service out.',
                       'An order giving leave to serve an originating summons out must likewise limit a time for acknowledgement: O.11 r.9(6).',
                     ],
@@ -1534,9 +1556,27 @@ window.COURSE_DETAILS.PCLL8010 = {
                     id: 'abroad',
                     label: 'Otherwise: service through governments, judicial authorities or consuls (O.11 r.6)',
                     points: [
-                      'Hague Convention country — service may be through the authority designated under the Convention for that country, or, if that country\'s law permits, through its judicial authorities or a British consular authority: O.11 r.6(2A)(a)-(b).',
-                      'Country with some other Civil Procedure Convention — through that country\'s judicial authorities, or through a British consular authority subject to any nationality restriction in the convention: O.11 r.6(2)(a)-(b).',
-                      'No convention at all — through the government of that country where it is willing to effect service, or through a British consular authority except where that is contrary to local law: O.11 r.6(3)(a)-(b).',
+                      {
+                        text: 'Hague Convention country — O.11 r.6(2A)(a)-(b) gives two routes:',
+                        points: [
+                          '(a) through the authority designated under the Convention for that country.',
+                          '(b) if that country\'s law permits, through its judicial authorities or a British consular authority.',
+                        ],
+                      },
+                      {
+                        text: 'Country with some other Civil Procedure Convention — O.11 r.6(2)(a)-(b):',
+                        points: [
+                          '(a) through the judicial authorities of that country.',
+                          '(b) through a British consular authority, subject to any nationality restriction in the convention.',
+                        ],
+                      },
+                      {
+                        text: 'No convention at all — O.11 r.6(3)(a)-(b):',
+                        points: [
+                          '(a) through the government of that country, where it is willing to effect service.',
+                          '(b) through a British consular authority, except where that is contrary to local law.',
+                        ],
+                      },
                       'O.11 r.6 does not apply to service in the UK, the Channel Islands, the Isle of Man, any independent Commonwealth country, British protectorate or colony, or the Republic of Ireland, unless service is pursuant to r.6(2A): O.11 r.6(1)(a)-(e).',
                       'Procedure: lodge a request in the Registry with a copy of the writ and an additional copy for each person to be served (O.11 r.6(4)); a translation into the official language of the place of service is required unless that language is or includes English (O.11 r.6(5)), certified correct with the translator\'s name, address and qualification (O.11 r.6(6)); the Registrar sends the documents to the Chief Secretary for Administration (O.11 r.6(7)).',
                       'The request must contain the undertaking to be personally responsible for the Chief Secretary\'s expenses: O.11 r.8.',
@@ -1699,7 +1739,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'A natural person: by a solicitor or in person: O.12 r.1(1).',
                       'A body corporate: by a solicitor, OR by a person duly authorised to act on its behalf — but that authorised person may take NO FURTHER STEP in the action, unless leave is given under r.1(2A) for the company to be represented by one of its directors: O.12 r.1(2).',
-                      'The r.1(2A) application is ex parte to a Registrar, supported by an affidavit made by the director and filed with the application, stating and verifying the reasons why leave should be given; the board resolution authorising the director to appear must be exhibited to the affidavit: O.12 r.1(2A)(a)-(b).',
+                      {
+                        text: 'The r.1(2A) application to let a director represent the company is ex parte to a Registrar, and has two components — O.12 r.1(2A)(a)-(b):',
+                        points: [
+                          '(a) an affidavit made by the director and filed with the application, stating and verifying the reasons why leave should be given.',
+                          '(b) the board resolution authorising the director to appear, exhibited to that affidavit.',
+                        ],
+                      },
                       'No appeal lies from the Registrar\'s order giving or refusing leave (r.1(2B)); the Court may revoke leave at any time (r.1(2C)); and no appeal lies from a revocation (r.1(2D)).',
                       'A person under disability acts through a next friend or guardian ad litem: O.80 r.2.',
                       'Where two or more defendants acknowledge by the same solicitor at the same time, only one acknowledgement need be completed: O.12 r.1(4).',
@@ -1912,7 +1958,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'r.8(1) — the Court HAS NO jurisdiction, or the writ or service was irregular: use this for a defect in the writ or its service, a claim that falls outside the O.11 r.1 gateways, or an order extending the writ\'s validity that should not have been made.',
                       'r.8(2) — the Court SHOULD NOT EXERCISE a jurisdiction it has: use this for forum non conveniens, an exclusive jurisdiction clause, or parallel foreign proceedings.',
-                      'The r.8(2A) grounds are set out expressly: (a) considering the best interests and convenience of the parties and witnesses, the proceedings should be conducted in another court; (b) the defendant is entitled to rely on an agreement to which the plaintiff is a party excluding the Court\'s jurisdiction; (c) other proceedings are pending between the same parties in another court on the same cause of action — and the limb is also open "on any other ground".',
+                      {
+                        text: 'The r.8(2A) grounds are set out expressly — and the limb is also open "on any other ground":',
+                        points: [
+                          '(a) considering the best interests and convenience of the parties and the witnesses, the proceedings should be conducted in another court.',
+                          '(b) the defendant is entitled to rely on an agreement to which the plaintiff is a party, excluding the Court\'s jurisdiction.',
+                          '(c) other proceedings are pending between the same parties in another court on the same cause of action.',
+                        ],
+                      },
                       'The two limbs are not exclusive of each other: a defendant served out may challenge the gateway under r.8(1) and seek a stay under r.8(2) in the same summons.',
                     ],
                   },
@@ -1920,8 +1973,28 @@ window.COURSE_DETAILS.PCLL8010 = {
                     id: 'relief',
                     label: 'Ask for the right relief',
                     points: [
-                      'Under r.8(1): (a) setting aside the writ or its service; (b) a declaration that the writ has not been duly served; (c) discharge of an order giving leave to serve out; (d) discharge of an order extending the writ\'s validity; (e) protection or release of seized property; (f) discharge of a freezing-type order; (g) a declaration that the Court has no jurisdiction over D in respect of the subject-matter, claim or relief; (ga) an order staying the proceedings; (h) such other relief as may be appropriate.',
-                      'Under r.8(2): (a) a declaration that the Court should not exercise any jurisdiction it may have; (b) an order staying the proceedings; (c) such other relief as may be appropriate, including the relief in r.8(1)(e) or (f).',
+                      {
+                        text: 'Under r.8(1) the reliefs available are:',
+                        points: [
+                          '(a) setting aside the writ or its service.',
+                          '(b) a declaration that the writ has not been duly served.',
+                          '(c) discharge of an order giving leave to serve out.',
+                          '(d) discharge of an order extending the writ\'s validity.',
+                          '(e) protection or release of seized property.',
+                          '(f) discharge of a freezing-type order.',
+                          '(g) a declaration that the Court has no jurisdiction over D in respect of the subject-matter, claim or relief.',
+                          '(ga) an order staying the proceedings.',
+                          '(h) such other relief as may be appropriate.',
+                        ],
+                      },
+                      {
+                        text: 'Under r.8(2) the reliefs available are:',
+                        points: [
+                          '(a) a declaration that the Court should not exercise any jurisdiction it may have.',
+                          '(b) an order staying the proceedings.',
+                          '(c) such other relief as may be appropriate, including the relief in r.8(1)(e) or (f).',
+                        ],
+                      },
                       'Where a stay is sought on forum grounds, the foreign forum said to be appropriate must be NAMED in the summons.',
                     ],
                   },
@@ -2599,7 +2672,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'Default (r.3(1)(b)): the party putting forward the verified document, or where appropriate his next friend or guardian ad litem; OR the legal representative of that party or next friend or guardian ad litem.',
                       'Witness statement or expert report (r.3(1)(a)): the maker of it.',
-                      'A body of persons, CORPORATE OR UNINCORPORATE (r.3(2)): a person holding a SENIOR POSITION in the body — for a corporation, any director, manager, secretary or other similar officer (r.3(4)(a)); for an unincorporated association, the corresponding person (r.3(4)(b)); for a public body or authority, a person duly authorised by it (r.3(4)(c)).',
+                      {
+                        text: 'A body of persons, CORPORATE OR UNINCORPORATE (r.3(2)): a person holding a SENIOR POSITION in the body — which r.3(4) defines:',
+                        points: [
+                          '(a) for a corporation, any director, manager, secretary or other similar officer.',
+                          '(b) for an unincorporated association, the corresponding person appropriate to it.',
+                          '(c) for a public body or authority, a person duly authorised by it.',
+                        ],
+                      },
                       'And that person must STATE IN THE STATEMENT OF TRUTH the office or position he holds: r.3(5).',
                       'A partnership (r.3(6)): one of the partners, or a person having the control or management of the partnership business.',
                       'A public officer (r.3(3)): the officer, or a person holding a senior position in the public body or authority to which the proceedings relate.',
@@ -2611,7 +2691,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'If the legal representative signs, understand what that signature means',
                     points: [
                       'He must sign IN HIS OWN NAME, and must not sign only in the name of the firm to which he belongs: O.41A r.3(10).',
-                      'O.41A r.4(3): the Court treats the signature as his statement that (a) the party authorised him to sign; (b) BEFORE SIGNING he had explained to the party that in signing he would be confirming the party\'s belief that the facts stated were true; and (c) BEFORE SIGNING he had informed the party of the possible consequences if it should subsequently appear the party did not have an honest belief in their truth.',
+                      {
+                        text: 'O.41A r.4(3): the Court treats a legal representative\'s signature as his statement of three things:',
+                        points: [
+                          '(a) the party authorised him to sign.',
+                          '(b) BEFORE SIGNING he had explained to the party that in signing he would be confirming the party\'s belief that the facts stated were true.',
+                          '(c) BEFORE SIGNING he had informed the party of the possible consequences if it should subsequently appear the party did not have an honest belief in their truth.',
+                        ],
+                      },
                       'So confirm all three in writing with the client before signing. The solicitor, not only the client, is exposed if the statement turns out to be false.',
                     ],
                   },
@@ -2639,7 +2726,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'If it is false — and note the gatekeeping',
                     points: [
                       'O.41A r.9(1): proceedings for contempt of court may be brought against a person who makes, or causes to be made, a false statement in a document verified by a statement of truth WITHOUT AN HONEST BELIEF IN ITS TRUTH.',
-                      'r.9(2): proceedings may be brought ONLY (a) by the Secretary for Justice or a person aggrieved by the false statement, AND (b) with the LEAVE OF THE COURT.',
+                      {
+                        text: 'r.9(2): proceedings may be brought ONLY where BOTH gates are passed:',
+                        points: [
+                          '(a) by the Secretary for Justice, or by a person aggrieved by the false statement.',
+                          '(b) AND with the LEAVE OF THE COURT.',
+                        ],
+                      },
                       'r.9(3): leave shall not be granted unless the Court is satisfied that punishment for contempt is PROPORTIONATE AND APPROPRIATE in relation to the false statement.',
                       'r.9(4): the rule is subject to, and without prejudice to, the general law of contempt.',
                       'Where the legal representative signed, the exposure is the legal representative\'s.',
@@ -2903,7 +2996,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'The rule applies only to "any pleading SUBSEQUENT TO A STATEMENT OF CLAIM" — so it bites on a defence, a reply, a defence to counterclaim, not on the statement of claim itself.',
                       'It requires a party to plead specifically any matter, FOR EXAMPLE performance, release, any relevant statute of limitation, fraud or any fact showing illegality — the list is illustrative, not exhaustive.',
-                      'And the test is three-limbed: a matter (a) which he alleges makes any claim or defence of the opposite party NOT MAINTAINABLE; or (b) which, if not specifically pleaded, might take the opposite party BY SURPRISE; or (c) which raises ISSUES OF FACT NOT ARISING out of the preceding pleading.',
+                      {
+                        text: 'And the test is three-limbed — a matter falling within any one of:',
+                        points: [
+                          '(a) which he alleges makes any claim or defence of the opposite party NOT MAINTAINABLE.',
+                          '(b) which, if not specifically pleaded, might take the opposite party BY SURPRISE.',
+                          '(c) which raises ISSUES OF FACT NOT ARISING out of the preceding pleading.',
+                        ],
+                      },
                       'So the right question is not "is this on a list?" but "does this matter fall within limb (a), (b) or (c)?"',
                     ],
                   },
@@ -2947,7 +3047,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'Knowledge and notice are a special case: O.18 r.12(4)',
                     points: [
                       'Knowledge is excepted from the r.12(1)(b) automatic requirement — so there is no strict need to particularise knowledge or notice at the outset.',
-                      'But where a party alleges as a fact that a person had knowledge or notice of some fact, matter or thing, the Court MAY, on such terms as it thinks just, order that party to serve particulars — (a) where knowledge is alleged, particulars of the facts relied on; (b) where notice is alleged, particulars of the notice: O.18 r.12(4).',
+                      {
+                        text: 'But where a party alleges as a fact that a person had knowledge or notice of some fact, matter or thing, the Court MAY, on such terms as it thinks just, order that party to serve particulars — O.18 r.12(4):',
+                        points: [
+                          '(a) where knowledge is alleged, particulars of the facts relied on.',
+                          '(b) where notice is alleged, particulars of the notice.',
+                        ],
+                      },
                       'Practical advice: give them anyway. It avoids an application (with its costs and delay), and you should in any event know why your client says the other side knew.',
                       'The lecture\'s worked example of particularised knowledge is the pre-contract Zoom meeting in which the plaintiff told the defendant\'s representative about the influencer collaboration that depended on the backdrop — the facts from which knowledge is inferred, pleaded as facts.',
                     ],
@@ -2967,7 +3073,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'Relying on a criminal conviction: O.18 r.7A',
                     points: [
                       'Section 62(1) of the Evidence Ordinance (Cap. 8) makes the fact of a criminal conviction, if relevant to the civil proceedings, admissible to prove commission of the offence; s62(2) means that once the conviction is proved, the defendant is taken to have committed the offence and all the acts constituting it UNLESS THE CONTRARY IS PROVED — so the burden shifts.',
-                      'To use it, the party must INCLUDE IN HIS PLEADING A STATEMENT OF HIS INTENTION, with particulars of (a) the conviction and the date thereof; (b) the court which made the conviction; and (c) the issue in the proceedings to which the conviction is relevant: O.18 r.7A(1).',
+                      {
+                        text: 'To use it, the party must INCLUDE IN HIS PLEADING A STATEMENT OF HIS INTENTION, with particulars of three matters — O.18 r.7A(1):',
+                        points: [
+                          '(a) the conviction and the date thereof.',
+                          '(b) the court which made the conviction.',
+                          '(c) the issue in the proceedings to which the conviction is relevant.',
+                        ],
+                      },
                       'O.18 r.7A(2) does the same for a finding of adultery under s63 of the Evidence Ordinance.',
                       'O.18 r.7A(3): the opposite party must in HIS pleading make any denial of the conviction, any allegation that it was erroneous, or any denial of its relevance.',
                       'The lecture\'s worked example pleads the defendants\' guilty pleas and convictions for driving and permitting to be driven a vehicle with defective tyres, naming the regulation, the offence provision, the magistracy and the case numbers.',
@@ -3260,7 +3373,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     label: 'Ask first: inconsistent with a PREVIOUS pleading, or within the SAME one?',
                     points: [
                       'Inconsistent with a PREVIOUS pleading of his own — O.18 r.10(1): a party shall not in any pleading make any allegation of fact, OR RAISE ANY NEW GROUND OF CLAIM, inconsistent with a previous pleading of his.',
-                      'Inconsistent within the SAME pleading — O.18 r.12A: a party MAY make an allegation of fact inconsistent with another allegation of fact in the same pleading IF (a) the party has REASONABLE GROUNDS for so doing, AND (b) the allegations are MADE IN THE ALTERNATIVE.',
+                      {
+                        text: 'Inconsistent within the SAME pleading — O.18 r.12A: a party MAY make an allegation of fact inconsistent with another allegation of fact in the same pleading, but only if BOTH limbs are satisfied:',
+                        points: [
+                          '(a) the party has REASONABLE GROUNDS for so doing.',
+                          '(b) AND the allegations are MADE IN THE ALTERNATIVE.',
+                        ],
+                      },
                       'The outline runs these together. They are different rules with different consequences, and identifying which one is engaged is the first step.',
                     ],
                   },
@@ -3410,7 +3529,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     id: 'pi',
                     label: 'If it is a personal injuries claim',
                     points: [
-                      'The plaintiff must serve WITH the statement of claim (a) a MEDICAL REPORT and (b) a STATEMENT OF THE SPECIAL DAMAGES CLAIMED: O.18 r.12(1A).',
+                      {
+                        text: 'The plaintiff must serve WITH the statement of claim two documents — O.18 r.12(1A):',
+                        points: [
+                          '(a) a MEDICAL REPORT.',
+                          '(b) a STATEMENT OF THE SPECIAL DAMAGES CLAIMED.',
+                        ],
+                      },
                       'If they are not served with it, the Court may specify a period within which they are to be provided, or make such other order as it thinks fit — including dispensing with the requirement or staying the proceedings: O.18 r.12(1B).',
                       'O.18 r.12(1C) defines both: the medical report must substantiate ALL the personal injuries alleged and be one the plaintiff proposes to adduce in evidence at trial; the statement of special damages must give full particulars of expenses and losses already incurred and an ESTIMATE of any future expenses and losses, including loss of earnings and of pension rights.',
                     ],
@@ -3537,7 +3662,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     id: 'deny',
                     label: 'If you deny, r.13(5) imposes two further duties',
                     points: [
-                      'Where an allegation is traversed BY A DENIAL, the denying party must in his defence or defence to counterclaim (a) STATE HIS REASONS for doing so; and (b) if he intends to put forward a DIFFERENT VERSION OF EVENTS from the claimant\'s, STATE HIS OWN VERSION.',
+                      {
+                        text: 'Where an allegation is traversed BY A DENIAL, the denying party must in his defence or defence to counterclaim — O.18 r.13(5)(a)-(b):',
+                        points: [
+                          '(a) STATE HIS REASONS for doing so.',
+                          '(b) and, if he intends to put forward a DIFFERENT VERSION OF EVENTS from the claimant\'s, STATE HIS OWN VERSION.',
+                        ],
+                      },
                       'Practice guidance on when to use which: ADMIT where there is really no controversy (White Book §18/13/2); DENY where it is within the defendant\'s own knowledge that the allegation is false (Blue Book O.18 [5606]); NOT ADMIT where the defendant has no knowledge of the truth of the allegation and wishes to put the plaintiff to proof (Blue Book O.18 [5606]).',
                       'A defendant who denies must set out his POSITIVE case; otherwise he is not entitled to call evidence of fact contrary to the plaintiff\'s contention (White Book §18/13/5).',
                     ],
@@ -3717,7 +3848,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'O.20 r.3(1): a party may, WITHOUT LEAVE, amend ANY PLEADING of his ONCE at any time BEFORE THE PLEADINGS ARE DEEMED TO BE CLOSED; and where he does so he must SERVE the amended pleading on the opposite party.',
                       'The plaintiff has a parallel right to amend THE WRIT once before the close of pleadings (O.20 r.1(1)) — but NOT for adding, omitting or substituting a party, altering the capacity in which a party sues or is sued, adding or substituting a new cause of action, or amending an indorsed statement of claim, unless done before service: O.20 r.1(3)(a)-(c).',
-                      'Consequential amendments — and note the asymmetry the outline flattens. Amended statement of claim served on D: D may amend his defence, and the period is the period fixed by the rules for his defence OR 14 days after service of the amended statement of claim, WHICHEVER EXPIRES LATER (O.20 r.3(2)(a)-(b)). Amended defence served on P: P may amend his reply, and the period is simply 14 days after service of the amended defence (O.20 r.3(3)(a)-(b)) — no "whichever is later".',
+                      {
+                        text: 'Consequential amendments — and note the asymmetry the outline flattens:',
+                        points: [
+                          'Amended statement of claim served on D: D may amend his defence, and the period is the period fixed by the rules for his defence OR 14 days after service of the amended statement of claim, WHICHEVER EXPIRES LATER (O.20 r.3(2)(a)-(b)).',
+                          'Amended defence served on P: P may amend his reply, and the period is simply 14 days after service of the amended defence (O.20 r.3(3)(a)-(b)) — no "whichever is later".',
+                        ],
+                      },
                       'O.20 r.3(4): references to a defence and a reply include a counterclaim and a defence to counterclaim. O.20 r.3(5) applies r.3(2) where an amended counterclaim is served on a non-plaintiff party.',
                       'O.20 r.3(6): if a party who has already pleaded does not amend, he is taken to rely on his existing pleading in answer to the amended one, and O.18 r.14(2) has effect as if the amended pleading had been served when the original was.',
                       'Costs: the costs of and occasioned by any amendment made without leave in the writ of summons or any pleading are borne by the party making the amendment, unless the Court otherwise orders: O.62 r.3(3).',
@@ -3755,7 +3892,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                     points: [
                       'Ketteman v Hansel Properties Ltd [1987] AC 189 at 212F gives the principles: amendments should be made as are necessary to enable the real questions in controversy to be decided; they should not be refused solely because they result from an honest fault or mistake, since it is not the function of the court to punish parties for mistakes in the conduct of their cases; however blameworthy (short of bad faith) the failure to plead earlier, and however late the application, the Court should generally allow the amendment UNLESS IT WILL PREJUDICE THE OTHER PARTY; and there is no injustice if the other party can be COMPENSATED BY APPROPRIATE ORDERS AS TO COSTS.',
                       'Nowadays that is read subject to the O.1A underlying objectives. So prejudice is assessed twice over: to the other party, and to the system.',
-                      'In Subba Alvin v Houng Kee (Asia) Ltd [2012] 4 HKLRD 640 leave was refused because of prejudice (i) to the other party, having to prepare a new case at a late stage; and (ii) to the whole system, since the trial dates would have to be vacated to give that party time.',
+                      {
+                        text: 'In Subba Alvin v Houng Kee (Asia) Ltd [2012] 4 HKLRD 640 leave was refused for prejudice on two fronts:',
+                        points: [
+                          '(i) to the other party, having to prepare a new case at a late stage.',
+                          '(ii) to the whole system, since the trial dates would have to be vacated to give that party time.',
+                        ],
+                      },
                       'Costs on a leave application: the Court retains a discretion (Wong Wai Lung v Bondfield Development Ltd (CACV 214/2006)), but the usual order is TWO SETS — the costs of and occasioned by the amendment to the other side in any event; and the costs of the hearing to whoever wins the argument about whether leave should be granted: Lessy SARL v Pacific Star Development Ltd [1996] 2 HKC 326 (HC), per Yam J at 327B-C.',
                     ],
                   },

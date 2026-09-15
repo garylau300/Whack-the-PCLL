@@ -989,22 +989,38 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   color: var(--accent-text); margin-bottom: 2px;
 }
 
-/* Notes bullets as tick-off checkboxes. The checkbox is an affordance, not
-   the content, so it stays visually quiet and the text keeps full contrast
-   until it is ticked — a checked point dims and strikes through so the
-   remaining work is what stands out. */
-.note-checks { list-style: none; padding: 0; margin: 6px 0; display: grid; gap: 2px; }
-.note-check > label {
+/* The answering flowchart as a three-level checklist: step > point >
+   sub-point. The checkbox is an affordance, not the content, so text keeps
+   full contrast until it is ticked; a completed row dims and strikes through
+   so what is left to work through is what stands out. A parent that is only
+   part-done renders indeterminate and gets the dashed rule, which is the
+   signal that there is unfinished work nested inside it. */
+.exam-flow--checkable .exam-flow-label { display: block; }
+.exam-flow-check {
   display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: start;
-  padding: 3px 4px; border-radius: var(--radius-sm); cursor: pointer;
+  padding: 2px 4px; margin-left: -4px; border-radius: var(--radius-sm);
+  cursor: pointer;
 }
-.note-check > label:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
-.note-check input[type="checkbox"] {
-  margin: 0.25em 0 0; width: 15px; height: 15px; flex: none;
+.exam-flow-check:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.exam-flow-check:focus-within { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.exam-flow-check input[type="checkbox"] {
+  margin: 0.2em 0 0; width: 15px; height: 15px; flex: none;
   accent-color: var(--accent-text); cursor: pointer;
 }
-.note-check.checked > label > span { color: var(--text-muted); text-decoration: line-through; }
-.note-check > label:focus-within { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.exam-flow-check--step > span { font-weight: 700; line-height: 1.45; }
+.exam-flow-check.checked > span { color: var(--text-muted); text-decoration: line-through; }
+.exam-flow-check.partial > span { text-decoration: none; }
+
+/* Sub-points: the third level. Indented under their point with a rule, so
+   the nesting reads even when a long point wraps over several lines. */
+.exam-flow-subpoints {
+  list-style: none; margin: 4px 0 6px; padding: 0 0 0 10px;
+  border-left: 2px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  display: grid; gap: 1px;
+}
+.exam-flow-subpoints > li { font-size: 0.95em; }
+.exam-flow--checkable .exam-flow-points { list-style: none; padding-left: 2px; }
+.exam-flow--checkable .exam-flow-points > li { margin-bottom: 3px; }
 
 /* Trigger routing (issue.html) — the "wrong page, try this one" half of the
    Issue Triggers section. Deliberately lighter than .exam-crossrefs: these

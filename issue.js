@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref, issueHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
-    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds,
+    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -98,25 +98,14 @@
       summaryEl.hidden = true;
     }
 
-    // Every bullet in the notes is a tick-off checkbox, persisted per issue
-    // page. Re-rendered from the stored Set on each paint so the checked
-    // styling and the stored state can't drift apart.
+    // The answering flowchart is a three-level checklist (step > point >
+    // sub-point), persisted per issue page. Only leaves are stored; every
+    // parent's state is derived by wireFlowChecks from its descendants.
     const notesKey = issueNotesKey(code, key, issue.id);
-    const paint = () => {
-      $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
-        triggers: examTriggerRoutesHtml(issue, data, code, details),
-      }, { checkable: true, checked: loadCheckedIds(notesKey) }) + examCrossRefsHtml(issue, data, code, details);
-    };
-    paint();
-    $('issueBody').addEventListener('change', (e) => {
-      const input = e.target.closest('input[type=checkbox][data-note-id]');
-      if (!input) return;
-      const set = loadCheckedIds(notesKey);
-      if (input.checked) set.add(input.dataset.noteId);
-      else set.delete(input.dataset.noteId);
-      saveCheckedIds(notesKey, set);
-      input.closest('.note-check').classList.toggle('checked', input.checked);
-    });
+    $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
+      triggers: examTriggerRoutesHtml(issue, data, code, details),
+    }, { checkable: true, checked: loadCheckedIds(notesKey) }) + examCrossRefsHtml(issue, data, code, details);
+    wireFlowChecks($('issueBody'), () => loadCheckedIds(notesKey), (set) => saveCheckedIds(notesKey, set));
     renderNav(issueTypes, index, ev, foundDate);
 
     $('status').hidden = true;

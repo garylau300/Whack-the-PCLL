@@ -1227,7 +1227,13 @@ window.COURSE_DETAILS.PCLL8020 = {
                     label: 'Single director (MA12)',
                     points: [
                       'MA7(1) still applies: a decision needs a quorate meeting or a unanimous decision.',
-                      'MA12 — if the TOTAL number of directors for the time being is less than the quorum, the directors must not take any decision other than a decision (a) to appoint further directors, or (b) to call a general meeting so as to enable the members to appoint further directors.',
+                      {
+                        text: 'MA12 — if the TOTAL number of directors for the time being is less than the quorum, the directors must not take any decision other than one of two:',
+                        points: [
+                          '(a) a decision to appoint further directors.',
+                          '(b) a decision to call a general meeting, so as to enable the members to appoint further directors.',
+                        ],
+                      },
                       'Note the trigger: MA12 turns on the total number of directors, not on a director merely being excluded from voting under MA16. Those are different problems with different answers.',
                     ],
                   },
@@ -2069,7 +2075,13 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'alter',
                     label: 'Is the share capital being altered? Only in the six s170(2) ways',
                     points: [
-                      '(a) increase by allotting and issuing new shares; (b) increase WITHOUT allotting new shares, where the members provide the funds or assets.',
+                      {
+                        text: 'Two ways the share capital can be increased:',
+                        points: [
+                          '(a) increase by allotting and issuing new shares.',
+                          '(b) increase WITHOUT allotting new shares, where the members provide the funds or assets.',
+                        ],
+                      },
                       '(c) capitalise profits, with or without allotting new shares; (d) allot and issue bonus shares, with or without increasing share capital.',
                       '(e) convert all or any shares into a larger or smaller number of shares.',
                       '(f) cancel shares — but only shares which, at the date of the cancellation resolution, have not been taken or agreed to be taken by any person, or which have been forfeited.',
@@ -2400,10 +2412,24 @@ window.COURSE_DETAILS.PCLL8020 = {
                     label: 'General meeting: who may call it',
                     points: [
                       's565 and MA34(2) — the directors may call a general meeting.',
-                      's566(2) — the directors MUST call one on requests from members representing at least 5% of total voting rights; s566(3) the request must state the general nature of the business and may include the text of a resolution; s566(5) it must be authenticated.',
+                      {
+                        text: 'Members\' power to require a general meeting — s566:',
+                        points: [
+                          's566(2) — the directors MUST call one on requests from members representing at least 5% of the total voting rights.',
+                          's566(3) — the request must state the general nature of the business, and may include the text of a resolution.',
+                          's566(5) — it must be authenticated.',
+                        ],
+                      },
                       's567(1) — they must call it within 21 days of becoming subject to the requirement, and s567(2) the meeting must be held not more than 28 days after the date of the notice convening it.',
                       's567(5) — if a special resolution is to be proposed, the directors are regarded as NOT having duly called the meeting unless the notice includes the text and specifies the intention.',
-                      's568(1) — if they do not, the requesting members (or any of them representing more than half of the total voting rights of all of them) may call it themselves; s568(3) for a date not more than 3 months after the directors became subject to the requirement; s568(6)-(7) the company reimburses their reasonable expenses and retains that sum out of the defaulting directors\' fees.',
+                      {
+                        text: 'If the directors do not call it — s568:',
+                        points: [
+                          's568(1) — the requesting members, or any of them representing more than half of the total voting rights of all of them, may call it themselves.',
+                          's568(3) — for a date not more than 3 months after the directors became subject to the requirement.',
+                          's568(6)-(7) — the company reimburses their reasonable expenses, and recovers that sum from the defaulting directors\' fees or remuneration.',
+                        ],
+                      },
                       's569(1) — where the company has no director, or not enough directors capable of acting to form a quorum, any director or any 2 or more members representing at least 10% of total voting rights may call one; s569(2) only so far as the articles make no other provision, and MA12 is such a provision.',
                       's570 — the court may order a meeting where it is impracticable to call one; "impracticable" does not mean "impossible".',
                     ],
@@ -2412,7 +2438,14 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'gmnotice',
                     label: 'General meeting: length of notice, and the days that do not count',
                     points: [
-                      's571(1)(b)(i) — at least 14 days for a limited company (s571(1)(b)(ii) 7 days for an unlimited company), whether an ordinary or a special resolution is proposed; s571(2) longer if the articles require.',
+                      {
+                        text: 'Length of notice for a general meeting:',
+                        points: [
+                          's571(1)(b)(i) — at least 14 days for a limited company, whether an ordinary or a special resolution is proposed.',
+                          's571(1)(b)(ii) — 7 days for an unlimited company.',
+                          's571(2) — longer if the articles require it.',
+                        ],
+                      },
                       'MA35(3) — the notice period is EXCLUSIVE of the day on which the notice is served or deemed served AND the day of the meeting. Count clear days.',
                       's571(3)(b) and MA35(6)(b) — short notice needs the agreement of a majority IN NUMBER of the members entitled to attend and vote, being a majority together representing at least 95% of the total voting rights.',
                     ],
@@ -2421,7 +2454,14 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'contents',
                     label: 'What the notice must actually contain (MA35(4))',
                     points: [
-                      '(a) the date and time; (b) the physical venue and/or the virtual meeting technology to be used; (ba) where there are two or more physical venues, the principal venue and the others.',
+                      {
+                        text: 'The notice must state — s576(1):',
+                        points: [
+                          '(a) the date and time.',
+                          '(b) the physical venue and/or the virtual meeting technology to be used.',
+                          '(ba) where there are two or more physical venues, the principal venue and the others.',
+                        ],
+                      },
                       '(c) the general nature of the business; (d) for an AGM, that the meeting is an annual general meeting.',
                       '(e) if a resolution is intended to be moved, notice of it plus any information or explanation reasonably necessary to indicate its purpose.',
                       '(f) if a SPECIAL resolution is intended, the intention must be specified and the text of the resolution included.',
@@ -2481,7 +2521,13 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'threshold',
                     label: 'Then do the arithmetic (ss563-564)',
                     points: [
-                      's563(1)-(3) — ordinary resolution: a simple majority; on a show of hands, of the members voting in person plus the proxies voting; on a poll, of the total voting rights of those voting in person or by proxy.',
+                      {
+                        text: 's563(1)-(3) — an ordinary resolution is a simple majority, but of what depends on how the vote is taken:',
+                        points: [
+                          'On a show of hands — a simple majority of the members voting in person, plus the proxies voting.',
+                          'On a poll — a simple majority of the total voting rights of those voting in person or by proxy.',
+                        ],
+                      },
                       's564(1)-(3) — special resolution: a majority of AT LEAST 75%, computed the same two ways. Exactly 75% therefore passes.',
                       's563(4) — anything that may be done by an ordinary resolution may also be done by a special resolution.',
                     ],
@@ -2491,12 +2537,26 @@ window.COURSE_DETAILS.PCLL8020 = {
                     label: 'Written resolutions (ss548-559)',
                     points: [
                       's548(1) — anything that may be done at a general meeting, done without a meeting and without any previous notice; s549 proposed by the directors or the members.',
-                      's548(3) — available for matters an Ordinance requires to be an ordinary OR a special resolution; s548(5) it has effect as if passed at a general meeting; s548(4) the "date of passing" is the s556 date.',
+                      {
+                        text: 'The written resolution procedure — s548:',
+                        points: [
+                          's548(3) — available for matters an Ordinance requires to be an ordinary OR a special resolution.',
+                          's548(5) — it has effect as if passed at a general meeting.',
+                          's548(4) — the "date of passing" is the s556 date.',
+                        ],
+                      },
                       's548(6)(a)-(b) — it does NOT apply to a resolution removing an auditor, or removing a director, before the end of their term.',
                       's556(1)-(3) — passed when ALL eligible members have signified agreement, by a document received by the company identifying the resolution and indicating agreement, in hard copy or electronic form, authenticated. For CCT take "authentication" to mean signature; see s829(3) and s828(5).',
                       's556(4) — once signified, a member\'s agreement may NOT be revoked.',
                       's558(1)-(2) — the proposed resolution lapses at the end of the period the articles specify, or 28 days from the circulation date if none; agreement signified after that is ineffective.',
-                      'ss550-554 — circulation with any accompanying statement at the company\'s expense; s555 a copy or notification to the auditors before it goes to members (failure does not affect validity); s559 notify members and auditors of the passing.',
+                      {
+                        text: 'Circulating a written resolution:',
+                        points: [
+                          'ss550-554 — circulation with any accompanying statement, at the company\'s expense.',
+                          's555 — a copy or notification to the auditors before it goes to members; failure does not affect validity.',
+                          's559 — notify members and auditors of the passing.',
+                        ],
+                      },
                     ],
                   },
                 ],
@@ -2852,7 +2912,14 @@ window.COURSE_DETAILS.PCLL8020 = {
                     points: [
                       's11 — a private company\'s articles must restrict the right to transfer its shares.',
                       'MA2(2) — the directors have a general discretion to refuse to register a transfer.',
-                      'MA64(1)(a)-(c) — they may also refuse if the instrument is not lodged at the registered office or another place the directors appointed; if it is not accompanied by the certificate for the share, or other evidence the directors reasonably require of the transferor\'s right to transfer; or if it is in respect of more than one class of shares.',
+                      {
+                        text: 'MA64(1)(a)-(c) — three further grounds on which the directors may refuse to register a transfer:',
+                        points: [
+                          '(a) the instrument is not lodged at the registered office, or another place the directors appointed.',
+                          '(b) it is not accompanied by the certificate for the share to which it relates, or other evidence the directors reasonably require to show the transferor\'s right to make the transfer, or evidence of the right of someone other than the transferor to make the transfer on the transferor\'s behalf.',
+                          '(c) the transfer is in respect of more than one class of shares.',
+                        ],
+                      },
                       'There may also be contractual restrictions, e.g. pre-emption rights in a shareholders\' agreement.',
                     ],
                   },
@@ -3053,7 +3120,15 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'sc',
                     label: 'Apply the significant controller test',
                     points: [
-                      'A person has significant control if they hold, directly or indirectly, MORE THAN 25% of the issued shares; or more than 25% of the voting rights; or the right to appoint or remove a majority of the board; or have the right to exercise, or actually exercise, significant influence or control.',
+                      {
+                        text: 'A person has significant control if ANY of these is satisfied:',
+                        points: [
+                          'They hold, directly or indirectly, MORE THAN 25% of the issued shares.',
+                          'They hold more than 25% of the voting rights.',
+                          'They hold the right to appoint or remove a majority of the board.',
+                          'They have the right to exercise, or actually exercise, significant influence or control.',
+                        ],
+                      },
                       'The company must take reasonable steps to ascertain its significant controllers and keep the register.',
                       'Where shares are held by a nominee for another person, those shares are regarded as held by that other person, and only that person\'s particulars are entered.',
                       'The register is not open to public inspection but may be inspected by, among others, the Companies Registry, the SFC, the Inland Revenue Department and the police. Listed companies are exempt.',
@@ -3074,7 +3149,14 @@ window.COURSE_DETAILS.PCLL8020 = {
                     label: 'Minutes and resolutions',
                     points: [
                       'Minutes of meetings, written resolutions of directors or members, and written records of a sole director\'s decisions — signed and kept in the minute book (ss481, 482, 618 and 621).',
-                      's481(2) — directors\' minutes and resolutions kept for 10 years; MA19 requires the same for every MA7(1) decision; MA20(4)-(5) for a sole director\'s written record or resolution.',
+                      {
+                        text: 'How long records of directors\' decisions must be kept — 10 years, from three directions:',
+                        points: [
+                          's481(2) — directors\' minutes and resolutions kept for 10 years.',
+                          'MA19 — the same for every MA7(1) decision.',
+                          'MA20(4)-(5) — the same for a sole director\'s written record or resolution.',
+                        ],
+                      },
                       'File copies of resolutions or notices with the Companies Registry where the CO requires it.',
                       's622(3) — a copy of a special resolution must be included in or annexed to every copy of the articles issued.',
                     ],
@@ -4377,7 +4459,14 @@ window.COURSE_DETAILS.PCLL8020 = {
                     id: 'ramsay',
                     label: 'And apply the Ramsay approach to avoidance',
                     points: [
-                      'Rules of purposive statutory construction: look at the facts of the transaction; see whether there are pre-ordained steps in a scheme which are devoid of commercial purpose; and set those steps aside.',
+                      {
+                        text: 'Rules of purposive statutory construction — the Ramsay approach, in three moves:',
+                        points: [
+                          'Look at the facts of the transaction.',
+                          'See whether there are pre-ordained steps in a scheme which are devoid of commercial purpose.',
+                          'Set those steps aside.',
+                        ],
+                      },
                       'Confirmed to apply to Hong Kong stamp duty cases: Collector of Stamp Revenue v Arrowtown Assets Ltd (CFA).',
                       'The classic target is a two-step transfer through an interposed company designed to keep each link at or above the s45 threshold while the end-to-end transfer would not qualify.',
                     ],

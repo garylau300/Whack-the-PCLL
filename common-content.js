@@ -84,13 +84,55 @@
   // an <a href="#id">: a flowchart can sit inside a mindmap popup <template>
   // that gets cloneNode'd, and DOM ids would then collide. An unresolvable
   // goto degrades to just the `then` text rather than throwing.
-  function flowchartHtml(fc) {
+  // A flowchart point is either a plain string, or `{ text, points: [...] }`
+  // where the nested points are its sub-points -- the third level. Both
+  // shapes coexist so the ~260 point lists authored as plain strings keep
+  // working untouched, and a sub-level is added only where the rule actually
+  // has one (a lettered list of limbs, a multi-part test).
+  function flowPointText(p) { return typeof p === 'string' ? p : p.text; }
+  function flowPointKids(p) { return (typeof p === 'string' ? null : p.points) || []; }
+
+  // Renders one checkbox row. `path` is the chain of ancestor texts, which is
+  // what makes the id both stable under reordering and unique on the page:
+  // two points with identical wording under different steps hash differently.
+  function flowCheckHtml(path, text, checked, cls, extra) {
+    const id = noteCheckId(path.join('\u0000'));
+    const on = checked.has(id);
+    return `<label class="${cls}${on ? ' checked' : ''}" data-flow-id="${escapeHtml(id)}"${extra || ''}>`
+      + `<input type="checkbox" data-flow-id="${escapeHtml(id)}"${on ? ' checked' : ''} />`
+      + `<span>${escapeHtml(text)}</span></label>`;
+  }
+
+  // The answering flowchart, rendered as a three-level checklist: each
+  // numbered step is a parent, its points are sub-checkboxes, and a point's
+  // own `points` are sub-sub-checkboxes. Only LEAVES are persisted --
+  // wireFlowChecks derives every parent's checked/indeterminate state from
+  // its descendants, so a stored Set can never disagree with what is shown.
+  // A step with no points is itself a leaf.
+  function flowchartHtml(fc, opts) {
     if (!fc || !fc.steps || !fc.steps.length) return '';
+    const o = opts || {};
+    const checkable = !!o.checkable;
+    const checked = o.checked || new Set();
     const positionOf = new Map(fc.steps.map((s, i) => [s.id, i + 1]));
     const title = fc.title ? `<p class="exam-flow-title">${escapeHtml(fc.title)}</p>` : '';
     const steps = fc.steps.map((s, i) => {
+      const stepPath = [s.label];
       const points = (s.points || []).length
-        ? `<ul class="exam-flow-points">${s.points.map((p) => `<li>${escapeHtml(p)}</li>`).join('')}</ul>`
+        ? `<ul class="exam-flow-points">${s.points.map((p) => {
+          const text = flowPointText(p);
+          const kids = flowPointKids(p);
+          const pointPath = stepPath.concat(text);
+          const subs = kids.length
+            ? `<ul class="exam-flow-subpoints">${kids.map((k) => (checkable
+              ? `<li>${flowCheckHtml(pointPath.concat(k), k, checked, 'exam-flow-check exam-flow-check--sub')}</li>`
+              : `<li>${escapeHtml(k)}</li>`)).join('')}</ul>`
+            : '';
+          const body = checkable
+            ? flowCheckHtml(pointPath, text, checked, 'exam-flow-check exam-flow-check--point')
+            : escapeHtml(text);
+          return `<li>${body}${subs}</li>`;
+        }).join('')}</ul>`
         : '';
       const branches = (s.branches || []).length
         ? `<ul class="exam-flow-branches">${s.branches.map((b) => {
@@ -103,14 +145,70 @@
         }).join('')}</ul>`
         : '';
       const decision = (s.branches || []).length ? ' exam-flow-step--decision' : '';
+      const label = checkable
+        ? flowCheckHtml(stepPath, s.label, checked, 'exam-flow-check exam-flow-check--step')
+        : `<span class="exam-flow-label">${escapeHtml(s.label)}</span>`;
       return `<li class="exam-flow-step${decision}">
         <span class="exam-flow-num" aria-hidden="true">${i + 1}</span>
-        <span class="exam-flow-label">${escapeHtml(s.label)}</span>
+        ${label}
         ${s.detail ? `<span class="exam-flow-detail">${escapeHtml(s.detail)}</span>` : ''}
         ${points}${branches}
       </li>`;
     }).join('');
-    return `${title}<ol class="exam-flow">${steps}</ol>`;
+    return `${title}<ol class="exam-flow${checkable ? ' exam-flow--checkable' : ''}">${steps}</ol>`;
+  }
+
+  // Behaviour for a checkable flowchart. Ticking a leaf saves it; ticking a
+  // parent sets every leaf beneath it. After any change -- and once on load --
+  // each parent is recomputed from its descendants: checked when all are,
+  // indeterminate when only some are. Because parents are derived rather than
+  // stored, editing a step's points can never leave a parent stuck ticked.
+  function wireFlowChecks(containerEl, load, save) {
+    // NOTE the `:scope` on both queries. Without it, `ul input` matches any
+    // input that has a `ul` ANYWHERE in its ancestry -- including the row's
+    // own input, whose enclosing <ul class="exam-flow-points"> sits outside
+    // the <li> being searched. That made every point count itself as one of
+    // its own leaves, so it could never roll up to fully checked.
+    const KIDS = ':scope ul input[type="checkbox"][data-flow-id]';
+    const leavesOf = (labelEl) => {
+      const li = labelEl.closest('li');
+      // A descendant input is a leaf only if nothing is nested beneath IT --
+      // so a step's leaves are its sub-points where they exist, and its bare
+      // points where they don't, never the intermediate point rows.
+      const leaves = [...li.querySelectorAll(KIDS)]
+        .filter((inp) => inp.closest('li').querySelectorAll(KIDS).length === 0);
+      return leaves.length ? leaves : [labelEl.querySelector('input')];
+    };
+    const refresh = () => {
+      // Order is irrelevant: every parent is computed from real leaf inputs,
+      // never from another parent's derived state.
+      for (const row of containerEl.querySelectorAll('.exam-flow-check')) {
+        const input = row.querySelector('input');
+        const leaves = leavesOf(row);
+        const isParent = !(leaves.length === 1 && leaves[0] === input);
+        if (isParent) {
+          const on = leaves.filter((l) => l.checked).length;
+          input.checked = on === leaves.length;
+          input.indeterminate = on > 0 && on < leaves.length;
+        }
+        row.classList.toggle('checked', input.checked);
+        row.classList.toggle('partial', input.indeterminate);
+      }
+    };
+    containerEl.addEventListener('change', (e) => {
+      const input = e.target.closest('input[type="checkbox"][data-flow-id]');
+      if (!input) return;
+      const row = input.closest('.exam-flow-check');
+      const set = load();
+      for (const leaf of leavesOf(row)) {
+        leaf.checked = input.checked;
+        if (input.checked) set.add(leaf.dataset.flowId);
+        else set.delete(leaf.dataset.flowId);
+      }
+      save(set);
+      refresh();
+    });
+    refresh();
   }
 
   // A callout for compliance-critical facts (statutory deadlines, offences,
@@ -144,37 +242,19 @@
   //
   // This function is the single source of truth for the vocabulary. Emission
   // order is fixed here, NOT by the order keys are authored in.
-  // A bullet list, optionally as a tick-off checklist. `opts.checkable` turns
-  // every bullet into a real checkbox so a reader can mark off the points
-  // they have learned; `opts.checked` is the Set of already-ticked ids (see
-  // noteCheckId, which derives a bullet's id from its own text). Opt-in
-  // rather than default, because reference-material appendices and mindmap
-  // popups are reading material, not a checklist -- only the exam-notes
-  // issue pages pass it.
-  function bulletListHtml(items, opts) {
-    const o = opts || {};
-    if (!o.checkable) return `<ul>${items.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
-    const checked = o.checked || new Set();
-    return `<ul class="note-checks">${items.map((b) => {
-      const id = noteCheckId(b);
-      const on = checked.has(id);
-      return `<li class="note-check${on ? ' checked' : ''}"><label><input type="checkbox" data-note-id="${escapeHtml(id)}"${on ? ' checked' : ''} /><span>${escapeHtml(b)}</span></label></li>`;
-    }).join('')}</ul>`;
-  }
-
   function fullNoteBodyHtml(n, opts) {
     let html = '';
     if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
-    if (n.bullets) html += bulletListHtml(n.bullets, opts);
+    if (n.bullets) html += `<ul>${n.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
     if (n.bulletGroups) {
-      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4>${bulletListHtml(g.items, opts)}`).join('');
+      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`).join('');
     }
     if (n.statutes) html += statuteBoxHtml(n.statutes);
     if (n.table) {
       html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
     if (n.diagram) html += processDiagramHtml(n.diagram);
-    if (n.flowchart) html += flowchartHtml(n.flowchart);
+    if (n.flowchart) html += flowchartHtml(n.flowchart, opts);
     if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${escapeHtml(p.q)}</dt><dd>${escapeHtml(p.a)}</dd>`).join('')}</dl>`;
     if (n.warnings) html += warningBoxHtml(n.warnings);
     return html;
@@ -371,7 +451,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml,
-    examIssueSectionsHtml,
+    examIssueSectionsHtml, wireFlowChecks,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
   });
 })();

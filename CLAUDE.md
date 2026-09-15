@@ -103,16 +103,39 @@ not what the code does.
   `codePrefix` (CIV / CCT / PRP so far) distinct from the others;
   `coursePrefix` falls back to the course code's numeric tail if one is
   missing.
-- **Notes bullets are tick-off checkboxes, but only on issue pages.**
-  `fullNoteBodyHtml(n, opts)` renders `bullets`/`bulletGroups` as checkboxes
-  when `opts.checkable` is set; `issue.js` is the only caller that sets it,
-  because reference-material appendices and mindmap popups are reading
-  material, not a checklist. State persists per issue page under
-  `issueNotesKey(code, sessionKey, issueId)`, and each bullet's id comes from
-  `noteCheckId(text)` — a hash of the bullet's **own text**, not its index,
-  so inserting a bullet doesn't transfer a neighbour's ticked state.
-  Rewording a bullet resets it, which is intended. Flowchart `points` stay
-  plain prose: a flowchart is a process to follow, not a list to tick off.
+- **The answering flowchart is a three-level checklist; nothing else is.**
+  Step > point > sub-point, all checkboxes. `bullets`/`bulletGroups`
+  everywhere (Issue Triggers, Look Out For, Skills, Mistakes, reference
+  appendices, mindmap popups) stay plain lists — they are things to notice
+  while reading, not work to complete. `flowchartHtml(fc, opts)` renders the
+  checkboxes only when `opts.checkable` is set, and `issue.js` is the only
+  caller that sets it.
+- **A flowchart point is a string OR `{ text, points: [...] }`.** The nested
+  `points` are sub-points, the third level. Both shapes coexist so the ~1,000
+  points authored as plain strings keep working untouched; add a sub-level
+  only where the rule genuinely has one (a lettered list of limbs, a
+  multi-part test). The best source of sub-points is an enumeration already
+  embedded in an existing point — lifting `(a)…(b)…(c)` out of a long
+  sentence is a restructure of verified text, not new content.
+- **Only leaves are persisted; parents are derived.** `wireFlowChecks`
+  computes each parent's checked/indeterminate state from its descendant
+  leaves on every change and once on load, so a stored Set can never disagree
+  with what is displayed, and editing a step's points cannot leave a parent
+  stuck ticked. Ticking a parent writes every leaf beneath it. State lives
+  under `issueNotesKey(code, sessionKey, issueId)`.
+- **A checkbox id is a hash of its ancestor chain**, via
+  `noteCheckId(path.join('\0'))` where path is step label > point text >
+  sub-point text. Text-derived, so inserting a row never transfers a
+  neighbour's ticked state; ancestor-qualified, so two identically worded
+  points under different steps don't collide. Rewording a row resets it,
+  which is intended. Don't give one step two identically worded points (or a
+  flowchart two identical step labels) — that *would* collide.
+- **Scope `querySelectorAll` with `:scope` when walking the checkbox tree.**
+  `li.querySelectorAll('ul input')` matches any input with a `ul` ancestor
+  *anywhere*, including the row's own input whose enclosing
+  `<ul class="exam-flow-points">` sits outside the `li` — which made every
+  point count itself among its own leaves and never roll up. See the `KIDS`
+  constant in `wireFlowChecks`.
 - **`sessionEventsByKey(data, code)`** (`common-core.js`) is the one way to
   go from a courseDetails session key back to a linkable timetable event.
   Both `course.js`'s exam roll-up and `examCrossRefsHtml` use it, so a
