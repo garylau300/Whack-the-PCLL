@@ -8,6 +8,9 @@
 window.COURSE_DETAILS = window.COURSE_DETAILS || {};
 window.COURSE_DETAILS.PCLL8010 = {
   name: 'Civil Litigation',
+  // Short tag for the derived issue codes (e.g. CIV-LG4.11) — see issueCode
+  // in common-core.js. Must be unique across courses.
+  codePrefix: 'CIV',
 
   coordinators: [
     { name: 'Ophelia Chan', room: 'CCT 6.15', hours: 'Wednesdays 11am-5pm', email: 'cyyo@hku.hk' },

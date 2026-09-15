@@ -5,7 +5,7 @@
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
-    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey,
+    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey, issueCode,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -160,6 +160,7 @@
       const cards = issueTypes.map((issue, i) => `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(found.ev, found.dateIso, issue.id))}">
         <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
         <span class="exam-issue-main">
+          <span class="exam-issue-code">${escapeHtml(issueCode(code, details, key, i))}</span>
           <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
           ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
         </span>

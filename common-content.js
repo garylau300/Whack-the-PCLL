@@ -12,7 +12,7 @@
 (() => {
   'use strict';
 
-  const { escapeHtml } = window.PCLL;
+  const { escapeHtml, noteCheckId } = window.PCLL;
 
   function listSection(heading, items) {
     if (!items || !items.length) return '';
@@ -144,12 +144,30 @@
   //
   // This function is the single source of truth for the vocabulary. Emission
   // order is fixed here, NOT by the order keys are authored in.
-  function fullNoteBodyHtml(n) {
+  // A bullet list, optionally as a tick-off checklist. `opts.checkable` turns
+  // every bullet into a real checkbox so a reader can mark off the points
+  // they have learned; `opts.checked` is the Set of already-ticked ids (see
+  // noteCheckId, which derives a bullet's id from its own text). Opt-in
+  // rather than default, because reference-material appendices and mindmap
+  // popups are reading material, not a checklist -- only the exam-notes
+  // issue pages pass it.
+  function bulletListHtml(items, opts) {
+    const o = opts || {};
+    if (!o.checkable) return `<ul>${items.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+    const checked = o.checked || new Set();
+    return `<ul class="note-checks">${items.map((b) => {
+      const id = noteCheckId(b);
+      const on = checked.has(id);
+      return `<li class="note-check${on ? ' checked' : ''}"><label><input type="checkbox" data-note-id="${escapeHtml(id)}"${on ? ' checked' : ''} /><span>${escapeHtml(b)}</span></label></li>`;
+    }).join('')}</ul>`;
+  }
+
+  function fullNoteBodyHtml(n, opts) {
     let html = '';
     if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
-    if (n.bullets) html += `<ul>${n.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+    if (n.bullets) html += bulletListHtml(n.bullets, opts);
     if (n.bulletGroups) {
-      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`).join('');
+      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4>${bulletListHtml(g.items, opts)}`).join('');
     }
     if (n.statutes) html += statuteBoxHtml(n.statutes);
     if (n.table) {
@@ -239,18 +257,18 @@
   // without either duplicating the section chrome or inverting the
   // core -> content -> session dependency direction. A section with only an
   // extra and no authored body still renders.
-  function examIssueSectionsHtml(issue, extras) {
+  function examIssueSectionsHtml(issue, extras, opts) {
     if (!issue) return '';
     const extra = extras || {};
     let html = EXAM_SECTIONS.map(({ key, heading }) => {
-      const body = (issue[key] && fullNoteBodyHtml(issue[key])) || '';
+      const body = (issue[key] && fullNoteBodyHtml(issue[key], opts)) || '';
       const added = extra[key] || '';
       if (!body && !added) return '';
       return `<section class="exam-section exam-section--${key}"><h3>${escapeHtml(heading)}</h3>${body}${added}</section>`;
     }).join('');
     if (issue.notes && issue.notes.length) {
       html += `<section class="exam-section exam-section--notes"><h3>Further Notes</h3>${issue.notes.map((n) => `
-        <div class="legal-issue-note"><h4>${escapeHtml(n.heading)}</h4>${fullNoteBodyHtml(n)}</div>`).join('')}</section>`;
+        <div class="legal-issue-note"><h4>${escapeHtml(n.heading)}</h4>${fullNoteBodyHtml(n, opts)}</div>`).join('')}</section>`;
     }
     return html;
   }

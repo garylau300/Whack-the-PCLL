@@ -168,6 +168,37 @@
 
   function sgPrepChecklistKey(code, sessionKey) { return `pcll.sgPrep.${code}.${sessionKey}`; }
 
+  // One key per issue-type page, so ticking a point off in the notes is
+  // remembered per issue rather than globally.
+  function issueNotesKey(code, sessionKey, issueId) { return `pcll.notes.${code}.${sessionKey}.${issueId}`; }
+
+  // Stable id for a note bullet. Derived from the bullet's own text (djb2 ->
+  // base36) rather than its position, so inserting a bullet above an existing
+  // one doesn't silently transfer its ticked state to a different point.
+  // Editing a bullet's wording does reset it, which is the right outcome: a
+  // rewritten point is a different point.
+  function noteCheckId(text) {
+    let h = 5381;
+    for (let i = 0; i < text.length; i++) h = (((h << 5) + h) ^ text.charCodeAt(i)) >>> 0;
+    return 'n' + h.toString(36);
+  }
+
+  // The short human-facing code for an issue type: `<PREFIX>-<sessionKey>.<NN>`,
+  // e.g. "CIV-LG4.11". Derived from the course's `codePrefix`, the session key
+  // and the issue's 1-based position -- never authored, so it cannot drift out
+  // of step with the notes or be typed inconsistently. `codePrefix` falls back
+  // to the numeric tail of the course code so a course that hasn't declared one
+  // still produces something unique.
+  function coursePrefix(code, details) {
+    if (details && details.codePrefix) return details.codePrefix;
+    const m = /(\d{2})(\d)$/.exec(code || '');
+    return m ? 'C' + m[2] : (code || '?');
+  }
+
+  function issueCode(code, details, sessionKey, index) {
+    return `${coursePrefix(code, details)}-${sessionKey}.${String(index + 1).padStart(2, '0')}`;
+  }
+
   // Pure renderer: items -> checklist row markup. No event wiring (same
   // spirit as eventCardHtml/field) — pair with wireChecklist() below.
   function checklistHtml(items, checkedSet) {
@@ -729,6 +760,7 @@
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
+    issueNotesKey, noteCheckId, coursePrefix, issueCode,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
     sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionEventsByKey, sessionKeyFor, sessionPartLetter,

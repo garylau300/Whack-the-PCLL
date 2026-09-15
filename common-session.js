@@ -15,7 +15,7 @@
   const {
     escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
     sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
-    loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey,
+    loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey, issueCode,
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
 
@@ -189,7 +189,7 @@
   // only links there's nothing for wireSessionDetail to wire, and nothing
   // measures the DOM — so this sidesteps the hidden-container/ResizeObserver
   // problem the mindmap has to work around.
-  function examNotesIndexHtml(examNotes, ev, dateIso) {
+  function examNotesIndexHtml(examNotes, ev, dateIso, code, details) {
     const issues = (examNotes && examNotes.issueTypes) || [];
     if (!issues.length) return '';
     const intro = examNotes.intro ? `<p class="muted">${escapeHtml(examNotes.intro)}</p>` : '';
@@ -202,6 +202,7 @@
       return `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(ev, dateIso, issue.id))}">
         <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
         <span class="exam-issue-main">
+          <span class="exam-issue-code">${escapeHtml(issueCode(code, details, sessionKeyFor(ev.no), i))}</span>
           <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
           ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
           ${issue.weighting || tags.length ? `<span class="exam-issue-tags">${
@@ -232,12 +233,16 @@
   // timetable and the authored notes, returning `{ text, href }` where href
   // is null unless BOTH halves resolved. Shared by the two renderers below so
   // the degrade-to-plain-text rule can only be implemented once.
-  function resolveIssueRef(ref, byKey, sessions) {
+  function resolveIssueRef(ref, byKey, sessions, code, details) {
     const found = byKey.get(ref.session);
     const target = sessions[ref.session];
     const issueTypes = (target && target.examNotes && target.examNotes.issueTypes) || [];
-    const targetIssue = issueTypes.find((t) => t.id === ref.issue);
-    const text = `${escapeHtml(ref.session)} — ${escapeHtml(ref.label || (targetIssue && targetIssue.title) || ref.issue)}`;
+    const idx = issueTypes.findIndex((t) => t.id === ref.issue);
+    const targetIssue = idx === -1 ? null : issueTypes[idx];
+    // Prefer the target's derived code over the bare session key: it carries
+    // the session anyway and pins the reference to a numbered issue.
+    const tag = targetIssue ? issueCode(code, details, ref.session, idx) : ref.session;
+    const text = `${escapeHtml(tag)} — ${escapeHtml(ref.label || (targetIssue && targetIssue.title) || ref.issue)}`;
     if (!found || !targetIssue) return { text, href: null };
     return { text, href: issueHref(found.ev, found.dateIso, targetIssue.id) };
   }
@@ -248,7 +253,7 @@
     const byKey = sessionEventsByKey(data, code);
     const sessions = (details && details.sessions) || {};
     const items = refs.map((ref) => {
-      const { text, href } = resolveIssueRef(ref, byKey, sessions);
+      const { text, href } = resolveIssueRef(ref, byKey, sessions, code, details);
       if (!href) return `<li>${text}</li>`;
       return `<li><a href="${escapeHtml(href)}">${text}</a></li>`;
     }).join('');
@@ -269,7 +274,7 @@
     const byKey = sessionEventsByKey(data, code);
     const sessions = (details && details.sessions) || {};
     const items = routes.map((route) => {
-      const { text, href } = resolveIssueRef(route, byKey, sessions);
+      const { text, href } = resolveIssueRef(route, byKey, sessions, code, details);
       const when = `<span class="exam-route-when">${escapeHtml(route.when)}</span>`;
       const to = href ? `<a href="${escapeHtml(href)}">${text}</a>` : `<span class="exam-route-to">${text}</span>`;
       return `<li>${when}${to}</li>`;
@@ -352,7 +357,7 @@
     // before the change — nothing already written needs migrating for the new
     // format to work alongside it.
     if (sessionDetail.examNotes) {
-      html += examNotesIndexHtml(sessionDetail.examNotes, ev, dateIso);
+      html += examNotesIndexHtml(sessionDetail.examNotes, ev, dateIso, code, details);
     } else if (sessionDetail.legalIssues) {
       html += legalIssuesMindmapHtml(sessionDetail.legalIssues);
     } else if (sessionDetail.fullNotes) {

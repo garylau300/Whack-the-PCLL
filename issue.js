@@ -4,6 +4,7 @@
   const {
     ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref, issueHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
+    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -84,7 +85,8 @@
     }
     const issue = issueTypes[index];
 
-    const heading = `${ev.no ? ev.no + ' — ' : ''}${issue.title}`;
+    const code9 = issueCode(code, details, key, index);
+    const heading = `${code9} — ${issue.title}`;
     document.title = `${heading} — Whack the PCLL`;
     $('issueTitle').textContent = heading;
 
@@ -96,9 +98,25 @@
       summaryEl.hidden = true;
     }
 
-    $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
-      triggers: examTriggerRoutesHtml(issue, data, code, details),
-    }) + examCrossRefsHtml(issue, data, code, details);
+    // Every bullet in the notes is a tick-off checkbox, persisted per issue
+    // page. Re-rendered from the stored Set on each paint so the checked
+    // styling and the stored state can't drift apart.
+    const notesKey = issueNotesKey(code, key, issue.id);
+    const paint = () => {
+      $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
+        triggers: examTriggerRoutesHtml(issue, data, code, details),
+      }, { checkable: true, checked: loadCheckedIds(notesKey) }) + examCrossRefsHtml(issue, data, code, details);
+    };
+    paint();
+    $('issueBody').addEventListener('change', (e) => {
+      const input = e.target.closest('input[type=checkbox][data-note-id]');
+      if (!input) return;
+      const set = loadCheckedIds(notesKey);
+      if (input.checked) set.add(input.dataset.noteId);
+      else set.delete(input.dataset.noteId);
+      saveCheckedIds(notesKey, set);
+      input.closest('.note-check').classList.toggle('checked', input.checked);
+    });
     renderNav(issueTypes, index, ev, foundDate);
 
     $('status').hidden = true;

@@ -3,7 +3,7 @@
   --surface: #ffffff;
   --border: #e1e4ea;
   --text: #1a1d24;
-  --text-muted: #666d7a;
+  --text-muted: #565d6b;
   --accent: #1e3a5f;
   --accent-2: #eab308;
   --accent-2-text: #1a1d24;
@@ -37,7 +37,7 @@
     --surface: #1d2129;
     --border: #2c313b;
     --text: #e8e9ec;
-    --text-muted: #9aa1ad;
+    --text-muted: #a8afbb;
     --today: #2a2410;
     --card-tint: 18%;
     --accent-text: #7ea6d9;
@@ -54,7 +54,7 @@
   --surface: #1d2129;
   --border: #2c313b;
   --text: #e8e9ec;
-  --text-muted: #9aa1ad;
+  --text-muted: #a8afbb;
   --today: #2a2410;
   --card-tint: 18%;
   --accent-text: #7ea6d9;
@@ -706,8 +706,10 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 /* A fullNotes entry's table/bulletGroups sub-headings sit one level below
    its own <h3>. */
 .session-detail-body h4, .reference-block h4 { font-size: 0.8rem; font-weight: 700; margin: 10px 0 4px; }
-.note-table { margin: 6px 0; font-size: 0.8rem; white-space: normal; }
+.note-table { margin: 6px 0; font-size: 0.86rem; line-height: 1.5; white-space: normal; }
 .note-table th, .note-table td { white-space: normal; }
+.note-table th { font-size: 0.72rem; letter-spacing: 0.03em; }
+.note-table th, .note-table td { vertical-align: top; }
 
 /* Q&A pairs (fullNotes' `qa` shape) — a definition list with the question
    bold and the answer indented underneath it. */
@@ -845,7 +847,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
    exam flowchart is read top-down), which is also why it needs no
    narrow-screen rule: it's already a stack. The left rail carries the eye
    down the sequence; branches indent under the step that forks. */
-.exam-flow-title { font-weight: 600; font-size: 0.82rem; margin: 10px 0 6px; }
+.exam-flow-title { font-weight: 700; font-size: 0.9rem; margin: 10px 0 6px; }
 /* padding-left and the badge's negative offset are deliberately equal, so the
    badge lands exactly on the list's left border box: it sits over the rail
    like a timeline node without ever poking outside the container (which, at
@@ -854,7 +856,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   list-style: none; margin: 8px 0 14px; padding: 0 0 0 34px;
   border-left: 2px solid color-mix(in srgb, var(--accent) 25%, var(--border));
 }
-.exam-flow-step { position: relative; margin-bottom: 14px; font-size: 0.82rem; }
+.exam-flow-step { position: relative; margin-bottom: 14px; font-size: 0.9rem; line-height: 1.55; }
 .exam-flow-step:last-child { margin-bottom: 0; }
 .exam-flow-num {
   position: absolute; left: -34px; top: 0;
@@ -862,9 +864,9 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.7rem; font-weight: 700;
 }
 .exam-flow-step--decision .exam-flow-num { background: var(--accent-2); color: var(--accent-2-text); }
-.exam-flow-label { display: block; font-weight: 700; }
-.exam-flow-detail { display: block; color: var(--text-muted); margin-top: 2px; }
-.exam-flow-points { margin: 4px 0 0; padding-left: 18px; color: var(--text-muted); }
+.exam-flow-label { display: block; font-weight: 700; line-height: 1.45; }
+.exam-flow-detail { display: block; color: var(--text); margin-top: 3px; }
+.exam-flow-points { margin: 5px 0 0; padding-left: 18px; color: var(--text); }
 .exam-flow-branches { list-style: none; margin: 6px 0 0; padding: 0 0 0 14px; }
 .exam-flow-branch {
   margin: 4px 0; padding: 6px 10px; border-radius: var(--radius-sm);
@@ -976,6 +978,33 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .exam-crossrefs a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
 .exam-crossrefs a:hover, .exam-crossrefs a:focus-visible { text-decoration: underline; }
+
+/* The derived issue code (e.g. CIV-LG4.11), shown on every index card and in
+   the page title. Monospace and tabular so a column of them lines up and the
+   session/number parts stay scannable at a glance. */
+.exam-issue-code {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
+  color: var(--accent-text); margin-bottom: 2px;
+}
+
+/* Notes bullets as tick-off checkboxes. The checkbox is an affordance, not
+   the content, so it stays visually quiet and the text keeps full contrast
+   until it is ticked — a checked point dims and strikes through so the
+   remaining work is what stands out. */
+.note-checks { list-style: none; padding: 0; margin: 6px 0; display: grid; gap: 2px; }
+.note-check > label {
+  display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: start;
+  padding: 3px 4px; border-radius: var(--radius-sm); cursor: pointer;
+}
+.note-check > label:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.note-check input[type="checkbox"] {
+  margin: 0.25em 0 0; width: 15px; height: 15px; flex: none;
+  accent-color: var(--accent-text); cursor: pointer;
+}
+.note-check.checked > label > span { color: var(--text-muted); text-decoration: line-through; }
+.note-check > label:focus-within { outline: 2px solid var(--accent-text); outline-offset: 1px; }
 
 /* Trigger routing (issue.html) — the "wrong page, try this one" half of the
    Issue Triggers section. Deliberately lighter than .exam-crossrefs: these

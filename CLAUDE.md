@@ -84,12 +84,35 @@ not what the code does.
   learning about the timetable (core → content → session still holds).
   Both renderers resolve through `resolveIssueRef`, so the
   degrade-to-plain-text rule is implemented once.
-- **Never repeat the session in a `label`.** `resolveIssueRef` prepends
-  `"<session> — "` itself, so `label: 'LG4 — Amending pleadings'` renders as
-  "LG4 — LG4 — Amending pleadings". Write the bare title. This applies to
-  `crossRefs` and `routes` alike, and cross-session refs are where it goes
-  wrong — both verification scripts now assert no rendered link text matches
-  `(LG|SG)\d+ — (LG|SG)\d+ —`.
+- **Never repeat the session or code in a `label`.** `resolveIssueRef`
+  prepends the target's own issue code (`"CIV-LG4.11 — "`) itself, so
+  `label: 'LG4 — Amending pleadings'` renders as "CIV-LG4.11 — LG4 —
+  Amending pleadings". Write the bare title. This applies to `crossRefs` and
+  `routes` alike, and cross-session refs are where it goes wrong — both
+  verification scripts assert no rendered link text carries two such tags.
+- **Every issue type has a derived code: `<PREFIX>-<sessionKey>.<NN>`**
+  (e.g. `CIV-LG4.11`), built by `issueCode(code, details, sessionKey, index)`
+  in `common-core.js` from the course's `codePrefix` and the issue's 1-based
+  position. It is **derived, never authored** — so it cannot drift out of
+  step with the notes, and there is nothing to keep in sync when an issue is
+  added. The trade-off is deliberate: **reordering or inserting an issue
+  renumbers everything after it**, so don't reorder a session's issueTypes
+  once students may have written a code down. It appears on the session-page
+  index cards, the course roll-up cards, the issue page's `<h1>`, and as the
+  tag on every `crossRefs`/`routes` link. Adding a course means adding a
+  `codePrefix` (CIV / CCT / PRP so far) distinct from the others;
+  `coursePrefix` falls back to the course code's numeric tail if one is
+  missing.
+- **Notes bullets are tick-off checkboxes, but only on issue pages.**
+  `fullNoteBodyHtml(n, opts)` renders `bullets`/`bulletGroups` as checkboxes
+  when `opts.checkable` is set; `issue.js` is the only caller that sets it,
+  because reference-material appendices and mindmap popups are reading
+  material, not a checklist. State persists per issue page under
+  `issueNotesKey(code, sessionKey, issueId)`, and each bullet's id comes from
+  `noteCheckId(text)` — a hash of the bullet's **own text**, not its index,
+  so inserting a bullet doesn't transfer a neighbour's ticked state.
+  Rewording a bullet resets it, which is intended. Flowchart `points` stay
+  plain prose: a flowchart is a process to follow, not a list to tick off.
 - **`sessionEventsByKey(data, code)`** (`common-core.js`) is the one way to
   go from a courseDetails session key back to a linkable timetable event.
   Both `course.js`'s exam roll-up and `examCrossRefsHtml` use it, so a
@@ -223,6 +246,16 @@ not what the code does.
   centred row and the title a full-width one beneath. Keep `min-width: 0`
   on `.topbar h1` so it wraps inside its column rather than widening the
   column and pushing the brand off-centre.
+- **Substantive note content is never `--text-muted`.** The muted token is
+  for genuine metadata (a route's "when" clause, a table header, a caption).
+  Flowchart step points and details carry the sub-rules that decide an
+  answer, so they use `--text`; they were muted at 0.82rem and measured 4.81:1
+  in light mode, which is the readability problem a reader actually notices
+  even though it technically passes AA. When adding a note component, check
+  it with `scratchpad/pw/contrast.js`, which walks the issue page and reports
+  a computed ratio per element — and note that `color-mix()` computed values
+  are not `rgb()` strings, so that script normalises every colour through a
+  canvas rather than parsing the numbers out.
 - **A looping animation's keyframes must start *and* end at the resting
   pose.** The global `prefers-reduced-motion` rule near the top of
   `styles.css` collapses every animation to a single 0.001ms run, which
