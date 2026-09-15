@@ -40,12 +40,21 @@ not what the code does.
     conceptually belongs to — check the dependency direction first
     (core β†’ content β†’ session, never the reverse) if it needs to call
     something from another file.
-- `courseDetails/PCLL8010.js`, `PCLL8020.js`, `PCLL8030.js` — one file per
-  course, each extends the same `window.COURSE_DETAILS`. Adding a new
-  course means a new file under `courseDetails/` plus a new `<script>` tag
-  on every HTML page that currently loads the other three — **six pages**:
+- `courseDetails/PCLL8010.js`, `PCLL8020.js`, `PCLL8030.js`, `PCLL8050.js` —
+  one file per course, each extends the same `window.COURSE_DETAILS`. Adding
+  a new course means a new file under `courseDetails/` plus a new `<script>`
+  tag on every HTML page that currently loads the others — **six pages**:
   course.html, index.html, issue.html, quiz.html, session.html,
-  timetable.html.
+  timetable.html. It also needs a `codePrefix` (CIV / CCT / PRP / CRM so far)
+  and, unless one already exists, a `COURSE_COLORS` hue.
+- **PCLL8050 is only half of what the Faculty calls the "Criminal Litigation
+  Core Practice Course".** That course is three subjects: Criminal Procedure
+  and Criminal Litigation are taught and assessed together as one 50%
+  component, which is what PCLL8050 covers; Criminal Advocacy is the other
+  50% and is its own timetable course, PCLL8051. So the PCLL8050 assessment
+  marks are out of **50**, exactly as the course outline states them — don't
+  renormalise them to 100, and don't fold Criminal Advocacy's assessment
+  into this course.
 - Session entries are keyed by `"LG"`/`"SG"` + number, **no trailing
   letter** (`"LG1"`, not `"LG1A"`) — `sessionKeyFor`/`sessionPartLetter` in
   `common-core.js` resolve the `"A"`/`"B"` part from the live timetable
@@ -151,10 +160,15 @@ not what the code does.
   `{ topic, items: [...] }` shape (see `asQuizGroups` in
   `common-content.js`) — not one flat undifferentiated list.
 - **Never add to a course page**: AI/plagiarism policy, attendance /
-  compulsory-session info, or generic course-description boilerplate —
-  even if a source document you're digesting contains such a section.
-  Coordinators, learning outcomes, assessment structure, and materials
-  lists are fine and expected.
+  compulsory-session info, mark-deduction and professionalism warnings,
+  repeat-the-year/discontinuation admin, or generic study-skills and
+  course-description boilerplate — even if a source document you're
+  digesting contains such a section (the Criminal Litigation outline has all
+  of them). Coordinators, learning outcomes, assessment structure, and
+  materials lists are fine and expected; so is the per-session LGS/SGS
+  outline, as `topicsCovered`. `scratchpad/pw/crim-verify.js` asserts the
+  banned phrases are absent from the rendered course page — worth copying
+  when you add a course.
 - **A `statutes` quote box (`{ text, cite }`) must be verbatim and
   verified.** Never present your own paraphrase as if it were a quote.
   WebSearch to confirm the real statute/case wording before using a quote
