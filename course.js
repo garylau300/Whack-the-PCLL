@@ -84,7 +84,7 @@
       <div class="coordinator-card">
         <strong>${escapeHtml(c.name)}</strong>
         ${meta ? `<div class="muted">${meta}</div>` : ''}
-        <a href="mailto:${escapeHtml(c.email)}">${escapeHtml(c.email)}</a>
+        ${c.email ? `<a href="mailto:${escapeHtml(c.email)}">${escapeHtml(c.email)}</a>` : ''}
       </div>`;
     }).join('');
     $('learningOutcomesList').innerHTML = (details.learningOutcomes || []).map((o) => `<li>${escapeHtml(o)}</li>`).join('');
