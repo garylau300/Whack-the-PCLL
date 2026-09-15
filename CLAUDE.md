@@ -246,6 +246,32 @@ not what the code does.
   inline on `session.html`), reached via the `.study-cta` button. They are
   optional: `session.js` hides the button when a session authors neither
   `cloze` nor `flashcards`, so an exam-notes session can simply omit them.
+- **The issue-type index is ONE renderer: `examIssueListHtml(groups)` in
+  `common-content.js`**, used by both the session page (`examNotesIndexHtml`)
+  and the course-wide roll-up (`course.js`). It used to be two copies of the
+  same card markup that had to be kept in step by hand; don't reintroduce a
+  second one. An item is `{ href, code, title, done, total, tags }` and a
+  group is `{ label, items }` — the caller resolves hrefs and codes, because
+  only it knows the timetable event.
+- **The index is a dense navigation ROW, and carries no summary.** At 26
+  issue types in one course a line of summary per row buried the titles, so
+  the list shows code + title + progress only. Nothing is lost: `summary` is
+  still authored and still rendered, as the subtitle on the issue page
+  itself, which is where you are once the list has done its job. Don't put
+  it back in the list. The Flowchart/Skeleton/Authorities chips are gone for
+  the same reason in reverse — `authorities` is set on 44 of 47 issue types,
+  so the chip marked almost every row and distinguished none; only
+  `weighting` still renders, because it is rare and says something.
+- **The index shows real progress, read from the flowchart checkboxes.**
+  `issueProgress(code, sessionKey, issue)` (`common-core.js`) recomputes the
+  leaf ids with `flowLeafIds` and counts how many are in the stored Set, so
+  the roll-up doubles as a record of what you have worked through. An issue
+  with no flowchart returns `total: 0` and renders **no meter at all**, not
+  a 0% bar — don't "fix" that into a zeroed meter.
+- **A filter box appears once a list passes `filterFrom` (default 8).** It
+  matches against `data-filter` on each row (the lowercased code + title),
+  hides groups left empty, and clears on Escape. Filtering must never read
+  the row's rendered text — that is what the data attribute is for.
 - **Exam notes are the format for newly authored sessions**, organised by
   the issue types that come up as exam questions. Each issue type is its
   own addressable page (`issue.html?code=…&no=…&date=…&start=…&issue=<id>`,

@@ -15,9 +15,10 @@
   const {
     escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
     sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
-    loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey, issueCode,
+    loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey, issueCode, issueProgress,
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
+  const { examIssueListHtml, wireIssueFilter } = window.PCLL;
 
   // Positions two concentric rings of `.mindmap-node` buttons around the
   // hub, sized to the container's actual pixel dimensions (not percentages
@@ -193,26 +194,23 @@
     const issues = (examNotes && examNotes.issueTypes) || [];
     if (!issues.length) return '';
     const intro = examNotes.intro ? `<p class="muted">${escapeHtml(examNotes.intro)}</p>` : '';
-    const cards = issues.map((issue, i) => {
-      const tags = [
-        issue.answering && 'Flowchart',
-        issue.skeleton && 'Skeleton',
-        issue.authorities && 'Authorities',
-      ].filter(Boolean);
-      return `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(ev, dateIso, issue.id))}">
-        <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
-        <span class="exam-issue-main">
-          <span class="exam-issue-code">${escapeHtml(issueCode(code, details, sessionKeyFor(ev.no), i))}</span>
-          <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
-          ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
-          ${issue.weighting || tags.length ? `<span class="exam-issue-tags">${
-            (issue.weighting ? [issue.weighting] : []).concat(tags).map((t) => `<span class="tag-chip exam-issue-tag">${escapeHtml(t)}</span>`).join('')
-          }</span>` : ''}
-        </span>
-        <span class="exam-issue-arrow" aria-hidden="true">&#8594;</span>
-      </a></li>`;
-    }).join('');
-    return `<h3>Exam Notes by Issue Type</h3>${intro}<ol class="exam-issue-index">${cards}</ol>`;
+    const sessionKey = sessionKeyFor(ev.no);
+    const items = issues.map((issue, i) => {
+      const { done, total } = issueProgress(code, sessionKey, issue);
+      return {
+        href: issueHref(ev, dateIso, issue.id),
+        code: issueCode(code, details, sessionKey, i),
+        title: issue.title,
+        done,
+        total,
+        // Only `weighting`, which is rare and says something ("Commonly
+        // 15-20 marks"). The old Flowchart/Skeleton/Authorities chips are
+        // gone: `authorities` is present on 44 of 47 issue types, so a chip
+        // for it marked almost every row and distinguished none of them.
+        tags: issue.weighting ? [issue.weighting] : [],
+      };
+    });
+    return `<h3>Exam Notes by Issue Type</h3>${intro}<div class="exam-issue-list">${examIssueListHtml([{ label: '', items }])}</div>`;
   }
 
   // Renders an issue type's cross-references to issue types taught in OTHER
@@ -398,6 +396,8 @@
   // now, wired there instead.)
   function wireSessionDetail(bodyEl, sessionDetail, code, ev) {
     if (sessionDetail && sessionDetail.legalIssues) wireLegalIssuesMindmap(bodyEl);
+    const list = bodyEl.querySelector('.exam-issue-list');
+    if (list) wireIssueFilter(list);
     if (!sessionDetail || !sessionDetail.prepChecklist) return;
     const prepKey = sgPrepChecklistKey(code, sessionKeyFor(ev.no));
     const container = bodyEl.querySelector('[data-prep-checklist]');

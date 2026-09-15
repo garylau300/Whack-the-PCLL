@@ -199,6 +199,36 @@
     return `${coursePrefix(code, details)}-${sessionKey}.${String(index + 1).padStart(2, '0')}`;
   }
 
+  // Every leaf checkbox id in an issue type's answering flowchart, in the
+  // same ancestor-chain scheme flowchartHtml uses (step > point > sub-point).
+  // A step with no points is itself a leaf; a point with sub-points is not.
+  // Kept here rather than in the renderer so the index can count progress
+  // without building any markup.
+  function flowLeafIds(flowchart) {
+    const out = [];
+    for (const step of (flowchart && flowchart.steps) || []) {
+      const points = step.points || [];
+      if (!points.length) { out.push(noteCheckId(step.label)); continue; }
+      for (const p of points) {
+        const text = typeof p === 'string' ? p : p.text;
+        const kids = (typeof p === 'string' ? null : p.points) || [];
+        if (!kids.length) { out.push(noteCheckId([step.label, text].join('\u0000'))); continue; }
+        for (const k of kids) out.push(noteCheckId([step.label, text, k].join('\u0000')));
+      }
+    }
+    return out;
+  }
+
+  // How far through one issue type's flowchart the reader has ticked.
+  // `total` is 0 for an issue with no flowchart, which callers render as
+  // "no checklist" rather than as 0%.
+  function issueProgress(code, sessionKey, issue) {
+    const leaves = flowLeafIds(issue.answering && issue.answering.flowchart);
+    if (!leaves.length) return { done: 0, total: 0 };
+    const set = loadCheckedIds(issueNotesKey(code, sessionKey, issue.id));
+    return { done: leaves.filter((id) => set.has(id)).length, total: leaves.length };
+  }
+
   // Pure renderer: items -> checklist row markup. No event wiring (same
   // spirit as eventCardHtml/field) — pair with wireChecklist() below.
   function checklistHtml(items, checkedSet) {
@@ -760,7 +790,7 @@
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
-    issueNotesKey, noteCheckId, coursePrefix, issueCode,
+    issueNotesKey, noteCheckId, coursePrefix, issueCode, flowLeafIds, issueProgress,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
     sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionEventsByKey, sessionKeyFor, sessionPartLetter,

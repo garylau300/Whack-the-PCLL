@@ -337,6 +337,87 @@
   // without either duplicating the section chrome or inverting the
   // core -> content -> session dependency direction. A section with only an
   // extra and no authored body still renders.
+  // The one issue-type index, shared by the session page and the course-wide
+  // roll-up (which previously carried two copies of this markup that had to
+  // be kept in step by hand). `groups` is [{ label, items }] where an item is
+  // { href, code, title, done, total, tags }.
+  //
+  // Deliberately a dense ROW, not a card: the list is navigation, and at
+  // 26 issues in one course a paragraph of summary per row buries the titles.
+  // The summary still exists — it is the subtitle on the issue page itself,
+  // which is where you are once the list has done its job.
+  function examIssueListHtml(groups, opts) {
+    const o = opts || {};
+    const total = groups.reduce((n, g) => n + g.items.length, 0);
+    if (!total) return '';
+    const body = groups.map((g) => {
+      const rows = g.items.map((it) => {
+        const pct = it.total ? Math.round((it.done / it.total) * 100) : 0;
+        const state = !it.total ? '' : it.done === it.total ? ' is-done' : it.done ? ' is-part' : '';
+        const meter = it.total
+          ? `<span class="exam-issue-progress${state}" role="img" aria-label="${it.done} of ${it.total} checklist points done">`
+            + `<span class="exam-issue-bar"><span style="width:${pct}%"></span></span>`
+            + `<span class="exam-issue-count">${it.done}/${it.total}</span></span>`
+          : '';
+        const tags = (it.tags || []).map((t) => `<span class="tag-chip exam-issue-tag">${escapeHtml(t)}</span>`).join('');
+        // data-filter carries exactly what the filter box matches against, so
+        // filtering never has to walk the row's DOM or re-read its text.
+        return `<li class="exam-issue-row" data-filter="${escapeHtml((it.code + ' ' + it.title).toLowerCase())}">
+          <a class="exam-issue-card${state}" href="${escapeHtml(it.href)}">
+            <span class="exam-issue-code">${escapeHtml(it.code)}</span>
+            <span class="exam-issue-title">${escapeHtml(it.title)}</span>
+            ${tags ? `<span class="exam-issue-tags">${tags}</span>` : ''}
+            ${meter}
+            <span class="exam-issue-arrow" aria-hidden="true">&#8594;</span>
+          </a></li>`;
+      }).join('');
+      // The label gets its own span so the count badge is not a bare sibling
+      // text node — otherwise the heading's accessible name reads "LG39"
+      // rather than "LG3, 9 issue types".
+      const head = g.label
+        ? `<h3 class="exam-index-session"><span class="exam-index-label">${escapeHtml(g.label)}</span>`
+          + `<span class="exam-index-count" aria-label="${g.items.length} issue types">${g.items.length}</span></h3>`
+        : '';
+      return `<div class="exam-issue-group" data-group="${escapeHtml(g.label || '')}">${head}<ol class="exam-issue-index">${rows}</ol></div>`;
+    }).join('');
+    // The filter earns its place once the list is long enough to scroll past.
+    const filter = total >= (o.filterFrom || 8)
+      ? `<div class="exam-index-filter">
+          <input type="search" class="exam-filter-input" placeholder="Filter ${total} issue types by code or title…" aria-label="Filter issue types" />
+          <span class="exam-filter-status" role="status"></span>
+        </div>`
+      : '';
+    return filter + body;
+  }
+
+  // Wires the filter box produced above. Hides non-matching rows and any
+  // group left empty, and announces the count for screen readers.
+  function wireIssueFilter(containerEl) {
+    const input = containerEl.querySelector('.exam-filter-input');
+    if (!input) return;
+    const status = containerEl.querySelector('.exam-filter-status');
+    const rows = [...containerEl.querySelectorAll('.exam-issue-row')];
+    const groups = [...containerEl.querySelectorAll('.exam-issue-group')];
+    const apply = () => {
+      const q = input.value.trim().toLowerCase();
+      let shown = 0;
+      for (const row of rows) {
+        const hit = !q || row.dataset.filter.includes(q);
+        row.hidden = !hit;
+        if (hit) shown++;
+      }
+      for (const g of groups) g.hidden = !g.querySelector('.exam-issue-row:not([hidden])');
+      if (status) status.textContent = q ? `${shown} of ${rows.length}` : '';
+      containerEl.classList.toggle('is-filtered', !!q);
+    };
+    input.addEventListener('input', apply);
+    input.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || !input.value) return;
+      input.value = '';
+      apply();
+    });
+  }
+
   function examIssueSectionsHtml(issue, extras, opts) {
     if (!issue) return '';
     const extra = extras || {};
@@ -451,7 +532,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml,
-    examIssueSectionsHtml, wireFlowChecks,
+    examIssueSectionsHtml, wireFlowChecks, examIssueListHtml, wireIssueFilter,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
   });
 })();

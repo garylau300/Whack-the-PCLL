@@ -935,29 +935,84 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
    summary under them, and the sequence is numbered, so columns would both
    wrap badly and scramble the reading order. Left plainer than .study-cta
    above deliberately — seven cards as loud as the CTA would drown it. */
-.exam-issue-index { list-style: none; margin: 8px 0 16px; padding: 0; display: grid; gap: 8px; }
-.exam-index-session { margin: 16px 0 0; font-size: 0.85rem; }
+.exam-issue-index { list-style: none; margin: 6px 0 14px; padding: 0; display: grid; gap: 2px; }
+.exam-issue-group[hidden] { display: none; }
+.exam-index-session {
+  display: flex; align-items: center; gap: 8px;
+  margin: 18px 0 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.exam-index-count {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0; color: var(--text-muted);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+}
+
+/* A navigation ROW, not a card. At 26 issue types in one course the old
+   card -- number badge, title, a line of summary, tag chips -- meant one
+   screen showed four of them; the titles are what you are scanning for, so
+   they now sit on one line with the code, and the summary lives on the
+   issue page where it belongs. Grid, not flex, so the code column is the
+   same width on every row and the titles line up as a column. */
 .exam-issue-card {
-  display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  display: grid; grid-template-columns: auto 1fr auto auto auto; gap: 4px 10px; align-items: baseline;
+  padding: 7px 10px; border-radius: var(--radius-sm);
+  border: 1px solid transparent; border-bottom-color: var(--border);
+  background: var(--surface);
   text-decoration: none; color: var(--text);
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 .exam-issue-card:hover, .exam-issue-card:focus-visible {
   border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
 }
-.exam-issue-num {
-  display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
-  flex: 0 0 auto; border-radius: 50%; background: var(--accent-2); color: var(--accent-2-text);
-  font-size: 0.72rem; font-weight: 700;
-}
-.exam-issue-main { min-width: 0; flex: 1; }
-.exam-issue-title { display: block; font-weight: 700; font-size: 0.85rem; }
-.exam-issue-summary { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
-.exam-issue-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.exam-issue-title { font-weight: 600; font-size: 0.88rem; min-width: 0; }
+.exam-issue-tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .exam-issue-tag { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
-.exam-issue-arrow { color: var(--accent-text); font-size: 1.1rem; flex: 0 0 auto; }
+/* Pinned to the last two columns so an optional middle cell (the weighting
+   chip) can appear or not without pushing either onto a second row. */
+.exam-issue-progress { grid-column: -3 / -2; }
+.exam-issue-arrow { grid-column: -2 / -1; color: var(--accent-text); font-size: 1rem; }
+
+/* Progress through the issue's flowchart checklist, read from the same
+   stored leaf ids the checkboxes use — so the index doubles as a record of
+   what you have actually worked through. Hidden entirely for an issue with
+   no flowchart rather than shown as a misleading 0%. */
+.exam-issue-progress { display: inline-flex; align-items: center; gap: 6px; justify-self: end; }
+.exam-issue-bar {
+  display: block; width: 46px; height: 5px; border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 28%, transparent); overflow: hidden;
+}
+.exam-issue-bar > span { display: block; height: 100%; background: var(--accent-text); border-radius: 999px; }
+.exam-issue-count {
+  font-size: 0.68rem; font-variant-numeric: tabular-nums; color: var(--text-muted); min-width: 4ch;
+}
+.exam-issue-progress.is-done .exam-issue-bar > span { background: var(--ok, #2f855a); }
+.exam-issue-card.is-done .exam-issue-title { color: var(--text-muted); }
+
+/* Filter box. Earns its place once the list is long enough to scroll past;
+   examIssueListHtml only emits it above a threshold. */
+.exam-index-filter { display: flex; align-items: center; gap: 10px; margin: 4px 0 10px; }
+.exam-filter-input {
+  flex: 1 1 auto; min-width: 0; max-width: 460px;
+  padding: 7px 10px; font: inherit; font-size: 0.85rem;
+  color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+}
+.exam-filter-input:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; border-color: var(--accent); }
+.exam-filter-status { font-size: 0.78rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 560px) {
+  /* Stack: code on its own line above the title, so a long title is never
+     squeezed into a sliver of column. The arrow goes — it is decorative (the
+     whole row is the link) and in a two-column stack it wrapped onto a line
+     of its own, costing a row of height per issue for nothing. */
+  .exam-issue-card { grid-template-columns: 1fr auto; row-gap: 2px; padding: 9px 10px; }
+  .exam-issue-code { grid-column: 1 / -1; }
+  .exam-issue-tags { grid-column: 1 / -1; }
+  .exam-issue-arrow { display: none; }
+  .exam-index-filter { flex-wrap: wrap; }
+  .exam-filter-input { max-width: none; }
+}
 
 /* One section of an issue-type page (issue.html). The two "be careful"
    sections get a tinted left rule -- amber, NOT --now-line, which stays
@@ -989,10 +1044,9 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
    the page title. Monospace and tabular so a column of them lines up and the
    session/number parts stay scannable at a glance. */
 .exam-issue-code {
-  display: block;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em;
-  color: var(--accent-text); margin-bottom: 2px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--accent-text); white-space: nowrap;
 }
 
 /* The answering flowchart as a three-level checklist: step > point >

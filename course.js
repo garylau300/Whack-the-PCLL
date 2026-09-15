@@ -6,6 +6,7 @@
     initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
     COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey, issueCode,
+    issueProgress, examIssueListHtml, wireIssueFilter,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -156,21 +157,26 @@
     const groups = Object.keys(sessions).map((key) => {
       const found = eventsByKey.get(key);
       const issueTypes = (sessions[key].examNotes && sessions[key].examNotes.issueTypes) || [];
-      if (!found || !issueTypes.length) return '';
-      const cards = issueTypes.map((issue, i) => `<li><a class="exam-issue-card" href="${escapeHtml(issueHref(found.ev, found.dateIso, issue.id))}">
-        <span class="exam-issue-num" aria-hidden="true">${i + 1}</span>
-        <span class="exam-issue-main">
-          <span class="exam-issue-code">${escapeHtml(issueCode(code, details, key, i))}</span>
-          <span class="exam-issue-title">${escapeHtml(issue.title)}</span>
-          ${issue.summary ? `<span class="exam-issue-summary">${escapeHtml(issue.summary)}</span>` : ''}
-        </span>
-        <span class="exam-issue-arrow" aria-hidden="true">&#8594;</span>
-      </a></li>`).join('');
-      return `<h3 class="exam-index-session">${escapeHtml(key)}</h3><ol class="exam-issue-index">${cards}</ol>`;
-    }).join('');
-    if (!groups) { section.hidden = true; return; }
+      if (!found || !issueTypes.length) return null;
+      return {
+        label: key,
+        items: issueTypes.map((issue, i) => {
+          const { done, total } = issueProgress(code, key, issue);
+          return {
+            href: issueHref(found.ev, found.dateIso, issue.id),
+            code: issueCode(code, details, key, i),
+            title: issue.title,
+            done,
+            total,
+          };
+        }),
+      };
+    }).filter(Boolean);
+    const html = examIssueListHtml(groups);
+    if (!html) { section.hidden = true; return; }
     section.hidden = false;
-    $('examIndexBody').innerHTML = groups;
+    $('examIndexBody').innerHTML = html;
+    wireIssueFilter($('examIndexBody'));
   }
 
   function renderCourse(data) {
