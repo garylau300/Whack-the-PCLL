@@ -8,6 +8,62 @@ window.COURSE_DETAILS.PCLL8030 = {
   // in common-core.js. Must be unique across courses.
   codePrefix: 'PRP',
 
+  coordinators: [
+    { name: 'Alwin Chan', email: 'alwinwh@hku.hk' },
+    { name: 'Henry Chung', email: 'hchung88@hku.hk' },
+  ],
+
+  // The course's own statement of what the six SGS require and the skills
+  // they cover, from the SGS/Assessment memorandum of 1 September 2026.
+  learningOutcomes: [
+    'Write on the legal and/or ethical issues involved in property transactions — required in all six Small Group Sessions',
+    'Interpret and analyse case law and statutes, such as the Conveyancing and Property Ordinance (Cap. 219)',
+    'Interpret and analyse transaction documents, such as the provisional Agreement for Sale and Purchase and the formal Agreement for Sale and Purchase',
+    'Interpret and analyse fact scenarios arising at the different stages of a typical Hong Kong property transaction',
+    'Research the relevant legal principles and apply them to the relevant facts and/or documents in property transactions',
+  ],
+
+  // Weightings and scope are from the coordinators' memorandum; the dates
+  // are the timetable's own "Assessment I/II (Provisional)" PCLL8030
+  // entries, hence the Provisional label (same convention as PCLL8020).
+  assessments: [
+    { title: 'Property Paper I', weight: '20%', dateLabel: '16 December 2026 (Provisional)', note: 'Open book. Examines only the material covered in LG1–LG10 — the conveyancing chain, from Government Lease through to Assignment.' },
+    { title: 'Property Paper II', weight: '80%', dateLabel: '4 January 2027 (Provisional)', note: 'Open book. Covers the entire course, including the LG11–LG14 stamp duty, tax and probate material.' },
+  ],
+  assessmentNotes: [
+    'Both Papers are open-book examinations. The coordinators covered the assessment structure at the start of LG1.',
+    'A past paper for Paper II has been uploaded to Moodle.',
+    'A review session on the conveyancing aspects only (LG1–LG10) runs on 30 November 2026 — it appears in the timetable as the optional Q&A Session. Students are encouraged to e-mail the coordinators their questions well before it so the answers can be shared in class.',
+  ],
+
+  // The six SGS written submissions. Each SGS is taught twice — a Monday
+  // sitting and a Tuesday one — and the two sittings have different
+  // submission deadlines: the Monday group submits by the preceding
+  // Thursday, the Tuesday group by the preceding Friday. The dates below
+  // are the MONDAY sitting's, which is the one this timetable places our
+  // group (Gp 11/24, SG part B, Mon 3:00pm, CCT 724, tutor Henry Chung) in.
+  // The Tuesday sitting's deadlines are 2 Oct, 9 Oct, 23 Oct, 30 Oct,
+  // 6 Nov and 13 Nov respectively, all also 11:59pm.
+  // SG1 is the one break in the pattern: the preceding Thursday is 1 October
+  // (National Day), so that deadline sits on Wednesday 30 September instead.
+  deadlines: [
+    { id: 'PCLL8030-hw-sg1', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg1', date: '2026-09-30', time: '23:59', title: 'SG1 written submission due (e-mail to tutor)' },
+    { id: 'PCLL8030-hw-sg2', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg2', date: '2026-10-08', time: '23:59', title: 'SG2 written submission due (e-mail to tutor)' },
+    { id: 'PCLL8030-hw-sg3', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg3', date: '2026-10-22', time: '23:59', title: 'SG3 written submission due (e-mail to tutor)' },
+    { id: 'PCLL8030-hw-sg4', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg4', date: '2026-10-29', time: '23:59', title: 'SG4 written submission due (e-mail to tutor)' },
+    { id: 'PCLL8030-hw-sg5', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg5', date: '2026-11-05', time: '23:59', title: 'SG5 written submission due (e-mail to tutor)' },
+    { id: 'PCLL8030-hw-sg6', courseCode: 'PCLL8030', kind: 'homework', refId: 'hw-sg6', date: '2026-11-12', time: '23:59', title: 'SG6 written submission due (e-mail to tutor)' },
+  ],
+
+  homework: [
+    { id: 'hw-sg1', title: 'SG1 — write on the legal and/or ethical issues', sgRef: 'SG1', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg1' },
+    { id: 'hw-sg2', title: 'SG2 — write on the legal and/or ethical issues', sgRef: 'SG2', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg2' },
+    { id: 'hw-sg3', title: 'SG3 — write on the legal and/or ethical issues', sgRef: 'SG3', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg3' },
+    { id: 'hw-sg4', title: 'SG4 — write on the legal and/or ethical issues', sgRef: 'SG4', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg4' },
+    { id: 'hw-sg5', title: 'SG5 — write on the legal and/or ethical issues', sgRef: 'SG5', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg5' },
+    { id: 'hw-sg6', title: 'SG6 — write on the legal and/or ethical issues', sgRef: 'SG6', mode: 'E-mail to your tutor before class', deadlineId: 'PCLL8030-hw-sg6' },
+  ],
+
   sessions: {
     // Pre-recorded — the timetable gives this entry no `no` of its own
     // (see week 1's preRecorded list), so it's matched back to this key
@@ -387,6 +443,61 @@ window.COURSE_DETAILS.PCLL8030 = {
             { front: 'What happens to an instrument that is not properly stamped?', back: 'It is not admissible in evidence, cannot be acted upon, filed or registered by public officers or bodies corporate, and penalties of up to 10 times the original duty may be imposed.' },
           ],
         },
+      ],
+    },
+
+    // SG1-SG6. The small group materials had not been distributed when the
+    // coordinators' memorandum was written, so these entries deliberately
+    // carry only what that memorandum actually states -- the standing
+    // written-submission requirement common to all six sessions, and each
+    // session's own deadline. Topics, fact patterns and notes go in as and
+    // when the real materials land; nothing here is guessed at.
+    SG1: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG1 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg1' },
+      ],
+    },
+    SG2: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG2 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg2' },
+      ],
+    },
+    SG3: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG3 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg3' },
+      ],
+    },
+    SG4: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG4 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg4' },
+      ],
+    },
+    SG5: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG5 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg5' },
+      ],
+    },
+    SG6: {
+      kind: 'SG',
+      mode: 'Small group — written submission e-mailed to your tutor before class',
+      skills: 'Interpreting and analysing case law, statutes, transaction documents and fact scenarios; researching and applying the relevant legal principles to the facts and documents',
+      activities: [
+        { title: 'Write on the legal and/or ethical issues involved in the SG6 fact scenario, and e-mail it to your tutor', deadlineId: 'PCLL8030-hw-sg6' },
       ],
     },
   },
