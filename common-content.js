@@ -12,7 +12,7 @@
 (() => {
   'use strict';
 
-  const { escapeHtml, noteCheckId } = window.PCLL;
+  const { escapeHtml, citeHtml, noteCheckId } = window.PCLL;
 
   function listSection(heading, items) {
     if (!items || !items.length) return '';
@@ -100,7 +100,7 @@
     const on = checked.has(id);
     return `<label class="${cls}${on ? ' checked' : ''}" data-flow-id="${escapeHtml(id)}"${extra || ''}>`
       + `<input type="checkbox" data-flow-id="${escapeHtml(id)}"${on ? ' checked' : ''} />`
-      + `<span>${escapeHtml(text)}</span></label>`;
+      + `<span>${citeHtml(text)}</span></label>`;
   }
 
   // The answering flowchart, rendered as a three-level checklist: each
@@ -126,11 +126,11 @@
           const subs = kids.length
             ? `<ul class="exam-flow-subpoints">${kids.map((k) => (checkable
               ? `<li>${flowCheckHtml(pointPath.concat(k), k, checked, 'exam-flow-check exam-flow-check--sub')}</li>`
-              : `<li>${escapeHtml(k)}</li>`)).join('')}</ul>`
+              : `<li>${citeHtml(k)}</li>`)).join('')}</ul>`
             : '';
           const body = checkable
             ? flowCheckHtml(pointPath, text, checked, 'exam-flow-check exam-flow-check--point')
-            : escapeHtml(text);
+            : citeHtml(text);
           return `<li>${body}${subs}</li>`;
         }).join('')}</ul>`
         : '';
@@ -141,17 +141,17 @@
           const jump = targetStep
             ? `<span class="exam-flow-goto">&#8594; Step ${target}: ${escapeHtml(targetStep.label)}</span>`
             : '';
-          return `<li class="exam-flow-branch"><strong class="exam-flow-cond">${escapeHtml(b.condition)}</strong>${b.then ? ` — ${escapeHtml(b.then)}` : ''}${jump}</li>`;
+          return `<li class="exam-flow-branch"><strong class="exam-flow-cond">${citeHtml(b.condition)}</strong>${b.then ? ` — ${citeHtml(b.then)}` : ''}${jump}</li>`;
         }).join('')}</ul>`
         : '';
       const decision = (s.branches || []).length ? ' exam-flow-step--decision' : '';
       const label = checkable
         ? flowCheckHtml(stepPath, s.label, checked, 'exam-flow-check exam-flow-check--step')
-        : `<span class="exam-flow-label">${escapeHtml(s.label)}</span>`;
+        : `<span class="exam-flow-label">${citeHtml(s.label)}</span>`;
       return `<li class="exam-flow-step${decision}">
         <span class="exam-flow-num" aria-hidden="true">${i + 1}</span>
         ${label}
-        ${s.detail ? `<span class="exam-flow-detail">${escapeHtml(s.detail)}</span>` : ''}
+        ${s.detail ? `<span class="exam-flow-detail">${citeHtml(s.detail)}</span>` : ''}
         ${points}${branches}
       </li>`;
     }).join('');
@@ -218,7 +218,7 @@
     if (!items || !items.length) return '';
     return `<div class="law-callout law-callout--warning">
       <div class="law-callout-head"><span aria-hidden="true">&#9888;</span> Important</div>
-      <ul>${items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>
+      <ul>${items.map((i) => `<li>${citeHtml(i)}</li>`).join('')}</ul>
     </div>`;
   }
 
@@ -229,7 +229,7 @@
     if (!items || !items.length) return '';
     return items.map((s) => `<blockquote class="law-callout law-callout--quote">
       <p>${escapeHtml(s.text)}</p>
-      ${s.cite ? `<cite>&mdash; ${escapeHtml(s.cite)}</cite>` : ''}
+      ${s.cite ? `<cite>&mdash; ${citeHtml(s.cite)}</cite>` : ''}
     </blockquote>`).join('');
   }
 
@@ -244,18 +244,18 @@
   // order is fixed here, NOT by the order keys are authored in.
   function fullNoteBodyHtml(n, opts) {
     let html = '';
-    if (n.body) html += `<p>${escapeHtml(n.body)}</p>`;
-    if (n.bullets) html += `<ul>${n.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`;
+    if (n.body) html += `<p>${citeHtml(n.body)}</p>`;
+    if (n.bullets) html += `<ul>${n.bullets.map((b) => `<li>${citeHtml(b)}</li>`).join('')}</ul>`;
     if (n.bulletGroups) {
-      html += n.bulletGroups.map((g) => `<h4>${escapeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`).join('');
+      html += n.bulletGroups.map((g) => `<h4>${citeHtml(g.heading)}</h4><ul>${g.items.map((i) => `<li>${citeHtml(i)}</li>`).join('')}</ul>`).join('');
     }
     if (n.statutes) html += statuteBoxHtml(n.statutes);
     if (n.table) {
-      html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+      html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${citeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
     if (n.diagram) html += processDiagramHtml(n.diagram);
     if (n.flowchart) html += flowchartHtml(n.flowchart, opts);
-    if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${escapeHtml(p.q)}</dt><dd>${escapeHtml(p.a)}</dd>`).join('')}</dl>`;
+    if (n.qa) html += `<dl class="qa-list">${n.qa.map((p) => `<dt>${citeHtml(p.q)}</dt><dd>${citeHtml(p.a)}</dd>`).join('')}</dl>`;
     if (n.warnings) html += warningBoxHtml(n.warnings);
     return html;
   }
@@ -429,7 +429,7 @@
     }).join('');
     if (issue.notes && issue.notes.length) {
       html += `<section class="exam-section exam-section--notes"><h3>Further Notes</h3>${issue.notes.map((n) => `
-        <div class="legal-issue-note"><h4>${escapeHtml(n.heading)}</h4>${fullNoteBodyHtml(n, opts)}</div>`).join('')}</section>`;
+        <div class="legal-issue-note"><h4>${citeHtml(n.heading)}</h4>${fullNoteBodyHtml(n, opts)}</div>`).join('')}</section>`;
     }
     return html;
   }

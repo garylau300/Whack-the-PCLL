@@ -309,6 +309,36 @@ not what the code does.
   centred row and the title a full-width one beneath. Keep `min-width: 0`
   on `.topbar h1` so it wraps inside its column rather than widening the
   column and pushing the brand off-centre.
+- **Statutory and case references are highlighted automatically — never by
+  hand.** `citeHtml(text)` in `common-core.js` detects them and wraps each in
+  `<span class="cite">` (bold, `--cite-text`); every note-body renderer in
+  `common-content.js` calls it instead of `escapeHtml`. Nothing in
+  courseDetails carries markup for this, and nothing should: adding a
+  provision to a note is enough for it to light up. Two rules if you touch
+  the detector:
+  - **Detect over the RAW string, then escape each slice.** `citeHtml`
+    collects character ranges and escapes the pieces separately. Running the
+    patterns over already-escaped text lets them collide with entities — `&`
+    becomes `&amp;`, so a case name like "Tommy C P Sze & Co" has an entity
+    in the middle of it. Only a fixed `<span>` is ever inserted, so no source
+    text can reach the output unescaped.
+  - **A reference continues past its first paragraph.** `PARAS` absorbs
+    `(a)-(c)`, `, (h), (j)-(p)` and ` and (b)`, so `r.1(1)(b), (h), (j)-(p)`
+    marks as one span rather than stopping at `(b)`. The separator must be
+    followed immediately by `(` — otherwise "O.11 r.4(4) and the 14-day rule"
+    swallows the prose after it. `RULE_RANGE` separately covers a range with
+    no parentheses at all (`rr.2-3`).
+  Measure any change against the whole corpus with
+  `scratchpad/detector.js`, which loads the detector **out of
+  `common-core.js`** rather than copying it, and diff old vs new matches: the
+  total span count should stay put while individual spans get longer. 148
+  references were being truncated before `PARAS` existed.
+- **`--cite-text` is dark red in light mode and a LIGHTER red in dark.** A
+  true dark red (`#991b1b`) measures 1.98:1 on the dark surface and is
+  unreadable, so the dark theme uses `#f28b82` (6.75:1). Same split as
+  `--now-line-text`. Inside a warning callout and a ticked checklist row the
+  colour is deliberately dropped to `inherit`, so a red-on-red callout stays
+  legible and a completed row dims as a whole.
 - **Substantive note content is never `--text-muted`.** The muted token is
   for genuine metadata (a route's "when" clause, a table header, a caption).
   Flowchart step points and details carry the sub-rules that decide an

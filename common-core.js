@@ -29,8 +29,8 @@
 
   const COURSE_COLORS = {
     PCLL8010: '#2b6cb0', // Civil Litigation
-    PCLL8020: '#2f855a', // Corp & Com Transactions
-    PCLL8030: '#b7791f', // Property Transactions
+    PCLL8020: '#b7791f', // Corp & Com Transactions
+    PCLL8030: '#2f855a', // Property Transactions
     PCLL8040: '#6b46c1', // Professional Practice & Management
     PCLL8050: '#c53030', // Criminal Litigation
     PCLL8051: '#dd6b20', // Criminal Advocacy
@@ -496,6 +496,118 @@
     return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
+  // ---------------------------------------------------------------------
+  // Statutory and case references, marked up for emphasis in the notes.
+  //
+  // Detection runs over the RAW string and yields character ranges; citeHtml
+  // then escapes each slice separately. Doing it the other way round -- regex
+  // over already-escaped text -- means the patterns can collide with entities
+  // (`&` becomes `&amp;`, and a case name like "Tommy C P Sze & Co" then has
+  // an entity in the middle of it), so ranges-then-escape is the safe order.
+  // Only a fixed <span class="cite"> is ever inserted; nothing in the source
+  // text can reach the output unescaped.
+  const COURT = 'HCA|CACV|HCPI|HCMP|HCZZ|DCCJ|FACV|HCCW|CAMP|CACC|HCCT|HCSD';
+  // A party-name token. The FIRST token must start upper-case or with a digit,
+  // so "on the Bruce v Odhams test" does not bold the leading "the".
+  const HEAD = "(?:[A-Z]|\\d+[A-Z])[\\w&'’-]*\\.?";
+  const TOK = "(?:[A-Z0-9][\\w&'’-]*\\.?|\\((?:No ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|y|&)";
+  // Left-hand party tokens may not be purely numeric — see the comment on
+  // CASE_RE below for the citation-merge this prevents.
+  const LTOK = "(?:(?:[A-Z]|\\d+[A-Z])[\\w&'’-]*\\.?|\\((?:No ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|&)";
+  // Bounded to the SHAPE of a citation so it cannot run on into the sentence
+  // after it — the first cut matched 28 arbitrary characters and bolded prose
+  // like "[1987] AC 189 at 212F gives the pr".
+  const REPORTER = "\\[(?:19|20)\\d\\d\\]\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
+  const YEARPAREN = "\\((?:19|20)\\d\\d\\)\\s*\\d*\\s*[A-Z][A-Za-z]{1,10}\\s*\\d+";
+  const COURTFILE = '(?:' + COURT + ') ?\\d+\\/\\d{4}';
+  // Optional trailing court and pinpoint, both fully bracket-balanced.
+  const TAIL = "(?:\\s*\\((?:CA|HC|CFI|CFA|PC)\\))?(?:\\s+at\\s+(?:paras?\\s+)?\\d[\\w.–-]*)?";
+  const CITATION = '(?:\\s*(?:' + REPORTER + '|' + YEARPAREN + ')' + TAIL
+    + '|\\s*\\(' + COURTFILE + '\\)|\\s+' + COURTFILE + '|\\s*\\((?:CA|HC|CFI|CFA|PC)\\))';
+
+  const CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){0,6}\\sv\\.? ' + TOK + '(?:\\s' + TOK + '){0,8}(?:' + CITATION + ')?', 'g');
+
+  // One paragraph group — (a), (1A), (ga) — never containing a space, so a
+  // parenthetical like "(the Court)" can never be swallowed.
+  const PARA = '\\([^()\\s]{1,8}\\)';
+  const PARA_RANGE = PARA + '(?:\\s*[-\u2013]\\s*' + PARA + ')?';
+  // A reference often continues past its first paragraph: "r.1(1)(b), (h),
+  // (j)-(p)" or "MA22(4)(a) and (b)". Without this the highlight stopped at
+  // the first group and the rest of the list read as ordinary prose. The
+  // separator has to be followed immediately by "(" so " and the 14-day rule"
+  // is not absorbed.
+  const MORE_PARAS = '(?:(?:\\s*,\\s*|\\s+and\\s+|\\s+or\\s+)' + PARA_RANGE + ')*';
+  const PARAS = '(?:' + PARA + ')*(?:\\s*[-\u2013]\\s*' + PARA + ')?' + MORE_PARAS;
+  // A rule range with no paragraph groups at all — "rr.2-3", "r.5-7".
+  const RULE_RANGE = '(?:\\s*[-\u2013]\\s*(?:rr?\\.\\s?)?\\d+[A-Z]*(?:' + PARA + ')*)?';
+
+  const PATTERNS = [
+    // Order + rule first, so "O.18 r.7(1)" stays one unit rather than two
+    new RegExp('\\bO\\.\\s?\\d+[A-Z]?\\s+rr?\\.\\s?\\d+[A-Z]*' + PARAS + '(?:\\s*(?:-|\u2013|and|to)\\s*(?:r\\.\\s?)?\\d*[A-Z]*(?:' + PARA + ')+' + MORE_PARAS + ')?' + RULE_RANGE, 'g'),
+    /\bO\.\s?\d+[A-Z]?\b/g,
+    new RegExp('\\brr?\\.\\s?\\d+[A-Z]*' + PARAS + RULE_RANGE, 'g'),
+    new RegExp('\\brules?\\s\\d+[A-Z]*' + PARAS, 'g'),
+    new RegExp('\\bss?\\.?\\s?\\d+[A-Z]*' + PARAS + '(?:\\s*[-\u2013]\\s*\\d+[A-Z]*)?(?:\\s+and\\s+\\d+[A-Z]*' + PARAS + ')?', 'g'),
+    new RegExp('\\bsections?\\s\\d+[A-Z]*' + PARAS, 'g'),
+    new RegExp('\\bMA\\s?\\d+[A-Z]?' + PARAS + '(?:\\s*[-\u2013]\\s*(?:MA)?\\d+' + PARAS + ')?', 'g'),
+    /\bCap\.?\s?\d+[A-Z]?\b/g,
+    /\b(?:Practice Direction|PD)\s?\d+(?:\.\d+)*(?:\s*§\s?\d+(?:\.\d+)*)?/g,
+    /§\s?\d+(?:[/.]\d+)*/g,
+    /\bArts?\.?\s?\d+[A-Z]?(?:\s+and\s+\d+)?\b/g,
+    /\bL\.N\.\s?\d+ of \d{4}\b/g,
+    new RegExp(REPORTER, 'g'),
+    new RegExp(YEARPAREN, 'g'),
+    new RegExp('\\b' + COURTFILE + '\\b', 'g'),
+    CASE_RE,
+  ];
+
+  // Sentence glue that is not part of a party name.
+  const LEAD_STOP = /^(?:Contrast|See|Cf|Per|And|But|Or|In|On|At|If|Then|Note|Compare|Under|Following|Applied|Approved|Citing|Unlike|Both|Here|This|That|These|Those|Where|When|While|Also|However|Whereas|Because|Since|Thus|So|Hence|Now|Again|Read|Use|Using|Apply|Applying|Consider|Identify|State|Give|Take|Run|Check|Ask|Say|Name|Draft|Plead|Serve|Tick|Set|The)\s+/;
+
+  function findRanges(text) {
+    const ranges = [];
+    for (const re of PATTERNS) {
+      re.lastIndex = 0;
+      let m;
+      while ((m = re.exec(text)) !== null) {
+        let start = m.index;
+        let str = m[0];
+        if (re === CASE_RE) {
+          const trimmed = str.replace(LEAD_STOP, '');
+          start += str.length - trimmed.length;
+          str = trimmed;
+        }
+        str = str.replace(/[\s,;:]+$/, '');
+        const end = start + str.length;
+        if (end > start) ranges.push([start, end]);
+        if (m.index === re.lastIndex) re.lastIndex++;
+      }
+    }
+    ranges.sort((a, b) => (a[0] - b[0]) || (b[1] - a[1]));
+    const kept = [];
+    for (const r of ranges) {
+      const prev = kept[kept.length - 1];
+      if (prev && r[0] < prev[1]) { if (r[1] > prev[1]) prev[1] = r[1]; continue; }
+      kept.push(r.slice());
+    }
+    return kept;
+  }
+
+  // Escapes `text` and wraps every statutory or case reference in it.
+  function citeHtml(text) {
+    const str = String(text);
+    const ranges = findRanges(str);
+    if (!ranges.length) return escapeHtml(str);
+    let out = '';
+    let last = 0;
+    for (const [a, b] of ranges) {
+      out += escapeHtml(str.slice(last, a));
+      out += '<span class="cite">' + escapeHtml(str.slice(a, b)) + '</span>';
+      last = b;
+    }
+    return out + escapeHtml(str.slice(last));
+  }
+
   function field(label, value) {
     return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
   }
@@ -786,7 +898,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, field, isHappeningNow, isMyGroupSession,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,

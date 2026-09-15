@@ -20,6 +20,11 @@
      decorative border/tint (which stay on the base tokens, unaffected). */
   --accent-text: var(--accent);
   --now-line-text: var(--now-line);
+  /* Statutory and case references in the notes. Dark red in light mode;
+     the dark theme must lighten it — #991b1b on the dark surface measures
+     1.98:1, which is unreadable, so it becomes a lighter red that still
+     reads as red (6.75:1). Same split as --now-line-text above. */
+  --cite-text: #991b1b;
   --raccoon-fur: #a8a9b0;
   --raccoon-fur-dark: #7a7b83;
   --raccoon-mask: #45474f;
@@ -42,6 +47,7 @@
     --card-tint: 18%;
     --accent-text: #7ea6d9;
     --now-line-text: #ff8a7a;
+    --cite-text: #f28b82;
     --raccoon-fur: #8a8c96;
     --raccoon-fur-dark: #5f616a;
     --raccoon-mask: #2b2e36;
@@ -59,6 +65,7 @@
   --card-tint: 18%;
   --accent-text: #7ea6d9;
   --now-line-text: #ff8a7a;
+  --cite-text: #f28b82;
   --raccoon-fur: #8a8c96;
   --raccoon-fur-dark: #5f616a;
   --raccoon-mask: #2b2e36;
@@ -709,6 +716,18 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .note-table { margin: 6px 0; font-size: 0.86rem; line-height: 1.5; white-space: normal; }
 .note-table th, .note-table td { white-space: normal; }
 .note-table th { font-size: 0.72rem; letter-spacing: 0.03em; }
+
+/* Statutory and case references, detected at render time by citeHtml in
+   common-core.js and wrapped in <span class="cite">. Bold + dark red so a
+   provision or an authority can be found by eye while scanning a long note.
+   Inherits the surrounding size and style deliberately — inside a quote box
+   it stays italic with the quotation, and inside a ticked checklist row it
+   dims and strikes through with the rest of the row rather than staying loud
+   after the point is done. */
+.cite { color: var(--cite-text); font-weight: 700; }
+.exam-flow-check.checked .cite,
+.law-callout--warning .cite { color: inherit; }
+.law-callout--warning .cite { font-weight: 700; }
 
 /* The assessment table's date cell carries a prose note, not tabular data.
    .session-table is nowrap by design (it is built for the timetable), which
