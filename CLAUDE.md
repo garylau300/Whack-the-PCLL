@@ -292,6 +292,32 @@ not what the code does.
 - **"Be careful" material belongs in an issue type's `lookOut` or
   `mistakes` section, not in `warnings`.** `warnings` stays reserved for
   compliance-critical facts so that red callout keeps its force.
+- **Printing is a stylesheet, not a library.** issue.html's print button
+  calls `window.print()` and nothing else — "Save as PDF" is a destination
+  in the browser's own print dialog, so there is no PDF dependency to add
+  and there should not be one. Everything about how the printed page looks
+  lives in the `@media print` block at the foot of `styles.css`:
+  - It re-declares the colour tokens on `:root, :root[data-theme="dark"]`.
+    Both selectors are needed: paper is white whatever the reader had on
+    screen, and `:root[data-theme="dark"]` would otherwise outrank a bare
+    `:root`. The greys are darkened from their screen values, because what
+    reads as "muted" backlit reads as "faded" in ink.
+  - `print-color-adjust: exact` is what keeps the flowchart's ticks, the
+    tints and the red citations — a printed checklist that drops its ticks
+    is a record of nothing.
+  - `.table-scroll` is unclipped and `.session-table` set to wrap, since the
+    wide authorities tables are sized for a 900px column and paper cannot
+    scroll sideways.
+  - Break rules avoid splitting a single checklist row, callout or table
+    row, and avoid stranding a heading — but deliberately do NOT put
+    `break-inside: avoid` on a whole `.exam-section`, because an answering
+    flowchart of thirty-odd rows would then shove a half-empty page ahead
+    of itself.
+  To verify a change, render the real thing with Playwright's `page.pdf()`.
+  Note the trap: `page.pdf()` uses print media only while no explicit
+  override is in force, so an earlier `emulateMedia({ media: 'screen' })` in
+  the same script silently renders the PDF with the on-screen chrome —
+  reset with `emulateMedia({ media: null })` before generating.
 - Every modal/popup on the site (settings panel, mindmap popup) is wired
   through the shared `initDialog` helper in `common-core.js` (focus trap,
   Escape-to-close, focus-restore-to-trigger) — don't hand-roll another

@@ -135,5 +135,9 @@
   }
 
   initTheme($('themeBtn'));
+  // "Save as PDF" is a destination in the browser's own print dialog, so
+  // printing is the whole implementation — see the @media print block in
+  // styles.css for what the printed page actually looks like.
+  $('printBtn').addEventListener('click', () => window.print());
   load();
 })();
