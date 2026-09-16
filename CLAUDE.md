@@ -448,4 +448,4 @@ recorded so the reasoning doesn't have to be redone.)
   changed.
 - Never force-push, amend, or rewrite history on this branch without being
   explicitly asked to.
-- Working branch: `claude/pcll-study-portal-timetable-wdjeu5`.
+- Working branch: `main`.
