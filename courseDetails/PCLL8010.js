@@ -5872,6 +5872,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'Ask the one question: must the Court assess the amount?',
+                    why: 'The distinction is not about how certain or precise the figure looks — it is about who has to do the arithmetic. A court can enter judgment for a sum only where the sum is already fixed by the parties or by statute; where it has to be assessed, the most the court can give on a default is liability, because nobody has yet proved the amount.',
+                    exam: {
+                      write: 'The Plaintiff\'s claim is for $[X] due under [the loan agreement/the invoice], a sum fixed by the contract and requiring no assessment by the Court. It is therefore a claim for a liquidated demand.',
+                      trap: 'Treating a large or precisely pleaded figure as liquidated because it looks certain — $1,000,000 for loss of goodwill is the plaintiff\'s assertion, not a sum the Court is bound to enter.',
+                    },
                     points: [
                       'A LIQUIDATED claim does not require the Court\'s assessment of loss — a fixed sum of debt, a fixed penalty, interest, or "liquidated damages" agreed in the contract.',
                       'An UNLIQUIDATED claim requires the Court to assess the amount — damages for negligence or for breach of contract, where the Court must decide how much the plaintiff is entitled to.',
@@ -5889,6 +5894,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'interest',
                     label: 'Check whether interest spoils the classification — usually it does not',
+                    why: 'Almost every debt claim carries interest, so without a saving the word \'interest\' would push ordinary debt claims into \'damages to be assessed\' and destroy the summary route. r.1(2) therefore carves out the ordinary case — but only the ordinary case, which is why it is pinned to s48 at or below the judgment-debt rate.',
+                    exam: {
+                      write: 'The claim includes interest under s48 of the Ordinance at a rate no higher than that payable on judgment debts at the date of the writ, which by O.13 r.1(2) does not prevent it being treated as a claim for a liquidated demand.',
+                      trap: 'Assuming any interest is within the saving. Read the rate and basis pleaded — interest on some other basis, or above the judgment-debt rate, falls outside r.1(2).',
+                    },
                     points: [
                       'O.13 r.1(2) — a claim is not prevented from being treated as one for a liquidated demand by reason ONLY that part of it is for interest under s48 of the Ordinance at a rate not higher than that payable on judgment debts at the date of the writ.',
                       'O.19 r.2(2) applies O.13 r.1(2) to default of defence, so the same saving runs in both Orders.',
@@ -5899,6 +5909,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'mixed',
                     label: 'Is it a MIXED claim? The answer differs between O.13A and O.13/O.19',
+                    why: 'The two regimes pull in opposite directions because they are doing different jobs. O.13 and O.19 enter judgment head by head, so each head keeps its own character and the judgment is simply part final and part interlocutory. O.13A produces a single settlement judgment, so a mixed claim has to collapse into one classification — and it collapses downwards, to unliquidated.',
+                    exam: {
+                      write: 'The writ is indorsed with both a liquidated demand and a claim for unliquidated damages. Under O.13 r.5 the Plaintiff may enter against the Defendant such judgment on each claim as he would be entitled to enter if it were the only claim indorsed — final as to [the debt], interlocutory as to [the damages].',
+                      trap: 'Carrying O.13A r.1(2)\'s \'mixed means unliquidated\' rule across into an O.13 or O.19 default judgment. The same writ can be mixed for one Order and unliquidated for the other.',
+                    },
                     points: [
                       'For O.13 and O.19 a mixed writ is NOT reclassified. The plaintiff enters against that defendant such judgment on each claim as he would have been entitled to enter if that were the only claim indorsed: O.13 r.5; O.19 r.6.',
                       'So a mixed judgment is PART FINAL (the liquidated demand, and possession of land) and PART INTERLOCUTORY (unliquidated damages, and detention of goods).',
@@ -5909,6 +5924,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'consequence',
                     label: 'Read off the consequence',
+                    why: 'The classification is not a label to record but a decision about what the Court can actually enter today. Final judgment ends the claim and can be enforced at once; interlocutory judgment buys only liability and leaves the plaintiff to prove quantum at an assessment.',
+                    exam: {
+                      write: 'Accordingly the Plaintiff may, after the prescribed time, enter final judgment against the Defendant for a sum not exceeding that claimed by the writ in respect of the demand and for costs: O.13 r.1(1).',
+                      trap: 'Entering final judgment on an unliquidated claim — or, on a possession claim, forgetting the solicitor\'s certificate that no relief of the nature specified in O.88 r.1 is claimed.',
+                    },
                     points: [
                       'Liquidated demand only → FINAL judgment for a sum not exceeding that claimed by the writ, and costs: O.13 r.1(1); O.19 r.2(1).',
                       'Unliquidated damages only → INTERLOCUTORY judgment for damages to be assessed, and costs: O.13 r.2; O.19 r.3. Liability is won; quantum still has to be proved at an assessment, usually with the defendant absent.',
@@ -6028,6 +6048,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gate',
                     label: 'Is O.13A available at all?',
+                    why: 'O.13A buys a defendant a cheap and quick exit, but only where the whole dispute is about money. If anything else is sought the Court cannot dispose of the action by entering a money judgment on an admission, so the Order simply does not engage — which is why r.2(1) is drafted with the word \'only\' in it.',
+                    exam: {
+                      write: 'The only remedy the Plaintiff seeks on the writ is the payment of $[X], so O.13A r.2(1) is engaged and the Defendant may make an admission under r.4, 5, 6 or 7.',
+                      trap: 'Using O.13A where the writ also seeks delivery up, possession, an injunction or a declaration — the gateway fails and the whole Order is unavailable.',
+                    },
                     points: [
                       'O.13A r.2(1) is a gateway: the Order applies only "where the only remedy that a plaintiff is seeking is the payment of money". A writ that also seeks delivery up, possession, an injunction or a declaration falls outside it.',
                       'Within that gateway both liquidated and unliquidated money claims are covered — rr.4-5 for liquidated, rr.6-7 for unliquidated.',
@@ -6046,6 +6071,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'timing',
                     label: 'Is the defendant in time — and if not, is the late route still open?',
+                    why: 'The deadline is not really a deadline. The Order exists to promote settlement, so it keeps working for as long as settlement is still possible — and it stops being possible the moment the plaintiff has judgment. That is why the race is against the default judgment rather than against the calendar, and why a plaintiff who wants to shut the route down enters judgment promptly.',
+                    exam: {
+                      write: 'Although the period for filing the admission under O.13A r.3(1)(a) has expired, no default judgment under O.13 or O.19 has been obtained, so the Defendant may still file an admission: r.3(2)(a), and it takes effect as if made within the primary period: r.3(3).',
+                      trap: 'Advising a late defendant that the O.13A route has closed without first checking whether a default judgment has actually been entered.',
+                    },
                     points: [
                       'Writ: the period for filing and serving the admission is the period fixed for service of his defence — O.13A r.3(1)(a).',
                       'Originating summons: the period fixed for filing his affidavit evidence — r.3(1)(b). In any other case, 14 days after service of the originating process — r.3(1)(c).',
@@ -6058,6 +6088,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'which',
                     label: 'Pick the right rule and the right form',
+                    why: 'The four rules split on two axes — liquidated or unliquidated, whole or part — because the plaintiff\'s options genuinely differ in each case. The form follows the axis, not the amount: Form No. 16 for liquidated, Form No. 16C for unliquidated, whichever fraction of the claim is admitted.',
+                    exam: {
+                      write: 'The claim being liquidated and the Defendant admitting the whole of it, he admits under O.13A r.4 by filing an admission in Form No. 16 in the Registry and serving a copy on the Plaintiff: r.4(2).',
+                      trap: 'Filing the admission without serving a copy. The plaintiff\'s 14 days run from service of the copy, so filing alone starts nothing.',
+                    },
                     points: [
                       'Whole of a liquidated claim → r.4, admission in Form No. 16.',
                       'Part of a liquidated claim, in satisfaction of the whole claim → r.5, admission in Form No. 16.',
@@ -6070,6 +6105,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'commit',
                     label: 'Advise the defendant what the admission actually commits him to',
+                    why: 'Clients hear \'admission\' and assume the case is over. It is not: under r.6 the defendant has conceded liability and nothing else, so he still faces an assessment and his exposure is uncapped. Under r.5 he has made an offer to settle the whole claim, which the plaintiff can simply refuse.',
+                    exam: {
+                      write: 'The Defendant should be advised that an admission under O.13A r.6 goes to liability only: judgment will be for an amount to be decided by the Court and costs (r.6(6)), so admitting does not cap his exposure.',
+                      trap: 'Telling a client that admitting liability under r.6 fixes what he has to pay, or that a r.5 part admission is money on account of a continuing claim.',
+                    },
                     points: [
                       'Under r.5 the plaintiff\'s only choices are to accept the amount admitted in satisfaction of the WHOLE claim, or not to accept it — in which case the action proceeds as a defended claim. A part admission is an offer to settle everything, not a payment on account.',
                       'An admission under r.6 concedes liability and leaves quantum to the Court, so the defendant has NOT capped his exposure and still faces an assessment.',
@@ -6082,6 +6122,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'serve',
                     label: 'If acting for the plaintiff: what must go out with the writ',
+                    why: 'A defendant can only use a mechanism he knows exists, so the admission forms must travel with the writ. PD 24.1 then makes any omission visible, by requiring the very affidavit on which the default judgment is sought to depose that the forms went out.',
+                    exam: {
+                      write: 'The writ, the only remedy sought being the payment of money, was accompanied by a copy of Form No. 16 [Form No. 16C] for admitting the claim as required by O.13A r.13(2).',
+                      trap: 'Serving a money writ without the admission form — it then shows up as a gap in the affidavit of service under PD 24.1 para.8.',
+                    },
                     points: [
                       'O.13A r.13(2) — where the only remedy sought is the payment of money, the writ, originating summons or other originating process MUST be accompanied by a copy of Form No. 16 (liquidated) or Form No. 16C (unliquidated) for admitting the claim.',
                       'PD 24.1 para.8 — on an O.13 application the affidavit of service should also depose to the fact that the relevant O.13A statutory forms were served together with the Writ and the acknowledgement of service.',
@@ -6192,6 +6237,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'clock',
                     label: 'Start the clock and note what happens if it runs out',
+                    why: 'The sanction is a stay rather than a dismissal because the plaintiff\'s inactivity should suspend his claim, not destroy it. That is also why it is self-lifting: he cures it simply by filing the document he should have filed, with no application and no indulgence needed.',
+                    exam: {
+                      write: 'More than 14 days having elapsed since the copy admission was served on the Plaintiff without a [request for judgment/notice] being filed, the claim is stayed until he files it: O.13A r.4(4).',
+                      trap: 'Counting the 14 days from the date the admission was filed at the Registry rather than served on the plaintiff, or describing the sanction as a striking out.',
+                    },
                     points: [
                       'In every case the 14 days run from the date the COPY OF THE ADMISSION IS SERVED on the plaintiff, not from the date it was filed.',
                       'The sanction is the same across all four rules and it is a stay, not a dismissal: rr.4(4), 5(4), 6(4) and 7(4).',
@@ -6202,6 +6252,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'whole-liq',
                     label: 'Whole of a liquidated claim admitted (r.4) — Form No. 16A',
+                    why: 'On a full admission of a liquidated sum there is nothing to accept or reject — the amount is agreed and the only question is the paperwork. That is why the Court \'shall\' enter judgment on receipt of the request: it is an administrative act, with no hearing and no discretion.',
+                    exam: {
+                      write: 'The Plaintiff obtains judgment by filing a request in Form No. 16A: O.13A r.4(3); on receipt the Court shall enter judgment for the amount of the claim less any payments made, and costs: rr.4(6)-(7).',
+                      trap: 'Forgetting that if the request specifies no date or rate, the judgment is payable IMMEDIATELY: r.4(7)(b).',
+                    },
                     points: [
                       'The plaintiff obtains judgment by filing a request in Form No. 16A: r.4(3).',
                       'Where the defendant has NOT requested time to pay, rr.4(5)-(7) apply; where he HAS, r.9 applies instead: r.4(3)(a)-(b).',
@@ -6213,6 +6268,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'part-liq',
                     label: 'Part of a liquidated claim admitted in satisfaction of the whole (r.5) — Form No. 16B',
+                    why: 'A part admission is an offer to settle the whole claim, not a payment towards it. Because the plaintiff is being asked to give up the balance, the rule makes him state a position rather than merely request judgment — hence a notice with three options rather than a bare request.',
+                    exam: {
+                      write: 'Within 14 days the Plaintiff shall file a notice in Form No. 16B and serve a copy on the Defendant, stating that he accepts the amount admitted in satisfaction of the whole claim, does not accept it and wishes the proceedings to continue, or accepts the amount but not the Defendant\'s proposals as to payment: O.13A r.5(3).',
+                      trap: 'Treating the admitted sum as money on account of a continuing claim. Rejecting it does not give the plaintiff that sum plus a trial of the balance — it simply makes the case a defended one.',
+                    },
                     points: [
                       {
                         text: 'Within 14 days the plaintiff SHALL file a notice in Form No. 16B AND serve a copy on the defendant, stating one of three things: r.5(3).',
@@ -6231,6 +6291,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'whole-unliq',
                     label: 'Liability on the whole of an unliquidated claim admitted (r.6) — Form No. 16D',
+                    why: 'There is no figure on the table to accept, so the only thing the plaintiff can obtain is liability plus an assessment. The outcome therefore has exactly the same shape as an interlocutory default judgment, which is why r.8 lets the Court give directions on quantum.',
+                    exam: {
+                      write: 'The Plaintiff files a request in Form No. 16D and the Court shall enter judgment for an amount to be decided by the Court and costs: O.13A rr.6(3), (5)-(6).',
+                      trap: 'Using a liquidated form (16A or 16B) on an unliquidated admission, or expecting the judgment to name a sum.',
+                    },
                     points: [
                       'The defendant\'s admission puts forward no figure at all: r.6(1)(c). It goes to liability, not quantum.',
                       'The plaintiff obtains judgment by filing a request in Form No. 16D: r.6(3), within 14 days or the claim is stayed: r.6(4).',
@@ -6241,6 +6306,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'part-unliq',
                     label: 'Liability on an unliquidated claim admitted with a sum offered (r.7) — Form No. 16E',
+                    why: 'The asymmetry with r.5 exists because liability is already admitted here. Rejecting the figure cannot put liability back in issue, so the plaintiff does not lose his judgment by refusing the offer — he simply gets one for an amount the Court will decide.',
+                    exam: {
+                      write: 'The Plaintiff does not accept the sum offered in satisfaction and may obtain judgment by filing a request in Form No. 16E: O.13A r.7(9); that judgment is for an amount to be decided by the Court and costs: r.7(10).',
+                      trap: 'Advising that rejecting a r.7 offer leaves the plaintiff with nothing, or applying the r.5 consequence (a defended claim) to a r.7 rejection.',
+                    },
                     points: [
                       'Within 14 days the plaintiff SHALL file a notice in Form No. 16E stating whether or not he accepts the amount in satisfaction of the claim, and serve a copy on the defendant: r.7(3). If he does not, the claim is stayed: r.7(4).',
                       'If he ACCEPTS the offer, he may obtain judgment by filing a request in Form No. 16E: r.7(5); he may specify the date or the times and rate of payment: r.7(6); the Court shall enter judgment: r.7(7); and judgment is for the amount OFFERED (less any payments made) and costs: r.7(8).',
@@ -6251,6 +6321,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'interest',
                     label: 'Finally, check interest',
+                    why: 'Interest is added automatically only where the plaintiff has already done the work — pleaded the basis, kept the rate within the judgment-debt rate, and calculated the sum. If he has not, the Court has to decide it, which defeats the point of a judgment entered on paper.',
+                    exam: {
+                      write: 'Interest having been claimed on the basis stated in the indorsement, at a s48 rate no higher than that payable on judgment debts when the writ issued, and the request including a calculation to the date of judgment, judgment must include it: O.13A r.12(1).',
+                      trap: 'Applying r.12 to a r.6 judgment. It names rr.4, 5 and 7 only, because on a r.6 admission there is no fixed sum for interest to run on.',
+                    },
                     detail: 'Judgment under r.4, 5 or 7 must include the amount of interest claimed to the date of judgment if the three conditions in r.12(1) are all met — the basis of the claim to interest was stated in the indorsement, statement of claim or originating summons; where interest is claimed under s48 of the Ordinance the rate is no higher than that payable on judgment debts at the date the writ or originating summons was issued; and the request for judgment includes a calculation of the interest claimed. If those conditions are not satisfied, judgment is for an amount of interest to be decided by the Court: r.12(2). Note that r.12 does not mention r.6 — there is no fixed sum for interest to run on.',
                   },
                 ],
@@ -6352,6 +6427,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'make',
                     label: 'Make the request properly, and note which admissions can carry one',
+                    why: 'The request has to be filed with the admission because the two are one package: the plaintiff is being asked to accept the amount and the terms together. Letting a defendant admit first and propose terms later would give him a second bite after the plaintiff had already committed.',
+                    exam: {
+                      write: 'The Defendant admits the claim under O.13A r.4 and, filed with that admission, makes a request for time to pay proposing payment by instalments of $[X] per month: rr.9(1)-(3).',
+                      trap: 'Advising a r.6 defendant to propose instalments — r.9(1) names rr.4, 5 and 7 only, and on a r.6 admission there is no sum for a proposal to attach to.',
+                    },
                     points: [
                       'A defendant who makes an admission under r.4, 5 or 7 may make a request for time to pay: r.9(1). Rule 6 is NOT in that list — there is no sum yet for a payment proposal to attach to.',
                       'A request for time to pay is a proposal about the date of payment, or a proposal to pay by instalments at the times and rate specified in the request: r.9(2).',
@@ -6362,6 +6442,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'accepted',
                     label: 'If the plaintiff ACCEPTS the proposal',
+                    why: 'This is the practical prize of admitting. Where the plaintiff accepts, it is the defendant — not the plaintiff and not the Court — whose payment terms are written into the judgment, and it is that fact which later triggers the automatic stay of execution.',
+                    exam: {
+                      write: 'The Plaintiff having accepted the proposal, judgment is entered for [the amount of the claim / the amount admitted / the amount offered] less any payments made, and costs, payable at the times and rate specified in the Defendant\'s own request: O.13A r.9(6).',
+                      trap: 'Applying rr.4(5)-(7) as well as r.9. Where time to pay is requested, rr.4(3)(b) and 5(5)(b) divert the process into r.9 instead.',
+                    },
                     points: [
                       'He may obtain judgment by filing a request for judgment in Form No. 16A, 16B or 16E as the case may be: r.9(4), and upon receipt the Court shall enter judgment: r.9(5).',
                       'Judgment is for the amount of the claim (r.4), the amount admitted (r.5) or the amount offered (r.7), in each case less any payments made, plus costs — and in ALL cases for payment by the date or at the times and rate specified in the defendant\'s own request: r.9(6).',
@@ -6371,6 +6456,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'refused',
                     label: 'If the plaintiff DOES NOT accept the proposal',
+                    why: 'Refusal moves the timing, not the amount. The admission has already settled what is owed, so the Court is asked only when it is to be paid — which is why it can decide on the papers, and why the defendant does not lose the benefit of having admitted.',
+                    exam: {
+                      write: 'The Plaintiff not accepting the proposal files a notice, and on receiving it the Court shall enter judgment for the amount admitted less any payments made, payable by the date or at the times and rate the Court determines: O.13A rr.10(2)-(3).',
+                      trap: 'Telling the client that a refused instalment proposal reopens the amount admitted. It does not — only the timing moves.',
+                    },
                     points: [
                       'The plaintiff files a notice in Form No. 16A, 16B or 16E as the case may be: r.10(2).',
                       'When the Court receives that notice it shall enter judgment for the amount admitted (less any payments made) to be paid by the date or at the times and rate DETERMINED BY THE COURT: r.10(3).',
@@ -6390,6 +6480,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'stay',
                     label: 'The stay of execution — what it is worth and how it is lost',
+                    why: 'The stay is what converts a judgment into a payment plan, and it is the real answer to \'can they take my assets?\'. It is conditional on performance, and r.9(8) is deliberately harsh: the whole balance falls in at once, so the plaintiff is not left suing for arrears instalment by instalment.',
+                    exam: {
+                      write: 'Judgment being for payment by instalments at the times and rate specified in the Defendant\'s own request, execution is stayed pending payment: O.13A r.9(7); but on failure to pay an instalment or part of one the stay immediately ceases and the Plaintiff may enforce the whole unpaid balance: r.9(8).',
+                      trap: 'Asserting a stay where the Court, not the defendant, fixed the rate under r.10 — r.9(7) is tied in terms to the defendant\'s own request. Read the judgment as entered.',
+                    },
                     points: [
                       'Where judgment is for payment by instalments at the times and rate specified in the DEFENDANT\'S request for time to pay, then unless the Court otherwise orders and subject to r.9(8), execution of the judgment is STAYED pending payment: r.9(7).',
                       'That is the answer to "can I stop them enforcing against my assets?" — yes, for so long as the instalments are paid.',
@@ -6401,6 +6496,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Advise on the costs of admitting',
+                    why: 'Fixed costs are the other half of the commercial case for admitting: a known, modest figure instead of an open-ended bill. That is what you weigh against the value of any defence when the question is whether the defendant \'should\' admit.',
+                    exam: {
+                      write: 'Judgment being obtained under O.13A without a hearing, costs are fixed by O.62, 2nd Sch., Pt II — $10,000 in the High Court where the Plaintiff is legally represented [$6,500 in the District Court], plus $500 [$350] for each additional defendant after the first.',
+                      trap: 'Quoting the High Court figure in a District Court action, or overlooking para.2, which withholds fixed costs altogether unless the Court orders them.',
+                    },
                     points: [
                       'Where the plaintiff obtains judgment under O.13A WITHOUT a hearing, the fixed scale in O.62, 2nd Schedule, Part II applies: 2nd Schedule, Part I, para.1A.',
                       'On that scale the basic costs for a para.1A case are $10,000 where the plaintiff is legally represented (and $600 where he is not), with $500 for each additional defendant after the first.',
@@ -6518,6 +6618,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'stage',
                     label: 'Confirm the stage of the default — O.13 is about the acknowledgement, not the defence',
+                    why: 'The whole lecture forks here. O.13 and O.19 are not alternatives but consecutive stages of the same timetable, and almost every difference between them follows from one fact: whether the defendant has engaged with the action at all. That is why only O.19 carries a notice requirement.',
+                    exam: {
+                      write: 'No acknowledgement of service having been filed within the time limited, the default is at the acknowledgement stage and O.13 applies, not O.19.',
+                      trap: 'Using O.13 where the defendant acknowledged service and merely failed to serve a defence — that is O.19, with a notice requirement O.13 does not have.',
+                    },
                     points: [
                       '"Notice of intention to defend" is given by filing an acknowledgement of service. O.13 bites where none is given at all.',
                       'If the defendant DID acknowledge but has served no defence, the Order is O.19, not O.13 — different rules, and a notice requirement O.13 does not have.',
@@ -6543,6 +6648,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'type',
                     label: 'Match the claim to the rule, and read off final or interlocutory',
+                    why: 'The four claim types are separated because each needs a different judgment. The Court can enter a sum only where no assessment is needed; it can order delivery of goods only subject to the reversioner rule; and it will not order possession without being satisfied that no mortgage relief is in play.',
+                    exam: {
+                      write: 'The writ being indorsed with a liquidated demand only, the Plaintiff may after the prescribed time enter final judgment against the Defendant for a sum not exceeding that claimed and for costs, and proceed with the action against the other defendants: O.13 r.1(1).',
+                      trap: 'Entering a default judgment on a claim outside rr.1-4. An account, an injunction or a declaration falls to r.6(1), which gives no default judgment at all.',
+                    },
                     points: [
                       'Liquidated demand only → r.1: final judgment for a sum not exceeding that claimed by the writ, and costs.',
                       'Unliquidated damages only → r.2: interlocutory judgment for damages to be assessed, and costs.',
@@ -6556,6 +6666,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'codefendants',
                     label: 'Check the effect on the other defendants — this is a standard exam sub-question',
+                    why: 'A default judgment is a judgment against one defendant, not a decision about the action. The closing words of each rule preserve the claim against everyone else, because the defaulting defendant\'s silence says nothing about the others\' liability. Land is the exception, since possession cannot sensibly be split between defendants.',
+                    exam: {
+                      write: 'Judgment against the 2nd Defendant does not dispose of the claim against the 1st Defendant: the Plaintiff may enter judgment against the defaulting defendant \'and proceed with the action against the other defendants, if any\': O.13 r.2.',
+                      trap: 'Enforcing a possession judgment against one defendant before judgment for possession has been entered against all of them: O.13 r.4(5).',
+                    },
                     points: [
                       'Each of rr.1-5 ends with the same words: the plaintiff may enter judgment against the defaulting defendant "and proceed with the action against the other defendants, if any".',
                       'So a default judgment against one defendant does NOT dispose of the claim against the co-defendants. The action simply continues against those who are defending.',
@@ -6566,6 +6681,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'late',
                     label: 'Watch the two timing traps at either end',
+                    why: 'The two traps sit at opposite ends of the same period. The defendant can still act right up until judgment is obtained, so a judgment sealed after a late acknowledgement is exposed; and the plaintiff can lose the right to act by sitting on the action for a year.',
+                    exam: {
+                      write: 'The Defendant acknowledged service out of time but before judgment was obtained, so leave was not required: O.12 r.6(1)-(2); the judgment having been sealed only after that acknowledgement, it is vulnerable: Kwan Tat Chung v Ho Cheuk Kwan.',
+                      trap: 'Overlooking O.3 r.6 — where a year or more has elapsed since the last proceeding, one month\'s notice of intention to proceed must be given before signing judgment.',
+                    },
                     points: [
                       'LATE ACKNOWLEDGEMENT — except with the leave of the Court, a defendant may not give notice of intention to defend AFTER judgment has been obtained: O.12 r.6(1).',
                       'Short of that, nothing precludes a defendant from acknowledging service after the time limited; but if he does, he is not, unless the Court otherwise orders, entitled to serve a defence or do any other act later than if he had acknowledged in time: O.12 r.6(2).',
@@ -6576,6 +6696,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'stayexec',
                     label: 'The defendant who will not contest but wants a stay: O.13 r.8',
+                    why: 'This rule is for the defendant who accepts that he owes the money but not that it should be seized from him immediately. He is not contesting liability, so he gets no defence — but he does get a short protected window in which to get his stay application on.',
+                    exam: {
+                      write: 'The Defendant having returned an acknowledgement stating that although he does not intend to contest the proceedings he intends to apply for a stay of execution by writ of fieri facias, execution by such a writ is stayed for 14 days from the acknowledgement: O.13 r.8.',
+                      trap: 'Treating r.8 as a general stay of enforcement. It stays execution by writ of fieri facias only.',
+                    },
                     detail: 'Where judgment for a debt or liquidated demand is entered under O.13 against a defendant who has returned an acknowledgement of service stating that although he does not intend to contest the proceedings he intends to apply for a stay of execution by writ of fieri facias, execution by such a writ is stayed for 14 days from the acknowledgement of service. If within that time the defendant issues and serves on the plaintiff a summons for such a stay, supported by an affidavit in accordance with O.47 r.1, the stay continues until the summons is heard or otherwise disposed of, unless the Court after giving the parties an opportunity of being heard otherwise directs.',
                   },
                 ],
@@ -6697,6 +6822,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'when',
                     label: 'Confirm that O.19 is the right Order, and that the time has run',
+                    why: 'O.19 bites at the pleadings stage, but it also catches the defendant who never acknowledged at all where the claim is outside O.13 rr.1-5 — because O.13 r.6(1) puts the plaintiff back on the ordinary track, and O.19 r.7 is then his route to judgment.',
+                    exam: {
+                      write: 'The Defendant acknowledged service on [date] but has served no defence, and the period fixed by the Rules for service of the defence expired on [date], so the Plaintiff may enter judgment under O.19.',
+                      trap: 'Forgetting r.1, which runs the other way: where the plaintiff fails to serve a statement of claim, the DEFENDANT may apply to dismiss the action.',
+                    },
                     points: [
                       'O.19 applies at the PLEADINGS stage: the defendant has failed to serve a defence on the plaintiff.',
                       'It also catches the defendant who never acknowledged service where the claim is for relief outside O.13 rr.1-5, because O.13 r.6(1) puts the plaintiff back on the ordinary track and O.19 r.7 is what he then uses.',
@@ -6707,6 +6837,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'type',
                     label: 'Match the claim to the rule — the structure mirrors O.13',
+                    why: 'The structure deliberately mirrors O.13, so the classification work already done carries straight across. Only r.7 differs in kind: a claim outside rr.2-5 needs the Court to look at the statement of claim and decide what the plaintiff is actually entitled to.',
+                    exam: {
+                      write: 'The claim being for a liquidated demand only, the Plaintiff may after expiry of the period for service of the defence enter final judgment for a sum not exceeding that claimed and costs: O.19 r.2(1), O.13 r.1(2) applying by virtue of r.2(2).',
+                      trap: 'Entering judgment administratively on a r.7 claim. That requires an application to the Court by summons: r.7(1), (3).',
+                    },
                     points: [
                       'Liquidated demand only → r.2(1): final judgment for a sum not exceeding that claimed by the writ, and costs. O.13 r.1(2)\'s interest saving is applied by r.2(2).',
                       'Unliquidated damages only → r.3: interlocutory judgment for damages to be assessed, and costs.',
@@ -6720,6 +6855,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'notice',
                     label: 'The notice of intention to enter judgment — read r.8A, not the shorthand',
+                    why: 'The notice exists because this defendant has engaged: he filed an acknowledgement giving notice of intention to defend, so he is entitled to be told before judgment is taken against him. The affidavit limb is what makes the requirement enforceable rather than merely aspirational.',
+                    exam: {
+                      write: 'Not less than 2 clear days before entering judgment the Plaintiff served written notice of his intention to do so on the Defendant\'s solicitors, and has filed in Court an affidavit of that service: O.19 r.8A(1)(a)-(b).',
+                      trap: 'Serving the notice but never filing the affidavit of that service. r.8A(1)(b) is a filing requirement, not an optional extra.',
+                    },
                     points: [
                       'r.8A(1) prohibits entering judgment under O.19 against a party WHO HAS FILED AN ACKNOWLEDGEMENT OF SERVICE GIVING NOTICE OF INTENTION TO DEFEND, or on a counterclaim, unless two things are done.',
                       'r.8A(1)(a) — after that acknowledgement or counterclaim has been filed, and NOT LESS THAN 2 CLEAR DAYS BEFORE ENTERING JUDGMENT, the party intending to enter judgment has served written notice of his intention to do so on the party against whom judgment is sought, or on his solicitor if he is legally represented.',
@@ -6738,11 +6878,21 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'counterclaim',
                     label: 'Do not forget the counterclaim mirror',
+                    why: 'A counterclaim is a claim, so the Order has to run in reverse or a plaintiff could ignore one with impunity. r.8 performs that substitution wholesale rather than leaving it to be argued by analogy.',
+                    exam: {
+                      write: 'The Plaintiff having failed to serve a defence to counterclaim within the period fixed, the Defendant may enter judgment on the counterclaim, rr.2-7 applying as if the counterclaim were a statement of claim and the parties reversed: O.19 r.8.',
+                      trap: 'Forgetting that r.8A\'s notice requirement applies on a counterclaim too — it is written into r.8A(1) in terms.',
+                    },
                     detail: 'A defendant who counterclaims against a plaintiff is treated for the purposes of rr.2-7 as if he were a plaintiff who had made the claim in the counterclaim against a defendant. So where the plaintiff or any other party against whom the counterclaim is made fails to serve a defence to counterclaim, those rules apply as if the counterclaim were a statement of claim, the defence to counterclaim a defence, and the parties reversed — with references to the period for service of the defence read as references to the period for service of the defence to counterclaim: O.19 r.8.',
                   },
                   {
                     id: 'aside',
                     label: 'Note the setting-aside power before you finish',
+                    why: 'The setting-aside power is the counterpart of O.13 r.9 in materially the same words, so nothing about the test turns on which Order produced the judgment. What decides the test is whether service was good, not which stage the default occurred at.',
+                    exam: {
+                      write: 'The judgment having been entered in default of defence, the Court may on such terms as it thinks just set it aside or vary it: O.19 r.9.',
+                      trap: 'Assuming the set-aside test differs because the Order differs. It does not — the regular/irregular analysis is identical.',
+                    },
                     detail: 'The Court may, on such terms as it thinks just, set aside or vary any judgment entered in pursuance of O.19: r.9. It is the counterpart of O.13 r.9, in materially the same words, and the same regular/irregular analysis applies to it.',
                   },
                 ],
@@ -6860,6 +7010,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'scope',
                     label: 'This is the O.13 procedure — only two pieces of it carry over to O.19',
+                    why: 'The two Orders prove different things because they start from different facts. O.13 has to prove the writ reached the defendant, because he never responded to it. O.19 does not, because his acknowledgement already concedes that it did — so what is proved there is service of the r.8A notice instead.',
+                    exam: {
+                      write: 'This being a default under O.13, the Plaintiff must prove due service of the writ itself: O.13 r.7(1)(b). Had the Defendant acknowledged service, the relevant proof would be service of the O.19 r.8A notice.',
+                      trap: 'Citing O.13 r.7(1), the 7-day opinion or r.7(3)-(5) on an O.19 judgment. None of them applies once the defendant has acknowledged.',
+                    },
                     points: [
                       'An O.13 judgment is entered because the defendant never acknowledged service, so what the plaintiff must prove is that the WRIT ITSELF was duly served — that is what the gate, the affidavit\'s 7-day opinion, and the r.7(3)-(5) returned-writ duty below are all about.',
                       'An O.19 judgment starts from the opposite fact: the defendant HAS acknowledged service, so the writ\'s service is no longer in issue. What has to be proved instead is service of the O.19 r.8A NOTICE OF INTENTION TO ENTER JUDGMENT — a different document, under a different rule, with its own affidavit requirement. That mechanism is covered on its own page: "Default judgment in default of defence (O.19)".',
@@ -6869,6 +7024,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gate',
                     label: 'Clear the O.13 r.7(1) gate first (O.13 only) — judgment "shall not be entered" unless one of three things is true',
+                    why: 'Proof of service is the condition on which judgment is entered, not paperwork produced afterwards. The whole justification for giving judgment without a hearing is that the defendant was given his chance to appear — so the Court must first be satisfied that he was.',
+                    exam: {
+                      write: 'An affidavit having been filed on behalf of the Plaintiff proving due service of the writ on the Defendant, the requirement in O.13 r.7(1)(b) is satisfied and judgment may be entered.',
+                      trap: 'Entering judgment without satisfying any of the three limbs. The rule is mandatory in form: \'judgment shall not be entered... unless\'.',
+                    },
                     points: [
                       'r.7(1)(a) — the defendant has acknowledged service of the writ on him; or',
                       'r.7(1)(b) — an affidavit is filed by or on behalf of the plaintiff proving due service of the writ on the defendant; or',
@@ -6880,6 +7040,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'docs',
                     label: 'Prepare the application: summons plus affidavit (this part applies whichever Order the default is under)',
+                    why: 'The summons and the judgment have to match the classification, because the Court can only enter the judgment the rules permit for that kind of claim. A prayer that asks for the wrong one invites the Registry to refuse it.',
+                    exam: {
+                      write: 'The Plaintiff applies by summons for an order that interlocutory judgment on liability be entered in his favour with damages to be assessed, and that costs be to the Plaintiff.',
+                      trap: 'A prayer that does not track the classification — asking for final judgment on an unliquidated claim, or for a sum on a claim the Court must assess.',
+                    },
                     points: [
                       {
                         text: 'The summons seeks the orders actually wanted, and the wording tracks the classification:',
@@ -6898,6 +7063,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'affidavit',
                     label: 'Draft the affidavit of service of the WRIT with the set-aside application in mind (O.13 only)',
+                    why: 'This affidavit is the document the defendant will attack months later on a set-aside application, so it should never assert more than the deponent can stand behind. C&S Dental is the cautionary example: the affirmation was framed on a deemed-service rule the facts went on to contradict.',
+                    exam: {
+                      write: 'The writ was served by insertion into the letter box at [address] on [date], and in the Plaintiff\'s opinion it would have come to the Defendant\'s knowledge within 7 days of that date.',
+                      trap: 'Omitting the 7-day opinion on postal or letter-box service, or asserting that a posted writ was not returned undelivered when it was, or later is.',
+                    },
                     points: [
                       'State who served, on whom, when, where and by what method — the affidavit is the document a defendant will later attack.',
                       'Where service was by POST or by INSERTION INTO A LETTER BOX, the affidavit must state that in the plaintiff\'s opinion the writ would have come to the defendant\'s knowledge within 7 days.',
@@ -6910,6 +7080,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'returned',
                     label: 'If the posted writ comes back undelivered, O.13 r.7(3)-(5) imposes a duty (O.13 only — no O.19 counterpart)',
+                    why: 'The duty is on the plaintiff because he is the only person who knows the writ came back. Making the set-aside automatic on filing the affidavit removes any incentive to press on regardless and hope the defendant never finds out.',
+                    exam: {
+                      write: 'The copy writ having been returned through the post undelivered, the Plaintiff must, before taking any step or further step in the action or in its enforcement, either request that the judgment be set aside or apply to the Court for directions: O.13 r.7(3).',
+                      trap: 'Taking a further step in enforcement after the writ comes back, instead of complying with r.7(3) — and forgetting that under r.7(4) the set-aside is automatic on filing, not a discretion.',
+                    },
                     points: [
                       'Where judgment has been entered against a defendant purporting to have been served BY POST under O.10 r.1(2)(a) and the copy writ is returned through the post undelivered, the plaintiff SHALL, before taking any step or further step in the action or in enforcement, do one of two things: r.7(3).',
                       'r.7(3)(a) — make a request for the judgment to be set aside on the ground that the writ has not been duly served. That request is made by producing to an officer of the Registry, and leaving with him for filing, an affidavit stating the relevant facts — and THEREUPON THE JUDGMENT SHALL BE SET ASIDE and the entries marked accordingly: r.7(4).',
@@ -6920,6 +7095,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Work out the costs on the fixed scale (this step DOES apply to an O.19 judgment too)',
+                    why: 'Fixed costs keep undefended debt claims proportionate — the work is largely clerical, so the scale replaces taxation. Para.2 is what stops the scale becoming a windfall: it withholds costs entirely unless the judgment was obtained promptly.',
+                    exam: {
+                      write: 'Costs are fixed by O.62, 2nd Sch., Pt II at $10,000, the Plaintiff being legally represented, plus $500 for each additional defendant after the first [and $1,000 for each defendant served where substituted service was ordered and effected].',
+                      trap: 'Quoting the figure without checking para.2 — no costs at all unless the Court orders them or judgment is obtained within 28 days after service of the writ.',
+                    },
                     points: [
                       'The scale in O.62, 2nd Schedule, Part II applies where the writ was indorsed with a claim for a debt or liquidated demand only and the plaintiff obtains judgment on failure to give notice of intention to defend under O.13 r.1, or in default of defence under O.19 r.2: 2nd Sch., Pt I, para.1(b).',
                       'It also applies where the plaintiff obtains judgment under O.13A without a hearing: para.1A.',
@@ -6932,6 +7112,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'after',
                     label: 'Say what happens next — an interlocutory judgment is not the end (whichever Order it was entered under)',
+                    why: 'An interlocutory judgment is a milestone, not an outcome. Liability is fixed, but the plaintiff must still prove quantum at an assessment — usually with the defendant absent, which makes it easy to forget that it has to be proved at all.',
+                    exam: {
+                      write: 'Interlocutory judgment having been entered, damages fall to be assessed before a master, the automatic directions under O.37 r.1A of the Rules of the District Court applying unless otherwise ordered: O.37 r.1.',
+                      trap: 'Advising the client that an interlocutory judgment has recovered the sum claimed.',
+                    },
                     points: [
                       'A final judgment can be enforced at once. An interlocutory judgment fixes liability only, and the plaintiff must still prove quantum at an assessment of damages at which the defendant is usually absent.',
                       'In the District Court, unless otherwise ordered or directed at the time of giving judgment, the assessment takes place before a master and the automatic directions under O.37 r.1A of the Rules of the District Court (Cap. 336H) take effect: O.37 r.1.',
@@ -7058,6 +7243,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'question',
                     label: 'Ask the right question: was the service of the writ defective?',
+                    why: 'The question is about the plaintiff\'s compliance, not the defendant\'s diligence. A wholly blameless defendant can still face a regular judgment — and that is precisely why the costs order follows the classification rather than the sympathy of the facts.',
+                    exam: {
+                      write: 'Service was effected by [method] in accordance with [rule], so the judgment is regular and the Defendant must bring himself within the discretionary test.',
+                      trap: 'Starting with the merits of the defence before settling whether the judgment is regular. The classification decides the test, so it comes first.',
+                    },
                     points: [
                       'A judgment is IRREGULAR because the service of the writ was defective — it did not comply with the rules on service, for instance O.10.',
                       'A judgment is REGULAR where the plaintiff served in the required manner and the defendant simply failed to respond in time.',
@@ -7068,6 +7258,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'presumption',
                     label: 'Where the trouble usually comes from: the O.10 alternatives to personal service',
+                    why: 'Posting and letter-box service are conveniences the rules allow so that a defendant cannot defeat service by avoiding the process server. They can therefore only raise a presumption — otherwise a defendant who genuinely never received the writ would have no answer at all.',
+                    exam: {
+                      write: 'The writ was served by insertion into the letter box, a method which gives rise to a presumption of good service only, and the Defendant may lead evidence that he was in fact unaware of the service.',
+                      trap: 'Treating the presumption as conclusive — or, from the other side, treating a bare denial as enough to rebut it.',
+                    },
                     points: [
                       'Posting the writ, and inserting it through a letter box, are permitted alternatives to personal service under O.10.',
                       'Those two methods give rise only to a PRESUMPTION of good service. The defendant may lead evidence to show that he was in fact unaware of the service of the writ.',
@@ -7077,6 +7272,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'State the test, in the terms the cases use',
+                    why: 'The purpose of service is to tell the defendant he is being sued. Delivery to an address he was not at achieves nothing of the sort, which is why the cases fix on notice rather than on delivery.',
+                    exam: {
+                      write: 'The test is whether the writ was brought to the Defendant\'s notice by the service, not whether it was merely delivered to his usual or last known address: Chu Kam Lun v Yap Lisa Susanto.',
+                      trap: 'Proving that the writ reached the address and stopping there, as though that answered the question.',
+                    },
                     points: [
                       'The test for regularity of service is whether the writ was BROUGHT TO THE DEFENDANT\'S NOTICE by the service — NOT whether it was merely delivered to his usual or last known address: Chu Kam Lun v Yap Lisa Susanto [1999] 3 HKC 378; Kwan Kam Wah v Chan Wai Ming [2000] 2 HKC 378; Cosec Nominees Ltd v Lam Hon Ming Alan [2001] 3 HKC 290.',
                       'A defendant may assert that he did not know of the existence of the writ, provided he can provide convincing evidence of that. The Court usually has to accept such an assertion unless it finds it not credible: BOC(HK) Ltd v Cheung King Fung [2007] 1 HKLRD 462 at 469-470.',
@@ -7086,6 +7286,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'mode',
                     label: 'Then take account of the MODE of service, because it changes the strength of the case',
+                    why: 'The mode changes the strength of the case because some modes are court-sanctioned precisely on the footing that they will bring the document to the defendant\'s attention. Substituted service was ordered on that basis, so it is hard to turn round and say it failed.',
+                    exam: {
+                      write: 'Service having been effected under an order for substituted service, there is a strong argument that the writ was thereby brought to the Defendant\'s notice, and it will be difficult to persuade the Court otherwise: Melco Crown Gaming.',
+                      trap: 'Running an \'I never knew\' case against substituted service without confronting Melco — or ignoring that the plaintiff is held to the service route his own affirmation chose: C&S Dental.',
+                    },
                     points: [
                       'If service was effected by SUBSTITUTED SERVICE, there is a strong argument that it would be treated as having brought the writ to the notice of the defendant, and it is difficult to persuade the Court otherwise: Melco Crown Gaming (Macau) Ltd v Wong Yam Tak HCA 238/2013 (To J; 07.05.2014).',
                       'Where a posted writ was RETURNED UNDELIVERED to the plaintiff and the plaintiff nevertheless entered default judgment, the defendant was held entitled to have the judgment set aside ex debito justitiae: Fok Chun Hung v Lo Yuk Shi [1995] 1 HKLR 420.',
@@ -7096,6 +7301,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'other',
                     label: 'Remember that irregularity is not only about service',
+                    why: 'Irregularity is about whether the judgment was properly obtained, and defective service is only the commonest way that goes wrong. A judgment entered at the wrong moment — after an acknowledgement, or after a year\'s silence without notice — is just as vulnerable.',
+                    exam: {
+                      write: 'The Defendant acknowledged service on [date], before the judgment was sealed on [date], and the judgment is accordingly vulnerable: Kwan Tat Chung v Ho Cheuk Kwan.',
+                      trap: 'Overlooking the non-service irregularities — and missing that where a posted writ was returned undelivered, O.13 r.7(3)-(4) gives a more direct route than any set-aside application.',
+                    },
                     points: [
                       'A judgment entered when the defendant had in fact acknowledged service before it was sealed is vulnerable: Kwan Tat Chung v Ho Cheuk Kwan HCPI 381/2002, [2003] HKEC 36, where two defendants set aside a judgment applied for after the acknowledgement time had expired but sealed only after they had acknowledged.',
                       'A defendant may acknowledge service after the time limited, except that he may not give notice of intention to defend after judgment has been obtained without leave: O.12 r.6(1)-(2).',
@@ -7106,6 +7316,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'consequence',
                     label: 'Read off what the classification decides',
+                    why: 'The classification decides the test, the evidence that has to be filed and who pays the costs. All three follow from it, which is why it has to be settled before a word of the application is drafted.',
+                    exam: {
+                      write: 'The judgment being irregular, the Defendant is entitled to have it set aside ex debito justitiae without the merits of his defence being considered, and the Plaintiff will usually be ordered to pay his costs.',
+                      trap: 'Advising in the alternative without saying that the costs order flips with the classification — that is half the value of answering the question at all.',
+                    },
                     points: [
                       'IRREGULAR — the defendant can set aside ex debito justitiae, as of right, without the merits of his defence being considered; and the plaintiff usually pays the defendant\'s costs.',
                       'REGULAR — the Court has a discretion; the defendant must explain the default and show a defence with a real prospect of success; and the defendant usually pays the plaintiff\'s costs.',
@@ -7214,6 +7429,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'rule',
                     label: 'Name the governing rule, and match it to the default',
+                    why: 'Both rules are discretionary in form; ex debito justitiae is what the case law does with that discretion where the judgment was irregularly obtained, not a separate power. And before applying at all, check r.7(3)-(4), which needs no application whatsoever.',
+                    exam: {
+                      write: 'The application is made under O.13 r.9, by which the Court may, on such terms as it thinks just, set aside or vary any judgment entered in pursuance of the Order.',
+                      trap: 'Applying to set aside where O.13 r.7(3)-(4) gives an automatic route on a posted writ returned undelivered.',
+                    },
                     points: [
                       'Default of notice of intention to defend → O.13 r.9: without prejudice to r.7(3) and (4), the Court may, on such terms as it thinks just, set aside or vary any judgment entered in pursuance of the Order.',
                       'Default of defence → O.19 r.9, in materially the same words.',
@@ -7224,6 +7444,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'entitlement',
                     label: 'State the entitlement — this is the whole point of the classification',
+                    why: 'If service was bad the defendant never had his chance to defend, so the Court does not pause to weigh whether he would have won. To do so would be to decide the case against a party who was never properly brought before it.',
+                    exam: {
+                      write: 'The judgment having been irregularly obtained, the Defendant is entitled to have it set aside ex debito justitiae, as of right and without the merits of his defence being considered: Po Kwong Marble.',
+                      trap: 'Arguing the merits as though they were required. Doing so concedes that they matter, which is exactly what the entitlement denies.',
+                    },
                     points: [
                       'The defendant can set aside an irregular judgment EX DEBITO JUSTITIAE, that is as of right, without the merits of his defence being considered: Po Kwong Marble Factory Ltd v Wah Yee Decoration Co Ltd [1996] 4 HKC 157.',
                       'So the affidavit does not have to establish a defence, and the plaintiff cannot answer the application by saying the defence is hopeless.',
@@ -7234,6 +7459,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'terms',
                     label: 'But expect terms — "as of right" does not mean unconditional',
+                    why: '\'As of right\' governs entitlement, not conditions. The Court can still do justice to the plaintiff — particularly where the defendant is in substance admitting the claim, or where his own conduct is what made the service go wrong.',
+                    exam: {
+                      write: 'The Defendant accepts that the Court may impose terms having regard to the circumstances and to his own conduct, and does not resist an order that on his paying $[X] into court within 14 days the judgment be set aside: Po Kwong Marble.',
+                      trap: 'Telling the client that \'as of right\' means unconditional. A conditional order he cannot satisfy leaves the judgment standing.',
+                    },
                     points: [
                       'The Court can take the circumstances into account, and especially the defendant\'s conduct, in deciding whether any terms should be imposed when setting the judgment aside: Po Kwong Marble.',
                       'Where the defendant is in substance admitting the claim, he may be required to pay the money representing the claim into Court as the price of the set-aside.',
@@ -7245,11 +7475,21 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Get the costs order the right way round',
+                    why: 'The plaintiff persisted with a judgment he should never have obtained, so he bears the cost of undoing it. Getting this the wrong way round is the quickest way to show that the classification has not been understood.',
+                    exam: {
+                      write: 'The judgment being irregular, the Plaintiff should pay the Defendant\'s costs of and occasioned by this application.',
+                      trap: 'Offering the plaintiff his costs. That is the order on a REGULAR judgment, and it gives the whole analysis away.',
+                    },
                     detail: 'On an irregular judgment the usual order is that the PLAINTIFF PAYS THE DEFENDANT\'S COSTS, because the plaintiff persisted with a judgment that was irregularly obtained. That is the opposite of the order on a regular judgment, and it is one of the quickest ways to show that the classification has been understood.',
                   },
                   {
                     id: 'procedure',
                     label: 'Run the application',
+                    why: 'A defendant usually learns of the action only when enforcement starts, so the set-aside and a stay of execution travel together — and any enforcement hearing already in the list has to be dealt with first, or the application may be overtaken before it is heard.',
+                    exam: {
+                      write: 'The Defendant applies by summons under O.13 r.9, supported by affidavit, for an order that the judgment in default entered on [date] be set aside and that execution be stayed in the meantime.',
+                      trap: 'Setting aside the interlocutory judgment but leaving the final judgment on assessment standing. Identify every judgment by date.',
+                    },
                     points: [
                       'Apply by SUMMONS supported by AFFIDAVIT, headed with the governing rule — O.13 r.9 or O.19 r.9 (or their Rules of the District Court equivalents where the action is in the District Court).',
                       'The prayer identifies the judgment by date and asks that it be set aside; where an interlocutory judgment was followed by a final judgment on assessment, both must be identified.',
@@ -7263,6 +7503,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'order',
                     label: 'Know the order you are asking for',
+                    why: 'The Court is not merely removing the judgment: it is restarting the action, which is why it gives consequential directions at the same time. Knowing the shape of the order tells you what to ask for.',
+                    exam: {
+                      write: 'The order sought is that (1) the judgment in default entered on [date] be set aside; and (2) [the appropriate costs order], with directions for the filing and service of the acknowledgement of service and the defence.',
+                      trap: 'Forgetting to ask for consequential directions, which leaves the timetable undefined and invites a further application.',
+                    },
                     detail: 'The usual order is in two parts: (1) the judgment in default entered on [date] be set aside; and (2) the appropriate costs order. When the Court sets a default judgment aside it will usually also give consequential directions on the future conduct of the case — typically fixing the time for the defendant to file and serve the acknowledgement of service and the defence.',
                   },
                 ],
@@ -7370,6 +7615,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'power',
                     label: 'Start from the power and the purpose',
+                    why: 'The power is identical to the irregular case; what changes is that the defendant has no entitlement to rely on. The application therefore becomes an exercise in persuasion on evidence — which is why the affidavit, not the argument, does the work.',
+                    exam: {
+                      write: 'The judgment being regular, the Court has a discretion whether to set it aside, exercised so as to avoid injustice to the Defendant: L&M Specialist Construction.',
+                      trap: 'Treating the discretion as a formality that follows automatically once a defence is asserted.',
+                    },
                     points: [
                       'The power is the same: O.13 r.9 or O.19 r.9 — on such terms as the Court thinks just.',
                       'On a regular judgment the Court has a discretion to decide whether to set it aside, exercised to avoid injustice to the defendant: L&M Specialist Construction Ltd v Wo Hing Construction Co Ltd [2000] 3 HKC 335.',
@@ -7379,6 +7629,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'factors',
                     label: 'Work through the discretionary factors',
+                    why: 'The Court is being asked to reopen a judgment the plaintiff properly obtained, so it wants to know why the default happened, how the defendant has behaved since he found out, and whether anyone else has relied on the judgment in the meantime.',
+                    exam: {
+                      write: 'The default arose because [reason], the Defendant applied within [N] days of first learning of the judgment on [date], and no third party has acted on the faith of it.',
+                      trap: 'Leading with the merits and never explaining the default. The merits are the most important factor, but they are not the only one.',
+                    },
                     points: [
                       'The NATURE OF AND REASONS FOR THE DEFAULT. Why was no acknowledgement or defence filed? An explanation that is candid and documented is worth far more than one that is vague.',
                       'The DEFENDANT\'S CONDUCT, including delay in applying to set aside and whether he has paid due regard to court processes: Wong Pak v Ng Po Chui [1982] HKC 243.',
@@ -7389,6 +7644,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'merits',
                     label: 'The merits: state the test in the words the cases use',
+                    why: 'The threshold is higher than arguability because a judgment already exists and the plaintiff is entitled to keep it unless there is a real reason not to. The Court therefore forms a provisional view of whether the defence would actually succeed.',
+                    exam: {
+                      write: 'The proposed defence that [X] has a real prospect of success, or at least carries with it some degree of conviction: Young Bing Ching v Chow Yung Fong.',
+                      trap: 'Asserting that a defence exists without exhibiting anything supporting it, or treating \'arguable\' as the test.',
+                    },
                     points: [
                       'A potential defence means the Court has to form a PROVISIONAL VIEW that the defence has a REAL PROSPECT OF SUCCESS, or carries with it SOME DEGREE OF CONVICTION: Young Bing Ching v Chow Yung Fong [2001] 2 HKLRD 394.',
                       'It is not simply an ARGUABLE defence, but one having a REAL LIKELIHOOD OF SUCCESS: Premier Fashion Wears Ltd v Li Hing Chung [1994] 1 HKC 213; Maryo Development Ltd v Tsang Yau May CACV 271/2013 (Yuen, Barma JJA & Harris J; 11.01.2016).',
@@ -7399,16 +7659,31 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Get the costs order the right way round — it is the reverse of the irregular case',
+                    why: 'The plaintiff did nothing wrong: he served properly, obtained judgment and enforced it. The defendant is asking for an indulgence, so he pays for it — and conceding the point up front strengthens rather than weakens the application.',
+                    exam: {
+                      write: 'The Defendant accepts that he should pay the Plaintiff\'s costs of obtaining the judgment and of and occasioned by this application, in any event.',
+                      trap: 'Expecting the plaintiff to pay the costs of a judgment he properly obtained.',
+                    },
                     detail: 'On a regular judgment the usual order is that the DEFENDANT PAYS THE PLAINTIFF\'S COSTS, both of obtaining the default judgment and of setting it aside, because the plaintiff did nothing wrong in serving properly and then obtaining and enforcing the judgment. The defendant\'s own summons will often offer exactly that — costs of the application to the plaintiff in any event.',
                   },
                   {
                     id: 'terms',
                     label: 'Expect terms where the defence is shadowy',
+                    why: 'A defence can clear the real-prospect threshold and still look thin. A payment into court protects the plaintiff against a defence raised mainly to buy time, without shutting out a defendant who genuinely means to fight.',
+                    exam: {
+                      write: 'Should the Court consider the defence shadowy, the Defendant does not resist a conditional order for payment of $[X] into court as a term of the judgment being set aside: L&M Specialist Construction.',
+                      trap: 'Advising the client that the judgment will simply go, without warning him about a conditional order he may not be able to meet.',
+                    },
                     detail: 'The Court can impose terms for setting the judgment aside where the defence, although having a real prospect of success, still appears SHADOWY: L&M Specialist Construction. In practice that means a conditional order for payment into Court. Advise the client on the risk of a conditional order before applying, because a condition he cannot meet leaves the judgment standing.',
                   },
                   {
                     id: 'evidence',
                     label: 'Build the affidavit around the test',
+                    why: 'Each section of the affidavit answers one limb of the test, so the structure is not a matter of style — it is the test in order. Delay in particular is measured from discovery, which is why fixing that date precisely does real work.',
+                    exam: {
+                      write: 'I first became aware of the Judgment on [date], when [event]; I instructed solicitors the same day and this application was issued on [date].',
+                      trap: 'Measuring delay from the date of the judgment rather than the date of discovery, or asserting facts outside the deponent\'s own knowledge without sourcing them.',
+                    },
                     points: [
                       'Identify the deponent, his authority to make the affidavit on the party\'s behalf, and the basis of his knowledge.',
                       'State its purpose: to support the application to set aside the judgment, identifying each judgment by date.',
