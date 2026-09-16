@@ -1216,7 +1216,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                 { when: 'No ordinary method can reach the party', session: 'LG3', issue: 'substituted-service', label: 'Substituted service' },
                 { when: 'The address for service came from an acknowledgement', session: 'LG3', issue: 'acknowledgement-of-service', label: 'Acknowledgement of service — the address requirements' },
                 { when: 'The document being served is a pleading', session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable (filing and serving)' },
-                { when: 'You are proving service in order to enter a default judgment', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+                { when: 'You are proving service in order to enter a default judgment', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
               ],
             },
             answering: {
@@ -5994,7 +5994,7 @@ window.COURSE_DETAILS.PCLL8010 = {
               { session: 'LG6', issue: 'admissions-o13a', label: 'Making an admission under O.13A' },
               { session: 'LG6', issue: 'default-notice-of-intention', label: 'Default judgment for failure to give notice of intention to defend (O.13)' },
               { session: 'LG6', issue: 'default-of-defence', label: 'Default judgment in default of defence (O.19)' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
             ],
           },
           {
@@ -6483,7 +6483,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             crossRefs: [
               { session: 'LG6', issue: 'admissions-o13a', label: 'Making an admission under O.13A' },
               { session: 'LG6', issue: 'responding-to-an-admission', label: 'The plaintiff\'s response to an admission' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
             ],
           },
           {
@@ -6505,7 +6505,7 @@ window.COURSE_DETAILS.PCLL8010 = {
               routes: [
                 { when: 'The defendant DID acknowledge service but filed no defence', session: 'LG6', issue: 'default-of-defence', label: 'Default judgment in default of defence (O.19)' },
                 { when: 'You still need to know whether the judgment is final or interlocutory', session: 'LG6', issue: 'liquidated-or-unliquidated', label: 'Classifying the claim: liquidated or unliquidated' },
-                { when: 'The question is the mechanics of entering the judgment', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+                { when: 'The question is the mechanics of entering the judgment', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
                 { when: 'The acknowledgement deadline itself is what is in dispute', session: 'LG3', issue: 'acknowledgement-of-service', label: 'Acknowledgement of service — 14 days INCLUDING the day of service' },
                 { when: 'The defendant says he never knew about the writ', session: 'LG6', issue: 'regular-or-irregular', label: 'Is the default judgment regular or irregular?' },
                 { when: 'The defendant would rather admit the claim than fight it', session: 'LG6', issue: 'admissions-o13a', label: 'Making an admission under O.13A' },
@@ -6654,7 +6654,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             },
             crossRefs: [
               { session: 'LG6', issue: 'default-of-defence', label: 'Default judgment in default of defence (O.19)' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
               { session: 'LG6', issue: 'liquidated-or-unliquidated', label: 'Classifying the claim: liquidated or unliquidated' },
               { session: 'LG6', issue: 'regular-or-irregular', label: 'Is the default judgment regular or irregular?' },
               { session: 'LG3', issue: 'acknowledgement-of-service', label: 'Acknowledgement of service' },
@@ -6680,7 +6680,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                 { when: 'No acknowledgement of service was ever filed', session: 'LG6', issue: 'default-notice-of-intention', label: 'Default judgment for failure to give notice of intention to defend (O.13)' },
                 { when: 'The dispute is about when the defence was actually due', session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
                 { when: 'A defence was served but is said to be defective', session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading (O.18 r.19)' },
-                { when: 'The question is how the judgment is actually entered', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+                { when: 'You need the fixed-costs scale or the prescribed form of judgment — the parts of the O.13 procedure that apply here too', session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
                 { when: 'Judgment has been entered and the defendant wants it set aside', session: 'LG6', issue: 'setting-aside-regular', label: 'Setting aside a regular judgment' },
                 { when: 'The claim falls under r.7 and the judgment is measured against the statement of claim', session: 'LG5', issue: 'function-and-structure', label: 'What a statement of claim must do, and its four-part shape' },
               ],
@@ -6815,7 +6815,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             },
             crossRefs: [
               { session: 'LG6', issue: 'default-notice-of-intention', label: 'Default judgment for failure to give notice of intention to defend (O.13)' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
               { session: 'LG6', issue: 'setting-aside-regular', label: 'Setting aside a regular judgment' },
               { session: 'LG4', issue: 'pleadings-timetable', label: 'The pleadings timetable and close of pleadings' },
               { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
@@ -6825,8 +6825,8 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'entering-default-judgment',
-            title: 'Entering the judgment: procedure, proof of service and fixed costs',
-            summary: 'The documents that actually obtain the judgment — and the affidavit of service that decides, months later, whether it survives.',
+            title: 'Entering judgment under O.13: procedure, proof of service and fixed costs',
+            summary: 'The documents that actually obtain an O.13 judgment — proof of service of the WRIT, which is what O.13 needs because the defendant never acknowledged. O.19 asks a different question (see "Default judgment in default of defence (O.19)"); only the fixed-costs scale and the form of judgment are genuinely shared between the two.',
             triggers: {
               bullets: [
                 'The plaintiff is in a position to enter judgment and asks what to file.',
@@ -6853,8 +6853,17 @@ window.COURSE_DETAILS.PCLL8010 = {
                 title: 'Obtaining and recording the judgment',
                 steps: [
                   {
+                    id: 'scope',
+                    label: 'This is the O.13 procedure — only two pieces of it carry over to O.19',
+                    points: [
+                      'An O.13 judgment is entered because the defendant never acknowledged service, so what the plaintiff must prove is that the WRIT ITSELF was duly served — that is what the gate, the affidavit\'s 7-day opinion, and the r.7(3)-(5) returned-writ duty below are all about.',
+                      'An O.19 judgment starts from the opposite fact: the defendant HAS acknowledged service, so the writ\'s service is no longer in issue. What has to be proved instead is service of the O.19 r.8A NOTICE OF INTENTION TO ENTER JUDGMENT — a different document, under a different rule, with its own affidavit requirement. That mechanism is covered on its own page: "Default judgment in default of defence (O.19)".',
+                      'Two things below genuinely apply to both Orders because their own text says so: the form-of-judgment rule (O.19 rr.2-5 cite the same Forms 39-42 as O.13 rr.1-4: O.42 r.1(1)-(2)), and the fixed-costs scale (O.62, 2nd Sch., Pt I para.1(b) names O.19 r.2 in the same breath as O.13 r.1). Everything else here — the r.7(1) gate, the affidavit\'s 7-day opinion, and the r.7(3)-(5) duty on a returned writ — is confined to O.13 by its own wording and has no O.19 counterpart.',
+                    ],
+                  },
+                  {
                     id: 'gate',
-                    label: 'Clear the O.13 r.7(1) gate first — judgment "shall not be entered" unless one of three things is true',
+                    label: 'Clear the O.13 r.7(1) gate first (O.13 only) — judgment "shall not be entered" unless one of three things is true',
                     points: [
                       'r.7(1)(a) — the defendant has acknowledged service of the writ on him; or',
                       'r.7(1)(b) — an affidavit is filed by or on behalf of the plaintiff proving due service of the writ on the defendant; or',
@@ -6865,7 +6874,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   },
                   {
                     id: 'docs',
-                    label: 'Prepare the application: summons plus affidavit',
+                    label: 'Prepare the application: summons plus affidavit (this part applies whichever Order the default is under)',
                     points: [
                       {
                         text: 'The summons seeks the orders actually wanted, and the wording tracks the classification:',
@@ -6875,26 +6884,27 @@ window.COURSE_DETAILS.PCLL8010 = {
                           'Costs be to the Plaintiff.',
                         ],
                       },
-                      'The affidavit proves that the writ was duly served: O.13 r.7(1)(b).',
-                      'Where a form of judgment is prescribed by Appendix A, the judgment must be in that form: O.42 r.1(1). The rules themselves point to Form 39 for a liquidated demand, Form 40 for unliquidated damages, Form 41 for detention of goods and Form 42 for possession of land.',
+                      'Under O.13 the affidavit proves that the writ was duly served: O.13 r.7(1)(b). Under O.19 it instead proves service of the r.8A notice of intention to enter judgment — the writ\'s own service is not what is being proved, because the acknowledgement already concedes it.',
+                      'Where a form of judgment is prescribed by Appendix A, the judgment must be in that form: O.42 r.1(1) — a Rules-wide provision, not an O.13 one. The same Forms 39-42 are named by both O.13 rr.1-4 and O.19 rr.2-5: Form 39 for a liquidated demand, Form 40 for unliquidated damages, Form 41 for detention of goods and Form 42 for possession of land.',
                       'The party entering judgment is entitled to have recited in it a statement of the MANNER in which, and the PLACE at which, the writ was served: O.42 r.1(2) — which is why the mode of service ends up on the face of the judgment.',
                       'A default judgment is short. In the negligence case file it reads, in substance: no notice of intention to defend having been given by the defendant, it is adjudged that the defendant do pay the plaintiff damages to be assessed.',
                     ],
                   },
                   {
                     id: 'affidavit',
-                    label: 'Draft the affidavit of service with the set-aside application in mind',
+                    label: 'Draft the affidavit of service of the WRIT with the set-aside application in mind (O.13 only)',
                     points: [
                       'State who served, on whom, when, where and by what method — the affidavit is the document a defendant will later attack.',
                       'Where service was by POST or by INSERTION INTO A LETTER BOX, the affidavit must state that in the plaintiff\'s opinion the writ would have come to the defendant\'s knowledge within 7 days.',
                       'That opinion must be REASONABLE. If the Court thinks it is not, it can rule that there has been no proper service and refuse the default judgment: Law Kwok Hung v Tse Ping Man [1999] 4 HKC 397; Cheng Yip Chi v Kan Ming Construction Investments Ltd HCA 3291/2000.',
                       'PD 24.1 para.8 — on an O.13 application the affidavit of service should also depose to the fact that the relevant O.13A statutory forms for making an admission were served together with the Writ and the acknowledgement of service.',
                       'Do not assert more than the deponent knows. In C&S Dental Care Ltd v Premier Asia Medical Centre Ltd DCCJ 6089/2019, [2020] HKDC 1023 the affirmation of service was framed on O.10 r.1(3) — that the letter had not been returned undelivered — and the writ was in fact returned before judgment was obtained, which made the service irregular.',
+                      'None of this affidavit exists under O.19. There the writ\'s service is already conceded by the acknowledgement, so there is nothing left to prove about it — the affidavit that matters instead proves service of the r.8A notice.',
                     ],
                   },
                   {
                     id: 'returned',
-                    label: 'If the posted writ comes back undelivered, O.13 r.7(3)-(5) imposes a duty',
+                    label: 'If the posted writ comes back undelivered, O.13 r.7(3)-(5) imposes a duty (O.13 only — no O.19 counterpart)',
                     points: [
                       'Where judgment has been entered against a defendant purporting to have been served BY POST under O.10 r.1(2)(a) and the copy writ is returned through the post undelivered, the plaintiff SHALL, before taking any step or further step in the action or in enforcement, do one of two things: r.7(3).',
                       'r.7(3)(a) — make a request for the judgment to be set aside on the ground that the writ has not been duly served. That request is made by producing to an officer of the Registry, and leaving with him for filing, an affidavit stating the relevant facts — and THEREUPON THE JUDGMENT SHALL BE SET ASIDE and the entries marked accordingly: r.7(4).',
@@ -6904,7 +6914,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   },
                   {
                     id: 'costs',
-                    label: 'Work out the costs on the fixed scale',
+                    label: 'Work out the costs on the fixed scale (this step DOES apply to an O.19 judgment too)',
                     points: [
                       'The scale in O.62, 2nd Schedule, Part II applies where the writ was indorsed with a claim for a debt or liquidated demand only and the plaintiff obtains judgment on failure to give notice of intention to defend under O.13 r.1, or in default of defence under O.19 r.2: 2nd Sch., Pt I, para.1(b).',
                       'It also applies where the plaintiff obtains judgment under O.13A without a hearing: para.1A.',
@@ -6916,7 +6926,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   },
                   {
                     id: 'after',
-                    label: 'Say what happens next — an interlocutory judgment is not the end',
+                    label: 'Say what happens next — an interlocutory judgment is not the end (whichever Order it was entered under)',
                     points: [
                       'A final judgment can be enforced at once. An interlocutory judgment fixes liability only, and the plaintiff must still prove quantum at an assessment of damages at which the defendant is usually absent.',
                       'In the District Court, unless otherwise ordered or directed at the time of giving judgment, the assessment takes place before a master and the automatic directions under O.37 r.1A of the Rules of the District Court (Cap. 336H) take effect: O.37 r.1.',
@@ -6931,9 +6941,9 @@ window.COURSE_DETAILS.PCLL8010 = {
               table: {
                 headers: ['Step', 'Document', 'Point to get right'],
                 rows: [
-                  ['Establish the right to enter judgment', 'Acknowledgement, affidavit of service, or the writ indorsed by the defendant\'s solicitor', 'One of the three limbs of O.13 r.7(1) must be satisfied or judgment shall not be entered'],
+                  ['Establish the right to enter judgment (O.13 only)', 'Acknowledgement, affidavit of service, or the writ indorsed by the defendant\'s solicitor', 'One of the three limbs of O.13 r.7(1) must be satisfied or judgment shall not be entered — under O.19 the gate is the r.8A notice instead, not this rule'],
                   ['Apply', 'Summons', 'The prayer must match the classification: final judgment, or interlocutory judgment with damages to be assessed; plus costs to the plaintiff'],
-                  ['Prove service', 'Affidavit of service', 'Mode, date and place; the 7-day opinion for postal or letter-box service, and it must be reasonable'],
+                  ['Prove service of the writ (O.13 only)', 'Affidavit of service', 'Mode, date and place; the 7-day opinion for postal or letter-box service, and it must be reasonable — O.19 proves service of the r.8A notice instead, not the writ'],
                   ['Prove the admission forms went out', 'The same affidavit', 'PD 24.1 para.8 — depose that the O.13A forms were served with the Writ and the acknowledgement of service'],
                   ['Enter judgment', 'Judgment in the prescribed Appendix A form', 'Form 39 liquidated, 40 unliquidated, 41 goods, 42 land: O.42 r.1(1); the manner and place of service may be recited: r.1(2)'],
                   ['Claim costs', 'Fixed scale', '$10,000 if legally represented; $500 per additional defendant; $1,000 per defendant where substituted service was ordered and effected; but nothing at all unless para.2 is satisfied'],
@@ -6944,6 +6954,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             },
             lookOut: {
               bullets: [
+                'This whole page is the O.13 procedure. Only the fixed-costs scale and the form-of-judgment rule below apply to an O.19 judgment too — the r.7(1) gate, the affidavit\'s 7-day opinion and the r.7(3)-(5) duty do not.',
                 'O.13 r.7(1) is mandatory in form — "judgment shall not be entered... unless".',
                 'The 7-day opinion on postal or letter-box service is the plaintiff\'s own opinion, and it is reviewable for reasonableness.',
                 'Never plead in the affidavit of service more than the deponent can stand behind — the C&S Dental affirmation is the cautionary example.',
@@ -6966,6 +6977,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             },
             mistakes: {
               bullets: [
+                'Citing O.13 r.7(1), the 7-day opinion, or r.7(3)-(5) as if they governed an O.19 judgment. They don\'t: O.19\'s equivalent gate is service of the r.8A notice, covered on its own page.',
                 'Entering judgment without satisfying one of the three limbs of O.13 r.7(1).',
                 'Omitting the 7-day opinion from an affidavit of postal or letter-box service.',
                 'Asserting in the affirmation of service that a posted writ was not returned, when it was or later is.',
@@ -6984,6 +6996,7 @@ window.COURSE_DETAILS.PCLL8010 = {
               table: {
                 headers: ['Point', 'Source', 'What it actually provides'],
                 rows: [
+                  ['Scope of this page', 'O.13 r.7; O.19 r.8A', 'The r.7(1) gate, the affidavit\'s 7-day opinion, and the r.7(3)-(5) duty on a returned writ are confined to O.13 by their own wording ("under this Order"); O.19\'s equivalent requirement is service of the r.8A notice of intention to enter judgment, covered on its own page. Only the form-of-judgment rule (O.42 r.1) and the fixed-costs scale below apply to both Orders'],
                   ['Proof of service', 'O.13 r.7(1)(a)-(c)', 'Judgment shall not be entered unless the defendant has acknowledged service, an affidavit proving due service is filed, or the plaintiff produces the writ indorsed by the defendant\'s solicitor accepting service'],
                   ['The Court\'s own satisfaction', 'O.13 r.7(2)', 'On an application affecting a party who failed to give notice of intention to defend, the Court may require to be satisfied in such manner as it thinks fit that he failed to do so'],
                   ['Writ returned undelivered', 'O.13 r.7(3)', 'Where the writ was purportedly served by post under O.10 r.1(2)(a) and is returned undelivered, the plaintiff shall, before any step or further step in the action or its enforcement, request a set-aside or apply for directions'],
@@ -7160,7 +7173,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             crossRefs: [
               { session: 'LG6', issue: 'setting-aside-irregular', label: 'Setting aside an irregular judgment' },
               { session: 'LG6', issue: 'setting-aside-regular', label: 'Setting aside a regular judgment' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
               { session: 'LG3', issue: 'serving-the-writ', label: 'Serving the writ under O.10' },
               { session: 'LG3', issue: 'serving-particular-parties', label: 'Serving particular kinds of party' },
               { session: 'LG3', issue: 'substituted-service', label: 'Substituted service' },
@@ -7316,7 +7329,7 @@ window.COURSE_DETAILS.PCLL8010 = {
             crossRefs: [
               { session: 'LG6', issue: 'regular-or-irregular', label: 'Is the default judgment regular or irregular?' },
               { session: 'LG6', issue: 'setting-aside-regular', label: 'Setting aside a regular judgment' },
-              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering the judgment: procedure, proof of service and fixed costs' },
+              { session: 'LG6', issue: 'entering-default-judgment', label: 'Entering judgment under O.13: procedure, proof of service and fixed costs' },
               { session: 'LG3', issue: 'defective-service', label: 'Defective service and the Court\'s discretion' },
               { session: 'LG3', issue: 'serving-the-writ', label: 'Serving the writ under O.10' },
             ],
