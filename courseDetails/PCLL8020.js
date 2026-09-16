@@ -645,6 +645,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'route',
                     label: 'Which route does the client actually need?',
+                    why: 'The three routes — incorporate fresh, buy a shelf company, or incorporate an existing business — solve different problems and take different amounts of time. Identifying which the client actually needs is what makes the rest of the advice relevant.',
+                    exam: {
+                      write: 'The client requires [a newly incorporated company / a shelf company, speed being essential / the incorporation of an existing business], and accordingly the steps are as follows.',
+                      trap: 'Describing incorporation generally when the facts point to a shelf company or to transferring an existing business.',
+                    },
                     branches: [
                       { condition: 'A new vehicle, no urgency', then: 'Incorporate a new company', goto: 'inc' },
                       { condition: 'A vehicle needed immediately', then: 'Acquire and make changes to a shelf company', goto: 'shelf' },
@@ -654,6 +659,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'inc',
                     label: 'Incorporation: name check, then lodge with the Companies Registry',
+                    why: 'Incorporation is a filing exercise: the Registrar acts on the documents lodged, so the name check comes first because a name clash is the one thing that will stop the process cold.',
+                    exam: {
+                      write: 'The proposed name having been checked against the register, there is delivered to the Registrar a copy of the articles and form NNC1 with a statement of compliance: s67.',
+                      trap: 'Lodging without checking the proposed name against names already registered.',
+                    },
                     points: [
                       'Check the proposed names against names already registered.',
                       'Lodge a copy of the articles (s67), a completed form NNC1 signed by a founder member with a statement of compliance (ss67-68 and Schedule 2), and a form IRBR1 notice to the Business Registration Office.',
@@ -663,11 +673,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'cert',
                     label: 'Registrar issues the certificate of incorporation',
+                    why: 'The certificate is the moment the company becomes a person in law, which is why every earlier act is done by promoters rather than by the company. The business registration certificate arrives with it under the one-stop procedure.',
+                    exam: {
+                      write: 'The company came into existence on [date], the date of its incorporation: ss71 and 73.',
+                      trap: 'Treating the company as able to contract before the date on the certificate.',
+                    },
                     detail: 'The company becomes a legal entity from the date of incorporation (ss71 and 73); a business registration certificate issues at the same time.',
                   },
                   {
                     id: 'activate',
                     label: 'Activate the new company',
+                    why: 'A newly incorporated company is an empty shell: it has legal personality but no officers in place, no bank account and no records. Activation is the list of things that have to happen before it can actually trade.',
+                    exam: {
+                      write: 'The first Board meeting is held to appoint the company secretary and the first auditors, adopt the registered office and open bank accounts.',
+                      trap: 'Assuming a common seal is required — s124(1) says a company MAY have one.',
+                    },
                     points: [
                       'Name plate and business stationery (Companies (Disclosure of Company Name and Liability Status) Regulation, Cap. 622B).',
                       'A common seal is optional — s124(1) says a company MAY have one; if it does, s124(2) requires a metallic seal with the company\'s name engraved in legible form, and s124(2A) settles which name: both if it has an English and a Chinese name, otherwise the one it has. Contravening s124(2) is an offence at level 3 (s124(3)-(4)).',
@@ -679,6 +699,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'shelf',
                     label: 'Shelf company: effect the changes the client needs',
+                    why: 'A shelf company already exists, so the work is conversion rather than creation: the existing subscriber shares and officers have to be replaced with the client\'s. Speed is the reason clients choose it, and the steps reflect that.',
+                    exam: {
+                      write: 'The subscriber shares are transferred to the client, and a Board meeting is held to approve the transfer, appoint the new directors and secretary and change the registered office.',
+                      trap: 'Describing incorporation steps for a shelf company, which is already incorporated.',
+                    },
                     points: [
                       'Change shareholders and directors.',
                       'Board meeting to resolve on: appointing a new secretary, approving the transfer of the subscriber shares, any further allotment, new auditors, the financial year-end, a change in the registered office, bank accounts, and convening a general meeting if needed.',
@@ -689,6 +714,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'existing',
                     label: 'Incorporating an existing business',
+                    why: 'Incorporating an existing business is two transactions, not one: a company must exist, and then the business or its assets must be moved into it. Keeping them separate is what makes the consideration and the stamp duty analysis tractable.',
+                    exam: {
+                      write: 'A limited company having been established, the business and its assets are transferred to it for [cash / shares] as consideration.',
+                      trap: 'Treating the transfer of the business as part of the incorporation rather than as a separate transaction with its own consideration.',
+                    },
                     points: [
                       'Establish a limited company (new, or an existing one).',
                       'Transfer the business or its assets to the company, for cash or non-cash consideration.',
@@ -698,6 +728,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'office',
                     label: 'Registered office and records',
+                    why: 'The registered office is the address at which the company can be reached for all purposes, including service of a writ. That is why the statute fixes it from the date of incorporation and requires notice of any change.',
+                    exam: {
+                      write: 'The company\'s registered office is at [address], being the intended address stated on incorporation: s658(2).',
+                      trap: 'Forgetting that a change of registered office must be notified, which is also how companies end up regularly served at an old address.',
+                    },
                     points: [
                       's658(1) — the company must have a registered office in Hong Kong "to which all communications and notices may be addressed".',
                       's658(2) — the intended address on the incorporation form is its registered office from the date of incorporation until a notice of change is delivered.',
@@ -708,6 +743,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'name',
                     label: 'Company name, if it is being changed',
+                    why: 'A change of name is a constitutional change, so it needs a special resolution and a filing — and the Registrar issues a fresh certificate. The language rule matters because a hybrid name is not permitted.',
+                    exam: {
+                      write: 'The company changed its name by special resolution passed on [date], notice being delivered to the Registrar: s107(1)-(2).',
+                      trap: 'Proposing a name combining English words or letters with Chinese characters.',
+                    },
                     points: [
                       'A name may be in English, or Chinese, or both — but not a combination of English words or letters and Chinese characters in one name.',
                       's107(1)-(2) — a company may change its name by special resolution, and must deliver a notice in the specified form (NNC2) to the Registrar within 15 days after the resolution is passed.',
@@ -798,6 +838,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'which',
                     label: 'Which set of articles governs this company? (s80)',
+                    why: 'Which articles govern is the first question because everything else is read against them. The model articles apply by default and to fill gaps, so a company that registered nothing is still fully governed.',
+                    exam: {
+                      write: 'The company having registered no articles prescribing regulations, the model articles form part of its articles: s80(1)-(2).',
+                      trap: 'Applying the model articles from memory without first establishing whether the company registered its own.',
+                    },
                     points: [
                       's80(1) — on incorporation, the model articles prescribed for that type of company, so far as applicable, form part of the articles as if they had been registered as the company\'s articles.',
                       's80(2) — that applies where the registered articles prescribe no regulations at all.',
@@ -808,11 +853,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'mods',
                     label: 'Read the modifications before applying any article from memory',
+                    why: 'A modification in the papers is there for a reason: the examiner has changed the default to change the answer. Reading the modifications first is what stops you applying the standard quorum or the standard casting vote to a company that has neither.',
+                    exam: {
+                      write: 'The company\'s articles modify MA[N] so that [the quorum is X], and the default in the model articles does not apply.',
+                      trap: 'Answering from the model articles when the question has attached modified ones.',
+                    },
                     detail: 'A question that attaches modified articles has put the modification there to change the answer — quorum numbers (MA11(2)) and the interested-director article (MA16) are the usual targets, and deleting MA17 removes the no-liability-to-account protection.',
                   },
                   {
                     id: 'mand',
                     label: 'Check the mandatory clauses are in place',
+                    why: 'The mandatory clauses are what the Ordinance insists every set of articles contains, so their absence is a defect rather than a choice. The objects clause is the one that is conditional, which is why it is easy to get wrong.',
+                    exam: {
+                      write: 'The articles contain the name clause (s81) and the members\' liability clause, an objects clause being required only while a s103 licence is in force: s82(1).',
+                      trap: 'Asserting that an objects clause is always mandatory.',
+                    },
                     points: [
                       'Name clause (s81) — both names if the company has an English and a Chinese name; otherwise whichever it has.',
                       'Objects clause (s82(1)) — mandatory only while a s103(2) or s103(4) licence to dispense with "limited" is in force; s82(2) any other company MAY state its objects.',
@@ -823,6 +878,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'effect',
                     label: 'What the articles actually bind (s86)',
+                    why: 's86 turns the articles into a contract, which is what makes them enforceable at all — and the contract runs between the company and each member AND between the members themselves. That second limb is the one that gets missed.',
+                    exam: {
+                      write: 'The articles have effect as a contract under seal between the company and each member and between the members themselves: s86(1)(a).',
+                      trap: 'Treating the articles as binding only between the company and its members, and overlooking the member-to-member limb.',
+                    },
                     points: [
                       's86(1)(a) — once registered they have effect as a contract under seal between the company and each member, AND between a member and each other member.',
                       's86(1)(b) — they are regarded as containing covenants by the company and each member to observe all their provisions.',
@@ -833,11 +893,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'override',
                     label: 'Check whether a statutory provision overrides the article',
+                    why: 'The articles cannot contract out of the Ordinance, so where the two conflict the statute wins. s462(1) is the standing example because it removes a director \'despite anything in its articles\'.',
+                    exam: {
+                      write: 'Notwithstanding the provision in the articles, the members may remove the director by ordinary resolution: s462(1).',
+                      trap: 'Applying an article that the statute expressly overrides.',
+                    },
                     detail: 'Statute beats the articles: the classic example is s462(1), removal of a director by ordinary resolution "despite anything in its articles or in any agreement between it and the director", which overrides Table A Reg 98\'s special resolution.',
                   },
                   {
                     id: 'alter',
                     label: 'If the articles are to be altered (s88)',
+                    why: 'Altering the articles changes the company\'s constitution, so it needs the higher threshold of a special resolution. The exception for the maximum number of shares is deliberate — it is a mechanical figure, not a constitutional principle.',
+                    exam: {
+                      write: 'The articles were altered by special resolution passed on [date]: s88(2).',
+                      trap: 'Using an ordinary resolution to alter the articles, other than for the maximum number of shares: s88(3).',
+                    },
                     points: [
                       's88(2) — a company may only alter its articles by special resolution.',
                       's88(3) — EXCEPT an alteration to the maximum number of shares the company may issue, which may be made by ordinary resolution.',
@@ -942,6 +1012,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'eligible',
                     label: 'Is the proposed director eligible?',
+                    why: 'Eligibility is checked first because an ineligible appointment is void, not merely voidable — so everything the person then purports to do as a director is built on nothing.',
+                    exam: {
+                      write: 'The proposed director having attained 18, the appointment is valid; an appointment in contravention of s459(1) would be void: s459(2).',
+                      trap: 'Overlooking that an undischarged bankrupt must not act as a director or take part in management: s480(1).',
+                    },
                     points: [
                       's459(1) — must have attained 18 at the time of appointment; s459(2) an appointment in contravention is VOID.',
                       's480(1) — an undischarged bankrupt must not act as a director, or take part directly or indirectly in the management of a company, except with the leave of the court.',
@@ -954,6 +1029,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'who-appoints',
                     label: 'Who is appointing?',
+                    why: 'The appointer determines the term. A Board-appointed director holds office only until the next AGM, because the Board is filling a gap rather than making a permanent choice — that is the members\' prerogative.',
+                    exam: {
+                      write: 'The director was appointed by [the Board under MA22(1)(b) / the members by ordinary resolution under MA22(1)(a)].',
+                      trap: 'Treating a Board appointment as permanent, when MA22(4) requires retirement at the next AGM.',
+                    },
                     branches: [
                       { condition: 'On incorporation', then: 'The first directors are those named as directors in the incorporation form delivered under s67(1) (s454(2))' },
                       { condition: 'Shareholders, by ordinary resolution', then: 'MA22(1)(a); unless the appointment specifies otherwise, the director holds office for an unlimited period (MA22(2))' },
@@ -963,6 +1043,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'boardterm',
                     label: 'A Board-appointed director\'s term (MA22(4))',
+                    why: 'The limit exists so that the members get to confirm or reject a Board\'s choice at the first opportunity. Where there are no AGMs, the nine-month backstop performs the same function.',
+                    exam: {
+                      write: 'Having been appointed by the Board, the director must retire at the next annual general meeting: MA22(4)(a).',
+                      trap: 'Forgetting the r.22(4)(b) alternative where the company has dispensed with AGMs.',
+                    },
                     points: [
                       'MA22(4)(a) — must retire at the next annual general meeting after the appointment.',
                       'MA22(4)(b) — or, if the company has dispensed with AGMs or is not required to hold them, before the end of 9 months after the end of the accounting reference period by reference to which the financial year of appointment is determined.',
@@ -972,6 +1057,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'reserve',
                     label: 'Is a reserve director in play? (s455)',
+                    why: 'A reserve director solves a specific problem: a single-member, single-director company whose director dies leaves the company with nobody able to act. The nomination is made in advance for exactly that event.',
+                    exam: {
+                      write: 'The company having one member who is also its sole director, a reserve director was nominated by resolution in general meeting: s455(1).',
+                      trap: 'Proposing a reserve director for a company that has more than one member or more than one director.',
+                    },
                     points: [
                       'Available only where a private company has one member who is also its sole director.',
                       's455(1) — nominated by resolution at a general meeting, despite anything in the articles; the nominee must be a natural person (not a body corporate) aged at least 18.',
@@ -982,6 +1072,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'terminate',
                     label: 'If a directorship is ending, on which MA25 ground?',
+                    why: 'MA25 lists the events that end a directorship automatically, without anyone having to act. Identifying the right limb matters because some are automatic and others — removal — require a resolution and carry protest rights.',
+                    exam: {
+                      write: 'The director\'s office was vacated on [date] under MA25([letter]), he having [become bankrupt / been absent from directors\' meetings without permission for more than 6 months].',
+                      trap: 'Treating every cessation as a removal, when MA25 vacates the office automatically on the listed events.',
+                    },
                     points: [
                       'MA25(a) — ceasing to be a director under the CO or Cap. 32, or being prohibited by law.',
                       'MA25(b) — becoming bankrupt, or making an arrangement or composition with creditors generally.',
@@ -995,6 +1090,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'resign',
                     label: 'Resignation (s464)',
+                    why: 'Resignation is a unilateral act unless the articles or an agreement say otherwise, which is why the default is that a director may go at any time. Where notice is required, s464(5) makes compliance a condition of the resignation taking effect at all.',
+                    exam: {
+                      write: 'The director resigned by notice given on [date] in accordance with the articles: s464(1), (5).',
+                      trap: 'Assuming a resignation is always effective immediately, when the articles may require notice.',
+                    },
                     points: [
                       's464(1) — a director may resign at any time, unless the articles or an agreement with the company provide otherwise.',
                       's464(5) — where notice IS required by the articles or an agreement, the resignation has no effect unless given in writing in accordance with that requirement, by leaving it at the registered office, or by sending it to the company in hard copy or electronic form.',
@@ -1004,6 +1104,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'removal',
                     label: 'Removal by the shareholders (ss462-463)',
+                    why: 'Removal by ordinary resolution is a members\' power the articles cannot take away — \'despite anything in its articles or in any agreement\'. That is what makes it the ultimate control over the Board.',
+                    exam: {
+                      write: 'The members removed the director by ordinary resolution passed at a general meeting on [date]: s462(1).',
+                      trap: 'Removing a director by written resolution. s462(1) requires a general meeting.',
+                    },
                     points: [
                       's462(1) — by ordinary resolution passed AT A GENERAL MEETING, "despite anything in its articles or in any agreement between it and the director". This overrides Table A Reg 98\'s special resolution.',
                       's462(2) — but it does not authorise removing a private company director who has held office for life since 31 August 1984.',
@@ -1017,6 +1122,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'protest',
                     label: 'But the director has protest rights (s463) — and they bite',
+                    why: 'The protest rights are the price of a power that can be exercised without cause. The director gets notice, a right to be heard and a right to have representations circulated, so removal is never done silently.',
+                    exam: {
+                      write: 'The company forthwith sent a copy of the resolution to the director, who is entitled to be heard on it at the meeting: s463(1)-(2).',
+                      trap: 'Treating removal as purely a matter of arithmetic and overlooking the s463 protest rights.',
+                    },
                     points: [
                       's463(1) — on receiving notice of the resolution the company must FORTHWITH send a copy to the director concerned.',
                       's463(2) — the director, whether or not a member, is entitled to be heard on the resolution at the meeting.',
@@ -1028,6 +1138,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'admin',
                     label: 'Administrative steps after any change',
+                    why: 'A change of director is only complete when the record shows it. The register and the Registry filing are what make the change effective against the outside world, including anyone serving documents on the company.',
+                    exam: {
+                      write: 'The register of directors was updated (s643) and the change notified to the Registrar within 15 days.',
+                      trap: 'Passing the resolution and stopping there, leaving the register and the Registry unchanged.',
+                    },
                     points: [
                       'Meeting minutes or written resolutions recording the appointment or cessation.',
                       'Update the register of directors (s643).',
@@ -1145,6 +1260,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'whose',
                     label: 'Is this a matter for the Board to decide at all?',
+                    why: 'The Board manages; the members own. Establishing that the matter falls to the Board is what makes the rest of the analysis relevant — and MA3(4) is the provision that gives a quorate meeting the full range of the directors\' powers.',
+                    exam: {
+                      write: 'The matter being the management of the company\'s business, it falls to the directors: MA3(1), and a quorate meeting may exercise all their powers: MA3(4).',
+                      trap: 'Analysing a Board procedure for something that is actually a reserved matter for the members.',
+                    },
                     points: [
                       'MA3(1) — subject to the Ordinance and the articles, the business and affairs of the company are managed by the directors, who may exercise all the powers of the company.',
                       'MA3(4) — a directors\' meeting at which a quorum is present may exercise all powers exercisable by the directors.',
@@ -1156,6 +1276,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'composition',
                     label: 'How many directors are there, and what do the articles require?',
+                    why: 'The number of directors drives everything that follows — the quorum, whether MA12 bites, whether the sole-director provisions apply. Counting them is therefore the first mechanical step.',
+                    exam: {
+                      write: 'The company has [N] directors, of whom [M] are eligible to vote on this matter.',
+                      trap: 'Working out the quorum without first establishing how many directors there actually are.',
+                    },
                     branches: [
                       { condition: 'More than one director', then: 'Multi-director: MA7(1) — majority at a meeting, or a unanimous decision under MA8', goto: 'convene' },
                       { condition: 'One director, articles do NOT require more than one', then: '"Sole director": MA7(2) disapplies MA7(1); decide and record under MA20', goto: 'sole' },
@@ -1165,6 +1290,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'convene',
                     label: 'Convening and notice (MA9)',
+                    why: 'Any director may call a meeting, because management is collective and no one director controls access to the Board. The notice content requirement exists so that directors can decide whether they can attend.',
+                    exam: {
+                      write: 'The meeting was called by [director] giving notice indicating the proposed date, time and place: MA9(1)-(2).',
+                      trap: 'Overlooking that notice may be given by the company secretary if authorised by a director: MA9(1).',
+                    },
                     points: [
                       'MA9(1) — any director may call a directors\' meeting by giving notice to the directors, or by authorising the company secretary to give that notice.',
                       'MA9(2) — the notice must indicate the proposed date and time of the meeting, and where it is to take place.',
@@ -1175,6 +1305,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'mode',
                     label: 'Mode of meeting and attendance (MA10)',
+                    why: 'The test is communication, not location. MA10 makes participation a question of whether each director can convey information and opinions to the others, which is why a meeting by telephone or video is a meeting.',
+                    exam: {
+                      write: 'The directors participated in the meeting by [telephone/video], each being able to communicate to the others any information or opinions on the business: MA10(1)(b).',
+                      trap: 'Insisting on physical presence. MA10(2) makes it irrelevant where a director is or how they communicate.',
+                    },
                     points: [
                       'MA10(1)(b) — directors participate when they can each communicate to the others any information or opinions they have on any particular item of the business of the meeting.',
                       'MA10(2) — it is irrelevant where a director is and how they communicate with each other.',
@@ -1185,6 +1320,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'quorum',
                     label: 'Quorum (MA11)',
+                    why: 'The quorum is what makes a meeting a meeting. MA11(1) is the point students miss: an inquorate meeting is not wholly powerless — it may vote on one thing, a proposal to call another meeting.',
+                    exam: {
+                      write: 'The quorum not having been fixed otherwise, it is 2: MA11(2); and no proposal may be voted on unless a quorum is participating, except a proposal to call another meeting: MA11(1).',
+                      trap: 'Treating an inquorate meeting as able to do nothing at all — MA11(1) preserves the power to call another meeting.',
+                    },
                     points: [
                       'MA11(2) — the quorum may be fixed from time to time by a decision of the directors; unless otherwise fixed it is 2.',
                       'MA11(1) — at a directors\' meeting, unless a quorum is participating, no proposal is to be voted on EXCEPT a proposal to call another meeting. So an inquorate board is not wholly powerless.',
@@ -1194,6 +1334,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'vote',
                     label: 'Voting',
+                    why: 'A Board decision is a majority decision, so the count and the chair\'s role both matter. The casting vote is a tie-breaker and, by MA14(2), it disappears if the chairperson is not counted for quorum or voting purposes.',
+                    exam: {
+                      write: 'The resolution was carried by a majority of the directors at the meeting: MA7(1)(a).',
+                      trap: 'Giving the chairperson a casting vote where MA14(2) removes it because they are not counted for quorum or voting.',
+                    },
                     points: [
                       'MA7(1)(a) — a decision is taken by a majority of the directors at a meeting.',
                       'MA13(1)-(3) — the directors may appoint, and may at any time terminate the appointment of, a director to chair their meetings; MA13(4) if the chairperson is not participating within 10 minutes of the start, or is unwilling to chair, the participating directors may appoint one of themselves.',
@@ -1205,6 +1350,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'unanimous',
                     label: 'Or take a unanimous decision instead (MA8)',
+                    why: 'Unanimity substitutes for a meeting because if every eligible director agrees there is nothing for a meeting to resolve. The decision is taken when they indicate agreement to each other, which is why the written resolution is only one form of it.',
+                    exam: {
+                      write: 'All eligible directors having indicated to each other that they share a common view, a unanimous decision was taken: MA8(1), evidenced by a written resolution signed by each: MA8(2).',
+                      trap: 'Assuming a unanimous decision must be in writing. MA8(1) is about indicating a common view by any means.',
+                    },
                     points: [
                       'MA8(1) — taken when all eligible directors indicate to each other, directly or indirectly, by any means, that they share a common view on a matter.',
                       'MA8(2) — it may take the form of a resolution in writing, signed by each eligible director or otherwise agreed to in writing by each.',
@@ -1215,6 +1365,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'sole',
                     label: 'Sole director (MA7(2)-(3), MA20)',
+                    why: 'A sole director has nobody to meet with, so the decision-taking machinery is disapplied entirely — and MA7(3) is deliberately broad: he may decide \'without regard to any of the provisions of these articles relating to directors\' decision-taking\'.',
+                    exam: {
+                      write: 'The company having only 1 director and no article requiring more, that director may take decisions without regard to the articles relating to directors\' decision-taking: MA7(2)-(3).',
+                      trap: 'Applying the quorum and meeting articles to a sole director, which MA7(2) disapplies.',
+                    },
                     points: [
                       'MA7(2) — MA7(1) does not apply if the company has only 1 director AND no provision of the articles requires it to have more than one.',
                       'MA7(3) — that director may then take decisions "without regard to any of the provisions of these articles relating to directors\' decision-taking".',
@@ -1225,6 +1380,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'single',
                     label: 'Single director (MA12)',
+                    why: 'MA12 is about the total number of directors falling below the quorum, not about directors being unable to vote on a particular matter. That distinction decides which way out of the deadlock is available.',
+                    exam: {
+                      write: 'The total number of directors being less than the quorum, the directors must not take any decision other than to appoint further directors or to call a general meeting: MA12.',
+                      trap: 'Applying MA12 where the shortfall arises because a director is excluded from voting by MA16 — MA12 turns on the TOTAL number.',
+                    },
                     points: [
                       'MA7(1) still applies: a decision needs a quorate meeting or a unanimous decision.',
                       {
@@ -1240,6 +1400,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'record',
                     label: 'Record the decision',
+                    why: 'The record is what proves the decision was taken, and the ten-year period reflects how long a company\'s acts may need to be justified. MA19 and s481(2) point the same way.',
+                    exam: {
+                      write: 'A written record of the decision was kept for at least 10 years from the date it was taken: MA19; s481(2).',
+                      trap: 'Keeping minutes only of meetings, and not of unanimous or sole-director decisions.',
+                    },
                     points: [
                       'MA19 — the directors must ensure the company keeps a written record of every decision taken under MA7(1) for at least 10 years from the date of the decision.',
                       's481(2) — minutes of directors\' meetings and directors\' resolutions must be kept for 10 years.',
@@ -1392,6 +1557,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'elements',
                     label: 'Test the three elements in s536(1) — all are required',
+                    why: 's536(1) has three cumulative elements, and a question can be answered wrongly by assuming the duty arises from the interest alone. Each element has to be established on the facts before any declaration is required.',
+                    exam: {
+                      write: 'The director is indirectly interested in the transaction, the transaction is significant in relation to the company\'s business, and the interest is material: s536(1).',
+                      trap: 'Concluding that a declaration is required as soon as an interest is spotted, without testing significance and materiality.',
+                    },
                     points: [
                       'The director is in any way, directly OR indirectly, interested in a transaction, arrangement or contract (or a PROPOSED one) with the company.',
                       'That transaction is significant in relation to the company\'s business.',
@@ -1402,16 +1572,31 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'material',
                     label: 'Is the interest material?',
+                    why: 'Materiality is judged objectively: would a reasonable person see a real, sensible possibility of conflict? That keeps the test away from the director\'s own view of whether he would be influenced.',
+                    exam: {
+                      write: 'A reasonable person considering the facts would see a real, sensible possibility of conflict, so the interest is material.',
+                      trap: 'Applying a subjective test — whether the director believes he would be influenced.',
+                    },
                     detail: 'Ask whether a reasonable person looking at the facts would see a real, sensible possibility of conflict; it need not have matured into an actual conflict. The Australian gloss is whether it has the capacity to influence the director\'s vote.',
                   },
                   {
                     id: 'significant',
                     label: 'Is the transaction significant in relation to the company\'s business?',
+                    why: 'Significance is relative, not absolute: a sum that is trivial for one company may be transformative for another. That is why the comparison is against the value of the company\'s business rather than against a threshold.',
+                    exam: {
+                      write: 'The transaction, valued at $[X] against the company\'s business worth $[Y], is significant in relation to that business.',
+                      trap: 'Treating a large sum as automatically significant without comparing it to the company\'s own scale.',
+                    },
                     detail: 'A relative-size judgment — compare the value of the transaction (or of the asset involved) against the value of the company. Say what you would need to know to decide it, and from whom.',
                   },
                   {
                     id: 'exclusions',
                     label: 'Check the two statutory exclusions before concluding a duty arises',
+                    why: 'The two exclusions mark the limits of the duty: you cannot declare what you do not know, and your own service contract is already visible to the Board. But s536(4)(a) has a deeming limb that closes the obvious loophole.',
+                    exam: {
+                      write: 'No declaration is required of an interest of which the director is not aware, though he is treated as aware of matters of which he ought reasonably to be aware: s536(4)(a).',
+                      trap: 'Relying on ignorance without applying the deeming limb of s536(4)(a).',
+                    },
                     points: [
                       's536(4)(a) — no declaration required of an interest, or a transaction, the director is not aware of; but s536(5) deems awareness of what they ought reasonably to be aware of.',
                       's536(4)(b) — no declaration required so far as the interest concerns the terms of the director\'s own service contract that have been or are to be considered by a directors\' meeting or a committee appointed for the purpose under the articles.',
@@ -1420,6 +1605,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'declare',
                     label: 'Declare: what, to whom, and how much',
+                    why: 'The statute requires the nature AND extent of the interest, not merely its existence. A bare statement that a director is interested tells the Board nothing it can act on, which is why an incomplete declaration must be corrected.',
+                    exam: {
+                      write: 'The director declared to the other directors the nature and extent of his interest, namely [detail]: s536(1); a further declaration being required if it becomes inaccurate or incomplete: s536(3).',
+                      trap: 'Declaring that an interest exists without stating its nature and extent.',
+                    },
                     points: [
                       'Declare the NATURE AND EXTENT of the interest to the other directors (s536(1)) — not merely that an interest exists.',
                       's536(3) — if the declaration proves to be, or becomes, inaccurate or incomplete, a further declaration must be made.',
@@ -1429,6 +1619,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'timing',
                     label: 'Timing (s537)',
+                    why: 'The timing rule tracks what the declaration is for: for a proposed transaction it lets the Board decide with full information, so it must come first; for one already entered into, disclosure as soon as practicable is the best that can be done.',
+                    exam: {
+                      write: 'The transaction being proposed, the declaration was made before the company entered into it: s537(2).',
+                      trap: 'Declaring after the company has committed itself to a proposed transaction.',
+                    },
                     points: [
                       's537(1) — for a transaction already entered into: as soon as reasonably practicable.',
                       's537(2) — for a proposed transaction: BEFORE the company enters into it.',
@@ -1438,6 +1633,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'procedure',
                     label: 'Manner of declaration (s538) — three routes',
+                    why: 'Three routes exist so that disclosure is practical whatever the company\'s decision-making looks like — at a meeting, by written notice, or by general notice. Each is a valid manner of declaration under s538.',
+                    exam: {
+                      write: 'The declaration was made by notice in writing sent to the other directors: s538(1)(b).',
+                      trap: 'Assuming disclosure must be made at a Board meeting when s538 offers two other routes.',
+                    },
                     points: [
                       's538(1)(a) — at a directors\' meeting.',
                       's538(1)(b) — by notice in writing sent to the other directors; by s538(2) in hard copy, or in an electronic form the recipient has agreed to, sent by hand or post or by agreed electronic means.',
@@ -1449,6 +1649,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'ma16',
                     label: 'Then apply the articles on voting and quorum (MA16)',
+                    why: 'The statute governs disclosure; the articles govern what happens next. MA16 is where the interested director loses his vote and his place in the quorum, which is the practical consequence the client cares about.',
+                    exam: {
+                      write: 'The director having declared his interest, he is not to be counted in the quorum or to vote on the resolution: MA16(3).',
+                      trap: 'Stopping at the s536 declaration and never applying MA16 to the voting and quorum.',
+                    },
                     points: [
                       'MA16(1) — the article applies where the director is (directly or indirectly) interested in a transaction with the company significant in relation to its business AND the interest is material — the same two limbs as s536.',
                       'MA16(2) — the director must declare the nature and extent of the interest to the other directors in accordance with s536.',
@@ -1461,6 +1666,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'exceptions',
                     label: 'Check the four MA16(6) exceptions — MA16(3) does not apply to:',
+                    why: 'The four MA16(6) exceptions cover situations where the conflict is formal rather than real — a director lending to his own company, or guaranteeing its debts. In those cases excluding him would harm the company rather than protect it.',
+                    exam: {
+                      write: 'The arrangement being one giving the director security for money lent by him to the company, MA16(3) does not apply: MA16(6)(a).',
+                      trap: 'Excluding an interested director automatically without checking the MA16(6) exceptions.',
+                    },
                     points: [
                       '(a) an arrangement giving the director security or an indemnity for money lent by them to, or obligations undertaken by them for the benefit of, the company.',
                       '(b) an arrangement for the company to give security to a third party for a debt or obligation of the company which the director has assumed wholly or partly under a guarantee, indemnity or deposit of security.',
@@ -1472,6 +1682,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'quorumfix',
                     label: 'Work out whether the Board can still act',
+                    why: 'Once the interested director is out of the count, the arithmetic may leave the Board unable to act. The route out matters: this is a voting exclusion, not a shortfall in the total number, so MA12 is not the answer.',
+                    exam: {
+                      write: 'With the interested director excluded, [N] eligible directors remain, which [is/is not] a quorum; if not, the matter must go to a general meeting or a further director be appointed.',
+                      trap: 'Reaching for MA12, which turns on the total number of directors, not on how many may vote.',
+                    },
                     points: [
                       'With the interested director out of the count, is the remaining number of eligible directors enough for the quorum (MA11(2))?',
                       'If not, the route out is a further appointment or a general meeting — not MA12, which turns on the TOTAL number of directors, not on an MA16 exclusion.',
@@ -1482,6 +1697,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'beyond',
                     label: 'Do not stop at the statute',
+                    why: 'The statutory duty runs to the other directors; the common law duty runs to the shareholders. They are cumulative, so satisfying s536 does not dispose of the conflict question.',
+                    exam: {
+                      write: 'The statutory duty to declare to the other directors is additional to the common law duty to disclose the conflict to the shareholders.',
+                      trap: 'Treating compliance with s536 as the end of the analysis.',
+                    },
                     points: [
                       'The statutory duty to the other directors is additional to the common law duty to disclose a conflict to the shareholders.',
                       'MA17(2)-(4) — a director is not disqualified from contracting with the company as vendor, purchaser or otherwise, the contract is not liable to be avoided, and the director is not liable to account for the profit — but MA17(5) says all of that applies ONLY if the director declared the nature and extent of the interest under s536.',
@@ -1593,6 +1813,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'must',
                     label: 'Every company must have a company secretary (s474(1))',
+                    why: 'The requirement is absolute: every company must have a secretary, because someone must be responsible for the company\'s records and filings. The first one is named on the incorporation form.',
+                    exam: {
+                      write: 'The company must have a company secretary: s474(1), the first being the person named in the incorporation form: s474(2).',
+                      trap: 'Treating the company secretary as optional for a small private company.',
+                    },
                     points: [
                       'The first company secretary is the person named as such in the incorporation form delivered under s67(1) (s474(2)).',
                       'If a firm\'s name is given in the incorporation form, all partners of the firm as at that date are the first joint company secretaries (s474(3)).',
@@ -1602,6 +1827,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'resident',
                     label: 'Is the secretary "resident" in Hong Kong? (s474(4))',
+                    why: 'The residence requirement exists so that there is always someone in Hong Kong answerable for the company\'s compliance. It differs for individuals and bodies corporate because the connecting factor differs.',
+                    exam: {
+                      write: 'The secretary, being a natural person, ordinarily resides in Hong Kong: s474(4)(a).',
+                      trap: 'Applying the individual test to a corporate secretary, which needs a registered office or place of business here: s474(4)(b).',
+                    },
                     points: [
                       's474(4)(a) — a natural person must ordinarily reside in Hong Kong.',
                       's474(4)(b) — a body corporate must have its registered office, or a place of business, in Hong Kong.',
@@ -1610,6 +1840,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'sole',
                     label: 'Does the company have only one director?',
+                    why: 'The bar on a sole director also being secretary exists so that two functions requiring independent minds are not collapsed into one person. It is the same policy s479 applies act by act.',
+                    exam: {
+                      write: 'The company having only one director, that director cannot also be the company secretary.',
+                      trap: 'Overlooking the bar and appointing the sole director as secretary.',
+                    },
                     branches: [
                       { condition: 'No', then: 's475(1) — subject to (2) and (3), a director MAY be the company secretary', goto: 'dualcap' },
                       { condition: 'Yes, and that director is the proposed secretary', then: 'Barred: s475(2) — the sole director of a private company must not also be its company secretary' },
@@ -1619,11 +1854,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'articles',
                     label: 'Check the articles bar too, not just the statute',
+                    why: 'The articles carry their own bar, independently of the statute. MA17(1) permits a director to hold any other office \'other than the office of company secretary\', which is the articles-level mirror of the statutory rule.',
+                    exam: {
+                      write: 'MA17(1) independently bars the sole director from holding the office of company secretary.',
+                      trap: 'Checking only the statute and missing that the articles impose the same bar.',
+                    },
                     detail: 'MA17(1) lets a director hold any other office or position of profit under the company "other than the office of auditor and if the company has only 1 director, the office of company secretary" — the articles-level mirror of s475(2).',
                   },
                   {
                     id: 'dualcap',
                     label: 'But can that person act in both capacities for this particular act?',
+                    why: 's479 is about a single act, not about office-holding: where a provision requires a thing to be done by a director and a secretary, one person wearing both hats cannot satisfy it. That is why it applies to the articles as well as the Ordinance.',
+                    exam: {
+                      write: 'The document requiring signature by a director and the company secretary, it cannot be signed by the same person in both capacities: s479(1)(a).',
+                      trap: 'Having one person sign as both director and secretary to execute a document.',
+                    },
                     points: [
                       's479(1)(a) — a provision requiring a thing to be done by a director and a company secretary is not satisfied by the same person acting as both.',
                       's479(1)(b) — nor by the same person acting both as director and in place of the company secretary.',
@@ -1634,6 +1879,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'vacant',
                     label: 'If the office is vacant or the secretary cannot act (s474(5))',
+                    why: 'A vacancy cannot be allowed to paralyse the company, so the statute provides substitutes in order — an assistant or deputy, failing that an authorised officer. It is a stopgap, not a permanent arrangement.',
+                    exam: {
+                      write: 'The office being vacant, the act may be done by or to an assistant or deputy secretary: s474(5)(a).',
+                      trap: 'Treating a vacancy as suspending everything the secretary would otherwise do.',
+                    },
                     points: [
                       's474(5)(a) — anything required or authorised to be done by or to the company secretary may be done by or to any assistant or deputy company secretary.',
                       's474(5)(b) — failing that, by or to any officer of the company authorised generally or specially in that behalf by the directors.',
@@ -1643,6 +1893,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'filings',
                     label: 'Filings on a change',
+                    why: 'A change of secretary is a matter of public record because third parties deal with the company through that office. The 15-day period is the same one that applies to directors.',
+                    exam: {
+                      write: 'The change was notified to the Registrar within 15 days on form ND2A.',
+                      trap: 'Recording the change internally and never filing it.',
+                    },
                     points: [
                       'First secretary on the NNC1 at incorporation.',
                       'Any appointment, cessation or change of particulars notified within 15 days — form ND2A (appointment/cessation) or ND2B (change of particulars).',
@@ -1738,6 +1993,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'category',
                     label: 'What kind of document is it?',
+                    why: 'The category of document decides the machinery: under hand, under seal, or as a deed. Fixing it first is what makes the rest of the analysis determinate, because each category has its own signatories.',
+                    exam: {
+                      write: 'The document is [a simple contract / a document under seal / a deed], and accordingly must be executed under [s121(1)(b) / s127 / s128].',
+                      trap: 'Applying the deed requirements to a simple contract, or vice versa.',
+                    },
                     branches: [
                       { condition: 'Not required to be under seal — e.g. a commercial contract, instrument of transfer, contract note', then: 'Execute under hand', goto: 'hand' },
                       { condition: 'Required to be under seal but not as a deed — e.g. a share certificate', then: 'Seal route or s127(3) route', goto: 'seal' },
@@ -1747,6 +2007,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'hand',
                     label: 'Under hand (s121(1)(b) and s121(3))',
+                    why: 'A company contracts through people, so a signature under hand needs authority behind it. Naming the Board resolution that confers that authority is what makes the answer complete rather than merely descriptive.',
+                    exam: {
+                      write: 'The contract was signed on the company\'s behalf by [name], acting under the authority of a Board resolution passed on [date]: s121(3).',
+                      trap: 'Saying a document may be signed \'by an authorised person\' without identifying where the authority comes from.',
+                    },
                     points: [
                       'A contract that would have to be in writing and signed by the parties if made between natural persons may be made on the company\'s behalf, in writing, by any person acting under the company\'s authority.',
                       'That authority should come as a Board approval — so the answer names a Board resolution authorising the signatory, not just the signature.',
@@ -1755,6 +2020,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'seal',
                     label: 'Under seal but not as a deed (s121(1)(a) and (2)) — two routes, pick on the facts',
+                    why: 'There are two routes to executing under seal, and s127(3) is available even where the company has a seal — because using the seal is optional. Choosing between them on the facts is the point of the step.',
+                    exam: {
+                      write: 'The company executed the document [under its common seal: s127(1)-(2) / without affixing a seal, under s127(3)].',
+                      trap: 'Assuming a company with a common seal must use it.',
+                    },
                     points: [
                       'Route 1, with the seal: s127(1) a company may execute under its common seal, and s127(2) the seal "must be affixed in accordance with the provisions of its articles" — which sends you to MA81.',
                       'Route 2, without the seal: s127(3), available even where the company HAS adopted a seal, because using it is optional. The document must be expressed (in whatever words) to be executed by the company (s121(2)(b), s127(5)).',
@@ -1763,6 +2033,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'ma81',
                     label: 'If the seal is used: what MA81 actually requires',
+                    why: 'MA81 adds two things the statute does not: the seal may only be used by the authority of the directors, and the counter-signature requirement is dispensable by them. Both are the kind of detail a problem question turns on.',
+                    exam: {
+                      write: 'The seal was affixed by the authority of the directors: MA81(1), and the document signed by 1 director and 1 authorised person, the directors not having decided otherwise: MA81(4).',
+                      trap: 'Stating the counter-signature requirement as absolute — MA81(4) begins \'unless otherwise decided by the directors\'.',
+                    },
                     points: [
                       'MA81(1) — a common seal may only be used by the authority of the directors. So a Board decision authorising the sealing is part of valid execution, not housekeeping.',
                       'MA81(3) — subject to the metallic-seal requirement, the directors decide by what means and in what form a seal is to be used.',
@@ -1774,6 +2049,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'who',
                     label: 'If s127(3) is used: exactly who may sign',
+                    why: 's127(3) prescribes the signatory combinations exhaustively, so the answer is a matter of matching the people available against the list. Getting it wrong means the document is not executed at all.',
+                    exam: {
+                      write: 'The company having 2 or more directors, the document was signed by 2 of them on the company\'s behalf: s127(3)(b)(i).',
+                      trap: 'Inventing a combination the subsection does not authorise.',
+                    },
                     points: [
                       's127(3)(a) — a company with only one director: signed by that director on the company\'s behalf.',
                       's127(3)(b)(i) — a company with 2 or more directors: signed by the 2 directors, or any 2 of the directors.',
@@ -1785,6 +2065,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'deed',
                     label: 'As a deed (s128) — all three limbs, not just execution',
+                    why: 'A deed needs all three limbs: valid execution, an expression that it is executed as a deed, and delivery. Execution alone produces a document under seal, not a deed.',
+                    exam: {
+                      write: 'The document was executed in accordance with s127, expressed to be executed as a deed and delivered as such: s128(1).',
+                      trap: 'Treating valid execution under s127 as sufficient to make a document a deed.',
+                    },
                     points: [
                       's128(1)(a) — executed in accordance with s127 (either the seal route or the s127(3) route).',
                       's128(1)(b) — expressed (in whatever words) to be executed by the company as a deed.',
@@ -1795,11 +2080,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'attorney',
                     label: 'Or execute through an attorney (s129)',
+                    why: 'A power of attorney lets the company act where its officers cannot be present, but the instrument conferring it must itself be a deed. That formality is what makes the attorney\'s acts binding.',
+                    exam: {
+                      write: 'The company empowered [name] as its attorney by an instrument executed as a deed: s129.',
+                      trap: 'Conferring a power of attorney by ordinary resolution rather than by an instrument executed as a deed.',
+                    },
                     detail: 'A company may, generally or for a specific matter, by an instrument executed as a deed, empower any person as its attorney to execute a deed or other document on its behalf in Hong Kong or elsewhere (s129(1)); what the attorney executes binds the company as if the company had executed it (s129(2)).',
                   },
                   {
                     id: 'check',
                     label: 'Finally, test the signing combination against the people you actually have',
+                    why: 'The last step is arithmetic against the people who actually exist: s479 means a single individual cannot satisfy a two-office requirement, and it applies to the articles as well as the Ordinance.',
+                    exam: {
+                      write: 'The signing combination is tested against s479(1), the same person not being able to sign as both director and company secretary.',
+                      trap: 'Producing a signing arrangement that the company does not have the officers to deliver.',
+                    },
                     points: [
                       's479(1) — a provision requiring a thing to be done by a director AND a company secretary is not satisfied by the same person acting both as director and company secretary, or both as director and in place of the company secretary.',
                       's479(2) — that applies to provisions of the CO and Cap. 32 AND to provisions in the company\'s articles.',
@@ -1945,6 +2240,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'source',
                     label: 'Internal or external funding?',
+                    why: 'Internal and external funding raise different legal questions: internal funding involves the existing members and so engages the allotment and pre-emption rules, while external funding is a matter of contract and security. Fixing the source directs the whole analysis.',
+                    exam: {
+                      write: 'The funding is to come from [the existing shareholders / an external lender], and accordingly the relevant considerations are [X].',
+                      trap: 'Analysing the allotment machinery for what is in substance a bank loan.',
+                    },
                     points: [
                       'Internal: existing shareholders — either further capital with or without new shares (share capital), or a loan from them (loan capital).',
                       'External: banks, financial institutions, non-bank lenders, or outside investors.',
@@ -1953,6 +2253,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'which',
                     label: 'Debt or equity?',
+                    why: 'Debt and equity differ in what the provider gets and where he ranks. A lender is a creditor with a right to repayment; a shareholder has no right to a return at all, only a share in what is distributed.',
+                    exam: {
+                      write: 'The funding is structured as [a shareholder\'s loan, the shareholder becoming a creditor / an allotment of shares, the subscriber becoming a member].',
+                      trap: 'Describing the mechanics without addressing which structure actually suits the client\'s priorities.',
+                    },
                     branches: [
                       { condition: 'Debt', then: 'Creditor-debtor relationship; the company is contractually liable to repay', goto: 'debt' },
                       { condition: 'Equity', then: 'The investor becomes a member with CO and Model Articles rights', goto: 'equity' },
@@ -1961,6 +2266,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'debt',
                     label: 'Debt: shareholder\'s loan characteristics',
+                    why: 'A shareholder\'s loan is usually on soft terms precisely because the lender is also an owner: he wants the company to survive rather than to extract a market return. Those terms are what distinguish it from bank debt.',
+                    exam: {
+                      write: 'The shareholder lends $[X] to the company repayable on demand and non-interest-bearing, the shareholder ranking as a creditor.',
+                      trap: 'Treating a shareholder\'s loan as share capital — it is a debt, and it is repayable.',
+                    },
                     points: [
                       'The lending shareholder is a creditor; the company is the debtor, liable to repay principal and any interest.',
                       'Typically on terms favourable to the company: no fixed repayment date (repayable on demand), non-interest-bearing, unsecured.',
@@ -1971,6 +2281,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'equity',
                     label: 'Equity: what the shareholder gets',
+                    why: 'Equity buys participation as well as return: the shareholder gets dividends out of distributable profits and a voice in the reserved matters. That bundle is what makes equity attractive despite the absence of a repayment right.',
+                    exam: {
+                      write: 'In return for the subscription the subscriber receives [N] shares, carrying the right to dividends out of distributable profits and to vote at general meetings.',
+                      trap: 'Promising a shareholder a return. Dividends depend on distributable profits and on a declaration.',
+                    },
                     points: [
                       'Financial return by way of dividends out of distributable profits.',
                       'Participation in decision-making through CO and Model Articles rights, including the reserved powers.',
@@ -1982,6 +2297,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'assign',
                     label: 'If an existing shareholder\'s loan is moving with the shares',
+                    why: 'When shares change hands the shareholder\'s loan does not follow automatically — it is a separate chose in action. If the buyer is to have it, it must be assigned, and a statutory assignment has formal requirements.',
+                    exam: {
+                      write: 'The shareholder\'s loan was assigned to the buyer by absolute assignment in writing with notice to the company: s9, Law Amendment and Reform (Consolidation) Ordinance (Cap. 23).',
+                      trap: 'Assuming the loan transfers with the shares, or attempting a statutory assignment of part of the debt only.',
+                    },
                     points: [
                       'A debt may be assigned as a statutory assignment under s9, Law Amendment and Reform (Consolidation) Ordinance (Cap. 23).',
                       'The assignment must be absolute — not conditional, and not of part of the debt only.',
@@ -2063,6 +2383,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'capital',
                     label: 'Identify the share capital',
+                    why: 'Share capital is what the members put in, and once in it belongs to the company. That is the foundation of capital maintenance: the money is a creditor buffer, not a fund the members can take back at will.',
+                    exam: {
+                      write: 'The company\'s issued share capital is $[X], being the contributions made by members in return for their shares.',
+                      trap: 'Confusing share capital with the company\'s value — they are different figures measuring different things.',
+                    },
                     points: [
                       'Share capital is the contribution, in cash or non-cash, made by shareholders in return for shares — it becomes the company\'s property.',
                       's112(2) — on registration, founder members are entered as members for the shares they agreed in the articles to subscribe for; the share capital is registered at incorporation.',
@@ -2074,6 +2399,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'alter',
                     label: 'Is the share capital being altered? Only in the six s170(2) ways',
+                    why: 'The six ways in s170(2) are exhaustive, so an alteration that is not one of them is simply not permitted. Knowing which increase and which decrease you are dealing with is what identifies the procedure.',
+                    exam: {
+                      write: 'The company altered its share capital by [capitalising profits / converting shares into a larger or smaller number]: s170(2)([letter]).',
+                      trap: 'Describing an alteration that does not correspond to one of the six s170(2) methods.',
+                    },
                     points: [
                       {
                         text: 'Two ways the share capital can be increased:',
@@ -2091,6 +2421,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'alterres',
                     label: 'Which alterations need a resolution?',
+                    why: 'Most of the six alterations need no members\' resolution because they do not change what anybody owns proportionately. Only conversion and cancellation do, which is why s170(3) singles them out.',
+                    exam: {
+                      write: 'The alteration being a [conversion/cancellation], a resolution of the company is required: s170(3).',
+                      trap: 'Requiring a resolution for every alteration. Only (e) and (f) need one.',
+                    },
                     points: [
                       's170(3) — ONLY a conversion under (e) or a cancellation under (f) requires a resolution of the company.',
                       's170(4) — that resolution may authorise the power to be exercised on more than one occasion, or at a specified time or in specified circumstances.',
@@ -2102,6 +2437,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'file',
                     label: 'File the notice of alteration',
+                    why: 'The Registry record of share capital is what third parties rely on, so any alteration has to be notified within a month. Allotments are carved out because they have their own return under s142.',
+                    exam: {
+                      write: 'Notice of the alteration was delivered to the Registrar within one month: s171(1).',
+                      trap: 'Using the s171 notice for an allotment, which requires form NSC1 under s142 instead.',
+                    },
                     points: [
                       's171(1) — within one month after altering its share capital under s170, the company must deliver a notice to the Registrar (form NSC11), in the specified form, stating the amount of any increase in issued share capital and including a statement of capital.',
                       's171(3) — except for an allotment, which uses form NSC1 under s142 instead.',
@@ -2110,6 +2450,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'value',
                     label: 'Work out the share value — which is not the share capital',
+                    why: 'Share value is the company\'s current worth, not the historical contribution recorded as share capital. That distinction drives the subscription price on an allotment and the stamp duty on a transfer.',
+                    exam: {
+                      write: 'The company\'s net asset value being $[X] across [N] issued shares, the value per share is $[Y].',
+                      trap: 'Using issued share capital as a proxy for value. They are almost certainly different.',
+                    },
                     points: [
                       'Share value is the company\'s worth from time to time, taken as net asset value: assets (cash, market value of property and assets owned) less liabilities (loans and other amounts owed).',
                       'It is almost certainly different from issued share capital.',
@@ -2119,6 +2464,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'whyvalue',
                     label: 'Then use it for whichever question is being asked',
+                    why: 'Value is not calculated for its own sake: it feeds the stamp duty analysis on a transfer and the price the directors set on an allotment. Knowing which question you are answering tells you how precise the figure must be.',
+                    exam: {
+                      write: 'The value per share is required in order to [assess stamp duty on the transfer / fix the subscription price on the proposed allotment].',
+                      trap: 'Computing a value with no purpose attached to it.',
+                    },
                     points: [
                       'Stamp duty analysis on a transfer of shares (see LG4).',
                       'The subscription price the directors fix on a proposed allotment.',
@@ -2128,6 +2478,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'distribute',
                     label: 'If value is to be returned to shareholders: capital maintenance',
+                    why: 'Capital maintenance protects creditors, who have no say in how the company is run but bear the loss if its assets are given away. That is why a distribution must come out of profits rather than capital.',
+                    exam: {
+                      write: 'The proposed payment is a distribution within s290(1) and may only be made out of distributable profits.',
+                      trap: 'Returning capital to members while the company is a going concern.',
+                    },
                     points: [
                       'The principle prevents an illegal return of capital while the company still exists — it protects creditors.',
                       's290(1) — "distribution" means any distribution of the company\'s assets, excluding bonus shares, redemption or purchase of its own shares, a reduction of capital, and distributions in a winding up.',
@@ -2139,6 +2494,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'dividends',
                     label: 'Who declares what (MA73)',
+                    why: 'MA73 splits the decision: the members declare a final dividend but cannot exceed what the directors recommend, and the directors alone pay interim dividends. The cap exists so that members cannot vote themselves the company\'s cash.',
+                    exam: {
+                      write: 'The company declared a final dividend at a general meeting not exceeding the amount recommended by the directors: MA73(1).',
+                      trap: 'Allowing the members to declare a dividend larger than the directors recommended.',
+                    },
                     points: [
                       'MA73(1) — the company may declare dividends at a general meeting, but a dividend must not exceed the amount recommended by the directors.',
                       'MA73(2) — the directors may from time to time pay interim dividends that appear to them to be justified by the profits of the company.',
@@ -2151,6 +2511,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'unlawful',
                     label: 'If the distribution turns out to be unlawful (s301)',
+                    why: 'Liability to repay is not strict: it depends on the member\'s knowledge at the time. That protects an innocent recipient while leaving the remedy against one who knew the distribution was unlawful.',
+                    exam: {
+                      write: 'The member is liable to repay the distribution only if, at the time of it, he knew or had reasonable grounds to believe it was made in contravention: s301.',
+                      trap: 'Asserting that any unlawful distribution is automatically repayable by the recipient.',
+                    },
                     detail: 'A member is liable to repay a cash distribution only where, AT THE TIME of the distribution, the member knew or had reasonable grounds for believing that it was made in contravention of s297, s298 or s299. Knowledge is part of the test, not an afterthought.',
                   },
                 ],
@@ -2250,6 +2615,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'split',
                     label: 'Is ownership split at all?',
+                    why: 'Legal and beneficial ownership usually coincide, so a split is a deliberate arrangement someone has created. Spotting it matters because the company deals only with the registered holder.',
+                    exam: {
+                      write: 'The registered holder holds the shares on trust for [the beneficial owner], the two ownerships having been split by a declaration of trust.',
+                      trap: 'Treating the registered holder as the owner for all purposes when the beneficial interest lies elsewhere.',
+                    },
                     points: [
                       'Registered (legal) and beneficial ownership are usually in the same person, but can be split.',
                       'The split is effected by the registered owner declaring that they hold the shares in trust for the beneficial owner.',
@@ -2258,6 +2628,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'company',
                     label: 'Remember what the company is concerned with',
+                    why: 'The company is entitled to ignore trusts entirely, which is what makes the register usable: it would be unworkable if the company had to investigate who really owns each share. s634 and MA58 say so expressly.',
+                    exam: {
+                      write: 'No notice of any trust may be entered on the register of members: s634, and the company is not bound to recognise any interest except the registered holder\'s absolute right: MA58.',
+                      trap: 'Expecting the company to act on the beneficial owner\'s instructions directly.',
+                    },
                     points: [
                       's634 — no notice of any trust, whether expressed, implied or constructive, may be entered in the register of members or received by the Registrar.',
                       'MA58 — except as required by law, the company is not in any way bound by or required to recognise any interest in a share other than the holder\'s absolute ownership of it and all the rights attaching to it.',
@@ -2268,6 +2643,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'docs',
                     label: 'Identify the three documents of a nominee arrangement',
+                    why: 'The three documents do three jobs: the declaration creates the trust, the blank transfer lets the beneficial owner move the shares later, and the certificate is what has to be produced to do so. Together they give control without registration.',
+                    exam: {
+                      write: 'The nominee executed a declaration of trust, an instrument of transfer endorsed in blank, and delivered the share certificate to the beneficial owner.',
+                      trap: 'Preparing the declaration of trust alone, which leaves the beneficial owner unable to move the shares without the nominee.',
+                    },
                     points: [
                       'A declaration of trust executed by the nominee in favour of the beneficial owner — this creates the trustee-beneficiary relationship. It is a bare trust: the nominee has no discretion and must act strictly on the beneficial owner\'s directions.',
                       'An instrument of transfer endorsed in blank — executed by the nominee as transferor, leaving the transferee\'s particulars, the consideration and the date blank.',
@@ -2277,11 +2657,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'why',
                     label: 'Why the blank transfer and the certificate are delivered',
+                    why: 'The blank transfer and the certificate exist so that the beneficial owner never has to go back to the nominee. That is the practical value of the arrangement, and it explains why both documents are handed over at the outset.',
+                    exam: {
+                      write: 'The blank transfer and certificate were delivered so that the beneficial owner may transfer the shares without further reference to the nominee.',
+                      trap: 'Leaving the certificate with the nominee, which defeats the purpose of the blank transfer.',
+                    },
                     detail: 'So the beneficial owner can transfer the shares in future without having to refer to, or involve, the nominee.',
                   },
                   {
                     id: 'stamp',
                     label: 'Stamping of the declaration of trust',
+                    why: 'A declaration of trust is not stampable as such, but adjudication produces a stamped document that proves the arrangement. The Law Society circular recommends it precisely because the proof matters later.',
+                    exam: {
+                      write: 'The executed declaration of trust was lodged with the Stamp Office to be adjudicated: Law Society circular no. 65/83.',
+                      trap: 'Assuming the declaration attracts ad valorem duty, or omitting adjudication and leaving the arrangement unproved.',
+                    },
                     points: [
                       'Not stampable per se.',
                       'Law Society circular no. 65/83 recommends lodging the executed declaration with the Stamp Office to be adjudicated not stampable, which evidences the date the arrangement was effected.',
@@ -2291,6 +2681,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'acting',
                     label: 'What the nominee does, on the beneficial owner\'s directions',
+                    why: 'The nominee is the registered holder, so it is the nominee who receives dividends and votes — but on the beneficial owner\'s directions. That division is what the trust enforces.',
+                    exam: {
+                      write: 'The nominee receives dividends and votes at general meetings on the directions of the beneficial owner.',
+                      trap: 'Having the beneficial owner attend and vote. The company recognises only the registered holder.',
+                    },
                     points: [
                       'Receives dividends on the shares.',
                       'Attends and votes at shareholders\' meetings.',
@@ -2301,6 +2696,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'rsc',
                     label: 'Significant controllers register',
+                    why: 'The significant controllers register looks through the nominee to the person really in control, because its purpose is transparency of beneficial ownership. A nominee arrangement does not defeat it.',
+                    exam: {
+                      write: 'Shares held by a nominee are regarded as held by the person for whom the nominee holds them, and are recorded in the significant controllers register accordingly.',
+                      trap: 'Recording the nominee as the significant controller.',
+                    },
                     detail: 'Where shares are held by a nominee for another person, those shares are regarded as held by that other person, and only the particulars of that other person need be entered in the register.',
                   },
                 ],
@@ -2386,11 +2786,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'reserved',
                     label: 'Is this a matter for the shareholders, and what approval does it need?',
+                    why: 'The members decide only what the Ordinance or the articles reserve to them; everything else is the Board\'s. Working from the catalogue rather than from instinct is what keeps the answer right.',
+                    exam: {
+                      write: 'The matter being [X], it is reserved to the members and requires [an ordinary/a special] resolution.',
+                      trap: 'Assuming the members can decide any matter they choose. Management is the Board\'s under MA3(1).',
+                    },
                     detail: 'Work it off the catalogue at the foot of this page. If the matter is not reserved, it is the Board\'s (see the Board catalogue on the LG2 page) and no shareholders\' resolution is needed at all.',
                   },
                   {
                     id: 'route',
                     label: 'Meeting or written resolution?',
+                    why: 'A written resolution achieves what a meeting would without the formality, which is why most private company business goes that way. But some things must be done at a meeting, and identifying them early saves a wasted procedure.',
+                    exam: {
+                      write: 'The resolution was passed [as a written resolution under s548 / at a general meeting held on [date]].',
+                      trap: 'Using a written resolution for something that requires a meeting — removal of a director, or anything needing special notice: s548(6).',
+                    },
                     branches: [
                       { condition: 'Written resolution', then: 's548(1) — anything that may be done by a resolution at a general meeting, done without a meeting and without any previous notice', goto: 'written' },
                       { condition: 'AGM', then: 'Annual business: accounts, final dividends, election of directors, appointment of auditors', goto: 'agm' },
@@ -2400,6 +2810,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'agm',
                     label: 'AGM: timing and notice',
+                    why: 'The AGM is the members\' annual opportunity to hold the Board to account, which is why its timing is fixed by reference to the accounting period and its notice period is longer.',
+                    exam: {
+                      write: 'The AGM was held within 9 months after the end of the accounting reference period: s610(1), on at least 21 days\' notice: s571(1)(a).',
+                      trap: 'Applying the general meeting notice period to an AGM.',
+                    },
                     points: [
                       's610(1) — hold it within 9 months after the end of the accounting reference period for each financial year; MA34(1) repeats this subject to ss611-613.',
                       's571(1)(a) — at least 21 days\' notice; s571(2) longer if the articles require it.',
@@ -2410,6 +2825,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'gm',
                     label: 'General meeting: who may call it',
+                    why: 'General meetings are normally called by the directors, but s566 gives members holding the requisite stake the power to require one. That is the safety valve when the Board will not act.',
+                    exam: {
+                      write: 'The general meeting was called by the directors: s565, MA34(2) [or: on the members\' requisition under s566].',
+                      trap: 'Overlooking the members\' power to require a meeting where the Board declines to call one.',
+                    },
                     points: [
                       's565 and MA34(2) — the directors may call a general meeting.',
                       {
@@ -2437,6 +2857,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'gmnotice',
                     label: 'General meeting: length of notice, and the days that do not count',
+                    why: 'The exclusive-days rule is what makes notice periods longer than they look: neither the day of service nor the day of the meeting counts. Missing it produces a meeting called a day short.',
+                    exam: {
+                      write: 'Notice of at least 14 days was given, exclusive of the day of service and the day of the meeting: MA35(3).',
+                      trap: 'Counting the day of service or the day of the meeting within the notice period.',
+                    },
                     points: [
                       {
                         text: 'Length of notice for a general meeting:',
@@ -2453,6 +2878,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'contents',
                     label: 'What the notice must actually contain (MA35(4))',
+                    why: 'The notice has to tell members enough to decide whether to attend and how to vote, which is why the contents are prescribed — including the text of any special resolution and the right to appoint a proxy.',
+                    exam: {
+                      write: 'The notice stated the date, time and place of the meeting and the general nature of the business, and set out the text of the special resolution: s576(1); MA35(4).',
+                      trap: 'Giving notice of a special resolution without setting out its text.',
+                    },
                     points: [
                       {
                         text: 'The notice must state — s576(1):',
@@ -2472,6 +2902,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'recipients',
                     label: 'Who must receive notice',
+                    why: 'Everyone entitled to attend must be told, which includes directors as well as members. The auditor gets a copy at the same time because the accounts are part of what the meeting considers.',
+                    exam: {
+                      write: 'Notice was given to every member and every director: s574(1), MA36(1).',
+                      trap: 'Serving the members only and overlooking the directors and the auditor.',
+                    },
                     points: [
                       's574(1) and MA36(1) — every member and every director.',
                       's574(2) — "member" includes a person entitled to a share on the death or bankruptcy of a member, once the company has been notified; s574(3) all of this is subject to the articles.',
@@ -2482,6 +2917,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'mode',
                     label: 'Mode of meeting and attendance',
+                    why: 'Meetings may now be physical, hybrid or fully virtual, and a virtual attendee counts as present. That is what lets a company hold a valid meeting without a room.',
+                    exam: {
+                      write: 'The meeting was held [using virtual meeting technology under s583A], members being able to listen, speak and vote without being physically present.',
+                      trap: 'Assuming a meeting requires a physical venue.',
+                    },
                     points: [
                       'Physical; or using any technology allowing members to listen, speak and vote (s584); or fully virtual (s583A and MA38); or hybrid — unless the articles expressly preclude it.',
                       '"Virtual meeting technology" means technology allowing a person to listen, speak and vote without being physically present (s547(1)); MA38(6) a person attends virtually by using the technology specified in the notice.',
@@ -2494,6 +2934,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'quorum',
                     label: 'Quorum and chair',
+                    why: 'The quorum is two members, but a one-member company necessarily has a quorum of one — otherwise it could never meet. MA39(2) then does for general meetings what MA11(1) does for the Board: an inquorate meeting may appoint its chair and nothing else.',
+                    exam: {
+                      write: 'Two members being present in person or by proxy, the meeting was quorate: s585(3), MA39(1).',
+                      trap: 'Applying the two-member quorum to a one-member company: s585(1).',
+                    },
                     points: [
                       's585(3) and MA39(1) — subject to s585(1) and the articles, 2 members present in person or by proxy are a quorum.',
                       's585(1)-(2) — in a one-member company that member present in person or by proxy is a quorum; if a body corporate, present by its corporate representative.',
@@ -2507,6 +2952,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'voting',
                     label: 'Voting',
+                    why: 'The two methods count different things: a show of hands counts people, a poll counts shares. That is why a member with multiple proxies needs a poll — his proxies cannot vote on a show of hands.',
+                    exam: {
+                      write: 'The resolution was passed on a show of hands, each member present having one vote: s588(1).',
+                      trap: 'Proceeding on a show of hands where a member has appointed more than one proxy: s588(2) means a poll is needed.',
+                    },
                     points: [
                       's588(1) — on a show of hands, every member present in person has one vote, and every duly appointed proxy present has one vote.',
                       's588(2) — if a member appoints MORE THAN ONE proxy, those proxies may not vote on a show of hands (so a poll is the only route for them).',
@@ -2520,6 +2970,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'threshold',
                     label: 'Then do the arithmetic (ss563-564)',
+                    why: 'The arithmetic depends on how the vote was taken, because the denominator changes. A special resolution needs at least 75%, so exactly 75% passes — a point worth being precise about.',
+                    exam: {
+                      write: 'The resolution was passed by a majority of at least 75% of the votes cast: s564(1), and so is duly passed as a special resolution.',
+                      trap: 'Treating exactly 75% as insufficient. The threshold is \'at least\' 75%.',
+                    },
                     points: [
                       {
                         text: 's563(1)-(3) — an ordinary resolution is a simple majority, but of what depends on how the vote is taken:',
@@ -2535,6 +2990,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'written',
                     label: 'Written resolutions (ss548-559)',
+                    why: 'The written resolution procedure substitutes circulation for a meeting, which is why it needs no notice at all. What it cannot do is dispense with the protections that depend on a meeting taking place.',
+                    exam: {
+                      write: 'The resolution was passed as a written resolution, being a thing that might have been done at a general meeting: s548(1).',
+                      trap: 'Using the written procedure where a meeting is required — s548(6) excludes anything needing special notice.',
+                    },
                     points: [
                       's548(1) — anything that may be done at a general meeting, done without a meeting and without any previous notice; s549 proposed by the directors or the members.',
                       {
@@ -2719,16 +3179,31 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'apply',
                     label: 'The subscriber applies',
+                    why: 'The allotment starts with an application, and identifying the applicant matters because the subscriber becomes a member with all that follows. A subscription agreement will also carry the commercial terms.',
+                    exam: {
+                      write: 'The subscriber applied for [N] shares [by share subscription agreement dated [date]].',
+                      trap: 'Skipping the application and treating the allotment as something the company does unilaterally.',
+                    },
                     detail: 'By a simple application for shares, or by entering into a share subscription agreement with the company. Identify whether the subscriber is a natural person or a company acting through its Board.',
                   },
                   {
                     id: 'prohibition',
                     label: 'Start from the prohibition, not the power (s140(1))',
+                    why: 's140(1) is drafted as a prohibition, not a power, which is the key to the whole topic: the directors must not allot unless s141 is satisfied. Starting from the prohibition is what produces the right sequence of steps.',
+                    exam: {
+                      write: 'Except in accordance with s141, the directors must not exercise any power to allot shares: s140(1).',
+                      trap: 'Starting from the directors\' general power to manage and treating allotment as an ordinary Board decision.',
+                    },
                     detail: 'Except in accordance with s141, the directors must not exercise any power to allot shares, or to grant rights to subscribe for or to convert any security into shares. So the question is whether an exception applies, or approval has been given.',
                   },
                   {
                     id: 'exceptions',
                     label: 'Does one of the four s140(2) exceptions apply?',
+                    why: 'The exceptions cover allotments where no member\'s proportion changes — pro rata offers and bonus issues — because there is nothing for the approval requirement to protect against.',
+                    exam: {
+                      write: 'The allotment being made under an offer to the members in proportion to their shareholdings, s140 does not apply: s140(2)(a).',
+                      trap: 'Applying the approval requirement to a pro rata offer or a bonus issue.',
+                    },
                     points: [
                       '(a) an allotment or grant under an offer made to the members in proportion to their shareholdings — the pro rata case.',
                       '(b) an allotment or grant on a bonus issue to the members in proportion to their shareholdings.',
@@ -2740,6 +3215,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'branch',
                     label: 'So which is it?',
+                    why: 'This is the fork the whole topic turns on: either an exception applies and the Board may act, or approval must be obtained in advance. Stating which branch you are on is what makes the answer decisive.',
+                    exam: {
+                      write: 'No s140(2) exception applying, the members\' approval under s141 is required before the directors may allot.',
+                      trap: 'Leaving the answer ambiguous as to whether approval is needed.',
+                    },
                     branches: [
                       { condition: 'An exception applies', then: 'The directors may proceed to allot; no members\' resolution needed', goto: 'price' },
                       { condition: 'No exception — e.g. a non-pro rata offer', then: 'The company must approve in advance by resolution (s141(1))', goto: 'or' },
@@ -2748,6 +3228,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'or',
                     label: 'Members\' approval, IN ADVANCE of the Board exercising the power (s141)',
+                    why: 'The approval must come in advance, because its purpose is to authorise the directors to act. Approval after the event does not cure an allotment made without it, which is why sequencing is the examinable point.',
+                    exam: {
+                      write: 'The members approved the exercise of the power in advance by ordinary resolution passed on [date]: s141(1).',
+                      trap: 'Obtaining the members\' approval after the Board has already resolved to allot.',
+                    },
                     points: [
                       's141(1) — the directors may exercise the power if the company gives approval in advance by resolution. An ordinary resolution suffices unless the CO or the articles require a special one (s562(3)).',
                       's141(2) — the approval may be for a particular exercise of the power or for its exercise generally, and may be unconditional or subject to conditions.',
@@ -2759,11 +3244,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'price',
                     label: 'Directors fix the subscription price',
+                    why: 'The subscription price is normally the current value per share, because allotting below value dilutes the existing members\' economic interest. That links this step back to the valuation exercise.',
+                    exam: {
+                      write: 'The directors fixed the subscription price at $[X] per share, being the current value per share.',
+                      trap: 'Allotting at par without considering the company\'s current value.',
+                    },
                     detail: 'Normally the then market value of the shares, which means the company\'s current value per share — so establish the value first, usually from the company\'s auditors or accountants.',
                   },
                   {
                     id: 'board',
                     label: 'Board resolves to allot',
+                    why: 'The Board resolution is the operative act of allotment, and MA72 is the articles-level anchor: the directors must not allot without the s140 approval. The resolution should also deal with issuing the certificate.',
+                    exam: {
+                      write: 'The directors resolved to allot [N] shares to the subscriber on receipt of the subscription monies and to issue the share certificate.',
+                      trap: 'Passing the Board resolution before the members\' approval has been given.',
+                    },
                     points: [
                       'The power to allot is part of the directors\' general power to manage the company (MA3(1)), subject to ss140-141 and MA72.',
                       'Resolve to allot on receipt of the subscription monies, and to issue the share certificate.',
@@ -2773,6 +3268,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'records',
                     label: 'Update the records and issue the certificate',
+                    why: 'Entry in the register of members is what makes the subscriber a member — the resolution alone does not. That is the same principle that governs transfers.',
+                    exam: {
+                      write: 'The subscriber\'s name was entered in the register of members, whereupon he became a member: s112(3).',
+                      trap: 'Treating the Board resolution as making the subscriber a member.',
+                    },
                     points: [
                       's112(3) — a person who agrees to become a member and whose name is entered as a member in the register of members IS a member. Enter the allottee.',
                       'Update the register of significant controllers only if the allotment changes who holds more than 25%.',
@@ -2785,6 +3285,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'file',
                     label: 'File the return of allotment (s142)',
+                    why: 'The return of allotment updates the public record of the company\'s capital, which is why it has its own form and its own one-month deadline separate from s171.',
+                    exam: {
+                      write: 'A return of the allotment with a statement of capital was delivered to the Registrar within one month: s142(1)-(2).',
+                      trap: 'Using the s171 notice of alteration instead of the s142 return of allotment.',
+                    },
                     points: [
                       's142(1) — within one month after an allotment, a limited company must deliver a return of the allotment to the Registrar (form NSC1).',
                       's142(2) — in the specified form, including a statement of capital as at immediately after the allotment complying with s201, and stating the number of shares allotted and the name and address of each allottee.',
@@ -2900,6 +3405,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'parties',
                     label: 'Confirm the right transferor and transferee',
+                    why: 'The transfer is between the outgoing and incoming shareholders — the company is not a party, it merely registers the result. Getting that clear prevents the common error of treating the company as the seller.',
+                    exam: {
+                      write: 'The transferor is [the existing shareholder] and the transferee [the incoming holder]; the company is not a party to the transfer.',
+                      trap: 'Naming the company as transferor, when the shares belong to the shareholder.',
+                    },
                     points: [
                       'The transferor is the existing shareholder and the transferee the incoming holder — NOT the target company, which is neither.',
                       'Are the registered and beneficial owners different? Work out which ownership is being transferred: registered, beneficial, or both.',
@@ -2909,6 +3419,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'restrict',
                     label: 'Check the restrictions on transfer',
+                    why: 'A private company must restrict transfers, so there is always something to check. The directors\' general discretion to refuse under MA2(2) is what gives those restrictions teeth.',
+                    exam: {
+                      write: 'The articles restrict the right to transfer as required by s11, and the directors have a general discretion to refuse registration: MA2(2).',
+                      trap: 'Advising that shares are freely transferable without reading the articles.',
+                    },
                     points: [
                       's11 — a private company\'s articles must restrict the right to transfer its shares.',
                       'MA2(2) — the directors have a general discretion to refuse to register a transfer.',
@@ -2926,6 +3441,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'form',
                     label: 'Prepare the instrument of transfer (MA63)',
+                    why: 'The instrument is what the company acts on, so the rules about its form and execution matter. Both parties execute it because both are giving something up — the shares and the price.',
+                    exam: {
+                      write: 'The shares were transferred by an instrument of transfer in a usual form executed by or on behalf of both the transferor and the transferee: MA63(1).',
+                      trap: 'Forgetting that no fee may be charged for registering the transfer: MA63(2).',
+                    },
                     points: [
                       'MA63(1) — shares may be transferred by an instrument of transfer in any usual form, or any other form approved by the directors, executed by or on behalf of BOTH the transferor and the transferee.',
                       'MA63(2) — the company may charge no fee for registering an instrument of transfer or any other document relating to or affecting title.',
@@ -2936,6 +3456,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'consid',
                     label: 'Consideration, and what documents that dictates',
+                    why: 'The consideration decides which documents are needed and what duty is payable: contract notes are required only on a sale or purchase for valuable consideration, so a gift takes a different route.',
+                    exam: {
+                      write: 'The transfer being [a sale for $X / a voluntary disposition], [bought and sold notes are required / the transfer is chargeable as a voluntary disposition inter vivos].',
+                      trap: 'Preparing contract notes for a gift, or omitting them on a sale.',
+                    },
                     points: [
                       'The parties are free to decide: full value, less than full value, or nil consideration (a gift).',
                       'Bought and sold notes (contract notes) are only required on a sale or purchase of Hong Kong stock for valuable consideration (s19(1) SDO) — so a pure gift needs none.',
@@ -2944,6 +3469,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'stamp',
                     label: 'Stamping — and note that this comes FIRST',
+                    why: 'Stamping comes before registration because s150(1) forbids the company from registering an unstamped transfer. That sequencing is the point: the Stamp Office sees the instrument before the Board does.',
+                    exam: {
+                      write: 'The instrument was duly stamped before being lodged, the company not being permitted to register a transfer unless a proper instrument has been delivered: s150(1).',
+                      trap: 'Putting the Board resolution before stamping. The company cannot register an improperly stamped transfer.',
+                    },
                     points: [
                       's150(1) — "A company must not register a transfer of shares in the company unless a proper instrument of transfer has been delivered to the company." A proper instrument means one duly stamped under the SDO.',
                       'So the instrument goes to the Stamp Office before the Board can act — lodge it with the company\'s financial statements where value has to be established.',
@@ -2955,6 +3485,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'lodge',
                     label: 'Lodge with the company; the Board must then act within a deadline',
+                    why: 'The two-month deadline exists so that a transferee is not left indefinitely off the register. The company must either register or send a notice of refusal — doing nothing is not an option.',
+                    exam: {
+                      write: 'The transfer having been lodged on [date], the company must within 2 months either register it or send notice of refusal: s151(2).',
+                      trap: 'Overlooking that the company must act within two months either way.',
+                    },
                     points: [
                       's151(1) — the transferee or transferor may lodge the transfer with the company.',
                       's151(2) — within 2 months after it is lodged the company must EITHER register the transfer OR send the transferee and the transferor notice of refusal. Doing nothing is not an option.',
@@ -2964,6 +3499,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'refuse',
                     label: 'If the Board refuses',
+                    why: 'A refusal must be explicable: the transferee can demand reasons, and the company has 28 days to give them or register the transfer. MA64 adds that the instrument must come back too.',
+                    exam: {
+                      write: 'Within 28 days of the request the company must send a statement of reasons or register the transfer: s151(3)-(4); MA64(4), and the instrument must be returned: MA64(2)(b).',
+                      trap: 'Refusing registration and neither giving reasons nor returning the instrument.',
+                    },
                     points: [
                       's151(3)-(4) — the transferee or transferor may request a statement of reasons; within 28 days of the request the company must either send that statement OR register the transfer.',
                       'MA64(2)(b) and MA64(3) — the instrument must be returned to whoever lodged it, together with the notice of refusal, within 2 months of lodgment — unless the directors suspect the proposed transfer may be fraudulent.',
@@ -2974,6 +3514,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'register',
                     label: 'Register the transferee — this is what actually transfers ownership',
+                    why: 'Registration is the operative act: until the transferee\'s name is entered he is not a member and the transferor remains the holder. MA63(4) says so in terms.',
+                    exam: {
+                      write: 'The transferee\'s name having been entered in the register of members, he became a member: s112(3); until then the transferor remained the holder: MA63(4).',
+                      trap: 'Treating the executed and stamped transfer as passing ownership. Entry in the register is what does it.',
+                    },
                     points: [
                       's112(3) — a person who agrees to become a member and whose name is entered as a member in the register of members is a member.',
                       'MA63(4) — "The transferor remains the holder of a share until the transferee\'s name is entered in the register of members as holder of it."',
@@ -2982,6 +3527,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'certs',
                     label: 'Cancel and re-issue certificates; update the registers',
+                    why: 'Certificates are evidence of title, so the old ones must be surrendered before new ones issue — otherwise there would be two certificates for the same shares in circulation.',
+                    exam: {
+                      write: 'New certificates were issued free of charge within 2 months after lodgment: MA59(1), the old certificates having first been returned for cancellation: MA61(2)-(3).',
+                      trap: 'Issuing replacement certificates without cancelling the originals.',
+                    },
                     points: [
                       'MA59(1) — new certificates issued free of charge within 2 months after lodgment of a proper instrument of transfer.',
                       'MA61(2)-(3) — a consolidated certificate must not issue unless the certificates it replaces have first been returned for cancellation, and separate certificates not unless the consolidated one has been.',
@@ -2992,6 +3542,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'loan',
                     label: 'Deal with any shareholder\'s loan separately',
+                    why: 'A selling shareholder\'s loan is a separate asset that does not move with the shares. Dealing with it expressly is part of getting the client out cleanly.',
+                    exam: {
+                      write: 'The shareholder\'s loan of $[X] was assigned to the buyer by absolute assignment in writing with notice to the company.',
+                      trap: 'Transferring the shares and leaving the shareholder\'s loan outstanding in the seller\'s name.',
+                    },
                     detail: 'A selling shareholder who has also lent money should deal with that debt too — assigned to the buyer as a statutory assignment under s9, Law Amendment and Reform (Consolidation) Ordinance (Cap. 23): absolute, in writing signed by the assignor, with express written notice to the debtor company.',
                   },
                 ],
@@ -3108,6 +3663,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'registers',
                     label: 'Which registers are affected?',
+                    why: 'The registers are the company\'s own record of who owns it and who runs it, and some of them are constitutive rather than merely evidential — entry in the register of members is what makes someone a member.',
+                    exam: {
+                      write: 'The register of members was updated to record the transferee (ss627-628), and the register of directors to record the change (s643).',
+                      trap: 'Treating the registers as administrative housekeeping, when entry in the register of members is what confers membership.',
+                    },
                     points: [
                       'Register of members (ss627-8) — entry of the transferee is what makes them a member (s112(3) and MA63(4)).',
                       'Register of directors (ss641, 643 and 645).',
@@ -3119,6 +3679,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'sc',
                     label: 'Apply the significant controller test',
+                    why: 'The significant controllers regime is about transparency: it asks who really controls the company, looking through nominees and indirect holdings. The company must take reasonable steps to find out, not merely record what it is told.',
+                    exam: {
+                      write: 'The company took reasonable steps to ascertain its significant controllers and entered [name] in the register, holding more than 25% of the shares.',
+                      trap: 'Recording only direct shareholdings and ignoring indirect control.',
+                    },
                     points: [
                       {
                         text: 'A person has significant control if ANY of these is satisfied:',
@@ -3137,6 +3702,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'records',
                     label: 'Company records',
+                    why: '\'Company records\' is defined broadly because the obligation is about being able to reconstruct what the company did. That is why the requirement is adequate recording for future reference rather than a particular format.',
+                    exam: {
+                      write: 'The company adequately recorded the required information for future reference: s655(1)-(2).',
+                      trap: 'Reading \'records\' narrowly as the statutory registers only.',
+                    },
                     points: [
                       's654 — "company records" means any register, index, agreement, memorandum, minutes or other document the Ordinance requires a company to keep, BUT DOES NOT INCLUDE accounting records.',
                       's655(1)-(2) — the company must adequately record the required information for future reference; records may be kept in hard copy or electronic form and arranged as the directors think fit.',
@@ -3147,6 +3717,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'minutes',
                     label: 'Minutes and resolutions',
+                    why: 'Ten years is the retention period because a company\'s decisions can be questioned long after they are taken. It applies to sole-director written records as much as to minutes of meetings.',
+                    exam: {
+                      write: 'Minutes and written records of directors\' decisions are kept for 10 years from the date of the decision: s481(2); MA19.',
+                      trap: 'Keeping minutes of meetings but no record of unanimous or sole-director decisions.',
+                    },
                     points: [
                       'Minutes of meetings, written resolutions of directors or members, and written records of a sole director\'s decisions — signed and kept in the minute book (ss481, 482, 618 and 621).',
                       {
@@ -3164,11 +3739,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'filings',
                     label: 'File the right form within the right period',
+                    why: 'Filing is what makes a change effective against the world, and each change has its own form and period. Missing a deadline is an offence as well as leaving the public record wrong.',
+                    exam: {
+                      write: 'The change was notified to the Registrar on form [X] within [N] days.',
+                      trap: 'Passing the resolutions and updating the internal registers, but never filing at the Registry.',
+                    },
                     detail: 'Forms may be submitted in paper form or electronically to the e-Registry. See the table below for the main ones and their deadlines.',
                   },
                   {
                     id: 'accounts',
                     label: 'Audited accounts',
+                    why: 'Audited accounts are how the members hold the Board to account, which is why they must be sent to shareholders. The SME regime exists because full reporting is disproportionate for small companies.',
+                    exam: {
+                      write: 'Annual audited accounts were prepared and sent to the shareholders: s373, auditors having been appointed under s394.',
+                      trap: 'Overlooking that simplified reporting is available to qualifying SMEs under ss359-366.',
+                    },
                     points: [
                       'Auditors (s394); annual audited accounts (s373), sent to shareholders.',
                       'Simplified accounting and reporting is available to small and medium-sized enterprises (ss359-366 and Schedule 3).',
@@ -3312,6 +3897,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'instrument',
                     label: 'Start from the right premise: stamp duty is a tax on instruments',
+                    why: 'Stamp duty is a tax on documents, not on transactions. That premise decides every question in the topic: if no provision of the SDO makes a document stampable, it is not stampable however commercially significant the deal behind it.',
+                    exam: {
+                      write: 'Stamp duty is charged on instruments, and unless a head of charge in the SDO applies to this document it is not stampable.',
+                      trap: 'Reasoning from the transaction to the duty. Start from the document and find the head of charge.',
+                    },
                     points: [
                       'It is a tax, on certain instruments, that evidence certain transactions.',
                       'If no provision of the SDO says a document is stampable, the document is NOT stampable. Do not reason from the transaction to a charge; reason from the charging provision to the instrument.',
@@ -3321,11 +3911,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'stock',
                     label: 'Is it "stock" (s2(1))?',
+                    why: 'The definition of \'stock\' excludes loan capital, which is why a shareholder\'s loan and its assignment fall outside the charge entirely. That exclusion is often the whole answer on a share-and-loan sale.',
+                    exam: {
+                      write: 'The shareholder\'s loan is loan capital and so is not \'stock\' within s2(1); its assignment is not chargeable.',
+                      trap: 'Treating an assignment of a shareholder\'s loan as a transfer of stock.',
+                    },
                     detail: 'The s2(1) definition of "stock" EXCLUDES loan capital. So a shareholder\'s loan, and an assignment of it, is not stock and is not stampable per se — though it can still be swept in as deemed consideration for the share transfer (see Deemed consideration).',
                   },
                   {
                     id: 'hkstock',
                     label: 'Is it "Hong Kong stock" (s2(1))?',
+                    why: 'The test is where the register must be kept, not where the company was incorporated or where the parties are. That is what makes a Hong Kong register the connecting factor for the charge.',
+                    exam: {
+                      write: 'The shares are Hong Kong stock, the transfer being required to be registered in Hong Kong: s2(1).',
+                      trap: 'Concluding that shares are Hong Kong stock because the company is Hong Kong incorporated, or because the parties are here.',
+                    },
                     points: [
                       'The definition reads: "stock the transfer of which is required to be registered in Hong Kong".',
                       'So the test is about where the register must be kept, not where the company was incorporated or where the parties are.',
@@ -3334,6 +3934,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'apply',
                     label: 'Apply it to the company in front of you',
+                    why: 'Applying the definition to the actual company is what turns the test into an answer. A company with a Hong Kong register produces Hong Kong stock; one without does not, and there is then no charge on the transfer at all.',
+                    exam: {
+                      write: 'The company maintains its register of members in Hong Kong, so its shares are Hong Kong stock and the transfer is chargeable.',
+                      trap: 'Stating the definition without applying it to the company in front of you.',
+                    },
                     branches: [
                       { condition: 'Hong Kong incorporated company', then: 'Yes — the register of members must be kept in Hong Kong: s628 CO, s654 CO and s3 of the Companies (Company Records) Regulation (Cap. 622I)' },
                       { condition: 'Listed company', then: 'Yes — the HKEx Listing Rules require a Hong Kong register' },
@@ -3343,6 +3948,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'allot',
                     label: 'Finally, check it is a transfer and not an allotment',
+                    why: 'An allotment creates new shares rather than moving existing ones, so there is no sale or purchase. s19(16) puts that beyond argument by excluding allotments expressly — which is why an allotment attracts no head 2(1) charge.',
+                    exam: {
+                      write: 'The transaction being an allotment of new shares, it is excluded from \'sale or purchase\' by s19(16) and no head 2(1) duty arises.',
+                      trap: 'Charging contract note duty on an allotment.',
+                    },
                     detail: '"Sale or purchase" in s19(16) expressly EXCLUDES an allotment of shares, so there is no head 2(1) charge on an allotment — and no stamp duty at all under s19(16) (see the LG3 allotment page, which makes the same point from the company-law side).',
                   },
                 ],
@@ -3423,11 +4033,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'stock',
                     label: '1. Is it Hong Kong stock?',
+                    why: 'This is the gateway: if the shares are not Hong Kong stock there is no charge to analyse. Disposing of it first stops you working through heads of charge that cannot apply.',
+                    exam: {
+                      write: 'The shares being Hong Kong stock, the transfer is within the charge.',
+                      trap: 'Working through the heads before establishing that the gateway is passed.',
+                    },
                     detail: 'If not, there is no charge on a share transfer at all. See the gateway page.',
                   },
                   {
                     id: 'sp',
                     label: '2. Is there a sale or purchase — does consideration of some value pass?',
+                    why: 'The presence or absence of valuable consideration is the fork in the road: a sale or purchase goes to head 2(1) with contract notes, while a gift goes to head 2(3) as a voluntary disposition. Everything downstream depends on it.',
+                    exam: {
+                      write: 'Valuable consideration of $[X] passes, so there is a sale or purchase within s19(16).',
+                      trap: 'Assuming that any transfer is a sale. A gift is not, and takes a different head entirely.',
+                    },
                     branches: [
                       { condition: 'Yes — consideration passes, so a beneficial interest in the stock passes for value', then: 'Contract notes are required under s19(1)', goto: 'consid' },
                       { condition: 'No — a gift, or no consideration at all', then: 'No contract notes; go straight to the voluntary-disposition analysis', goto: 'vd' },
@@ -3436,6 +4056,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'consid',
                     label: '3. Work out the STAMPABLE CONSIDERATION',
+                    why: 'The stampable consideration is not always what the contract says: s24 can add deemed consideration where the transfer is subject to a payment or the transferee takes on the target\'s debts. Computing it properly is the analytical core of the topic.',
+                    exam: {
+                      write: 'The stampable consideration is $[X], being the price paid plus $[Y] deemed consideration under s24.',
+                      trap: 'Taking the stated price at face value without testing for deemed consideration under s24.',
+                    },
                     points: [
                       'The consideration paid by the transferee for the transfer of the shares: cash, or the value of any non-cash consideration.',
                       'Then ask whether anything must be ADDED as deemed consideration under s24 — a payment of money the transfer is subject to (s24(1) second limb), or indebtedness of the target the transferee takes on (s24(3)).',
@@ -3445,6 +4070,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'value',
                     label: '4. Compare the stampable consideration with the VALUE of the shares',
+                    why: 'The comparison with value is what brings s27(4) into play. Duty is normally charged on consideration, but where consideration falls short of value the transfer may be treated as a voluntary disposition and charged on value instead.',
+                    exam: {
+                      write: 'The stampable consideration of $[X] is [less than / not less than] the value of the shares, $[Y].',
+                      trap: 'Computing consideration and never comparing it against the value of the shares.',
+                    },
                     branches: [
                       { condition: 'Consideration is at least the value of the shares', then: 'An ordinary sale: head 2(1) on the notes and head 2(4) on the instrument', goto: 'heads' },
                       { condition: 'Consideration is less than the value AND the Stamp Office considers a substantial benefit is conferred on the transferee', then: 'The transfer operates as a voluntary disposition under s27(4)', goto: 'vd' },
@@ -3453,11 +4083,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'vd',
                     label: 'Voluntary disposition route',
+                    why: 'The voluntary disposition route changes both the base and the head: duty is charged on value under head 2(3), and adjudication becomes mandatory. It is not merely a different rate.',
+                    exam: {
+                      write: 'The transfer operating as a voluntary disposition, duty is charged under head 2(3) on the value of the shares, and adjudication is mandatory: s27(3).',
+                      trap: 'Charging head 2(3) on the consideration rather than on the value.',
+                    },
                     detail: 'Head 2(3): ad valorem duty on the VALUE of the shares, plus the fixed duty — and adjudication is mandatory under s27(3). See the voluntary-disposition page.',
                   },
                   {
                     id: 'heads',
                     label: 'Apply the heads to the right documents',
+                    why: 'Each head attaches to a particular document, so the answer must say which document bears which duty. Head 2(1) hits each contract note; head 2(4) is the fixed duty on the instrument of transfer.',
+                    exam: {
+                      write: 'Head 2(1) duty at 0.1% is charged on each of the bought and sold notes, and head 2(4) fixed duty of $5 on the instrument of transfer.',
+                      trap: 'Charging head 2(1) once on the transaction rather than on each contract note.',
+                    },
                     points: [
                       'Head 2(1) is charged on EACH contract note — the bought note and the sold note.',
                       'Head 2(4) is the fixed duty on the instrument of transfer, for a transfer of any other kind.',
@@ -3468,6 +4108,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'relief',
                     label: '5. Only now, ask whether an exemption or relief applies',
+                    why: 'Reliefs come last because they presuppose a charge to relieve. Reaching for s27(5) or s45 before establishing the head of charge produces an answer that cannot say what is being exempted.',
+                    exam: {
+                      write: 'The charge having been established, [the s27(5) exemption / s45 intra-group relief] applies to [exempt the ad valorem duty / relieve the duty under heads 2(1) and 2(3)].',
+                      trap: 'Applying a relief before identifying the head of charge it is meant to relieve.',
+                    },
                     points: [
                       's27(5) — nominee arrangements and the other listed transfers: the ad valorem duty is exempted, leaving the fixed duty under head 2(4).',
                       's45 — intra-group transfers between associated bodies corporate: relieves the duty payable under heads 2(1) and 2(3).',
@@ -3568,6 +4213,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'test',
                     label: 'Apply the s19(16) definition of "sale or purchase"',
+                    why: 'The definition is deliberately wide on one side and narrow on the other: any disposal or acquisition for valuable consideration is caught, but an allotment never is. Both limbs are worth quoting.',
+                    exam: {
+                      write: 'There is a disposal for valuable consideration and so a sale or purchase within s19(16), an allotment being expressly excluded.',
+                      trap: 'Overlooking that the definition covers acquisitions as well as disposals.',
+                    },
                     points: [
                       'It INCLUDES a disposal or acquisition for valuable consideration — i.e. consideration of some value passes.',
                       'It EXCLUDES an allotment of shares.',
@@ -3578,6 +4228,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 's19',
                     label: 'If yes, s19(1) imposes three obligations on the person effecting it',
+                    why: 's19(1) imposes three distinct obligations on the person effecting the sale, and they are cumulative: make the note, execute it, and get it stamped. Listing them separately is what shows the duty is procedural as well as fiscal.',
+                    exam: {
+                      write: 'The person effecting the sale must make and execute a contract note and cause it to be stamped: s19(1).',
+                      trap: 'Treating the obligation as simply to pay duty, and omitting the making and execution of the note.',
+                    },
                     points: [
                       'Make and execute a contract note.',
                       'Cause the contract note to be stamped.',
@@ -3587,6 +4242,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'notes',
                     label: 'Identify the documents and what each is for',
+                    why: 'Three documents do three jobs: the bought and sold notes evidence the bargain and bear the ad valorem duty, while the instrument of transfer is what the company registers. Confusing them produces the wrong duty on the wrong paper.',
+                    exam: {
+                      write: 'A bought note and a sold note were made and executed, and the instrument of transfer was duly stamped as a proper instrument of transfer.',
+                      trap: 'Charging ad valorem duty on the instrument of transfer in a sale, where it belongs on the contract notes.',
+                    },
                     points: [
                       'A bought note and a sold note (together, the contract notes) — required where a sale or purchase is effected, i.e. where consideration passes (s19(1)).',
                       'The instrument of transfer (the "share transfer") — the document that must be duly stamped to be a "proper instrument of transfer" for the target\'s Board to register the change of registered ownership (s150 CO).',
@@ -3596,6 +4256,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'contents',
                     label: 'Check the contract note contains the required particulars',
+                    why: 'The prescribed particulars let the Stamp Office see who really transacted and when, which is what makes the note assessable. The principal/agent disclosure is there to prevent duty being avoided behind an agency.',
+                    exam: {
+                      write: 'The contract note states whether the person acts as principal or agent (and if as agent, the principal\'s name), and the date of the transaction.',
+                      trap: 'Omitting the principal\'s name where the party acted as agent.',
+                    },
                     points: [
                       'Whether the person effecting the sale or purchase acts as principal or agent and, if as agent, the name of the principal.',
                       'The date of the transaction and of the making of the contract note.',
@@ -3608,6 +4273,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'charge',
                     label: 'Then apply the heads',
+                    why: 'The two heads operate together on a sale: 0.1% on each note plus the $5 fixed duty on the transfer. Stating both is what makes the computation complete.',
+                    exam: {
+                      write: 'Duty is 0.1% of the consideration on each of the bought and sold notes (head 2(1)) plus $5 on the instrument of transfer (head 2(4)).',
+                      trap: 'Giving a single figure without saying which document bears which duty.',
+                    },
                     points: [
                       'Head 2(1): 0.1% of the amount of the consideration or of its value, on every sold note and every bought note.',
                       'Head 2(4): $5 fixed duty on the instrument of transfer, as a transfer of any other kind.',
@@ -3697,11 +4367,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'gate',
                     label: 'Gate: does a beneficial interest in the stock pass?',
+                    why: 's24 is a formula for measuring consideration, so it only engages where a beneficial interest actually passes. Without that, there is nothing for the deeming to attach to.',
+                    exam: {
+                      write: 'A beneficial interest in the shares passes, so s24 may apply to determine the stampable consideration.',
+                      trap: 'Applying s24 where no beneficial interest passes at all.',
+                    },
                     detail: 'There is no deeming unless a beneficial interest in the shares passes — i.e. some consideration passes in the underlying share transaction. Allotments, gifts and changes to nominee arrangements therefore trigger no deeming at all.',
                   },
                   {
                     id: 's241',
                     label: 's24(1) second limb — the transfer is subject to a payment of money or transfer of stock',
+                    why: 'The second limb catches the case where the buyer pays less because he takes the shares subject to an obligation. The deeming restores that obligation to the consideration, whether it is certain or contingent.',
+                    exam: {
+                      write: 'The transfer being subject to the payment of $[X], that amount is deemed to form part of the consideration: s24(1).',
+                      trap: 'Ignoring a contingent obligation — s24(1) applies whether the liability is certain or contingent.',
+                    },
                     points: [
                       'The transaction must be subject, either certainly or contingently, to the payment or transfer of any money or stock.',
                       'It applies whether or not that payment or transfer constitutes a charge or incumbrance on the interest passing.',
@@ -3712,6 +4392,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'integral',
                     label: 'But test whether it is INTEGRAL to the share transaction',
+                    why: 'The integrality test is what keeps s24(1) within its purpose: it catches obligations that are part of the price, not independent dealings that happen alongside. An assignment of a shareholder\'s loan is the standing example of the latter.',
+                    exam: {
+                      write: 'The payment forms an integral part of the transaction effecting the transfer, and so is within s24(1).',
+                      trap: 'Deeming an independent dealing — such as a separate assignment of a shareholder\'s loan — into the share consideration.',
+                    },
                     points: [
                       'For s24(1) to apply, the payment or transfer must form an integral part of the transaction effecting the transfer of the stock.',
                       'If the payment is independent of the share sale, it falls outside s24(1) — and independent dealings in debts (assignments of debts and the like) are not themselves chargeable in Hong Kong.',
@@ -3721,6 +4406,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'whopays',
                     label: 'Do not be distracted by who pays and who receives',
+                    why: 'The section is silent on who pays and who receives, which is deliberate: the economic substance is the same whoever discharges the obligation. Arguing that the purchaser assumed no personal liability does not defeat it.',
+                    exam: {
+                      write: 'It is immaterial by whom or to whom the payment is made; the purchaser need not assume personal liability.',
+                      trap: 'Arguing that s24(1) cannot apply because the purchaser never became personally liable.',
+                    },
                     points: [
                       'The section does not say by whom or to whom the money is paid. The obligation would normally be the purchaser\'s, but it may be performed indirectly — e.g. the purchaser instructs a related person to pay.',
                       'The purchaser need not assume personal liability for making the payment.',
@@ -3730,6 +4420,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 's243',
                     label: 's24(3) — the transferee incurs liability for the target\'s indebtedness',
+                    why: 's24(3) addresses a different structure: the buyer does not pay more, he takes on the target\'s debts. The liability incurred is treated as consideration because it is what the seller is really being relieved of.',
+                    exam: {
+                      write: 'The transferee having incurred liability for the target\'s indebtedness of $[X], that amount is deemed to be consideration: s24(3).',
+                      trap: 'Confusing the two subsections — (1) is about a payment the transfer is subject to, (3) about liability for the target\'s debts.',
+                    },
                     points: [
                       'Where, by virtue of or in connection with a transaction whereby a beneficial interest in shares passes, any liability is incurred by the transferee in respect of any indebtedness of the body corporate, the transaction is deemed to be subject to the payment of an amount of money EQUAL TO THAT INDEBTEDNESS — in addition to any other payment of money or transfer of shares it is subject to.',
                       'Examples: the purchaser undertaking to procure the target to repay its debts at a later date; the purchaser guaranteeing the target\'s debts.',
@@ -3741,6 +4436,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'quantum',
                     label: 'Then note the difference in QUANTUM — this is the examinable distinction',
+                    why: 'This is the examinable distinction: s24(1) deems what is actually paid, while s24(3) deems the full indebtedness regardless of what it cost the transferee. The difference can be large, and it is the point of comparing the two.',
+                    exam: {
+                      write: 'Under s24(3) the deemed amount is the full indebtedness of $[X], no account being taken of what the transferee actually paid for it.',
+                      trap: 'Applying the s24(1) measure (what was actually paid) to a s24(3) case.',
+                    },
                     points: [
                       'Under s24(1): the deemed amount is what is actually paid for the assignment, which may differ from (and be less than) the face value of the debt.',
                       'Under s24(3): the deemed amount is the full amount of the indebtedness incurred, with no account taken of whether the debt is likely to be repaid or is a bad debt.',
@@ -3750,11 +4450,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'still27',
                     label: 'Finally, remember s24 does not oust s27',
+                    why: 's24 only fixes the consideration; it does not decide whether that consideration is adequate. If the deemed figure is still below value, s27(4) can operate on top of it.',
+                    exam: {
+                      write: 'The deemed consideration of $[X] still being less than the value of the shares, s27(4) falls to be considered.',
+                      trap: 'Treating s24 as the end of the analysis and never testing the result against value.',
+                    },
                     detail: 's24 merely supplies a formula for determining the consideration. If the deemed consideration is still below the value of the stock, s27(4) and (1) can still apply and duty is charged on the value of the stock instead.',
                   },
                   {
                     id: 'disclose',
                     label: 'And disclose',
+                    why: 'Disclosure is a statutory obligation, not a tactical choice: s11 requires all facts and circumstances affecting liability to be fully and truly set forth. Suppressing the deeming facts is how a duty question becomes an offence.',
+                    exam: {
+                      write: 'All facts and circumstances affecting the liability to duty are fully and truly set forth: s11.',
+                      trap: 'Omitting the arrangements that trigger s24 from the material put before the Stamp Office.',
+                    },
                     detail: 's11 requires all the facts and circumstances affecting liability to duty, or its amount, to be fully and truly set forth in the instrument. Where s24 may apply, the parties must give full details of the transaction, and the Stamp Office may make enquiries before stamping.',
                   },
                 ],
@@ -3866,11 +4576,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'normal',
                     label: 'Start from the normal rule',
+                    why: 'The default is that duty follows consideration. s27(4) exists because that default would let parties choose their own tax base simply by understating the price.',
+                    exam: {
+                      write: 'Duty is normally charged on the stampable consideration; s27(4) displaces that where the consideration is inadequate.',
+                      trap: 'Starting from s27(4) rather than from the normal rule it displaces.',
+                    },
                     detail: 'Ad valorem duty is charged on the amount or value of the stampable consideration. s27(4) displaces that where the consideration is inadequate.',
                   },
                   {
                     id: 'test',
                     label: 'Apply the two-part s27(4) test — BOTH limbs are required',
+                    why: 'Both limbs are required: shortfall alone is not enough, the Stamp Office must also form the opinion that the transfer confers a substantial benefit. That second limb is what distinguishes a bad bargain from a disguised gift.',
+                    exam: {
+                      write: 'The consideration is less than the value of the shares and the transfer confers a substantial benefit on the transferee, so it operates as a voluntary disposition inter vivos: s27(4).',
+                      trap: 'Applying s27(4) on the shortfall alone, without addressing the substantial-benefit limb.',
+                    },
                     points: [
                       'First: the stampable consideration is LESS THAN THE VALUE of the shares being transferred.',
                       'Second: the Stamp Office is of opinion that, by reason of the inadequacy of the consideration or other circumstances, the transfer confers a SUBSTANTIAL BENEFIT ON THE TRANSFEREE.',
@@ -3881,6 +4601,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'value',
                     label: 'Establish the value of the shares, and how you would evidence it',
+                    why: 'Value has to be evidenced, not asserted, because the Stamp Office is being asked to charge duty on it. Net asset value from the accounts is the usual basis, with a landed property schedule where the company holds land.',
+                    exam: {
+                      write: 'The value of the shares is $[X] per share, being net asset value per the company\'s financial statements.',
+                      trap: 'Asserting a value without the accounts or, where the company owns land, the Schedule of Landed Properties.',
+                    },
                     points: [
                       'Unlisted shares: net asset value per the financial accounts.',
                       'If the company owns landed property wherever situated: a completed Schedule of Landed Properties (form IRSD102).',
@@ -3891,6 +4616,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'charge',
                     label: 'If s27(4) applies, charge under head 2(3)',
+                    why: 'Head 2(3) is a composite charge: $5 plus 0.2% on value. Adding head 2(4) on top double-counts the fixed duty that head 2(3) already includes.',
+                    exam: {
+                      write: 'Duty under head 2(3) is $5 plus ad valorem duty at 0.2% on the value of the shares.',
+                      trap: 'Adding head 2(4)\'s $5 on top of head 2(3), which already contains it.',
+                    },
                     points: [
                       'Head 2(3): $5 plus ad valorem duty at 0.2% on the VALUE of the shares (not the consideration).',
                       'That single head covers the instrument — do not add head 2(4) on top; the $5 is already in head 2(3).',
@@ -3900,6 +4630,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'adj',
                     label: 'Adjudication is mandatory',
+                    why: 'Adjudication is mandatory here because the charge depends on a valuation the Stamp Office must accept. The absence of a fee reflects that it is compulsory rather than elective.',
+                    exam: {
+                      write: 'Adjudication is required for a transfer operating as a voluntary disposition: s27(3), no fee being payable: s13(1B).',
+                      trap: 'Treating adjudication as optional, or charging the $50 fee that s13(1B) disapplies.',
+                    },
                     points: [
                       's27(3) — adjudication is required for a transfer operating as a voluntary disposition.',
                       'But no $50 adjudication fee is payable: s13(1B).',
@@ -3992,6 +4727,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'which',
                     label: 'Identify which s27(5) transfer this is',
+                    why: 's27(5) lists specific transfers where no beneficial interest really moves — appointing a new trustee, or a trustee transferring to the beneficiary. Identifying which limb you are in is what grounds the exemption.',
+                    exam: {
+                      write: 'The transfer is [from the nominee back to the beneficial owner / between nominees to effectuate the appointment of a new trustee] within s27(5).',
+                      trap: 'Claiming the exemption without identifying which s27(5) transfer it is.',
+                    },
                     points: [
                       'A transfer to effectuate the appointment of a new trustee — which includes a nominee-to-nominee transfer.',
                       'A transfer to a beneficiary by a trustee — i.e. the nominee transferring back to the beneficial owner.',
@@ -4002,6 +4742,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'effect',
                     label: 'What the exemption does',
+                    why: 'The exemption removes the ad valorem duty only. The fixed duty remains, because the instrument is still an instrument — which reflects that stamp duty is a tax on documents.',
+                    exam: {
+                      write: 'The ad valorem duty is exempted under s27(5), the instrument still bearing $5 fixed duty under head 2(4).',
+                      trap: 'Treating the exemption as removing all duty, including the fixed duty.',
+                    },
                     points: [
                       'The AD VALOREM duty is exempted — not the fixed duty.',
                       'So the instrument still bears $5 under head 2(4) as a transfer of any other kind.',
@@ -4011,11 +4756,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'setforth',
                     label: 'Meet the condition: the circumstances must be set forth in the instrument',
+                    why: 'The condition is that the circumstances appear on the instrument itself, because the Stamp Office assesses the document in front of it. In practice that means an endorsement on the back of the transfer.',
+                    exam: {
+                      write: 'The circumstances relied on are set forth in the instrument, endorsed on the back of the transfer.',
+                      trap: 'Relying on the exemption while the instrument says nothing about the nominee arrangement.',
+                    },
                     detail: 'The circumstances must be set out in the transfer document — in practice, endorsed on the back of the instrument of transfer. This is a condition of the exemption, not an optional extra.',
                   },
                   {
                     id: 'evidence',
                     label: 'Satisfy the Stamp Office on the evidence — this is where answers turn',
+                    why: 'The exemption depends on proving the trust existed from the outset. That is exactly what an adjudicated declaration of trust does — which is why adjudication at the time of execution matters so much later.',
+                    exam: {
+                      write: 'The declaration of trust, adjudicated as not stampable at the time of execution, evidences that the nominee held on trust from the time the shares were received.',
+                      trap: 'Producing an unadjudicated declaration of trust and expecting the Stamp Office to accept it.',
+                    },
                     points: [
                       'You must satisfy the Stamp Office that the original nominee arrangement was established when the nominee received registered ownership.',
                       'That is what the declaration of trust proves — provided it was adjudicated as not stampable AT THE TIME OF EXECUTION.',
@@ -4026,6 +4781,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'setup',
                     label: 'Note the position when the arrangement is first set up',
+                    why: 'Setting up a nominee arrangement after the shares were acquired is a transfer of the legal title, so it attracts duty. Only the original arrangement escapes, which is why timing decides the answer.',
+                    exam: {
+                      write: 'The nominee arrangement having been established after acquisition, the instrument transferring the shares to the nominee is itself chargeable.',
+                      trap: 'Assuming a nominee arrangement is always duty-free, whenever it was created.',
+                    },
                     points: [
                       'The declaration of trust is not per se stampable.',
                       'If the nominee arrangement is set up some time AFTER the beneficial owner acquired the shares, an instrument of transfer is needed to change the registered ownership — so head 2(4) applies and $5 fixed duty is payable per instrument.',
@@ -4034,6 +4794,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'blank',
                     label: 'Remember the mechanics of the change itself',
+                    why: 'The blank transfer is what makes the arrangement work in practice: the beneficial owner can complete and use it without the nominee. Knowing the mechanics explains why the documents are prepared as they are.',
+                    exam: {
+                      write: 'The instrument of transfer endorsed in blank by the nominee is completed by the beneficial owner to effect the change.',
+                      trap: 'Overlooking that the blank transfer is what allows the change without recourse to the nominee.',
+                    },
                     detail: 'The instrument of transfer endorsed in blank by the nominee, held by the beneficial owner, is what allows the change: the transferor is pre-filled and the new nominee or the beneficiary is filled in as transferee — no need to go back to the outgoing nominee.',
                   },
                 ],
@@ -4134,6 +4899,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'scope',
                     label: 'Check the transaction is within s45',
+                    why: 's45 relieves the duty under heads 2(1) and 2(3), which tells you it applies to both sale and voluntary-disposition transfers. Fixing the scope prevents claiming it against the fixed duty.',
+                    exam: {
+                      write: 'The instrument transfers a beneficial interest in Hong Kong stock between bodies corporate, and s45(1) relieves the duty under heads 2(1) and 2(3).',
+                      trap: 'Claiming s45 relief against head 2(4) fixed duty.',
+                    },
                     points: [
                       'It applies to instruments conveying a beneficial interest in immovable property, or transferring a beneficial interest in Hong Kong stock, from one associated body corporate to another — and to contract notes for a sale or purchase of Hong Kong stock between associated bodies corporate.',
                       'It relieves the duty payable under head 2(1) and head 2(3) (s45(1)).',
@@ -4144,6 +4914,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'assoc',
                     label: 'Apply the "associated bodies corporate" test',
+                    why: 'The 90% threshold defines what counts as one economic group. \'Not less than\' means 90% exactly qualifies, which is worth stating because the arithmetic is often engineered to sit on the line.',
+                    exam: {
+                      write: 'The transferor is beneficial owner of not less than 90% of the issued share capital of the transferee, so they are associated bodies corporate.',
+                      trap: 'Reading \'not less than 90%\' as \'more than 90%\'.',
+                    },
                     points: [
                       'One is beneficial owner of NOT LESS THAN 90% of the issued share capital of the other; OR a third such body is beneficial owner of not less than 90% of the issued share capital of each.',
                       'Not less than 90% means 90% or more.',
@@ -4154,6 +4929,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'chain',
                     label: 'For a chain, multiply — do not just read the top figure',
+                    why: 'In a vertical chain the holdings multiply, so association at each link does not produce association end to end. Working the arithmetic rather than reading the top figure is what catches the trap.',
+                    exam: {
+                      write: 'A Co holds 95% of B Co and B Co 91% of C Co, so A Co\'s indirect holding in C Co is 86.45% and A and C are not associated.',
+                      trap: 'Assuming that because A is associated with B and B with C, A is associated with C.',
+                    },
                     points: [
                       'Vertical: if A Co owns 95% of B Co and B Co owns 91% of C Co, then A-B are associated and B-C are associated, but A and C are NOT (95% × 91% = 86.45%, below 90%).',
                       'Horizontal: if A Co owns 90% of B Co and 90% of C Co, then A, B and C are all associated with one another.',
@@ -4162,6 +4942,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'conditions',
                     label: 'Check none of the s45(4) disqualifying conditions applies',
+                    why: 'The disqualifying conditions stop the relief being used to move assets into or out of a group under cover of an internal transfer. They are aimed at arrangements involving outsiders.',
+                    exam: {
+                      write: 'None of the s45(4) conditions applies, no consideration having been provided by a person outside the group.',
+                      trap: 'Establishing the 90% association and stopping, without checking s45(4).',
+                    },
                     points: [
                       'The transaction must not be in pursuance of or in connection with an arrangement whereby consideration was provided or received by a person outside the group (s45(4)(a)).',
                       'Nor one whereby the beneficial interest had previously been transferred from outside the group (s45(4)(b)).',
@@ -4171,11 +4956,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'why',
                     label: 'Understand why s45(4)(c) is there — it explains the whole relief',
+                    why: 'The rationale explains the shape of the relief: a group is treated as one entity for internal administration, so moving assets around inside it is not a taxable disposal. s45(4)(c) protects that rationale from abuse.',
+                    exam: {
+                      write: 'The relief permits the internal administration of a corporate group, associated bodies corporate being regarded as a single entity for that purpose.',
+                      trap: 'Reciting the conditions without the rationale, which is what explains why the disqualifications exist.',
+                    },
                     detail: 'The relief exists to permit the internal administration of corporate groups: associated bodies corporate are regarded as so closely related that an intra-group transfer is only a change in nominal ownership. If the transferee is to leave the group, the asset leaves with it, so the relief should never have been available.',
                   },
                   {
                     id: 'apply',
                     label: 'Apply for the relief properly',
+                    why: 'The burden is on the applicant to show the conditions are met, and adjudication is the mechanism. As with voluntary dispositions, the absence of a fee reflects that adjudication is required rather than chosen.',
+                    exam: {
+                      write: 'The applicant shows the conditions for relief are fulfilled and the instrument is adjudicated: s45(3), no fee being payable: s13(1B).',
+                      trap: 'Claiming the relief without adjudication.',
+                    },
                     points: [
                       'The applicant must show that the conditions for relief are fulfilled.',
                       'Adjudication is required (s45(3)) — but no $50 fee is payable (s13(1B)).',
@@ -4187,6 +4982,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'withdraw',
                     label: 'Then watch the two-year withdrawal rule (s45(5A))',
+                    why: 'The two-year rule exists because the relief assumes the asset stays in the group. If it leaves within two years the premise fails and the duty comes back, with a 30-day notification obligation.',
+                    exam: {
+                      write: 'The transferor and transferee having ceased to be associated within 2 years of the transfer, the relief is withdrawn and the Stamp Office must be notified within 30 days: s45(5A).',
+                      trap: 'Advising that the relief is final once granted.',
+                    },
                     points: [
                       'If the transferor and transferee cease to be associated within 2 YEARS after the date of the transfer — i.e. the transferee leaves the corporate group, as described in s45(4)(c) — any relief previously claimed is deemed withdrawn.',
                       'The transferor and transferee must notify the Stamp Office within 30 days of the cessation.',
@@ -4293,6 +5093,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'when',
                     label: 'Identify the document, then read its deadline',
+                    why: 'Each document has its own deadline, and they differ. Reading the deadline off the document rather than the transaction is what keeps the answer accurate.',
+                    exam: {
+                      write: 'The contract note must be stamped within 2 days of the sale, the sale having been effected in Hong Kong.',
+                      trap: 'Applying one deadline to every document in the transaction.',
+                    },
                     points: [
                       'Contract note for the sale or purchase of any Hong Kong stock (head 2(1)): 2 days after the sale or purchase if effected in Hong Kong; 30 days if effected elsewhere.',
                       'Transfer operating as a voluntary disposition inter vivos (head 2(3)): 7 days after execution; 30 days if executed outside Hong Kong.',
@@ -4302,11 +5107,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'trigger',
                     label: 'Note what each clock runs from — they are not the same event',
+                    why: 'The clocks run from different events: contract note duty from the sale or purchase, head 2(3) and 2(4) from execution. Mixing them produces a date that is wrong even when the period is right.',
+                    exam: {
+                      write: 'The contract note clock runs from the sale or purchase; the head 2(4) clock runs from execution of the instrument.',
+                      trap: 'Counting every deadline from execution.',
+                    },
                     detail: 'The contract-note clock runs from the SALE OR PURCHASE; the head 2(3) and 2(4) clocks run from EXECUTION of the instrument. And head 2(4) is the odd one: stamping is due before execution, not after it.',
                   },
                   {
                     id: 'how',
                     label: 'Choose a method of stamping',
+                    why: 'There are two routes, and e-stamping has been available for off-exchange stock transactions since December 2019. Naming the method is part of describing the procedure rather than just the liability.',
+                    exam: {
+                      write: 'The documents were stamped [manually at the Stamp Office / by e-stamping].',
+                      trap: 'Describing only manual stamping, which is no longer the only route.',
+                    },
                     points: [
                       'Manual stamping — presenting the stampable documents to the Stamp Office, in person or by post, with the supporting documents.',
                       'e-stamping — available for off-exchange stock transactions since December 2019, on an individual or bulk basis (up to 5,000 instruments), without presenting the originals; a stamp certificate is generated on successful payment.',
@@ -4316,6 +5131,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'what',
                     label: 'Lodge what the Stamp Office needs to assess the duty',
+                    why: 'The Stamp Office cannot assess duty without the evidence of value, so lodging the accounts or articles is part of the submission rather than an afterthought. What is required depends on how long the company has existed.',
+                    exam: {
+                      write: 'There were lodged the instrument of transfer, the contract notes and the company\'s [articles of association, the company being less than 18 months old / latest financial statements].',
+                      trap: 'Lodging the instruments without the evidence of value the Stamp Office needs to assess them.',
+                    },
                     points: [
                       'The documents requiring stamping themselves — the instrument of transfer and any contract notes.',
                       'Evidence of value: the articles of association (if the company has been incorporated for less than 18 months) or the latest annual return (form NAR1) if 18 months or more; the latest return of allotment (form NSC1) for any increase in share capital not yet reflected.',
@@ -4420,16 +5240,31 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'evidence',
                     label: 'Consequence 1: the instrument cannot be used as evidence',
+                    why: 'The evidential bar is the sanction that gives stamp duty its practical force: an unstamped instrument is useless in civil proceedings, so the parties cannot rely on their own document.',
+                    exam: {
+                      write: 'The instrument being unstamped, it cannot be received in evidence in civil proceedings: s15(1).',
+                      trap: 'Forgetting the exceptions for criminal proceedings and Inland Revenue proceedings.',
+                    },
                     detail: 'An unstamped instrument cannot be received in evidence (s15(1)) — except in criminal proceedings, or in Inland Revenue Department proceedings to recover stamp duty.',
                   },
                   {
                     id: 'register',
                     label: 'Consequence 2: the company cannot register the transfer',
+                    why: 'The registration bar closes the loop with the Companies Ordinance: s15(2) SDO and s150(1) CO together mean an unstamped transfer cannot make the transferee a member.',
+                    exam: {
+                      write: 'The company cannot register the transfer, the instrument not being duly stamped: s15(2) SDO; s150(1) CO.',
+                      trap: 'Advising that the transferee is a member once the transfer is executed, ignoring the stamping requirement.',
+                    },
                     detail: 'The instrument cannot be registered by the company: s15(2) SDO, and s150(1) CO requires a "proper instrument of transfer", meaning one duly stamped. So until stamping happens, nothing moves on the register — and under MA63(4) the transferor remains the holder.',
                   },
                   {
                     id: 'dividend',
                     label: 'Consequence 3: restrictions on dividend payment (s21)',
+                    why: 'The dividend restriction reaches the economic benefit of the shares, not just the paperwork. It bites on beneficial owners as well as registered holders, which is what makes it effective.',
+                    exam: {
+                      write: 'Payment of dividends in respect of the shares is restricted while the transfer is not duly stamped: s21.',
+                      trap: 'Assuming non-stamping affects only registration and not the right to receive dividends.',
+                    },
                     points: [
                       's21 restricts payment of dividends in respect of shares whose transfer is not duly stamped.',
                       'That bites on registered owners, and on beneficial owners under a trust arrangement.',
@@ -4439,6 +5274,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'penalty',
                     label: 'Consequence 4: penalties for late stamping (s9)',
+                    why: 'The penalties escalate with delay in fixed multiples, so the cost of waiting is calculable. Quoting the tier that applies is more useful than saying penalties may be charged.',
+                    exam: {
+                      write: 'The delay being [1 month or less], the penalty is 2 times the amount of stamp duty: s9.',
+                      trap: 'Referring to penalties generally without identifying the tier the delay falls into.',
+                    },
                     points: [
                       'Delay not exceeding 1 month: 2 times the amount of stamp duty.',
                       'Delay exceeding 1 month but not exceeding 2 months: 4 times the amount of stamp duty.',
@@ -4449,6 +5289,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'evasion',
                     label: 'Then separate evasion from avoidance',
+                    why: 'Evasion and avoidance are different in kind: one is criminal, the other is a construction question. Keeping them apart is what stops an answer treating a structured transaction as fraud.',
+                    exam: {
+                      write: 'Failing to set forth all facts and circumstances affecting liability is an offence under s11; evasion additionally engages the common law offences of cheating the Revenue.',
+                      trap: 'Describing tax avoidance as an offence.',
+                    },
                     points: [
                       'Evasion: the common law offences of cheating and defrauding the Revenue, and conspiracy to do the same.',
                       's11 — it is an offence not to set out all the facts and circumstances affecting the liability for, and the amount of, stamp duty, with intent to defraud the Government.',
@@ -4458,6 +5303,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'ramsay',
                     label: 'And apply the Ramsay approach to avoidance',
+                    why: 'Ramsay is a rule of purposive construction, not an anti-avoidance power: the court asks what the statute means and whether the transaction, viewed realistically, answers to it. Arrowtown confirms it applies to Hong Kong stamp duty.',
+                    exam: {
+                      write: 'Applying the Ramsay approach as confirmed for stamp duty in Collector of Stamp Revenue v Arrowtown Assets Ltd, the statute is construed purposively and the transaction viewed realistically.',
+                      trap: 'Treating Ramsay as a general power to disregard steps, rather than as purposive construction.',
+                    },
                     points: [
                       {
                         text: 'Rules of purposive statutory construction — the Ramsay approach, in three moves:',
@@ -4601,6 +5451,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'goals',
                     label: 'A. Identify the client\'s goals',
+                    why: 'Everything else follows from the goal, so getting it wrong wastes the whole analysis. The goal comes from instructions, which is why checking that the instructions are complete is part of this step.',
+                    exam: {
+                      write: 'The client\'s goal is [X]; the facts required to achieve it are [Y], to be obtained from [the client / a company search].',
+                      trap: 'Assuming the goal from the facts rather than taking it from the client\'s instructions.',
+                    },
                     points: [
                       'What does the client actually want to achieve? Take this from their instructions — and make sure those instructions are complete.',
                       'Work out what facts you need in order to complete the transaction, and where they will come from: the client, lawyers for the other parties, third parties, experts, or the public domain (a company search, published information).',
@@ -4610,6 +5465,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'steps',
                     label: 'B. Identify the steps necessary to achieve those goals',
+                    why: 'Identifying the transaction and then its steps separates what is being done from how it is done. Each step has a nature — Board authorisation, members\' approval, a filing — and that is what generates the obstacles.',
+                    exam: {
+                      write: 'The transaction is [an allotment / a transfer]; the steps required are [Board resolution, members\' ordinary resolution, stamping, registration, filing].',
+                      trap: 'Listing documents without identifying the authorisations each step requires.',
+                    },
                     points: [
                       'Identify the transaction: what is its nature (allotment? transfer?), who are the parties, and what are its terms?',
                       'Identify the steps to effect it: the nature of each step — Board authorisation? shareholders\' authorisation, and by ordinary or special resolution?',
@@ -4622,6 +5482,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'obstacles',
                     label: 'C. Identify and resolve obstacles and legal issues',
+                    why: 'Obstacles are found by interrogating each step: what could prevent this resolution being passed, this notice being valid, this instrument being registered? That is where the legal research is actually directed.',
+                    exam: {
+                      write: 'The obstacle at this step is [the notice period / the absence of the s141 approval], resolved by [X].',
+                      trap: 'Identifying legal issues in the abstract rather than as obstacles to particular steps.',
+                    },
                     points: [
                       'Identify the nature of the obstacle arising from each step — for a Board resolution, that might be the notice convening the meeting, attendance, the quorum, or the decision-making process itself.',
                       'Carry out the legal research, analysis and reasoning. For more complex cases a solicitor may advise the client to seek Counsel\'s opinion; where foreign law is involved, foreign counsel should be retained.',
@@ -4631,6 +5496,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'options',
                     label: 'D. Analyse the options available to the client',
+                    why: 'Options must be compared on a like-for-like basis — cost, time, dilution, duty — and each rests on assumptions worth stating. That comparison is what the client is actually paying for.',
+                    exam: {
+                      write: 'Option 1 [allotment] and Option 2 [transfer] are compared as to cost, timing, the effect on existing shareholdings and stamp duty.',
+                      trap: 'Presenting one option as the answer without evaluating the alternative.',
+                    },
                     points: [
                       'Identify the options available.',
                       'Analyse and evaluate them by comparing pros and cons, and note the limitations of each and the assumptions each rests on.',
@@ -4641,11 +5511,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'instructions',
                     label: 'E. Take the client\'s instructions on the choice of options',
+                    why: 'The decision is the client\'s, not the solicitor\'s. Advising and recommending is the lawyer\'s role; choosing is not, which is why instructions are taken before the action plan is implemented.',
+                    exam: {
+                      write: 'Having advised on both options, we seek the clients\' instructions as to which they wish to adopt.',
+                      trap: 'Choosing the option for the client rather than advising and taking instructions.',
+                    },
                     detail: 'A lawyer\'s responsibility is to advise. You may recommend, but the decision rests solely with the client — so always take or confirm instructions, preferably in writing, before taking any step to implement the chosen option.',
                   },
                   {
                     id: 'plan',
                     label: 'F. Action plan to implement the chosen option',
+                    why: 'The action plan converts the chosen option into a sequence with deadlines. Sequencing matters because several steps are conditional on earlier ones — stamping before registration, approval before allotment.',
+                    exam: {
+                      write: 'The steps are carried out in the following sequence: [1]...[2]..., the statutory deadlines being [X].',
+                      trap: 'Producing a list of tasks with no order and no deadlines.',
+                    },
                     points: [
                       'List, in sequence, the specific tasks or steps involved.',
                       'Time management — what is the schedule? Is there a contractual or statutory deadline?',
@@ -4733,6 +5613,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'facts',
                     label: 'The facts',
+                    why: 'The facts fix the constraints: unmodified Model Articles, a common seal, and the existing shareholdings. Each of those will decide a step later, which is why they are recorded before any analysis.',
+                    exam: {
+                      write: 'The company has adopted the Model Articles in Schedule 2 of Cap. 622H without modification and the existing shareholdings are [X].',
+                      trap: 'Starting the analysis without recording which articles govern and what the existing holdings are.',
+                    },
                     points: [
                       'A married couple are the only shareholders and directors of a Hong Kong private company operating dog care centres: she holds 800 of the 1,000 issued shares, he holds 200.',
                       'The company adopts the Model Articles in Schedule 2 of Cap. 622H without modification, and has adopted a common seal.',
@@ -4743,6 +5628,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'goal',
                     label: 'A. The client\'s goal, and the facts to gather',
+                    why: 'The goal — the daughter obtaining 100 shares — can be reached two ways, and identifying the goal separately from the mechanism is what allows both to be compared. The company search supplies the facts either route needs.',
+                    exam: {
+                      write: 'The goal is for the daughter to acquire 100 shares; a company search is conducted to confirm the issued share capital and corporate details.',
+                      trap: 'Fixing on allotment or transfer before the goal has been stated independently of the mechanism.',
+                    },
                     points: [
                       'Goal: for the daughter to obtain 100 shares. The problem is identifying the most appropriate mode — allotment or transfer.',
                       'Do a company search to confirm the issued share capital and other corporate details.',
@@ -4753,6 +5643,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'transaction',
                     label: 'B. The transactions, and their parties and terms',
+                    why: 'The two routes have different parties: an allotment is between the company and the daughter, a transfer between each parent and the daughter. That difference drives the documents and the duty.',
+                    exam: {
+                      write: 'On an allotment the parties are the company and the daughter; on a transfer they are each parent as transferor and the daughter as transferee.',
+                      trap: 'Treating the company as a party to a transfer between shareholders.',
+                    },
                     points: [
                       'Allotment: 100 new shares allotted by the company to the daughter — parties are the company and the daughter; the price is fixed by the Board.',
                       'Transfer: 50 shares from each parent to the daughter — parties are each parent as transferor and the daughter as transferee; the transfers are gifts.',
@@ -4761,6 +5656,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'allotsteps',
                     label: 'B. Steps if allotting',
+                    why: 'An allotment that is not pro rata needs the members\' prior approval, so the sequence is approval, then Board resolution, then issue and filing. Getting that order right is the examinable part.',
+                    exam: {
+                      write: 'The members approve the exercise of the power by ordinary resolution in advance, whereupon the Board resolves to allot and the return of allotment is filed: ss141, 142.',
+                      trap: 'Allotting first and seeking approval afterwards.',
+                    },
                     points: [
                       'Shareholders\' prior approval by ordinary resolution, because the offer is not in proportion to existing holdings and so falls outside every s140(2) exception; only then may the directors exercise the power (s140(1), s141(1), MA72).',
                       'Documents: an application for shares from the daughter, Board and shareholders\' resolutions, and a new share certificate.',
@@ -4773,6 +5673,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'transfersteps',
                     label: 'B. Steps if transferring',
+                    why: 'A transfer runs the other way: the instruments are executed and stamped before the Board can register. Stamping first is what s150(1) CO requires.',
+                    exam: {
+                      write: 'Each parent executes an instrument of transfer, which is stamped before being lodged with the company for registration.',
+                      trap: 'Putting the Board resolution before stamping.',
+                    },
                     points: [
                       'Documents: two instruments of transfer — one signed by each parent as transferor, both signed by the daughter as transferee. No contract notes, because this is not a sale and purchase.',
                       'Stamping is required (see below) and must happen before the Board can act.',
@@ -4785,6 +5690,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'issues',
                     label: 'C. The legal issues each route raises',
+                    why: 'Each route raises its own issue: the allotment engages s140 because it is not pro rata, and the transfers are gifts and so voluntary dispositions under s27(4). Naming both is what makes the comparison real.',
+                    exam: {
+                      write: 'The allotment is not in proportion to existing holdings, so no s140(2) exception applies; the transfers being gifts, they are voluntary dispositions under s27(4) SDO.',
+                      trap: 'Comparing the routes on convenience without identifying the legal issue each raises.',
+                    },
                     points: [
                       'If allotting: the offer is not in proportion to existing shareholdings, so none of the four s140(2) exceptions applies and the members must approve in advance by ordinary resolution (s140(1), s141(1)); MA72 says the same at the articles level.',
                       'If transferring: as gifts, the transfers are voluntary dispositions under s27(4) SDO, attracting ad valorem duty at 0.2% of the value of the shares plus HK$5 under charging head 2(3) of Schedule 1, payable jointly and severally by transferor and transferee.',
@@ -4793,6 +5703,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'compare',
                     label: 'D. Compare the two options',
+                    why: 'The comparison is quantitative as well as procedural: an allotment dilutes everyone, a transfer moves a fixed block and attracts duty on value. Showing the resulting percentages is what makes the advice usable.',
+                    exam: {
+                      write: 'On an allotment the parents\' holdings dilute to [X]%; on a transfer they fall to 75% and 15%, with ad valorem duty on the value of the shares transferred.',
+                      trap: 'Comparing the routes without working out the resulting shareholdings or the duty.',
+                    },
                     points: [
                       'Option 1, allotment: on the parents paying the subscription monies, the company allots 100 shares to the daughter. Her parents\' stakes fall to roughly 73% and 18% (of 1,100 shares). No stamp duty.',
                       'Option 2, transfer as gifts: each parent gratuitously transfers 50 shares. Their stakes fall to 75% and 15% (of 1,000 shares). Stamp duty of 0.2% ad valorem on the value of the shares, plus HK$5.',
@@ -4801,11 +5716,21 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'instruct',
                     label: 'E. Take instructions',
+                    why: 'Having evaluated both, the choice returns to the client. That is the same principle as in the general method: advise and recommend, but do not decide.',
+                    exam: {
+                      write: 'Having analysed and evaluated both options, we seek the clients\' instructions on which to adopt.',
+                      trap: 'Recommending one route and proceeding without instructions.',
+                    },
                     detail: 'Having analysed and evaluated both options for them, seek the clients\' instructions on which they choose.',
                   },
                   {
                     id: 'planallot',
                     label: 'F. Action plan — if allotment is chosen',
+                    why: 'The allotment plan sequences application, approval, Board resolution, certificate and filing. Each depends on the one before, which is why the order is the plan.',
+                    exam: {
+                      write: 'The daughter applies for 100 shares; the members pass an ordinary resolution; the Board resolves to allot; the certificate issues and the return of allotment is filed.',
+                      trap: 'Producing a plan whose steps could not actually be performed in the order given.',
+                    },
                     points: [
                       'The daughter makes an application for 100 shares.',
                       'The Board convenes a general meeting so the two shareholders can pass an ordinary resolution (at the meeting or as written resolutions) approving the non-pro rata allotment.',
@@ -4817,6 +5742,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'plantransfer',
                     label: 'F. Action plan — if transfer as gifts is chosen',
+                    why: 'The transfer plan reflects that these are gifts: no contract notes, because there is no sale or purchase, but stamping on value with the financial statements lodged as evidence.',
+                    exam: {
+                      write: 'All three sign the instruments of transfer, no contract notes being required; the instruments are lodged for stamping with the company\'s financial statements.',
+                      trap: 'Preparing contract notes for a gift.',
+                    },
                     points: [
                       'All three sign the instruments of transfer (no contract notes, as there is no sale and purchase).',
                       'The instruments are lodged with the Stamp Office for stamping, together with the company\'s financial statements.',
