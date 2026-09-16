@@ -3491,6 +3491,8 @@ window.COURSE_DETAILS.PCLL8010 = {
                 { when: 'The heading, numbering or signature is in issue', session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
                 { when: 'The question is how the defendant must answer it', session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
                 { when: 'The claim discloses no reasonable cause of action', session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+                { when: 'You have to draft one from a client file, and the claim is contractual', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'You have to draft one from a client file, and the claim is in tort', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
               ],
             },
             answering: {
@@ -3603,6 +3605,9 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
+              { session: 'LG5', issue: 'function-and-structure', label: 'What a statement of claim must do, and its four-part shape' },
+              { session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+              { session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
               { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
               { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
               { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
@@ -4184,6 +4189,1601 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
         ],
       },
+    },
+
+    LG5: {
+      kind: 'LG',
+      date: '2026-09-10',
+      time: '09:00-11:30',
+      mode: 'Face-to-face',
+      authors: ['Julienne Jen', 'Ophelia Chan'],
+      objectives: [
+        'Draft a simple Statement of Claim in a contract and negligence case.',
+      ],
+      topicsCovered: [
+        'Main function of a Statement of Claim — all the material facts and necessary particulars that establish the cause of action and the relief sought',
+        'Guide and tools: Dramatis Personae, chronology, the 5-Level Case Analysis, the Basic Structures, the Pleadings Drafting Guide',
+        'General approach to drafting a Statement of Claim — Steps 1 to 9',
+        'Basic Structure for a Contractual Claim (Steps 1-11) and for a Tortious Claim (Steps 1-9)',
+        'Review and critique of the sample drafts for Exercises 1 and 2',
+      ],
+      prep: {
+        readings: [
+          'The LG4 Lecture Notes Parts E, F & G, and this Lecture Outline',
+          'RHC O.18 and O.41A (Cap. 4A) — the key rules for this lecture',
+          'Appendices 1-8: the Dramatis Personae and chronology examples, the two 5-Level Case Analyses, the succinct summary, both Basic Structures and the Pleadings Drafting Guide',
+        ],
+        activities: [
+          { title: 'Exercise 1: To Tung Restaurant Limited (Appendix 9)', instructions: 'Prepare a draft extract of the Skeletal Plan covering Steps 2 to 4 of the Basic Structure for a Statement of Claim in Contract, and a draft extract of the Statement of Claim covering up to Step 4 of the Skeletal Plan.' },
+          { title: 'Exercise 2: Lost Treasures Antique Shop (Appendix 10)', instructions: 'Prepare a draft extract of the Skeletal Plan covering Steps 2, 4 and 6 of the Basic Structure for a Statement of Claim in Tort, and draft extracts of the Statement of Claim covering the accident, the Defendants’ breach and the Plaintiff’s loss and damage.' },
+        ],
+      },
+      prepChecklist: [
+        { id: 'read-lg4-parts', label: 'Review LG4 Lecture Notes Parts E, F & G and the LG5 Lecture Outline' },
+        { id: 'read-orders', label: 'Read RHC O.18 and O.41A themselves' },
+        { id: 'read-appendices', label: 'Work through Appendices 1-8 — the two case-analysis examples, both Basic Structures and the Drafting Guide' },
+        { id: 'exercise-1', label: 'Exercise 1 (To Tung): skeletal plan extract for Steps 2-4, and the Statement of Claim extract to Step 4' },
+        { id: 'exercise-2', label: 'Exercise 2 (Lost Treasures): skeletal plan extract for Steps 2, 4 and 6, and the Statement of Claim extracts for the accident, the breach and the loss' },
+      ],
+      keyTakeaways: [
+        'A Statement of Claim sets out all the material facts and necessary particulars establishing the cause of action, and the relief sought — three limbs, all three of which have to be satisfied.',
+        'Level 4 material facts are what gets pleaded; Level 5 evidence is what stays out. That is why the 5-Level Case Analysis is done before the draft, not after.',
+        'Every draft has the same four parts: introduction and background; substantive contents; prayer for relief; statement of truth.',
+        'In a tortious claim the accident paragraph is neutral (Step 2) and the fault paragraph is pointed (Step 4) — a neutral description is one D may admit.',
+        'There is no set right or wrong answer in drafting. The tools are a scaffold to be used flexibly, and the Pleadings Drafting Guide is the checklist your finished draft is measured against.',
+      ],
+      examNotes: {
+        intro: 'LG4 told you what a pleading may and may not contain. LG5 is the drafting paper: given a client file, produce a Statement of Claim. The issue types below run in the order the work is actually done — function and shape first, then the two fact-organising tools, then the 5-Level Case Analysis that turns facts into pleadable material facts, then the nine-step process, then the contract and tort structures that supply the paragraph order, then the endings (interest, prayer, jurisdiction plea), then the marking criteria, and finally the two worked examples end to end.',
+        issueTypes: [
+          {
+            id: 'function-and-structure',
+            title: 'What a statement of claim must do, and its four-part shape',
+            summary: 'The function the lecture gives it in one sentence, and the skeleton every draft is hung on.',
+            triggers: {
+              bullets: [
+                'The question says "draft a Statement of Claim" and you need somewhere to start.',
+                'A draft has substantive paragraphs but never introduces the parties.',
+                'A draft ends at the last paragraph of loss, with no prayer for relief.',
+                'A draft is unsigned and unverified.',
+                'The question asks what the function or purpose of a statement of claim is.',
+                'You are asked to review and critique a sample draft rather than write one.',
+                'The facts plainly give a cause of action but you cannot tell which of them have to go in.',
+                'A paragraph is accurate and interesting and you cannot say what it is doing there.',
+              ],
+              routes: [
+                { when: 'The question is about pleadings generally rather than this document', session: 'LG4', issue: 'what-pleadings-do', label: 'What pleadings are and why they matter' },
+                { when: 'The issue is the prayer, the writ’s causes of action, or the date of issue', session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+                { when: 'The issue is whether a paragraph is fact, evidence or argument', session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+                { when: 'The formal heading, numbering or signature is in issue', session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+                { when: 'The claim is contractual and you need the paragraph order', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'The claim is in tort and you need the paragraph order', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Fixing the shape before writing a word',
+                steps: [
+                  {
+                    id: 'function',
+                    label: 'Start from the function, because it decides what goes in',
+                    points: [
+                      'The main function of a statement of claim is to set out ALL the material facts AND necessary particulars that establish the plaintiff’s cause of action, AND the relief sought.',
+                      {
+                        text: 'That sentence contains three separate tests, and every paragraph you write has to pass the one that applies to it:',
+                        points: [
+                          'Material facts — O.18 r.7(1): a statement in summary form of the material facts relied on, NOT the evidence by which they are to be proved, as brief as the nature of the case admits.',
+                          'Necessary particulars — O.18 r.12(1): every pleading must contain the necessary particulars of any claim, defence or other matter pleaded.',
+                          'The relief sought — O.18 r.15(1): the relief or remedy claimed must be stated specifically, though costs need not be.',
+                        ],
+                      },
+                      'Most deficient drafts satisfy the first limb and fail one of the other two. Check all three, separately.',
+                    ],
+                  },
+                  {
+                    id: 'structure',
+                    label: 'Lay out the four parts',
+                    points: [
+                      'Introduction to the parties and necessary background.',
+                      'Substantive contents — the cause of action, told in the order it happened.',
+                      'Prayer for relief.',
+                      'Statement of truth.',
+                      'That is the whole document, and the Basic Structures in the appendices map straight onto it. In the contractual structure, Step 1 is the introduction, Steps 2-9 are the substantive contents, Step 10 is the prayer and Step 11 the verification; in the tortious structure, Step 1, Steps 2-7, Step 8 and Step 9 respectively.',
+                    ],
+                  },
+                  {
+                    id: 'coverage',
+                    label: 'Test the draft for coverage against the legal ingredients',
+                    points: [
+                      'A statement of claim is complete when EVERY legal ingredient of the cause of action has at least one material fact pleaded in support of it.',
+                      'That is exactly what Levels 3 and 4 of the 5-Level Case Analysis give you, which is why the analysis is done before the draft.',
+                      'Level 5 evidence does not go into the pleading at all — it goes into the witness statements and affidavits.',
+                      'Run the test the other way too: a paragraph that supports no legal ingredient and no head of relief is a paragraph to cut.',
+                    ],
+                  },
+                  {
+                    id: 'flex',
+                    label: 'Remember the general note — there is no set right or wrong answer',
+                    points: [
+                      'The lecture says so expressly: with drafting there is no set right/wrong answer, and although the tools help, they should be used FLEXIBLY.',
+                      'So the marks are not for reproducing the appendix step order. They are for a draft that is accurate, complete, logical and readable.',
+                      'A step may be skipped where it has nothing to say on the facts — the appendices say so expressly for Step 1, for contract Step 4, and for tort Steps 3 and 5.',
+                      'Steps may be reordered where it reads better — the contract structure expressly allows D’s knowledge to be pleaded before the contract, or between the contract and the terms.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The function sentence has three limbs. Drafts routinely plead the facts, then forget the particulars or the prayer.',
+                '"Necessary background" is not everything the client told you. Both Basic Structures warn to keep it concise and avoid irrelevant details.',
+                'Some background IS a material fact — ownership of the property in a claim for its loss; the employment relationship where vicarious liability is alleged; the goodwill owned in passing off. Those are pleaded because an ingredient needs them, not as scene-setting.',
+                'The statement of truth is part of the document you were asked to draft, not an afterthought that someone else adds.',
+                'The source of a fact belongs in the chronology and in the witness statements. It never belongs in the pleading.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Write the four part headings on a blank page first and then fill them. It is much harder to lose the prayer for relief that way.',
+                'Before drafting, list the legal ingredients down the left of a page and the material facts against each. A blank is a gap in the CLAIM, not a gap in the draft.',
+                'When critiquing a draft, work the three limbs in order — facts, particulars, relief — rather than reading top to bottom hunting for errors.',
+                'Keep asking of each paragraph: which ingredient or which head of relief does this support?',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Opening with the accident or the contract and never introducing the parties.',
+                'Reciting the whole factual history because the client supplied it.',
+                'Pleading the evidence — what a witness said, what a document says word for word — instead of the fact it proves.',
+                'Stopping at the loss paragraph, with no prayer for relief and no statement of truth.',
+                'Treating the appendix step numbers as a compulsory template rather than a checklist.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Subject to the provisions of this rule and rules 7A, 10, 11 and 12, every pleading must contain, and contain only, a statement in a summary form of the material facts on which the party pleading relies for his claim or defence, as the case may be, but not the evidence by which those facts are to be proved, and the statement must be as brief as the nature of the case admits.', cite: 'O.18 r.7(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'A statement of claim must state specifically the relief or remedy which the plaintiff claims; but costs need not be specifically claimed.', cite: 'O.18 r.15(1), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['The function', 'LG5 Lecture Outline, Part A', 'To set out all the material facts and necessary particulars that establish the plaintiff’s cause of action and the relief sought'],
+                  ['Material facts only', 'O.18 r.7(1)', 'A summary of the material facts relied on, not the evidence proving them, as brief as the nature of the case admits'],
+                  ['Necessary particulars', 'O.18 r.12(1)', 'Every pleading must contain the necessary particulars of any claim, defence or other matter pleaded'],
+                  ['The relief sought', 'O.18 r.15(1)', 'Must be stated specifically; costs need not be specifically claimed'],
+                  ['Points of law', 'O.18 r.11', 'A party may by his pleading raise any point of law — raise, not argue'],
+                  ['The four parts', 'LG5 Lecture Outline, Part B (Basic Structures)', 'Introduction to parties and necessary background; substantive contents; prayer for relief; statement of truth'],
+                  ['Verification', 'O.18 r.20A; O.41A r.5(1)', 'The pleading must be verified by a statement of truth, in the prescribed form'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG5', issue: 'drafting-process', label: 'The nine-step drafting process' },
+              { session: 'LG5', issue: 'drafting-guide-criteria', label: 'The Pleadings Drafting Guide' },
+              { session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+            ],
+          },
+
+          {
+            id: 'case-analysis-tools',
+            title: 'Dramatis Personae and the chronology',
+            summary: 'The two organising tools that turn a bundle of instructions into facts you can plead — and a list of what is still missing.',
+            triggers: {
+              bullets: [
+                'The instructions name a dozen people and the roles will not stay straight.',
+                'Two documents give different dates, or different figures, for the same thing.',
+                'You are asked what further information or investigation is required.',
+                'The question asks who the parties to the action should be.',
+                'A fact plainly matters but you cannot say how it would be proved.',
+                'The facts arrive as letters, invoices and attendance notes rather than as a narrative.',
+                'You are asked for the pre-drafting analysis rather than the draft.',
+                'The same person is described three different ways across the file.',
+              ],
+              routes: [
+                { when: 'The facts are organised and you now need the legal ingredients', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'The question is what order the whole job is done in', session: 'LG5', issue: 'drafting-process', label: 'The nine-step drafting process' },
+                { when: 'The gap is a missing particular in a pleading already served', session: 'LG4', issue: 'further-and-better-particulars', label: 'Further and better particulars' },
+                { when: 'The worry is that a fact is evidence rather than a material fact', session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Organising the facts before the law',
+                steps: [
+                  {
+                    id: 'dp',
+                    label: 'Dramatis Personae — who is who',
+                    points: [
+                      'A list of the persons involved in the case.',
+                      {
+                        text: 'The information recorded generally includes:',
+                        points: [
+                          'The person’s name.',
+                          'Their position or role.',
+                          'A summary of their involvement in the case.',
+                        ],
+                      },
+                      'Add the DEFINED TERM you will use for that person throughout — the Appendix 1 example carries a column for exactly that, and those defined terms carry straight into the pleading.',
+                      'Group by side: the plaintiff and its people, then each defendant and its people, then "other parties" such as police officers and independent witnesses.',
+                      'It answers the Step 3 question "who should be the parties to the action?". Someone who owed a duty or made a promise is a candidate defendant; someone who merely saw it happen is a witness.',
+                    ],
+                  },
+                  {
+                    id: 'chron',
+                    label: 'Chronology — what happened, in date order',
+                    points: [
+                      'A list of the relevant events in DATE ORDER.',
+                      {
+                        text: 'The information recorded generally includes:',
+                        points: [
+                          'The date.',
+                          'A description of the event.',
+                          'The SOURCE of the information — a particular document, or a particular witness.',
+                        ],
+                      },
+                      'The source column is the point of the exercise: it is where a fact with no proof shows up as a fact with an empty cell.',
+                      'Use square brackets for what you do not yet have — the Appendix 2 example runs "[contract with Svarowski?]" and "[any other witnesses at the party?]" straight down its source column — so the gaps stay visible.',
+                      'Record approximate dates as approximate ("Around October 2020 or before", "A day after"), because that is how they will have to be pleaded: "On or about ...".',
+                    ],
+                  },
+                  {
+                    id: 'use',
+                    label: 'Use them to drive the draft and the further-instructions letter',
+                    points: [
+                      'The chronology gives the ORDER of the substantive paragraphs. A statement of claim is told chronologically, which is why both Basic Structures run contract or accident, then what followed, then breach, then consequences, then loss.',
+                      'The Dramatis Personae gives the introductory paragraphs and the defined terms.',
+                      'Anything still in square brackets when both are finished is your list of further instructions and further investigations.',
+                      'Neither tool is filed and neither is a pleading. They are working documents for you.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The source column belongs to the chronology, not to the pleading. Naming the witness or the document in a statement of claim is pleading evidence, contrary to O.18 r.7(1).',
+                'A date that cannot be precisely ascertained is pleaded as "On or about ..." — the chronology is where you notice that it cannot.',
+                'Two sources giving different dates for the same event is a further-instructions point, not something to resolve silently in the draft.',
+                'The Dramatis Personae is usually where vicarious liability surfaces: an individual named as the tortfeasor, and their employer named separately as a second defendant.',
+                'Where a contract was made through agents, the Dramatis Personae is also what tells you to plead the agency and each agent’s authority.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Build both before taking a view on the law. They are cheap, and they stop you drafting around a fact you have not noticed.',
+                'Carry the defined terms from the Dramatis Personae into the draft unchanged, so the same person is never called two things.',
+                'Keep the square-bracket queries alive into the skeletal plan. The model plans do, and they are what the further-instructions letter is written from.',
+                'Record the source even for facts the client gave you orally — "the client" is a source, and it tells you the fact rests on his evidence alone.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Writing the chronology from the client’s narrative alone and never recording a source.',
+                'Leaving out the people who will not be parties — the witnesses are exactly who you will need later.',
+                'Resolving a doubtful date by picking one, instead of flagging it and pleading "on or about".',
+                'Carrying the source column into the pleading.',
+                'Treating either tool as a document to be filed or served.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Tool', 'What it records', 'What it is for'],
+                rows: [
+                  ['Dramatis Personae', 'Name; position or role; summary of involvement; the defined term to be used', 'The introductory paragraphs, the defined terms, and deciding who the parties should be'],
+                  ['Chronology', 'Date; description of event; source of information (document or witness)', 'The order of the substantive paragraphs, and identifying which facts have no proof yet'],
+                  ['Why the source stays out of the pleading', 'O.18 r.7(1)', 'A pleading contains material facts, not the evidence by which they are to be proved'],
+                  ['Conversations and documents', 'O.18 r.7(2)', 'The effect of a document or the purport of a conversation must, if material, be briefly stated; the precise words must not be, except so far as they are themselves material'],
+                  ['Where the gaps go next', 'LG5 Lecture Outline, Part C Steps 1-2 and 8', 'Step 1 is investigation and research; Step 2 is organising; Step 8 asks whether further instructions are required'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG5', issue: 'drafting-process', label: 'The nine-step drafting process' },
+              { session: 'LG5', issue: 'worked-contract-claim', label: 'Worked example: the commercial dishwashers claim' },
+              { session: 'LG5', issue: 'worked-tort-claim', label: 'Worked example: the shopfront collision claim' },
+            ],
+          },
+
+          {
+            id: 'five-level-case-analysis',
+            title: 'The 5-Level Case Analysis',
+            summary: 'Area of law, cause of action, ingredients, material facts, evidence — and the four separate jobs the one grid does.',
+            triggers: {
+              bullets: [
+                'The question asks you to prepare a case analysis, or hands you a partial one to complete.',
+                'You have the facts but cannot tell which of them have to be pleaded.',
+                'You are asked to assess the merits of the client’s case.',
+                'You are asked what further evidence should be obtained.',
+                'A draft pleads a breach but never pleads the term said to have been breached.',
+                'A head of loss is claimed and nothing in the draft makes it recoverable.',
+                'Two defendants are involved and the ingredients differ between them.',
+                'The same facts support two causes of action and you are not sure how to handle both.',
+              ],
+              routes: [
+                { when: 'The facts are not yet organised', session: 'LG5', issue: 'case-analysis-tools', label: 'Dramatis Personae and the chronology' },
+                { when: 'The analysis is done and the draft is next', session: 'LG5', issue: 'drafting-process', label: 'The nine-step drafting process' },
+                { when: 'The claim is contractual and you need the paragraph order', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'The claim is tortious and you need the paragraph order', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+                { when: 'The question is whether a particular fact is material or evidential', session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working the five levels',
+                steps: [
+                  {
+                    id: 'levels',
+                    label: 'The five levels, in order',
+                    points: [
+                      'Level 1 — the AREA OR AREAS OF LAW in question.',
+                      'Level 2 — within each area of law, the CAUSE OR CAUSES OF ACTION and the REMEDIES that are relevant.',
+                      'Level 3 — in respect of each cause of action or remedy, the LEGAL INGREDIENTS that have to be established.',
+                      'Level 4 — in respect of each legal ingredient, the MATERIAL FACT OR FACTS in support.',
+                      'Level 5 — in respect of each material fact, the EVIDENCE (and the method of proof) for that fact.',
+                    ],
+                  },
+                  {
+                    id: 'uses',
+                    label: 'What the analysis is for — four jobs, not one',
+                    points: [
+                      'Drafting pleadings: the Level 4 material facts, which must cover ALL the Level 3 legal ingredients.',
+                      'Drafting affidavits or witness statements: the Level 5 evidence.',
+                      'Analysing the merits of the client’s case — whether, and how well, all the necessary legal ingredients can be established.',
+                      'Deciding what further evidence should be obtained, by checking whether there is enough to prove all the necessary points.',
+                      'So one grid answers the drafting question AND the advice question. Where an exam asks both, build it once and read it twice.',
+                    ],
+                  },
+                  {
+                    id: 'contract',
+                    label: 'The Level 3 ingredients in a breach of contract claim',
+                    points: [
+                      'Existence of the contract.',
+                      'The material terms.',
+                      'Breach of those terms.',
+                      'Recoverable loss — loss within D’s contemplation at the time of the contract. Both worked examples give this its own ingredient row, and the material fact under it is what D WAS TOLD before contracting.',
+                    ],
+                  },
+                  {
+                    id: 'tort',
+                    label: 'The Level 3 ingredients in a negligence claim',
+                    points: [
+                      'Duty of care owed by the defendant to the plaintiff.',
+                      'Where the employer is sued too: vicarious liability of the employer for the employee’s negligence — a separate ingredient, with its own material facts.',
+                      'Breach of duty by each defendant, taken separately.',
+                      'Breach of any statutory provision relied on, with the conviction and its date where there has been one.',
+                      'Causation.',
+                      'Damages — foreseeable, and not too remote.',
+                    ],
+                  },
+                  {
+                    id: 'fill',
+                    label: 'Fill it in as a grid, then read it both ways',
+                    points: [
+                      'Down the ingredient column: is there a material fact against EVERY ingredient? A blank here is a claim that fails, not a draft that is short.',
+                      'Across from each material fact: is there evidence? A blank here is a further-investigation point, not a pleading problem.',
+                      'Square-bracket the evidence you expect to exist but have not seen. Both worked examples do this throughout, and it is what the further-instructions letter is written from.',
+                      'Where there are two defendants, run separate ingredient rows for each — their breaches are pleaded in separate paragraphs.',
+                      'Where the same facts give two causes of action, that is two grids, not one grid with more rows.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Level 4 is what gets pleaded; Level 5 is what does not. That one line is the entire reason the analysis comes before the draft.',
+                'Recoverable loss is an ingredient, not an afterthought. Without it, the consequential heads of loss have nothing holding them up.',
+                'Level 2 asks for REMEDIES as well as causes of action — a claim that needs a declaration or an injunction has to reach the prayer for relief.',
+                'Vicarious liability is its own ingredient row, and it needs two facts: that the tortfeasor was the employee, AND that he was acting in the course of employment at the time.',
+                'An ingredient supplied by statute still needs its material facts. "The goods were not of merchantable quality" is the ingredient; the defective modules and the faulty pump are the facts.',
+                'The grid is per cause of action, so two causes of action on one set of facts are two grids.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Write Level 3 from the LAW, then go looking for facts. Doing it the other way round produces a pleading that tracks the client’s story and misses an ingredient.',
+                'Name each ingredient in the words the law uses — "merchantable quality", "in the course of employment" — because that is what the material fact has to answer.',
+                'Keep the evidence column even when only the pleading is asked for. It is where the further-instructions questions come from, and they earn marks.',
+                'Where the ingredient is statutory, put the subsection in the grid so it reaches the draft.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Pleading the Level 5 evidence — the witness, the police statement, the invoice — in the statement of claim.',
+                'Skipping Level 3 and going straight from the facts to the draft.',
+                'Treating loss as a figure, and never pleading the knowledge that makes it recoverable.',
+                'Running one grid across two defendants whose ingredients differ.',
+                'Filling in Level 5 with "the client" for everything, and so never noticing which facts rest on his evidence alone.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Level', 'What goes in it', 'Where it ends up'],
+                rows: [
+                  ['Level 1', 'The area(s) of law in question', 'Frames the whole analysis — contract, tort, or both'],
+                  ['Level 2', 'The cause(s) of action and remedy(ies) that are relevant', 'The causes of action in the writ and the heads in the prayer for relief'],
+                  ['Level 3', 'The legal ingredients of each cause of action or remedy', 'Nothing — but every one of them must be covered by Level 4'],
+                  ['Level 4', 'The material fact(s) supporting each ingredient', 'The body of the statement of claim'],
+                  ['Level 5', 'The evidence, and the method of proof, for each material fact', 'Witness statements and affidavits, never the pleading'],
+                  ['Contract ingredients', 'LG5 Lecture Outline, Part C Step 3; Appendices 3 and the Exercise 1 model', 'Existence of contract; material terms; breach; recoverable loss within D’s contemplation at the time of contract'],
+                  ['Negligence ingredients', 'Appendix 4 and the Exercise 2 model', 'Duty; vicarious liability where relied on; breach by each defendant; breach of statutory provision where relied on; causation; damages not too remote'],
+                  ['Terms implied by statute', 'Sale of Goods Ordinance (Cap. 26) ss16(2), 16(3) and 17(2), as cited in the course materials', 'Merchantable quality; reasonable fitness for a purpose made known to the seller; correspondence with the sample. Read the subsections themselves before pleading them'],
+                  ['Evidence excluded from the pleading', 'O.18 r.7(1)', 'Material facts only, not the evidence by which they are to be proved'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'case-analysis-tools', label: 'Dramatis Personae and the chronology' },
+              { session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+              { session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+            ],
+          },
+
+          {
+            id: 'drafting-process',
+            title: 'The nine-step drafting process',
+            summary: 'Part C’s Steps 1 to 9 — from gathering the facts to explaining the statement of truth to the client.',
+            triggers: {
+              bullets: [
+                'The question asks how you would go about drafting the statement of claim.',
+                'You are asked for a SKELETAL PLAN rather than a draft.',
+                'You are asked for a succinct summary of the claim.',
+                'The draft is finished and the question is what happens next.',
+                'The question asks what you would do before sending the draft to the client.',
+                'You are told to review and critique a draft.',
+                'The question asks what further instructions you would seek.',
+              ],
+              routes: [
+                { when: 'You are at the fact-organising stage', session: 'LG5', issue: 'case-analysis-tools', label: 'Dramatis Personae and the chronology' },
+                { when: 'You are at the legal-ingredients stage', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'You are at the drafting stage and the claim is contractual', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'You are at the drafting stage and the claim is in tort', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+                { when: 'You are at the review stage', session: 'LG5', issue: 'drafting-guide-criteria', label: 'The Pleadings Drafting Guide' },
+                { when: 'The question is who signs the statement of truth', session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Steps 1 to 9',
+                steps: [
+                  {
+                    id: 'gather',
+                    label: 'Steps 1-2 — gather, then organise',
+                    points: [
+                      'Step 1: gather together the client’s facts — all the background facts and information — and conduct all the necessary investigations and research.',
+                      'Step 2: organise the facts and identify the relevant FACTUAL issues, using the Dramatis Personae and the chronology of events.',
+                      'These two are where a missing document or an unasked question is cheapest to find.',
+                    ],
+                  },
+                  {
+                    id: 'law',
+                    label: 'Steps 3-4 — identify the law, then map it onto the facts',
+                    points: [
+                      'Step 3: identify the relevant LEGAL issues. What are the causes of action and remedies? Who should be the parties to the action?',
+                      'Step 3 also asks, for each cause of action or remedy, what the legal ingredients are — for breach of contract, the existence of the contract, the material terms, and breach of those terms.',
+                      'Step 4: prepare the 5-Level Case Analysis. It shows the inter-relationship between the factual and legal issues, and identifies, for each legal ingredient, the material fact(s) required to establish it — and those are the facts that must be pleaded.',
+                    ],
+                  },
+                  {
+                    id: 'plan',
+                    label: 'Steps 5-6 — the summary, then the skeleton',
+                    points: [
+                      'Step 5: prepare a SUCCINCT SUMMARY of the client’s claim in 2-3 SENTENCES. It gives you the basic shape of the claim, and it should be easy once the 5-Level Case Analysis is done.',
+                      'Step 6: prepare a SKELETAL PLAN of the statement of claim following the basic structure, using the Level 4 material facts. This can be done in POINT FORM.',
+                      'The skeletal plan is where the square-bracket queries live — "did he pay $8,000 or $8,900?", "obtain the registration number from the client". The model plans carry them; the draft does not.',
+                      'The plan is also where you record WHY you are pleading something that is not strictly material — the Exercise 1 model notes that the express delivery and payment terms are pleaded because P will refer to them when pleading its own performance.',
+                    ],
+                  },
+                  {
+                    id: 'draft',
+                    label: 'Step 7 — start drafting',
+                    points: [
+                      {
+                        text: 'Bear in mind, by reference to the relevant rules in O.18:',
+                        points: [
+                          'The FORMALITIES — O.18 r.6.',
+                          'The specific matters which MUST be pleaded — O.18 rr.8, 12 and 15.',
+                          'The matters which MAY be pleaded — O.18 r.11, points of law.',
+                          'The matters which SHOULD NOT be pleaded — O.18 r.7(1), evidence and immaterial facts, and legal argument.',
+                        ],
+                      },
+                      'That list is the LG4 material being put to work. If you cannot place a paragraph in one of those four categories, it probably does not belong.',
+                    ],
+                  },
+                  {
+                    id: 'review',
+                    label: 'Step 8 — review the completed draft, against questions and then against the Guide',
+                    points: [
+                      'Is it logical? Can the intended reader follow it?',
+                      'Are its contents, including those reflecting the client’s instructions, accurate?',
+                      'Does it contain everything that needs or should be included?',
+                      'Are further instructions from the client required?',
+                      'Are there any typographical or grammatical mistakes?',
+                      'Can certain sentences or phrases be expressed more precisely and concisely?',
+                      'Does it read convincingly?',
+                      'Then run the Pleadings Drafting Guide over it as a checklist, and amend where necessary.',
+                    ],
+                  },
+                  {
+                    id: 'client',
+                    label: 'Step 9 — to the client',
+                    points: [
+                      'Send the finalised draft to the client for approval and comments, and amend where necessary.',
+                      'EXPLAIN THE STATEMENT OF TRUTH to the client, who should sign it.',
+                      'That explanation is not a courtesy. Where the legal representative signs instead, O.41A r.4(3) treats the signature as a statement that the party authorised it, that the explanation was given before signing, and that the party was told the possible consequences of a statement made without honest belief.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The succinct summary is 2-3 sentences and it is a real step, not a warm-up. If you cannot write it, the analysis is not finished.',
+                'Step 6’s skeletal plan is in POINT FORM. Exam questions frequently ask for the plan, or for an extract of the plan and an extract of the draft — read what is asked for before writing prose.',
+                'Step 8 is where the further-instructions questions are settled, before the draft goes out — not after the client has queried it.',
+                'The CLIENT signs the statement of truth. The lawyer signs only where it cannot conveniently be signed by the client.',
+                'Steps 1 and 9 both involve the client. The drafting in between is only the middle of the job.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'When asked for a skeletal plan, answer in the appendix’s step headings with point form under each. That is the form the model answers take, and it makes the coverage visible.',
+                'Keep the square-bracket queries in the plan; they earn marks because they show the further instructions were spotted.',
+                'When asked for "an extract covering Steps 2 to 4", give exactly those steps — not a whole pleading, and not a narrative.',
+                'Write the succinct summary before the draft, and read the finished draft back against it.',
+                'Note in the plan, in brackets, any deliberate departure from the appendix order and why.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Drafting straight from the instructions, skipping the analysis and the plan.',
+                'Producing a full statement of claim when the question asked for a skeletal plan extract.',
+                'Leaving the statement of truth unexplained, or having the solicitor sign it as a matter of course.',
+                'Treating Step 8 as proofreading rather than as a checklist pass against the drafting guide.',
+                'Resolving a factual gap by assumption instead of listing it as a further instruction.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Step', 'What it produces', 'Where the rule or tool comes from'],
+                rows: [
+                  ['1 — Gather', 'All background facts, investigations and research', 'LG5 Lecture Outline, Part C'],
+                  ['2 — Organise', 'Dramatis Personae and chronology; the factual issues', 'Appendices 1 and 2'],
+                  ['3 — Legal issues', 'Causes of action, remedies, parties, and the legal ingredients of each', 'LG5 Lecture Outline, Part C'],
+                  ['4 — Analyse', 'The 5-Level Case Analysis grid', 'Appendices 3 and 4'],
+                  ['5 — Summarise', 'A succinct summary of the claim in 2-3 sentences', 'Appendix 5'],
+                  ['6 — Plan', 'A skeletal plan in point form, from the Level 4 material facts', 'Appendices 6 and 7'],
+                  ['7 — Draft', 'The statement of claim', 'O.18 r.6 (formalities); rr.8, 12, 15 (must); r.11 (may); r.7(1) (must not)'],
+                  ['8 — Review', 'An amended draft that satisfies the Guide', 'Appendix 8'],
+                  ['9 — Client', 'An approved, verified pleading', 'O.41A rr.3 and 4(3)'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'drafting-guide-criteria', label: 'The Pleadings Drafting Guide' },
+              { session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+              { session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+            ],
+          },
+
+          {
+            id: 'contract-claim-structure',
+            title: 'Basic structure for a contractual claim',
+            summary: 'Appendix 6’s eleven steps — parties, contract, terms, D’s knowledge, performance, breach, consequences, loss, interest, prayer, verification.',
+            triggers: {
+              bullets: [
+                'The claim is for damages for breach of contract and you need the paragraph order.',
+                'The contract was made orally, or partly orally and partly in writing.',
+                'The terms relied on are implied rather than express.',
+                'The loss claimed goes beyond the price — lost profits, expenses, compensation paid to a third party.',
+                'The contract was varied after it was made.',
+                'The parties contracted through agents.',
+                'P has terminated and wants to say so in the pleading.',
+                'P incurred expenses trying to limit its loss and wants them back.',
+                'The claim is to enforce a term for a fixed sum rather than for damages.',
+              ],
+              routes: [
+                { when: 'The claim is in tort rather than contract', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+                { when: 'You have not yet worked out the ingredients', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'The interest, prayer or jurisdiction plea is the point', session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+                { when: 'You want to see it done on a full set of facts', session: 'LG5', issue: 'worked-contract-claim', label: 'Worked example: the commercial dishwashers claim' },
+                { when: 'The question is which matters must be pleaded specifically', session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Appendix 6, step by step',
+                steps: [
+                  {
+                    id: 's1',
+                    label: 'Step 1 — Introduction to parties and necessary background',
+                    points: [
+                      'Save in a very simple claim, it is customary to give a brief introduction to the parties and some necessary background. Keep it CONCISE and avoid irrelevant details.',
+                      'Sometimes certain background facts are necessary ingredients of P’s claim, and so are material facts that HAVE to be pleaded — if P claims for the loss of his property, he must plead his ownership of it.',
+                      'Where there is nothing of significance to say about the parties or the background, Step 1 can be skipped.',
+                      'In practice this is the "At all material times" paragraph: incorporation, the business each party carries on, and — where the contract was made through agents — each individual’s authority to act for and on behalf of his company.',
+                    ],
+                  },
+                  {
+                    id: 's2',
+                    label: 'Step 2 — The contract',
+                    points: [
+                      {
+                        text: 'The material facts relating to the contract generally include:',
+                        points: [
+                          '(a) the parties to the contract.',
+                          '(b) the date of the contract — if it cannot be precisely ascertained, give an approximate date by saying "On or about ...".',
+                          '(c) how the contract was made — orally, in writing, or by conduct; or, for example, partly oral and partly in writing.',
+                          '(d) the subject matter of the contract.',
+                          '(e) the consideration.',
+                        ],
+                      },
+                      'If the contract is wholly or partly IN WRITING, identify the document(s) in which it is contained.',
+                      'If the contract is wholly or partly ORAL, give particulars as to the oral part — how, when, where and between whom the contract was made.',
+                      'If the parties acted through AGENTS in agreeing the contract, say so, and identify the agents and the principals.',
+                      'Where the contract has been altered or modified by a subsequent agreement, plead the ORIGINAL contract first and then the VARIATION (which also needs to be supported by consideration). In a simple case where nothing significant arises from the history and the variation is unlikely to be in dispute, go straight to the varied contract.',
+                      'O.18 r.7(2) governs how the oral part is pleaded: the PURPORT of the conversation, briefly stated — not the precise words, unless the words are themselves material.',
+                    ],
+                  },
+                  {
+                    id: 's3',
+                    label: 'Step 3 — The material terms',
+                    points: [
+                      'Plead any other material terms not already covered at Step 2.',
+                      'A term is MATERIAL if it is one P intends to rely upon for his claim — a term allegedly breached by D, or a term which entitles P to the relief or remedy sought.',
+                      'State whether the term is EXPRESS or IMPLIED, and set out the substance of the term.',
+                      'If it is an implied term, generally give particulars of the facts and matters — and the statutory provision, if any — relied on as giving rise to the implied term.',
+                      'If the term is a CONDITION of the contract and P claims repudiation for breach of a condition, say "condition" instead of "term".',
+                      'Avoid the ineffective and unnecessary plea "P will refer to all other terms and conditions of the agreement at trial": Citibank N.A. (Nominees) Ltd v Deacon Te-ken Chiu [1983] HKLR 121 (CA).',
+                    ],
+                  },
+                  {
+                    id: 's4',
+                    label: 'Step 4 — D’s knowledge',
+                    points: [
+                      'Where P relies on D’s knowledge of certain facts, or on any special circumstances, to show that the loss suffered was reasonably within the parties’ contemplation AT THE TIME OF CONTRACT as a likely consequence of the breach, P MUST plead those facts, that knowledge and those special circumstances.',
+                      'This may be more conveniently pleaded before Step 2, or between Steps 2 and 3. The Exercise 1 model does exactly that — the pre-contract telephone conversation comes before the express terms, because the terms were agreed in the same call.',
+                      'Skip this step if it is not applicable to the case.',
+                      'Without it, consequential heads of loss have no pleaded foundation. This is the step most often missed.',
+                    ],
+                  },
+                  {
+                    id: 's5',
+                    label: 'Step 5 — Material events after the contract',
+                    points: [
+                      'Plead performance of the contract on P’s part where necessary or appropriate — P has paid the price; P has given D the required notification for delivery of the goods.',
+                      'Plead performance on D’s part where necessary or appropriate — D has delivered part of the goods to P.',
+                      'This is where the express terms pleaded at Step 3 earn their place: performance is pleaded by reference to them.',
+                    ],
+                  },
+                  {
+                    id: 's6',
+                    label: 'Step 6 — D’s breach',
+                    points: [
+                      'Identify PRECISELY and WITH PARTICULARS how D has fallen short of the contractual promise.',
+                      'Generally start by alleging that D was in breach of contract, and then set out clearly D’s acts or omissions constituting the breach.',
+                      'If P wants to allege that the breach gives P a right to treat the contract as at an end and P has accordingly terminated, plead that D has REPUDIATED the contract and that P has ACCEPTED the repudiation, giving the necessary particulars.',
+                      'In practice: one paragraph alleging breach of the identified terms, then a "PARTICULARS OF BREACH" sub-heading listing the specific defects or failures.',
+                    ],
+                  },
+                  {
+                    id: 's7',
+                    label: 'Step 7 — Material events after D’s breach',
+                    points: [
+                      'What happened as a result of the breach, which leads to the loss and damage suffered by P?',
+                      'It is generally NOT necessary for P to plead that it has reasonably mitigated its loss — failure to mitigate is for D to raise in the Defence if D wishes to.',
+                      'BUT if P wants to rely on acts done in mitigation — for instance to claim the expenses incurred in attempting to mitigate — set out those facts and particulars HERE.',
+                      'If P is alleging repudiation and acceptance, that can equally be pleaded here with its particulars.',
+                    ],
+                  },
+                  {
+                    id: 's8',
+                    label: 'Step 8 — The loss and damage',
+                    points: [
+                      'Plead that the loss and damage arise AS A RESULT of D’s breach.',
+                      'Briefly identify EACH HEAD of loss separately.',
+                      'State the amount under each head, and where applicable show how the figure is arrived at. State any deduction allowed.',
+                      'If the amount of damages cannot be quantified at the pleading stage, it is permissible to plead words to the effect that particulars of damages are to be supplied later — or after a particular stage of the proceedings, such as after discovery.',
+                      'Distinguish LIQUIDATED claims from UNLIQUIDATED damages. If you are not claiming damages for breach but enforcing a term — a liquidated sum under a guarantee or agreement — avoid the words "loss and damage".',
+                      'In practice this is a "PARTICULARS OF DAMAGES" table, one head of loss per row, with a total.',
+                    ],
+                  },
+                  {
+                    id: 's9to11',
+                    label: 'Steps 9-11 — Interest, prayer for relief, statement of truth',
+                    points: [
+                      'Step 9 — interest: discretionary interest under s48 HCO (or s49 DCO) may be set out in the body and the prayer, or in the prayer alone; ALL other claims for interest must be pleaded in the body with the facts and matters they depend on.',
+                      'Step 10 — prayer for relief: summarise all the relief sought at the end (O.18 r.15); the sum claimed if liquidated, or "Damages" if unliquidated; interest; costs; and, in a District Court action, the Practice Direction 27 jurisdiction plea as the last paragraph before the prayer.',
+                      'Step 11 — statement of truth: signed by the party or his legal representative (O.41A r.3(1)(b)), though in general the lawyer should not sign unless the client cannot conveniently do so; a director, manager or secretary for a corporation (O.41A rr.3(2) and (4)); a partner or a person with the control or management of the business for a partnership (O.41A r.3(6)); and, if a legal representative signs, in his own name and not the firm’s (O.41A r.3(10)).',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Step 4 is the step that is skipped and should not be. Without D’s knowledge pleaded, lost profits, a discount given to a customer and compensation paid to a third party have nothing establishing their recoverability.',
+                'The order of Steps 2, 3 and 4 is flexible, and the model draft reorders them. What matters is that all three are there.',
+                'A term is material only if P relies on it — but an express term can still be worth pleading because P’s own performance will be pleaded by reference to it. Say so in the plan when you do that.',
+                '"Condition" is a deliberate word: use it only where repudiation for breach of a condition is being claimed.',
+                'Mitigation cuts both ways. P need not plead that it mitigated, but P must plead the acts if it wants the cost of them.',
+                'Do not plead D’s exclusion clauses for it. Whether terms sent after an oral contract was concluded were incorporated at all is D’s point to take in its Defence.',
+                'Citibank N.A. (Nominees) Ltd v Deacon Te-ken Chiu [1983] HKLR 121 (CA) is the authority for not sweeping up with "all other terms and conditions".',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Define your terms once, in brackets, at first use — "the Agreement", "the Dishwashers" — and never vary them afterwards.',
+                'Use "At all material times" for standing facts in the introduction, and dates for events.',
+                'Give each implied term its statutory source in the same paragraph as the term.',
+                'Put PARTICULARS OF BREACH and PARTICULARS OF DAMAGES under their own headings — the Drafting Guide marks headings and paragraphing.',
+                'Express dates, sums and other numbers in figures and not in words: O.18 r.6(3).',
+                'Plead the agency expressly where individuals contracted for companies: who acted, for whom, and with what authority.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Pleading the breach without first pleading the term that was breached.',
+                'Claiming consequential loss with no pleaded knowledge or special circumstances.',
+                'Sweeping up with "P will refer to all other terms and conditions of the agreement at trial".',
+                'Alleging breach with no particulars of breach.',
+                'Pleading a single global damages figure with no breakdown by head.',
+                'Using "loss and damage" for a liquidated sum claimed under a term.',
+                'Reproducing the precise words of the pre-contract conversation rather than its purport.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Without prejudice to paragraph (1), the effect of any document or the purport of any conversation referred to in the pleading must, if material, be briefly stated, and the precise words of the document or conversation must not be stated, except in so far as those words are themselves material.', cite: 'O.18 r.7(2), Rules of the High Court (Cap. 4A)' },
+                { text: 'Dates, sums and other numbers must be expressed in a pleading in figures and not in words.', cite: 'O.18 r.6(3), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Step', 'What is pleaded', 'Rule or authority'],
+                rows: [
+                  ['1 — Parties and background', 'Concise introduction; background facts that are themselves ingredients (e.g. ownership); agents’ authority', 'Appendix 6 Step 1'],
+                  ['2 — The contract', 'Parties, date, how made, subject matter, consideration; documents if written; particulars of the oral part; agency; original contract then variation', 'Appendix 6 Step 2; O.18 r.7(2)'],
+                  ['3 — Material terms', 'Express or implied, with the substance of each; the statutory provision for an implied term; "condition" where repudiation is claimed', 'Appendix 6 Step 3'],
+                  ['No sweeping-up plea', 'Citibank N.A. (Nominees) Ltd v Deacon Te-ken Chiu [1983] HKLR 121 (CA)', 'Avoid "P will refer to all other terms and conditions of the agreement at trial"'],
+                  ['4 — D’s knowledge', 'The facts, knowledge and special circumstances bringing the loss within the parties’ contemplation at the time of contract', 'Appendix 6 Step 4'],
+                  ['5 — Performance', 'Performance by P, and by D, where necessary or appropriate', 'Appendix 6 Step 5'],
+                  ['6 — Breach', 'The allegation of breach, then the particulars of breach; repudiation and acceptance if relied on', 'Appendix 6 Step 6; O.18 r.12(1)'],
+                  ['7 — After the breach', 'What followed; acts done in mitigation only if their cost is claimed', 'Appendix 6 Step 7'],
+                  ['8 — Loss and damage', 'Each head separately, with amounts and workings; deductions; particulars to follow if unquantifiable; liquidated vs unliquidated', 'Appendix 6 Step 8'],
+                  ['9-11 — Endings', 'Interest, prayer for relief, statement of truth', 'O.18 r.15; O.41A r.3'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'worked-contract-claim', label: 'Worked example: the commercial dishwashers claim' },
+              { session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+            ],
+          },
+
+          {
+            id: 'tort-claim-structure',
+            title: 'Basic structure for a tortious claim',
+            summary: 'Appendix 7’s nine steps, the neutral-accident rule at Step 2, separate particulars per defendant, and O.18 r.7A where there is a conviction.',
+            triggers: {
+              bullets: [
+                'The claim is in negligence and you need the paragraph order.',
+                'There are two defendants — a tortfeasor and an employer.',
+                'The duty arises under a statute rather than at common law.',
+                'The facts mention a prosecution, a conviction or a notice of prosecution.',
+                'Someone was injured, not just property damaged.',
+                'The claim is on occupier’s liability, employer’s liability or passing off, where the relationship itself has to be pleaded.',
+                'A draft describes the accident in language full of "negligently" and "recklessly".',
+                'The losses cannot all be quantified yet.',
+              ],
+              routes: [
+                { when: 'The claim is contractual rather than tortious', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'You have not yet worked out the ingredients', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'You want to see it done on a full set of facts', session: 'LG5', issue: 'worked-tort-claim', label: 'Worked example: the shopfront collision claim' },
+                { when: 'The interest, prayer or jurisdiction plea is the point', session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+                { when: 'The question is what the defendant must admit, deny or not admit', session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Appendix 7, step by step',
+                steps: [
+                  {
+                    id: 's1',
+                    label: 'Step 1 — Introduction to parties and necessary background',
+                    points: [
+                      'Save in a very simple claim, give a brief, concise introduction to the parties and the necessary background.',
+                      {
+                        text: 'Very often the RELATIONSHIP between the parties must be set out, because it forms the basis for the existence of the duty:',
+                        points: [
+                          'Occupier’s liability — it is material that D was the occupier and P the visitor.',
+                          'An employer’s statutory or common law duty — it is material that D was P’s employer.',
+                          'Vicarious liability — it is material that the tortfeasor is the servant or agent of D.',
+                        ],
+                      },
+                      'In some cases the factual basis for the duty, or for the right D has infringed, must be stated first. In passing off, P should first identify the goodwill owned, and later plead D’s misrepresentation and the damage to that goodwill.',
+                      'Where there is nothing of significance to say, Step 1 can be skipped.',
+                    ],
+                  },
+                  {
+                    id: 's2',
+                    label: 'Step 2 — The accident or event leading to the claim',
+                    points: [
+                      'Describe the accident or event SUCCINCTLY: the parties’ roles, the date, the time, the location, and what happened to cause the accident or event, with particulars.',
+                      'At this stage, AVOID IF POSSIBLE making any allegation of negligence or breach.',
+                      'Describe the event in a NEUTRAL manner, so that hopefully D will ADMIT it.',
+                      'There is a pleading consequence behind that tactic: an allegation of fact is deemed admitted unless traversed (O.18 r.13(1)), so a paragraph D has no reason to deny is an issue removed from the trial.',
+                      'This is also where the facts founding vicarious liability go — that D1 was acting in the course of his employment with D2 at the time.',
+                    ],
+                  },
+                  {
+                    id: 's3',
+                    label: 'Step 3 — The existence and scope of duty',
+                    points: [
+                      'Identify the specific duty that was breached by D, and set out its scope.',
+                      'If the duty arose under statute, identify the relevant statutory provision(s).',
+                      'In simple cases where the duty and its scope are obvious, or non-controversial, or do not involve statutory provisions — traffic accident cases are the example given — Step 3 may be SKIPPED.',
+                    ],
+                  },
+                  {
+                    id: 's4',
+                    label: 'Step 4 — D’s negligence or breach',
+                    points: [
+                      'NOW make clear allegations of negligence and/or breach, in plain and descriptive language, so that D will understand the case being made against it.',
+                      'Identify precisely and with particulars how D has fallen short of the duty of care.',
+                      'Generally start by alleging that the accident or event was CAUSED BY D’s negligence or breach of duty.',
+                      'Then set out the PARTICULARS of negligence or breach of duty, listing all D’s specific acts or omissions constituting the breach.',
+                      'If two or more specific duties are breached, use a SEPARATE PARAGRAPH for each breach of duty.',
+                      'If two or more defendants are involved, the allegations of the separate acts and omissions of EACH defendant should be set out in DIFFERENT PARAGRAPHS — the model draft uses lettered headings, "PARTICULARS OF NEGLIGENCE OF THE 1ST DEFENDANT" and then the 2nd.',
+                      'O.18 r.7A: if P wishes to adduce evidence that D was convicted of an offence before a court in Hong Kong, P MUST include in the pleading a statement of that intention, with particulars of the conviction and its date, the court which made the conviction, and the issue in the proceedings to which the conviction is relevant.',
+                    ],
+                  },
+                  {
+                    id: 's5',
+                    label: 'Step 5 — Material events after D’s breach',
+                    points: [
+                      'What happened as a result of the breach, which leads to the loss and damage suffered by P?',
+                      'This step may be SKIPPED if it has already been set out under Step 2.',
+                      'In practice it is the "As a result of the Collision ..." paragraph — what was destroyed or damaged — and then a second paragraph for what P had to do about each of those things.',
+                    ],
+                  },
+                  {
+                    id: 's6',
+                    label: 'Step 6 — The loss and damage',
+                    points: [
+                      'Plead that the loss and damage arise as a result of the accident or of D’s breach.',
+                      'Briefly identify each head of loss separately, and state the amount under each head, showing how the figure is arrived at where applicable.',
+                      'If the amount cannot be quantified at the pleading stage, it is permissible to plead that particulars of damages are to be supplied later.',
+                      'PERSONAL INJURIES actions need more: summarily describe the injuries suffered, ATTACH the medical report(s) relied upon, and file a STATEMENT OF SPECIAL DAMAGES — a separate document with greater detail on the injuries and a breakdown of the damages sought. See O.18 rr.12(1A) and (1C), and Practice Direction 18.1.',
+                    ],
+                  },
+                  {
+                    id: 's7to9',
+                    label: 'Steps 7-9 — Interest, prayer for relief, statement of truth',
+                    points: [
+                      'Step 7 — interest: normally P can claim only DISCRETIONARY interest in a tortious claim, under s48 HCO (or s49 DCO). It may be set out in the body and the prayer, or in the prayer alone.',
+                      'Step 8 — prayer for relief: summarise all the relief sought (O.18 r.15); normally the primary claim is for damages, plus interest and costs; add the Practice Direction 27 jurisdiction plea in a District Court action.',
+                      'Step 9 — statement of truth, on the same O.41A r.3 rules as a contractual claim.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Step 2 neutral, Step 4 pointed. Getting that the wrong way round is the commonest structural error in a tort draft — an accident paragraph loaded with "negligently" gives D a reason to deny what it would otherwise have admitted.',
+                'Step 3 is skippable in traffic accident cases. Do not spend paragraphs establishing a duty nobody disputes.',
+                'Vicarious liability needs BOTH facts pleaded: the employment relationship, and that the tortfeasor was acting in the course of employment at the time.',
+                'Where the employer is ALSO primarily negligent, that is a separate allegation with its own particulars. Do not fold it into vicarious liability — they are different ingredients.',
+                'O.18 r.7A is a MUST, not a may, and it is easy to miss where the facts mention a prosecution. Where a prosecution is only a possibility, it is a further-instructions point and an amendment later.',
+                'The personal-injuries machinery in O.18 r.12(1A)-(1C) applies only where personal injuries are claimed. A pure property-damage claim does not carry it.',
+                'Where a damaged item is replaced with something better than what was lost, betterment is a real issue — raise it with the client rather than pleading the full replacement cost unexamined.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Write the particulars of negligence as a list of failures, each beginning with a verb — "failing to keep any or any proper look-out", "driving whilst physically unfit to do so".',
+                'Use the "any or any proper" formula where the allegation is that the thing was not done at all, or not done adequately.',
+                'Plead a breach of a guideline or standard by naming the guideline and saying what it sets.',
+                'Keep the accident paragraph to date, time, place, roles and mechanism — nothing evaluative.',
+                'Give the accident a defined term ("the Collision") at Step 2 and use it for the rest of the pleading.',
+                'Where a fact is not yet known — a registration number, the exact dates of the repair works — leave a visible placeholder and list it as a further instruction.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Alleging negligence in the accident paragraph.',
+                'Pleading one undifferentiated set of particulars against two defendants.',
+                'Omitting the course-of-employment averment where vicarious liability is relied on.',
+                'Forgetting the O.18 r.7A statement and particulars where there has been a conviction.',
+                'Attaching the personal-injuries machinery to a pure property-damage claim, or omitting it from a personal injuries one.',
+                'Spending paragraphs on duty in a road traffic case.',
+                'Inventing a figure for a loss the client has not yet quantified, instead of reserving particulars.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Subject to paragraph (6), an allegation of fact made by a party in his pleading is deemed to be admitted by the opposite party unless it is traversed by that party in his pleading or a joinder of issue under rule 14 operates as a non-admission of it.', cite: 'O.18 r.13(1), Rules of the High Court (Cap. 4A)' },
+              ],
+              table: {
+                headers: ['Step', 'What is pleaded', 'Rule or authority'],
+                rows: [
+                  ['1 — Parties and background', 'The relationship founding the duty — occupier and visitor, employer and employee, principal and servant or agent; the goodwill in passing off', 'Appendix 7 Step 1'],
+                  ['2 — The accident', 'Roles, date, time, location, mechanism, with particulars — described NEUTRALLY so D may admit it', 'Appendix 7 Step 2; O.18 r.13(1)'],
+                  ['3 — Duty and its scope', 'The specific duty and its scope; the statutory provision if the duty is statutory. Skippable where obvious (e.g. traffic accidents)', 'Appendix 7 Step 3'],
+                  ['4 — Negligence or breach', 'The allegation that the accident was caused by D’s negligence, then particulars; a separate paragraph per duty and per defendant', 'Appendix 7 Step 4; O.18 r.12(1)'],
+                  ['Convictions', 'O.18 r.7A(1)', 'A statement of the intention to adduce the conviction, with particulars of the conviction and its date, the court, and the issue to which it is relevant'],
+                  ['5 — After the breach', 'What resulted from the breach; skippable if already in Step 2', 'Appendix 7 Step 5'],
+                  ['6 — Loss and damage', 'Each head separately with amounts and workings; particulars to follow if unquantifiable', 'Appendix 7 Step 6'],
+                  ['Personal injuries extras', 'O.18 rr.12(1A) and (1C); Practice Direction 18.1', 'A medical report substantiating all the injuries alleged, and a statement of the special damages claimed, served with the statement of claim'],
+                  ['7-9 — Endings', 'Discretionary interest under s48 HCO or s49 DCO; prayer for relief; statement of truth', 'O.18 r.15; O.41A r.3'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'worked-tort-claim', label: 'Worked example: the shopfront collision claim' },
+              { session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+              { session: 'LG4', issue: 'defence-counterclaim-and-reply', label: 'Defence, counterclaim and reply' },
+            ],
+          },
+
+          {
+            id: 'interest-and-prayer',
+            title: 'Interest, the prayer for relief and the District Court plea',
+            summary: 'Where interest goes and where it must not, what the prayer has to contain, and the extra paragraph a District Court action needs.',
+            triggers: {
+              bullets: [
+                'Interest is wanted and the question is where in the pleading it goes.',
+                'The claim is for contractual interest rather than discretionary interest.',
+                'The action is in the District Court.',
+                'A draft prayer claims damages but not interest, or not costs.',
+                'The question asks what the closing paragraphs of a statement of claim should be.',
+                'A remedy the client wants does not appear at the end of the draft.',
+                'The draft adds "further or other relief" and you are asked whether that saves anything.',
+                'The claim is liquidated and the draft claims "Damages".',
+              ],
+              routes: [
+                { when: 'The issue is the prayer’s relationship to the writ, or the date of issue', session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+                { when: 'The issue is what must be pleaded specifically in general', session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+                { when: 'You are drafting a contractual claim end to end', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'You are drafting a tortious claim end to end', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+                { when: 'The question is who signs the verification', session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Ending the pleading properly',
+                steps: [
+                  {
+                    id: 'interest',
+                    label: 'Interest: which kind is it?',
+                    points: [
+                      'DISCRETIONARY interest is claimed under s48 of the High Court Ordinance (Cap. 4), or s49 of the District Court Ordinance (Cap. 336) in a District Court action.',
+                      'For discretionary interest, some practitioners set the claim out BOTH in the body of the statement of claim AND in the prayer; some set it out ONLY in the prayer. BOTH are acceptable: Prague Enterprises Ltd v Chan Miu Cheung [1994] 3 HKC 175 (CA).',
+                      'ALL OTHER claims for interest — contractual interest being the obvious one — require the facts and matters on which they depend to be set out, and MUST be pleaded IN THE BODY of the pleading, not only in the prayer.',
+                      'Read that alongside O.18 r.8(4), which requires a party to plead specifically any claim for interest under s48 "or otherwise". The safe course, and the one both model drafts take, is a body paragraph claiming interest AND a line in the prayer.',
+                      'In a tortious claim, normally only discretionary interest is available.',
+                    ],
+                  },
+                  {
+                    id: 'prayer',
+                    label: 'The prayer for relief',
+                    points: [
+                      'Summarise ALL the relief sought at the end: O.18 r.15.',
+                      'Set out the SUM CLAIMED if it is a liquidated demand, or claim "Damages" if the claim is unliquidated.',
+                      'Claim interest.',
+                      'It is customary to expressly ask for "Costs", though O.18 r.15(1) says costs need not be specifically claimed.',
+                      'Some practitioners add "Further or other relief". It generally has NO LEGAL EFFECT, because all the relief claimed must be specifically pleaded.',
+                      'The reason the prayer matters: the Court cannot grant relief which has not been claimed at all — Belmont Finance Corp Ltd v Williams Furniture Ltd [1979] Ch 250, [1978] 1 All ER 118.',
+                    ],
+                  },
+                  {
+                    id: 'dc',
+                    label: 'If the action is in the District Court, add the jurisdiction plea',
+                    points: [
+                      'Practice Direction 27 §4 requires all writs and originating summonses to contain a plea that the relief sought does fall within the jurisdiction of the District Court, specifying the jurisdiction-conferring section(s) of the District Court Ordinance (Cap. 336) or other enactment.',
+                      'It can conveniently be inserted as the LAST PARAGRAPH of the statement of claim, before the prayer for relief.',
+                      'The current Practice Direction 27 is dated 5 June 2025 and took effect on 20 June 2025 — check the wording against the current version rather than an outline’s paraphrase of it.',
+                      'No equivalent plea is needed in the Court of First Instance.',
+                    ],
+                  },
+                  {
+                    id: 'truth',
+                    label: 'Then the statement of truth — the document is not finished at the prayer',
+                    points: [
+                      'A pleading must be verified by a statement of truth: O.18 r.20A(1).',
+                      'The form is prescribed by O.41A r.5(1): "[I believe] [the (plaintiff or as may be) believes] that the facts stated in this [name document being verified] are true.".',
+                      'Who signs is an O.41A r.3 question: the party, or his legal representative, but the lawyer should not sign unless it cannot conveniently be signed by the client.',
+                      'A corporation: a person holding a senior position — a director, manager, secretary or other similar officer — who must state the office or position held (O.41A rr.3(2), (4)(a) and (5)).',
+                      'A partnership: one of the partners, or a person having the control or management of the partnership business (O.41A r.3(6)).',
+                      'A legal representative who signs must sign in his OWN NAME, not only in the name of the firm (O.41A r.3(10)).',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Court cannot grant relief which has not been claimed at all. The prayer is therefore the paragraph to check FIRST, not last.',
+                'Discretionary interest is the only kind that may live in the prayer alone. Contractual interest cannot.',
+                'O.18 r.8(4) and the Prague Enterprises practice sit slightly awkwardly together — pleading interest in the body as well as in the prayer satisfies both, at no cost.',
+                '"Further or other relief" is not a safety net for a remedy you forgot.',
+                'The District Court jurisdiction plea comes from a Practice Direction, not from the Rules — but it applies to every District Court writ, and the outline’s wording of it differs slightly from the current Practice Direction.',
+                'Match the ordinance to the court: s48 HCO in the Court of First Instance, s49 DCO in the District Court. The two model drafts do exactly that, and for that reason.',
+                'A liquidated claim asks for the sum; an unliquidated claim asks for "Damages". Do not blur them.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Draft the prayer from the client’s list of objectives, not from the body of the pleading — that is how you catch a remedy that never got pleaded.',
+                'Claim damages, interest and costs as three numbered items.',
+                'Name the ordinance and section in the body paragraph: "pursuant to section 48 of the High Court Ordinance".',
+                'Check which court the action is in before you check the section number.',
+                'In a District Court draft, write the jurisdiction paragraph in as soon as you start, so it cannot be forgotten at the end.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Pleading contractual interest only in the prayer.',
+                'Citing s48 HCO in a District Court action, or s49 DCO in the Court of First Instance.',
+                'Omitting costs, or relying on "further or other relief" to cover an unpleaded remedy.',
+                'Leaving out the District Court jurisdiction paragraph.',
+                'Stopping at the prayer and omitting the statement of truth.',
+                'Having the solicitor sign the statement of truth where the client could conveniently have signed it.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'A party must plead specifically any claim for interest under section 48 of the Ordinance or otherwise.', cite: 'O.18 r.8(4), Rules of the High Court (Cap. 4A)' },
+                { text: 'A statement of claim must state specifically the relief or remedy which the plaintiff claims; but costs need not be specifically claimed.', cite: 'O.18 r.15(1), Rules of the High Court (Cap. 4A)' },
+                { text: 'All writs and originating summonses should contain a plea that the relief sought does fall within the jurisdiction of the District Court, specifying which jurisdiction-conferring section(s) of the District Court Ordinance (Cap. 336) or other enactment shall apply to the case.', cite: 'Practice Direction 27, §4 (dated 5 June 2025, in effect 20 June 2025)' },
+              ],
+              table: {
+                headers: ['Point', 'Source', 'What it actually provides'],
+                rows: [
+                  ['Discretionary interest', 's48, High Court Ordinance (Cap. 4); s49, District Court Ordinance (Cap. 336)', 'The Court’s discretionary power to award interest on debt and damages — the only interest normally available in a tortious claim'],
+                  ['Where discretionary interest may be pleaded', 'Prague Enterprises Ltd v Chan Miu Cheung [1994] 3 HKC 175 (CA)', 'Both in the body and in the prayer, or in the prayer alone; both are acceptable'],
+                  ['All other interest claims', 'Appendix 6 Step 9', 'The facts and matters on which they depend must be set out, and they must be pleaded in the body, not only in the prayer'],
+                  ['Plead interest specifically', 'O.18 r.8(4)', 'Any claim for interest under s48 of the Ordinance or otherwise must be pleaded specifically'],
+                  ['The prayer', 'O.18 r.15(1)', 'The relief or remedy must be stated specifically; costs need not be'],
+                  ['Relief never claimed', 'Belmont Finance Corp Ltd v Williams Furniture Ltd [1979] Ch 250, [1978] 1 All ER 118', 'The Court cannot grant relief which has not been claimed at all'],
+                  ['District Court jurisdiction plea', 'Practice Direction 27, §4', 'Every District Court writ and originating summons pleads that the relief falls within the District Court’s jurisdiction, specifying the jurisdiction-conferring section(s)'],
+                  ['Verification', 'O.18 r.20A(1); O.41A r.5(1)', 'The pleading must be verified by a statement of truth, in the prescribed form'],
+                  ['Who signs', 'O.41A rr.3(1)(b), (2), (4)(a), (5), (6), (10)', 'The party or his legal representative; a senior officer for a corporation, stating the position held; a partner or manager for a partnership; a lawyer signs in his own name, not the firm’s'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'statement-of-claim', label: 'Drafting the statement of claim' },
+              { session: 'LG4', issue: 'statement-of-truth', label: 'The statement of truth' },
+              { session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+              { session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+            ],
+          },
+
+          {
+            id: 'drafting-guide-criteria',
+            title: 'The Pleadings Drafting Guide — what the draft is marked against',
+            summary: 'Appendix 8: Presentation 30%, Contents 40%, Overall 30% — and how to run it over a draft as a checklist.',
+            triggers: {
+              bullets: [
+                'You have finished a draft and are at Step 8 of the process.',
+                'The question asks you to review and critique a sample draft.',
+                'The question asks what makes a good statement of claim.',
+                'A draft is legally accurate but hard to follow.',
+                'A draft contradicts itself on a date or a figure.',
+                'A draft argues the law instead of pleading facts.',
+                'You are marking your own practice attempt.',
+              ],
+              routes: [
+                { when: 'The problem is that a paragraph is evidence or legal argument', session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+                { when: 'The problem is the heading, numbering, indorsement or signature', session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+                { when: 'The problem is a missing particular', session: 'LG4', issue: 'pleading-specifically-and-particulars', label: 'Matters to be pleaded specifically, and particulars' },
+                { when: 'The problem is that the pleading is bad in principle', session: 'LG4', issue: 'striking-out', label: 'Striking out a pleading' },
+                { when: 'The problem is that an ingredient has no material fact behind it', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Running the Guide over a draft',
+                steps: [
+                  {
+                    id: 'presentation',
+                    label: 'Presentation — 30%',
+                    points: [
+                      'Uses correct grammar and spelling.',
+                      'Is succinct and precise.',
+                      'Uses appropriate language.',
+                      {
+                        text: 'Is well-organised:',
+                        points: [
+                          'An appropriate introduction.',
+                          'Appropriate headings and paragraphing.',
+                          'Logical sequencing.',
+                          'A conclusion that flows logically from the text.',
+                        ],
+                      },
+                      'Avoids internal contradictions.',
+                      'Complies fully with all prescribed formalities under O.18 r.6.',
+                    ],
+                  },
+                  {
+                    id: 'contents',
+                    label: 'Contents — 40%',
+                    points: [
+                      'Sets out ALL material facts supporting ALL ingredients of the cause(s) of action.',
+                      'Sets out all necessary particulars of fact as required under O.18 r.12.',
+                      'Sets out the relief claimed.',
+                      'Sets out matters required under O.18 rr.7, 7A and 8.',
+                      'Excludes evidence and immaterial facts.',
+                      'Excludes law and legal arguments — but may raise a point of law.',
+                    ],
+                  },
+                  {
+                    id: 'overall',
+                    label: 'Overall — 30%',
+                    points: [
+                      'Shows a clear understanding of the nature and purpose of pleadings.',
+                      'Sets out a SUSTAINABLE claim.',
+                      'Accurately, coherently, logically and effectively sets out the client’s case.',
+                    ],
+                  },
+                  {
+                    id: 'use',
+                    label: 'How the Guide is meant to be used',
+                    points: [
+                      'Be familiar with the criteria BEFORE you start drafting, and then use the Guide as a CHECKLIST to assess the draft once it is done.',
+                      'Read the weightings. 30% is presentation alone, so spelling, headings and paragraph numbering are worth real marks, not housekeeping.',
+                      'Contents at 40% is the largest block, and its first line is coverage of every ingredient — that is the 5-Level Case Analysis being marked.',
+                      'Overall at 30% asks whether the claim is SUSTAINABLE. A technically tidy pleading of a claim that cannot succeed does not score here.',
+                      'Work the three blocks as three separate passes over the draft, not as one read-through.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Guide is the marking scheme for a drafting question. Use it as one, rather than reading the draft and hoping to notice things.',
+                '"Excludes law and legal arguments (but may raise a point of law)" is a real distinction, not a contradiction: O.18 r.11 permits a point of law to be RAISED; it does not permit it to be argued.',
+                'Internal contradictions are marked separately — check the dates and figures in the body against the particulars of damages and the prayer.',
+                'The formalities referred to are O.18 r.6: the year the writ was issued and the action number, the title of the action, the description of the pleading, the date of service, numbered paragraphs, figures rather than words, the indorsement and the signature.',
+                'O.18 r.7A appears expressly in the Contents criteria. It is easy to forget in a tort draft where a conviction is in the facts.',
+                'A "sustainable claim" means one that would survive O.18 r.19 — so a pleading that discloses no reasonable cause of action fails the Overall block however tidy it looks.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Do a dedicated arithmetic pass: the heads of loss must add to the stated total, and the total must match anything asserted in the body.',
+                'Do a dedicated consistency pass on defined terms, names and dates.',
+                'Read the draft once asking only one question: would D understand the case it has to meet?',
+                'Check every ingredient in your case analysis against a paragraph number in the draft, and write the number down.',
+                'When critiquing someone else’s draft, organise the critique under the Guide’s three headings — it reads as a structured answer rather than a list of gripes.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating presentation as the part that does not matter, when it is 30% of the marks.',
+                'Arguing the law in the pleading.',
+                'A particulars-of-damages table whose rows do not add up to its total.',
+                'Inconsistent defined terms, or the same person named two different ways.',
+                'Reviewing by reading rather than against the criteria.',
+                'Leaving the formalities to chance because the question said "draft an extract".',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Block', 'Criteria', 'Rules engaged'],
+                rows: [
+                  ['Presentation — 30%', 'Grammar and spelling; succinct and precise; appropriate language; well-organised (introduction, headings and paragraphing, logical sequencing, conclusion flowing from the text); no internal contradictions; full compliance with the prescribed formalities', 'O.18 r.6'],
+                  ['Contents — 40%', 'All material facts supporting all ingredients; all necessary particulars of fact; the relief claimed; the matters required by rr.7, 7A and 8; excludes evidence and immaterial facts; excludes law and legal argument, though a point of law may be raised', 'O.18 rr.7, 7A, 8, 11, 12, 15'],
+                  ['Overall — 30%', 'Clear understanding of the nature and purpose of pleadings; a sustainable claim; accurate, coherent, logical and effective setting-out of the client’s case', 'Poon Hau Kei v Hsin Cheong Construction Co Ltd (2004) 7 HKCFAR 148; O.18 r.19'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'drafting-process', label: 'The nine-step drafting process' },
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG4', issue: 'formal-requirements', label: 'Formal requirements for a pleading' },
+              { session: 'LG4', issue: 'material-facts-not-evidence', label: 'Material facts, not evidence' },
+              { session: 'LG4', issue: 'what-pleadings-do', label: 'What pleadings are and why they matter' },
+            ],
+          },
+
+          {
+            id: 'worked-contract-claim',
+            title: 'Worked example: the commercial dishwashers claim',
+            summary: 'Exercise 1 end to end — the analysis, the summary, the skeletal plan and what the draft extract does with them.',
+            triggers: {
+              bullets: [
+                'A contract question turns on goods that did not perform as promised.',
+                'The terms relied on are implied by the Sale of Goods Ordinance rather than agreed expressly.',
+                'The loss claimed includes consequential loss that depends on what the seller was told before contracting.',
+                'The seller’s standard terms arrived after an oral contract had already been concluded.',
+                'The question asks for a skeletal plan extract covering particular steps.',
+                'The claim is being brought in the District Court.',
+                'A figure in the client’s own earlier correspondence does not match the figure the instructions support.',
+              ],
+              routes: [
+                { when: 'You need the step structure rather than the worked example', session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+                { when: 'You need the ingredients grid', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'The interest, prayer or jurisdiction plea is the point', session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+                { when: 'The claim is in tort rather than contract', session: 'LG5', issue: 'worked-tort-claim', label: 'Worked example: the shopfront collision claim' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'The dishwasher claim, step by step',
+                steps: [
+                  {
+                    id: 'facts',
+                    label: 'The facts, compressed',
+                    points: [
+                      'A restaurant company bought two commercial dishwashers from a catering-supplies company under an oral agreement made by telephone between the restaurant’s director and the supplier’s sales director.',
+                      'In that same call the buyer told the seller what the machines were for: a celebrity wedding banquet on a fixed date; a large volume of crockery and cutlery cleaned quickly; the standard of a top-class Hong Kong restaurant; and that poor hygiene can seriously affect a restaurant’s reputation and business.',
+                      'Both machines had defective temperature control modules and one also had a faulty water pump, so the water temperature and pressure were inadequate to clean properly.',
+                      'The restaurant gave a discount to the banquet customer whose guests fell ill, paid to have the machines repaired, and lost regular profits as long-standing customers stopped coming.',
+                    ],
+                  },
+                  {
+                    id: 'analysis',
+                    label: 'The 5-Level Case Analysis',
+                    points: [
+                      'Level 1 contract; Level 2 breach of contract and damages.',
+                      'Ingredient — the contract. Material fact: an oral contract made by telephone between the two named individuals for their respective companies on a stated date, for two identified dishwashers at a stated total price.',
+                      'Ingredient — the material terms. Material fact: the terms implied by the Sale of Goods Ordinance (Cap. 26).',
+                      'Ingredient — breach. Material fact: the machines were neither of merchantable quality nor fit for their purpose.',
+                      'Ingredient — recoverable loss. Material facts: what the seller was told before the contract, and then the three heads of loss.',
+                      'Level 5 evidence: the client; the order confirmation; the repairer’s invoice; the customer’s complaint letter; the parties’ exchange of letters.',
+                    ],
+                  },
+                  {
+                    id: 'summary',
+                    label: 'The succinct summary',
+                    points: [
+                      'One or two sentences: damages for breach of an oral sale-of-goods contract, for failing to supply dishwashers of merchantable quality and/or fit for their purpose.',
+                      'Notice what it leaves out — no dates, no figures, no particulars. It is the SHAPE of the claim, not its content.',
+                    ],
+                  },
+                  {
+                    id: 'plan',
+                    label: 'The skeletal plan, and what its square brackets do',
+                    points: [
+                      'Step 1 introduces both companies, with "[check with client]" and "[conduct a company search]" against the incorporation facts.',
+                      'Step 2 gives the five Step 2 elements — parties, date, mode, subject matter, consideration — and records a drafting decision: the individuals are introduced in the introductory paragraph so that the contract paragraph can be shorter.',
+                      'Step 3 separates express terms (delivery date; deposit and balance) from implied terms, and records WHY the express terms are pleaded although not strictly material — P will refer to them when pleading its own performance.',
+                      'Step 4 lists the three things the seller was told, which is what makes the consequential loss recoverable.',
+                      'Step 5 raises a real discrepancy: the deposit may have been 10% of the dishwashers alone, or of an order that also included a wine cooler. The plan asks the client to check, rather than choosing a figure.',
+                      'Steps 6 to 8 give the breach with particulars, the events after the breach, and the three heads of loss.',
+                      'Step 9 claims discretionary interest under s49 of the District Court Ordinance, because the action is in the District Court.',
+                    ],
+                  },
+                  {
+                    id: 'draft',
+                    label: 'What the draft does with the plan',
+                    points: [
+                      'Paragraph 1 is "At all material times" and introduces both companies and both individuals, including that each individual had authority to act for and on behalf of his company.',
+                      'Paragraph 2 pleads the agreement: made orally, between the named individuals on behalf of the named companies, on a stated date, with the subject matter and the price.',
+                      'Paragraph 3 pleads the pre-contract telephone conversation and what the buyer told the seller — Step 4, moved ahead of the terms because the terms were agreed in the same call.',
+                      'Paragraph 4 pleads the express terms agreed in that call; paragraph 5 the implied terms under the Sale of Goods Ordinance.',
+                      'Paragraph 6 pleads performance on both sides — deposit, delivery, balance — by reference to the express terms.',
+                      'Paragraph 7 alleges breach of the implied terms and gives PARTICULARS OF BREACH: the defective temperature control modules, and the faulty water pump on one machine.',
+                      'Paragraph 8 pleads the consequences; paragraph 9 pleads the loss with a PARTICULARS OF DAMAGES table and a total.',
+                      'Then interest under s49 DCO, the prayer for damages, interest and costs, the solicitors’ name, and a statement of truth signed by the director, stating his position and his authority to sign for the company.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The seller’s exclusion clauses are printed on the reverse of an order confirmation faxed AFTER the oral contract was concluded on the telephone. Whether they were incorporated at all is a live question — the plaintiff does not plead them, and should not.',
+                'The seller’s reply letter gives a delivery date different from the buyer’s account. That is a dispute of fact: plead the client’s instructions, and record the conflict as a further-instructions point.',
+                'The buyer’s own complaint letter asserts lost profits "of at least $300,000", while the instructions support $100,000. The model pleads the figure the instructions support. A pleading that contradicts the client’s own earlier correspondence is a gift to the other side.',
+                'The order confirmation covers a wine cooler as well as the dishwashers, which is why the deposit figure is uncertain. Do not silently pick one.',
+                'The seller’s letter also relies on the buyer having signed the delivery confirmation. That is a defence point, not something the statement of claim answers in advance.',
+                'The model Exercise 1 draft is a District Court action but carries no Practice Direction 27 §4 jurisdiction plea. Appendix 6 Step 10 says such a plea can conveniently go in as the last paragraph before the prayer — put one in your own District Court draft.',
+                'Check that the particulars-of-damages rows add to the stated total. In the model they do.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Where an oral contract is pleaded, plead the individuals, their authority, the date and the medium — that is the O.18 r.7(2) "purport of the conversation", not its words.',
+                'Plead implied terms with their statutory source in the same paragraph as the term.',
+                'Keep pre-contract representations that go to the defendant’s knowledge in their own paragraph, separate from the terms.',
+                'Where an amount is uncertain, raise it as a further instruction rather than pleading a guess.',
+                'Give the contract and the goods defined terms at first mention and use them throughout.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Pleading the seller’s terms and conditions for it.',
+                'Copying a figure from the client’s own letter without checking it against the instructions.',
+                'Pleading the repair invoice and the complaint letter as the facts, rather than the facts they prove.',
+                'Claiming s48 HCO interest in a District Court action.',
+                'Omitting the authority averment for the individuals who made the contract.',
+                'Pleading only merchantable quality, and forgetting fitness for the particular purpose that was made known.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Element', 'How it is pleaded', 'Rule or source'],
+                rows: [
+                  ['The contract', 'Oral, by telephone, between named individuals for named companies, on a stated date, with subject matter and price', 'Appendix 6 Step 2'],
+                  ['Authority of the agents', 'Each individual pleaded as having authority to act for and on behalf of his company', 'Appendix 6 Step 2'],
+                  ['The implied terms', 'Sale of Goods Ordinance (Cap. 26) ss16(2) and 16(3), as pleaded in the model draft', 'Merchantable quality; reasonable fitness for a purpose made known to the seller — read the subsections before relying on them'],
+                  ['Recoverable loss', 'The three things the seller was told before contracting, pleaded in their own paragraph', 'Appendix 6 Step 4'],
+                  ['Particulars of breach', 'Defective temperature control modules on both machines; a faulty water pump on one', 'O.18 r.12(1)'],
+                  ['Particulars of damages', 'The discount given to the customer; the cost of repair; lost profits — each a row, with a total', 'Appendix 6 Step 8'],
+                  ['Figures', 'In figures, not words', 'O.18 r.6(3)'],
+                  ['Interest', 'Discretionary interest in a District Court action', 's49, District Court Ordinance (Cap. 336)'],
+                  ['Verification', 'Signed by a director, stating the position held and the authority to sign for the company', 'O.41A rr.3(2), (4)(a), (5)'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'contract-claim-structure', label: 'Basic structure for a contractual claim' },
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+              { session: 'LG5', issue: 'worked-tort-claim', label: 'Worked example: the shopfront collision claim' },
+            ],
+          },
+
+          {
+            id: 'worked-tort-claim',
+            title: 'Worked example: the shopfront collision claim',
+            summary: 'Exercise 2 end to end — two defendants, vicarious liability, particulars per defendant, and property loss that is not all quantified.',
+            triggers: {
+              bullets: [
+                'A vehicle operated by an employee damages a third party’s property.',
+                'The employer is sued both vicariously and for its own negligence.',
+                'The driver breached an industry guideline on working hours.',
+                'A vehicle was mechanically defective and the owner allowed it on the road.',
+                'The plaintiff trades as a sole proprietor under a business name.',
+                'Some heads of loss cannot yet be quantified.',
+                'A prosecution may follow but has not yet been brought.',
+                'Property was replaced with something newer or better than what was lost.',
+              ],
+              routes: [
+                { when: 'You need the step structure rather than the worked example', session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+                { when: 'You need the ingredients grid', session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+                { when: 'The claim is contractual rather than tortious', session: 'LG5', issue: 'worked-contract-claim', label: 'Worked example: the commercial dishwashers claim' },
+                { when: 'The interest or prayer is the point', session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'The shopfront collision, step by step',
+                steps: [
+                  {
+                    id: 'facts',
+                    label: 'The facts, compressed',
+                    points: [
+                      'A bus mounted the pavement and hit a vehicle parked outside an antique shop; the force of the collision propelled both the vehicle and the front of the bus through the shopfront.',
+                      'The frontage was destroyed, the ceiling structurally damaged and the stock on display smashed; repairs took six weeks, during which the shop was closed.',
+                      'The driver had fallen asleep at the wheel during his usual shift, having worked hours significantly in excess of the Transport Department guidelines; the bus’s steering rod and joints were severely rusted.',
+                      'The shop owner sues the driver as first defendant and the bus company as second defendant.',
+                    ],
+                  },
+                  {
+                    id: 'analysis',
+                    label: 'The 5-Level Case Analysis',
+                    points: [
+                      'Level 1 tort; Level 2 negligence of both defendants, vicarious liability of the employer, and damages.',
+                      'Ingredients: duty of care owed by both defendants; the employer’s vicarious liability; breach by the driver; breach by the employer; causation; damages that are foreseeable and not too remote.',
+                      'Driver’s breach: falling asleep at the wheel; failing to observe the guidelines on working hours; driving with a severely rusted steering rod and joints.',
+                      'Employer’s own breach: permitting its employee to work in excess of the guidelines; allowing the bus to operate in that mechanical condition.',
+                      'Causation: the collision propelled the vehicle and the front of the bus through the shopfront, damaging the vehicle, the stock, the frontage and the ceiling.',
+                      'Evidence: the client; staff who witnessed it; the bus passenger; police statements; the guidelines themselves; the police examination report — several carrying question marks, because they have not been obtained yet.',
+                    ],
+                  },
+                  {
+                    id: 'plan',
+                    label: 'The skeletal plan',
+                    points: [
+                      'Step 1 introduces the owner (of both the shop and the vehicle), the driver (the employer’s employee) and the bus company (owner of the bus and employer of the driver).',
+                      'Step 2 gives the date, the time, the location and the mechanism, plus the two facts that have to be pleaded there: that the vehicle was parked outside the shop, and that the driver was acting in the course of his employment.',
+                      'Step 3 is marked "N.A." — this is a traffic accident case, the duty is obvious, and the step is skipped exactly as Appendix 7 allows.',
+                      'Step 4 is the driver’s negligence with particulars, the employer’s own negligence with particulars, and the employer’s vicarious liability.',
+                      'Step 5 lists what the collision did: the vehicle written off, the frontage destroyed, the ceiling structurally damaged, the stock irreparably damaged, and the shop closed for the six weeks of repairs.',
+                      'Step 6 gives the heads of loss, with square-bracket queries on betterment (was replacing an older vehicle with a new one warranted? was the warranty in place on the old one?) and on losses not yet quantified (business lost during the closure).',
+                      'Step 7 claims discretionary interest under s48 of the High Court Ordinance, because the action is in the Court of First Instance.',
+                    ],
+                  },
+                  {
+                    id: 'draft',
+                    label: 'What the draft does with the plan',
+                    points: [
+                      'Paragraphs 1 to 3 are "At all material times": what the plaintiff owned; what the first defendant was employed as and drove; what the second defendant owned and operated. Registration numbers are left as visible placeholders, to be obtained.',
+                      'Paragraph 4 is the NEUTRAL accident paragraph: date, time, road, that the driver was in the course of his employment, what the bus did, and a defined term for the collision. No allegation of negligence anywhere in it.',
+                      'Paragraph 5 pleads the three factual matters that make the negligence case — asleep at the wheel, over-hours, defective steering — still as facts rather than as allegations of fault.',
+                      'Paragraph 6 then alleges that the collision was caused by the negligence of the first defendant, for which the second defendant is vicariously liable, and by the negligence of the second defendant.',
+                      'The particulars follow under two lettered headings, one per defendant, each a list of failures beginning with a verb.',
+                      'Paragraph 7 is what the collision did; paragraph 8 is what the plaintiff then had to do about it; paragraph 9 pleads loss and damage with a PARTICULARS OF DAMAGE list and two square-bracket queries left open.',
+                      'Then interest under s48 HCO, the prayer for damages, interest and costs, and a statement of truth signed by the plaintiff personally in the "I believe" form.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The plaintiff is a sole proprietor, so the shop is not a separate legal person. He sues in his own name, and his ownership of both the shop and the vehicle is a MATERIAL FACT, not background.',
+                'The vehicle was parked on double yellow lines and the insurer has refused to indemnify. Illegal parking is a contributory-negligence point for the defence to raise; it does not stop the claim being pleaded, and the refusal is why the plaintiff bears the loss himself.',
+                'The draft keeps paragraphs 4 and 5 neutral and puts the fault in paragraph 6. That is Appendix 7 Steps 2 and 4 working exactly as intended.',
+                'No prosecution had been brought when instructions were taken, so O.18 r.7A does not bite yet. If a conviction follows, the pleading must be amended to add the r.7A statement and particulars.',
+                'Nobody was injured, so none of the personal-injuries machinery in O.18 rr.12(1A)-(1C) applies here.',
+                'The particulars of damage deliberately leave two items unquantified, in square brackets, rather than inventing figures — and the plan flags betterment on the replacement vehicle as a question for the client.',
+                'The employer’s primary negligence and its vicarious liability are pleaded as two distinct things in the same paragraph. Both are needed: one survives if the other fails.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Separate what the defendants DID (a neutral paragraph) from what that MAKES them (the negligence paragraph).',
+                'Give each defendant its own lettered block of particulars.',
+                'Where a registration number or a date is not yet known, leave a visible placeholder and list it as a further instruction.',
+                'Plead a guideline breach by naming the guideline and saying what it sets — here, maximum driving hours.',
+                'Plead the vicarious liability averment twice over: employment in the introduction, course of employment in the accident paragraph.',
+                'Use "any or any proper" where the allegation is that something was not done at all, or not done adequately.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Suing the shop rather than the sole proprietor who owns it.',
+                'Merging the two defendants’ particulars into a single list.',
+                'Putting "negligently" into the accident paragraph.',
+                'Claiming the cost of a brand-new replacement without addressing betterment.',
+                'Pleading a conviction that has not happened — or omitting the r.7A statement once one has.',
+                'Omitting the closure of the shop, and so losing the head of loss for the business lost during it.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Element', 'How it is pleaded', 'Rule or source'],
+                rows: [
+                  ['The parties', 'Ownership of the shop and the vehicle; the driver’s employment; the employer’s ownership and operation of the bus', 'Appendix 7 Step 1'],
+                  ['The accident', 'Date, time, location, mechanism and a defined term — neutrally, with no allegation of fault', 'Appendix 7 Step 2; O.18 r.13(1)'],
+                  ['Duty', 'Skipped — a traffic accident where the duty is obvious and non-statutory', 'Appendix 7 Step 3'],
+                  ['Negligence', 'One paragraph alleging causation by each defendant’s negligence, then lettered particulars per defendant', 'Appendix 7 Step 4'],
+                  ['Vicarious liability', 'Employment pleaded in the introduction; course of employment pleaded in the accident paragraph', 'Appendix 4 and Appendix 7 Step 1'],
+                  ['Convictions', 'Not applicable on these facts — no prosecution had been brought', 'O.18 r.7A(1)'],
+                  ['Consequences and loss', 'What the collision did, then what the plaintiff had to do, then the particulars of damage', 'Appendix 7 Steps 5 and 6'],
+                  ['Unquantified heads', 'Left in square brackets as items to be particularised once known', 'Appendix 7 Step 6'],
+                  ['Interest', 'Discretionary interest in the Court of First Instance', 's48, High Court Ordinance (Cap. 4)'],
+                  ['Verification', 'Signed by the plaintiff personally, in the "I believe" form', 'O.41A rr.3(1)(b), 5(1)'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG5', issue: 'tort-claim-structure', label: 'Basic structure for a tortious claim' },
+              { session: 'LG5', issue: 'five-level-case-analysis', label: 'The 5-Level Case Analysis' },
+              { session: 'LG5', issue: 'interest-and-prayer', label: 'Interest, the prayer for relief and the District Court plea' },
+              { session: 'LG5', issue: 'worked-contract-claim', label: 'Worked example: the commercial dishwashers claim' },
+            ],
+          },
+        ],
+      },
+      flashcards: [
+        {
+          topic: 'Function and Structure of a Statement of Claim',
+          items: [
+            { front: 'What is the main function of a Statement of Claim?', back: 'To set out all the material facts and necessary particulars that establish the plaintiff’s cause of action, and the relief sought.' },
+            { front: 'What are the four parts every Statement of Claim comprises?', back: 'Introduction to parties and necessary background; substantive contents; prayer for relief; statement of truth.' },
+            { front: 'Under O.18 r.7(1), what must a pleading contain — and contain only?', back: 'A statement in summary form of the material facts relied on, not the evidence by which those facts are to be proved, as brief as the nature of the case admits.' },
+            { front: 'Under O.18 r.15(1), what must a statement of claim state specifically — and what need not be claimed?', back: 'It must state specifically the relief or remedy claimed; costs need not be specifically claimed.' },
+            { front: 'Why does omitting a remedy from the prayer for relief lose it?', back: 'Because the Court cannot grant relief which has not been claimed at all: Belmont Finance Corp Ltd v Williams Furniture Ltd [1979] Ch 250.' },
+            { front: 'How must dates, sums and other numbers be expressed in a pleading?', back: 'In figures and not in words: O.18 r.6(3).' },
+          ],
+        },
+        {
+          topic: 'The 5-Level Case Analysis',
+          items: [
+            { front: 'What are the five levels of the 5-Level Case Analysis?', back: '1 the area(s) of law; 2 the causes of action and remedies; 3 the legal ingredients of each; 4 the material facts supporting each; 5 the evidence for each material fact.' },
+            { front: 'Which level supplies what goes into the pleading, and which level must stay out of it?', back: 'Level 4 material facts are pleaded; Level 5 evidence is not — it goes into witness statements and affidavits.' },
+            { front: 'What are the legal ingredients of a breach of contract claim?', back: 'Existence of the contract; the material terms; breach of those terms — plus recoverable loss within the defendant’s contemplation at the time of the contract.' },
+            { front: 'What two facts must be pleaded to establish an employer’s vicarious liability?', back: 'That the tortfeasor was the employer’s employee, and that he was acting in the course of that employment at the time.' },
+            { front: 'Besides drafting pleadings, what three other jobs does the 5-Level Case Analysis do?', back: 'It supplies the evidence for affidavits and witness statements; it tests the merits of the client’s case; and it shows what further evidence needs to be obtained.' },
+          ],
+        },
+        {
+          topic: 'Pleading a Contractual Claim',
+          items: [
+            { front: 'What material facts about the contract itself does Step 2 of the contract structure require?', back: 'The parties; the date (or "on or about" an approximate date); how the contract was made; the subject matter; and the consideration.' },
+            { front: 'When is a term "material" and so required to be pleaded?', back: 'When it is a term the plaintiff intends to rely upon for his claim — one allegedly breached, or one entitling him to the relief sought.' },
+            { front: 'What extra detail must be given when pleading an implied term?', back: 'Particulars of the facts and matters — and the statutory provision, if any — relied on as giving rise to the implied term.' },
+            { front: 'Why must the defendant’s knowledge of special circumstances be pleaded?', back: 'Because it is what shows the loss was reasonably within the parties’ contemplation at the time of the contract as a likely consequence of the breach.' },
+            { front: 'Which sweeping-up plea should be avoided, and on what authority?', back: '"P will refer to all other terms and conditions of the agreement at trial" — Citibank N.A. (Nominees) Ltd v Deacon Te-ken Chiu [1983] HKLR 121 (CA).' },
+            { front: 'Must the plaintiff plead that it mitigated its loss?', back: 'Generally no — failure to mitigate is for the defendant to raise in the Defence. But the plaintiff must plead acts done in mitigation if it wants to claim the expenses of them.' },
+            { front: 'When pleading an oral contract, how much of the conversation goes in?', back: 'Its purport, briefly stated — not the precise words, unless the words are themselves material: O.18 r.7(2).' },
+          ],
+        },
+        {
+          topic: 'Pleading a Tortious Claim',
+          items: [
+            { front: 'How should the accident paragraph of a tort claim be written, and why?', back: 'Neutrally, avoiding any allegation of negligence, so that the defendant will hopefully admit it — an allegation of fact is deemed admitted unless traversed: O.18 r.13(1).' },
+            { front: 'When may Step 3 (the existence and scope of duty) be skipped?', back: 'Where the duty and its scope are obvious, non-controversial or not statutory — traffic accident cases being the example.' },
+            { front: 'How are allegations pleaded where two defendants are involved?', back: 'The separate acts and omissions of each defendant go in different paragraphs, with separate particulars for each.' },
+            { front: 'What must a plaintiff plead if he intends to rely on the defendant’s conviction in Hong Kong?', back: 'A statement of that intention with particulars of the conviction and its date, the court which made it, and the issue in the proceedings to which it is relevant: O.18 r.7A.' },
+            { front: 'What two extra documents must be served with a statement of claim in a personal injuries action?', back: 'A medical report and a statement of the special damages claimed: O.18 r.12(1A).' },
+            { front: 'Where does the relationship founding the duty of care get pleaded?', back: 'In the introduction — occupier and visitor, employer and employee, or master and servant where vicarious liability is alleged.' },
+          ],
+        },
+        {
+          topic: 'Interest, Relief and Verification',
+          items: [
+            { front: 'Where may a claim for discretionary interest be pleaded?', back: 'Either in the body of the statement of claim and the prayer, or in the prayer alone — both are acceptable: Prague Enterprises Ltd v Chan Miu Cheung [1994] 3 HKC 175 (CA).' },
+            { front: 'Where must a claim for contractual interest be pleaded?', back: 'In the body of the pleading, with the facts and matters on which it depends — not only in the prayer.' },
+            { front: 'Which section gives discretionary interest in the Court of First Instance, and which in the District Court?', back: 'Section 48 of the High Court Ordinance (Cap. 4); section 49 of the District Court Ordinance (Cap. 336).' },
+            { front: 'What extra plea must a District Court statement of claim carry?', back: 'A plea that the relief sought falls within the District Court’s jurisdiction, specifying the jurisdiction-conferring section(s) relied on: Practice Direction 27 §4.' },
+            { front: 'Who signs the statement of truth where the party is a corporation?', back: 'A person holding a senior position — a director, manager, secretary or other similar officer — who must state the office or position held: O.41A rr.3(2), (4)(a) and (5).' },
+            { front: 'When should a solicitor sign the statement of truth?', back: 'Only where it cannot conveniently be signed by the client — and then in his own name, not the firm’s: O.41A r.3(10).' },
+          ],
+        },
+      ],
+      cloze: [
+        {
+          topic: 'Function and Structure of a Statement of Claim',
+          items: [
+            { text: 'The main function of a Statement of Claim is to set out all the {{material facts}} and necessary {{particulars}} that establish the plaintiff’s cause of action and the {{relief sought}}.' },
+            { text: 'A Statement of Claim comprises an introduction to parties and necessary background; the {{substantive contents}}; the {{prayer for relief}}; and the {{statement of truth}}.' },
+            { text: 'Under O.18 r.{{7(1)}}, a pleading must contain a statement in summary form of the material facts relied on, but not the {{evidence}} by which those facts are to be proved.' },
+            { text: 'Under O.18 r.15(1) a statement of claim must state specifically the relief or remedy claimed, but {{costs}} need not be specifically claimed.' },
+            { text: 'Under O.18 r.6(3), dates, sums and other numbers must be expressed in a pleading in {{figures}} and not in {{words}}.' },
+          ],
+        },
+        {
+          topic: 'The 5-Level Case Analysis',
+          items: [
+            { text: 'Level {{3}} of the case analysis gives the legal ingredients of the cause of action; Level {{4}} gives the material facts supporting each ingredient; and Level {{5}} gives the evidence for each material fact.' },
+            { text: 'It is the Level {{4}} material facts that are pleaded in the Statement of Claim, and they must cover all the Level {{3}} legal ingredients.' },
+            { text: 'The legal ingredients of a breach of contract claim are the existence of the {{contract}}, the {{material terms}}, and {{breach}} of those terms.' },
+            { text: 'Recoverable loss in contract is loss within the defendant’s {{contemplation}} at the time of the {{contract}} as a likely consequence of the breach.' },
+            { text: 'Vicarious liability requires the plaintiff to plead that the tortfeasor was the defendant’s {{employee}} and was acting in the {{course of employment}} at the time.' },
+          ],
+        },
+        {
+          topic: 'Pleading a Contractual Claim',
+          items: [
+            { text: 'Where the date of the contract cannot be precisely ascertained, it is pleaded by giving an approximate date, using the words "{{On or about}}".' },
+            { text: 'A term is material if it is one the plaintiff intends to {{rely upon}} for his claim, and the pleading must state whether it is an {{express}} or an {{implied}} term.' },
+            { text: 'Where the plaintiff claims repudiation for breach of a condition, the pleading should describe the term as a "{{condition}}" rather than as a term.' },
+            { text: 'Under O.18 r.7(2), the {{purport}} of a conversation referred to in a pleading must, if material, be briefly stated, and the {{precise words}} must not be stated unless they are themselves material.' },
+            { text: 'The plaintiff generally need not plead that it has {{mitigated}} its loss, because failure to mitigate is for the {{defendant}} to raise in the Defence.' },
+            { text: 'Where the plaintiff wishes to treat the contract as at an end, it must plead that the defendant {{repudiated}} the contract and that the plaintiff {{accepted}} the repudiation.' },
+          ],
+        },
+        {
+          topic: 'Pleading a Tortious Claim',
+          items: [
+            { text: 'The accident paragraph of a tortious claim should describe the event in a {{neutral}} manner, avoiding any allegation of negligence, so that the defendant will hopefully {{admit}} it.' },
+            { text: 'An allegation of fact in a pleading is deemed to be {{admitted}} by the opposite party unless it is {{traversed}}: O.18 r.13(1).' },
+            { text: 'Step 3 of the tortious structure — the existence and scope of the duty — may be skipped where the duty is obvious or non-controversial, as in {{traffic accident}} cases.' },
+            { text: 'Where a plaintiff intends to adduce evidence of a defendant’s conviction in Hong Kong, O.18 r.{{7A}} requires him to plead his intention with particulars of the conviction and its date, the {{court}} which made it, and the {{issue}} to which it is relevant.' },
+            { text: 'In a personal injuries action the plaintiff must serve with the statement of claim a {{medical report}} and a statement of the {{special damages}} claimed: O.18 r.12(1A).' },
+          ],
+        },
+        {
+          topic: 'Interest, Relief and Verification',
+          items: [
+            { text: 'Discretionary interest is claimed under section {{48}} of the High Court Ordinance, or section {{49}} of the District Court Ordinance.' },
+            { text: 'A claim for discretionary interest may be set out in the body and the prayer, or in the {{prayer}} alone: Prague Enterprises Ltd v Chan Miu Cheung [1994] 3 HKC 175 (CA).' },
+            { text: 'All claims for interest other than discretionary interest must be pleaded in the {{body}} of the pleading, with the facts and matters on which they depend.' },
+            { text: 'Under O.18 r.8(4), a party must plead {{specifically}} any claim for interest under section 48 of the Ordinance or otherwise.' },
+            { text: 'Practice Direction 27 §4 requires every District Court writ to plead that the relief sought falls within the {{jurisdiction}} of the District Court, specifying the jurisdiction-conferring {{section(s)}} relied on.' },
+            { text: 'Where the party is a corporation, the statement of truth must be signed by a person holding a {{senior position}}, who must state the {{office or position}} he holds.' },
+            { text: 'A legal representative who signs a statement of truth must sign in his {{own name}}, and not only in the name of the {{firm}} to which he belongs.' },
+          ],
+        },
+      ],
     },
 
     SG1: {
