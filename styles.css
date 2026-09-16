@@ -1090,6 +1090,80 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-flow-check.checked > span { color: var(--text-muted); text-decoration: line-through; }
 .exam-flow-check.partial > span { text-decoration: none; }
 
+/* Per-step coaching: "Why this matters" (the reasoning behind the rule) and
+   "In the exam" (a sentence to write, and the trap at that step). Deliberately
+   collapsed by default -- the flowchart's job is to stay scannable as a
+   checklist, and an always-open rationale under every step would bury the
+   points that are the actual work. Both are plain <details>, so keyboard and
+   screen-reader behaviour comes free and there is nothing to measure; issue.js
+   opens them all before printing so a saved PDF is complete. */
+.exam-coach { display: flex; flex-wrap: wrap; gap: 6px; margin: 5px 0 2px; }
+.exam-coach-item {
+  flex: 1 1 auto; min-width: 0;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+}
+.exam-coach-item > summary {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 9px 3px 7px;
+  border-radius: 999px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.03em;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease;
+}
+.exam-coach-item > summary::-webkit-details-marker { display: none; }
+.exam-coach-item > summary::before {
+  content: '+'; font-size: 0.85rem; line-height: 1; font-weight: 700;
+}
+.exam-coach-item[open] > summary::before { content: '\2212'; }
+.exam-coach-item > summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.exam-coach-item--why > summary {
+  color: var(--accent-text);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.exam-coach-item--why > summary:hover { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+/* Solid accent-2 rather than a translucent tint, and for the same reason the
+   decision-step badge is solid: --accent-2-text is near-black, so over a tint
+   it rides on whatever surface is beneath and collapses to 1.83:1 in dark
+   mode. On the flat gold it is theme-independent and passes in both. */
+.exam-coach-item--exam > summary {
+  color: var(--accent-2-text);
+  background: var(--accent-2);
+  border-color: color-mix(in srgb, var(--accent-2) 70%, #000);
+}
+.exam-coach-item--exam > summary:hover { background: color-mix(in srgb, var(--accent-2) 85%, #000); }
+.exam-coach-item[open] { flex-basis: 100%; }
+.exam-coach-body {
+  margin: 6px 0 2px; padding: 8px 10px;
+  border-left: 3px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text); line-height: 1.5;
+}
+.exam-coach-item--why .exam-coach-body { border-left-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.exam-coach-item--exam .exam-coach-body {
+  border-left-color: var(--accent-2);
+  background: color-mix(in srgb, var(--accent-2) 10%, transparent);
+}
+.exam-coach-line { margin: 0 0 6px; }
+.exam-coach-line:last-child { margin-bottom: 0; }
+.exam-coach-tag {
+  display: inline-block; margin-right: 6px;
+  font-size: 0.66rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.exam-coach-line--write { font-style: italic; }
+.exam-coach-line--write .exam-coach-tag { font-style: normal; color: var(--accent-text); }
+/* --cite-text, not --now-line-text: the latter measures 4.24:1 on the amber
+   panel in light mode, just under AA. Both carry the same "warning" red and
+   both are already theme-split. */
+.exam-coach-line--trap .exam-coach-tag { color: var(--cite-text); }
+
 /* Sub-points: the third level. Indented under their point with a rule, so
    the nesting reads even when a long point wraps over several lines. */
 .exam-flow-subpoints {
@@ -1492,4 +1566,12 @@ summary::marker { color: var(--text-muted); }
   .exam-flow-check:hover,
   .session-table tbody tr:hover td { background: none; }
   a { text-decoration: none; }
+
+  /* issue.js opens every coach block before printing, so on paper these are
+     always-visible notes rather than controls: drop the +/- affordance and
+     let the two sit as stacked labelled panels. */
+  .exam-coach { display: block; }
+  .exam-coach-item { break-inside: avoid; page-break-inside: avoid; }
+  .exam-coach-item > summary { cursor: default; border-radius: var(--radius-sm); }
+  .exam-coach-item > summary::before { content: none; }
 }

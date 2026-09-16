@@ -6527,6 +6527,11 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'prescribed',
                     label: 'Work out "the prescribed time" — it is defined, and it is not always 14 days',
+                    why: 'The rules never say "14 days" here — they say "after the prescribed time", and then define it. The definition has two limbs because the 14 days exist to give the defendant a chance to decide whether to fight: a defendant who returns an acknowledgement saying he does not intend to contest has already made that decision, so there is nothing left for the rest of the period to protect and the clock closes early.',
+                    exam: {
+                      write: 'The prescribed time under O.13 r.6A expired on [date], being the last day limited for the 2nd Defendant to acknowledge service, and no acknowledgement having been filed the Plaintiff was entitled to enter judgment on [date].',
+                      trap: 'Asserting "14 days" without computing it, or citing O.13 r.6 for the definition — r.6 is the "other claims" rule, and the definition is in r.6A.',
+                    },
                     points: [
                       'Every one of O.13 rr.1-6 lets the plaintiff act only "after the prescribed time", and r.6A defines it.',
                       'Limb 1 — the time limited for the defendant to acknowledge service of the writ.',

@@ -92,6 +92,39 @@
   function flowPointText(p) { return typeof p === 'string' ? p : p.text; }
   function flowPointKids(p) { return (typeof p === 'string' ? null : p.points) || []; }
 
+  // The two coaching blocks a flowchart step may carry, rendered as inline
+  // <details> under the step's own label:
+  //
+  //   why:  'Why the rule is shaped this way -- the reasoning that makes the
+  //          step memorable rather than a line to recite.'
+  //   exam: { write: 'A sentence to transcribe with the facts swapped in.',
+  //           trap:  'The one mistake that loses marks at this step.' }
+  //
+  // Both are optional and independent. They are deliberately NOT checkboxes:
+  // per the three-level rule, only the flowchart's own step/point/sub-point
+  // chain is work to complete -- these are things to understand while doing
+  // it, so they sit outside the checklist and outside flowLeafIds entirely.
+  // That also means adding them to an authored step cannot disturb a
+  // reader's saved ticks, since no checkbox id is derived from them.
+  function flowCoachHtml(step) {
+    const why = step.why
+      ? `<details class="exam-coach-item exam-coach-item--why"><summary>Why this matters</summary>`
+        + `<div class="exam-coach-body">${citeHtml(step.why)}</div></details>`
+      : '';
+    const ex = step.exam || {};
+    const write = ex.write
+      ? `<p class="exam-coach-line exam-coach-line--write"><span class="exam-coach-tag">Write</span>${citeHtml(ex.write)}</p>`
+      : '';
+    const trap = ex.trap
+      ? `<p class="exam-coach-line exam-coach-line--trap"><span class="exam-coach-tag">Trap</span>${citeHtml(ex.trap)}</p>`
+      : '';
+    const exam = (write || trap)
+      ? `<details class="exam-coach-item exam-coach-item--exam"><summary>In the exam</summary>`
+        + `<div class="exam-coach-body">${write}${trap}</div></details>`
+      : '';
+    return (why || exam) ? `<div class="exam-coach">${why}${exam}</div>` : '';
+  }
+
   // Renders one checkbox row. `path` is the chain of ancestor texts, which is
   // what makes the id both stable under reordering and unique on the page:
   // two points with identical wording under different steps hash differently.
@@ -152,6 +185,7 @@
         <span class="exam-flow-num" aria-hidden="true">${i + 1}</span>
         ${label}
         ${s.detail ? `<span class="exam-flow-detail">${citeHtml(s.detail)}</span>` : ''}
+        ${flowCoachHtml(s)}
         ${points}${branches}
       </li>`;
     }).join('');

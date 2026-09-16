@@ -126,6 +126,30 @@ not what the code does.
   multi-part test). The best source of sub-points is an enumeration already
   embedded in an existing point — lifting `(a)…(b)…(c)` out of a long
   sentence is a restructure of verified text, not new content.
+- **Every flowchart step carries two coaching blocks, and they are NOT part
+  of the checklist.** A step may author `why` (a sentence or two on why the
+  rule is shaped this way — the reasoning that makes it memorable rather
+  than a line to recite) and `exam: { write, trap }` (`write` is a sentence
+  to transcribe with the facts swapped in; `trap` is the one mistake that
+  loses marks at that step). Both are optional and independent, and
+  `flowCoachHtml` in `common-content.js` renders them as two collapsed
+  `<details>` under the step's own label. Three rules:
+  - **They are never checkboxes.** Only the step > point > sub-point chain
+    is work to complete; these are things to understand while doing it. That
+    is also why `flowLeafIds` ignores them entirely — which means adding
+    `why`/`exam` to an already-authored step **cannot reset a reader's saved
+    ticks**, because no checkbox id is derived from them. (Editing the step
+    `label` still does.)
+  - **Collapsed by default, and opened for printing by `issue.js`.** A
+    closed `<details>` prints as just its summary, and CSS cannot reliably
+    force one open — the closed state is not a plain `display` rule. So
+    `beforeprint` opens them and `afterprint` re-closes exactly the ones
+    that were shut, which covers Ctrl+P as well as the print button.
+  - **`write` must be transcribable and grounded.** It is a model sentence,
+    so it names the provision the step has already established and leaves
+    `[date]`/`[sum]` placeholders for the facts. Never put a provision in a
+    `write` line that the step itself has not cited — the same
+    no-fabrication rule as anywhere else.
 - **Only leaves are persisted; parents are derived.** `wireFlowChecks`
   computes each parent's checked/indeterminate state from its descendant
   leaves on every change and once on load, so a stored Set can never disagree

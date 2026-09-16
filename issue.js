@@ -138,6 +138,22 @@
   // "Save as PDF" is a destination in the browser's own print dialog, so
   // printing is the whole implementation — see the @media print block in
   // styles.css for what the printed page actually looks like.
+  //
+  // The per-step "Why this matters" and "In the exam" blocks are collapsed
+  // <details>, and a closed <details> prints as just its summary — so a
+  // printed copy would silently lose them. CSS cannot reliably force one open
+  // (the closed state is not a plain `display` rule), so open them here and
+  // put back exactly the ones that were closed once the dialog is done.
+  // beforeprint covers Ctrl+P as well as the button.
+  let reclose = [];
+  window.addEventListener('beforeprint', () => {
+    reclose = [...document.querySelectorAll('.exam-coach-item:not([open])')];
+    reclose.forEach((d) => { d.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    reclose.forEach((d) => { d.open = false; });
+    reclose = [];
+  });
   $('printBtn').addEventListener('click', () => window.print());
   load();
 })();
