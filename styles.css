@@ -77,6 +77,24 @@
 
 [hidden] { display: none !important; }
 
+/* Text size. Every font-size in this file is in rem, so these three
+   declarations are the whole feature: they scale the entire type system in
+   one move, and nothing else needs a per-size override.
+
+   They are PERCENTAGES, deliberately. A percentage multiplies whatever the
+   reader's browser font size already is, so a reader who has set 20px in
+   their browser keeps that as their "normal" and still gets three steps
+   above it. Hard-coding px here would silently throw that setting away,
+   which is the opposite of what a text-size control is for.
+
+   Spacing stays in px and so does not grow with the text. That is the
+   intended trade: the reading column tightens up a little at Larger rather
+   than the layout growing in every direction, and it is what keeps the
+   dense pages (a 40-row flowchart, the issue index) from doubling in
+   height. */
+:root[data-font-scale="large"] { font-size: 112.5%; }
+:root[data-font-scale="larger"] { font-size: 125%; }
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -283,7 +301,11 @@ body {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 58px;
+  /* Set from the DOM by trackTopbarHeight (common-core.js), because the bar's
+     height moves with the text size, the viewport and a wrapping title. The
+     fallback is the old literal, used only for the instant before the script
+     runs. */
+  top: var(--topbar-h, 58px);
   z-index: 19;
 }
 .week-scroll {
@@ -1496,6 +1518,16 @@ summary::marker { color: var(--text-muted); }
    feature is this stylesheet plus a window.print() call.
    --------------------------------------------------------------------------- */
 @media print {
+  /* Paper gets the normal size whatever the reader had on screen — the same
+     call this block already makes about dark mode. The screen scale is
+     about reading on a backlit display at arm's length; a printed copy is a
+     fixed artefact whose page count and layout should not depend on a
+     setting made for the screen. All three selectors are needed, because
+     :root[data-font-scale="..."] outranks a bare :root. */
+  :root,
+  :root[data-font-scale="large"],
+  :root[data-font-scale="larger"] { font-size: 100%; }
+
   /* Paper is white whatever the reader had on screen, so the dark theme's
      tokens have to be undone. The [data-theme="dark"] selector is repeated
      here because it would otherwise outrank a bare :root on specificity.

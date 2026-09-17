@@ -60,8 +60,19 @@ function createRun(title) {
 function loadSite(root) {
   const path = require('path');
   const R = (f) => path.join(root, f);
+  // A browser stub, not a DOM: these files render to strings and touch the
+  // document only for the theme, the text size and the topbar measurement,
+  // all of which run at load. Anything that returns null here is a page
+  // element that does not exist outside a browser, and the site code is
+  // expected to cope — that is the contract this stub asserts.
   global.window = {};
-  global.document = { documentElement: { dataset: {} } };
+  global.document = {
+    documentElement: { dataset: {}, style: { setProperty() {} } },
+    readyState: 'complete',
+    querySelector() { return null; },
+    getElementById() { return null; },
+    addEventListener() {},
+  };
   global.localStorage = { getItem() { return null; }, setItem() {} };
   require(R('common-core.js'));
   require(R('common-content.js'));

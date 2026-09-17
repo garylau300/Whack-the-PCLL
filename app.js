@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, eventCardHtml, initTheme,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, eventCardHtml, initTheme, initFontScale,
     loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
     buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone, emptyStateHtml,
   } = window.PCLL;
@@ -163,6 +163,7 @@
 
   function init() {
     initTheme($('themeBtn'));
+    initFontScale($('fontBtn'));
     $('prevWeek').addEventListener('click', () => selectWeek(activeWeekIndex - 1));
     $('nextWeek').addEventListener('click', () => selectWeek(activeWeekIndex + 1));
     $('prevDay').addEventListener('click', () => {

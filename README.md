@@ -109,7 +109,11 @@ A few things worth knowing:
   print dialog. How the page prints lives entirely in the `@media print`
   block at the foot of `styles.css`.
 - Light is the default theme; dark applies only once you toggle it
-  (persisted per browser).
+  (persisted per browser). The **Aa** button beside it cycles the text
+  through three sizes — every font-size in the stylesheet is in `rem`, so
+  that is one declaration on `:root` rather than a per-element override, and
+  it is a percentage so it multiplies whatever size the reader's browser is
+  already set to. Both settings are reset for printing.
 - Statutory and case references are detected and highlighted automatically —
   nothing in `courseDetails` carries markup for it.
 - The Google Fonts stylesheet is loaded non-render-blocking (`media="print"`

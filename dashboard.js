@@ -3,7 +3,7 @@
 
   const {
     todayISO, pickCurrentWeekIndex, fmtShort, fmtLong, fmtTime, escapeHtml,
-    eventCardHtml, initTheme, loadTimetable, loadMyElectives,
+    eventCardHtml, initTheme, initFontScale, loadTimetable, loadMyElectives,
     eventIsFilteredOut, initElectiveSettings, ELECTIVE_NAMES, ELECTIVE_CODES, ICONS,
     COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession, emptyStateHtml,
     buildDeadlinesIndex, isDeadlineDone, daysUntil, countdownBadgeHtml,
@@ -288,6 +288,7 @@
 
   function init() {
     initTheme($('themeBtn'));
+    initFontScale($('fontBtn'));
     initElectiveSettings({
       settingsBtn: $('settingsBtn'),
       closeBtn: $('closeSettings'),

@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref, issueHref,
+    ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
     issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks,
   } = window.PCLL;
@@ -135,6 +135,7 @@
   }
 
   initTheme($('themeBtn'));
+  initFontScale($('fontBtn'));
   // "Save as PDF" is a destination in the browser's own print dialog, so
   // printing is the whole implementation — see the @media print block in
   // styles.css for what the printed page actually looks like.

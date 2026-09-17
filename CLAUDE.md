@@ -387,6 +387,32 @@ not what the code does.
   override is in force, so an earlier `emulateMedia({ media: 'screen' })` in
   the same script silently renders the PDF with the on-screen chrome —
   reset with `emulateMedia({ media: null })` before generating.
+- **Text size is one CSS declaration, because every font-size is in `rem`.**
+  `initFontScale(btn)` (`common-core.js`) cycles `:root`'s `data-font-scale`
+  through normal → large → larger, persisted under `pcll.fontScale`, and
+  `styles.css` turns that into `font-size: 112.5%` / `125%` on `:root`.
+  Three rules if you touch it:
+  - **Keep new font sizes in `rem`.** A single `px` font-size is a line of
+    text that silently refuses to scale. There are currently none.
+  - **The scales are percentages, never px.** A percentage multiplies the
+    reader's own browser font size, so someone who has already set 20px
+    keeps that as their "normal"; a px value would throw their setting away,
+    which is the opposite of what the control is for.
+  - **It is applied in the same pre-stylesheet IIFE as the theme**, and
+    reset to 100% in the `@media print` block on the same reasoning that
+    block resets the dark theme: paper is a fixed artefact and should not
+    inherit a choice made for a backlit screen.
+  Spacing stays in `px` and deliberately does not scale — the reading column
+  tightens rather than the whole layout inflating, which is what keeps a
+  40-row flowchart from doubling in height.
+- **Anything that sits under the topbar reads `--topbar-h`, never a
+  literal.** `trackTopbarHeight` (`common-core.js`) publishes the bar's
+  measured height on `:root` via a `ResizeObserver`, because that height
+  moves with the text size, the viewport width and a title that wraps —
+  the timetable's sticky `.week-nav` used to hard-code `top: 58px` against a
+  bar that is 64px on a desktop and over 120px at phone width, and tucked
+  under it. CSS cannot measure an element, so the number has to come from
+  the DOM.
 - Every modal/popup on the site (settings panel, mindmap popup) is wired
   through the shared `initDialog` helper in `common-core.js` (focus trap,
   Escape-to-close, focus-restore-to-trigger) — don't hand-roll another

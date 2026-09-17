@@ -3,7 +3,7 @@
 
   const {
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
-    initTheme, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
+    initTheme, initFontScale, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
     COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey, issueCode,
     issueProgress, examIssueListHtml, wireIssueFilter,
@@ -256,6 +256,7 @@
   }
 
   initTheme($('themeBtn'));
+  initFontScale($('fontBtn'));
   initSessionRows();
   load();
 })();

@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    ELECTIVE_NAMES, initTheme, loadTimetable, sessionKeyFor, sessionHref,
+    ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref,
     findSessionInTimetable, flashcardSectionHtml, wireFlashcardSection,
     clozeSectionHtml, wireClozeSection,
   } = window.PCLL;
@@ -83,5 +83,6 @@
   }
 
   initTheme($('themeBtn'));
+  initFontScale($('fontBtn'));
   load();
 })();

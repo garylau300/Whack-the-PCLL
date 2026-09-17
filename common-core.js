@@ -13,14 +13,24 @@
 // which file happens to run last.
 //
 // Applied immediately (this file is loaded synchronously in <head>, before
-// the stylesheet) so there's no flash of the wrong theme. Light is the
-// default -- dark only applies once the visitor has explicitly chosen it.
+// the stylesheet) so there's no flash of the wrong theme or the wrong text
+// size. Light and normal are the defaults -- the other values apply only
+// once the visitor has explicitly chosen them. Text size has to be settled
+// this early for the same reason as the theme, and more urgently: it
+// changes the height of everything, so applying it after first paint
+// reflows the whole page under the reader.
 (function () {
   try {
     const saved = localStorage.getItem('pcll.theme');
     document.documentElement.dataset.theme = saved === 'dark' ? 'dark' : 'light';
   } catch {
     document.documentElement.dataset.theme = 'light';
+  }
+  try {
+    const size = localStorage.getItem('pcll.fontScale');
+    document.documentElement.dataset.fontScale = (size === 'large' || size === 'larger') ? size : 'normal';
+  } catch {
+    document.documentElement.dataset.fontScale = 'normal';
   }
 })();
 
@@ -78,6 +88,18 @@
 
   const THEME_KEY = 'pcll.theme';
 
+  // Text size is a three-step cycle rather than a two-state toggle: on a
+  // page of dense flowchart rows the useful range runs further than one
+  // notch, and three is still short enough to click back round to normal.
+  // The scales themselves live in styles.css as percentages on :root, so
+  // they multiply the reader's OWN browser font size rather than replacing
+  // it -- someone who has already set 20px in their browser keeps that as
+  // their "normal". Every font-size in the stylesheet is in rem, which is
+  // what makes one declaration scale the whole type system.
+  const FONT_KEY = 'pcll.fontScale';
+  const FONT_STEPS = ['normal', 'large', 'larger'];
+  const FONT_LABELS = { normal: 'Normal', large: 'Large', larger: 'Larger' };
+
   const ELECTIVES_KEY = 'pcll.myElectives';
 
   // Inline SVG (stroke="currentColor") instead of emoji — crisp at any size,
@@ -91,6 +113,13 @@
     moon: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
     play: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>',
     refresh: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>',
+    // Three "Aa" marks, one per text-size step. The glyph itself grows with
+    // the step, so the control shows the setting it is currently on rather
+    // than needing a separate state indicator -- the same trick the theme
+    // button uses in swapping sun for moon.
+    textNormal: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><text x="12" y="17" text-anchor="middle" font-size="13" font-weight="700" font-family="Inter, system-ui, sans-serif">Aa</text></svg>',
+    textLarge: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><text x="12" y="18" text-anchor="middle" font-size="16" font-weight="700" font-family="Inter, system-ui, sans-serif">Aa</text></svg>',
+    textLarger: '<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><text x="12" y="19" text-anchor="middle" font-size="19" font-weight="700" font-family="Inter, system-ui, sans-serif">Aa</text></svg>',
   };
 
   // The site's mascot -- used at "nothing to worry about" empty states
@@ -905,10 +934,81 @@
     btn.addEventListener('click', () => setTheme(effectiveTheme() === 'dark' ? 'light' : 'dark', btn));
   }
 
+  // Publishes the topbar's real height as --topbar-h, for anything that has
+  // to sit directly beneath it (the timetable's sticky .week-nav).
+  //
+  // That offset used to be the literal 58px, against a bar that is actually
+  // 64px on a desktop and taller still below 640px, where the brand takes a
+  // row of its own — so the nav already tucked under the bar before any of
+  // this. A text-size control makes the coupling worse in the cases where
+  // the title wraps, and there is no way for CSS to measure an element, so
+  // the number has to come from the DOM.
+  //
+  // A ResizeObserver rather than one measurement, for the reason CLAUDE.md
+  // gives about the mindmap: the bar's height changes with the text size,
+  // the viewport width and a title that wraps, and a single reading taken
+  // at load would be stale after any of them.
+  function trackTopbarHeight() {
+    const bar = document.querySelector('.topbar');
+    if (!bar) return;
+    const publish = () => {
+      document.documentElement.style.setProperty('--topbar-h', `${Math.round(bar.getBoundingClientRect().height)}px`);
+    };
+    publish();
+    if (typeof ResizeObserver === 'function') new ResizeObserver(publish).observe(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', trackTopbarHeight);
+  } else {
+    trackTopbarHeight();
+  }
+
+  function effectiveFontScale() {
+    const explicit = document.documentElement.dataset.fontScale;
+    return FONT_STEPS.includes(explicit) ? explicit : 'normal';
+  }
+
+  // The button's accessible name has to say both where the reader is and
+  // where the next click goes: an icon that merely looks bigger tells a
+  // screen-reader user nothing, and a label of just "Text size" leaves a
+  // sighted reader guessing what a third click does.
+  function paintFontButton(btn, scale) {
+    if (!btn) return;
+    const next = FONT_STEPS[(FONT_STEPS.indexOf(scale) + 1) % FONT_STEPS.length];
+    btn.innerHTML = scale === 'larger' ? ICONS.textLarger : (scale === 'large' ? ICONS.textLarge : ICONS.textNormal);
+    const label = `Text size: ${FONT_LABELS[scale]} — click for ${FONT_LABELS[next]}`;
+    btn.title = label;
+    btn.setAttribute('aria-label', label);
+  }
+
+  function setFontScale(scale, btn) {
+    const next = FONT_STEPS.includes(scale) ? scale : 'normal';
+    document.documentElement.dataset.fontScale = next;
+    try { localStorage.setItem(FONT_KEY, next); } catch { /* no-op */ }
+    paintFontButton(btn, next);
+    if (btn) {
+      // Restart the pop-in keyframe, as setTheme does.
+      btn.classList.remove('icon-pop');
+      void btn.offsetWidth;
+      btn.classList.add('icon-pop');
+    }
+  }
+
+  // Call once per page with the text-size button element.
+  function initFontScale(btn) {
+    if (!btn) return;
+    paintFontButton(btn, effectiveFontScale());
+    btn.addEventListener('click', () => {
+      const i = FONT_STEPS.indexOf(effectiveFontScale());
+      setFontScale(FONT_STEPS[(i + 1) % FONT_STEPS.length], btn);
+    });
+  }
+
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, field, isHappeningNow, isMyGroupSession,
-    eventCardHtml, effectiveTheme, setTheme, initTheme, fetchTimetable, loadTimetable,
+    eventCardHtml, effectiveTheme, setTheme, initTheme, effectiveFontScale, setFontScale, initFontScale, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     issueNotesKey, noteCheckId, coursePrefix, issueCode, flowLeafIds, issueProgress,
