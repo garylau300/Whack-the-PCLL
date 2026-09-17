@@ -235,7 +235,25 @@ not what the code does.
   - **e-Legislation cannot be WebFetched** — it is a JS single-page app and
     returns only its loading shell, for the HTML and `.pdf` URLs alike.
     `curl` on `!en.pdf` also returns the HTML shell, not a PDF. HKLII is
-    the same. Don't waste calls on either.
+    the same (`/eng/hk/legis/ord/<cap>/s<n>.html` returns the shell too).
+    Don't waste calls on either.
+  - **For an Ordinance with no machine-readable mirror**, there is no
+    extract to grep, so `quotecheck.py` can only report MISS — that is the
+    script being honest, not the quote being wrong, and the quote still has
+    to be verified by hand before it ships. Confirm it against **two
+    independent reproductions that are unmistakably of the Hong Kong text**,
+    not of the English Act it was copied from: an HK-specific section number
+    or a subsection where HK and England diverge is what proves the source
+    is the Ordinance. Two boxes were cleared this way and need no re-check:
+    `s7(1), Control of Exemption Clauses Ordinance (Cap. 71)` (HK numbers it
+    s7 where UCTA 1977 numbers it s2) and `s3(1), Partnership Ordinance
+    (Cap. 38)` (reproductions carry HK's own s3(2) opening, "But the relation
+    between members of any company or association which is— (a) registered
+    as a company under any Ordinance relating to the registration of
+    joint-stock companies"). Both matched their box word for word.
+    Dead ends already tried for these two, don't repeat them: studylib
+    (bot check), HKU Historical Laws Online (connection reset), Practical
+    Law (403).
   - The **course outline still governs scope**: it decides what is
     examinable, and italicised/unexaminable topics stay out however
     interesting the statute is.
