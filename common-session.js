@@ -258,10 +258,10 @@
     return `<section class="exam-section exam-section--crossrefs"><h3>Related Issue Types</h3><ul class="exam-crossrefs">${items}</ul></section>`;
   }
 
-  // The routing half of an issue type's "Issue Triggers" section. A trigger
-  // list says "these facts mean you are on this page"; a route says "these
-  // neighbouring facts mean you are on the WRONG page, and here is the right
-  // one". Authored as `triggers.routes`, each entry `{ when, session, issue,
+  // The routing half of an issue type's "Fact Pattern Triggers" section. A
+  // trigger list says "these facts mean you are on this page"; a route says
+  // "these neighbouring facts mean you are on the WRONG page, and here is the
+  // right one". Authored as `triggers.routes`, each entry `{ when, session, issue,
   // label }`. Returned as a fragment rather than a section because it is
   // injected into the triggers section through examIssueSectionsHtml's
   // `extras` argument -- it belongs under that heading, not beside it.

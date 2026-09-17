@@ -58,6 +58,24 @@ for (const [code, details] of Object.entries(COURSE_DETAILS)) {
       seenIds.add(issue.id);
       if (!issue.title) run.fail('issue title', where, 'issue type has no title');
 
+      // Fact Pattern Triggers is the first thing on the page and the whole
+      // point of the index: it is what tells a reader looking at a problem
+      // question that this is the right page. A session authored without
+      // them ships an issue type that can only be found by its title.
+      const bullets = (issue.triggers && issue.triggers.bullets) || [];
+      if (bullets.length < 4) {
+        run.fail('trigger coverage', where, `only ${bullets.length} fact pattern trigger(s) — an issue type needs enough to discriminate`);
+      }
+      run.count('trigger bullets', bullets.length);
+      for (const bullet of bullets) {
+        // A trigger is a fact pattern, not a restatement of the rule or an
+        // instruction about the exam paper. Both of those read as guidance
+        // and neither helps a reader recognise the facts in front of them.
+        if (/^(The question|The problem|You are asked to say whether)\b/.test(bullet)) {
+          run.fail('trigger shape', where, `${JSON.stringify(bullet.slice(0, 70))} describes the question rather than the facts`);
+        }
+      }
+
       for (const key of Object.keys(issue)) {
         if (!ISSUE_KEYS.has(key)) {
           run.fail('unknown issue key', where, `"${key}" is not rendered by examIssueSectionsHtml — it will silently vanish`);

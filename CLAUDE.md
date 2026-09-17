@@ -87,6 +87,27 @@ not what the code does.
   ref pointing at a renamed or deleted issue degrades to plain text rather
   than a dead link, so **renaming an issue `id` silently downgrades every
   ref to it** — grep for the old id when you rename one.
+- **Triggers are FACT PATTERNS, and the section is called "Fact Pattern
+  Triggers".** A trigger is a sentence describing facts a reader could meet
+  in a problem question and recognise — "A generally indorsed writ was served
+  on 6 October and the defendant gave notice of intention to defend on 14
+  October; no statement of claim has followed" — not a restatement of the
+  rule, and not a description of what the exam paper asks ("The question
+  gives a service date and asks for a deadline"). `verify-data.js` rejects a
+  bullet opening "The question"/"The problem", and requires at least 4 per
+  issue type.
+  - **Build the facts out of what the issue's own notes already cite.**
+    Concrete dates, sums, forms and thresholds are what make a trigger
+    recognisable, and every one of them must come from a provision the
+    flowchart or authorities on that page has already established. Turning
+    "a defence has not been served" into "the 28 days for the defence expired
+    on 21 April with nothing served" is a restructure of verified text, the
+    same reasoning that licenses lifting sub-points out of a long point. An
+    invented threshold is fabrication like any other.
+  - **Make them diverse.** Across a list, vary the shape: the textbook case,
+    the near-miss the reader will get wrong, the one that looks like the
+    neighbouring issue type, and the edge the rule expressly carves out. Nine
+    restatements of the same situation discriminate no better than one.
 - **An issue type's `triggers` has two halves.** `bullets` say "these facts
   mean you are on the right page"; `routes` say "these neighbouring facts
   mean you are on the WRONG page, and here is the right one". A `routes`
@@ -120,7 +141,7 @@ not what the code does.
   missing.
 - **The answering flowchart is a three-level checklist; nothing else is.**
   Step > point > sub-point, all checkboxes. `bullets`/`bulletGroups`
-  everywhere (Issue Triggers, Look Out For, Skills, Mistakes, reference
+  everywhere (Fact Pattern Triggers, Look Out For, Skills, Mistakes, reference
   appendices, mindmap popups) stay plain lists — they are things to notice
   while reading, not work to complete. `flowchartHtml(fc, opts)` renders the
   checkboxes only when `opts.checkable` is set, and `issue.js` is the only
@@ -503,6 +524,16 @@ not what the code does.
      unused exports are for.
    When adding a check, make it fail on purpose first — a check that can't
    fail is worse than none, because it reads as coverage.
+   Bulk-editing courseDetails by script is normal here (they are too big to
+   hand-edit reliably), and the failure mode is silent: a patcher that finds
+   its anchor by searching FORWARD from an issue's `id:` will happily walk
+   past the end of that issue when the key it wants is absent, and overwrite
+   the same-named array in a later section. That is how a `triggers.bullets`
+   rewrite once ate an issue type's `skills` list. Bound every such search to
+   the next `id: '` AND fail the whole run if any target is missing rather
+   than patching what was found; then diff every OTHER section against
+   `git show HEAD:` afterwards and require that nothing but the intended key
+   changed. `npm test` caught that one, which is the argument for the suite.
 3. Then start the dev server (`npm run dev`) and write a throwaway
    Playwright script in the scratchpad dir to click through the change —
    screenshot both light and dark themes, check for console errors.

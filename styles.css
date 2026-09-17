@@ -1187,7 +1187,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-flow--checkable .exam-flow-points > li { margin-bottom: 3px; }
 
 /* Trigger routing (issue.html) — the "wrong page, try this one" half of the
-   Issue Triggers section. Deliberately lighter than .exam-crossrefs: these
+   Fact Pattern Triggers section. Deliberately lighter than .exam-crossrefs: these
    are inline redirects while reading, not the page's own related-topics
    list, so they get a left rule rather than a full card. Each row is the
    fact pattern followed by the issue type that answers it; the row wraps to

@@ -325,7 +325,7 @@
   // question: spot it -> work it -> work it well -> write it -> don't blow
   // it -> look it up. `notes` is the catch-all and stays last.
   const EXAM_SECTIONS = [
-    { key: 'triggers', heading: 'Issue Triggers' },
+    { key: 'triggers', heading: 'Fact Pattern Triggers' },
     { key: 'answering', heading: 'Answering Flowchart' },
     { key: 'lookOut', heading: 'Things to Look Out For' },
     { key: 'skills', heading: 'Answering Skills' },
