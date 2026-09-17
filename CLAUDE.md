@@ -474,28 +474,55 @@ not what the code does.
 
 ## Verification workflow — do this before every commit
 
-1. `npm run check` (syntax-checks every tracked `.js` file) and
-   `npm run lint`.
-2. Start the dev server (`npm run dev`), then write a throwaway Playwright
-   script in the scratchpad dir to actually click through the change —
-   screenshot both light and dark themes, check for console errors. There
-   is no persisted test suite yet (see "Known gaps"), so this manual pass
-   is what actually catches a regression before it ships.
-3. Kill the dev server (`pkill -f "scripts/dev-server.js"`) before
+1. `npm run check` (syntax-checks every tracked `.js` file),
+   `npm run lint`, and `npm test`.
+2. `npm test` is three plain Node programs under `scripts/` — no test
+   framework, same zero-build reasoning as the site itself. They cover the
+   cross-file invariants nothing else can see, and CI runs them on every
+   push:
+   - `verify-data.js` — courseDetails structure. A section key the renderer
+     doesn't know is dropped silently, a `crossRefs` entry at a renamed
+     issue id degrades to plain text, two identically worded rows under one
+     step share a checkbox. It also derives every flowchart checkbox id a
+     *third* time, from the data, and requires `flowLeafIds`
+     (`common-core.js`) and the rendered markup (`common-content.js`) to
+     agree — they walk the same tree in two files that can't call each
+     other, so nothing but a check keeps them in step.
+   - `verify-pages.js` — page wiring. All six pages load the same scripts
+     in the required order, every `courseDetails/*.js` on disk is on every
+     page, every DOM id a page's scripts look up is declared by that page,
+     and `COURSE_COLORS` matches `api/timetable.js`'s `COURSES` exactly.
+   - `verify-parser.js` — `lib/parseTimetable.js` and `lib/xlsxLite.js`
+     against hand-built fixtures. This is what those modules' otherwise
+     unused exports are for.
+   When adding a check, make it fail on purpose first — a check that can't
+   fail is worse than none, because it reads as coverage.
+3. Then start the dev server (`npm run dev`) and write a throwaway
+   Playwright script in the scratchpad dir to click through the change —
+   screenshot both light and dark themes, check for console errors.
+   `npm test` deliberately covers none of this: layout, contrast and print
+   rendering still need a real browser. Two traps in this container:
+   `playwright-core` isn't a dependency of this repo (install it in the
+   scratchpad, `--no-save`), and `waitUntil: 'networkidle'` never settles
+   because the Google Fonts request hangs — abort `fonts.g*` routes and
+   wait on `#status` being hidden instead.
+4. Kill the dev server (`pkill -f "scripts/dev-server.js"`) before
    finishing up.
-4. Commit with a message that explains *why*, not just what.
+5. Commit with a message that explains *why*, not just what.
 
 ## Known gaps / natural next steps
 
 (From a deliberate "what would you improve" review — not urgent, just
 recorded so the reasoning doesn't have to be redone.)
 
-- **No persisted automated test suite.** Every verification this repo has
-  had so far is a one-off Playwright script, written and thrown away per
-  session. A handful of checked-in specs (a session/course/quiz page smoke
-  test, a mindmap-overlap check) run via `npm test` and wired into CI would
-  catch a regression automatically instead of relying on whoever's working
-  that session to think to check by hand.
+- **No automated *browser* test.** `npm test` now covers the data, the
+  page wiring and the parser (see the verification workflow above), but
+  everything that needs a rendered page — layout, contrast, the mindmap's
+  measured positions, the print stylesheet — is still a one-off Playwright
+  script written and thrown away per session. Checking in a couple of
+  headless specs (a session/course/quiz smoke test, a mindmap-overlap
+  check) would close the rest of this, at the cost of making Playwright a
+  real dependency and CI a good deal slower.
 - **Prettier is configured but not enforced.** `npm run format`/
   `format:check` exist, but `prettier --check .` currently fails on every
   tracked source file — the existing code wasn't written to Prettier's

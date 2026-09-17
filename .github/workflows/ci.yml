@@ -1,12 +1,21 @@
 name: CI
 
-# Deliberately lightweight -- this is a zero-build static site with no
-# automated browser tests yet (see CLAUDE.md's "known gaps" section), so
-# there's no build step to run here. What this catches: a JS syntax error,
-# an obvious bug ESLint's default rules flag (undeclared globals, stray
-# `var`, an unused variable), and a CSS file with unbalanced braces --
-# each of these has actually broken a page in this repo's history, and none
-# of them require a browser to detect.
+# No build step -- this is a zero-build static site. Everything here runs in
+# plain Node and needs no browser, which is what keeps it fast enough to run
+# on every push. What this catches:
+#   * a JS syntax error, and the bugs ESLint's default rules flag (undeclared
+#     globals, stray `var`, an unused variable);
+#   * a CSS file with unbalanced braces;
+#   * the cross-file invariants nothing else can see -- a note section that
+#     will silently not render, a crossRef pointing at a renamed issue id, two
+#     flowchart rows that would share one checkbox, a page missing a course's
+#     <script>, a DOM id a script reaches for that the page never declares,
+#     and the timetable parser's own behaviour (see npm test).
+# Each of these has actually broken something in this repo's history.
+#
+# Still not covered: anything that needs a real browser (layout, contrast,
+# print rendering). Those stay manual Playwright passes -- see CLAUDE.md's
+# verification workflow.
 on:
   push:
     branches: ['**']
@@ -30,6 +39,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Verify data, page wiring and parser
+        run: npm test
 
       - name: Check styles.css brace balance
         run: |

@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "for f in $(git ls-files '*.js'); do node --check \"$f\" || exit 1; done"
+    "check": "for f in $(git ls-files '*.js'); do node --check \"$f\" || exit 1; done",
+    "test": "node scripts/verify-data.js && node scripts/verify-pages.js && node scripts/verify-parser.js"
   },
   "repository": {
     "type": "git",

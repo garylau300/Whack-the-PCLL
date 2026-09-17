@@ -614,8 +614,17 @@
 
   async function fetchTimetable(fresh) {
     const res = await fetch(`/api/timetable${fresh ? '?fresh=1' : ''}`);
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to load timetable');
+    // api/timetable.js answers its own failures with a JSON { error } body,
+    // but a platform-level failure (a gateway timeout, a 5xx from the host
+    // rather than the function) answers with HTML. Parsing that first turned
+    // every such outage into "Unexpected token '<'", which reads like a bug
+    // in the site rather than a service that is down -- so the status is
+    // checked before the body is trusted to be JSON at all.
+    const text = await res.text();
+    let data = null;
+    try { data = JSON.parse(text); } catch { /* not JSON — handled below */ }
+    if (!res.ok) throw new Error((data && data.error) || `Timetable service error (HTTP ${res.status})`);
+    if (!data) throw new Error('Timetable service returned an unreadable response');
     return data;
   }
 
