@@ -67,9 +67,15 @@ not what the code does.
   `examNotes` shape, documented on `examIssueSectionsHtml` in that file.
 - **A session has three possible note formats, and `sessionDetailHtml`
   picks the first one authored**, in this order: `examNotes` (current),
-  `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). Only
-  six sessions predate `examNotes` and they're deliberately left as they
-  are — a new format alongside them, not a migration.
+  `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). As of
+  the last count: 44 sessions declared, 8 with `examNotes`, **3** with
+  `legalIssues` (PCLL8010/LG1, PCLL8020/LG1, PCLL8030/LG0), and **0** with
+  `fullNotes`. The three mindmap sessions predate `examNotes` and are
+  deliberately left as they are — a new format alongside them, not a
+  migration. `fullNotes` is a different case: its renderer is still live in
+  `common-session.js` but no data has reached it for some time. Removing it
+  is a decision, not a cleanup — don't do it in passing, and don't assume
+  it's exercised when you change the note-body renderers.
 - **One course topic can span several sessions.** CCT's Corporate Practice
   is the worked example: the outline covers LG2, LG3 and LG5 as one body of
   law, so it's authored as `examNotes` on each of those three sessions

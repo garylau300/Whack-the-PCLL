@@ -5,12 +5,14 @@ name: CI
 # on every push. What this catches:
 #   * a JS syntax error, and the bugs ESLint's default rules flag (undeclared
 #     globals, stray `var`, an unused variable);
-#   * a CSS file with unbalanced braces;
 #   * the cross-file invariants nothing else can see -- a note section that
 #     will silently not render, a crossRef pointing at a renamed issue id, two
 #     flowchart rows that would share one checkbox, a page missing a course's
 #     <script>, a DOM id a script reaches for that the page never declares,
-#     and the timetable parser's own behaviour (see npm test).
+#     and the timetable parser's own behaviour;
+#   * stylesheet rules that only bite in one mode -- unbalanced braces, a
+#     reduced-motion block that forgets to reset delays, a looping animation
+#     that ends mid-motion (see npm test).
 # Each of these has actually broken something in this repo's history.
 #
 # Still not covered: anything that needs a real browser (layout, contrast,
@@ -40,22 +42,5 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Verify data, page wiring and parser
+      - name: Verify data, page wiring, parser and styles
         run: npm test
-
-      - name: Check styles.css brace balance
-        run: |
-          node -e "
-            const fs = require('fs');
-            const css = fs.readFileSync('styles.css', 'utf8');
-            let depth = 0;
-            for (const ch of css) {
-              if (ch === '{') depth++;
-              if (ch === '}') depth--;
-            }
-            if (depth !== 0) {
-              console.error('styles.css braces are unbalanced (net depth ' + depth + ')');
-              process.exit(1);
-            }
-            console.log('styles.css braces balanced');
-          "

@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "for f in $(git ls-files '*.js'); do node --check \"$f\" || exit 1; done",
-    "test": "node scripts/verify-data.js && node scripts/verify-pages.js && node scripts/verify-parser.js"
+    "test": "node scripts/verify-data.js && node scripts/verify-pages.js && node scripts/verify-parser.js && node scripts/verify-styles.js"
   },
   "repository": {
     "type": "git",

@@ -99,6 +99,17 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    /* Delays have to go too, not just durations. The dashboard staggers its
+       sections with animation-delay (up to 0.2s) under `fill-mode: both`, so
+       the backwards fill holds each one at its `from` keyframe -- opacity 0
+       -- for the whole delay. Collapsing only the duration left a
+       reduced-motion reader watching the page assemble itself one block at a
+       time over ~210ms, measured, which is the very effect the preference
+       asks us to drop; everyone else got a single smooth 350ms fade. Any new
+       delay is covered automatically by resetting them here rather than
+       per-rule. */
+    animation-delay: 0s !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
 }

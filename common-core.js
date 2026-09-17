@@ -648,7 +648,7 @@
   }
 
   // Stale-while-revalidate, client-side: every page load otherwise re-pays
-  // the live sheet's fetch+parse cost (well over a second — see README) even
+  // the live sheet's fetch+parse cost (~600ms cold — see README) even
   // though the data rarely changes between visits. Shows the last-cached
   // copy instantly (if any) via `onData(data, true)`, then fetches fresh
   // data in the background and calls `onData(data, false)` again once it

@@ -32,7 +32,7 @@ const COURSES = {
 // Edge caching (the Cache-Control header below) only ever helps *other*
 // visitors hitting a warm CDN entry — it does nothing for this function's
 // own cold/warm invocations. This in-memory cache is what actually saves
-// the ~1s fetch+parse cost (see README) whenever the same lambda container
+// the ~600ms fetch+parse cost (see README) whenever the same lambda container
 // serves more than one request within the window — free on Vercel's warm
 // reuse, harmless if a cold start means it's never hit.
 const CACHE_MS = 6 * 60 * 60 * 1000; // matches the s-maxage below

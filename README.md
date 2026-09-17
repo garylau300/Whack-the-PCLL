@@ -1,101 +1,185 @@
-# Whack the PCLL — Timetable (Group 11)
+# Whack the PCLL (Group 11)
 
-An interactive timetable for HKU's PCLL programme, built for Group 11. It's a
-zero-build static site backed by one Vercel serverless function that parses
-HKU's official Google Sheet **live on every request** — no manual copy to go
-stale, no redeploy needed when the sheet changes.
+A study portal for HKU's PCLL, built for Group 11. Two halves that meet on
+the same page:
 
-## How it works
+- a **live timetable** — one Vercel serverless function parses HKU's official
+  Google Sheet on request, so nothing is copied by hand and nothing goes
+  stale; and
+- **exam notes** — hand-authored, per-course, organised by the issue types
+  that actually come up in a problem question, hung off the sessions the
+  timetable already knows about.
 
-- `api/timetable.js` fetches the published timetable workbook
+It's a zero-build static site: plain HTML/CSS/JS, no bundler, no framework,
+no client dependencies. ESLint and Prettier are dev-only.
+
+`CLAUDE.md` is the companion to this file: this one is *what the code does*,
+that one is *the conventions and rules for changing it*.
+
+## The timetable half
+
+- **`api/timetable.js`** fetches the published workbook
   (`.../export?format=xlsx`) and parses it with a small dependency-free XLSX
-  reader (`lib/xlsxLite.js` — avoids the `xlsx` npm package, whose registry
-  build carries unpatched security advisories).
-- `lib/parseTimetable.js` walks each week's free-form layout (whole-cohort
-  webinars/LGs and small-group breakouts stacked per weekday column), resolves
-  Group 11's specific room/instructor wherever the sheet lists every group's
-  breakout (groups pair as N / N+13, so Group 11 pairs with Group 24), and
-  classifies each session's free text into structured fields (No. / Topic /
-  Venue / Instructor) rather than leaving it as a raw text dump. A small-group
-  session listed for other groups (not Group 11's) is still surfaced — with
-  the full listing — but tagged `scope: "other-group"` so the UI can grey it
-  out instead of hiding it.
-- The response is cached at the edge for ~6 hours (`Cache-Control:
-  s-maxage`/`stale-while-revalidate`), and `api/timetable.js` also keeps an
-  in-memory copy (with the same 6h TTL) so a warm serverless container
-  answers repeat requests without re-fetching/re-parsing the sheet at all —
-  and falls back to serving that last-known-good copy if a fetch to Google
-  Sheets ever fails, rather than erroring out. On the client, `common.js`'s
-  `loadTimetable()` mirrors the same pattern in `localStorage`: cached data
-  (if any) renders instantly, then a background fetch quietly upgrades it —
-  so navigating between pages, or reopening the site, never shows a blank
-  loading screen once it's been synced once. Use the "Refresh now" button (or
-  `/api/timetable?fresh=1`) to force an immediate re-sync end-to-end.
-- **`index.html`** (`dashboard.js`) is the homepage: today's own classes,
-  a rule-based "what to do today" checklist, this week's pre-recorded videos
-  (cross-referencing each one's "before LGx/SGx" hint against this week's
-  actual live sessions to resolve a real "Watch before {day}" deadline where
-  possible, falling back to the raw hint otherwise), a "this week — watch out
-  for" scan across the current week for assessments/exams/hand-ins/court
-  attendance/holidays, a compact Mon–Sat strip for the week, and a
-  Legal Skill of the Day (see below). All derived client-side from the same
-  live `/api/timetable` response — no extra backend calls.
-- **`timetable.html`** (`app.js`) is the full week-grid/day-view timetable,
-  with the settings panel to filter elective sessions once you know your 3
-  choices (saved in your browser only).
-- Any session with a course code is clickable, linking to `course.html?code=`
-  that course — a per-course page (`course.js`) listing every session for it
-  across the whole programme as a compact table (Date / Time / No. / Topic /
-  Venue / Who), with the same "your group" / "other group" highlighting, plus
-  that course's pre-recorded LGs interleaved in by week (each sheet lists
-  these above the "Week N" row — `extractPreRecorded` in
-  `lib/parseTimetable.js` pulls the code, topic, its own LG number(s) — a
-  regex pass over the topic text, since it's often mid-sentence ("...Post
-  LG2 Supplement...") rather than a clean prefix, so it's additive and never
-  rewrites the topic — the watch-before/after hint, and instructor out of
-  them). It's built as one `<section class="course-section">` among others
-  still to come (assessment methods, course materials).
-- Shared rendering (event cards, date/time formatting, the elective-filter
-  settings panel, the light/dark toggle) lives in `common.js`, loaded by
-  every page. Light is the default theme; dark only applies once a visitor
-  explicitly toggles it (persisted per-browser). There's no "Group 11" badge
-  in the UI — it's implicit throughout (the whole site is built for that one
-  group), so showing it back to the user added nothing.
+  reader (`lib/xlsxLite.js` — which exists to avoid the `xlsx` npm package,
+  whose registry build carries unpatched prototype-pollution/ReDoS
+  advisories).
+
+  Roughly where the time goes on a cold request: **~530ms** fetching from
+  Google, **~70ms** parsing 21 week-tabs, for a **~75KB** JSON response.
+  Most of what a naive parse costs is avoidable — Sheets pads its export out
+  to the sheet's full declared grid, so a week tab holds 25,859
+  styled-but-empty cells against 123 that carry anything, and skipping those
+  is worth about 6x on the parse alone.
+
+- **`lib/parseTimetable.js`** walks each week's free-form layout
+  (whole-cohort webinars/LGs and small-group breakouts stacked per weekday
+  column) and turns it into structured events. The interesting part is
+  resolving *this* student's session out of a sheet that lists every group's:
+  groups pair as N / N+13, so Group 11 pairs with Group 24. Each session's
+  free text is classified into No. / Topic / Venue / Instructor rather than
+  left as a text dump. A breakout listed for other groups is still
+  surfaced — with the full listing — but tagged `scope: "other-group"` so the
+  UI can grey it out instead of hiding it.
+
+  Nearly every regex in that file is there because HKU's sheet does something
+  irregular, and each one carries a comment saying which irregularity. It has
+  no frontend dependency and is unit-tested by `scripts/verify-parser.js`.
+
+- **Caching, three layers deep**, because the sheet changes far less often
+  than people load the page:
+  - the response is cached at the edge for ~6 hours (`Cache-Control:
+    s-maxage` / `stale-while-revalidate`);
+  - `api/timetable.js` keeps an in-memory copy with the same TTL, so a warm
+    container answers a repeat request in ~1ms without re-fetching — and
+    serves that last-known-good copy if Google Sheets ever fails, rather than
+    erroring out;
+  - on the client, `loadTimetable()` in `common-core.js` mirrors the pattern
+    in `localStorage`: cached data renders instantly, then a background fetch
+    quietly upgrades it, so moving between pages never shows a loading
+    screen once you've synced once.
+
+  "Refresh now" (or `/api/timetable?fresh=1`) forces a re-sync end to end.
+
+## The notes half
+
+- **`courseDetails/PCLL8010.js`** and friends — one file per course, each
+  extending the same `window.COURSE_DETAILS`. This is where all authored
+  content lives: course info, assessment structure, materials, and per-session
+  notes.
+- A session's notes are authored as **exam notes**: a list of *issue types*,
+  each its own addressable page (`issue.html?...&issue=<id>`). An issue type
+  carries the triggers that tell you you're on the right page, an answering
+  flowchart, things to look out for, common mistakes, a model-answer skeleton
+  and its key authorities. The answering flowchart is a three-level checklist
+  (step > point > sub-point) that remembers what you've ticked, and every step
+  carries two collapsed coaching blocks: *why* the rule is shaped that way,
+  and what to *write* in the exam plus the *trap* at that step.
+- Issue types get a derived code — `CIV-LG4.11` — built from the course
+  prefix, session key and position. Derived, never authored, so it can't drift
+  out of step with the notes.
+- Notes cross-link. `crossRefs` says "this is also dealt with over there";
+  `routes` says "if the facts look like *this*, you're on the wrong page, go
+  here". Both resolve through the live timetable, and degrade to plain text
+  rather than a dead link if a target moves.
+- Two earlier formats are still supported alongside it: an interactive
+  mindmap (`legalIssues`), used by three sessions that predate exam notes and
+  deliberately left as they are, and a flat accordion (`fullNotes`), which
+  nothing currently authors — the renderer is still there, but no data
+  reaches it.
+
+## Pages
+
+| Page | Script | What it is |
+| --- | --- | --- |
+| `index.html` | `dashboard.js` | Today's classes, a rule-based "what to do today", this week's pre-recorded videos, upcoming deadlines, a week strip, a Legal Skill of the Day |
+| `timetable.html` | `app.js` | The full week-grid / day-view timetable, plus the settings panel for filtering electives |
+| `course.html` | `course.js` | One course: info, assessment, the course-wide issue-type roll-up, homework, every session across the programme, materials |
+| `session.html` | `session.js` | One session's own page — real and linkable, never a modal |
+| `quiz.html` | `quiz.js` | That session's cloze/flashcards, where authored |
+| `issue.html` | `issue.js` | One issue type's notes, with the checklist and a print button |
+
+Shared logic is split across three files that **must load in that order** —
+`common-core.js` → `common-content.js` → `common-session.js` — because each
+merges its exports into `window.PCLL` and the dependency runs one way only.
+
+A few things worth knowing:
+
+- **Printing is a stylesheet, not a library.** `issue.html`'s print button
+  calls `window.print()`; "Save as PDF" is a destination in the browser's own
+  print dialog. How the page prints lives entirely in the `@media print`
+  block at the foot of `styles.css`.
+- Light is the default theme; dark applies only once you toggle it
+  (persisted per browser).
+- Statutory and case references are detected and highlighted automatically —
+  nothing in `courseDetails` carries markup for it.
 - The Google Fonts stylesheet is loaded non-render-blocking (`media="print"`
-  swapped to `all` on load, with a `<noscript>` fallback) so a slow or
-  unreachable fonts CDN can't delay first paint; each page's `#status`
-  placeholder also shows a small CSS spinner instead of bare text while the
-  first sync is in flight.
-- `legalSkills.js` is a static, hand-written set of legal-skills tips (a
-  Socratic question, an IRAC-structure reminder, a practical skill tip per
-  PCLL core course), modeled on the categories in Anthropic's
+  swapped to `all` on load, with a `<noscript>` fallback), so a slow fonts CDN
+  can't delay first paint.
+- `legalSkills.js` is a static, hand-written set of legal-skills tips,
+  modelled on the categories in Anthropic's
   [`claude-for-legal`](https://github.com/anthropics/claude-for-legal) repo —
-  specifically its `law-student` plugin. That repo is a Claude Code
-  plugin/skill marketplace (slash commands run inside a Claude session), not
-  a public API, so this content is written once rather than fetched live; the
-  dashboard picks whichever tip matches today's actual classes.
+  specifically its `law-student` plugin. That repo is a Claude Code plugin
+  marketplace, not a public API, so the content is written once rather than
+  fetched; the dashboard picks whichever tip matches today's classes.
 
 ## Running locally
 
 ```
-npm run dev
+npm install     # dev-only: eslint, prettier
+npm run dev     # site + API at http://localhost:3000
 ```
 
-Serves the site and the API at http://localhost:3000.
+## Checks
+
+```
+npm run check   # node --check every tracked .js
+npm run lint    # eslint
+npm test        # the four verify-*.js scripts below
+```
+
+`npm test` is four plain Node programs under `scripts/` — no test framework,
+same reasoning as the site having no bundler. They catch the cross-file
+mistakes that produce no error anywhere:
+
+- **`verify-data.js`** — a note section whose key the renderer doesn't know
+  (silently dropped), a `crossRefs` entry pointing at a renamed issue id
+  (silently degraded to prose), two identically worded rows under one step
+  (silently sharing one checkbox). It also derives every checkbox id a third
+  time, from the data, and requires `flowLeafIds` and the rendered markup to
+  agree — they walk the same tree in two files that can't call each other.
+- **`verify-pages.js`** — all six pages load the same scripts in the required
+  order, every `courseDetails/*.js` is on every page, every DOM id a script
+  reaches for is declared by that page, `COURSE_COLORS` matches the API's
+  course list.
+- **`verify-parser.js`** — `lib/parseTimetable.js` and `lib/xlsxLite.js`
+  against hand-built fixtures.
+- **`verify-styles.js`** — brace balance, and two motion rules: the
+  `prefers-reduced-motion` block must neutralise delays and not just
+  durations, and a looping animation's keyframes must start *and* end at the
+  resting pose (that block collapses an animation to one 0.001ms run, which
+  snaps the element to its final keyframe).
+
+CI runs all of it on every push. Nothing here needs a browser, which is what
+keeps it fast — so layout, contrast and print rendering are still checked by
+hand with a throwaway Playwright script. See CLAUDE.md's verification
+workflow.
 
 ## Deploying
 
-Zero config — connect the repo to Vercel. `index.html` etc. are served as a
-static site; `api/timetable.js` is auto-detected as a serverless function.
+Zero config — connect the repo to Vercel. `index.html` and friends are served
+statically; `api/timetable.js` is auto-detected as a serverless function.
 
 ## Updating for a new term / if HKU restructures the sheet
 
 The parser assumes: one tab per week, a `Week N` label in column A with
 weekday headers across the row, dates on the next row, and free-form session
 blocks below (a time range like `9:00 - 11:00 a.m.` opens a new session;
-`Gp <n> / <m> - <venue> - <instructor>` lines are per-group breakouts). If
-HKU changes the sheet's structure, adjust `lib/parseTimetable.js` — it's
-independent of the frontend and unit-testable by feeding it a saved grid.
+`Gp <n> / <m> - <venue> - <instructor>` lines are per-group breakouts). If HKU
+changes that shape, `lib/parseTimetable.js` is the only file to touch —
+start by adding a fixture to `scripts/verify-parser.js` for the new shape.
 
-If Gary's group number ever changes, update `GROUP` / `PAIRED_GROUP` in
-`api/timetable.js`.
+If the group number changes, update `GROUP` / `PAIRED_GROUP` in
+`api/timetable.js`. A new course needs a file in `courseDetails/`, a
+`<script>` on all six pages, a `codePrefix`, a `COURSE_COLORS` hue and an
+entry in the API's `COURSES` map — `npm test` will tell you which of those you
+forgot.
