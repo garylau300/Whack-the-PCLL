@@ -526,6 +526,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply the two-part test: the purpose and the degree of annexation',
+                    detail: 'Whether an item has become part of the land is decided by the purpose of the annexation and the degree of annexation, weighed together. The purpose limb asks whether the item was attached for the better enjoyment of the item itself, or in order to improve the land or building.',
                     why: 'Degree alone would make a heavy machine land merely because it is hard to move, and would make a priceless tapestry a chattel merely because it hangs on two hooks. Purpose is what stops the test being about brute physics: the question is whether the thing was attached for the better enjoyment of the thing itself, or to improve the land.',
                     exam: {
                       write: 'The test is the purpose and the degree of annexation. Here the [item] was affixed by [means], and the purpose of that annexation was to [improve the premises / enable the item to be used as a chattel], so it is a [fixture / chattel].',
@@ -554,6 +555,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Calibrate against the decided examples before committing',
+                    detail: 'There is no bright line, so the reported outcomes do the work. The Hong Kong decisions run from a conservatory held to be an integral part of a building, through a window-type air conditioner fitted into an aperture, down to a free-standing unit resting on a restaurant floor.',
                     why: 'This is an area where the reported outcomes are the argument. A bare statement of the test decides nothing; what persuades is showing that the facts sit closer to the case that went one way than to the case that went the other.',
                     exam: {
                       write: 'The present facts are closer to [case] than to [case], because [the feature that decided the first].',
@@ -574,6 +576,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Say what the classification actually decides on these facts',
+                    detail: 'A fixture is part of the land and passes with it on a sale; a chattel or a fitting does not. The classification therefore decides what the purchaser has bought and what the vendor may lawfully remove before completion.',
                     why: 'Classification is never the question a client asks. The client asks whether the vendor may strip the chandeliers out before completion, or whether the price bought the conservatory. The category is only the route to that answer.',
                     exam: {
                       write: 'Since the [item] is a fixture, it forms part of the land and passes to the purchaser on the assignment; the vendor is not entitled to remove it.',
@@ -661,6 +664,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Start from the fact that Hong Kong guarantees no boundaries',
+                    detail: 'There are no guaranteed boundaries in Hong Kong. Resolving a boundary dispute is therefore an exercise in construing the grant rather than consulting a register, and the surveys the boundaries derive from differ between the New Territories and the urban areas.',
                     why: 'This is the premise that makes the whole exercise contractual rather than registral. In a title-guarantee system you would look up the boundary; here there is nothing to look up, so the boundary is whatever the grant, construed objectively, says it is.',
                     exam: {
                       write: 'There is no system of guaranteed boundaries in Hong Kong, so the dispute falls to be resolved as a matter of construction of the Government lease.',
@@ -675,6 +679,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Identify the operative provision, which is usually the verbal description',
+                    detail: 'The question is the intention of the parties as evidenced by the words they used, which is an objective test. That intention is ascertained from the operative provision, which is usually the verbal description in the parcels clause.',
                     why: 'A conveyance operates by its words; the plan is an aid to understanding them. Starting with the plan inverts the relationship and lets a draughtsman\'s error rewrite the grant.',
                     exam: {
                       write: 'The intention of the parties is ascertained objectively from the words used, and the operative provision here is the verbal description in the parcels clause: Secretary for Justice v Wing Lung Wai Community [1999] 3 HKC 580, CA.',
@@ -687,6 +692,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then ask what the plan is permitted to do',
+                    detail: 'A plan annexed to the grant may be looked at to elucidate the verbal description, but not so as to contradict it. The exception is a parcels clause saying the land is "more particularly delineated and described" on the plan, where the plan may prevail.',
                     why: 'The line drawn in the cases is between elucidation and contradiction. A plan may explain an ambiguous description; it may not be used to say the description means the opposite of what it says.',
                     exam: {
                       write: 'The plan may be looked at for elucidation but not so as to contradict the verbal description: Green Park Properties Ltd v Dorku Ltd.',
@@ -700,6 +706,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Consider rectification if the words genuinely miss the parties\' intention',
+                    detail: 'Where the words of the grant fail to record what the parties actually agreed, the court may modify or even supply words so as to give effect to their true intention. That is rectification, and it is a different exercise from construction.',
                     why: 'Construction can only work with the words on the page. Where the parties plainly agreed something the document fails to express, the answer is to correct the document rather than to strain its language into a meaning it cannot bear.',
                     exam: {
                       write: 'If the words as they stand do not reflect the parties\' true intention, the Court may modify or even supply words so as to give effect to that intention.',
@@ -712,6 +719,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'State the practical answer for the transaction',
+                    detail: 'The client needs to know what the vendor can convey and whether to complete. Say which description governs, whether the statutory plan requirements were met on any sectioning, and how large a discrepancy in area the grant itself contemplated.',
                     why: 'A boundary opinion is advice about risk, not an abstract ruling. The purchaser wants to know whether to take the title, raise a requisition, or insist on a survey before completion.',
                     exam: {
                       write: 'On the true construction of the Government lease the boundary follows [the verbal description / the plan], so the disputed strip [does / does not] form part of the lot the vendor can convey.',
@@ -768,6 +776,7 @@ window.COURSE_DETAILS.PCLL8030 = {
             crossRefs: [
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
               { session: 'LG1', issue: 'lease-or-conditions', label: 'Government lease or Conditions? Legal estate or equitable interest' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -797,6 +806,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'First ask whether the division is physical or notional',
+                    detail: 'Subject to any prohibition in the Government lease or Conditions, an owner is at liberty to deal with the leasehold interest in his lot. He may divide the plot on the ground and sell part of it, which is sectioning, or build a multi-storey building and assign each flat, which requires subdivision into undivided shares.',
                     why: 'The two routes answer different commercial problems. Selling off a piece of ground is a physical division; selling forty flats stacked on the same ground cannot be, because no flat occupies a distinct piece of the lot\'s surface.',
                     exam: {
                       write: 'The owner wishes to dispose of [a distinct part of the ground / individual units in a building], so the appropriate mechanism is [sectioning / subdivision into undivided shares].',
@@ -811,6 +821,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If it is physical: section the lot by deed poll, and follow the naming convention',
+                    detail: 'A physical division is carried out by deed poll, and the parts are named by a fixed convention under which each division produces one named Section and leaves a Remaining Portion. A plan must be drawn up by a surveyor and registered: s30, Land Survey Ordinance (Cap. 473).',
                     why: 'The convention exists so that any lot can be split indefinitely without ever reusing a name. Each division creates one named Section and leaves a Remaining Portion, so the chain of names records the history of the divisions.',
                     exam: {
                       write: 'The lot is divided by deed poll, producing Section A of Lot [number] and the Remaining Portion of Lot [number].',
@@ -826,6 +837,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If it is notional: subdivide into undivided shares, and be precise about what each owner gets',
+                    detail: 'A notional division gives each flat owner a number of undivided shares in the whole plot, held as tenant in common with the other owners, together with the exclusive right to occupy, use and enjoy — not to possess — a particular flat. The arrangement is held together by a deed of mutual covenant.',
                     why: 'This is the single most important structural fact about Hong Kong residential conveyancing. Nobody owns a flat as a parcel of land; each owner owns an abstract fraction of the whole lot, and the right to occupy a particular flat is contractual, arising from the deed of mutual covenant.',
                     exam: {
                       write: 'Each flat owner becomes a tenant in common of the whole lot, holding a number of undivided shares with the exclusive right to occupy, use and enjoy the particular flat.',
@@ -840,6 +852,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check what the division does to the grant itself',
+                    detail: 'Sectioning has a statutory consequence beyond the conveyancing convention. Where separate certificates of compliance are issued for separate sections, s14(5) of the Conveyancing and Property Ordinance deems separate Government leases to have been granted, so each section stands on its own.',
                     why: 'Sectioning is not merely a conveyancing label. Once separate certificates of compliance are issued for separate sections, the statute treats the sections as separately granted — which governs who has to consent to what afterwards.',
                     exam: {
                       write: 'By s14(5) of the Conveyancing and Property Ordinance separate Government leases are deemed to have been granted upon sectioning of the land, so a modification affecting one section does not require the consent of the owners of another.',
@@ -927,6 +940,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Identify which instrument made the grant',
+                    detail: 'Land used to be granted by Government lease and is now granted by way of Conditions. In the New Territories, Block Government leases were granted corresponding with the Demarcation Districts. A grantee under a Government lease or a Block Government lease receives a legal leasehold estate.',
                     why: 'Government leases stopped being issued, but the old ones are still on titles and the New Territories has its own species of them. The answer to every later question in this issue type turns on which of the three you are holding.',
                     exam: {
                       write: 'The grant here was made by [a Government lease / a Block Government lease / Conditions of Sale dated [date]], which determines the nature of the interest the grantee takes.',
@@ -942,6 +956,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If it is Conditions, say which of the five kinds',
+                    detail: 'Conditions come in five kinds, each recording why the Government parted with the land, and are invariably in two parts: General Conditions and Special Conditions.',
                     why: 'The five labels are not interchangeable — each records why the Government parted with the land, and that reason often explains the restrictions that follow. Conditions of Grant for a temple will carry a user restriction that Conditions of Sale by auction would not.',
                     exam: {
                       write: 'The grant was made by Conditions of [Sale / Exchange / Grant / Re-grant / Extension], which are in two parts: General Conditions and Special Conditions.',
@@ -958,6 +973,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Establish that the Conditions are a binding contract',
+                    detail: 'Where land is sold under Conditions, the purchaser receives the Conditions together with a Memorandum of Agreement which he signs. The two documents together constitute a binding contract: Attorney General v Tong Iu [1968] HKLR 603.',
                     why: 'Conditions look like a set of terms rather than an agreement, and the purchaser signs a separate short Memorandum. The point of Tong Iu is that the two documents are read together as one contract, so the purchaser is bound by conditions he never separately signed.',
                     exam: {
                       write: 'The Conditions of Sale together with the Memorandum of Agreement signed by the purchaser constitute a binding contract: Attorney General v Tong Iu [1968] HKLR 603.',
@@ -971,6 +987,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'State the interest the grantee holds before compliance — and protect it',
+                    detail: 'Until the conditions have been complied with, the grantee under Conditions holds only an equitable interest under a specifically enforceable agreement. It is converted into a legal estate on compliance: s14(1)(a), Conveyancing and Property Ordinance (Cap. 219).',
                     why: 'This is the practical heart of the issue type. Until the conditions are performed the grantee has only what a purchaser under a specifically enforceable contract has: an equitable interest. An equitable interest is vulnerable to a later legal estate acquired without notice, which is why registration matters.',
                     exam: {
                       write: 'Until the conditions have been complied with, the grantee\'s interest under the specifically enforceable Conditions is merely an equitable interest; it should be registered in the Land Registry to protect it.',
@@ -984,6 +1001,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then apply the deeming provision on compliance',
+                    detail: 'No Government lease is physically issued today. Instead, once the conditions have as a matter of fact been complied with, s14(1)(b) of the Conveyancing and Property Ordinance deems a Government lease to have been issued, on the terms conventionally contained in Government leases.',
                     why: 'No Government lease is physically issued any more. Rather than leave every modern title without the document at its root, the Ordinance deems the lease to have been issued once the conditions are met, and gives it the terms leases conventionally contained.',
                     exam: {
                       write: 'No Government lease is in fact issued; by s14(1)(a) of the Conveyancing and Property Ordinance a Government lease is deemed to have been issued upon compliance with the conditions, on the terms conventionally contained in Government leases.',
@@ -997,6 +1015,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check what happens to instruments made in the gap',
+                    detail: 'Decades may pass between the Conditions and compliance, and the land will have been dealt with in the meantime. Section 42 of the Conveyancing and Property Ordinance preserves both the effect of instruments made in that gap and their registration.',
                     why: 'There can be decades between the Conditions and compliance, and a great deal of dealing happens in between. Without a saving provision the deemed issue of a new legal estate could be argued to wipe the slate, which would be unworkable.',
                     exam: {
                       write: 'By s42(1) of the Conveyancing and Property Ordinance an instrument taking effect after the agreement for the Government lease but before its issue has the same force and effect after that issue as it had immediately before.',
@@ -1010,6 +1029,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Draw the consequence for the transaction',
+                    detail: 'Whether the vendor holds a legal estate or an equitable interest is not academic on a sale: it changes what he can show, what the purchaser must requisition, and whether a restriction on alienation still bites.',
                     why: 'The difference between a legal estate and an equitable interest is not academic on a sale: it changes what the vendor can show, what requisitions the purchaser must raise, and whether a restriction on alienation still bites.',
                     exam: {
                       write: 'The distinction matters because the grantee under a Government lease holds a legal estate, whereas the grantee under Conditions holds only an equitable interest until the conditions are complied with.',
@@ -1068,6 +1088,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'term-renewal-extension', label: 'Term, renewal and extension' },
               { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
               { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -1096,6 +1117,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Date the Conditions first — everything turns on 1 January 1970',
+                    detail: 'How compliance is proved depends on whether the agreement for the Government lease — that is, the Conditions — was entered into before or after 1 January 1970. Sections 14(2) and 14(3) of the Conveyancing and Property Ordinance take opposite approaches either side of that date.',
                     why: 'The divide is a piece of statutory tidying. Titles deriving from pre-1970 Conditions were so numerous, and so often without any certificate, that requiring proof would have cast doubt on a great deal of good title. So the statute simply deems those conditions complied with.',
                     exam: {
                       write: 'The Conditions of Grant are dated [date], which is [before / after] 1 January 1970, so compliance [is deemed under s14(2) / must be proved under s14(3)].',
@@ -1108,6 +1130,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If the Conditions are dated before 1 January 1970: compliance is deemed',
+                    detail: 'Conditions entered into before 1 January 1970 are deemed by s14(2) of the Conveyancing and Property Ordinance to have been complied with, so the Government lease is deemed issued and the owner\'s title is a legal estate, without any certificate.',
                     why: 'Deeming compliance converts the interest into a legal estate by operation of law, whatever the historical facts. That is a deliberate policy choice in favour of the security of old titles over historical accuracy.',
                     exam: {
                       write: 'The Conditions being dated before 1 January 1970, they are deemed to have been complied with under s14(2) of the Conveyancing and Property Ordinance, the Government lease is deemed issued, and no certificate of compliance is required.',
@@ -1122,6 +1145,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If the Conditions are dated after 1 January 1970: the owner must prove compliance',
+                    detail: 'For Conditions entered into on or after 1 January 1970, s14(3) of the Conveyancing and Property Ordinance deems compliance only on the issue of a certificate of compliance by the Director of Lands and the registration of that certificate in the Land Registry.',
                     why: 'For modern grants the statute takes the opposite view: the burden of showing that a building covenant and a raft of positive conditions were actually performed falls on the owner, and it is discharged by a document the Director issues after inspecting.',
                     exam: {
                       write: 'The Conditions being dated after 1 January 1970, the owner must prove compliance; by s14(3) he is deemed to have complied upon the issue of a certificate of compliance and the registration of that certificate in the Land Registry.',
@@ -1135,6 +1159,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Read what the certificate does and does not say',
+                    detail: 'A certificate of compliance is evidence that the positive conditions were performed and that no restrictive condition was being breached at the date of inspection. It is expressly given without prejudice to the Government\'s rights in respect of any breach existing then or occurring afterwards.',
                     why: 'A certificate is evidence that the positive conditions were performed at the date of inspection. It is not an absolution for breaches of restrictive conditions, and the Government says so on the face of the document.',
                     exam: {
                       write: 'The certificate of compliance provides evidence that the positive conditions have been complied with and that there was no breach of a restrictive covenant at that date; it does not preclude the Government from enforcing a later breach.',
@@ -1149,6 +1174,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Watch for sectioned and phased developments',
+                    detail: 'Where a site is developed in phases, each section is certified separately, and by s14(5) of the Conveyancing and Property Ordinance separate Government leases are deemed granted upon sectioning.',
                     why: 'Where a site is developed in phases, each section is certified separately, and the statute then treats each as separately granted. That is what allows later modifications to be negotiated section by section.',
                     exam: {
                       write: 'Separate certificates of compliance were issued for each section, so by s14(5) separate Government leases are deemed to have been granted on the sectioning.',
@@ -1205,6 +1231,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does an unwaived breach defeat title?' },
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -1235,6 +1262,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Read the term off the grant, and note how varied they are',
+                    detail: 'There is no standard term. Grants have run from 75 years through 999 years to the 50 years the Basic Law now permits, and the length of the term tells you which historical regime the grant belongs to and therefore which renewal or extension mechanism applies to it.',
                     why: 'There is no standard term. The length tells you which historical regime the grant belongs to, and therefore which renewal or extension mechanism you are looking for — so reading it off accurately is the first move, not a detail.',
                     exam: {
                       write: 'The grant is for a term of [length] commencing [date], at an annual Government rent of [sum].',
@@ -1250,6 +1278,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If the land is in the New Territories, apply the NT-specific regime',
+                    detail: 'New Territories land was never ceded. It was held under the Second Convention of Peking for 99 years from 1 July 1898, so every New Territories term had to fit inside that period — which is why the leases run 75 years plus a renewal of 24 years less three days.',
                     why: 'New Territories land was never ceded; it was held under a treaty for 99 years from 1 July 1898. Every NT term had to fit inside that, which is why the leases are 75 years plus a renewal of 24 years less three days — and why all of them needed an extension when the treaty period ran out.',
                     exam: {
                       write: 'The lot is in the New Territories and was held under a Block Government lease for 75 years from 1 July 1898, renewable for 24 years less three days, extended by the New Territories Leases (Extension) Ordinance until 30 June 2047.',
@@ -1265,6 +1294,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'For Hong Kong Island and Kowloon, take the four Basic Law cases in turn',
+                    detail: 'The 1997 transition had to deal with urban leases in four different states at once: expiring after 1997, non-renewable and expiring before it, renewable, and newly granted. Articles 120, 121 and 123 of the Basic Law and Annex 3 of the Joint Declaration deal with each separately.',
                     why: 'The 1997 transition had to deal with leases in four different states at once, and the Basic Law and the Joint Declaration deal with each separately. Getting the right limb matters because only some of them produce a new lease, and only some carry a rent that moves with the rateable value.',
                     exam: {
                       write: 'This is a [non-renewable lease expiring before 1997 / renewable lease / new lease granted before 1 July 1997 / new lease granted after 1 July 1997], so it is governed by Article [120 / 121 / 123] of the Basic Law.',
@@ -1280,6 +1310,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Note how s5 solves the multi-storey renewal problem',
+                    detail: 'An option to renew held by every co-owner of a multi-storey building is unexercisable in practice, because it would need all of them to execute. Section 5 of the Government Leases Ordinance (Cap. 40) cuts through that by treating the option as exercised.',
                     why: 'An option to renew held by three hundred co-owners is unexercisable in practice — you would need every one of them to execute. The statute cuts through it by treating the option as exercised, which is why nobody in a modern building has ever been asked to sign a renewal.',
                     exam: {
                       write: 'Where the renewal paperwork was never executed, s5 of the Government Leases Ordinance (Cap. 40) treats the land as if the owners had exercised the option to renew.',
@@ -1292,6 +1323,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then apply the 2024 extension mechanism for leases running out now',
+                    detail: 'The Extension of Government Leases Ordinance (Cap. 648), in operation from 5 July 2024, answers the 2047 problem the way the 1997 problem was answered: by extending applicable leases automatically for 50 years, with a notified exclusion procedure for those that are not to be extended.',
                     why: 'The 2047 problem is the 1997 problem again: a large stock of leases expiring on one horizon, with owners unable to plan or borrow against them. The Ordinance answers it the same way — a statutory extension that requires no application and no premium — while keeping a route to refuse extension in a bad case.',
                     exam: {
                       write: 'The lease expires on [date], after 5 July 2024, carries no right of renewal and is neither a short term tenancy nor a special purpose lease, so it is an applicable lease and is extended for 50 years under the Extension of Government Leases Ordinance (Cap. 648).',
@@ -1307,6 +1339,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Finally, ask what survives the renewal or extension',
+                    detail: 'A renewal or extension carries the old burdens and benefits forward. Covenants relating to the land continue to have effect unless a contrary intention appears, and an easement granted for the residue of a term may run to the end of the extended term.',
                     why: 'An extension that wiped the covenants would be a windfall, and one that killed the easements would be a disaster. The statute and the cases both push the same way: the new term carries the old burdens and the old benefits.',
                     exam: {
                       write: 'By s42(3) of the Conveyancing and Property Ordinance, where a Government lease expires and is renewed or replaced by a new lease of the same land, any covenant relating to that land continues to have effect unless a contrary intention is expressed.',
@@ -1398,6 +1431,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Identify the restriction the client actually needs changed',
+                    detail: 'Modification is negotiated restriction by restriction and priced accordingly, so the first task is to identify precisely which covenants stand in the way — typically a restriction on the type of building, a user restriction, or a limit on height, plot ratio or site coverage.',
                     why: 'Modification is negotiated restriction by restriction and priced accordingly. A client who says "we want to redevelop" is usually asking about three or four separate covenants, and each has to be identified before anything can be applied for.',
                     exam: {
                       write: 'The client needs a modification of the [user / height / plot ratio / site coverage] restriction in [Special Condition x / the Government lease].',
@@ -1410,6 +1444,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply to LACO, and expect to pay',
+                    detail: 'Application is made to the Legal Advisory and Conveyancing Office of the Lands Department, and a premium will usually be charged. Modification premiums are one of the three ways the leasehold system produces revenue, alongside the premium on the original grant and Government rent.',
                     why: 'The premium is the point. The Government is monetising the value the modification releases, and the notes list modification premiums among the reasons the leasehold system is profitable for Hong Kong — alongside the grant premium and the rental income.',
                     exam: {
                       write: 'Application is made to the Legal Advisory and Conveyancing Office of the Lands Department, and a premium will usually be charged.',
@@ -1423,6 +1458,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Use the right instrument — and note that the statute forgives the wrong one',
+                    detail: 'A Government lease is a deed and should ideally be varied by a Deed of Variation under seal; Conditions are a document under hand and may be varied by a letter of modification. Section 14A of the Conveyancing and Property Ordinance now allows a Government lease to be modified by letter as well.',
                     why: 'A deed can only properly be varied by a deed; Conditions are a document under hand and can be varied by a letter. Practice had not always respected that, so a great many titles would have been defective on a technicality — which is exactly what s14A was enacted to cure.',
                     exam: {
                       write: 'A Government lease should be varied by a Deed of Variation under seal and Conditions by a letter of modification; but by s14A of the Conveyancing and Property Ordinance even a Government lease may be modified by a written letter of modification.',
@@ -1436,6 +1472,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Advise that the refusal is generally not amenable to judicial review',
+                    detail: 'When the Government modifies a lease it acts as a private landlord under a contract, not as a public authority exercising a public power, so public-law grounds such as irrationality generally have no purchase on a refusal.',
                     why: 'When the Government modifies a lease it is exercising the rights of a landlord under a contract, not a public power. Public-law grounds like irrationality have no purchase on a landlord deciding what to charge for relaxing a covenant it bargained for.',
                     exam: {
                       write: 'In deciding whether to grant a modification, and on the premium chargeable, the Government acts as a private landlord rather than in a public capacity, so the decision is not amenable to judicial review on grounds of irrationality.',
@@ -1449,6 +1486,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check who has to consent where the lot has been sectioned',
+                    detail: 'Where separate certificates of compliance have issued for separate sections, s14(5) of the Conveyancing and Property Ordinance deems separate Government leases to have been granted. A modification of one section is then a transaction between the Government and that section\'s owner alone.',
                     why: 'Once sections are separately certified the statute deems separate leases, so a modification of one section is a transaction between the Government and that section\'s owner alone. Owners of other sections are strangers to it, however much the outcome affects their view.',
                     exam: {
                       write: 'By s14(5) of the Conveyancing and Property Ordinance separate Government leases are deemed granted on sectioning, so the modification letters for the other sections did not affect this owner and his consent was not required.',
@@ -1504,6 +1542,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'waiver', label: 'Has the Government waived the breach?' },
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -1538,6 +1577,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Quote the covenant and construe its words',
+                    detail: 'These cases are won and lost on the words of the particular grant, and there is no free-standing meaning to be looked up: a search for a meaning of "house" valid for all times and circumstances was described as fruitless in Wah Yick Enterprises Co Ltd v Building Authority. Construe this covenant, in this grant, against this use.',
                     why: 'These cases are won and lost on the words of the particular grant. The reports read like a dictionary because each one is construing a different formula, and a case about "boarding house" decides nothing about a covenant that says "private dwelling house".',
                     exam: {
                       write: 'The covenant provides that [quote the words], so the question is whether [the use] falls within [the prohibited / the permitted] description.',
@@ -1551,6 +1591,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Work through the residential and dwelling-house line of cases',
+                    detail: 'The residential and private dwelling-house formula is the most heavily litigated, and the decisions are strikingly restrictive: uses that are residential in a loose sense — a guesthouse, short-term paying tenants, a sub-let floor — have repeatedly been held to breach it.',
                     why: 'This is the most heavily litigated formula and the cases are strikingly restrictive — the courts have repeatedly held that a use which is residential in a loose sense is nonetheless commercial in character, and that is usually the answer a problem question is looking for.',
                     exam: {
                       write: 'Use as a [guesthouse / boarding house / home for the elderly] is commercial rather than residential in character and therefore breaches a covenant restricting user to [private residential] use.',
@@ -1560,7 +1601,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                       'Wong Bei-nei v Attorney General [1973] HKLR 582: a covenant permitting only detached or semi-detached residential premises of a European type, to be used as a private dwelling house, prohibited the erection of a block of flats.',
                       'Fully Profit (Asia) Ltd v Secretary for Justice (2013) 6 HKCFAR 351: a covenant requiring no more than one house on the lot prohibited a multi-storey building.',
                       'Incorporated Owners of Hamilton Mansion v Yu Keim Chiu [1998] 1 HKC 112: a DMC limited to private residential use was breached by use as a photographer\'s studio and as a guesthouse.',
-                      'Lau Yan Kin v Perfection (Global) Ltd LDPD 2697/2014, 4 February 2016: use of residential premises as a guesthouse was commercial, not residential.',
+                      'Lau Yan Kin v Perfection (Global) Ltd (2016) LDPD 2697/2014, 4 February 2016: use of residential premises as a guesthouse breached the user clause — though the ruling was in the context of a private tenancy agreement, not a Government lease.',
                       'Aberdeen Shopping Plaza Ltd v Incorporated Owners of Aberdeen Na King Mansions HCA 9319/2000, 13/5/2003, and Winland Finance Ltd v Profit Fine Ltd [2006] 1 HKC 582: a prohibition on use as a boarding house caught a home for elderly persons and a nursing home.',
                       'Caradon District Council v Paton (2000) Times May 17, CA: occupation by paying tenants on short-term lets breached a covenant not to use the property otherwise than as a private dwelling house.',
                       'Dobbs v Linford [1952] 2 All ER 827: a covenant not to use the premises for any purpose other than a private dwelling house was breached by sub-letting the top floor.',
@@ -1569,6 +1610,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If the covenant is industrial, ask what the activity actually is',
+                    detail: 'The industrial cases run in two stages: is manufacturing involved at all, and if there is also a non-manufacturing element, is it substantial? That structure is what allows Mexx and Raider to sit alongside one another.',
                     why: 'The industrial cases turn on a single question — is manufacturing involved? — and then on whether the non-manufacturing element is substantial. That two-stage structure is what lets Mexx and Raider come out differently on superficially similar facts.',
                     exam: {
                       write: 'The test of whether user is industrial is whether manufacturing is involved; here the [activity] is [not] manufacturing, and it [is / is not] a substantial part of the use.',
@@ -1585,6 +1627,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply the partial breach test: how extensive or substantial is the offending use?',
+                    detail: 'A covenant is not breached by every trivial departure. The test asks how extensive or substantial the offending use is relative to the whole, which is why one room used for charity work was not a breach while a substantial paging business was.',
                     why: 'A covenant is not breached by every trivial departure. The test asks about the scale and significance of the offending use relative to the whole, which is why one room used for charity work was not a breach but a paging business occupying much of a factory was.',
                     exam: {
                       write: 'The test for a partial breach is how extensive or substantial the offending use is: Donald W Shields (No 2) v Mary Chan [1972] HKLR 121. Here the [use] occupies [extent], which is [not] substantial.',
@@ -1598,6 +1641,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check the specialised user cases the lecture flags',
+                    detail: 'Agricultural and religious-purpose covenants have generated their own recent line of litigation, most of it about the storage of ashes, and Conditions restricting car parking have produced two further decisions worth having.',
                     why: 'Agricultural and religious-purpose covenants have produced a distinct line of recent litigation, almost all of it about storing ashes — which is both commercially important and a reliable exam fact pattern.',
                     exam: {
                       write: 'Use of the land as a columbarium breaches a covenant restricting user to [agricultural / religious] purposes: [Splendid Resources / Regal Shining].',
@@ -1606,12 +1650,13 @@ window.COURSE_DETAILS.PCLL8030 = {
                     points: [
                       'Splendid Resources Inc v Secretary for Justice [2017] 2 HKLRD 421, [2017] 2 HKC 570: subterranean chambers for storing ashes on Po Toi Island breached a term in a New Grant restricting use to agricultural user.',
                       'Regal Shining Ltd v Secretary for Justice [2016] 3 HKC 291, CA: land permitted to be used for religious purposes; use as a columbarium breached the permitted user, the grant also providing that no grave should be made nor human remains interred or deposited on the lot in earthenware jars or otherwise.',
-                      'Radford Portfolio Management Ltd v Secretary for Justice CACV 257/2009: Conditions restricting each owner to one car-parking space; a car-stacking device contravened the restriction.',
-                      'Latangan Co Ltd v Chu Yip Sing DCCJ 3373/2008: Conditions specifying parking only for residents\' vehicles; parking a lorry used commercially breached the restriction.',
+                      'Radford Portfolio Management Ltd v Secretary for Justice [2010] CACV 257/2009: Conditions restricting each owner to one car-parking space; a car-stacking device contravened the restriction.',
+                      'Latangan Co Ltd v Chu Yip Sing [2011] DCCJ 3373/2008: Conditions specifying parking only for residents\' vehicles; parking a lorry used commercially breached the restriction.',
                     ],
                   },
                   {
                     label: 'Say what follows from the breach',
+                    detail: 'A breach matters for what the Government may do about it and for what it does to a sale. The Government\'s remedy is re-entry; between vendor and purchaser the question becomes whether there is a real risk that the right would actually be exercised.',
                     why: 'A breach is only interesting because of what the Government may do about it and what it does to a sale. The remedies are drastic, and the court has shown it will not stand by and let a breach continue merely because the parties had priced it in.',
                     exam: {
                       write: 'The breach exposes the owner to re-entry by the Government and, on a sale, raises the question whether the vendor can show good title.',
@@ -1676,7 +1721,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   ['Partial breach', 'Donald W Shields (No 2) v Mary Chan [1972] HKLR 121', 'How extensive or substantial is the offending use'],
                   ['Agricultural user', 'Splendid Resources Inc v Secretary for Justice [2017] 2 HKLRD 421', 'Subterranean ash chambers breached agricultural user in a New Grant'],
                   ['Religious purposes', 'Regal Shining Ltd v Secretary for Justice [2016] 3 HKC 291, CA', 'Columbarium breached the permitted user'],
-                  ['Car parking', 'Radford Portfolio Management CACV 257/2009; Latangan Co Ltd DCCJ 3373/2008', 'Car-stacking device and commercial lorry each breached'],
+                  ['Car parking', 'Radford Portfolio Management [2010] CACV 257/2009; Latangan Co Ltd [2011] DCCJ 3373/2008', 'Car-stacking device and commercial lorry each breached'],
                   ['Enforcement despite knowledge', 'Regency Power Enterprises Ltd v SCS Express International Ltd HCA 2195/2009', 'Injunction granted; court will not permit a continuing breach of a Government lease'],
                 ],
               },
@@ -1716,6 +1761,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Establish that this is a Block Government lease and find both candidate clauses',
+                    detail: 'It used to be thought that a Block Government lease contained two restrictive covenants, one in the body and one in the Schedule. Melhado decided that only the body covenant restricts user, so the first task is to separate the two and identify which is being relied on.',
                     why: 'It used to be thought there were two restrictive covenants — one in the body, one in the Schedule. Melhado decided there is only one, and the whole issue type is about not confusing them. So separating the two physically, in the document, is the first step.',
                     exam: {
                       write: 'The land is held under a Block Government lease covering Demarcation District [number]. The two provisions in issue are the covenant in the body of the lease and the description of the land in the Schedule.',
@@ -1744,6 +1790,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'The Schedule: Melhado holds it is description, not restriction',
+                    detail: 'The Schedule entries — "padi", "waste", "garden", "house", "grave" — record what each lot was being used for at the time of the grant, around 1905. Melhado holds that this is mere description and does not restrict the permitted use to that shown.',
                     why: 'The Schedule entries record what each lot was being used for in about 1905. Treating a snapshot of historical use as a perpetual restriction would have frozen New Territories land use for a century, and the Full Court declined to do it.',
                     exam: {
                       write: 'The description of the land in the Schedule as "padi" is a mere description of the use of the land at the time of the grant and is not a restrictive covenant restricting permitted use: Attorney General v Melhado Investments Ltd [1983] HKLR 327.',
@@ -1757,6 +1804,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then ask whether what has been put on the land is a "structure"',
+                    detail: 'With the Schedule out of the picture, the live question is the body covenant\'s prohibition on erecting a building or structure without approval — which turns on whether the thing on the land is a structure at all.',
                     why: 'Once the Schedule is out of the picture, the live question becomes the body covenant and the approval requirement — and that turns on whether the thing on the land is a building or structure at all. Splendid Resources gives the working definition.',
                     exam: {
                       write: 'The concrete slabs are a structure, being something constructed and put together so as to make one whole intended to stay in place permanently: Splendid Resources Inc v Secretary for Justice.',
@@ -1770,6 +1818,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Note that the Block lease\'s offensive trades clause is differently drafted',
+                    detail: 'A Block Government lease conventionally contains an offensive trades clause, but unlike the urban version it names no trades. It prohibits only the carrying on of any noisy, noisome or offensive trade or business, so the argument is always about the general words.',
                     why: 'The urban lease itemises a list of Victorian trades; the Block lease does not. That difference matters because the urban list can be argued over word by word, whereas the Block lease version is an open standard that has to be applied to the facts.',
                     exam: {
                       write: 'The Block Government lease prohibits only any noisy, noisome or offensive trade or business, without identifying particular trades.',
@@ -1854,6 +1903,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Find the clause and note which kind of lease it is in',
+                    detail: 'The urban and Block lease versions are drafted quite differently. An urban Government lease itemises a list of Victorian trades and then adds general words; a Block Government lease has only the general words. Either way the prohibition is subject to a licence from the Government.',
                     why: 'The urban and Block lease versions are drafted quite differently, and the analysis diverges immediately: one gives you a closed list plus general words, the other only the general words.',
                     exam: {
                       write: 'The Government lease contains an offensive trades clause prohibiting the named trades and any other noisy, noisome or offensive trade or business without the previous licence of the Government.',
@@ -1867,6 +1917,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Ask first whether the clause is still effective at all',
+                    detail: 'These clauses are relics, and a court asked to enforce a prohibition on sugar-bakers and fellmongers has to decide whether the Government would ever act on it. The answer is fact-sensitive and runs alongside the question of construction.',
                     why: 'These clauses are relics. A court asked to enforce a prohibition on sugar-bakers and fellmongers in 2026 has to decide whether the Government would ever act on it, and Green Park suggests that for an ordinary modern food business it would not.',
                     exam: {
                       write: 'Whether the clause continues to be enforceable is itself in issue: in Green Park Properties Ltd v Dorku Ltd it was described as unthinkable that the Government would enforce the clause against a pizza restaurant.',
@@ -1880,6 +1931,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Construe the particular word relied on',
+                    detail: 'The named trades are archaic and their meanings are not obvious, so each has had to be construed — and the results are not always merciful, "victualler" having been held to catch a modern sandwich shop.',
                     why: 'The named trades are archaic and their meanings are not obvious, so each has had to be construed. The results are not always merciful: "victualler" has been held to catch a modern sandwich shop.',
                     exam: {
                       write: 'The word relied on is "[victualler / tavern / noisy, noisome or offensive]", which has been construed to mean [meaning], and the present use [falls / does not fall] within it.',
@@ -1893,6 +1945,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If the general words are relied on, apply the Uni-Creation approach',
+                    detail: 'The general words are the part of the clause with a future. Uni-Creation gives "offensive" a wider, fluid meaning — anything causing reasonable discomfort or disquiet — which cuts both ways, since a trade that offends nobody\'s senses may still be caught.',
                     why: 'The general words are the part of the clause with a future. Uni-Creation makes "offensive" a fluid, context-sensitive standard rather than a list of nuisances — which cuts both ways, since a trade that offends nobody\'s senses may still be offensive, and yet on the facts the columbarium was not.',
                     exam: {
                       write: 'Applying Uni-Creation Investments Ltd v Secretary for Justice, "offensive" bears a wider meaning including anything causing reasonable discomfort or disquiet to any person within the relevant location, judged in context.',
@@ -1907,6 +1960,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check the licence limb and then state the consequence',
+                    detail: 'The clause is a prohibition subject to consent, not an absolute bar: the trade may be carried on with the previous licence of the Government signified in writing. A client whose use is caught may therefore be able to regularise it.',
                     why: 'The clause is a prohibition subject to consent, not an absolute bar. A client whose use is caught may still be able to regularise it, which is a better answer than advising that the use must stop.',
                     exam: {
                       write: 'The prohibited trade may be carried on with the previous licence of the Government signified in writing; no such licence was obtained here, so the use is in breach.',
@@ -1965,6 +2019,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'block-lease-nt', label: 'New Territories land: the Watford covenant and Melhado' },
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does an unwaived breach defeat title?' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
             ],
           },
           {
@@ -1994,6 +2049,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Identify the clause and whose approval it requires',
+                    detail: 'These clauses do not forbid anything outright; they transfer a decision to a named official. A design, disposition and height clause makes the building subject to the Director\'s prior written approval, a restriction on alienation makes any disposal subject to his consent, and other clauses require an approved layout plan or compliance with measures a named Director considers necessary.',
                     why: 'These clauses do not forbid anything outright; they transfer a decision to a named official. So the first question is not "is this permitted?" but "who decides, and have they decided?".',
                     exam: {
                       write: 'The Conditions provide that [the design, disposition and height of the building] shall be subject to the prior written approval of [the Director], and no building works may commence until that approval is given.',
@@ -2007,6 +2063,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'For a DDH clause, apply Ying Ho and note its independence',
+                    detail: 'A design, disposition and height clause gives the Director a discretion of his own, exercisable on grounds that need have nothing to do with the statutory building controls. Ying Ho shows how far that goes: a proposal for the highest building in the world was refused under it.',
                     why: 'Ying Ho is the case that shows how much a DDH clause is worth to the Government: it defeated a proposal for the highest building in the world on grounds that had nothing to do with the height figure in the Conditions. United Bright then confirmed the clause survives a modification of the numerical restrictions.',
                     exam: {
                       write: 'The Director was entitled to refuse approval under the design, disposition and height clause, and the Court of Final Appeal in Ying Ho Co Ltd v Secretary for Justice held that the discretion had been properly exercised.',
@@ -2019,6 +2076,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'For a restriction on alienation, connect it to the Consent Scheme',
+                    detail: 'A restriction on alienation stops a developer disposing of the land, or of flats in it, before the positive conditions have been performed. Where the developer wants to pre-sell, that is what brings the Consent Scheme into play.',
                     why: 'The restriction exists to stop a developer selling flats in a building it has not yet built on land whose conditions it has not yet performed. The Consent Scheme is the regulated route by which pre-sale nonetheless happens.',
                     exam: {
                       write: 'The Conditions restrict alienation without the consent of the Director of Lands until the positive conditions have been complied with, which invokes the Consent Scheme where the developer wishes to pre-sell flats.',
@@ -2032,6 +2090,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Ask whether the refusal is amenable to judicial review — usually it is not',
+                    detail: 'In administering its own grant the Government acts as a private landlord, so the usual public-law grounds do not run against a refusal of approval. Secan adds the qualification that a landlord must nonetheless act in good faith.',
                     why: 'The same reasoning as for modification: when the Government administers its own grant it is acting as a landlord. Secan adds an important qualification, though — even a landlord must act in good faith.',
                     exam: {
                       write: 'The Director\'s decision under the clause is not amenable to judicial review, as he is not performing a public duty; but he must still act in good faith: Secan Ltd v Attorney General.',
@@ -2045,6 +2104,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Separate the lease question from the building-control question',
+                    detail: 'Approval of building plans and the issue of an occupation permit come from the Building Authority under the Buildings Ordinance. They say nothing about the Government\'s rights as lessor, and do not estop the Lands Department from enforcing a covenant in the grant.',
                     why: 'A developer with an approved set of building plans and an occupation permit naturally assumes he is in the clear. He is not: the Building Authority administers the Buildings Ordinance, and the Lands Department administers the lease, and neither binds the other.',
                     exam: {
                       write: 'Approval of building plans or the issue of an occupation permit by the Building Authority does not estop the Lands Department from enforcing a breach of a restrictive covenant in the Government lease: Hang Wah Chong.',
@@ -2131,6 +2191,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Separate the two questions before answering either',
+                    detail: 'Two distinct questions are in play, and they fail in different ways. First, does the covenant run with the land so as to bind successors in title at all? Only if it does is it worth asking the second, whether it has been spent by initial compliance.',
                     why: 'They fail in different ways and at different stages. A covenant that does not run never reaches the present owner at all; a covenant that runs but is spent reaches him and then does nothing. Running them together produces an answer that cannot be checked.',
                     exam: {
                       write: 'Two issues arise: first, whether the covenant runs with the land so as to bind successors in title; and secondly, whether, as a matter of construction, it has been spent by initial compliance.',
@@ -2144,6 +2205,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply s41 of the Conveyancing and Property Ordinance to the running question',
+                    detail: 'Sections 41(1) and 41(2) of the Conveyancing and Property Ordinance provide that the burden of a covenant runs with the land and binds the covenantor\'s successors in title and those claiming under or through him. Two requirements must both be met: the covenant must be a land covenant, and it must be expressed or intended to run.',
                     why: 'Section 41 replaces the old common law learning with a two-limb statutory test. Both limbs must be satisfied: being a land covenant is not enough if nothing shows it was meant to run.',
                     exam: {
                       write: 'By ss41(1) and 41(2) of the Conveyancing and Property Ordinance, the burden of a covenant runs with the land and binds successors in title of the covenantor, and persons claiming under or through them, if the covenant is a land covenant and is expressed or intended to run with the land.',
@@ -2157,6 +2219,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then construe the covenant to see whether it is spent',
+                    detail: 'Whether a covenant is spent is a matter of construing that covenant. As a general principle a restrictive covenant is not spent once initially complied with and continues to bind the land; a positive covenant to do a defined act by a defined date is the natural candidate for exhaustion.',
                     why: 'A positive covenant to build within three years genuinely can be exhausted by building. A restrictive covenant about what may stand on the land is a different creature — it describes a continuing state of affairs, and initial compliance is the beginning of the obligation rather than the end of it.',
                     exam: {
                       write: 'As a general principle a restrictive covenant is not spent once it has been initially complied with but continues to bind the land; whether it is spent is a matter of construction of the particular covenant.',
@@ -2170,6 +2233,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Test the construction against Expressluck and Gold Shine',
+                    detail: 'In both cases a grantee argued that the covenant was directed at the first building only, and in both the court read it as governing the land thereafter. Together they show how hard it is to persuade a court that a restriction on what may stand on the land has been used up.',
                     why: 'Both cases involve a grantee arguing that the covenant was aimed at the first building only, and in both the court read the covenant as governing the land thereafter. Together they show how strongly the construction runs against the "spent" argument.',
                     exam: {
                       write: 'In Expressluck the words "and keep for domestic use" were implied into a covenant that the lessee would not erect any building except domestic houses, so the restriction affected future use once a domestic building had been erected.',
@@ -2189,6 +2253,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check what a renewal or extension of the lease did to the covenant',
+                    detail: 'If covenants died on renewal, every statutory extension would quietly deregulate the land it extended. The Ordinance provides the opposite: a covenant relating to the land continues to have effect on renewal or replacement unless a contrary intention appears.',
                     why: 'If covenants died on renewal, every statutory extension would have quietly deregulated the land it extended. The Ordinance says the opposite, and puts the burden on anyone asserting the contrary to point to an expressed contrary intention.',
                     exam: {
                       write: 'By s42(3) of the Conveyancing and Property Ordinance the covenant continued to have effect after the lease was renewed, no contrary intention having been expressed.',
@@ -2201,6 +2266,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Do not forget the maintenance covenant, which is a running obligation by nature',
+                    detail: 'Many Government leases and Conditions contain a general covenant to maintain the land granted. A duty to keep something in repair is a state rather than an act, so it is the clearest example of an obligation that cannot be spent.',
                     why: 'A maintenance covenant is the clearest example of an obligation that cannot be spent — the duty is to keep something in repair, which is a state rather than an act. The litigation is instead about how far the thing to be maintained extends.',
                     exam: {
                       write: 'The general maintenance covenant requires the grantee and his successors in title to maintain [the land / the slope / the access road], the scope of which is a question of construction of the grant.',
@@ -2291,6 +2357,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Ask first whether the waiver is express or implied',
+                    detail: 'The two are proved in completely different ways. An express waiver is something the Government has said, to be construed; an implied waiver, or acquiescence, is an inference drawn from inaction in the face of a breach the Government knew or must be taken to have known about.',
                     why: 'The two are proved completely differently. An express waiver is a document to be construed; an implied waiver is an inference from years of inaction. Mixing the evidence for one with the test for the other is the commonest way to go wrong here.',
                     exam: {
                       write: 'The waiver relied on is [express, arising from the Government\'s letter of [date] / implied, arising from the Government\'s inaction over [period]].',
@@ -2304,6 +2371,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If express, decide which of the three kinds it is',
+                    detail: 'An express waiver may be temporary, limited or permanent, and the three differ in how long the forgiveness lasts. A temporary waiver can be withdrawn, a limited one is spent with the building it permitted, and a permanent one releases the covenant for good.',
                     why: 'The three kinds differ in how long the forgiveness lasts, and that is the only thing the client cares about. A temporary waiver can be pulled; a limited one dies with the building; a permanent one settles the title.',
                     exam: {
                       write: 'The waiver is [temporary / limited / permanent], because the words used show an intention to [suspend enforcement for the time being / permit this particular building only / abandon the covenant].',
@@ -2317,6 +2385,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply the objective test that distinguishes them',
+                    detail: 'Which kind of waiver was given is decided by the intention of the parties as evidenced by the words used, objectively — the same test that governs the boundary cases earlier in this lecture.',
                     why: 'The same test runs through this whole lecture: intention as evidenced by the words used. It appears in the boundary cases and it appears here, and saying so shows the examiner you have seen the pattern rather than memorised three cases.',
                     exam: {
                       write: 'To distinguish temporary, limited and permanent waiver the test is the intention of the parties as evidenced by the words used — an objective test.',
@@ -2330,6 +2399,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check whether the express waiver was conditional',
+                    detail: 'A waiver may be granted on terms, and a waiver granted subject to conditions ceases to have effect if those conditions are later breached.',
                     why: 'A waiver granted on terms is a bargain, and a party who breaks his side of it cannot keep the benefit. Missing this turns a conditional reprieve into a supposed permanent one.',
                     exam: {
                       write: 'Even where the Government has waived its right to enforce, the waiver may cease to have effect if it was granted subject to conditions which have since been breached: Favourable Issue Co Ltd v Secretary for Justice.',
@@ -2341,6 +2411,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'If implied, ask what the Government knew and what it failed to do',
+                    detail: 'Acquiescence is not mere delay. It requires inaction with actual or constructive knowledge of the breach, which is why the cases turn on whether the breach was open and notorious enough that the Government must be taken to have known of it.',
                     why: 'Acquiescence is not mere delay. It is inaction in the face of a breach so open that the Government must be taken to have known of it — which is why "open and notorious" is the operative phrase in the cases.',
                     exam: {
                       write: 'Inaction with actual or constructive knowledge of the breach may constitute implied waiver or acquiescence; here the breach was open and notorious over [period] and the Government took no enforcement action.',
@@ -2355,6 +2426,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Distinguish waiving a past breach from abandoning the covenant',
+                    detail: 'Waiving existing past breaches is not the same as waiving the whole covenant through non-enforcement. A client who has got away with a breach for decades has not thereby acquired a licence to commit a larger one.',
                     why: 'This is the distinction Expressluck turns on and it is the one that decides most real disputes. A client who has got away with a breach for decades has not thereby acquired a licence to do it again on a larger scale.',
                     exam: {
                       write: 'The Government\'s inaction may have waived the past breach, but it did not abandon the covenant for the purposes of the proposed new development.',
@@ -2443,6 +2515,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Identify who is arguing with whom — this decides the test',
+                    detail: 'Two different tests apply depending on the parties. Where the Government is enforcing, the Fairfax approach asks whether it knew of the breach and delayed. Where the dispute is between private parties and the Government is not before the court, Jumbo Gold asks whether there is a real risk of enforcement.',
                     why: 'The single most important move in this issue type. Fairfax and Jumbo Gold apply different tests, and Pak Wai Ching exists precisely because a litigant tried to borrow the wrong one.',
                     exam: {
                       write: 'This is a dispute between [the Government and the owner / a vendor and a purchaser], so the applicable approach is [Fairfax / Jumbo Gold].',
@@ -2456,19 +2529,21 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'On a sale, accept that there may well be an unwaived breach',
+                    detail: 'Jumbo Gold does not require the vendor to prove that there was no breach, or that any right of re-entry has gone. It assumes the right exists and asks the practical question instead: would the Government ever exercise it?',
                     why: 'The elegance of Jumbo Gold is that it does not require the vendor to prove there was no breach. It accepts the breach may be live and asks a different, practical question — which is why it can produce good title on facts where the covenant has plainly been broken.',
                     exam: {
                       write: 'The evidence does not exclude a reasonable possibility of an unwaived breach of condition giving the Government a right of re-entry; the question is therefore whether there is any real risk that it would enforce.',
                       trap: 'Trying to argue the breach away. On these facts you usually cannot, and you do not need to.',
                     },
                     points: [
-                      'Jumbo Gold Investment Ltd v Warren Yuen Cheong Leung [2000] 3 HKCFAR 52, CFA: height restricted to 35 feet in a Crown lease and the height was exceeded; the Government had taken no action for some forty years; when the vendor came to sell, the purchaser raised a requisition as to title.',
+                      'Jumbo Gold Investment Ltd v Warren Yuen Cheong Leung (2000) 3 HKCFAR 52, CFA: height restricted to 35 feet in a Crown lease and the height was exceeded; the Government had taken no action for some forty years; when the vendor came to sell, the purchaser raised a requisition as to title.',
                       'Held that the vendor had shown good title since there was no real risk of enforcement by the Government.',
                       'The court assumed the right of re-entry existed rather than deciding it did not.',
                     ],
                   },
                   {
                     label: 'Apply the real risk test to the facts you are given',
+                    detail: 'The test rests on an assumption about how government behaves — that it will not take the drastic step of re-entry to the detriment of innocent owners. So the age of the breach, how open it has been, and how many neighbouring owners are in the same position are what the argument is built from.',
                     why: 'The test rests on an assumption about how government behaves — that it will not take a drastic step against innocent owners. That is why the age of the breach, its openness, and the presence of innocent purchasers all matter to the answer.',
                     exam: {
                       write: 'Assuming the Government has a right of re-entry, there is no real risk that it would take the drastic step of enforcing it to the detriment of innocent owners, so the vendor has shown good title.',
@@ -2482,6 +2557,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check that no other approval has been mistaken for a cure',
+                    detail: 'Purchasers routinely produce an occupation permit or a certificate of compliance as though it answered the lease question. Neither does: the first comes from a different authority under a different Ordinance, and the second is expressed to be without prejudice to the Government\'s rights.',
                     why: 'Purchasers and their solicitors routinely produce an occupation permit as though it answered the lease question. It does not, and a title opinion that relies on it is wrong.',
                     exam: {
                       write: 'The occupation permit issued by the Building Authority does not estop the Lands Department from enforcing the covenant: Hang Wah Chong Investment Co Ltd v Attorney-General.',
@@ -2495,6 +2571,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Give the advice the client actually needs',
+                    detail: 'The purchaser is not asking for a ruling on the covenant; he is asking whether to complete. The answer has to say whether good title has been shown, what he may do about it, and what changes if the risk turns out to be real rather than theoretical.',
                     why: 'This is where the whole lecture lands. The purchaser is not asking for a ruling on the covenant; he is asking whether to complete, and the answer has to be expressed as advice with its risk stated.',
                     exam: {
                       write: 'The vendor has shown good title notwithstanding the breach, and the purchaser is not entitled to rescind; the requisition should be answered by reference to Jumbo Gold.',
@@ -2589,6 +2666,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 steps: [
                   {
                     label: 'Identify which of the two implied covenants is engaged',
+                    detail: 'A covenant for quiet enjoyment and a covenant against derogation from grant are implied in all Government leases and Conditions of Grant. They overlap but are not the same: the first is about interference with the land granted, the second about the grantor\'s use of land it kept back.',
                     why: 'They overlap but are not the same. Quiet enjoyment is about interference with the grantee\'s use of the land granted; derogation from grant is about the grantor using land it kept back in a way that frustrates the purpose of the grant.',
                     exam: {
                       write: 'Two covenants on the part of the Government as grantor are implied in all Government leases and Conditions: a covenant for quiet enjoyment and a covenant not to derogate from the grant.',
@@ -2602,6 +2680,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'For quiet enjoyment, ask whether the interference was substantial',
+                    detail: 'The covenant is not a guarantee of undisturbed comfort. The cases draw the line at substantial interference, so acts that make the premises unusable breach it while temporary interference does not.',
                     why: 'The covenant is not a guarantee of undisturbed comfort. The cases draw the line at substantial interference, which is why demolishing a wall breaches it and a few weeks of building works does not.',
                     exam: {
                       write: 'The interference complained of [was / was not] substantial, and temporary interference will not constitute a breach of the covenant for quiet enjoyment.',
@@ -2616,6 +2695,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'For derogation, ask what the grant was for and whether the Government has frustrated it',
+                    detail: 'The principle is that a grantor may not give with one hand and take away with the other. It bites where a later act of the Government destroys the very purpose for which the land was granted, and the cases turn on how tightly that purpose was defined.',
                     why: 'The principle is that a grantor may not give with one hand and take away with the other. It bites where the Government\'s later act destroys the very purpose for which it granted the land — but it does not guarantee that the surrounding conditions will stay as they were.',
                     exam: {
                       write: 'The Government granted [the land / the easement] for [purpose], and by [act] has rendered that grant [incapable of use / worthless], which constitutes a derogation from grant.',
@@ -2629,6 +2709,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Consider whether any other term should be implied',
+                    detail: 'The two named covenants are not a closed list. Where the grant would be unworkable without something further, the court has been willing to imply it.',
                     why: 'The two named covenants are not a closed list. Where the grant would be unworkable without something, the court has been willing to imply it — access to the site being the obvious example.',
                     exam: {
                       write: 'A duty to provide reasonable access to the site to permit development has also been implied: Hang Tak Co Ltd v Attorney General.',
@@ -2640,6 +2721,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then place the claim against the public-law route',
+                    detail: 'A grantee aggrieved by the Government usually wants judicial review and usually cannot have it, because the Government administers its grants as a private landlord. The implied covenants are the contractual route that remains open.',
                     why: 'A grantee aggrieved by the Government usually wants judicial review and usually cannot have it. The implied covenants are the contractual route that remains open, which is why they matter more here than they would against a private landlord.',
                     exam: {
                       write: 'Since decisions administering the grant are generally not amenable to judicial review, the grantee\'s remedy lies in contract, on the implied covenants.',
@@ -2923,6 +3005,9 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
               { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -3009,6 +3094,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Say what follows for the transaction in front of you',
+                    detail: 'The construction exercise only matters for what it does to the client. Once the part is classified, three things follow at once: whether anyone can give title to it, who may sue on a breach affecting it, and who carries the duty to keep it in repair.',
                     why: 'A construction exercise that stops at "it is a common part" has answered half the question. The client is buying, selling or suing, and the label only matters for what it does to that.',
                     exam: {
                       write: 'It follows that [the part] is [a common part / retained by the developer], so that [the vendor cannot give title to it / the purchaser takes subject to the manager\'s control / only the incorporated owners may sue on a breach affecting it].',
@@ -3067,6 +3153,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
               { session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
               { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -3196,6 +3283,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
               { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -3290,6 +3378,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'State the consequence for the transaction',
+                    detail: 'Every one of the cases above was a conveyancing dispute. What the client needs to know is whether the vendor can give good title, and that turns on whether the defect is one of title or merely of evidence.',
                     why: 'Every one of the cases above was a conveyancing dispute, not an abstract one. The answer the client needs is whether he must complete, and that turns on whether the defect is one of title or merely of evidence.',
                     exam: {
                       write: 'It follows that the vendor [can / cannot] give good title to [the unit], and the purchaser [must complete / is entitled to raise a requisition and, if it is not answered, to rescind].',
@@ -3436,6 +3525,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Say what follows once the part is classified',
+                    detail: 'The classification is never the client\'s question. It decides who may use the part, who repairs it, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the deed of mutual covenant.',
                     why: 'The classification is never the client\'s question. It decides who repairs the part, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the DMC.',
                     exam: {
                       write: 'The [part] being a common part, [the owner\'s conversion of it is a breach of s34I(1)(a) of the Building Management Ordinance and, by s34I(2), a deemed breach of the deed of mutual covenant / the proper plaintiff is the incorporated owners under s16 of that Ordinance].',
@@ -3493,6 +3583,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
               { session: 'LG2', issue: 'internal-walls', label: 'Internal, load-bearing and partition walls' },
               { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
             ],
           },
           {
@@ -3592,6 +3683,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Draw the consequences for breach, repair and remedy',
+                    detail: 'Once the external wall is a common part, three consequences follow together: affixing anything to it is a breach of the deed of mutual covenant and of s34I of the Building Management Ordinance, the incorporated owners are the proper plaintiff under s16, and the incorporated owners also carry the exposure if the wall injures someone.',
                     why: 'Once the wall is a common part, three things follow at once, and an answer that gives only one of them is incomplete: the sign is a breach, the incorporated owners are the plaintiff, and the incorporated owners also carry the risk if the wall injures someone.',
                     exam: {
                       write: 'The external wall being a common part, the affixing of the sign is a breach of the deed of mutual covenant and of s34I of the Building Management Ordinance, and by s16 of that Ordinance the proper plaintiff is the incorporated owners.',
@@ -3649,6 +3741,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
               { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
               { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+              { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
             ],
           },
           {
@@ -4029,6 +4122,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Identify the plaintiff and the remedy, and check for a defence',
+                    detail: 'The remedy sought in these cases is almost always a mandatory injunction to reinstate, which is drastic. Who may seek it depends on whether the building is incorporated, and whether it will be granted depends on the discretionary defences.',
                     why: 'The remedy in these cases is almost always a mandatory injunction to reinstate, which is drastic. That is why the defences — acquiescence, delay, the gravity of the breach — do so much work here and so little elsewhere.',
                     exam: {
                       write: 'The building being incorporated, the proper plaintiff is the incorporated owners, who seek a mandatory injunction requiring reinstatement of [the wall / the window].',
@@ -4088,6 +4182,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
               { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -4254,6 +4349,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
               { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
               { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -4574,6 +4670,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
               { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
               { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -4736,6 +4833,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
               { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -4922,6 +5020,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
               { session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
               { session: 'LG1', issue: 'waiver', label: 'Has the breach been waived?' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -5071,6 +5170,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
               { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -5280,6 +5380,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
               { session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
               { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
             ],
           },
           {
@@ -5379,6 +5480,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Advise on the transaction, not merely the litigation',
+                    detail: 'These disputes reach the court as a claim by the incorporated owners against an owner, but they reach a solicitor as a requisition on title. The advice has to cover both: what the present owner is liable for, and what that does to a sale.',
                     why: 'Nearly every case in this topic reaches the court as a dispute between the incorporated owners and an owner, but it reaches a solicitor as a requisition on title. The advice has to cover both.',
                     exam: {
                       write: 'On a sale, the [continuing breach / arrears] renders the vendor\'s title [defective / defeasible], and the purchaser is entitled to raise a requisition requiring [reinstatement / payment] before completion.',
@@ -5441,6 +5543,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does the breach defeat title? The "no real risk" approach' },
               { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
             ],
           },
         ],
@@ -5490,7 +5594,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                 'On execution of the formal agreement a further tranche of deposit brings the total paid to 10 per cent of the price.',
                 'The assignment has been executed in escrow by the purchaser and sent to the vendor.',
                 'Completion is to take place by mutual undertakings between the two firms of solicitors.',
-                'The purchase price less the deposits was sent by cashier order against an undertaking to send the executed assignment and title deeds within 21 days.',
+                'The purchase price less the deposits was sent by cashier order against an undertaking to send the executed assignment and title deeds within 21 days of completion.',
                 'The property being sold is already subject to a mortgage the vendor has not yet discharged.',
               ],
               routes: [
@@ -5613,7 +5717,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Stages 20 to 23: completion, the deeds, registration and the accounts',
-                    detail: 'On the completion date the balance of the purchase price is sent by cashier order, usually by messenger, against the vendor\'s solicitors\' undertaking to send the executed assignment together with the title deeds within 21 days. The vendor usually provides the keys at this point.',
+                    detail: 'On the completion date the balance of the purchase price is sent by cashier order, usually by messenger, against the vendor\'s solicitors\' undertaking to send the executed assignment together with the title deeds within a stated period, typically 21 days. The vendor usually provides the keys at this point.',
                     why: 'The 21 days exist because the assignment has to be stamped before it can be registered and handed over. The undertaking bridges that gap for the purchaser.',
                     exam: {
                       write: 'On completion the balance of [sum] was paid by cashier order against the vendor\'s solicitors\' undertaking to send the executed assignment and title deeds within 21 days.',
@@ -5670,6 +5774,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'twin-duties', label: 'The twin duties of giving and showing title' },
               { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
               { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -5823,6 +5929,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
               { session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
               { session: 'LG4', issue: 'showing-vs-giving', label: 'Showing title: production and requisitions' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
             ],
           },
           {
@@ -5905,6 +6012,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Put the question in the form the lecture gives it',
+                    detail: 'Everything above reduces to a single question that can be applied to any alleged defect, and reducing it that way is what makes the topic usable under exam conditions.',
                     why: 'Reducing the topic to one question is what makes it usable under exam conditions: everything above feeds into a single sentence that can be applied to any alleged defect.',
                     exam: {
                       write: 'The question is whether there is a real risk that the vendor\'s title is defective by reason of being encumbered or defeasible, or whether the risk is merely illusory.',
@@ -6107,6 +6215,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
               { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
               { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
             ],
           },
           {
@@ -6210,6 +6320,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Advise the vendor on what to do about it',
+                    detail: 'At bottom this is a drafting problem with a short drafting answer: identify the defect in the agreement, or before it. That is what turns a clause the court will read down into one it will enforce.',
                     why: 'The topic is at bottom a drafting problem, and the drafting answer is short: identify the defect in the contract or before it. That is what turns a clause the court will read down into one it will enforce.',
                     exam: {
                       write: 'To render the exclusion clause effective, the vendor should bring [the defect] to the purchaser\'s attention either in the sale and purchase agreement or before the agreement is concluded.',
@@ -6283,6 +6394,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
               { session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
               { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -6782,6 +6894,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'State the consequence for the transaction',
+                    detail: 'An unregistered registrable interest is one requisition the purchaser need not raise and one defect the vendor need not clear. The interests s3(2) does not touch are a different matter, and are why the site visit exists.',
                     why: 'The point of the exercise is practical: an unregistered registrable interest is one requisition the purchaser does not need to raise, and one defect the vendor does not need to clear.',
                     exam: {
                       write: 'The interest being void against the purchaser, the vendor\'s title is not encumbered by it and no requisition on it needs to be answered.',
@@ -6842,6 +6955,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
               { session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
               { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -6912,6 +7026,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Stand back and check which of the three exceptions applies',
+                    detail: 'The three exceptions to the free-from-encumbrances rule do different work and are pleaded differently: the first is a matter of the register, the second of the contract, the third of the facts on the ground.',
                     why: 'The three exceptions do different work and are pleaded differently: the first is a matter of the register, the second of the contract, the third of the facts on the ground. Naming the wrong one wastes the point.',
                     exam: {
                       write: 'The vendor is able to assign free from all encumbrances save [the encumbrance], which falls within the [first / second / third] exception because [it is registrable but unregistered / the sale is expressly made subject to it / it is patent].',
@@ -6967,6 +7082,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
               { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
               { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -7162,6 +7278,9 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
               { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
               { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
             ],
           },
           {
@@ -7383,6 +7502,10 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
               { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
               { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+              { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
             ],
           },
         ],
@@ -7720,6 +7843,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
               { session: 'LG4', issue: 'powers-of-attorney', label: 'Powers of attorney under section 13(1)(c)' },
               { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
             ],
           },
           {
@@ -8007,6 +8132,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
               { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
             ],
           },
           {
@@ -8153,6 +8279,9 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
               { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
               { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -8224,6 +8353,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Apply the good title standard to what remains',
+                    detail: 'A pre-intermediate root defect is still only a defect if it carries a real risk. Once the recitals and any secondary evidence have been exhausted, what is left falls to be measured against the ordinary good title standard.',
                     why: 'A pre-intermediate root defect is still only a defect if it carries a real risk. Kingdom Miles is the worked example of an ancient gap that carried none.',
                     exam: {
                       write: 'Even taking the pre-intermediate root [gap] at its highest, there is no real risk of a successful assertion against the purchaser, and the title is good.',
@@ -8280,6 +8410,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
               { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
               { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -8402,6 +8534,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
               { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
             ],
           },
           {
@@ -8545,6 +8678,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
               { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
               { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
             ],
           },
           {
@@ -8617,6 +8751,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Check the decided examples of recitals curing a gap',
+                    detail: 'Both worked examples involve exactly the sort of document that goes missing — a Crown lease and a distribution agreement on an intestacy — and in each the recital in a later deed was accepted as proof of title.',
                     why: 'Both worked examples involve exactly the sort of document that goes missing: a Crown lease and a distribution agreement on an intestacy. That is the pattern to recognise.',
                     exam: {
                       write: 'The missing [Crown lease / distribution agreement] is cured by the recital in the [pre-intermediate root document / subsequent assignment], which is sufficient proof of title.',
@@ -8674,6 +8809,10 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
               { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
               { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+              { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -8745,6 +8884,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'State the consequence for the transaction',
+                    detail: 'Classifying a defect as a matter of mere conveyance is how a vendor defeats a requisition without doing anything more than he was always going to do at completion.',
                     why: 'Classifying a defect as a matter of mere conveyance is how a vendor defeats a requisition without doing anything more than he was always going to do at completion.',
                     exam: {
                       write: 'The defect being a matter of mere conveyance, the title is not defective and the purchaser is not entitled to refuse to complete on account of it.',
@@ -8887,6 +9027,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Then raise reasonable requisitions',
+                    detail: 'The investigation exists in order to produce requisitions. Everything before this step is preparation for the one step that actually protects the purchaser — and a defect that could have been found at this stage is one that cannot support a late requisition.',
                     why: 'The investigation exists to produce requisitions. Everything above is preparation for the one step that actually protects the purchaser.',
                     exam: {
                       write: 'Having investigated the title, the purchaser\'s solicitor should raise reasonable requisitions on the defects identified, within the time the agreement allows.',
@@ -8950,6 +9091,9 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
               { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
               { session: 'LG3', issue: 'conveyancing-stages', label: 'The stages of a simple conveyancing transaction' },
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
             ],
           },
           {
@@ -9274,6 +9418,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
               { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
               { session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
             ],
           },
           {
@@ -9580,6 +9725,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
               { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
               { session: 'LG4', issue: 'mere-conveyance', label: 'Matters of mere conveyance' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
         ],
