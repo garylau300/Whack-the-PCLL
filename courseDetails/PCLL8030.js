@@ -632,6 +632,7 @@ window.COURSE_DETAILS.PCLL8030 = {
             },
             crossRefs: [
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+              { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
             ],
           },
           {
@@ -787,6 +788,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               routes: [
                 { when: 'The dispute is where the boundary of the section actually runs', session: 'LG1', issue: 'boundaries-and-plans', label: 'Boundaries, plans and the verbal description' },
                 { when: 'A modification letter was issued for one section only', session: 'LG1', issue: 'modification', label: 'Modifying the lease or the Conditions' },
+                { when: 'The building is divided into undivided shares and governed by a deed of mutual covenant', session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
               ],
             },
             answering: {
@@ -891,6 +893,8 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'boundaries-and-plans', label: 'Boundaries, plans and the verbal description' },
               { session: 'LG1', issue: 'modification', label: 'Modifying the lease or the Conditions' },
               { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
+              { session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
+              { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
             ],
           },
           {
@@ -2253,6 +2257,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'term-renewal-extension', label: 'Term, renewal and extension' },
               { session: 'LG1', issue: 'waiver', label: 'Has the Government waived the breach?' },
+              { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
             ],
           },
           {
@@ -2404,6 +2409,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does an unwaived breach defeat title?' },
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
             ],
           },
           {
@@ -2549,6 +2555,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'waiver', label: 'Has the Government waived the breach?' },
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
+              { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
             ],
           },
           {
@@ -2689,6 +2696,2747 @@ window.COURSE_DETAILS.PCLL8030 = {
       },
     },
 
+    LG2: {
+      kind: 'LG',
+      date: '2026-09-11',
+      time: '13:00-15:30',
+      mode: 'Face-to-face',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Trace the stages by which a developer turns a lot into a multi-storey building of separately owned flats, and say what each stage contributes to title.',
+        'Construe a deed of mutual covenant and a first assignment to decide what is a common part and what the developer reserved.',
+        'Advise whether a co-owner is in breach of the Building Management Ordinance\'s overriding duties or of the express covenants in the deed of mutual covenant.',
+        'Identify the proper plaintiff for a given breach, and the remedies available to it.',
+        'Apply section 41 of the Conveyancing and Property Ordinance to decide whether the benefit and burden of a covenant have run to the parties before you.',
+      ],
+      topicsCovered: [
+        'The eight stages from lot to registered deed of mutual covenant, and the Consent and Non-Consent Schemes',
+        'Construction of the deed of mutual covenant and the first assignment: Jumbo King and Donora',
+        'Sub-deeds of mutual covenant and the division of shares by deed poll',
+        'Undivided shares, tenancy in common, and whether the shares are sufficiently delineated to give good title',
+        'Common parts: section 2 and the First Schedule to the Building Management Ordinance',
+        'External walls, advertising signs and reserved rights; internal, load-bearing and partition walls',
+        'The overriding duties in sections 34H and 34I of the Building Management Ordinance',
+        'Express covenants: structural alterations, external appearance, nuisance and annoyance',
+        'Adverse possession by and against co-owners, and of the common parts',
+        'The proper plaintiff: incorporated owners, manager, owners\' committee and the individual co-owner',
+        'The duties and liabilities of an owners\' corporation, including to third parties',
+        'Acquiescence after Centre Chase, and section 18(1)(c) of the Building Management Ordinance',
+        'Remedies: injunction, damages including loss of bargain, and the charge for management fees',
+        'Running of the benefit and the burden of covenants under sections 39 to 41 of the Conveyancing and Property Ordinance',
+        'Liability for a predecessor in title\'s breach, and continuing breaches',
+      ],
+      examNotes: {
+        intro: 'Almost every flat in Hong Kong is an undivided share in a lot plus a contractual right to occupy one part of a building, and the deed of mutual covenant is what makes that arrangement work. Two questions run through the issue types below. First, construction: what do the DMC and the first assignment actually say about this part of the building? Second, enforcement: who may sue on that covenant, against whom, and with what remedy?',
+        issueTypes: [
+          {
+            id: 'developer-sequence',
+            title: 'The stages from lot to registered deed of mutual covenant',
+            summary: 'Eight steps turn one lot into many separately owned flats. Knowing which step is missing is usually the answer.',
+            triggers: {
+              bullets: [
+                'A developer bought the lot under Conditions of Sale, built a block of twenty flats and twenty car parking spaces, and now wants to sell them one by one.',
+                'Flats are being sold before the occupation permit has issued and the purchaser asks what authority the developer needed.',
+                'The assignment to the first purchaser transfers 31 undivided shares of and in the lot together with the exclusive right to occupy Flat 5B and car space 12.',
+                'The deed of mutual covenant was executed by the developer, the first purchaser and a management company that is a subsidiary of the developer.',
+                'A later assignment from the developer says the flat is sold "together with the benefit of and subject to the burdens and obligations set out in the deed of mutual covenant".',
+                'The deed of mutual covenant was executed but never lodged at the Land Registry, and the second purchaser now wants to sue the fifth purchaser on a covenant in it.',
+                'The lot was divided into 620 shares, 30 to each flat and one to each car space, and the penthouse purchaser complains that she has no more shares than anyone else.',
+                'The developer allocated no undivided shares at all to the staircases, lifts and gardens.',
+                'The first purchaser wants to know why the assignment gives her shares in the lot rather than ownership of the flat itself.',
+              ],
+              routes: [
+                { when: 'The dispute is about what the developer kept back for itself when it assigned to the first purchaser', session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
+                { when: 'The complaint is that the shares attached to a particular flat cannot be identified', session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+                { when: 'The question is whether an owner further divided his own shares after the event', session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+                { when: 'The lot is being cut up horizontally into sections rather than into undivided shares', session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Walking the development through its stages',
+                steps: [
+                  {
+                    label: 'Stage (a): the developer acquires the lot and builds',
+                    detail: 'The developer takes the land either from the Government, by Government lease or Conditions of Grant, Sale or Exchange, or from a previous owner, and then puts up the block.',
+                    why: 'Everything that follows is carved out of this one title. The flat owners are not grantees from the Government; they are co-owners of the developer\'s interest in the lot, which is why a breach of the Government grant is still their problem years later.',
+                    exam: {
+                      write: 'The developer holds the lot under [the Government lease / Conditions of Sale dated [date]], and every interest in the building below is carved out of that one title.',
+                      trap: 'Forgetting that the flat owners take subject to the Government grant. A user restriction in the Conditions binds the twentieth purchaser exactly as it bound the developer.',
+                    },
+                    points: [
+                      'Identify the source of the developer\'s own title: a Government lease, Conditions of Grant or Sale, or an assignment from a previous owner.',
+                      'The co-owners will hold their interest subject to the terms of both the Government lease or Conditions and the DMC.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (b): comply with the Consent or Non-Consent Scheme before any pre-sale',
+                    detail: 'A pre-sale is a sale before the flat is completed and the occupation permit issued. If the sale falls under either Scheme, the Scheme\'s rules must be complied with first.',
+                    why: 'The Schemes exist because a purchaser paying for an unbuilt flat has handed over money against nothing he can inspect. The regulation is a substitute for the thing he would normally be buying.',
+                    exam: {
+                      write: 'The sale of Flat [x] on [date] was a pre-sale, the occupation permit not having issued until [date], so the requirements of the [Consent / Non-Consent] Scheme had to be satisfied first.',
+                      trap: 'Saying "consent scheme" without identifying whose consent. Under the Consent Scheme it is the consent of the Director of Lands to the pre-sale.',
+                    },
+                    points: [
+                      'A pre-sale is a sale before completion of the flat and before the occupation permit is issued.',
+                      'Under the Consent Scheme the consent of the Director of Lands to the pre-sale must be obtained.',
+                      'Where a developer pre-sells in a multi-storey building in accordance with the Consent Scheme, there is no obligation to allocate shares to the common parts.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (c): divide the whole building and the land notionally into undivided shares',
+                    detail: 'The lot and the building on it are divided into a number of undivided shares representing the units intended to be created, with a number of shares allocated to each flat and each car parking space.',
+                    why: 'The division is notional, not physical. Hong Kong has no statutory strata title, so the only way to give a flat buyer a legal estate is to give him a fraction of the whole lot and add a contractual right to occupy one part of it.',
+                    exam: {
+                      write: 'The lot and the building were notionally divided into [n] undivided shares, of which [m] were allocated to Flat [x].',
+                      trap: 'Describing the shares as shares in the flat. They are undivided shares of and in the lot.',
+                    },
+                    points: [
+                      {
+                        text: 'The shares need not be equal between flats.',
+                        points: [
+                          'A worked example from the lecture: a block of 20 flats and 20 car parking spaces divided into 620 shares, 30 per flat and one per car space.',
+                          'A large penthouse may be allocated more shares than a smaller lower flat.',
+                        ],
+                      },
+                      'Shares must be allocated to the common parts — the staircases, lifts, gardens, tennis courts and roads — save in the Consent Scheme pre-sale case at stage (b).',
+                      'The division is notional: nothing is physically partitioned.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (d): the first assignment, and what the developer reserves',
+                    detail: 'The developer agrees to sell one flat with a specified car space to the first purchaser and assigns it. The first purchaser receives undivided shares of and in the lot as tenant in common, together with the right to exclusive occupation, use and enjoyment of his flat and car space.',
+                    why: 'The reservation in the first assignment is doing a great deal of work. Once the developer has assigned shares in the lot, it is a co-owner like anyone else, so without an express reservation it has no better right to the rest of the building than the purchaser of Flat 5B has.',
+                    exam: {
+                      write: 'By the assignment dated [date] the first purchaser took [m] undivided shares of and in the lot as tenant in common, together with the exclusive right to occupy Flat [x] and car space [y], the vendor reserving the rest of the building to itself.',
+                      trap: 'Writing that the purchaser bought "the flat". He bought shares in the lot plus a right of exclusive occupation — which is exactly why the number of shares matters so much.',
+                    },
+                    points: [
+                      'Shares are of and in the LOT, not in the flat.',
+                      'The purchaser takes as tenant in common, so there is no right of survivorship between co-owners.',
+                      'In the assignment the developer reserves for itself and its successors the exclusive right to occupy the rest of the building, other than the common parts, to the exclusion of the first purchaser.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (e): execute the deed of mutual covenant for the whole development',
+                    detail: 'The developer and the first purchaser execute the DMC in respect of the whole development. The management company, which may be a subsidiary of the developer, may also be a party.',
+                    why: 'Only two or three people ever sign the DMC, yet it has to bind hundreds. That gap is the reason section 41 of the Conveyancing and Property Ordinance matters so much later in this lecture: the DMC works on everyone else through the running of covenants, not through signature.',
+                    exam: {
+                      write: 'The deed of mutual covenant was executed on [date] by the developer, the first purchaser and [the manager], and it governs the whole development notwithstanding that no later purchaser is a party to it.',
+                      trap: 'Assuming every owner signed the DMC. The only parties are the developer, the first purchaser and perhaps the management company.',
+                    },
+                    points: [
+                      'The DMC is executed for the whole development, not for the one flat being sold.',
+                      'The manager is commonly a party, which is what lets it enforce the covenants directly.',
+                      'Because later purchasers are not parties, the general law must be used to make the DMC bind them.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (f): register the assignment and the deed of mutual covenant',
+                    detail: 'Both instruments are registered at the Land Registry. Failure to register might render the covenants in the DMC unenforceable by and against the successors in title of the parties.',
+                    why: 'Registration supplies the notice that equity would otherwise require, which is why section 41(9) of the Conveyancing and Property Ordinance can bind a successor whether or not he searched.',
+                    exam: {
+                      write: 'The deed of mutual covenant was registered on [date] and bears memorial number [n]; by s41(9) of the Conveyancing and Property Ordinance successors in title are bound by its covenants whether or not they searched the register.',
+                      trap: 'Treating registration as a formality. An unregistered DMC is the fact that decides an enforceability question against a successor in title.',
+                    },
+                    points: [
+                      'Registration gives the DMC a memorial number, which later assignments refer to.',
+                      'Failure to register may make the covenants unenforceable by and against successors in title.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (g): the developer assigns the remaining flats',
+                    detail: 'Each later assignment should be expressly made "together with the benefit of and subject to the burdens and obligations set out in the deed of mutual covenant", now identified by its memorial number. These assignments are registered.',
+                    why: 'The express words are belt and braces. Sections 39 to 41 of the Conveyancing and Property Ordinance would run most of these covenants anyway, but a clause that expressly assigns benefit and burden removes the argument.',
+                    exam: {
+                      write: 'The assignment to [purchaser] dated [date] was expressly made together with the benefit of and subject to the burdens and obligations set out in the deed of mutual covenant registered under memorial no. [n].',
+                      trap: 'Ignoring this clause when the question is whether a covenant binds a later purchaser. It is the first thing to point to.',
+                    },
+                    points: [
+                      'Look for the express benefit-and-burden clause in the assignment before reaching for s41.',
+                      'The DMC is now identified by its memorial number.',
+                    ],
+                  },
+                  {
+                    label: 'Stage (h): a purchaser resells, and the covenants pass again',
+                    detail: 'On a resale the flat is assigned together with and subject to the benefit and burden provided for in the DMC, so that both the benefits and the burdens bind successors in title of the covenantor and covenantee.',
+                    why: 'The chain has to be unbroken. A single assignment that omits the clause does not necessarily break it, because s39 and s40 of the Conveyancing and Property Ordinance imply annexation unless a contrary intention is expressed — but the omission is what a requisition will be raised on.',
+                    exam: {
+                      write: 'On the resale to [purchaser] the property was assigned together with the benefit of and subject to the burdens in the deed of mutual covenant, so that both pass to the successor in title.',
+                      trap: 'Stopping at the express clause without asking whether the covenant is one whose burden can run at all — a positive covenant does not run against a lessee or occupier: s41(5) of the Conveyancing and Property Ordinance.',
+                    },
+                    points: [
+                      'The purpose of the clause is to bind successors in title of both covenantor and covenantee.',
+                      'Whether it succeeds still depends on s41 of the Conveyancing and Property Ordinance.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The number of shares allocated to a flat is not just accounting. It fixes the owner\'s share of management expenses and his voting weight, and if it cannot be identified the title is called into question.',
+                'The management company is often a subsidiary of the developer. That is a commercial point worth noticing where the question is about the manager\'s enforcement decisions.',
+                'A developer who pre-sells under the Consent Scheme need not allocate shares to the common parts — so the absence of shares attached to the common parts is not by itself a defect.',
+                'Common parts include the staircases, lifts, gardens, tennis courts and roads, not merely the lobby and the lift.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the developer\'s own title to the lot and any restriction in it.',
+                'Ask whether the sale in question was a pre-sale and, if so, whether the Scheme was complied with.',
+                'Set out the notional division into undivided shares and what was allocated to the unit in issue.',
+                'State what the first assignment gave and what it reserved.',
+                'Identify the parties to the DMC and the date of its registration.',
+                'Trace the clause by which benefit and burden were passed on each later assignment.',
+                'Say what the missing or defective stage means for the transaction in front of you.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Saying the purchaser buys the flat. He buys undivided shares in the lot plus a right of exclusive occupation, and every later question turns on that.',
+                'Forgetting that the DMC is executed for the whole development on the first sale, long before most of the owners exist.',
+                'Assuming that because a purchaser was not a party to the DMC he is not bound by it.',
+                'Treating unequal share allocations between flats as an irregularity. They are normal and usually reflect size.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Stage', 'Source', 'What it establishes'],
+                rows: [
+                  ['Pre-sale', 'Consent Scheme; Non-Consent Scheme', 'The Scheme\'s rules must be complied with before a flat can be pre-sold; under the Consent Scheme the Director of Lands must consent'],
+                  ['Division into shares', 'The DMC', 'The lot and building are notionally divided into undivided shares allocated to each flat and car space, and to the common parts'],
+                  ['First assignment', 'The assignment', 'Shares of and in the lot as tenant in common, plus the exclusive right to occupy; the rest of the building reserved to the developer'],
+                  ['Failure to reserve', 'Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 707, CFA', 'On construction the developer retained exclusive occupation of the rest of the property save the common parts'],
+                  ['Followed', 'Wui Fung Lee Investment Co Ltd v Hong Kong Mansion, Causeway Bay (IO) [2021] 1 HKLRD 408', 'Jumbo King applied'],
+                  ['Registration', 's41(9), Conveyancing and Property Ordinance (Cap. 219)', 'On registration of the DMC successors in title are bound irrespective of whether they searched the register'],
+                  ['Passing benefit and burden', 'The express clause in each assignment', 'Assignment "together with the benefit of and subject to the burdens" in the DMC'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
+              { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+              { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+            ],
+          },
+          {
+            id: 'construing-the-dmc',
+            title: 'Construing the DMC and the first assignment',
+            summary: 'What did the developer keep? A question of construction in which the DMC now has the primacy — and the shares tell you more than the words.',
+            triggers: {
+              bullets: [
+                'The developer sold the lower commercial floors and the purchaser now says the roofs and utility rooms, to which no shares were allocated, must be common parts.',
+                'The DMC defines the common parts by listing them and simply does not mention the external walls at all.',
+                'The first assignment reserved to the vendor the exclusive use, occupation and enjoyment of the outer walls of the building unless otherwise specifically included in the property.',
+                'The first assignment reserved the exclusive right to affix and maintain chimneys or flue pipes on the external walls, and to use them for advertising.',
+                'The DMC allows other owners to use the external wall with the manager\'s consent and makes the manager responsible for its maintenance and repair.',
+                'No undivided shares were ever attached to the part of the building now in dispute.',
+                'The DMC purports to designate the main roof as a common part, but the developer later assigned the exclusive right to part of it to the plaintiff\'s predecessor.',
+                'A requisition is raised asking whether roofs and utility rooms retained by the developer are common parts.',
+                'The developer\'s retained rights over a part of the building are so extensive that the other owners argue no use is left for them.',
+              ],
+              routes: [
+                { when: 'The specific question is whether the external wall is a common part', session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
+                { when: 'The question is what counts as a common part in the first place', session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+                { when: 'The complaint is that shares attached to the disputed part cannot be identified', session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Construing the DMC and the assignment together',
+                steps: [
+                  {
+                    label: 'Read the DMC first, and give it primacy',
+                    detail: 'In Donora Co Ltd v IO of Tsuen Kam Centre [2023] HKCA 33, [2024] HKCFA 3, the Court of Final Appeal treated the first assignment as merely part of the context in the construction of the DMC, and the making of the DMC and the first assignment as one transaction.',
+                    why: 'The DMC is the document every later purchaser is told to read, and the only one he can find by its memorial number. Giving it primacy means an owner in 2026 is not caught by a reservation buried in a 1970s assignment he has never seen.',
+                    exam: {
+                      write: 'Following Donora, the deed of mutual covenant is the primary document and the first assignment is part of the context in which it falls to be construed, the two being treated as one transaction.',
+                      trap: 'Starting with the reservation in the first assignment and treating the DMC as a gloss on it. Donora puts it the other way round.',
+                    },
+                    points: [
+                      'Identify the DMC\'s own definition of the common parts and see whether the disputed part is in it.',
+                      'Then read the first assignment as context, not as the governing instrument.',
+                      'Treat the DMC and the first assignment as one transaction.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether any undivided shares were attached to the disputed part',
+                    detail: 'In Donora the Court of Final Appeal discussed a number of factors, of which perhaps the most important was that no undivided shares were attached specifically to the external walls.',
+                    why: 'Shares are the currency of ownership in this system. A part of the building to which nobody\'s shares are attached cannot be anybody\'s exclusive property, because there is no share to carry the right of exclusive occupation.',
+                    exam: {
+                      write: 'No undivided shares were attached to [the disputed part], which in Donora was treated as perhaps the most important factor pointing towards its being a common part.',
+                      trap: 'Missing the contrast with SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275, where an undivided share had been assigned to the external wall and reserved by the developer, and the wall was held to be exclusively owned.',
+                    },
+                    points: [
+                      'No shares attached to the disputed part points strongly towards common part.',
+                      'A share assigned to the part and reserved by the developer points the other way: SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275.',
+                      'A right of exclusive use cannot be assigned or mortgaged without shares attached to it.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Jumbo King: construction is not a game of words',
+                    detail: 'In Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 707, CFA, the developer sold the lower commercial floors; the property was described as including roofs and utility rooms, to which no shares had been allocated, and the DMC referred only to "offices and shops" retained by the developer and was otherwise silent.',
+                    why: 'Lord Hoffmann\'s point was that the DMC is a mutual document, unlike an assignment between two parties, and the context of the first purchase was a residential unit. Construction has to serve what the parties were obviously doing, not reward whoever finds the better verbal hook.',
+                    exam: {
+                      write: 'Applying Jumbo King, the construction of a deed of mutual covenant is not a game of words; it is a mutual document and falls to be construed in the context of the transaction as a whole.',
+                      trap: 'Citing Jumbo King as authority that unreserved parts are always common parts. It decided the opposite on its facts — the developer was held to have retained the commercial unit.',
+                    },
+                    points: [
+                      'The DMC is a mutual document, unlike an assignment.',
+                      'The context of the first purchase in Jumbo King was a residential unit, and the parties plainly intended the developer to keep the commercial unit.',
+                      'Held: on construction the developer had retained the right of exclusive occupation over the rest of the property, save the common parts.',
+                      'Followed in Wui Fung Lee Investment Co Ltd v Hong Kong Mansion, Causeway Bay (IO) [2021] 1 HKLRD 408.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether a later designation has already settled the point',
+                    detail: 'In Chong Chi Ting Chris v Kin On Building (IO) [2023] HKLRD 284, the DMC had effectively designated the main roof, including the part main roof, as a common part of the building.',
+                    why: 'Designation is an event with a date. Once the DMC and first assignment have designated a part as common, the developer has nothing left to assign, so everything downstream fails for want of title rather than for want of construction.',
+                    exam: {
+                      write: 'The deed of mutual covenant having designated [the part] as a common part, the developer lost its exclusive right on the execution of the DMC and the first assignment, and the purported later assignments of that right were null and void for lack of title.',
+                      trap: 'Advising the client that he has a poor title when in truth he has none at all. In Chong Chi Ting the purported assignments were void, not merely defective.',
+                    },
+                    points: [
+                      'The developer lost its exclusive right to the part main roof after the execution of the DMC and the first assignment.',
+                      'All the purported assignments of that exclusive right to the plaintiff\'s predecessor in title were null and void and of no legal effect for lack of title.',
+                    ],
+                  },
+                  {
+                    label: 'Say what follows for the transaction in front of you',
+                    why: 'A construction exercise that stops at "it is a common part" has answered half the question. The client is buying, selling or suing, and the label only matters for what it does to that.',
+                    exam: {
+                      write: 'It follows that [the part] is [a common part / retained by the developer], so that [the vendor cannot give title to it / the purchaser takes subject to the manager\'s control / only the incorporated owners may sue on a breach affecting it].',
+                      trap: 'Forgetting that once the part is a common part, the proper plaintiff for a breach affecting it is usually the incorporated owners alone, under s16 of the Building Management Ordinance.',
+                    },
+                    points: [
+                      'If it is a common part, a purported assignment of exclusive rights over it is void for want of title.',
+                      'If it is a common part, enforcement of a breach affecting it is generally exclusive to the incorporated owners: s16, Building Management Ordinance (Cap. 344).',
+                      'If it was validly retained, the retaining owner carries the maintenance duty under s34H, Building Management Ordinance (Cap. 344).',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Donora is a Court of Appeal decision at [2023] HKCA 33 affirmed at [2024] HKCFA 3 — cite the level you are relying on.',
+                'The primacy of the DMC is expressed cautiously in the lecture materials: the Court of Final Appeal "appears to be" asserting it. Present it as the direction of travel rather than a settled rule.',
+                'A reservation that is extensive is not for that reason a reservation of exclusive possession. In Kong Wai Hsien v IO of Tai Wai Glamour Garden [2019] HKCA 1229 the argument that the developer\'s rights left no use for the other owners was rejected.',
+                'Buildings predating 19 June 1970 are outside s2 and Schedule 1 of the Building Management Ordinance, so construction of the DMC is all you have: Shine Empire Ltd v IO of San Po Kong Mansion HCA 3444/2001, 3/12/2004, paras 87-103.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Set out the DMC\'s definition of the common parts and whether the disputed part falls within it.',
+                'Read the first assignment as context and identify precisely what was reserved.',
+                'State whether undivided shares were attached to the disputed part.',
+                'Apply Jumbo King and Donora and reach a conclusion on construction.',
+                'Check whether the part has already been designated, with the consequences in Chong Chi Ting.',
+                'State the consequence for title, enforcement or maintenance.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Reading the first assignment as the governing document. After Donora the DMC has the primacy and the assignment is context.',
+                'Treating Jumbo King as a rule about roofs. It is a rule about how to construe a mutual document.',
+                'Concluding that a part is exclusively owned because the developer reserved extensive rights over it, without asking whether shares were attached.',
+                'Advising on construction without saying who may sue on the answer.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Construction of a DMC', 'Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 707, CFA', 'Not a game of words; the DMC is a mutual document; on the facts the developer retained the rest of the property save the common parts'],
+                  ['Jumbo King applied', 'Wui Fung Lee Investment Co Ltd v Hong Kong Mansion, Causeway Bay (IO) [2021] 1 HKLRD 408', 'Followed on failure to reserve'],
+                  ['Primacy of the DMC', 'Donora Co Ltd v IO of Tsuen Kam Centre [2023] HKCA 33, [2024] HKCFA 3', 'The first assignment is part of the context; the DMC and first assignment are one transaction; no shares attached to the external walls'],
+                  ['Share attached and reserved', 'SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275', 'External wall exclusively owned where an undivided share was assigned to it and reserved by the developer'],
+                  ['Extensive reserved rights', 'Kong Wai Hsien v IO of Tai Wai Glamour Garden [2019] HKCA 1229', 'Still common parts; the argument that no use was left for other owners was rejected'],
+                  ['Designation exhausts title', 'Chong Chi Ting Chris v Kin On Building (IO) [2023] HKLRD 284', 'Main roof designated a common part; later purported assignments of exclusive rights void for lack of title'],
+                  ['Pre-1970 buildings', 'Shine Empire Ltd v IO of San Po Kong Mansion HCA 3444/2001, 3/12/2004', 'Buildings predating 19 June 1970 not governed by s2 and Schedule 1 of the BMO'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
+              { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+            ],
+          },
+          {
+            id: 'sub-dmc',
+            title: 'Sub-deeds of mutual covenant',
+            summary: 'A co-owner may cut up his own shares by deed poll — but new units need new shares, a new plan and, where new common parts appear, a sub-DMC.',
+            triggers: {
+              bullets: [
+                'The owner of the whole 35th floor wants to divide it into eight separate units and sell them.',
+                '227 undivided shares were allocated to a floor, the floor was later divided into flats, and no shares were ever allocated to the individual flats.',
+                'The head DMC is silent on whether an assignee may further divide his shares.',
+                'A purchaser of one of the new units asks what he is liable to pay by way of management fees under the head DMC.',
+                'The sole owner of three floors of a commercial building executed a sub-DMC converting them into shops and appointed a manager for those three floors.',
+                'The incorporated owners of the building are trying to dismiss the manager appointed under a sub-deed for three floors.',
+                'New corridors and lift lobbies have been created inside a subdivided floor and nobody has said whose they are.',
+                'Only one of several new co-owners under the sub-deed has been sued on a covenant in the head deed.',
+                'The division of the shares was effected by an assignment rather than by deed poll.',
+              ],
+              routes: [
+                { when: 'The question is whether the shares attached to the unit can be identified at all', session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+                { when: 'The dispute is about who manages the new common areas', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+                { when: 'The lot itself is being cut up rather than a floor within a building', session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Dividing shares and drawing a sub-deed',
+                steps: [
+                  {
+                    label: 'Check whether the head DMC permits further division',
+                    detail: 'The developer and each assignee from the developer can further divide up its or his undivided shares, by deed poll, unless such division is prohibited in the deed of mutual covenant: Kwong Ka Hung v Lai Wah Development Co Ltd HCA 10566/94. So can any subsequent assignee: Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317.',
+                    why: 'The default is freedom, because a co-owner is dealing with his own shares. The prohibition has to be found in the DMC; it is not implied from the scheme.',
+                    exam: {
+                      write: 'Unless prohibited by the deed of mutual covenant, [the owner] may further divide his undivided shares by deed poll: Kwong Ka Hung v Lai Wah Development Co Ltd HCA 10566/94.',
+                      trap: 'Assuming only the developer may subdivide. Any subsequent assignee may: Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317.',
+                    },
+                    points: [
+                      'The right exists unless the head DMC prohibits it.',
+                      'It belongs to the developer, to assignees from the developer, and to any subsequent assignee.',
+                      'The division is effected by deed poll, not by assignment.',
+                    ],
+                  },
+                  {
+                    label: 'Do the three things a division requires',
+                    detail: 'A co-owner dividing his shares — for example the owner of a floor who wishes to divide it into several units — must draw up a new floor plan, allocate undivided shares to the new units, and draw up a sub-deed of mutual covenant, at least where new common parts are to be created.',
+                    why: 'Each of the three answers a different question a later purchaser will ask: where is my unit, what is my share, and who looks after the corridor outside my door.',
+                    exam: {
+                      write: 'On subdividing the floor the owner had to draw up a new floor plan, allocate undivided shares to each new unit, and execute a sub-deed of mutual covenant, new common parts having been created.',
+                      trap: 'Treating the sub-DMC as always required. The lecture puts it as required at least where new common parts are to be created.',
+                    },
+                    points: [
+                      'Draw up a new floor plan.',
+                      'Allocate undivided shares to those new units.',
+                      'Draw up a sub-deed of mutual covenant, at least where new common parts are to be created.',
+                    ],
+                  },
+                  {
+                    label: 'Deal in the sub-deed with liability under the head deed',
+                    detail: 'The sub-DMC should, among other things, deal with the new co-owners\' liability under the head DMC, for example by identifying their share of the management fees.',
+                    why: 'The head DMC knows only the original share. If the sub-deed does not apportion it, the new owners are left jointly and severally exposed on an obligation none of them can control.',
+                    exam: {
+                      write: 'The sub-deed of mutual covenant apportions the [n] shares formerly attached to the floor between the new units, and with them the liability for management fees under the head deed.',
+                      trap: 'Thinking the sub-deed can reduce what the head deed demands of the floor as a whole. It apportions the liability; it does not shrink it.',
+                    },
+                    points: [
+                      'Identify each new co-owner\'s share of the management fees.',
+                      'The new co-owners are liable to observe the land covenants in the head DMC.',
+                      'In Incorporated Owners of San Po Kong Mansion v Island Management Services Ltd [2007] 1 HKC 206 the parties to the sub-DMC were held jointly and severally bound to observe and perform the land covenants in the head DMC, with a corresponding right of indemnity between them if only one were sued.',
+                    ],
+                  },
+                  {
+                    label: 'Recognise that the sub-deed creates its own management regime',
+                    detail: 'A new management regime is created within the sub-DMC: Incorporated Owners of Po Lok Building v Leung Koon [2006] 3 HKLRD 877.',
+                    why: 'The new common areas serve only the new units, so it makes sense that they are common parts only as between those owners. That is precisely why the building-wide manager has no say over them.',
+                    exam: {
+                      write: 'The sub-deed of mutual covenant created a separate management regime for the [three] floors; the new common areas are common parts only as between the owners of those units and fall outside the jurisdiction of the manager of the building.',
+                      trap: 'Letting the incorporated owners of the whole building interfere with the sub-deed manager. In Po Lok Building they had no right to do so and could not dismiss him.',
+                    },
+                    points: [
+                      'The owner of the floors had the right to draw up a sub-DMC for his floors, and its terms were valid provided they did not conflict with the head DMC.',
+                      'The new common areas were common parts only as against the owners of the shops on those floors.',
+                      'They fell outside the jurisdiction of the building\'s manager, who was responsible only for the common areas identified in the head DMC.',
+                      'The owners\' corporation therefore had no right to interfere and could not dismiss the sub-deed manager.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A sub-deed that conflicts with the head deed is to that extent bad. Po Lok Building upheld the sub-deed expressly on the footing that its terms did not conflict.',
+                'The failure to execute a sub-deed is a title problem, not merely an administrative one: Lee Tak Chun v East Weal International Ltd [1994] 1 HKC 722 held the owner\'s title defective, though that decision was criticised in Hinex.',
+                'Division is by deed poll because the owner is dealing with his own shares — there is no other party to the instrument.',
+                'Where a sub-deed creates new common parts, the building\'s incorporated owners lose control of them, which has consequences for who may sue on a breach affecting them.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Check the head DMC for a prohibition on further division.',
+                'Identify whether new units, and new common parts, are being created.',
+                'Set out the three requirements: plan, allocation of shares, sub-deed.',
+                'Deal with the new owners\' liability under the head deed, particularly management fees.',
+                'Identify who manages the new common parts, and who may sue on a breach affecting them.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Describing the division as an assignment. It is effected by deed poll.',
+                'Assuming the building\'s incorporated owners or manager control the new common areas created by a sub-deed.',
+                'Forgetting the indemnity in San Po Kong Mansion when only one of several new co-owners has been sued.',
+                'Treating Lee Tak Chun as settled. It was criticised in Hinex, and Marking and Goldjet went the other way on similar facts.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Right to divide', 'Kwong Ka Hung v Lai Wah Development Co Ltd HCA 10566/94', 'Developer and assignees may further divide their shares by deed poll unless the DMC prohibits it'],
+                  ['Subsequent assignees too', 'Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317', 'Any subsequent assignee may also divide'],
+                  ['Liability under the head deed', 'Incorporated Owners of San Po Kong Mansion v Island Management Services Ltd [2007] 1 HKC 206', 'Sub-deed parties jointly and severally bound by the head deed\'s land covenants, with a right of indemnity between them'],
+                  ['Separate management regime', 'Incorporated Owners of Po Lok Building v Leung Koon [2006] 3 HKLRD 877', 'Sub-deed valid if not in conflict with the head deed; new common areas outside the building manager\'s jurisdiction; owners\' corporation cannot dismiss the sub-deed manager'],
+                  ['Failure to subdivide shares', 'Lee Tak Chun v East Weal International Ltd [1994] 1 HKC 722', 'Title defective where no shares allocated to individual flats after a floor was divided (criticised in Hinex)'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+              { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+            ],
+          },
+          {
+            id: 'undivided-shares-and-good-title',
+            title: 'Undivided shares, tenancy in common and good title',
+            summary: 'What the owner actually owns, what he may sell separately, and when the shares are too vague to give title.',
+            triggers: {
+              bullets: [
+                'The vendor purports to assign the exclusive right to occupy the roof without assigning any undivided shares with it.',
+                'A mortgage was taken over the flat and the shares, but the entrance hall and staircase were mortgaged separately with no shares attached.',
+                'The mortgagee has exercised its power of sale over a flat together with an entrance hall to which no shares were ever attached.',
+                'The sale and purchase agreement sells 12/3,100th shares together with the exclusive right to use unit 912, but the DMC allocated 138 shares to the ninth floor and none to individual units.',
+                'The Land Registry control card shows 12 shares against unit 912 and there is a share apportionment document for the development.',
+                'The vendor agreed to sell a 1/108 share, the DMC allocated no shares, but subdivision registers were opened on the assignments of the flats.',
+                'A purchaser requisitions the title on the ground that the vendor has not shown how many shares are allocated to the other flats in the building.',
+                'Two co-owners of a flat have died and the survivor claims the whole by survivorship.',
+                'The exclusive right to occupy a part of the building is being sold on its own, unaccompanied by any share.',
+              ],
+              routes: [
+                { when: 'The shares were never apportioned because a floor was divided without a sub-deed', session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+                { when: 'The argument is about what the developer reserved rather than about shares', session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
+                { when: 'The real question is whether the item is "land" at all', session: 'LG1', issue: 'what-is-land', label: 'Is it "land"? Fixtures, chattels and fittings' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing what the owner owns and whether he can sell it',
+                steps: [
+                  {
+                    label: 'State the nature of the interest: tenancy in common plus a right of exclusive occupation',
+                    detail: 'Each owner receives a number of undivided shares in the multi-storey building and becomes a co-owner with the others: Kung Ming Tak Tong v Park Solid Enterprise (2008) 11 HKCFAR 403. The co-ownership is a tenancy in common with the other co-owners and the developer, until the developer has disposed of all the flats and hence all his interest.',
+                    why: 'Tenancy in common is the only form of co-ownership that can carry this system. Joint tenancy would mean each owner\'s interest passed to the others on death, which is unthinkable for a block of strangers.',
+                    exam: {
+                      write: '[Owner] holds [n] undivided shares of and in the lot as tenant in common with the other co-owners, together with the right granted by the deed of mutual covenant to the exclusive occupation, use and enjoyment of Flat [x].',
+                      trap: 'Applying the right of survivorship. Jus accrescendi applies only to joint tenants and does not apply to tenants in common.',
+                    },
+                    points: [
+                      'Co-ownership in Hong Kong is a legal interest which can be assigned and mortgaged.',
+                      'Jus accrescendi, the right of survivorship, applies only to joint tenants, not to tenants in common.',
+                      'The DMC grants the right to exclusive occupation, use and enjoyment of a particular flat and perhaps a car space.',
+                      'The co-owner holds subject to the terms of the DMC and of the Government lease or Conditions.',
+                    ],
+                  },
+                  {
+                    label: 'Check that any dealing carries shares with it',
+                    detail: 'Every co-owner has the right to sell or mortgage his shares. The right to exclusive use and occupation cannot be assigned or mortgaged except together with an assignment of a share in the land: Lai Wing-ho v Chan Siu-fong [1993] 1 HKLR 319.',
+                    why: 'The right of exclusive occupation is contractual, given by the DMC; the share is the proprietary interest. Detach one from the other and there is nothing for the purchaser\'s title to hang on.',
+                    exam: {
+                      write: 'The purported [assignment / mortgage] of the exclusive right to occupy [the part] was ineffective, no undivided shares having been attached to it at the time: Lai Wing-ho v Chan Siu-fong [1993] 1 HKLR 319.',
+                      trap: 'Stating Lai Wing-ho as a prohibition on selling parts of a building. Jumbo King held that an owner may assign the right to exclusive use of any part provided he assigns some shares at the same time.',
+                    },
+                    points: [
+                      'Lai Wing-ho: assignment of the exclusive right to occupy a roof without any assignment of shares was ineffective.',
+                      'Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 757, CFA: an owner may assign the right to exclusive use and occupation over any part of the building provided that at the same time he assigns some shares in the building.',
+                      {
+                        text: 'Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266 works the point through a mortgage.',
+                        points: [
+                          'The vendor owned shares plus the exclusive right to occupy a flat and an entrance hall and staircase.',
+                          'He mortgaged the shares together with the flat, but without mentioning the hall and staircase, and later mortgaged the hall and staircase to the same mortgagee.',
+                          'On a sale under the power of sale the purchaser did not get good title to the hall and staircase, the purported mortgage of them being ineffective because no shares were attached to them at the time of the mortgage (per Poon J).',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the shares attached to this unit are clearly designated',
+                    detail: 'The number of shares to be assigned must be clearly designated. If no clear delineation of the number of shares attached to the flat has been made, the owner cannot give good title to it.',
+                    why: 'A share is a fraction, and a fraction of nothing identifiable cannot be conveyed. This is the routine title objection in an older subdivided building, and it is the practical reason sub-deeds exist.',
+                    exam: {
+                      write: 'The number of undivided shares attached to Flat [x] [is / is not] clearly designated, [the DMC allocating [m] shares to it / no allocation having been made to individual units on that floor].',
+                      trap: 'Requiring the vendor to account for the whole building. There is no requirement to show how many shares have been allocated to the other flats, provided it is clear how many are allocated to the one in question: Sheenip Industries Ltd v Champion Billion Development Ltd HCMP 1390/1995, 4/7/1995.',
+                    },
+                    points: [
+                      'Lee Tak Chun v East Weal International Ltd [1994] 1 HKC 722: 227 shares allocated to a floor, the floor then divided into flats and no further allocation made; title held defective. The decision was criticised in Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317.',
+                      'Marking Ltd v Cheerifat Ltd HCMP 2727/1995: no allocation to units on the ninth floor by sub-deed, but the Land Registry control card showed 12 shares against unit 912 and a share apportionment document did too; sufficient evidence that 12 shares had been assigned.',
+                      'Goldjet International Investment Ltd v Ling Ki Wai [1997] 3 HKC 503: no allocation in the DMC, but subdivision registers had been opened based on the assignments and the control card showed the allocation; good title shown. Same conclusion in Hinex.',
+                      'No requirement to show the allocation to other flats: Sheenip Industries Ltd v Champion Billion Development Ltd HCMP 1390/1995, 4/7/1995.',
+                    ],
+                  },
+                  {
+                    label: 'Confirm the right to use the common parts',
+                    detail: 'Every owner has the right to use the common parts. This right is granted by the DMC; if no such grant is made the courts may imply it.',
+                    why: 'The implied right cannot be an easement, because a co-owner cannot have an easement over his own property. It has to be contractual — a term implied into the DMC — which is why it is described as a quasi-easement.',
+                    exam: {
+                      write: 'In the absence of an express grant, a term is implied into the deed of mutual covenant entitling each co-owner to pass along the common parts: Chui Shu-choi v Merrilong Dyeing Works Ltd [1990] 1 HKLR 385, CA.',
+                      trap: 'Calling it an easement. Co-owners cannot enjoy easements over their own property; the right arises by virtue of contract, as a quasi-easement.',
+                    },
+                    points: [
+                      'The right is normally granted expressly by the DMC.',
+                      'If not, a right to pass along the common parts arises by necessary implication as a quasi-easement, not an easement: Chui Shu-choi v Merrilong Dyeing Works Ltd [1990] 1 HKLR 385, CA.',
+                    ],
+                  },
+                  {
+                    label: 'State the consequence for the transaction',
+                    why: 'Every one of the cases above was a conveyancing dispute, not an abstract one. The answer the client needs is whether he must complete, and that turns on whether the defect is one of title or merely of evidence.',
+                    exam: {
+                      write: 'It follows that the vendor [can / cannot] give good title to [the unit], and the purchaser [must complete / is entitled to raise a requisition and, if it is not answered, to rescind].',
+                      trap: 'Treating Lee Tak Chun as the last word. Marking, Goldjet and Hinex all found other evidence of the allocation sufficient, so look for the control card and the subdivision register before advising that title is bad.',
+                    },
+                    points: [
+                      'Evidence outside the DMC — control cards, share apportionment documents, subdivision registers — can establish the allocation.',
+                      'A purported dealing with a right of exclusive occupation unaccompanied by shares gives no title at all.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Jumbo King is reported at [1999] 3 HKLRD 707 in the lecture notes\' treatment of construction and at [1999] 3 HKLRD 757 in the treatment of assignment of exclusive rights. Use the page reference that matches the proposition you are citing.',
+                'Lai Wing-ho and Jumbo King are not contradictory once the rule is stated properly: shares must accompany the right, but any part of the building may be dealt with if they do.',
+                'A mortgagee is a successor in title only when in possession — a distinction that matters for s41(5) of the Conveyancing and Property Ordinance later in the lecture.',
+                'The developer remains a co-owner, and bound by the DMC, until it has disposed of all the flats.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State the interest: undivided shares held as tenant in common, plus the DMC right of exclusive occupation.',
+                'Identify precisely what is being assigned or mortgaged and whether shares accompany it.',
+                'Test whether the shares attached to the unit are clearly designated, and look outside the DMC for evidence if not.',
+                'Deal with the right to use the common parts, express or implied.',
+                'Conclude on title and on what the purchaser may do about it.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying survivorship to co-owners of a flat. They are tenants in common.',
+                'Saying a right of exclusive occupation can never be dealt with separately. It can, provided shares go with it.',
+                'Requisitioning the share allocation of the whole building when only the subject flat is in question.',
+                'Describing the right to use the common parts as an easement.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Nature of co-ownership', 'Kung Ming Tak Tong v Park Solid Enterprise (2008) 11 HKCFAR 403', 'Each owner becomes a co-owner with the others; tenancy in common'],
+                  ['Shares must accompany the right', 'Lai Wing-ho v Chan Siu-fong [1993] 1 HKLR 319', 'Assignment of the exclusive right to occupy a roof without shares ineffective'],
+                  ['But any part may be dealt with', 'Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 757, CFA', 'An owner may assign the right to exclusive use of any part provided he assigns shares at the same time'],
+                  ['Mortgage without shares', 'Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266', 'Mortgage of hall and staircase ineffective, no shares attached; purchaser under the power of sale took no title'],
+                  ['Shares not delineated', 'Lee Tak Chun v East Weal International Ltd [1994] 1 HKC 722', 'Title defective where a divided floor\'s units had no allocation (criticised in Hinex)'],
+                  ['Other evidence sufficed', 'Marking Ltd v Cheerifat Ltd HCMP 2727/1995', 'Control card and share apportionment document showed 12 shares against unit 912'],
+                  ['Other evidence sufficed', 'Goldjet International Investment Ltd v Ling Ki Wai [1997] 3 HKC 503', 'Subdivision registers and control card established the allocation; good title'],
+                  ['No need to show other flats', 'Sheenip Industries Ltd v Champion Billion Development Ltd HCMP 1390/1995, 4/7/1995', 'Only the shares attached to the subject flat need be shown'],
+                  ['Right to use common parts', 'Chui Shu-choi v Merrilong Dyeing Works Ltd [1990] 1 HKLR 385, CA', 'Implied right to pass along the common parts as a quasi-easement, arising by contract'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+              { session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+            ],
+          },
+          {
+            id: 'common-parts-definition',
+            title: 'Is it a common part?',
+            summary: 'Section 2 and the First Schedule start from the whole building and subtract what has been designated for exclusive use. Everything turns on that designation.',
+            triggers: {
+              bullets: [
+                'A co-owner has built a structure on a part of the building and says it was never anybody\'s common part.',
+                'The DMC lists the common parts and the part in dispute is not on the list, but nothing says it was retained either.',
+                'The building was completed in 1965 and the DMC is silent about the disputed part.',
+                'The DMC assigned 20 undivided shares to the common parts and the definition of common parts includes the external walls.',
+                'A part of the building has been specified in an instrument registered in the Land Registry as being for the exclusive use of one owner.',
+                'The manager is responsible under the DMC for maintaining and repairing the disputed part, and other owners may use it with his consent.',
+                'The staircase and lift lobby are being used by one owner as storage and the other owners want them back.',
+                'A pipe running through one owner\'s flat serves the whole building and the owner objects to the manager entering to repair it.',
+                'The developer never specified or designated the disputed part in any registered instrument.',
+              ],
+              routes: [
+                { when: 'The part in dispute is an external wall', session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
+                { when: 'The part in dispute is an internal or partition wall', session: 'LG2', issue: 'internal-walls', label: 'Internal, load-bearing and partition walls' },
+                { when: 'The answer turns on construing the developer\'s reservation', session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
+                { when: 'The part is a common part and the complaint is that someone has taken it over', session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Deciding whether a part is a common part',
+                steps: [
+                  {
+                    label: 'Check the date of the building before anything else',
+                    detail: 'The predecessor of the Building Management Ordinance was enacted on 19 June 1970. In Shine Empire Ltd v IO of San Po Kong Mansion HCA 3444/2001, 3/12/2004, at paragraphs 87 to 103, it was held that buildings predating the ordinance would not be governed by s2 and Schedule 1 of the BMO.',
+                    why: 'The statutory definition operates by subtracting designated parts from the whole building, which only makes sense if the designation regime was in force when the building was carved up. For an older block there is nothing to subtract from, so the DMC is all there is.',
+                    exam: {
+                      write: 'The building having been completed in [year], before 19 June 1970, s2 and Schedule 1 of the Building Management Ordinance do not apply and the question is one of construction of the deed of mutual covenant alone: Shine Empire Ltd v IO of San Po Kong Mansion HCA 3444/2001, 3/12/2004.',
+                      trap: 'Applying Schedule 1 to a pre-1970 building. It is the first thing to check and the easiest mark to lose.',
+                    },
+                    points: [
+                      'The predecessor ordinance was enacted on 19 June 1970.',
+                      'For a pre-1970 building, work from the DMC and the assignments alone.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the two limbs of the s2 definition',
+                    detail: 'Section 2 of the Building Management Ordinance defines common parts as (a) the whole of a building except such parts as have been specified or designated in an instrument registered in the Land Registry as being for the exclusive use, occupation and enjoyment of an owner; and (b) unless so specified or designated, those parts specified in Schedule 1.',
+                    why: 'The definition works by subtraction, and the burden that follows from that is the point: the starting position is that everything is common, and it is for whoever claims a part exclusively to point to the registered designation.',
+                    exam: {
+                      write: 'By s2 of the Building Management Ordinance (Cap. 344), the common parts are the whole of the building except such parts as are specified or designated in a registered instrument as being for the exclusive use, occupation and enjoyment of an owner; and, unless so specified or designated, the parts listed in Schedule 1.',
+                      trap: 'Reading limb (b) as an exhaustive list. Schedule 1 supplements limb (a); it does not replace it.',
+                    },
+                    points: [
+                      'Limb (a) — the whole of the building, less parts specified or designated in an instrument registered in the Land Registry for the exclusive use, occupation and enjoyment of an owner.',
+                      'Limb (b) — unless so specified or designated, those parts specified in Schedule 1.',
+                      'The instrument must be registered in the Land Registry.',
+                      'The designation must be for exclusive use, occupation AND enjoyment.',
+                    ],
+                  },
+                  {
+                    label: 'Test whether the part has been "specified or designated"',
+                    detail: 'Whether a part has been specified or designated can be difficult, as Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 707, CFA, shows.',
+                    why: 'Designation is a question of substance, not of finding the word. A DMC that hands a developer maintenance-free exclusive rights over a part without saying so in terms may still not have designated it, because designation has to be visible to the later purchaser reading the register.',
+                    exam: {
+                      write: 'The [part] [has / has not] been specified or designated in a registered instrument as being for the exclusive use, occupation and enjoyment of an owner, and accordingly [is not / is] a common part.',
+                      trap: 'Treating silence in the DMC as designation in the developer\'s favour. Silence usually leaves the part within limb (a) of s2.',
+                    },
+                    points: [
+                      'Where the DMC designates the part as common, the developer loses its exclusive right on execution of the DMC and the first assignment: Chong Chi Ting Chris v Kin On Building (IO) [2023] HKLRD 284.',
+                      'A purported later assignment of an exclusive right over a designated common part is null and void for lack of title.',
+                      'Reserved rights of use, however extensive, are not the same as designation of exclusive possession.',
+                    ],
+                  },
+                  {
+                    label: 'Check Schedule 1 for the parts the statute lists',
+                    detail: 'Schedule 1 to the Building Management Ordinance lists parts that are common parts unless specified or designated otherwise. It includes external walls and internal load-bearing walls.',
+                    why: 'Schedule 1 is a default, not a trump. It supplies the answer only where the DMC and the registered instruments have not spoken — which is why the construction exercise always comes first.',
+                    exam: {
+                      write: 'External walls fall within Schedule 1 to the Building Management Ordinance and are therefore common parts unless specifically designated as being for the exclusive use of an owner.',
+                      trap: 'Assuming Schedule 1 settles the point. In IO Westlands Garden v Oey Chiou Ling [2011] 2 HKC 460 the expert evidence took the wall outside the Schedule 1 description.',
+                    },
+                    points: [
+                      'External walls are common parts unless specifically designated for the exclusive use of an owner.',
+                      'Internal load-bearing walls are included in the Schedule 1 definition.',
+                      'Whether a particular wall answers the Schedule 1 description may itself need evidence.',
+                    ],
+                  },
+                  {
+                    label: 'Say what follows once the part is classified',
+                    why: 'The classification is never the client\'s question. It decides who repairs the part, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the DMC.',
+                    exam: {
+                      write: 'The [part] being a common part, [the owner\'s conversion of it is a breach of s34I(1)(a) of the Building Management Ordinance and, by s34I(2), a deemed breach of the deed of mutual covenant / the proper plaintiff is the incorporated owners under s16 of that Ordinance].',
+                      trap: 'Stopping at the classification. The marks are in the consequence.',
+                    },
+                    points: [
+                      'Every owner has a right to use the common parts, express under the DMC or implied as a quasi-easement.',
+                      'Converting a common part to one\'s own use engages s34I(1)(a), Building Management Ordinance (Cap. 344).',
+                      'Enforcement of a breach affecting the common parts is generally exclusive to the incorporated owners: s16 of that Ordinance.',
+                      'The owner with full and exclusive rights over a part carries the maintenance duty under s34H of that Ordinance.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Part VIA of the Building Management Ordinance, which contains ss34C to 34L, is universally applicable — it applies whether or not the owners have incorporated.',
+                'Section 2 works by subtraction. Do not start by asking whether the part is "common"; ask whether it has been designated out.',
+                'Designation must be in an instrument registered in the Land Registry. An unregistered side agreement will not do it.',
+                'Chong Chi Ting shows designation is one-way: once the DMC has designated a part as common, the developer has nothing left to assign.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Check the building\'s date against 19 June 1970.',
+                'Read the DMC\'s own definition of the common parts.',
+                'Apply limb (a) of s2: has the part been specified or designated in a registered instrument for exclusive use, occupation and enjoyment?',
+                'If not, check Schedule 1.',
+                'State the classification and then the consequence for repair, enforcement and remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying s2 and Schedule 1 to a building completed before 19 June 1970.',
+                'Treating a reservation of extensive rights of use as a designation of exclusive possession.',
+                'Forgetting that the designation has to cover use, occupation and enjoyment.',
+                'Classifying the part and then failing to say who may sue about it.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Definition', 's2 and Schedule 1, Building Management Ordinance (Cap. 344)', 'The whole building less parts designated in a registered instrument for exclusive use, occupation and enjoyment; and, unless so designated, the Schedule 1 parts'],
+                  ['Universal application', 'Part VIA (ss34C-34L), Building Management Ordinance (Cap. 344)', 'Applies whether or not the owners have incorporated'],
+                  ['Pre-1970 buildings', 'Shine Empire Ltd v IO of San Po Kong Mansion HCA 3444/2001, 3/12/2004, paras 87-103', 'Buildings predating 19 June 1970 not governed by s2 and Schedule 1'],
+                  ['Difficulty of designation', 'Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279, [1999] 3 HKLRD 707, CFA', '"Specified or designated" can be difficult; construction of the DMC is not a game of words'],
+                  ['Designation exhausts title', 'Chong Chi Ting Chris v Kin On Building (IO) [2023] HKLRD 284', 'DMC designated the main roof a common part; later purported assignments of exclusive rights void'],
+                  ['Right to pass', 'Chui Shu-choi v Merrilong Dyeing Works Ltd [1990] 1 HKLR 385, CA', 'Implied right to pass along the common parts, a quasi-easement arising by contract'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
+              { session: 'LG2', issue: 'internal-walls', label: 'Internal, load-bearing and partition walls' },
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+            ],
+          },
+          {
+            id: 'external-walls',
+            title: 'External walls, signs and reserved rights',
+            summary: 'The commonest fight in the building. A reserved right to advertise is not a reservation of the wall — unless a share went with it.',
+            triggers: {
+              bullets: [
+                'An owner has erected an unauthorised structure on an outside wall and the DMC never delineated the external walls as anyone\'s.',
+                'The DMC distinguishes between "exterior side walls" and the facade, and the dispute is over the wall at the back of the building.',
+                'The developer reserved the exclusive right to use the external walls for advertising purposes and to affix chimneys and flue pipes to them.',
+                'The DMC assigned 20 undivided shares to the common parts and included the external walls in the definition of common parts.',
+                'The DMC allows other owners to use the external wall with the manager\'s consent, and makes the manager responsible for its maintenance.',
+                'An undivided share was assigned specifically to the external wall and reserved by the developer.',
+                'A co-owner has affixed a large trade name sign advertising a pre-school to the external wall.',
+                'The developer says its reserved rights over the external wall are so extensive that no use is left for the other owners.',
+                'The incorporated owners are being sued over a defective air grille in the external wall and say the wall is the developer\'s.',
+              ],
+              routes: [
+                { when: 'The general question is what counts as a common part', session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+                { when: 'The wall is internal rather than external', session: 'LG2', issue: 'internal-walls', label: 'Internal, load-bearing and partition walls' },
+                { when: 'The complaint is that the sign alters the external appearance in breach of the DMC', session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+                { when: 'The breach is conceded and the argument is that the incorporated owners let it happen', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working out who owns the external wall',
+                steps: [
+                  {
+                    label: 'Start from the presumption: external walls are common parts',
+                    detail: 'Section 2 and Schedule 1 to the Building Management Ordinance provide that external walls are common parts unless specifically designated as being for the exclusive use of an owner.',
+                    why: 'Au JA\'s reasoning in Kong Wai Hsien explains why the presumption is strong: the external walls hold and support the building and prevent damage to its interior. A part that serves every flat is naturally common to all of them.',
+                    exam: {
+                      write: 'By s2 and Schedule 1 of the Building Management Ordinance (Cap. 344) the external walls are common parts unless specifically designated as being for the exclusive use of an owner.',
+                      trap: 'Forgetting the 19 June 1970 cut-off. For an older building the presumption does not apply and construction of the DMC is all you have.',
+                    },
+                    points: [
+                      'Snowland Ltd v Topland Holdings Ltd [2006] 4 HKC 188: unauthorised structures on an outside wall were on a common part, the DMC not having specifically delineated the external walls as within any owner\'s exclusive occupation or enjoyment.',
+                      'The external walls hold and support the building and prevent damage to its interior: Au JA in Kong Wai Hsien v IO of Tai Wai Glamour Garden [2019] HKCA 1229.',
+                    ],
+                  },
+                  {
+                    label: 'Construe the words the DMC actually uses',
+                    detail: 'In Sino Channel Holdings Ltd v Vast Faith Investment Ltd [2020] HKCA 311, the Court of Appeal held it was clear from the relevant provisions of the DMC that the parties intended to differentiate between exterior walls facing the street, that is the facade, and "exterior side walls". "Exterior side walls" referred only to the laterals and not to the front or back.',
+                    why: 'The draftsman\'s choice of word carries weight because a DMC is drafted once for the whole life of the building. Using "side" when "external" was available is a deliberate narrowing, not carelessness.',
+                    exam: {
+                      write: 'The deed of mutual covenant refers to "[the phrase used]", which on the reasoning in Sino Channel is to be read as [narrower / wider] than "external walls", the draftsman having had the wider phrase available.',
+                      trap: 'Treating all the phrases as synonyms. The use of "side" was a strong indication of a reference to something different from "external walls", "exterior walls" or "exterior".',
+                    },
+                    points: [
+                      '"Exterior side walls" meant the laterals only, not the front or back.',
+                      'The draftsman\'s use of "side" was a strong indication of a reference to something different from "external walls", "exterior walls" or "exterior".',
+                    ],
+                  },
+                  {
+                    label: 'Separate the right to use from the right to possess',
+                    detail: 'It is very common in Hong Kong for external walls to be common parts, or owned by another party, while a particular owner, usually the developer, has a right to erect advertising signs. The wording may lead to confusion about whether the developer retained exclusive possession or only the exclusive right to erect signs.',
+                    why: 'This is the whole battleground. A right to hang something on a wall is a right over somebody else\'s wall; it presupposes that the wall is not yours. The drafting invites the opposite reading, which is why the courts have had to say so repeatedly.',
+                    exam: {
+                      write: 'The reservation confers the exclusive right to use the external walls for [advertising / pipes and machinery], which is a right of use over a common part and not a reservation of exclusive possession of the wall itself.',
+                      trap: 'Accepting the argument that rights so extensive leave no use for the other owners. It was rejected in Kong Wai Hsien.',
+                    },
+                    points: [
+                      {
+                        text: 'Kong Wai Hsien v IO of Tai Wai Glamour Garden [2019] HKCA 1229 is the worked example.',
+                        points: [
+                          'The DMC\'s definition of common parts included the external walls, and 20 undivided shares were assigned to the common parts.',
+                          'The developer retained exclusive rights to place pipes, wires and machinery on the walls, and the exclusive right to use or allow others to use them for advertising.',
+                          'Held: common parts despite the exclusive rights granted to the developer; the argument that the rights were so extensive that no use was left for other owners was rejected.',
+                        ],
+                      },
+                      'IO of Goa Building v Wui Tat Co Ltd [2004] 1 HKC 348, CA: reserving a right to erect signs, signboards and flue pipes was not "full and exclusive rights" under s34H of the Building Management Ordinance, so the repairing duty did not fall on the developer; the words were not sufficient to find that it had retained ownership of the wall, being not all the rights associated with it.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether any undivided share was attached to the wall',
+                    detail: 'In Donora Co Ltd v IO of Tsuen Kam Centre [2023] HKCA 33, [2024] HKCFA 3, a number of factors were discussed, of which perhaps the most important was that no undivided shares were attached to the external walls specifically.',
+                    why: 'This is the one factor that cuts cleanly, because it is a matter of record rather than of construction. SPM is the mirror image and shows the test working in the developer\'s favour.',
+                    exam: {
+                      write: 'No undivided share having been attached to the external wall, it is a common part notwithstanding the rights reserved over it: Donora Co Ltd v IO of Tsuen Kam Centre [2024] HKCFA 3.',
+                      trap: 'Citing Donora for a general rule that external walls are always common parts. SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275 is an example of the courts finding the opposite where a share had been assigned to the wall.',
+                    },
+                    points: [
+                      {
+                        text: 'The Donora facts repay reading closely.',
+                        points: [
+                          'The first assignment reserved to the vendor and its successors the right to the exclusive use, occupation and enjoyment of the outer walls of the building unless otherwise specifically included in the property.',
+                          'It also reserved the exclusive right to use, affix to and maintain on the external walls one or more chimneys or flue pipes, and the exclusive right to use the external walls for advertising purposes.',
+                          'The DMC\'s definition of common areas did not include the walls, but did not say they were retained by the developer either.',
+                          'The DMC allowed other owners to use the external wall with the consent of the manager, and made the manager responsible for its maintenance and repair.',
+                        ],
+                      },
+                      'The Court of Final Appeal treated the first assignment as merely part of the context in the construction of the DMC.',
+                      'Contrast SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275: an undivided share was assigned to the external wall and reserved by the developer, and the wall was exclusively owned.',
+                    ],
+                  },
+                  {
+                    label: 'Draw the consequences for breach, repair and remedy',
+                    why: 'Once the wall is a common part, three things follow at once, and an answer that gives only one of them is incomplete: the sign is a breach, the incorporated owners are the plaintiff, and the incorporated owners also carry the risk if the wall injures someone.',
+                    exam: {
+                      write: 'The external wall being a common part, the affixing of the sign is a breach of the deed of mutual covenant and of s34I of the Building Management Ordinance, and by s16 of that Ordinance the proper plaintiff is the incorporated owners.',
+                      trap: 'Forgetting the exposure that runs the other way. In Leung Tsang Hung v IO of Kwok Wing House [2007] 5 HKC 227, [2007] 4 HKLRD 654, CFA the incorporated owners were liable in public nuisance for a piece of concrete that fell from a balcony attached to the external wall.',
+                    },
+                    points: [
+                      'IO KK Mansion v Jade Water Group Ltd [2010] 3 HKLRD 195, DC: mandatory injunction to remove signs erected on the external wall; breach of both the DMC and s34I of the Building Management Ordinance.',
+                      'The common parts being the incorporated owners\' responsibility, the exposure to third parties runs with it.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Goa Building is about s34H, not about the common parts definition: the question was whether the developer had "full and exclusive rights" such that the repairing duty fell on it.',
+                'Kong Wai Hsien and Donora are both examples of external walls held to be common parts; SPM is the counter-example. Have all three, and know which way each went.',
+                'The Donora DMC made the manager responsible for maintaining and repairing the external wall, which is a powerful indication against the developer owning it.',
+                'A right "to use or allow others to use" a wall is a licensing right, and licensing presupposes that the licensor does not own what he licenses.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State the s2 and Schedule 1 presumption and check the building\'s date.',
+                'Set out the DMC\'s own words and construe them, distinguishing facade, sides and external walls if the drafting does.',
+                'Separate the reserved right of use from a reservation of possession.',
+                'Ask whether any undivided share was attached to the wall.',
+                'Conclude, and state the consequences for breach, the proper plaintiff and repair.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating a reserved advertising right as ownership of the wall.',
+                'Accepting the "no use left for anyone else" argument, which Kong Wai Hsien rejected.',
+                'Reading "exterior side walls" as covering the front and back of the building.',
+                'Citing Donora as a rule rather than as a decision on the factors, of which the absence of attached shares was the most important.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Presumption', 's2 and Schedule 1, Building Management Ordinance (Cap. 344)', 'External walls are common parts unless specifically designated for an owner\'s exclusive use'],
+                  ['No delineation in the DMC', 'Snowland Ltd v Topland Holdings Ltd [2006] 4 HKC 188', 'Unauthorised structures on an outside wall were on a common part'],
+                  ['Drafting distinctions', 'Sino Channel Holdings Ltd v Vast Faith Investment Ltd [2020] HKCA 311', '"Exterior side walls" meant the laterals only, not the facade'],
+                  ['Extensive reserved rights', 'Kong Wai Hsien v IO of Tai Wai Glamour Garden [2019] HKCA 1229', 'Still common parts; walls hold and support the building; "no use left" argument rejected'],
+                  ['Primacy of the DMC', 'Donora Co Ltd v IO of Tsuen Kam Centre [2023] HKCA 33, [2024] HKCFA 3', 'First assignment merely context; no undivided shares attached to the walls; manager responsible for their upkeep'],
+                  ['Share attached', 'SPM Ltd v Appeal Tribunal (Buildings Ordinance) [2023] HKCA 275', 'External wall exclusively owned where a share was assigned to it and reserved'],
+                  ['Repairing duty', 'IO of Goa Building v Wui Tat Co Ltd [2004] 1 HKC 348, CA', 'A right to erect signs and flue pipes is not "full and exclusive rights" under s34H'],
+                  ['Remedy', 'IO KK Mansion v Jade Water Group Ltd [2010] 3 HKLRD 195, DC', 'Mandatory injunction to remove signs; breach of the DMC and of s34I'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+            ],
+          },
+          {
+            id: 'internal-walls',
+            title: 'Internal, load-bearing and partition walls',
+            summary: 'Schedule 1 catches load-bearing walls, but an ordinary partition between two flats belongs to the owners either side.',
+            triggers: {
+              bullets: [
+                'The owner of two adjacent flats has cut a doorway through the wall between them for access.',
+                'A partition wall divides two flats and neither assignment says the wall is for the exclusive use of either owner.',
+                'The DMC and the other title deeds are silent about the wall now being demolished.',
+                'Expert evidence is called to say that the wall in question does not in fact bear any load.',
+                'An owner wants to know whether he may demolish a wall wholly inside his own flat.',
+                'The incorporated owners say the wall is a common part and the owner replies that a common area inside his own flat is an unattractive idea.',
+                'The assignment of the flat says nothing about the wall, and the argument is about what the assignor had power to assign.',
+                'The demolition is said to be both a conversion of a common part and a structural alteration.',
+                'The wall being altered runs between two flats in the same ownership.',
+              ],
+              routes: [
+                { when: 'The wall is an external one', session: 'LG2', issue: 'external-walls', label: 'External walls, signs and reserved rights' },
+                { when: 'The complaint is that the works are structural alterations in breach of the DMC', session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+                { when: 'The complaint is that a common part has been taken over', session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Classifying an internal wall',
+                steps: [
+                  {
+                    label: 'Ask first whether the wall is load-bearing',
+                    detail: 'Internal load-bearing walls are included in the definition of common parts in the Building Management Ordinance. Load-bearing walls form part of Schedule 1, so if the DMC and other title deeds are silent the wall would be a common part: IO Westlands Garden v Oey Chiou Ling [2011] 2 HKC 460, [2011] 2 HKLRD 421, CA.',
+                    why: 'A wall that holds the building up serves every owner in it, which is the same reasoning that makes the external walls common. Take it away and everyone above is affected.',
+                    exam: {
+                      write: 'Internal load-bearing walls fall within Schedule 1 to the Building Management Ordinance, so the wall is a common part unless the deed of mutual covenant or the title deeds provide otherwise.',
+                      trap: 'Assuming the label settles it. In Westlands Garden the expert evidence suggested the wall did not bear a load, and it was held to fall outside the Schedule 1 definition; similarly in Tam Sze Man v IO Shan Tsui Court [2011] 5 HKLRD 434.',
+                    },
+                    points: [
+                      'Schedule 1 to the Building Management Ordinance includes internal load-bearing walls.',
+                      'Whether a particular wall is load-bearing is a question of fact, usually for expert evidence.',
+                      'Expert evidence that the wall bears no load takes it outside Schedule 1: IO Westlands Garden v Oey Chiou Ling [2011] 2 HKC 460, CA; Tam Sze Man v IO Shan Tsui Court [2011] 5 HKLRD 434.',
+                    ],
+                  },
+                  {
+                    label: 'If it is not load-bearing, work out who owns it under the assignments',
+                    detail: 'In Metro City Management Ltd v Tsui Fee Hung Vincent HCA 4327/2003, 13/1/2005, the partition wall did not form part of the common parts but was owned by the owners of the two flats; the judge observed that "the idea of having a common area within one\'s property is an unattractive one".',
+                    why: 'Section 17 of the Conveyancing and Property Ordinance does the work here: an assignment carries everything the assignor had and had power to assign, unless a contrary intention is expressed. The developer had the wall, said nothing about it, and so passed it on.',
+                    exam: {
+                      write: 'The wall not being load-bearing, and no contrary intention being expressed in the assignment, s17 of the Conveyancing and Property Ordinance operates to pass the assignor\'s interest in it, so that it is owned by the owners of the two flats it divides.',
+                      trap: 'Forgetting to cite s17. It is the provision that turns "the assignment is silent" into an answer rather than a gap.',
+                    },
+                    points: [
+                      'Section 17 of the Conveyancing and Property Ordinance: unless a contrary intention is expressed, an assignment operates to assign all the estate, right and interest in the land assigned which the assignor has and has power to assign.',
+                      'Per Tang Ag CJHC in CACV 328/2005, 6/6/2006: an internal partition wall does not form part of the common parts and may be demolished by the owner provided it is not load-bearing.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether the assignment designated the wall to one owner',
+                    detail: 'In Chi Fu Fa Yuen Ltd v Cho Wai Man Raymond [2008] 1 HKC 59 the owner of two adjacent flats constructed a door in the wall between them. Since the assignments of the two units had not stated that the wall was for the exclusive use and enjoyment of the owner, the wall remained part of the common parts; it was also load-bearing.',
+                    why: 'This is s2 limb (a) applied to a wall. Without a designation in a registered instrument, the subtraction never happens and the wall stays within the common parts.',
+                    exam: {
+                      write: 'The assignments of the two units not having stated that the wall was for the exclusive use and enjoyment of the owner, the wall remains part of the common parts.',
+                      trap: 'Thinking that owning the flats on both sides of a wall means owning the wall. In Chi Fu Fa Yuen it did not.',
+                    },
+                    points: [
+                      'The designation has to appear in the instrument; common ownership of both flats does not supply it.',
+                      'A load-bearing wall inside one\'s own flats can still be a common part.',
+                    ],
+                  },
+                  {
+                    label: 'Identify every breach the works give rise to',
+                    detail: 'In Chi Fu Fa Yuen the owner was held both to have converted part of the common parts to his own use in breach of s34I of the Building Management Ordinance, and to have made structural alterations in breach of the DMC. A mandatory injunction to reinstate the wall was granted.',
+                    why: 'The two breaches have different sources and different plaintiffs, so pleading only one may put the case in the wrong hands. The conversion is statutory and deemed a DMC breach by s34I(2); the structural alteration is an express covenant.',
+                    exam: {
+                      write: 'The works constitute both a conversion of a common part to the owner\'s own use, contrary to s34I(1)(a) of the Building Management Ordinance and so a deemed breach of the deed of mutual covenant under s34I(2), and a breach of the express covenant against structural alterations.',
+                      trap: 'Pleading the express covenant alone and losing the statutory route, or vice versa. Chi Fu Fa Yuen shows a single set of works triggering both.',
+                    },
+                    points: [
+                      'Conversion of a common part: s34I(1)(a), Building Management Ordinance (Cap. 344).',
+                      'Deemed breach of the DMC: s34I(2) of that Ordinance.',
+                      'Breach of the express covenant against structural alterations in the DMC.',
+                      'Demolition of load-bearing walls will amount to structural alterations, and may also be conversion of common parts.',
+                      'A mandatory injunction to reinstate the wall may be granted.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Westlands Garden and Tam Sze Man both went the owner\'s way on the evidence, so do not assume an internal wall is common merely because it is thick.',
+                'Metro City is the authority for the s17 route, and is worth having because it explains why a common area inside a private flat is an unattractive result.',
+                'Chi Fu Fa Yuen went the other way because the wall was load-bearing and the assignments contained no designation — two independent reasons.',
+                'The classification decides who may sue. If the wall is a common part, the incorporated owners are generally the only plaintiff: s16, Building Management Ordinance (Cap. 344).',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Establish whether the wall is load-bearing, on the evidence.',
+                'If it is, apply Schedule 1 and check whether the DMC or the title deeds say otherwise.',
+                'If it is not, apply s17 of the Conveyancing and Property Ordinance to see what the assignments carried.',
+                'Look for a designation of exclusive use in the assignments.',
+                'List every breach the works give rise to, statutory and contractual.',
+                'Identify the proper plaintiff and the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating all internal walls as common parts because Schedule 1 mentions load-bearing walls.',
+                'Assuming the owner of both flats either side of a wall owns the wall.',
+                'Omitting s17 of the Conveyancing and Property Ordinance when the assignment is silent.',
+                'Pleading only one of the two breaches a demolition typically gives rise to.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Load-bearing walls', 'Schedule 1, Building Management Ordinance (Cap. 344)', 'Internal load-bearing walls are within the common parts definition'],
+                  ['Evidence can displace it', 'IO Westlands Garden v Oey Chiou Ling [2011] 2 HKC 460, [2011] 2 HKLRD 421, CA', 'Expert evidence put the wall outside the Schedule 1 description'],
+                  ['Same result', 'Tam Sze Man v IO Shan Tsui Court [2011] 5 HKLRD 434', 'Wall outside Schedule 1 on the evidence'],
+                  ['Partition walls', 'Metro City Management Ltd v Tsui Fee Hung Vincent HCA 4327/2003, 13/1/2005; CACV 328/2005, 6/6/2006', 'Partition wall owned by the owners either side; s17 CPO applied; may be demolished if not load-bearing'],
+                  ['What an assignment carries', 's17, Conveyancing and Property Ordinance (Cap. 219)', 'Unless a contrary intention is expressed, an assignment passes all the estate, right and interest the assignor has and can assign'],
+                  ['Two breaches at once', 'Chi Fu Fa Yuen Ltd v Cho Wai Man Raymond [2008] 1 HKC 59', 'Load-bearing wall with no designation remained a common part; conversion under s34I and structural alteration in breach of the DMC; mandatory injunction to reinstate'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+            ],
+          },
+          {
+            id: 'bmo-overriding-duties',
+            title: 'The BMO\'s overriding duties: sections 34H and 34I',
+            summary: 'Two statutory duties that override anything the DMC says: repair what you exclusively occupy, and keep off the common parts.',
+            triggers: {
+              bullets: [
+                'A co-owner has converted part of the lobby into a shop and installed a large vending machine elsewhere in the common parts.',
+                'A co-owner has put surveillance cameras up in the common corridor without asking anybody.',
+                'The DMC expressly permits the very conduct that the Ordinance prohibits.',
+                'The owners\' committee passed a resolution approving one owner\'s conversion of part of the common parts.',
+                'The owners\' committee refused consent to a conversion and the owner complains that the refusal was unreasonable.',
+                'A meeting of all the owners, rather than the owners\' committee, purported to approve the conversion.',
+                'A stranger to the DMC, who owns nothing in the building, has taken over part of the common parts.',
+                'The developer reserved a right to erect signs and flue pipes on the external wall and now denies any duty to repair it.',
+                'Storage of personal belongings in the common area next to the car park is said to be unlawful.',
+              ],
+              routes: [
+                { when: 'The prior question is whether the part taken over is a common part at all', session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+                { when: 'The works are alterations to the fabric rather than a taking of common parts', session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+                { when: 'The breach is admitted and the defence is that it was allowed to continue', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+                { when: 'The question is who may bring the claim', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Applying sections 34H and 34I',
+                steps: [
+                  {
+                    label: 'Note that these duties override the DMC and apply to every building',
+                    detail: 'The Building Management Ordinance stipulates two duties which must be observed by owners and which override any express provision in the deed of mutual covenant: s34C(2). Part VIA of the Ordinance, containing ss34C-34L, is universally applicable, so Schedules 7 and, where applicable, 8 are implied into all DMCs.',
+                    why: 'Without an override, a developer drafting the DMC for a building it wholly owns could simply write the duties out. Making them statutory and universal is what stops the standard of building management being set by whoever held the pen first.',
+                    exam: {
+                      write: 'Sections 34H and 34I of the Building Management Ordinance (Cap. 344) impose duties on owners which, by s34C(2), override any express provision of the deed of mutual covenant.',
+                      trap: 'Treating these duties as applying only to incorporated buildings. Part VIA applies whether or not the owners have incorporated.',
+                    },
+                    points: [
+                      'Section 34C(2) makes these duties override express provisions of the DMC.',
+                      'Part VIA (ss34C-34L) is universally applicable.',
+                      'Schedules 7 and 8 are implied into all DMCs — Schedule 7 always, Schedule 8 where applicable.',
+                    ],
+                  },
+                  {
+                    label: 'Section 34H: you own it exclusively, so you repair it',
+                    detail: 'Section 34H of the Building Management Ordinance provides that an owner who has the exclusive use and occupation of a unit has a duty to maintain that unit in good repair and condition.',
+                    why: 'The duty follows exclusivity because nobody else can get at the unit to repair it. That is also why the threshold is "full and exclusive rights" rather than merely extensive ones.',
+                    exam: {
+                      write: 'By s34H of the Building Management Ordinance, [owner], having the exclusive use and occupation of [the unit / the part], is under a duty to maintain it in good repair and condition.',
+                      trap: 'Assuming reserved rights amount to exclusivity. In IO of Goa Building v Wui Tat Co Ltd [2004] 1 HKC 348, CA, a right to erect signs, signboards and flue pipes on the external wall was not "full and exclusive rights", so the developer did not have to repair the wall.',
+                    },
+                    points: [
+                      'The question in Goa Building was whether the developer\'s reserved rights were "full and exclusive rights" under s34H.',
+                      'Held: no. The words were not sufficient to find that the developer had retained ownership of the external wall; they were not all the rights associated with the wall.',
+                      'So the repairing duty for the wall did not fall on the developer.',
+                    ],
+                  },
+                  {
+                    label: 'Section 34I(1)(a): no conversion of common parts without a resolution',
+                    detail: 'Section 34I(1)(a) of the Building Management Ordinance provides that no person may convert any part of the common parts of a building to his own use unless such conversion is approved by a resolution of the owners\' committee.',
+                    why: 'The consent is collective because the loss is collective: what one owner takes, every other owner loses. That is also why the section does not import a reasonableness standard on refusal — it is not a licensing scheme, it is a veto held by the people being deprived.',
+                    exam: {
+                      write: 'By s34I(1)(a) of the Building Management Ordinance, no person may convert any part of the common parts to his own use unless the conversion is approved by a resolution of the owners\' committee; no such resolution having been passed, [owner] is in breach.',
+                      trap: 'Arguing that consent was unreasonably refused. The section does not impose a requirement of reasonableness on the grant or refusal of consent by resolution: Incorporated Owners of Bonham Crest v Lai Felix Ltd [2019] HKLdT 29.',
+                    },
+                    points: [
+                      'The approval must be by a resolution of the owners\' committee.',
+                      'No requirement of reasonableness attaches to the grant or refusal of that consent: Incorporated Owners of Bonham Crest v Lai Felix Ltd [2019] HKLdT 29.',
+                      'There will often also be an express DMC covenant prohibiting conversion, which is enforceable alongside the section.',
+                    ],
+                  },
+                  {
+                    label: 'Section 34I(1)(b): no unreasonable interference, no nuisance or hazard',
+                    detail: 'Section 34I(1)(b)(i) prohibits using or permitting the common parts to be used in such a manner as unreasonably to interfere with their use and enjoyment by any owner or occupier of the building.',
+                    why: 'Limb (b) catches what limb (a) misses. Putting a vending machine in a corridor is not taking the corridor for yourself, but it degrades everyone else\'s use of it just the same.',
+                    exam: {
+                      write: 'The [vending machine / camera / structure] does not convert the common part to [owner]\'s own use but unreasonably interferes with the other co-owners\' use and enjoyment of it, contrary to s34I(1)(b)(i) of the Building Management Ordinance.',
+                      trap: 'Thinking a resolution can cure a limb (b) breach. The management committee or owners\' committee cannot pass a resolution to allow unreasonable interference.',
+                    },
+                    points: [
+                      'Gallium Development Ltd v Winning Properties Management Ltd CACV 400/2003, 17/9/2004: a co-owner converted part of the common parts into a shop and installed a large vending machine in other common parts; held a breach of s34I.',
+                      'IO Ning Fung Court v Ho Mei Tak LDBM 110/2009, 20/7/2010: surveillance cameras in the common parts.',
+                      'A management committee or owners\' committee cannot pass a resolution to allow unreasonable interference.',
+                    ],
+                  },
+                  {
+                    label: 'Check who "no person" catches',
+                    detail: 'It was held in Yeung Mau Cheung v IO of Ka Ming Court, Castle Peak Road [2013] 4 HKLRD 211 that "no person" in s34I(1) is confined to those who are bound by the DMC.',
+                    why: 'Section 34I(2) deems a contravention a breach of the DMC, and a deemed breach of a document that does not bind you is meaningless. The limit on "no person" follows from the remedy the section creates.',
+                    exam: {
+                      write: '"No person" in s34I(1) is confined to those bound by the deed of mutual covenant: Yeung Mau Cheung v IO of Ka Ming Court, Castle Peak Road [2013] 4 HKLRD 211, so [the defendant] [is / is not] within the section.',
+                      trap: 'Using s34I against a complete stranger to the building. Common-area DMC breaches can only be committed between co-owners, residents and others bound by the DMC.',
+                    },
+                    points: [
+                      'Breaches of the common areas provisions can only be committed by those bound by the DMC — co-owners, residents and the like.',
+                      'A person outside that class must be sued on some other basis, such as trespass or nuisance.',
+                    ],
+                  },
+                  {
+                    label: 'Use s34I(2) to turn the statutory breach into a DMC breach, and choose the remedy',
+                    detail: 'By s34I(2) of the Building Management Ordinance, a person who contravenes s34I(1) is deemed to be in breach of an obligation imposed on him by the deed of mutual covenant in respect of the building.',
+                    why: 'The deeming provision is what gives the section teeth. It imports the whole DMC enforcement machinery — the proper plaintiff, the injunction, the damages — instead of creating a standalone statutory claim.',
+                    exam: {
+                      write: 'By s34I(2) of the Building Management Ordinance the contravention is deemed a breach of an obligation imposed by the deed of mutual covenant, so that the [incorporated owners / manager] may sue upon it and seek an injunction.',
+                      trap: 'Forgetting the injunction. The applicant may also, of course, obtain an injunction, and in this area that is usually what the client wants.',
+                    },
+                    points: [
+                      'Breach of these implied terms is deemed a breach of the DMC: s34I(2).',
+                      'The applicant may obtain an injunction, including a mandatory injunction to reinstate.',
+                      'Storage of personal belongings in the common area next to a car park was held unlawful, though not illegal, in 好安樓業主立案法團 v Leung Kam Chung Kenneth [2023] HKLdT 26.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Section 34I(1)(a) requires a resolution of the owners\' committee specifically. In the Gallium line of reasoning, a meeting of all the owners may in theory have greater authority, but the statutory mechanism has not been employed.',
+                'Bonham Crest is the answer to "the refusal was unreasonable": s34I imposes no reasonableness requirement on the grant or refusal of consent.',
+                'The distinction between limb (a) conversion and limb (b) interference matters for acquiescence — see Freder Centre and, now, Centre Chase.',
+                'The lecture flags the distinction between unlawful and illegal: storing belongings in a common area was unlawful but not illegal.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State that Part VIA applies to every building and that s34C(2) makes these duties override the DMC.',
+                'Identify whether the complaint is about repair (s34H) or the common parts (s34I).',
+                'For s34I, decide whether the conduct is conversion under limb (a) or interference or nuisance under limb (b).',
+                'Check whether an owners\' committee resolution approved it, and that the approver was the right body.',
+                'Check that the defendant is a person bound by the DMC.',
+                'Apply s34I(2) and identify the proper plaintiff and the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying these sections only to incorporated buildings. Part VIA is universally applicable.',
+                'Arguing unreasonable refusal of consent under s34I(1)(a).',
+                'Assuming an owners\' committee can authorise unreasonable interference under limb (b). It cannot.',
+                'Using s34I against someone who is not bound by the DMC.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Override', 's34C(2), Building Management Ordinance (Cap. 344)', 'The two duties override any express provision of the DMC'],
+                  ['Universal application', 'Part VIA (ss34C-34L), Building Management Ordinance (Cap. 344)', 'Applies whether or not the owners have incorporated; Schedules 7 and 8 implied into all DMCs'],
+                  ['Duty to repair', 's34H, Building Management Ordinance (Cap. 344)', 'An owner with exclusive use and occupation must maintain the unit in good repair and condition'],
+                  ['What exclusivity means', 'IO of Goa Building v Wui Tat Co Ltd [2004] 1 HKC 348, CA', 'A right to erect signs and flue pipes is not "full and exclusive rights"; developer not liable to repair the external wall'],
+                  ['Conversion', 's34I(1)(a), Building Management Ordinance (Cap. 344)', 'No conversion of common parts to one\'s own use without a resolution of the owners\' committee'],
+                  ['No reasonableness requirement', 'Incorporated Owners of Bonham Crest v Lai Felix Ltd [2019] HKLdT 29', 'The section imposes no requirement of reasonableness on the grant or refusal of consent by resolution'],
+                  ['Unreasonable interference', 's34I(1)(b)(i), Building Management Ordinance (Cap. 344); Gallium Development Ltd v Winning Properties Management Ltd CACV 400/2003, 17/9/2004', 'Shop in the common parts and a vending machine elsewhere in them; breach of s34I'],
+                  ['Cameras', 'IO Ning Fung Court v Ho Mei Tak LDBM 110/2009, 20/7/2010', 'Surveillance cameras in the common parts'],
+                  ['Who is caught', 'Yeung Mau Cheung v IO of Ka Ming Court, Castle Peak Road [2013] 4 HKLRD 211', '"No person" confined to those bound by the DMC'],
+                  ['Deemed DMC breach', 's34I(2), Building Management Ordinance (Cap. 344)', 'Contravention of s34I(1) is deemed a breach of an obligation imposed by the DMC'],
+                  ['Unlawful but not illegal', '好安樓業主立案法團 v Leung Kam Chung Kenneth [2023] HKLdT 26', 'Storage of belongings in a common area adjacent to a car park was unlawful but not illegal'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+            ],
+          },
+          {
+            id: 'structural-alterations',
+            title: 'Structural alterations and external appearance',
+            summary: 'An express covenant in every DMC, construed more liberally than the Buildings Ordinance — and one set of works often breaches two covenants.',
+            triggers: {
+              bullets: [
+                'An owner has constructed a new window in the outside wall of his flat.',
+                'An owner demolished part of the outside wall so that the unit could be used as a garage, and produced an architect\'s certificate saying the structure was unaffected.',
+                'Air conditioners have been installed in the outside wall of a flat.',
+                'An owner has enlarged the window in the outside wall of his flat.',
+                'An owner has affixed his trade name to the outside wall of the building.',
+                'Concrete plinths and gondolas have been installed on the roof of the building.',
+                'A door has been cut through a load-bearing wall between two flats in the same ownership.',
+                'The works are said to be structural under the DMC although they would not be under the Buildings Ordinance.',
+                'The alterations are visible from the street and the DMC forbids altering the external appearance of the building.',
+              ],
+              routes: [
+                { when: 'The works take a common part for the owner\'s own use', session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+                { when: 'The wall in question is an internal one and the argument is whether it is load-bearing', session: 'LG2', issue: 'internal-walls', label: 'Internal, load-bearing and partition walls' },
+                { when: 'The works were done by a previous owner', session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+                { when: 'The incorporated owners knew of the works and did nothing for years', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing works against the structural alterations covenant',
+                steps: [
+                  {
+                    label: 'Find the express covenant and read it as a DMC covenant, not a statutory one',
+                    detail: 'A covenant against structural alterations is an express covenant in all DMCs. The meaning of "structural alterations" in the context of a prohibition in a DMC may be construed more liberally than when used in the Buildings Ordinance.',
+                    why: 'The two regimes are asking different questions. The Buildings Ordinance is a criminal statute concerned with safety; the DMC is a bargain between co-owners who also care what the building looks like and what their neighbours do to it.',
+                    exam: {
+                      write: 'The covenant against structural alterations in clause [x] of the deed of mutual covenant falls to be construed more liberally than the same phrase in the Buildings Ordinance.',
+                      trap: 'Answering a DMC question with Buildings Ordinance cases alone. The criminal and civil regimes are distinct, though the Buildings Ordinance cases may still help.',
+                    },
+                    points: [
+                      'The criminal regime is the Buildings Ordinance; the civil regime is the DMC.',
+                      'There is commonly also an express covenant not to alter the external appearance of the building or to affix any trade name or advertisement to the external wall, and the two overlap.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the cases: "structural" is read widely',
+                    detail: 'In Incorporated Owners of Elite Garden v Profit More Company Ltd [2002] 2 HKLRD 518 the construction of a window in an outside wall was a structural alteration, "structural" including visual aspects.',
+                    why: 'Reading "structural" to include appearance makes sense of the covenant\'s place in a mutual document: the other owners\' interest in the wall is precisely that they have to look at it and live behind it.',
+                    exam: {
+                      write: 'The [construction of a window / demolition of the wall / installation of the air conditioner] is a structural alteration within the meaning of the covenant, "structural" being construed to include visual aspects: Incorporated Owners of Elite Garden v Profit More Company Ltd [2002] 2 HKLRD 518.',
+                      trap: 'Accepting an architect\'s certificate as an answer. In Incorporated Owners of Tuen Mun Hun Cheung Industrial Centre v United Hong Kong Ltd HCMP 2991/1998, 22/11/1999, demolition of an outside wall was a structural alteration despite a certificate that the structure was unaffected — "structural" was to be interpreted literally.',
+                    },
+                    points: [
+                      'Elite Garden: a window constructed in an outside wall; "structural" includes visual aspects.',
+                      'Tuen Mun Hun Cheung Industrial Centre: demolition of an outside wall to permit use as a garage; structural despite an architect\'s certificate.',
+                      'Incorporated Owners of Jing Hui Garden v Ng Kei Sang LDBM 155/2005, 14/5/2007: installation of air conditioners in an outside wall was a breach.',
+                      'Incorporated Owners of Shan Kwong Towers Phase II v Li Suet Ching [2007] 4 HKLRD 567: enlargement of a window in an outside wall was a breach.',
+                    ],
+                  },
+                  {
+                    label: 'Use the Buildings Ordinance cases for what they are worth',
+                    detail: 'It may still be helpful to consider Buildings Ordinance breaches, as in Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1.',
+                    why: 'Mariner is useful because it reasons about what makes something structural rather than merely listing examples, and that reasoning transfers even though the regime does not.',
+                    exam: {
+                      write: 'Although decided under the Buildings Ordinance, Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1 is of assistance on whether works involve the structure of the building.',
+                      trap: 'Presenting Mariner as deciding the DMC question. It does not; it informs it.',
+                    },
+                    points: [
+                      'Works involve the structure if they serve a structural function or are capable of affecting integrity.',
+                      'A purposive approach was taken to "in" the building: items on the roof, not exposed to the elements if inside.',
+                      'Concrete plinths and gondolas were not within the exemption.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the works are also a conversion of common parts',
+                    detail: 'Demolition of load-bearing walls will amount to structural alterations, but may also be a conversion of common parts: Chi Fu Fa Yuen Ltd v Cho Wai Man Raymond [2008] 1 HKC 59.',
+                    why: 'Two breaches are better than one, and they have different escape routes: the conversion can in principle be approved by resolution under s34I(1)(a), the express covenant cannot unless the DMC says so.',
+                    exam: {
+                      write: 'The works breach both the express covenant against structural alterations and s34I(1)(a) of the Building Management Ordinance, the wall being a common part.',
+                      trap: 'Forgetting the overlap with the covenant not to alter the external appearance. A sign on an external wall may breach that covenant, the structural alterations covenant, and s34I all at once.',
+                    },
+                    points: [
+                      'Conversion of common parts: s34I(1)(a), Building Management Ordinance (Cap. 344), deemed a DMC breach by s34I(2).',
+                      'Some overlap with the express covenant not to alter the external appearance of the building.',
+                      'IO of Freder Centre v Gringo Ltd [2016] 4 HKC 346, [2016] 2 HKLRD 190, CA: a trade name affixed to an outside wall, a common part, in breach of the DMC.',
+                    ],
+                  },
+                  {
+                    label: 'Identify the plaintiff and the remedy, and check for a defence',
+                    why: 'The remedy in these cases is almost always a mandatory injunction to reinstate, which is drastic. That is why the defences — acquiescence, delay, the gravity of the breach — do so much work here and so little elsewhere.',
+                    exam: {
+                      write: 'The building being incorporated, the proper plaintiff is the incorporated owners, who seek a mandatory injunction requiring reinstatement of [the wall / the window].',
+                      trap: 'Overlooking acquiescence. In Freder Centre the incorporated owners were held to have acquiesced in the breach.',
+                    },
+                    points: [
+                      'For an incorporated building the proper plaintiff is the incorporated owners; for an unincorporated one, the manager.',
+                      'The usual remedy is a mandatory injunction to reinstate.',
+                      'Consider acquiescence, and the gravity of the breach, as defences.',
+                      'Consider whether the present owner inherited the works from a predecessor in title.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An architect\'s certificate that the structure is unaffected does not answer a DMC covenant: Tuen Mun Hun Cheung Industrial Centre.',
+                'The Elite Garden reading of "structural" as including visual aspects and the Tuen Mun reading of it "literally" pull in slightly different directions — both produce a wide covenant, but say which you are relying on.',
+                'Works to an external wall raise the common parts question as well, because the external walls are within Schedule 1 to the Building Management Ordinance.',
+                'Mariner is a Buildings Ordinance case at Court of Final Appeal level and is persuasive here rather than binding on the DMC point.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Set out the express covenant relied on and the works complained of.',
+                'Construe "structural alterations" in its DMC context, more liberally than under the Buildings Ordinance.',
+                'Apply the closest decided case on the type of works.',
+                'Check the overlap with the external appearance covenant and with s34I.',
+                'Identify the plaintiff and the remedy sought.',
+                'Consider acquiescence and any predecessor-in-title point.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the Buildings Ordinance meaning of "structural" as decisive of the DMC covenant.',
+                'Accepting an expert certificate as conclusive.',
+                'Pleading the structural alterations covenant alone when the works also take a common part.',
+                'Assuming a mandatory injunction follows automatically. The defences matter, and Freder Centre shows one succeeding.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Works', 'Authority', 'Outcome'],
+                rows: [
+                  ['New window in an outside wall', 'Incorporated Owners of Elite Garden v Profit More Company Ltd [2002] 2 HKLRD 518', 'Structural alteration; "structural" includes visual aspects'],
+                  ['Demolition of outside wall for a garage', 'Incorporated Owners of Tuen Mun Hun Cheung Industrial Centre v United Hong Kong Ltd HCMP 2991/1998, 22/11/1999', 'Structural despite an architect\'s certificate; "structural" interpreted literally'],
+                  ['Air conditioners in an outside wall', 'Incorporated Owners of Jing Hui Garden v Ng Kei Sang LDBM 155/2005, 14/5/2007', 'Breach'],
+                  ['Enlargement of a window', 'Incorporated Owners of Shan Kwong Towers Phase II v Li Suet Ching [2007] 4 HKLRD 567', 'Breach'],
+                  ['Buildings Ordinance guidance', 'Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1', 'Structural if serving a structural function or capable of affecting integrity; purposive reading of "in" the building; plinths and gondolas not exempt'],
+                  ['Load-bearing wall', 'Chi Fu Fa Yuen Ltd v Cho Wai Man Raymond [2008] 1 HKC 59', 'Structural alteration and conversion of common parts; mandatory injunction to reinstate'],
+                  ['Trade name on an outside wall', 'IO of Freder Centre v Gringo Ltd [2016] 4 HKC 346, [2016] 2 HKLRD 190, CA', 'Breach of the DMC, but the incorporated owners had acquiesced'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+            ],
+          },
+          {
+            id: 'nuisance-and-annoyance',
+            title: 'Nuisance, annoyance, and entry to abate',
+            summary: 'Annoyance is easier to prove than nuisance, so read the covenant\'s exact words — and know how to get into the offending flat.',
+            triggers: {
+              bullets: [
+                'A co-owner has erected antennae on the roof and other owners fear the radiation is harming their health.',
+                'The DMC forbids any act which may be or become "a nuisance or annoyance or cause damage" to the other owners.',
+                'The DMC forbids only the commission of "a nuisance" and says nothing about annoyance.',
+                'Water is seeping from one unit in a multi-storey building into the co-owner\'s unit below.',
+                'An air-conditioning condenser has been erected which blocks the view to the display window of the shop next door.',
+                'Residents complain of loud and disturbing noise from a neighbouring unit but no expert evidence is available.',
+                'An owner refuses to let the incorporated owners\' workmen into his flat to replace a defective air grille in the external wall.',
+                'A pipe inside one owner\'s flat is affecting the common parts and the management committee wants to inspect it.',
+                'No scientific proof of a health hazard is available and the respondent applies for further and better particulars.',
+              ],
+              routes: [
+                { when: 'The complaint is about the common parts being taken or obstructed', session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+                { when: 'The complaint is about alterations to the fabric or appearance of the building', session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+                { when: 'The question is who may bring the claim', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+                { when: 'The remedy is in issue rather than the breach', session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Running a nuisance or annoyance complaint',
+                steps: [
+                  {
+                    label: 'Read the covenant\'s exact words before anything else',
+                    detail: 'Annoyance is easier to establish than nuisance, so a covenant that forbids only a nuisance is much narrower than one that forbids a nuisance or annoyance.',
+                    why: 'This is a covenant, not a tort, so the words are the whole of the obligation. The pair of antennae cases turns entirely on which words the two DMCs used.',
+                    exam: {
+                      write: 'Clause [x] of the deed of mutual covenant prohibits [any act which may be or become a nuisance or annoyance to / anything which should become a nuisance to] the other co-owners, and the question is whether the [conduct] falls within those words.',
+                      trap: 'Arguing nuisance when the covenant gives you annoyance, which is easier. Plead the wider limb if the covenant provides one.',
+                    },
+                    points: [
+                      'Annoyance is easier to prove than nuisance.',
+                      'Set out the covenant verbatim and identify which limb is engaged.',
+                    ],
+                  },
+                  {
+                    label: 'Compare the two antennae cases, which turn on exactly that',
+                    detail: 'Incorporated Owners of Fanling Centre v Wong Yu Ting Terence HCMP 1979/2014, 11/11/2014, CA, and Incorporated Owners of Kadoorie Avenue Mansion v Rising Dragon International Ltd LDBM 201/2013, 22/12/2014, both concerned antennae, and went opposite ways.',
+                    why: 'In Fanling Centre the covenant caught anything which may "be or become a nuisance or annoyance", and peace of mind was enough. In Kadoorie the covenant required a nuisance, and anxiety without scientific proof was not one. The facts were close; the drafting was not.',
+                    exam: {
+                      write: 'The covenant here being in the [Fanling Centre / Kadoorie] form, the [anxiety and loss of peace of mind suffered by the co-owners suffices / claimant must establish a nuisance, for which the evidence of anxiety alone is insufficient].',
+                      trap: 'Citing Fanling Centre for the proposition that fear of radiation is actionable. It was actionable there because the covenant covered annoyance.',
+                    },
+                    points: [
+                      {
+                        text: 'Fanling Centre: the DMC provided that no owner do cause or permit or suffer to be done any act or thing which may be or become a nuisance or annoyance or cause damage to the other owners or occupiers.',
+                        points: [
+                          'A co-owner had erected antennae on the roof; the daughter of another co-owner had suffered a brain tumour.',
+                          'No expert evidence was adduced to prove causation between the antennae and the tumour.',
+                          'The incorporated owners nevertheless obtained mandatory orders for removal, the peace of mind of the co-owners having been adversely affected, which sufficed as a breach of the "no nuisance or annoyance" provision.',
+                        ],
+                      },
+                      {
+                        text: 'Kadoorie Avenue Mansion: the covenant was "not to commit or suffer to be committed on the premises anything which should become a nuisance to the other co-owners".',
+                        points: [
+                          'Antennae and radio base stations on the roof; the incorporated owners contended the co-owners suffered anxiety through a belief in harmful radiation.',
+                          'There was no scientific proof of the alleged health hazards.',
+                          'Fanling Centre at first instance was readily distinguishable, the antennae there having caused an annoyance; this covenant required a nuisance. The respondent\'s application was granted and the claim rejected.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'Match the conduct to the decided examples',
+                    detail: 'Creating loud and disturbing noise might constitute a nuisance; so might leaking pipes and obstructions.',
+                    why: 'This is a covenant applied to everyday building life, so the value of the cases is in the range they cover rather than in any principle: noise, water, and an obstruction that hurts a neighbour\'s trade.',
+                    exam: {
+                      write: 'The [seepage / obstruction / noise] is of the kind held in [case] to constitute a breach of the covenant against nuisance or annoyance.',
+                      trap: 'Assuming noise is always a nuisance. In Tam Wai Cheung Roger v Goodwell Property Management Ltd DCCJ 2262/2013, 11/1/2016, no nuisance was found on the evidence.',
+                    },
+                    points: [
+                      'Noise: Tam Wai Cheung Roger v Goodwell Property Management Ltd DCCJ 2262/2013, 11/1/2016 — no nuisance found on the evidence.',
+                      'Obstruction of a shop display: Felan Investment Ltd v Sarwin Industries Ltd LDBM 7/2015 — an air-conditioning condenser blocking the view to a display window was a breach.',
+                      'Water seepage: Putai Ltd v Yau Lee Ho DCCJ 2666/2013 — allowing water to seep into a co-owner\'s unit was a breach.',
+                    ],
+                  },
+                  {
+                    label: 'Get into the flat: the DMC power and s40 of the Building Management Ordinance',
+                    detail: 'The DMC may contain powers for co-owners to enter individual flats to inspect and repair damage caused to their own flats. In addition, s40(1) of the Building Management Ordinance gives a member of a management committee, and any other person authorised by the committee, a power of entry.',
+                    why: 'A nuisance coming from inside someone else\'s flat is useless to complain about if you cannot get at it. Section 40 is the practical half of the duty in s34H.',
+                    exam: {
+                      write: 'By s40(1) of the Building Management Ordinance a member of the management committee, or a person authorised by it, may on reasonable notice enter the flat at a reasonable time to [inspect and repair the common parts there / abate the hazard or nuisance affecting the common parts or other owners].',
+                      trap: 'Forgetting the notice and timing conditions: the entry must be on reasonable notice to the owner or occupier and at a reasonable time.',
+                    },
+                    points: [
+                      {
+                        text: 'Section 40(1) permits entry, on reasonable notice to the owner or occupier and at a reasonable time, for two purposes.',
+                        points: [
+                          'Paragraph (a) — inspecting, repairing, maintaining or renewing (i) any common parts in the flat, or (ii) any other property in the flat the condition of which does or may affect adversely the common parts or other owners.',
+                          'Paragraph (b) — abating any hazard or nuisance which does or may adversely affect the common parts or other owners.',
+                        ],
+                      },
+                      'Section 40(2): the management committee can apply to a magistrate for a warrant to break into the offending flat.',
+                      'Section 40(3): the incorporated owners may recover the costs and expenses so incurred.',
+                      'Incorporated Owners of Grenville House v Wong Tak Keung Stanley [2012] 1 HKLRD 315: an owner refused entry to replace a defective air grille; a warrant was granted under s40(2) and the court ordered him to pay the costs and expenses under s40(3).',
+                    ],
+                  },
+                  {
+                    label: 'Check where the nuisance is, and who may sue',
+                    detail: 'Whether the nuisance affects the common parts or the complainant\'s own flat matters, and s40(1) of the Building Management Ordinance is framed by reference to that distinction.',
+                    why: 'The location decides the plaintiff. A nuisance affecting the common parts is the incorporated owners\' business under s16; a nuisance affecting one owner\'s flat and nobody else\'s is his own.',
+                    exam: {
+                      write: 'The nuisance affecting [the common parts / the plaintiff\'s own flat alone], the proper plaintiff is [the incorporated owners under s16 of the Building Management Ordinance / the affected co-owner].',
+                      trap: 'Sending an individual co-owner to court over a common parts nuisance when the building is incorporated.',
+                    },
+                    points: [
+                      'A nuisance affecting the common parts engages the incorporated owners\' exclusive jurisdiction: s16, Building Management Ordinance (Cap. 344).',
+                      'An individual co-owner who suffers specific damage may sue: IO of One Beacon Hill v Match Power Investment Ltd [2012] 6 HKC 200, CA.',
+                      'The incorporated owners may also distrain for rent owing: s24 of that Ordinance.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Fanling Centre is reported as a Court of Appeal decision; the Kadoorie judge distinguished the Fanling Centre ruling at first instance. Be precise about which you are citing.',
+                'Peace of mind was enough for annoyance in Fanling Centre even without proof of causation — a striking point worth stating explicitly.',
+                'Section 40 entry requires reasonable notice and a reasonable time. A forced entry without a s40(2) warrant is itself unlawful.',
+                'The costs of a s40 entry are recoverable under s40(3), which is often the practical point for a management committee client.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Set out the covenant and identify whether it covers annoyance as well as nuisance.',
+                'Characterise the conduct and match it to the closest decided case.',
+                'Deal with the evidence, including the absence of expert proof if that is the position.',
+                'If entry is needed, set out the s40(1) power and its conditions, and the s40(2) warrant.',
+                'Identify the proper plaintiff by reference to where the nuisance bites.',
+                'State the remedy sought.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating nuisance and annoyance as interchangeable. They are not, and the covenant may give you only one.',
+                'Assuming proof of causation is required where the covenant catches annoyance.',
+                'Advising a client to force entry without the s40(2) warrant.',
+                'Overlooking that an individual co-owner with specific damage can sue even where the common parts are affected.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Annoyance covenant', 'Incorporated Owners of Fanling Centre v Wong Yu Ting Terence HCMP 1979/2014, 11/11/2014, CA', 'Antennae on the roof; peace of mind adversely affected sufficed, without proof of causation; mandatory orders for removal'],
+                  ['Nuisance-only covenant', 'Incorporated Owners of Kadoorie Avenue Mansion v Rising Dragon International Ltd LDBM 201/2013, 22/12/2014', 'Anxiety without scientific proof insufficient where the covenant required a nuisance; Fanling Centre distinguished'],
+                  ['Noise', 'Tam Wai Cheung Roger v Goodwell Property Management Ltd DCCJ 2262/2013, 11/1/2016', 'No nuisance found on the evidence'],
+                  ['Obstruction', 'Felan Investment Ltd v Sarwin Industries Ltd LDBM 7/2015', 'Air-conditioning condenser blocking a shop display window was a breach'],
+                  ['Water seepage', 'Putai Ltd v Yau Lee Ho DCCJ 2666/2013', 'Seepage into a co-owner\'s unit was a breach of the covenant'],
+                  ['Power of entry', 's40(1), Building Management Ordinance (Cap. 344)', 'Entry on reasonable notice at a reasonable time to inspect or repair, or to abate a hazard or nuisance affecting the common parts or other owners'],
+                  ['Warrant and costs', 'ss40(2) and 40(3), Building Management Ordinance (Cap. 344)', 'Warrant from a magistrate to break in; costs and expenses recoverable'],
+                  ['Warrant in practice', 'Incorporated Owners of Grenville House v Wong Tak Keung Stanley [2012] 1 HKLRD 315', 'Warrant reasonably applied for; owner ordered to pay the incorporated owners\' costs under s40(3)'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+              { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+            ],
+          },
+          {
+            id: 'adverse-possession',
+            title: 'Adverse possession in a multi-storey building',
+            summary: 'A co-owner is entitled to use the whole lot, so nothing short of ousting everyone will do — and whether the common parts can be possessed at all is still open.',
+            triggers: {
+              bullets: [
+                'One co-owner has used part of the building exclusively for twenty-five years and now claims a possessory title.',
+                'A co-owner has collected and kept all the rent from the land since 1978 without accounting to the other co-owners.',
+                'The claimant expressly disavows any intention to eject the other co-owners from the land.',
+                'One of the paper title owners occasionally entered the land and parked his car there without paying.',
+                'The wall of one shop encroaches on part of the neighbouring shop and has done so for the limitation period.',
+                'The area claimed was separated from the neighbour\'s shop by a concrete wall and has formed part of the claimant\'s shop.',
+                'The defendants asserted no title over the area until after the action was commenced.',
+                'The incorporated owners have built a management office on part of the roof and claim it by possession.',
+                'The area said to be adversely possessed is a common part of the building rather than anyone\'s unit.',
+              ],
+              routes: [
+                { when: 'The question is whether the disputed part is a common part in the first place', session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+                { when: 'The claim is that a squatter is bound by the covenants in the DMC', session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+                { when: 'The claimant is asserting an exclusive right under the DMC rather than by possession', session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing an adverse possession claim between co-owners',
+                steps: [
+                  {
+                    label: 'Start from the co-owner\'s own entitlement',
+                    detail: 'Since a co-owner as tenant in common is entitled to use the whole of the land and buildings, he may not successfully claim a possessory title by long exclusive usage of any part of it. Any such usage is attributable to ownership and is not adverse to the other owners, because they and the claimant have consented to the claimant\'s use: IO of Kwan Sen Mansion v So Kwai Chor HCMP 134/1994, 6/6/2002.',
+                    why: 'Adverse possession works by contradiction: the possession has to be inconsistent with the paper owner\'s title. A tenant in common already has a right to use the whole, so his use contradicts nothing.',
+                    exam: {
+                      write: '[Claimant] is a tenant in common entitled to use the whole of the lot, so his exclusive use of [the area] is attributable to his ownership and is not adverse to the other co-owners: IO of Kwan Sen Mansion v So Kwai Chor HCMP 134/1994, 6/6/2002.',
+                      trap: 'Starting with factual possession and animus possidendi. Between co-owners the prior question is whether the possession can be adverse at all.',
+                    },
+                    points: [
+                      'The claimant\'s use is attributable to his own ownership.',
+                      'The other co-owners are taken to have consented to it.',
+                    ],
+                  },
+                  {
+                    label: 'Require an actual ouster of all the other co-owners',
+                    detail: 'To assert adverse possession successfully, a co-owner has to oust all other co-owners entirely from possession of the whole of the land: Tang Tak Sum v Tang Kai Fong [2015] 1 HKLRD 286, CA. It will therefore be rare for adverse possession to succeed in respect of part of a large building with many owners.',
+                    why: 'The Court of Appeal in Tang Tak Sum disapproved the idea of a presumed ouster that is not about physical eviction. If consent is the obstacle, only something that plainly revokes the consent can get past it.',
+                    exam: {
+                      write: 'Following Tang Tak Sum v Tang Kai Fong [2015] 1 HKLRD 286, CA, [claimant] must prove an actual ouster of all the other co-owners from the whole of the land, which on these facts he cannot do.',
+                      trap: 'Relying on the collection of all the rent. In Tang Tak Sum that was held not to be enough, and the claimant had in any event disavowed any intention to eject the plaintiffs.',
+                    },
+                    points: [
+                      'It is necessary to prove actual ouster or dispossession where a co-owner claims against another co-owner.',
+                      'Collecting and keeping all the rent without accounting is not by itself an ouster.',
+                      'A presumed actual ouster is concerned with physical eviction, contrary to the judge\'s view below in Tang Tak Sum.',
+                    ],
+                  },
+                  {
+                    label: 'Weigh the paper title owner\'s acts, which count for very little',
+                    detail: 'In respect of possession by the paper title owner, the slightest acts done by him will be found to negative discontinuance of possession, because an owner who has the right to possession of land will be readily assumed to have the requisite intention to possess unless the contrary is clearly proved.',
+                    why: 'The asymmetry is deliberate. The law is reluctant to take land away from its owner, so the evidential burden sits almost entirely on the claimant.',
+                    exam: {
+                      write: '[Paper owner]\'s [visits to the land / parking of his car there without payment] are slight acts, but the slightest acts by the paper title owner negative discontinuance of possession.',
+                      trap: 'Dismissing occasional visits as de minimis. In Tang Tak Sum the plaintiff\'s visits and parking were the important evidence.',
+                    },
+                    points: [
+                      'The owner is readily assumed to have the requisite intention to possess unless the contrary is clearly proved.',
+                      'The principle is drawn from Powell at p.472, as applied in Tang Tak Sum.',
+                    ],
+                  },
+                  {
+                    label: 'Note the cases where a co-owner has succeeded against another co-owner\'s unit',
+                    detail: 'In principle the doctrine applies to occupation by one co-owner of part of another co-owner\'s unit, and there have been instances of courts allowing it.',
+                    why: 'The exclusive-use area of another owner is not land the claimant has any right to use, so the consent reasoning does not apply to it. That is the distinction that lets Foremost Hill sit alongside Kwan Sen Mansion.',
+                    exam: {
+                      write: 'The area claimed forms part of [another co-owner]\'s exclusive use area rather than the common parts, so the objection that the claimant was entitled to use it as a co-owner does not arise: Foremost Hill Ltd v Bank of China (HK) Ltd HCA 2555/2013, 5/4/2017.',
+                      trap: 'Requiring the claimant to show that the incorporated owners were ousted too. In Foremost Hill the area had never formed part of the common parts and neither the DMC nor the general law gave the incorporated owners any title to it.',
+                    },
+                    points: [
+                      'Foremost Hill Ltd v Bank of China (HK) Ltd HCA 2555/2013, 5/4/2017: the wall of the plaintiff\'s shop encroached on part of the defendant\'s shop.',
+                      'The subject area had never formed part of the common parts, so no question of ousting the incorporated owners arose.',
+                      'Part of a unit can be adversely possessed provided the part is sufficiently well defined and the act of ouster is adequately demonstrated.',
+                      'See also Wong Chow Yun DCMP 1752/2015, 1/3/2017.',
+                    ],
+                  },
+                  {
+                    label: 'Deal carefully with the common parts, where the point is still open',
+                    detail: 'Whether a co-owner can adversely possess the common parts is unsettled. Some practitioners relied on IO of Man Hong Apartments v Kwong Yu Ching [2001] 3 HKC 116 for the proposition that co-owners cannot dispossess fellow co-owners because they are bound by the DMC and the BMO, but the Court of Appeal there did not rule out co-owners establishing adverse possession in the common areas.',
+                    why: 'The materials are explicit that it remains technically open at Court of Appeal and Court of Final Appeal level, and they set two sources against each other. Presenting it as settled either way is the error.',
+                    exam: {
+                      write: 'Whether the common parts can be adversely possessed remains open at appellate level; the Law Reform Commission Report on Adverse Possession at paragraph 6.10 and the Court of Appeal\'s reasoning point in different directions.',
+                      trap: 'Citing IO of Kam Luk Building v Poon Mui Sang [2018] HKDC 1493 as settling the point. It is a District Court decision in which HH Andrew Li accepted the position as binding on him, following Wong King Lim v The Incorporated Owners of Peony House [2013] 4 HKC 295, CA.',
+                    },
+                    points: [
+                      'LRC Report on Adverse Possession, paragraph 6.10, citing IO of Chungking Mansions v Shamdasani [1991] 2 HKC 342, points one way; the practitioner literature at 7.85 the other.',
+                      'IO of Kam Luk Building v Poon Mui Sang [2018] HKDC 1493: HH Andrew Li accepted, as bound by the Court of Appeal, that adverse possession of the common parts is possible.',
+                      'Wong King Lim v The Incorporated Owners of Peony House [2013] 4 HKC 295, CA, per Yuen JA at paragraphs 14 to 15.2: the law did not adopt a position that so long as the subject property had been designated a common part there could be no adverse possession at all, whether by a co-owner or a stranger to the DMC.',
+                      'It is open to the incorporated owners themselves to assert adverse possession: IO of San Po Kong Mansion v Shine Empire Ltd (2007) 10 HKCFAR 588, though on the facts it was not established.',
+                    ],
+                  },
+                  {
+                    label: 'Remember that a squatter is still bound by the restrictive covenants',
+                    detail: 'Where a squatter has occupied part of a multi-storey building, he will still be bound by the restrictive, but not the positive, covenants in the DMC: Incorporated Owners of Man Hong Apartments v Kwong Yuk Ching [2001] 3 HKC 116, CA.',
+                    why: 'A possessory title is still a title to land within the scheme, so the negative obligations that regulate how the land is used bind whoever holds it. Positive covenants do not, because s41(5) of the Conveyancing and Property Ordinance keeps them off occupiers.',
+                    exam: {
+                      write: 'Even if the claim to a possessory title succeeds, [claimant] remains bound by the restrictive covenants in the deed of mutual covenant, though not by the positive ones.',
+                      trap: 'Thinking a successful squatter escapes the DMC. He escapes the positive covenants only.',
+                    },
+                    points: [
+                      'Restrictive covenants bind the squatter; positive covenants do not.',
+                      'See also Incorporated Owners of Mountain View Mansion v Heart Cuisine CACV 235/2011.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The lecture flags that it is technically still open at Court of Appeal and Court of Final Appeal level whether adverse possession applies to the common areas, or even to exclusively owned units in multi-storey buildings. Say so rather than choosing a side.',
+                'Man Hong Apartments appears twice in this topic on different points — as the case relied on for the no-dispossession proposition, and as authority that a squatter is bound by the restrictive covenants.',
+                'Foremost Hill turned on the subject area never having been a common part. Check that before importing its reasoning.',
+                'Tang Tak Sum is a Court of Appeal decision correcting a first-instance approach; the correction, not the outcome, is what you cite.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify whether the area claimed is a common part, another co-owner\'s exclusive use area, or the claimant\'s own.',
+                'State the co-ownership objection: use attributable to ownership, consented to by the others.',
+                'Apply the ouster requirement in Tang Tak Sum and test the evidence against it.',
+                'Weigh the paper owner\'s acts, remembering that the slightest suffice.',
+                'If the area is the common parts, present the point as open and give both sides.',
+                'Deal with what the squatter remains bound by if he succeeds.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Running a standard limitation analysis without addressing the co-ownership objection first.',
+                'Treating the receipt of all the rent as an ouster.',
+                'Stating as settled that a co-owner can, or cannot, possess the common parts.',
+                'Assuming a squatter who succeeds takes free of the DMC.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Use attributable to ownership', 'IO of Kwan Sen Mansion v So Kwai Chor HCMP 134/1994, 6/6/2002', 'A co-owner entitled to use the whole cannot gain a possessory title by long exclusive use'],
+                  ['Ouster required', 'Tang Tak Sum v Tang Kai Fong [2015] 1 HKLRD 286, CA', 'Actual ouster of all co-owners from the whole; the slightest acts of the paper owner negative discontinuance'],
+                  ['Part of another\'s unit', 'Foremost Hill Ltd v Bank of China (HK) Ltd HCA 2555/2013, 5/4/2017', 'Encroaching wall; part of a unit may be possessed if well defined and ouster demonstrated; area never a common part'],
+                  ['Same', 'Wong Chow Yun DCMP 1752/2015, 1/3/2017', 'Adverse possession of another co-owner\'s exclusive use area'],
+                  ['Common parts: open', 'LRC Report on Adverse Possession, para 6.10; IO of Chungking Mansions v Shamdasani [1991] 2 HKC 342', 'The question whether the common parts can be possessed remains unsettled'],
+                  ['Common parts: accepted below', 'IO of Kam Luk Building v Poon Mui Sang [2018] HKDC 1493; Wong King Lim v The Incorporated Owners of Peony House [2013] 4 HKC 295, CA', 'Designation as a common part does not of itself exclude adverse possession, whether by a co-owner or a stranger to the DMC'],
+                  ['IO may possess', 'IO of San Po Kong Mansion v Shine Empire Ltd (2007) 10 HKCFAR 588', 'An owners\' corporation may acquire a possessory title over the common parts; not established on the facts'],
+                  ['Squatter still bound', 'Incorporated Owners of Man Hong Apartments v Kwong Yuk Ching [2001] 3 HKC 116, CA; Incorporated Owners of Mountain View Mansion v Heart Cuisine CACV 235/2011', 'A squatter is bound by the restrictive, but not the positive, covenants in the DMC'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+            ],
+          },
+          {
+            id: 'proper-plaintiff',
+            title: 'Who is the proper plaintiff?',
+            summary: 'Three kinds of building, three answers. Get this wrong and the action is struck out however good the breach.',
+            triggers: {
+              bullets: [
+                'A co-owner has commenced an action over a structural alteration to the common parts and the building is incorporated.',
+                'A co-owner applies for a declaration that another co-owner\'s signboard on the exterior wall breaches the DMC.',
+                'The building has a DMC and an owners\' committee but the owners have never incorporated.',
+                'The building has no DMC at all and one owner wants to stop another\'s works.',
+                'Water is seeping from the roof, a common part, into one owner\'s flat and nobody else\'s.',
+                'The DMC empowers the manager to enforce its covenants and the manager has declined to take action.',
+                'The client wants to know whether to complain to the owner, the manager or the incorporated owners.',
+                'The owners\' committee has resolved to sue in its own name.',
+                'Only some of the co-owners are affected by the breach and they have suffered specific damage.',
+              ],
+              routes: [
+                { when: 'The claim is one the incorporated owners have declined to bring', session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+                { when: 'The new common parts were created by a sub-deed for particular floors', session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+                { when: 'The defence is that the breach was allowed to continue', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+                { when: 'The question is what remedy to seek once the plaintiff is identified', session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Identifying the proper plaintiff',
+                steps: [
+                  {
+                    label: 'Classify the building: no DMC, DMC with an owners\' committee, or incorporated',
+                    detail: 'There are three types of building. In the first there is no DMC and everybody must agree. In the second there is a DMC and often an owners\' committee, but no incorporation. In the third the owners have incorporated under the Building Management Ordinance.',
+                    why: 'Each type has a different decision-making body and a different legal personality, and only the third has a body that can sue in its own name. That is the whole reason incorporation is worth doing.',
+                    exam: {
+                      write: 'The building [has no deed of mutual covenant / has a deed of mutual covenant and an owners\' committee but the owners have not incorporated / is incorporated under the Building Management Ordinance], so the proper plaintiff is [x].',
+                      trap: 'Confusing an owners\' committee with a management committee. The committee of an unincorporated building is an owners\' committee with no separate legal personality; the incorporated owners act through a management committee.',
+                    },
+                    points: [
+                      'Type 1, no DMC: everybody must agree.',
+                      {
+                        text: 'Type 2, DMC and owners\' committee but no incorporation.',
+                        points: [
+                          'The DMC will usually refer to a committee that may be set up, exercising the powers the DMC stipulates.',
+                          'The BMO\'s mandatory implied covenants apply, and so does Part VIA (ss34C-34L).',
+                          'Resolutions and decisions follow the DMC and Schedule 8, so far as consistent with the DMC.',
+                          'Enforcement is by the manager, if the DMC allows, or by individual owners: the owners\' committee is not a separate legal body.',
+                        ],
+                      },
+                      {
+                        text: 'Type 3, incorporated.',
+                        points: [
+                          'The incorporated owners are a separate legal body.',
+                          'The BMO\'s mandatory covenants apply, plus many more of its provisions.',
+                          'A management committee makes decisions for the incorporated owners, sometimes requiring owners\' votes, under Schedule 3 and the rest of the Ordinance.',
+                          'Enforcement of common parts breaches is exclusive to the incorporated owners under s16.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'If the building is incorporated, apply s16 to anything affecting the common parts',
+                    detail: 'Upon registration of the owners\' corporation, the rights and powers of the owners in relation to the common parts must be exercised and performed by the owners\' corporation: s16, Building Management Ordinance.',
+                    why: 'Exclusivity avoids a building with two hundred owners producing two hundred actions over the same lift lobby. The price is that an owner who wants something done must persuade the corporation, or go to the Lands Tribunal.',
+                    exam: {
+                      write: 'The breach affecting the common parts, s16 of the Building Management Ordinance vests the owners\' rights and powers in relation to them in the incorporated owners, who are the only competent plaintiff.',
+                      trap: 'Forgetting that s16 works both ways: any liability of the owners in relation to the common parts must likewise be enforced against the corporation.',
+                    },
+                    points: [
+                      'See Wah Fan v Incorporated Owners of Ki Tat Garden [2003] 3 HKLRD 1, CA: an action by a co-owner over a structural alteration to the common parts was struck out; it should have been commenced by the owners\' corporation.',
+                      'Snowland Ltd v Topland Holdings Ltd [2006] 4 HKC 188: only the owners\' corporation, not a co-owner, could bring proceedings in respect of the common parts.',
+                      'An owner who wants action taken may apply to the Lands Tribunal for an order compelling the owners\' corporation to take the necessary enforcement action.',
+                      'Liability in relation to the common parts must be enforced against the corporation: s16.',
+                    ],
+                  },
+                  {
+                    label: 'Check the One Beacon Hill exception: specific damage to particular owners',
+                    detail: 'Where all the co-owners are not affected by the breach to the common parts but only one or more are affected, and suffer specific damage, that or those co-owners are entitled to sue: IO of One Beacon Hill v Match Power Investment Ltd [2012] 6 HKC 200, CA.',
+                    why: 'Section 16 vests the owners\' collective rights in the corporation. A claim founded on damage peculiar to one owner is not a collective right at all, so there is nothing for s16 to have taken away.',
+                    exam: {
+                      write: 'Only [owner] is affected by the [seepage / obstruction], and has suffered specific damage, so notwithstanding s16 he is entitled to sue in his own name: IO of One Beacon Hill v Match Power Investment Ltd [2012] 6 HKC 200, CA.',
+                      trap: 'Treating s16 as covering everything the incorporated owners might do. The lecture notes that s18 does not necessarily carry the same exclusivity.',
+                    },
+                    points: [
+                      'The exception requires that not all co-owners be affected AND that the claimant suffer specific damage.',
+                      'Section 18 of the Ordinance does not necessarily carry the same exclusivity as s16.',
+                    ],
+                  },
+                  {
+                    label: 'If the building is not incorporated, look to the manager and the DMC',
+                    detail: 'In the absence of a management committee and incorporation, the building is managed under the express terms of the DMC, or occasionally a separate management agreement, as augmented by the terms implied into all DMCs by the seventh and eighth Schedules to the Building Management Ordinance.',
+                    why: 'The manager can sue because it is a party to the DMC, not because of any statutory standing. That is why its enforcement powers have to be found in the deed.',
+                    exam: {
+                      write: 'The building not being incorporated, the manager, as a party to the deed of mutual covenant, is empowered by clause [x] to enforce its covenants, and is the proper plaintiff.',
+                      trap: 'Assuming the manager must sue on every breach. Its duty is to act reasonably in enforcing the covenants, not absolutely.',
+                    },
+                    points: [
+                      'The manager is typically a party to the DMC and is empowered by it to enforce.',
+                      'Long Source Industrial Ltd v Guardian Property Management Ltd [2016] 2 HKC 199, LT: the manager\'s duty is not absolute, only a duty to act reasonably in enforcing the DMC; it acted reasonably in not taking enforcement action where the owners had already sought permission from the Building Authority to remedy unauthorised works.',
+                      'DMCs often allow owners to form an owners\' committee to supervise the manager and make decisions about the building.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether the claim reaches beyond the building',
+                    detail: 'An owners\' corporation has the right to enforce rights extending to land outside the building itself: IO of Block F1-F7 Pearl Island Holiday Flats v IO Pearl Island Garden [1997] 4 HKC 424, CA.',
+                    why: 'The corporation exists to exercise the owners\' rights in relation to the common parts, and those rights may include easements over neighbouring land. Confining it to the footprint of the block would leave those rights unenforceable.',
+                    exam: {
+                      write: 'The incorporated owners may enforce [the right of way over the road outside the property], their capacity extending to land situated beyond the building itself.',
+                      trap: 'Assuming the corporation\'s standing stops at the boundary of the lot.',
+                    },
+                    points: [
+                      'Pearl Island: the incorporated owners could enforce a right of way over a road outside the property.',
+                      'They may also acquire a possessory title over the common parts: IO of San Po Kong Mansion v Shine Empire Ltd (2007) 10 HKCFAR 588.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Incorporation is voluntary. It is for the co-owners to decide, and many buildings never do it.',
+                'Whether incorporated or not, Part VIA of the Building Management Ordinance applies, which means s34H, s34I and Schedules 7 and 8 are in play in every building.',
+                'The lecture describes a management committee as akin to the board of directors of a limited company, the incorporated owners being the legal person.',
+                'Where a sub-deed has created new common parts for particular floors, the building\'s incorporated owners have no jurisdiction over them: Po Lok Building.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Classify the building into one of the three types.',
+                'Identify whether the breach affects the common parts.',
+                'If incorporated and the common parts are affected, apply s16 and its exclusivity.',
+                'Test the One Beacon Hill exception on the facts.',
+                'If unincorporated, find the manager\'s enforcement power in the DMC and consider the reasonableness of its decision.',
+                'Name the plaintiff and say what happens to an action brought by the wrong one.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Letting an individual co-owner sue on a common parts breach in an incorporated building. The action will be struck out: See Wah Fan.',
+                'Treating the owners\' committee of an unincorporated building as capable of suing. It is not a separate legal body.',
+                'Assuming the manager has an absolute duty to enforce every breach.',
+                'Extending s16 exclusivity to s18.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Exclusive jurisdiction', 's16, Building Management Ordinance (Cap. 344)', 'On registration of the corporation, the owners\' rights and powers in relation to the common parts are exercised by it; liability likewise enforced against it'],
+                  ['Struck out', 'See Wah Fan v Incorporated Owners of Ki Tat Garden [2003] 3 HKLRD 1, CA', 'Co-owner\'s action over a structural alteration to the common parts struck out; remedy is to apply to the Lands Tribunal to compel the corporation'],
+                  ['Same', 'Snowland Ltd v Topland Holdings Ltd [2006] 4 HKC 188', 'Only the corporation could sue in respect of the exterior wall, a common part'],
+                  ['Specific damage exception', 'IO of One Beacon Hill v Match Power Investment Ltd [2012] 6 HKC 200, CA', 'Where not all co-owners are affected and the claimant suffers specific damage, he may sue'],
+                  ['Unincorporated buildings', 'Schedules 7 and 8, Building Management Ordinance (Cap. 344)', 'Terms implied into all DMCs; Schedule 8 governs meeting and voting procedure so far as consistent with the DMC'],
+                  ['Manager\'s duty', 'Long Source Industrial Ltd v Guardian Property Management Ltd [2016] 2 HKC 199, LT', 'The manager must act reasonably in enforcing the DMC; the duty is not absolute'],
+                  ['Beyond the building', 'IO of Block F1-F7 Pearl Island Holiday Flats v IO Pearl Island Garden [1997] 4 HKC 424, CA', 'The corporation may enforce rights over land outside the building'],
+                  ['Possessory title', 'IO of San Po Kong Mansion v Shine Empire Ltd (2007) 10 HKCFAR 588', 'The corporation may acquire a possessory title over the common parts'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+              { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+              { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+            ],
+          },
+          {
+            id: 'io-duties-and-liability',
+            title: 'The owners\' corporation: duties and liabilities',
+            summary: 'A legal person with a statutory job description — and, because it controls the common parts, an occupier\'s exposure to anyone the building hurts.',
+            triggers: {
+              bullets: [
+                'Water has seeped from the roof, a common part, into the flat below and the owner sues the incorporated owners and the management company.',
+                'The incorporated owners were told of a defect months ago and did nothing about it.',
+                'A concrete canopy over the pavement collapsed, killing a pedestrian and injuring others.',
+                'A piece of concrete fell from a balcony illegally extended thirty-five years ago and killed a hawker below.',
+                'Most of the co-defendants held liable for the accident are insolvent and the incorporated owners are not.',
+                'The incorporated owners themselves installed a water pipe in breach of the DMC.',
+                'The management committee has employed a manager, insured the building and opened a bank account, and an owner questions its authority.',
+                'An owner argues that s18(1) makes the incorporated owners automatically liable for any disrepair in the common parts.',
+                'The incorporated owners have engaged independent contractors to carry out the repairs.',
+              ],
+              routes: [
+                { when: 'The question is who may bring the claim rather than what the corporation must do', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+                { when: 'The corporation has declined to enforce and the issue is whether it had to', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+                { when: 'The dispute is about the charge for unpaid management fees', session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working out what the corporation owed and to whom',
+                steps: [
+                  {
+                    label: 'Identify the corporation\'s duties under ss16 and 18',
+                    detail: 'Section 16 vests the owners\' rights and powers in relation to the common parts in the corporation. Section 18(1) requires it to do all things reasonably necessary for the enforcement of the obligations contained in the DMC for the control, management and administration of the building.',
+                    why: 'The two sections do different jobs. Section 16 is about the common parts and is exclusive; s18 is about enforcing the DMC generally, and the lecture is careful to say it is not necessarily to the exclusion of the owners.',
+                    exam: {
+                      write: 'By s18(1) of the Building Management Ordinance the incorporated owners must do all things reasonably necessary for the enforcement of the obligations in the deed of mutual covenant for the control, management and administration of the building.',
+                      trap: 'Reading s18 as exclusive in the way s16 is. The incorporated owners must deal with these matters, but not necessarily to the exclusion of the owners.',
+                    },
+                    points: [
+                      'Section 16: rights and powers in relation to the common parts; exclusive jurisdiction.',
+                      'Section 18(1): all things reasonably necessary to enforce the DMC obligations for control, management and administration.',
+                      'Section 18 covers all co-owners\' obligations, not only those relating to the common parts.',
+                    ],
+                  },
+                  {
+                    label: 'Note that the corporation is itself bound by the DMC',
+                    detail: 'The owners\' corporation is bound by the terms of the DMC: Wing Ming Garment Factory Ltd v Incorporated Owners of Wing Ming Industrial Centre [1994] 2 HKC 748.',
+                    why: 'The corporation is the owners collectively, not a regulator standing over them. A body that could ignore the deed it exists to enforce would be an odd creature.',
+                    exam: {
+                      write: 'The incorporated owners are themselves bound by the deed of mutual covenant, and their installation of [the pipe] was in breach of it: Wing Ming Garment Factory Ltd v Incorporated Owners of Wing Ming Industrial Centre [1994] 2 HKC 748.',
+                      trap: 'Assuming a breach by the corporation produces an injunction automatically. In Wing Ming the mandatory injunction was refused in the exercise of the court\'s discretion.',
+                    },
+                    points: [
+                      'A breach by the corporation is actionable like any other.',
+                      'The remedy remains discretionary: in Wing Ming a mandatory injunction was refused.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Lee Ming Yueh to a disrepair claim by an owner',
+                    detail: 'In Lee Ming Yueh v Broadway-Nassau Investments Ltd [2015] 5 HKLRD 208, CA, water seeped from the roof, a common part, into the owner\'s flat below. Section 18(1) does not render the incorporated owners automatically liable if some part of the common parts falls into disrepair.',
+                    why: 'Automatic liability would make the corporation an insurer of the fabric, funded by the very owners suing it. Fault-based liability keeps the incentive where it belongs — on responding once you know.',
+                    exam: {
+                      write: 'Section 18(1) does not render the incorporated owners automatically liable for disrepair in the common parts; liability arises if they were at fault, or if, having been made aware of a defect requiring remedy, they failed to take appropriate steps.',
+                      trap: 'Ignoring the defence. In Lee Ming Yueh the incorporated owners had taken reasonable steps by employing independent contractors to carry out the necessary repairs, and were not liable.',
+                    },
+                    points: [
+                      'Liability arises if the corporation was at fault.',
+                      'Liability also arises if, having been made aware of a defect which required remedy, it failed to take appropriate steps: Lau Chun Wing v IO Po On Building CACV 20/2007, 1/11/2007.',
+                      'Employing independent contractors to carry out the necessary repairs may be reasonable steps.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with liability to third parties, which is where the exposure is largest',
+                    detail: 'An owners\' corporation may be liable for injuries suffered by third parties.',
+                    why: 'The corporation controls the common parts, and control is what founds an occupier\'s duty. The Court of Final Appeal in Leung Tsang Hung put it as a category closely analogous to that of an occupier.',
+                    exam: {
+                      write: 'The incorporated owners, by reason of their powers and duties in respect of the common parts and particularly their degree of control, fall into a category closely analogous to that of an occupier, and owed a duty to inspect and neutralise the hazard.',
+                      trap: 'Forgetting the contribution point. In Aberdeen Winner the solvent co-defendants had to shoulder the insolvent ones\' shares under s19(2) of the Law Amendment and Reform (Consolidation) Ordinance, so the co-owners were jointly liable to contribute.',
+                    },
+                    points: [
+                      {
+                        text: 'Aberdeen Winner Investments Ltd v Incorporated Owners of Albert House [2004] 3 HKLRD 910, CA — the collapsed canopy.',
+                        points: [
+                          'A concrete canopy, a common part, collapsed, killing one pedestrian and injuring others.',
+                          'Liability was apportioned: developer 15%, incorporated owners 15%, restaurant operator 50%, contractor 5%, building management company 15%.',
+                          'Most co-defendants were insolvent; by s19(2) of the Law Amendment and Reform (Consolidation) Ordinance those not bankrupt had to share responsibility for the outstanding damages.',
+                          'The co-owners were accordingly jointly liable to contribute to the award.',
+                        ],
+                      },
+                      {
+                        text: 'Leung Tsang Hung v Incorporated Owners of Kwok Wing House [2007] 5 HKC 227, [2007] 4 HKLRD 654, CFA — the falling concrete.',
+                        points: [
+                          'Concrete fell from a balcony illegally extended thirty-five years earlier and attached to the external wall, a common part, killing a hawker below.',
+                          'The judge and the Court of Appeal held only the flat owner and the tenant liable.',
+                          'The Court of Final Appeal held the corporation\'s powers, duties and degree of control put it in a category closely analogous to an occupier; it ought to have known of the illegal modifications, had a duty to inspect and neutralise the hazard, plainly had the resources to do so, and its failure caused the death.',
+                          'The corporation was liable in public nuisance to the hawker\'s estate.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'Identify the body that acts: the management committee',
+                    detail: 'Section 29 of the Building Management Ordinance provides that the powers and duties of the owners\' corporation are exercised by the management committee.',
+                    why: 'The corporation is a legal person and needs an organ to act through, exactly as a company needs a board. That is also why a decision not to enforce is the committee\'s decision to make.',
+                    exam: {
+                      write: 'By s29 of the Building Management Ordinance the powers and duties of the incorporated owners are exercised by the management committee, which [employed the manager / effected the insurance / resolved not to take proceedings].',
+                      trap: 'Naming the management committee as defendant. The legal person is the incorporated owners; the committee acts for it.',
+                    },
+                    points: [
+                      'Maintaining the common parts, employing a manager and insuring the building: s18.',
+                      'Establishing funds and a bank account: s20.',
+                      'Preparing the annual budget: Schedule 5.',
+                      'Keeping accounts: s27.',
+                      'Ordering supplies: s20A.',
+                      'Enforcing the terms of the DMC: s22.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Incorporation is voluntary, but once it happens the corporation acquires both the exclusive right to enforce and the exposure that goes with control.',
+                'Leung Tsang Hung reversed the courts below, which had held only the flat owner and the tenant liable. The reversal is the point.',
+                'Aberdeen Winner is the case for insolvency among co-defendants, which is what turned a 15% apportionment into a much larger bill for the owners.',
+                'The lecture treats management as not the focus of this course, but expects you to know who the proper plaintiff is and to whom a client should complain.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify whether the building is incorporated and set out ss16 and 18(1).',
+                'If the claim is by an owner for disrepair, apply Lee Ming Yueh: no automatic liability, fault or failure to act after notice.',
+                'If the claim is by a third party, apply Leung Tsang Hung and the analogy with an occupier.',
+                'Consider apportionment and the effect of insolvent co-defendants.',
+                'Identify the management committee as the acting organ and the relevant statutory powers.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating s18(1) as imposing automatic liability for disrepair.',
+                'Suing the management committee rather than the incorporated owners.',
+                'Forgetting that the corporation is itself bound by the DMC.',
+                'Ignoring the contribution consequences where other defendants are insolvent.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Common parts vested', 's16, Building Management Ordinance (Cap. 344)', 'The owners\' rights, powers and liabilities in relation to the common parts are exercised by and enforced against the corporation'],
+                  ['Duty to enforce', 's18(1), Building Management Ordinance (Cap. 344)', 'All things reasonably necessary for the enforcement of the DMC obligations for control, management and administration'],
+                  ['Corporation bound', 'Wing Ming Garment Factory Ltd v Incorporated Owners of Wing Ming Industrial Centre [1994] 2 HKC 748', 'The corporation is bound by the DMC; mandatory injunction refused in the court\'s discretion'],
+                  ['No automatic liability', 'Lee Ming Yueh v Broadway-Nassau Investments Ltd [2015] 5 HKLRD 208, CA', 'Section 18(1) does not make the corporation automatically liable for disrepair; liability on fault or failure to act after notice; contractors engaged was reasonable'],
+                  ['Failure after notice', 'Lau Chun Wing v IO Po On Building CACV 20/2007, 1/11/2007', 'Liability where aware of a defect requiring remedy and no appropriate steps taken'],
+                  ['Third parties: canopy', 'Aberdeen Winner Investments Ltd v Incorporated Owners of Albert House [2004] 3 HKLRD 910, CA', 'Apportionment across five defendants; s19(2) Law Amendment and Reform (Consolidation) Ordinance made solvent defendants share the insolvent ones\' liability'],
+                  ['Third parties: falling concrete', 'Leung Tsang Hung v Incorporated Owners of Kwok Wing House [2007] 5 HKC 227, [2007] 4 HKLRD 654, CFA', 'Corporation closely analogous to an occupier; duty to inspect and neutralise; liable in public nuisance'],
+                  ['Acting organ', 's29, Building Management Ordinance (Cap. 344)', 'The powers and duties of the corporation are exercised by the management committee'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+            ],
+          },
+          {
+            id: 'acquiescence',
+            title: 'Acquiescence after Centre Chase',
+            summary: 'The Court of Final Appeal has swept away the rule that an incorporated owners cannot acquiesce. What is left is proprietary estoppel — and the question whether it binds successors.',
+            triggers: {
+              bullets: [
+                'An owner demolished the external wall on the basis of an approval, and the incorporated owners took no action for four years afterwards.',
+                'A huge advertising sign was erected on an external canopy and the DMC gave the developer liberty to permit such signs.',
+                'An owner affixed his trade name to a common part and the incorporated owners knew about it and did nothing.',
+                'Fung shui window frames were affixed on top of the existing window frames on an external wall.',
+                'The breach complained of is an unreasonable interference with the common parts rather than a conversion of them.',
+                'The incorporated owners say they were duty bound to enforce and so could not have acquiesced.',
+                'The owner who is said to have acquiesced has since sold the flat, and the new owner now sues.',
+                'The breach was committed before the owners incorporated and the incorporated owners now object to it.',
+                'An owner spent a large sum on works after the manager indicated that no objection would be taken.',
+              ],
+              routes: [
+                { when: 'The breach in issue is a conversion of or interference with common parts', session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+                { when: 'The question is whether the corporation had to enforce at all', session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+                { when: 'The breach was committed by a predecessor in title', session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Running an acquiescence defence',
+                steps: [
+                  {
+                    label: 'State what acquiescence now is: a form of proprietary estoppel',
+                    detail: 'Acquiescence is a form of proprietary estoppel that requires proof of representation, reliance and detriment: Wong Koon Wah v All Persons in Occupation of Lot No. 775 in D.D. 216 & Anor [2023] HKCA 1279, at paragraphs 98 to 102.',
+                    why: 'Once acquiescence is classified as proprietary estoppel, everything else follows from the classification — the elements you must prove, and, later, whether the resulting equity can bind a successor.',
+                    exam: {
+                      write: 'Acquiescence is a form of proprietary estoppel requiring representation or inaction, detrimental reliance and unconscionability: Wong Koon Wah v All Persons in Occupation of Lot No. 775 in D.D. 216 & Anor [2023] HKCA 1279 at [98]-[102].',
+                      trap: 'Pleading acquiescence as mere delay. Delay without reliance and detriment is not acquiescence; it may go to laches or to the court\'s discretion instead.',
+                    },
+                    points: [
+                      'Representation, or inaction.',
+                      'Detrimental reliance.',
+                      'Unconscionability.',
+                    ],
+                  },
+                  {
+                    label: 'Start from where the law was before Centre Chase',
+                    detail: 'Practitioners had taken the view that an owners\' corporation could not acquiesce in a breach of the DMC where it was under a statutory duty to enforce its terms. That belief stemmed from Incorporated Owners of Hoi Luen Industrial Centre v Ohashi Chemical Industries (Hong Kong) Ltd [1995] 2 HKC 11 and Hollywood Shopping Centre Owners Committee Ltd v IO Wing Wah Building Mongkok Kowloon [2011] 4 HKLRD 623.',
+                    why: 'The old rule had an internal logic: the corporation could not acquiesce in acts which in law it could not do. Knowing that logic is what makes it possible to say precisely what the Court of Final Appeal has now rejected.',
+                    exam: {
+                      write: 'Before Centre Chase the position was governed by Hoi Luen: whether acquiescence was available depended on the nature of the breach, and it was unavailable where the breach was beyond the corporation\'s power to permit.',
+                      trap: 'Presenting the old rule as still good law. Centre Chase holds that the reasoning in Hoi Luen cannot be sustained.',
+                    },
+                    points: [
+                      {
+                        text: 'The Hollywood Shopping Centre principles, per Rimsky Yuen SC, upheld on appeal.',
+                        points: [
+                          'Whether acquiescence could be set up depended on the nature or type of breach in question.',
+                          'If the breach was within the corporation\'s power to acquiesce in, acquiescence could be a valid defence provided the requisite elements were established.',
+                          'If it was beyond the corporation\'s power, the defence was unavailable, because the corporation could not acquiesce in acts which in law it could not do.',
+                          'On the facts the corporation had the right under the DMC to permit such advertising signs, so it was within its power, and acquiescence was established.',
+                        ],
+                      },
+                      'IO of Freder Centre v Gringo Ltd [2016] 4 HKC 346, [2016] 2 HKLRD 190, CA: it was implicit in s34I(1)(a) of the Building Management Ordinance that the incorporated owners could approve a conversion of a common part, so they could acquiesce in the breach.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Centre Chase',
+                    detail: 'In Centre Chase Investment Limited v The Incorporated Owners of Castle Peak Road International Industrial Building and Another [2026] HKCFA 26, the Court of Final Appeal held that the reasoning in Hoi Luen cannot be sustained. The incorporated owners may acquiesce in breaches of the DMC, and of s34I of the Building Management Ordinance, as long as it is not illegal to do so.',
+                    why: 'The Court\'s point was that it makes no sense to distinguish between interference with the common parts and conversion of them, permitting acquiescence in one and not the other. The purpose of the corporation is the control, management and administration of the building, which is a managerial function, not a duty to litigate every breach.',
+                    exam: {
+                      write: 'Following Centre Chase Investment Ltd v The Incorporated Owners of Castle Peak Road International Industrial Building [2026] HKCFA 26, the incorporated owners may acquiesce in a breach of the deed of mutual covenant and of s34I provided it is not illegal to do so, and it is unnecessary to examine the wording of the covenant to see whether the breach is totally precluded.',
+                      trap: 'Still asking whether the breach was one the corporation had power to permit. Centre Chase removes that inquiry.',
+                    },
+                    points: [
+                      'The facts: fung shui window frames affixed on top of existing window frames on an external wall, in breach of the common parts provisions in the DMC and of s34I.',
+                      'It makes no sense to differentiate between interference with common parts under s34I(1)(b) and conversion of them under s34I(1)(a).',
+                      'In considering acquiescence, it is not necessary to examine the wording of the covenant to see whether the breach is totally precluded.',
+                      'Section 18(1)(c) does not impose an inflexible duty on the corporation to enforce the DMC: the corporation may take into account practical considerations such as the legal costs of suing, and may consider waiving rights to reach an amicable settlement (see paragraphs 53 to 55).',
+                      'The purpose of the corporation is the control, management and administration of the building; it need not take legal action over every breach.',
+                    ],
+                  },
+                  {
+                    label: 'Then prove acquiescence as a matter of fact',
+                    detail: 'Even where acquiescence is available in law, it has to be made out on the evidence, and the cases go both ways.',
+                    why: 'The lecture makes the point that before Centre Chase many judgments concluded there could be no acquiescence as a matter of law, so the factual reasoning in the old cases still has to be handled with care — it was often reached in the alternative.',
+                    exam: {
+                      write: 'The incorporated owners had knowledge of the breach when the works began and took no action for [four] years thereafter, which on the reasoning in IO of Tuen Mun Hung Cheung Industrial Centre HCMP 2991/1998, 22/11/1999, amounts to acquiescence.',
+                      trap: 'Ignoring the gravity of the breach. It was a relevant factor in Hon Hing Enterprises Ltd v Honolulu Land Investment Co Ltd HCA 3557/1991, 31/7/1992.',
+                    },
+                    points: [
+                      'Contrast IO of Dragon View v Nalpak Ltd [1989] 1 HKC 549 with IO of Hoi Luen Industrial Centre v Ohashi Chemical Industries (HK) Ltd [1995] 2 HKC 11.',
+                      'Basis of approval, and knowledge of the breach followed by four years\' inaction: IO of Tuen Mun Hung Cheung Industrial Centre HCMP 2991/1998, 22/11/1999.',
+                      'Gravity of the breach: Hon Hing Enterprises Ltd v Honolulu Land Investment Co Ltd HCA 3557/1991, 31/7/1992.',
+                      'Acquiescence by the co-owners themselves can defeat the remedy: Cheung Yuet v Incorporated Owners of Oriental Gardens [1979] HKLR 536.',
+                      'Before Centre Chase many judgments concluded there could be no acquiescence as a matter of law, but to obtain an injunction one still had to show it was not inequitable.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the acquiescence binds successors',
+                    detail: 'Even if acquiescence is readily available, there may be other barriers, of which the most important is whether it is purely personal in nature.',
+                    why: 'Proprietary estoppel produces a remedy, and the nature of that remedy decides whether a successor is bound. A personal right cannot bind a purchaser of the land; a proprietary one prima facie can.',
+                    exam: {
+                      write: 'Acquiescence and waiver give rise to defences personal to the person who acquiesced and his heirs, and do not run with the land, so [the new owner] is not bound by them.',
+                      trap: 'Stating the personal-in-nature rule without the exception. Proprietary estoppel is excluded from it, and the question is what remedy the court would grant.',
+                    },
+                    points: [
+                      'Per Au JA in IO of Kam Luk Building v 吳靜燕 [2022] HKCA 1896, applying Grand Power International Ltd v Chan Sing Hoi Enterprises Ltd [2020] 3 HKC 451 at [47]: the defences of acquiescence, waiver, laches and estoppel, except proprietary estoppel, are all personal in nature and do not run with the land.',
+                      'An estoppel binds a successor to property only if it is one the court will satisfy by the grant of a right in the property.',
+                      'If the antecedent equity is not satisfied by the grant of a proprietary interest, the equity was purely personal and will not bind successors, even with notice, unless their consciences are affected.',
+                      'The lecture asks whether IO of Kam Luk Building caused a misunderstanding: see 富嘉花園業主立案法團 v In Smart Ltd [2025] HKLdT 18 at [187].',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Centre Chase is very recent. State clearly what it displaced — the Hoi Luen reasoning — because an answer that simply asserts the new rule shows less than one that shows the shift.',
+                'The "not illegal" limit is the boundary Centre Chase left in place. An incorporated owners still cannot acquiesce in something unlawful in the sense of being illegal.',
+                'Acquiescence before incorporation was always possible; the controversy was only about the corporation.',
+                'The "personal in nature" line is quoted in the materials from Grand Power at [47] per Kwan VP, and applied by Au JA in Kam Luk Building. Attribute it correctly.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Where the defence is run against an incorporated owners, plead Centre Chase first and the factual elements second: the old law would have stopped the defence before the facts mattered.',
+                'Set out the representation or inaction, the reliance and the detriment separately, with dates and sums, rather than asserting acquiescence as a conclusion.',
+                'If your client is the successor in title of the party who acquiesced, take the point that the defence is personal before arguing the facts.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the breach and who is said to have acquiesced.',
+                'State the old law and what Centre Chase did to it.',
+                'Apply the "not illegal" limit.',
+                'Prove the elements: representation or inaction, detrimental reliance, unconscionability.',
+                'Deal with s18(1)(c) and the corporation\'s discretion not to sue.',
+                'Ask whether the resulting equity binds successors in title.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying Hoi Luen as if it were still good law.',
+                'Asking whether the covenant totally precludes the breach. Centre Chase says that inquiry is unnecessary.',
+                'Treating mere delay as acquiescence.',
+                'Assuming an acquiescence binds the next purchaser.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Acquiescence and waiver can only give rise to defences which are personal in nature to the person who acquiesced and his heirs. Except in special circumstances, they cannot give rise to any proprietary interest capable of binding successors in title in that a personal contract relating to land does not run with the land', cite: 'Grand Power International Ltd v Chan Sing Hoi Enterprises Ltd [2020] 3 HKC 451 at [47], per Kwan VP, as reproduced in the LG2 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['What acquiescence is', 'Wong Koon Wah v All Persons in Occupation of Lot No. 775 in D.D. 216 & Anor [2023] HKCA 1279 at [98]-[102]', 'A form of proprietary estoppel: representation, reliance, detriment'],
+                  ['The old rule', 'Incorporated Owners of Hoi Luen Industrial Centre v Ohashi Chemical Industries (Hong Kong) Ltd [1995] 2 HKC 11', 'A corporation under a duty to enforce could not acquiesce'],
+                  ['The old rule applied', 'Hollywood Shopping Centre Owners Committee Ltd v IO Wing Wah Building Mongkok Kowloon [2011] 4 HKLRD 623', 'Availability depended on the nature of the breach and whether it was within the corporation\'s power to permit; acquiescence established on the facts'],
+                  ['Conversion could be approved', 'IO of Freder Centre v Gringo Ltd [2016] 4 HKC 346, [2016] 2 HKLRD 190, CA', 'Implicit in s34I(1)(a) that the corporation could approve a conversion, so it could acquiesce'],
+                  ['The new rule', 'Centre Chase Investment Ltd v The Incorporated Owners of Castle Peak Road International Industrial Building [2026] HKCFA 26', 'Hoi Luen cannot be sustained; the corporation may acquiesce so long as it is not illegal; no need to examine whether the covenant totally precludes the breach'],
+                  ['No inflexible duty to sue', 's18(1)(c), Building Management Ordinance (Cap. 344); Centre Chase at [53]-[55]', 'Practical considerations, including legal costs, may be taken into account; waiver to reach an amicable settlement is open'],
+                  ['Facts: four years\' inaction', 'IO of Tuen Mun Hung Cheung Industrial Centre HCMP 2991/1998, 22/11/1999', 'Knowledge of the breach at the outset and four years without action'],
+                  ['Facts: gravity', 'Hon Hing Enterprises Ltd v Honolulu Land Investment Co Ltd HCA 3557/1991, 31/7/1992', 'The gravity of the breach is relevant'],
+                  ['Facts: contrast', 'IO of Dragon View v Nalpak Ltd [1989] 1 HKC 549', 'Contrasted with Hoi Luen on the facts'],
+                  ['By the co-owners', 'Cheung Yuet v Incorporated Owners of Oriental Gardens [1979] HKLR 536', 'Owners, and hence the manager, may lose the remedy by acquiescing'],
+                  ['Personal in nature', 'Grand Power International Ltd v Chan Sing Hoi Enterprises Ltd [2020] 3 HKC 451 at [47]; IO of Kam Luk Building v 吳靜燕 [2022] HKCA 1896', 'Acquiescence, waiver, laches and estoppel other than proprietary estoppel are personal and do not run with the land'],
+                  ['The remedy decides', '富嘉花園業主立案法團 v In Smart Ltd [2025] HKLdT 18 at [187]', 'Whether a successor is bound depends on the nature of the right the court would grant'],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Why the remedy decides whether a successor is bound',
+                statutes: [
+                  { text: 'If C acquires A\'s land, or a right in relation to A\'s land, after a court order has been made in B\'s favour, the effect of B\'s right on C will depend simply on the nature of that right: if it is a proprietary right, it is capable of binding C; if it is a personal right it cannot, in itself, bind C. It should make no difference, it is submitted, that B\'s right arose through proprietary estoppel, rather than by any other means.', cite: 'Snell\'s Equity at 12-053, as reproduced in the LG2 slides' },
+                ],
+                bullets: [
+                  'So an order that A pay B a sum of money, or allow B a licence, gives C no duty to B merely because C acquired a right in the land.',
+                  'An order that A grant B a property right, such as an easement, prima facie binds C, subject to the priority and registration rules.',
+                  'This is the reasoning the lecture uses to ask whether IO of Kam Luk Building v 吳靜燕 [2022] HKCA 1896 has been misunderstood.',
+                ],
+              },
+            ],
+            crossRefs: [
+              { session: 'LG2', issue: 'bmo-overriding-duties', label: 'The BMO\'s overriding duties: sections 34H and 34I' },
+              { session: 'LG2', issue: 'io-duties-and-liability', label: 'The owners\' corporation: duties and liabilities' },
+              { session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+              { session: 'LG1', issue: 'waiver', label: 'Has the breach been waived?' },
+            ],
+          },
+          {
+            id: 'remedies-and-charge',
+            title: 'Remedies: injunction, damages and the charge',
+            summary: 'A negative covenant deliberately broken gets an injunction as of course; and unpaid management fees get a charge, but only if the DMC provides for one.',
+            triggers: {
+              bullets: [
+                'The owner erected a structure in breach of a negative covenant with his eyes open and now argues the balance of convenience.',
+                'The developer converted part of the common parts to its own use and the question is how damages are to be assessed.',
+                'An owner has occupied part of the common parts for six years and the incorporated owners want to be paid for it.',
+                'Noise levels from a unit are in breach of the DMC and the plaintiff wants the activity stopped.',
+                'Management fees have gone unpaid for two years and the manager wants to impose a charge on the flat.',
+                'The incorporated owners purported to impose a charge and the manager purported to impose one personally as well.',
+                'The DMC contains no provision at all empowering the imposition of a charge for unpaid management fees.',
+                'A charge was imposed but never registered, and the flat has been sold to a bona fide purchaser.',
+                'A mandatory injunction is sought requiring the removal of structures already built.',
+              ],
+              routes: [
+                { when: 'The question is who may seek the remedy', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+                { when: 'The defendant says the breach was allowed to continue', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+                { when: 'The unpaid fees relate to a period before the defendant bought the flat', session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Choosing and securing the remedy',
+                steps: [
+                  {
+                    label: 'For a negative covenant, start with Doherty v Allman',
+                    detail: 'Where parties for valuable consideration and with their eyes open contract that a particular thing shall not be done, a court of equity says by way of injunction what the parties have already said by way of covenant.',
+                    why: 'The injunction is not a discretionary balancing exercise but the specific performance of a negative bargain. That is why the usual equitable arguments about convenience and the scale of the damage fall away.',
+                    exam: {
+                      write: 'The covenant being negative and deliberately broken, the grant of an injunction is the specific performance by the court of the negative bargain the parties made, and it is not a question of the balance of convenience: Doherty v Allman (1878) 3 App Cas 709 at 720.',
+                      trap: 'Letting the defendant argue balance of convenience on a negative covenant. Doherty v Allman shuts that down.',
+                    },
+                    points: [
+                      'The injunction gives the sanction of the court\'s process to what is already the contract between the parties.',
+                      'It is not a question of the balance of convenience or inconvenience, nor of the amount of damage or injury.',
+                    ],
+                  },
+                  {
+                    label: 'Pick the right form of injunction',
+                    detail: 'A mandatory injunction may be granted to remove structures or objects; a prohibitory injunction to cease certain activities.',
+                    why: 'The distinction matters because a mandatory injunction is the more drastic and the more likely to attract the discretionary defences — which is why acquiescence cases so often concern structures already built.',
+                    exam: {
+                      write: 'The plaintiff seeks a [mandatory injunction requiring the removal of [the structure] / prohibitory injunction restraining [the activity]].',
+                      trap: 'Forgetting that the discretion survives. In Wing Ming Garment Factory Ltd v Incorporated Owners of Wing Ming Industrial Centre [1994] 2 HKC 748 a mandatory injunction was refused in the exercise of the court\'s discretion.',
+                    },
+                    points: [
+                      'Mandatory: Hong Yip Service Co Ltd v Ng Wai-man CACV 159/1988, 22/3/1989.',
+                      'Prohibitory: Realty Harvest Ltd v Gold Margin Development Ltd [2001] 1 HKLRD 506, on noise levels.',
+                    ],
+                  },
+                  {
+                    label: 'Consider damages on a loss of bargain basis',
+                    detail: 'Other than the normal measure, damages may be measured on the basis of loss of bargain, that is the sum which might reasonably have been demanded for the use in question.',
+                    why: 'Between co-owners the ordinary rule is that one does not pay rent to another, so without this route a developer occupying the common parts would pay nothing for years of use. The contract between them is what displaces the rule.',
+                    exam: {
+                      write: 'Damages fall to be assessed as compensation for the wrongful occupation of the common parts, representing the sum of money which might reasonably have been demanded for their use for the relevant period.',
+                      trap: 'Applying the no-rent-between-co-owners rule. It does not apply where there is a contract between the parties, which the DMC is.',
+                    },
+                    points: [
+                      'IO of Percival House v Fusion Advertising Solution Ltd [2012] 5 HKC 95.',
+                      'Wing Ming Garment Factory Ltd v IO Wing Ming Industrial Centre [2014] 4 HKLRD 52: the developer had converted part of the common parts to its own use in breach of s34I(1); the general principle that one co-owner should not be required to pay rent to another did not apply where there was a contract between the parties.',
+                      'Mesne profits are also available.',
+                    ],
+                  },
+                  {
+                    label: 'For unpaid management fees, find the power to charge in the DMC',
+                    detail: 'Section 19(1) of the Building Management Ordinance provides that where a DMC empowers the manager to impose a charge on the property for the payment of management fees, an owners\' corporation may instead impose the charge.',
+                    why: 'Section 19 does not create the power; it transfers it. The DMC has to have given the manager the power in the first place, which is why the first thing to read is the deed, not the Ordinance.',
+                    exam: {
+                      write: 'Clause [x] of the deed of mutual covenant empowers the manager to impose a charge for unpaid management fees, so by s19(1) of the Building Management Ordinance the incorporated owners may impose it instead.',
+                      trap: 'Letting the manager impose the charge personally once the owners have incorporated. In Incorporated Owners of Kingsford Industrial Centre v Austria Pty Management Co [1997] 3 HKC 735 only the corporation, through the management committee, could do so.',
+                    },
+                    points: [
+                      'Section 19 applies only if there is a provision in the DMC.',
+                      'Where there is none, no charge may be imposed: Fu Tor Loy Sun Chuen Stage I v Foeng Houw Liam Steven [2016] 2 HKLRD 339. The corporation would have to secure judgment for the outstanding sum, then a charging order and an order for sale.',
+                      'Once incorporated, only the corporation through the management committee may impose the charge: Incorporated Owners of Kingsford Industrial Centre v Austria Pty Management Co [1997] 3 HKC 735.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with the formality objection, and then register',
+                    detail: 'Sections 5(1) and 44(1) of the Conveyancing and Property Ordinance require, among other things, that a charge be by deed and signed by the chargor, that is the person to be charged, the owner. Notwithstanding those requirements, a provision in the DMC empowering the imposition of a charge has been held to be effective.',
+                    why: 'The owner is bound by the DMC, and the DMC is a deed he or his predecessor executed or took subject to. The formality is treated as satisfied by the deed that authorises the charge rather than by a fresh instrument.',
+                    exam: {
+                      write: 'Although ss5(1) and 44(1) of the Conveyancing and Property Ordinance require a charge to be by deed and signed by the chargor, a provision in the deed of mutual covenant empowering the imposition of a charge is effective: Beacon Heights (Management) Ltd v Leung Ping Hung, Antonio [1995] 1 HKC 181.',
+                      trap: 'Stopping at the imposition. A written charge must be prepared and registered to be effective against a bona fide purchaser: Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762.',
+                    },
+                    points: [
+                      'Beacon Heights (Management) Ltd v Leung Ping Hung, Antonio [1995] 1 HKC 181.',
+                      'Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762: a written charge must be prepared and registered by the management committee to be effective against a bona fide purchaser.',
+                      'Register the charge in the Land Registry for the purposes of priority.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Doherty v Allman applies to a negative covenant. For a positive one, and for a mandatory injunction, the discretion is real.',
+                'Wing Ming Garment Factory appears twice in this topic at different citations: [1994] 2 HKC 748 on the corporation being bound by the DMC, and [2014] 4 HKLRD 52 on loss of bargain damages.',
+                'Section 19 of the Building Management Ordinance only transfers a power the DMC has already given the manager. Read the DMC first.',
+                'The charge must be registered, or a bona fide purchaser will take free of it.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the covenant and whether it is negative or positive.',
+                'For a negative covenant, apply Doherty v Allman (1878) 3 App Cas 709. Then state the form of injunction sought.',
+                'Consider damages, including loss of bargain and mesne profits.',
+                'For management fees, find the charging power in the DMC and apply s19.',
+                'Address the ss5(1) and 44(1) formality objection.',
+                'Register the charge and explain the priority consequence.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Conceding balance of convenience on a deliberately broken negative covenant.',
+                'Applying the no-rent-between-co-owners rule where there is a DMC.',
+                'Letting the manager impose a charge personally after incorporation.',
+                'Imposing a charge without registering it.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'If parties for valuable consideration, with their eyes open, contract that a particular thing shall not be done, all that a court of equity has to do is to say, by way of injunction, that which the parties have already said by way of covenant, that the thing shall not be done and, in such a case, the injunction does nothing more than give the sanction of the process of the court to that which already is the contract between the parties. It is not then a question of the balance of convenience or inconvenience, or of the amount of damage or of injury', cite: 'Doherty v Allman (1878) 3 App Cas 709 at 720, as reproduced in the LG2 notes' },
+              ],
+              table: {
+                headers: ['Remedy', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Injunction as of course', 'Doherty v Allman (1878) 3 App Cas 709 at 720', 'Specific performance of a negative bargain; not a question of the balance of convenience'],
+                  ['Mandatory injunction', 'Hong Yip Service Co Ltd v Ng Wai-man CACV 159/1988, 22/3/1989', 'Removal of structures or objects'],
+                  ['Prohibitory injunction', 'Realty Harvest Ltd v Gold Margin Development Ltd [2001] 1 HKLRD 506', 'Cessation of activities; noise levels'],
+                  ['Discretion survives', 'Wing Ming Garment Factory Ltd v Incorporated Owners of Wing Ming Industrial Centre [1994] 2 HKC 748', 'Mandatory injunction refused in the exercise of the court\'s discretion'],
+                  ['Loss of bargain', 'IO of Percival House v Fusion Advertising Solution Ltd [2012] 5 HKC 95; Wing Ming Garment Factory Ltd v IO Wing Ming Industrial Centre [2014] 4 HKLRD 52', 'Damages as the sum reasonably demandable for the use of the common parts; the no-rent rule between co-owners displaced by contract'],
+                  ['The charge', 's19(1), Building Management Ordinance (Cap. 344)', 'Where the DMC empowers the manager to charge for management fees, the corporation may impose it instead'],
+                  ['Only the corporation', 'Incorporated Owners of Kingsford Industrial Centre v Austria Pty Management Co [1997] 3 HKC 735', 'Only the corporation through the management committee may impose it; not the manager personally'],
+                  ['Formalities', 'ss5(1) and 44(1), Conveyancing and Property Ordinance (Cap. 219); Beacon Heights (Management) Ltd v Leung Ping Hung, Antonio [1995] 1 HKC 181', 'Charge by deed signed by the chargor, yet a DMC provision empowering a charge is effective'],
+                  ['Registration', 'Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762', 'A written charge must be prepared and registered to bind a bona fide purchaser'],
+                  ['No DMC provision', 'Fu Tor Loy Sun Chuen Stage I v Foeng Houw Liam Steven [2016] 2 HKLRD 339', 'No charge may be imposed; judgment, charging order and order for sale instead'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+            ],
+          },
+          {
+            id: 'enforceability-s41',
+            title: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance',
+            summary: 'Benefit and burden run by different routes. Test them separately, and remember positive covenants do not bind tenants or occupiers.',
+            triggers: {
+              bullets: [
+                'The plaintiff is the fifth purchaser of a flat and was never a party to the DMC, which was executed in 1978.',
+                'The defendant is a tenant of a co-owner and the covenant sued on requires money to be spent on repairs.',
+                'The covenant relied on gives one owner the right to name the building.',
+                'The covenant is to repay a tenant\'s deposit and the landlord has assigned the reversion.',
+                'The DMC says the covenants are made "for the benefit of the land of the covenantee and his successors in title".',
+                'The DMC is silent on whether the covenants are for the benefit of successors in title.',
+                'There is no DMC at all, but the development was laid out and sold as a single scheme.',
+                'One house on a small-house development never executed the DMC and a purchaser raises a requisition about it.',
+                'The covenantee has sold every unit he owned and now wants to enforce the covenant.',
+                'A squatter in part of the building is sued on a covenant in the DMC.',
+              ],
+              routes: [
+                { when: 'The breach was committed by the defendant\'s predecessor in title', session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+                { when: 'The question is who may bring the action rather than whether the covenant runs', session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+                { when: 'The covenant in issue is in a Government lease rather than a DMC', session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing the running of benefit and burden',
+                steps: [
+                  {
+                    label: 'Identify the covenantor, the covenantee, and who is suing whom',
+                    detail: 'Every covenant in the DMC has a covenantor, who bears the burden, and a covenantee, who has the benefit. The running of benefit and burden must be dealt with separately, since the rules differ slightly. Ascertain whether the benefit has run in favour of the plaintiff and whether the burden has run against the defendant.',
+                    why: 'The only parties to a DMC are the developer, the first purchaser and perhaps the manager, so in almost every real dispute both halves have to run. Testing only one half is the commonest structural error in this topic.',
+                    exam: {
+                      write: 'The plaintiff must show that the benefit of the covenant has run to him and that its burden has run against the defendant; the two are governed by different limbs of s41(2) of the Conveyancing and Property Ordinance.',
+                      trap: 'Distinguish successors in title from persons claiming under or through them. Successors in title include assignees and mortgagees, but only when in possession; persons claiming under or through include tenants, mortgagees not in possession, and squatters.',
+                    },
+                    points: [
+                      'Section 41 applies to express and implied covenants alike: s41(1).',
+                      'Successors in title: assignees; mortgagees only when in possession.',
+                      'Persons claiming under or through: tenants, mortgagees not in possession, squatters.',
+                      'Section 41 is only a partial codification: a covenant falling outside its terms may still be governed by the common law, including the building scheme rules — Sky Heart Ltd v Lee Hysan Co Ltd [1999] 1 HKLRD 100, [1999] 1 HKC 18, CFA, per Lord Hoffmann.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the covenant relates to the land of the covenantor',
+                    detail: 'This is required for both benefit and burden: s41(2)(a). It is the same as the old test whether the covenant touched and concerned the land: Supreme Honour Development Ltd v Lamaya Ltd [1991] 1 HKC 198, CA, at 203, per Cons JA.',
+                    why: 'A covenant that does not affect the land is a personal bargain between two people, and there is no reason a purchaser of the land should inherit it. The test is what makes a land covenant proprietary rather than contractual.',
+                    exam: {
+                      write: 'The covenant [to pay management fees / not to make structural alterations] is a land covenant: it affects the nature, quality, mode of user or value of the land, per Lord Oliver in P & A Swift Investments (A Firm) v Combined English Stores Group PLC [1989] 1 AC 633 at 642.',
+                      trap: 'Forgetting the exception the lecture flags twice: practically everything in a DMC runs with the land, the notable exception being the right to name a building — Supreme Honour.',
+                    },
+                    points: [
+                      {
+                        text: 'Held to be land covenants:',
+                        points: [
+                          'To pay rent, including Government rent: Parker v Webb (1693) 3 Salk 5; and guaranteeing payment of that rent: Rolling Development Ltd v Ease King Ltd CACV 128/1997.',
+                          'To pay management fees: Hang Yick Properties Management Ltd v Incorporated Owners of Tuen Mun Kar Wah Building [2005] 2 HKLRD 499, CA, per Woo V-P.',
+                          'Prohibiting the keeping of dogs and other pets in a flat: Lee Yin Hong v Incorporated Owners of Serenade Cove DCCJ 4861/2008.',
+                          'To repair: Williams v Earle (1868) LR 3 QB 739; and to insure against fire: Vernon v Smith (1821) 5 B & Ald 1.',
+                          'Not to make structural alterations: Incorporated Owners of Marina Cove v Chu Kam Tai [2012] 2 HKLRD 107, CA; Incorporated Owners of Wah Fai Court v Lee Man Ho Joseph LDBM 60/2010.',
+                          'Not to commit nuisance or annoyance: Putai Ltd v Yau Lee Ho DCCJ 2666/2013; Felan Investment Ltd v Sarwin Industries Ltd LDBM 7/2015.',
+                          'To use the land for agricultural purposes only: Marten v Flight Refuelling Ltd [1962] Ch 115; or only as a private dwelling house: Wilkinson v Rogers (1864) 2 De GJ & S 62.',
+                          'Not to use a roof other than for erecting signs: Incorporated Owners of Mirador Mansions v Tecowin Development Ltd [1999] 4 HKC 113; not to build on adjoining land: Ricketts v Enfield Churchwardens [1909] 1 Ch 544.',
+                          'To abide by House Rules: Tsang Chi Ming v Broadway-Nassau Investments Ltd [2008] 1 HKLRD 96, DC.',
+                        ],
+                      },
+                      {
+                        text: 'Held NOT to be land covenants, that is personal covenants:',
+                        points: [
+                          'To repay the tenant\'s deposit: Hua Chiao Commercial Bank Ltd v Chiaphua Industries Ltd [1987] 2 WLR 179, [1987] 1 HKC 60, PC (not binding on a mortgagee from the landlord); Crocodile Garments Ltd v Prudential Enterprise Ltd [1989] 1 HKC 474 (not binding on an assignee from the landlord).',
+                          'Giving the right to name a building: Supreme Honour Development Ltd v Lamaya Ltd [1991] 1 HKC 198, applied in Incorporated Owners of Nine Queen\'s Road Central v Minkind Development Ltd MP 3979/1996 and Pak Fah Yeow Investment (Hong Kong) Co Ltd v Proper Invest Group Ltd [2009] 3 HKC 285, CA.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'For the BENEFIT, require that it be expressed AND intended to benefit the covenantee\'s land',
+                    detail: 'By ss41(2)(a) and (3), the benefit of a covenant, positive or restrictive, can be enforced by successors in title of the covenantee and persons deriving title under or through them, provided the covenant relates to the covenantor\'s land and is expressed and intended to benefit the land of the covenantee and his successors in title: s41(2)(c).',
+                    why: 'There are two elements, and the lecture is explicit that both must be satisfied. "Expressed" is about annexation, express or implied; "intended" is about purpose, and is readily inferred once the covenant relates to the land.',
+                    exam: {
+                      write: 'The covenant is expressed to benefit the covenantee\'s land [by the express annexation in clause [x] / by the deemed annexation under s39(1) of the Conveyancing and Property Ordinance], and, relating to the land, is likely actually to benefit it, so the intention requirement is satisfied.',
+                      trap: 'Missing that annexation can be implied. Section 39(1) deems a covenant relating to land of the covenantee to be made with the covenantee and his successors in title, unless a contrary intention is expressed.',
+                    },
+                    points: [
+                      'Express annexation: the DMC provides that the covenants are made for the benefit of the land of the covenantee and his successors in title — Sky Heart Ltd v Lee Hysan Estate Co Ltd [1997] 1 HKC 313, upheld [1999] 1 HKC 18, CFA.',
+                      'Implied or deemed annexation: s39(1) of the Conveyancing and Property Ordinance, applied in Incorporated Owners of Mirador Mansion v Tecowin Development Ltd [1999] 4 HKC 113, where a covenant not stated to be for the benefit of successors was held not intended to be personal.',
+                      'Where there is no DMC, annexation may arise from a building scheme: Elliston v Reacher [1908] 2 Ch 374; Sky Heart Ltd v Lee Hysan Estate Ltd [1999] 1 HKLRD 100, CFA, where common intention was implied.',
+                      'Intention: provided the covenant relates to the land, it is likely actually to benefit it — Supreme Honour Development Ltd v Lamaya Ltd [1991] 1 HKC 198, CA.',
+                    ],
+                  },
+                  {
+                    label: 'Check that the covenantee has retained land to be benefited',
+                    detail: 'Since a covenant is an interest in land, similar to an easement, the covenantee in whose favour it was given must retain land to be benefited in order to enforce it: Sky Heart Ltd v Lee Hysan Estate Co Ltd [1999] 1 HKLRD 100, [1999] 1 HKC 18, CFA.',
+                    why: 'A covenant with no dominant land left is a right in gross, and land law does not recognise one here. The requirement is what keeps the covenant tied to land rather than floating free as a saleable right.',
+                    exam: {
+                      write: '[The covenantee] retains [the remaining units / the common parts] to be benefited, so the covenant remains enforceable by it.',
+                      trap: 'Forgetting that predecessors in title cannot enforce. The benefit runs to successors in title and those claiming under or through them, not backwards.',
+                    },
+                    points: [
+                      'The covenantee must retain land to be benefited.',
+                      'The benefit runs to successors in title and to persons claiming under or through them, but not to predecessors in title.',
+                    ],
+                  },
+                  {
+                    label: 'For the BURDEN, require only that it be expressed OR intended to run',
+                    detail: 'Section 41(2)(b) and (3) provides that the burden can be enforced against the occupiers of the land, the covenantor and his successors in title and persons deriving title under or through him, provided the covenant relates to the covenantor\'s land and the burden is expressed or intended to run with that land.',
+                    why: 'This is the difference from the benefit side, and it is easy to miss: annexation, express or implied, suffices without a separate requirement of intention to benefit. Section 40(1) supplies the implication.',
+                    exam: {
+                      write: 'The burden is expressed or intended to run with the covenantor\'s land, s40(1) of the Conveyancing and Property Ordinance deeming a covenant relating to the covenantor\'s land to be made on behalf of himself and his successors in title and those deriving title through them, no contrary intention being expressed.',
+                      trap: 'Importing the benefit side\'s two-element test. On the burden side annexation alone suffices; there is no added requirement of intention to benefit the land.',
+                    },
+                    points: [
+                      'Implied annexation follows from s40(1) of the Conveyancing and Property Ordinance.',
+                      'The burden reaches occupiers, the covenantor, his successors in title and those deriving title under or through him — subject always to s41(5).',
+                    ],
+                  },
+                  {
+                    label: 'Apply the s41(5) limit: positive covenants do not reach lessees or occupiers',
+                    detail: 'A positive covenant is one to expend money, do something, or which is otherwise positive in nature: s41(6). Section 41(5) provides that a positive covenant shall not be enforceable against three classes.',
+                    why: 'A positive covenant costs money, and it would be harsh to impose that on someone with a limited interest who took no benefit from the bargain. The line is drawn at those who hold the land rather than merely use it.',
+                    exam: {
+                      write: 'The covenant [to repair / to contribute to the management expenses] is a positive covenant within s41(6) of the Conveyancing and Property Ordinance and so, by s41(5), is not enforceable against [the tenant / the occupier].',
+                      trap: 'Extending the exemption to owners and mortgagees. Tenants, subtenants, squatters and perhaps mortgagees not in possession escape positive covenants; owners and mortgagees do not.',
+                    },
+                    points: [
+                      'A lessee from the covenantor, or from a successor in title of the covenantor, or from any person deriving title under or through the covenantor or such a successor.',
+                      'Any person deriving title under or through such a lessee.',
+                      'Any person merely because he is an occupier of land: Discovery Bay Services Management Ltd v David Buxhaum [1995] HKDCLR 7, where the defendant was not liable as occupier.',
+                      'Owners and mortgagees remain bound by positive covenants.',
+                    ],
+                  },
+                  {
+                    label: 'Finish with registration and its effect on notice',
+                    detail: 'Section 41(9) provides that, on the registration of the DMC, successors in title are bound by its covenants irrespective of whether or not they have searched the register.',
+                    why: 'In equity the burden of a restrictive covenant runs only against a successor with notice. Registration supplies that notice as a matter of law, which is why registering the DMC is a stage in the development sequence rather than an afterthought.',
+                    exam: {
+                      write: 'The deed of mutual covenant having been registered, s41(9) of the Conveyancing and Property Ordinance binds successors in title to its covenants irrespective of whether they searched the register.',
+                      trap: 'Applying s41(9) to any covenant in the deed. By the s41(2) definition, the covenants within s41(9) must be land covenants whose burden is expressed or intended to run and which are expressed and intended to benefit the covenantee\'s land.',
+                    },
+                    points: [
+                      'Registration supplies the notice equity would otherwise require.',
+                      'The covenant must still satisfy the s41(2) conditions to be within s41(9).',
+                      'A squatter is bound by the restrictive, but not the positive, covenants: Incorporated Owners of Man Hong Apartments v Kwong Yuk Ching [2001] 3 HKC 116, CA; Incorporated Owners of Mountain View Mansion v Heart Cuisine CACV 235/2011.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Section 41 is a partial codification only. Sky Heart is the authority that the common law building scheme rules survive alongside it, and they are what you need when there is no DMC.',
+                'Fortune Link Ltd v Grand House Ltd [2010] 1 HKC 253 is worth having for a small-house development: there was no element of co-ownership, the DMC was not a document of title, and the absence of one owner\'s signature was not a title defect or an impediment to completion — a person cannot take the benefits of a building scheme without accepting its burdens.',
+                'The distinction between successors in title and persons claiming under or through them is what s41(5) turns on. Write it down before applying the subsection.',
+                'A mortgagee is a successor in title only when in possession. That single qualification decides whether it is caught by a positive covenant.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Set the analysis out in two columns, benefit and burden, rather than as one narrative. The rules differ and an examiner is looking for both.',
+                'Classify the covenant as positive or restrictive early, using the s41(6) definition, because it decides s41(5).',
+                'When advising a purchaser, say what the answer means for completion: whether the requisition is a good one, and whether title is defective.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the parties and classify each as covenantor, covenantee, successor in title, or person claiming under or through.',
+                'Establish that the covenant relates to the covenantor\'s land.',
+                'Run the benefit: expressed to benefit, by annexation express, implied under s39(1), or by building scheme; and intended to benefit.',
+                'Check the covenantee has retained land to be benefited.',
+                'Run the burden: expressed or intended to run, with s40(1) supplying the implication.',
+                'Classify the covenant as positive or restrictive and apply s41(5).',
+                'Deal with registration and s41(9), and conclude.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Running one composite test for benefit and burden. They are governed by different limbs and the benefit side has the extra intention requirement.',
+                'Enforcing a positive covenant against a tenant, subtenant, squatter or occupier.',
+                'Forgetting that the covenantee must retain land to be benefited.',
+                'Treating s41 as a complete code and overlooking the common law building scheme.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Partial codification', 'Sky Heart Ltd v Lee Hysan Co Ltd [1999] 1 HKLRD 100, [1999] 1 HKC 18, CFA', 'Section 41 does not prevent a covenant outside its terms being governed by the common law; building scheme rules apply in Hong Kong; the covenantee must retain land to be benefited'],
+                  ['Relates to the land', 's41(2)(a), Conveyancing and Property Ordinance (Cap. 219); Supreme Honour Development Ltd v Lamaya Ltd [1991] 1 HKC 198, CA', 'Same as the old touching-and-concerning test, per Cons JA at 203'],
+                  ['The test', 'P & A Swift Investments (A Firm) v Combined English Stores Group PLC [1989] 1 AC 633 at 642', 'Does the covenant affect the nature, quality, mode of user or value of the land, per Lord Oliver'],
+                  ['Personal covenant', 'Supreme Honour Development Ltd v Lamaya Ltd [1991] 1 HKC 198', 'The right to name a building is not a land covenant'],
+                  ['Personal covenant', 'Hua Chiao Commercial Bank Ltd v Chiaphua Industries Ltd [1987] 2 WLR 179, [1987] 1 HKC 60, PC', 'A covenant to repay the tenant\'s deposit does not bind a mortgagee from the landlord'],
+                  ['Management fees', 'Hang Yick Properties Management Ltd v Incorporated Owners of Tuen Mun Kar Wah Building [2005] 2 HKLRD 499, CA', 'A covenant to pay management fees is a land covenant, per Woo V-P'],
+                  ['Benefit', 'ss41(2)(a), 41(2)(c) and 41(3), Conveyancing and Property Ordinance (Cap. 219)', 'Enforceable by successors in title and those deriving title under or through them, if expressed AND intended to benefit the covenantee\'s land'],
+                  ['Deemed annexation of benefit', 's39(1), Conveyancing and Property Ordinance (Cap. 219); Incorporated Owners of Mirador Mansion v Tecowin Development Ltd [1999] 4 HKC 113', 'A covenant relating to the covenantee\'s land is deemed made with him and his successors unless a contrary intention is expressed'],
+                  ['Building scheme', 'Elliston v Reacher [1908] 2 Ch 374; Fortune Link Ltd v Grand House Ltd [2010] 1 HKC 253', 'Annexation by scheme where there is no DMC; a person cannot take the benefits of a scheme without its burdens'],
+                  ['Burden', 's41(2)(b) and (3), Conveyancing and Property Ordinance (Cap. 219)', 'Enforceable against occupiers, the covenantor, his successors in title and those deriving title under or through him, if the burden is expressed or intended to run'],
+                  ['Deemed annexation of burden', 's40(1), Conveyancing and Property Ordinance (Cap. 219)', 'A covenant relating to the covenantor\'s land is deemed made on behalf of himself and his successors unless a contrary intention is expressed'],
+                  ['Positive covenants limited', 'ss41(5) and 41(6), Conveyancing and Property Ordinance (Cap. 219); Discovery Bay Services Management Ltd v David Buxhaum [1995] HKDCLR 7', 'A positive covenant is unenforceable against a lessee, a person deriving title under a lessee, or a person merely because he is an occupier'],
+                  ['Registration', 's41(9), Conveyancing and Property Ordinance (Cap. 219)', 'On registration, successors in title are bound irrespective of whether they searched the register'],
+                  ['Squatters', 'Incorporated Owners of Man Hong Apartments v Kwong Yuk Ching [2001] 3 HKC 116, CA; Incorporated Owners of Mountain View Mansion v Heart Cuisine CACV 235/2011', 'Bound by the restrictive but not the positive covenants'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              { session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
+              { session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
+            ],
+          },
+          {
+            id: 'predecessor-breaches',
+            title: 'Liability for a predecessor in title\'s breach',
+            summary: 'A positive covenant breach dies with the seller; a restrictive one may not, if the breach continues and the buyer has adopted it.',
+            triggers: {
+              bullets: [
+                'The previous owner erected an iron gate blocking the common parts and the present owner has left it there.',
+                'Structural alterations were made to the external wall of the house by the previous owner and the incorporated owners now want it reinstated.',
+                'Part of the common parts was converted by a predecessor in title and the present owner continues to use it.',
+                'The vendor left management fees unpaid for two years and the purchaser is now asked to pay them.',
+                'The DMC provides that the "owner for the time being" is liable for past and present management charges.',
+                'The defendant received the property from his father as a gift rather than by purchase.',
+                'A party to the DMC has sold his interest and is being sued for something he did before he sold.',
+                'A purchaser raises a requisition on unauthorised works erected by the vendor\'s predecessor.',
+                'The works were done before the present owner bought, and he has done nothing to remove them.',
+              ],
+              routes: [
+                { when: 'The prior question is whether the covenant runs to the defendant at all', session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+                { when: 'The works complained of are structural alterations', session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+                { when: 'The defence is that the incorporated owners allowed the works to stand', session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+                { when: 'The claim is for the charge securing the unpaid fees', session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Deciding whether the present owner answers for the past',
+                steps: [
+                  {
+                    label: 'Deal first with the outgoing party\'s own liability',
+                    detail: 'At common law the parties remained liable under the covenants even after they had disposed of their interests: Thursby v Plant (1670) 1 WMS Saund 230. Section 41(8) of the Conveyancing and Property Ordinance changed that: parties are no longer bound by a covenant when they have ceased to hold any estate or interest in the land, except in respect of a breach committed by them before they ceased to have an interest.',
+                    why: 'The exception is what keeps the seller in the frame. He escapes the covenant but not the consequences of having broken it, which is why a claimant should look at him before arguing that the buyer inherited anything.',
+                    exam: {
+                      write: 'By s41(8) of the Conveyancing and Property Ordinance, [the previous owner], having ceased to hold any estate or interest in the land, is no longer bound by the covenant, but remains liable for the breach he committed before he ceased to have an interest.',
+                      trap: 'Forgetting to sue the person who actually did it. The previous owner or tenant who committed the breach remains liable to the covenantee.',
+                    },
+                    points: [
+                      'The common law position is displaced by s41(8).',
+                      'Liability survives for breaches committed while the party still held an interest.',
+                    ],
+                  },
+                  {
+                    label: 'Classify the covenant: positive or restrictive',
+                    detail: 'The rules for a predecessor\'s breach differ according to the nature of the covenant, and the classification is the one in s41(6) of the Conveyancing and Property Ordinance.',
+                    why: 'A positive covenant demands an act, and one cannot sensibly be in breach today of a failure to act that was somebody else\'s years ago. A restrictive covenant forbids a state of affairs, which is why a structure left standing is still a breach now.',
+                    exam: {
+                      write: 'The covenant [to contribute to the management expenses / not to make structural alterations] is [positive within s41(6) / restrictive], which determines whether the present owner answers for the breach.',
+                      trap: 'Treating unpaid management fees as a continuing breach. They are a positive covenant breach, and the answer comes from the exception below, not from the continuing-breach doctrine.',
+                    },
+                    points: [
+                      'A positive covenant is one to expend money, do something, or otherwise positive in nature: s41(6).',
+                      'Everything else is restrictive.',
+                    ],
+                  },
+                  {
+                    label: 'For a POSITIVE covenant, the general rule is that the successor is not liable',
+                    detail: 'Successors in title of a covenantor and persons claiming under or through them will not, as a matter of principle, be liable for any breach of a positive covenant committed by their predecessors in title where they purchased the property: Discovery Bay Services Management Ltd v David Buxhaum [1995] HKDCLR 7.',
+                    why: 'The successor takes the covenant, not the history. A purchaser prices the property on what it is, and cannot be expected to price in a debt he had no way of quantifying.',
+                    exam: {
+                      write: 'The covenant being positive, [the present owner] is not liable for the breach committed by his predecessor in title, from whom he purchased the property: Discovery Bay Services Management Ltd v David Buxhaum [1995] HKDCLR 7.',
+                      trap: 'Ignoring the gift exception. A successor IS liable for a predecessor\'s breach of a positive covenant where he received the property by way of gift.',
+                    },
+                    points: [
+                      'The rule applies where the successor purchased the property.',
+                      'It does not apply where he received it by way of gift.',
+                      'Liabilities accrued before the sale will not pass to a successor in title under s41(5) of the Conveyancing and Property Ordinance.',
+                    ],
+                  },
+                  {
+                    label: 'Watch the outstanding management fees exception',
+                    detail: 'Outstanding management fees, or contribution notices, owed are an exception, and the present owner may also be liable where the DMC so provides.',
+                    why: 'The covenant to pay management fees is a land covenant, and a DMC that makes the "owner for the time being" liable is doing expressly what the general law would not. Read the deed before advising the purchaser he is safe.',
+                    exam: {
+                      write: 'The deed of mutual covenant provides that the owner for the time being is liable for past and present management charges, so [the present owner] is liable for the arrears notwithstanding that they accrued before he bought.',
+                      trap: 'Advising a purchaser without reading the DMC\'s own words on arrears. This is a routine and expensive point on completion.',
+                    },
+                    points: [
+                      'Hang Yick Properties v IO of Tuen Mun Kar Wah Building [2005] 2 HKLRD 499: outstanding management fees are an exception.',
+                      'Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762: the DMC provided that the "owner for the time being" was liable for past and present management charges.',
+                    ],
+                  },
+                  {
+                    label: 'For a RESTRICTIVE covenant, ask whether the breach continues and has been adopted',
+                    detail: 'Failure to remedy a predecessor\'s breach of a restrictive covenant might, where the breach is a continuing one and the present owner has adopted it, render the present owner\'s title defective or defeasible.',
+                    why: 'This is why the point matters on a conveyance rather than only in litigation. A continuing breach the buyer inherits is a title problem, and it is his own inaction that converts the predecessor\'s wrong into his.',
+                    exam: {
+                      write: 'The breach is a continuing breach of a restrictive covenant which [the present owner] has adopted by [leaving the gate in place / continuing to use the converted area], so he is liable to rectify it and a mandatory injunction may be granted.',
+                      trap: 'Missing the conveyancing consequence. The lecture puts it as rendering the present owner\'s title defective or defeasible, which is what a purchaser\'s solicitor is really asking about.',
+                    },
+                    points: [
+                      'Incorporated Owners of Fortune Mansion, Tsuen Wan v Chiu Ng Ling [2010] 2 HKC 67, CA: conversion of part of the common parts by a predecessor in title; the present owner was liable to rectify, the breach being continuing.',
+                      'Incorporated Owners of Marina Cove v Chu Kam Tai [2012] 2 HKLRD 107, CA: an iron gate blocking the common parts erected by the predecessor; the present owner had adopted the breach and a mandatory injunction to demolish was granted.',
+                      'Incorporated Owners of Wah Fai Court v Lee Man Ho Joseph LDBM 60/2010: structural alterations to an external wall by a predecessor; a continuing breach and the present owner liable to reinstate.',
+                      'Incorporated Owners of Kam Tao, Ngan Tao and Hoi Tao Building v Durap-Rogress Ltd LDBM 300/2015.',
+                    ],
+                  },
+                  {
+                    label: 'Advise on the transaction, not merely the litigation',
+                    why: 'Nearly every case in this topic reaches the court as a dispute between the incorporated owners and an owner, but it reaches a solicitor as a requisition on title. The advice has to cover both.',
+                    exam: {
+                      write: 'On a sale, the [continuing breach / arrears] renders the vendor\'s title [defective / defeasible], and the purchaser is entitled to raise a requisition requiring [reinstatement / payment] before completion.',
+                      trap: 'Forgetting that the present owner has no answer merely because he did not do the works. Adoption is inferred from leaving them in place.',
+                    },
+                    points: [
+                      'Consider whether the breach can be remedied before completion.',
+                      'Consider a retention or an undertaking for arrears of management charges.',
+                      'Consider whether the incorporated owners have acquiesced, which after Centre Chase is a live defence.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The positive and restrictive covenant rules pull in opposite directions on identical facts, so classify the covenant before anything else.',
+                'The gift exception to the positive covenant rule is easy to miss and is exactly the kind of fact an examiner plants.',
+                'Marina Cove is cited in the lecture both as a land covenant case and as a continuing-breach case. Know which proposition you are using it for.',
+                'A negative covenant breach by a predecessor is described in the slides as something to be careful of precisely because it may be a continuing breach.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify who committed the breach and when, and whether they still hold an interest.',
+                'Apply s41(8) to the outgoing party.',
+                'Classify the covenant as positive or restrictive under s41(6).',
+                'For a positive covenant, apply the Discovery Bay rule and check for gift or a DMC provision about arrears.',
+                'For a restrictive covenant, ask whether the breach continues and whether the present owner has adopted it.',
+                'State the consequence for the litigation and for the transaction.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying the continuing-breach doctrine to unpaid management fees.',
+                'Forgetting that a donee, unlike a purchaser, inherits a positive covenant breach.',
+                'Advising that the present owner is safe without reading the DMC\'s own words about arrears.',
+                'Stopping at liability without saying what it does to title on a sale.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Outgoing party', 's41(8), Conveyancing and Property Ordinance (Cap. 219); Thursby v Plant (1670) 1 WMS Saund 230', 'A party ceases to be bound on parting with all interest, except for breaches committed before he did so'],
+                  ['Positive covenant defined', 's41(6), Conveyancing and Property Ordinance (Cap. 219)', 'A covenant to expend money, do something, or otherwise positive in nature'],
+                  ['Successor not liable', 'Discovery Bay Services Management Ltd v David Buxhaum [1995] HKDCLR 7; s41(5) of that Ordinance', 'A purchaser is not liable for a predecessor\'s breach of a positive covenant; liabilities accrued before sale do not pass'],
+                  ['Gift exception', 'Lecture note on s41(5)', 'A successor who received the property by gift IS liable for the predecessor\'s breach of a positive covenant'],
+                  ['Management fees exception', 'Hang Yick Properties v IO of Tuen Mun Kar Wah Building [2005] 2 HKLRD 499', 'Outstanding management fees and contribution notices are an exception'],
+                  ['DMC may so provide', 'Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762', '"Owner for the time being" liable for past and present management charges'],
+                  ['Continuing breach: conversion', 'Incorporated Owners of Fortune Mansion, Tsuen Wan v Chiu Ng Ling [2010] 2 HKC 67, CA', 'Present owner liable to rectify a predecessor\'s conversion of common parts'],
+                  ['Continuing breach: gate', 'Incorporated Owners of Marina Cove v Chu Kam Tai [2012] 2 HKLRD 107, CA', 'Gate erected by the predecessor; present owner had adopted the breach; mandatory injunction to demolish'],
+                  ['Continuing breach: wall', 'Incorporated Owners of Wah Fai Court v Lee Man Ho Joseph LDBM 60/2010; Incorporated Owners of Kam Tao, Ngan Tao and Hoi Tao Building v Durap-Rogress Ltd LDBM 300/2015', 'Structural alterations by a predecessor; continuing breach; present owner liable to reinstate'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+              { session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
+              { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does the breach defeat title? The "no real risk" approach' },
+            ],
+          },
+        ],
+      },
+    },
     // SG1-SG6. The small group materials had not been distributed when the
     // coordinators' memorandum was written, so these entries deliberately
     // carry only what that memorandum actually states -- the standing
