@@ -895,6 +895,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
               { session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
               { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -1066,6 +1067,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
               { session: 'LG1', issue: 'term-renewal-extension', label: 'Term, renewal and extension' },
               { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
             ],
           },
           {
@@ -1202,6 +1204,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'lease-or-conditions', label: 'Government lease or Conditions? Legal estate or equitable interest' },
               { session: 'LG1', issue: 'sectioning-and-subdivision', label: 'Dividing a lot: sectioning and undivided shares' },
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does an unwaived breach defeat title?' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -2410,6 +2413,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
+              { session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
             ],
           },
           {
@@ -2556,6 +2560,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG1', issue: 'user-covenants', label: 'Is the use in breach of the user restriction?' },
               { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
               { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
             ],
           },
           {
@@ -3190,6 +3195,7 @@ window.COURSE_DETAILS.PCLL8030 = {
             crossRefs: [
               { session: 'LG2', issue: 'undivided-shares-and-good-title', label: 'Undivided shares, tenancy in common and good title' },
               { session: 'LG2', issue: 'proper-plaintiff', label: 'Who is the proper plaintiff?' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
             ],
           },
           {
@@ -3342,6 +3348,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
               { session: 'LG2', issue: 'construing-the-dmc', label: 'Construing the DMC and the first assignment' },
               { session: 'LG2', issue: 'common-parts-definition', label: 'Is it a common part?' },
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
             ],
           },
           {
@@ -5272,6 +5279,7 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'predecessor-breaches', label: 'Liability for a predecessor in title\'s breach' },
               { session: 'LG2', issue: 'developer-sequence', label: 'The stages from lot to registered deed of mutual covenant' },
               { session: 'LG1', issue: 'covenants-running-and-spent', label: 'Does the covenant run, and is it spent?' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
             ],
           },
           {
@@ -5432,6 +5440,4146 @@ window.COURSE_DETAILS.PCLL8030 = {
               { session: 'LG2', issue: 'structural-alterations', label: 'Structural alterations and external appearance' },
               { session: 'LG2', issue: 'acquiescence', label: 'Acquiescence after Centre Chase' },
               { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does the breach defeat title? The "no real risk" approach' },
+              { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+            ],
+          },
+        ],
+      },
+    },
+    LG3: {
+      kind: 'LG',
+      date: '2026-09-15',
+      time: '09:00-11:30',
+      mode: 'Face-to-face',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Place any question about title at the right stage of a conveyancing transaction, from the preliminary agreement to the sending of the accounts.',
+        'Distinguish the duty to GIVE good title from the duty to SHOW title, and say which one the facts engage.',
+        'State what a good title is, and apply the "no real risk" standard to an alleged defect.',
+        'Decide whether an exclusion or limiting clause protects the vendor, and whether the purchaser has waived his right to object.',
+        'Classify a defect as making the title encumbered or defeasible, and identify what the vendor must hand over to give title.',
+      ],
+      topicsCovered: [
+        'The stages of a simple conveyancing transaction, from the preliminary agreement to completion and registration',
+        'The twin duties of giving and showing good title',
+        'What constitutes a good title: MEPC, Kan Wing Yau and the willing purchaser in Mexon',
+        'The duty to give good title: express term, implied term, and whether the legal estate must pass',
+        'Excluding or limiting the duty: contra proferentem, Jumbo King and the misleading purchaser',
+        'The "as is" clause, and a limiting clause added after a binding preliminary agreement',
+        'Waiver by the purchaser of his right to object to a defective title',
+        'Encumbered and defeasible titles distinguished',
+        'Title must be in the vendor; no third-party consent required; assignment free from encumbrances',
+        'Registrable encumbrances that are unregistered, and why the purchaser\'s knowledge is irrelevant',
+        'Encumbrances expressly subject to, and patent grounds of defeasibility',
+        'Original title deeds: the common law after De Monsa, and s13A of the Conveyancing and Property Ordinance',
+        'Which documents are documents of title',
+      ],
+      examNotes: {
+        intro: 'LG3 and LG4 are one body of law split across two lectures: LG3 is about GIVING good title, LG4 about SHOWING it. Keep the two apart, because the whole of this topic turns on the fact that they are separate and independent duties — a vendor with a perfect title can still lose the sale by answering a requisition badly, and a purchaser who never raised a requisition can still refuse to complete.',
+        issueTypes: [
+          {
+            id: 'conveyancing-stages',
+            title: 'The stages of a simple conveyancing transaction',
+            summary: 'Twenty-odd steps from the estate agent\'s office to the sending of the accounts. Most title questions are really "which stage is this?".',
+            triggers: {
+              bullets: [
+                'A preliminary agreement was signed in the estate agent\'s office and a preliminary deposit paid.',
+                'The purchaser wants to know whether the preliminary agreement he signed a fortnight ago needs stamping.',
+                'One firm of solicitors proposes to act for both the vendor and the purchaser.',
+                'Title deeds have been sent to the purchaser\'s solicitors against an undertaking to return them on demand.',
+                'On execution of the formal agreement a further tranche of deposit brings the total paid to 10 per cent of the price.',
+                'The assignment has been executed in escrow by the purchaser and sent to the vendor.',
+                'Completion is to take place by mutual undertakings between the two firms of solicitors.',
+                'The purchase price less the deposits was sent by cashier order against an undertaking to send the executed assignment and title deeds within 21 days.',
+                'The property being sold is already subject to a mortgage the vendor has not yet discharged.',
+              ],
+              routes: [
+                { when: 'The question is what the vendor must hand over at completion', session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+                { when: 'The question is what the vendor must produce by way of proof of title', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The question is whether the vendor is obliged to give good title at all', session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Placing the facts in the transaction',
+                steps: [
+                  {
+                    label: 'Note the assumption, and check whether it holds',
+                    detail: 'The stages below assume that the property owned by the vendor is not presently subject to a mortgage. If it is, additional steps have to be taken to have the mortgage discharged so that the vendor may assign the property free from it.',
+                    why: 'A subsisting mortgage is an encumbrance, and the vendor must be able to assign free of it. That is why the discharge, and its registration, appear again at the end of the sequence.',
+                    exam: {
+                      write: 'The property [is / is not] presently subject to a mortgage, so [the additional steps to obtain a discharge before completion arise / the simple sequence applies].',
+                      trap: 'Forgetting that the discharge itself must be registered, along with the assignment and the purchaser\'s own mortgage.',
+                    },
+                    points: [
+                      'A subsisting mortgage must be discharged so the vendor can assign free from it.',
+                      'The discharge is registered at the end, with the assignment and the purchaser\'s mortgage.',
+                    ],
+                  },
+                  {
+                    label: 'Stage 1: the preliminary sale and purchase agreement',
+                    detail: 'The preliminary agreement is signed in the estate agent\'s office, with a licensed estate agent, in compliance with s45 of the Estate Agents Ordinance (Cap. 511). It is customary in Hong Kong for the purchaser to pay a preliminary deposit at this time.',
+                    why: 'The preliminary agreement is where the bargain is actually struck, which is why so much later argument is about whether the formal agreement may depart from it.',
+                    exam: {
+                      write: 'The preliminary agreement was signed on [date] in compliance with s45 of the Estate Agents Ordinance (Cap. 511), the purchaser paying a preliminary deposit of [sum].',
+                      trap: 'Treating the preliminary agreement as a mere formality. Three questions arise on it, and the lecture flags them for later: is it binding, does it need stamping, does it need registration?',
+                    },
+                    points: [
+                      'Is the agreement binding?',
+                      'Does it require stamping? Yes — unless followed within 14 days by a formal sale and purchase agreement.',
+                      'Does it require registration?',
+                    ],
+                  },
+                  {
+                    label: 'Stages 2 to 3: solicitors are retained and the vendor\'s side checks title',
+                    detail: 'The parties retain solicitors, jointly or separately, under rule 5C of the Solicitors Practice Rules (Cap. 159H). The vendor\'s solicitors acquire the title deeds, originals or certified copies, and carry out their own Land Registry search.',
+                    why: 'The vendor\'s solicitors check title first so that any defect can be provided for in the formal agreement, while there is still a document to write it into. After the formal agreement is signed it is too late.',
+                    exam: {
+                      write: 'The vendor\'s solicitors should have acquired the title deeds and searched the Land Registry before the formal agreement, so that any defect could be provided for in that agreement.',
+                      trap: 'Missing the joint-representation point. Rule 5C of the Solicitors Practice Rules (Cap. 159H) governs whether one firm may act for both.',
+                    },
+                    points: [
+                      'If defects are found, provision must be made for them in the formal agreement if at all possible.',
+                      'The vendor\'s solicitors should check whether any consent to sell is needed — for example under the Consent Scheme for the pre-sale of flats in a multi-storey building — and obtain it before the time for completion.',
+                    ],
+                  },
+                  {
+                    label: 'Stages 4 to 7: deeds go over, finance is arranged, the formal agreement is drafted',
+                    detail: 'Title deeds, originals or certified copies, are sent to the purchaser\'s solicitors against an undertaking to return them on demand. The purchaser arranges finance. The vendor\'s solicitors draft the formal agreement and send it with any remaining title deeds.',
+                    why: 'The undertaking to return the deeds matters: without one, the purchaser has a lien on the deeds supplied for the return of his deposit — which is only useful if what was supplied were the originals.',
+                    exam: {
+                      write: 'The title deeds were sent to the purchaser\'s solicitors against their undertaking to return them on demand.',
+                      trap: 'Overlooking what is being negotiated at this stage — the fixtures and fittings to be included, and the completion date.',
+                    },
+                    points: [
+                      'Without an undertaking, the purchaser has a lien on the deeds supplied for the return of the deposit.',
+                      'Negotiation of the formal agreement covers, among other things, the fixtures and fittings included and the completion date.',
+                    ],
+                  },
+                  {
+                    label: 'Stages 8 to 12, in parallel: the purchaser investigates',
+                    detail: 'The purchaser\'s solicitors peruse the title deeds, check the user provisions, make inquiries, and the purchaser or his solicitors visit and inspect the property. The lecture notes that these steps take place in parallel.',
+                    why: 'They run in parallel because each answers a different question and none of them can wait: the deeds show the paper title, the visit shows who is in occupation, and the inspection shows what has been built.',
+                    exam: {
+                      write: 'The purchaser\'s solicitors perused the title deeds, checked the user provisions in the [Government lease / Conditions / deed of mutual covenant / Outline Zoning Plan / occupation permit], and the purchaser inspected the property.',
+                      trap: 'Forgetting the site visit. It is what reveals an occupier with a resulting-trust interest, and unauthorised building works of a structural nature.',
+                    },
+                    points: [
+                      {
+                        text: 'The common defects to look for, which the later lectures detail:',
+                        points: [
+                          'Missing title deeds — originals under s13A of the Conveyancing and Property Ordinance, or certified copies under s13.',
+                          'Defective execution of title deeds, by companies or under powers of attorney.',
+                          'Discrepancies in names, signatures and the like on the title deeds.',
+                          'Encumbrances: mortgages, trusts, rights of way, restrictive covenants, easements.',
+                          'Grounds for rendering title defeasible: arrears of management fees, notices of resumption, demolition, repair, re-entry, charging orders.',
+                          'Unregistrable interests such as resulting and constructive trusts and short-term tenancies.',
+                        ],
+                      },
+                      'Check the user provisions in the Government lease or Conditions of Grant, the deed of mutual covenant, the Outline Zoning Plan and the occupation permit.',
+                      'Visit to ensure no occupant has an interest by way of resulting trust.',
+                      'Inspect, perhaps with a surveyor, for unauthorised building works of a structural nature.',
+                    ],
+                  },
+                  {
+                    label: 'Stages 13 to 14: execution, stamping and registration of the formal agreement',
+                    detail: 'The formal agreement is usually executed in duplicate. The purchaser pays a further tranche of deposit which, with the preliminary deposit, equals 10 per cent of the purchase price. The purchaser executes first and sends it to the vendor, who returns one set on execution. The agreement is then stamped and registered.',
+                    why: 'The purchaser signs first because he is the one paying; the vendor\'s counterpart comes back as confirmation that the bargain is closed.',
+                    exam: {
+                      write: 'The formal agreement was executed in duplicate, the purchaser paying a further deposit bringing the total to 10 per cent of the price, and was then stamped and registered.',
+                      trap: 'Reversing the order of execution. The purchaser executes first and sends to the vendor, not the other way round.',
+                    },
+                    points: [
+                      'Usually executed in duplicate.',
+                      'The deposits together equal 10 per cent of the purchase price.',
+                      'The vendor returns one set to the purchaser on execution.',
+                    ],
+                  },
+                  {
+                    label: 'Stages 15 to 19: the assignment, the undertakings, the money',
+                    detail: 'The assignment is drafted by the purchaser\'s solicitors and approved by the vendor\'s, usually executed in escrow by the purchaser first. The method of completion is agreed, normally by mutual undertakings. A completion statement is sent, the mortgage is finalised, and the purchaser inspects for vacant possession.',
+                    why: 'Completion by undertakings exists because neither side will part with its half of the exchange first. The undertakings are what make the simultaneous exchange work across two offices.',
+                    exam: {
+                      write: 'Completion was to take place by way of mutual undertakings given by the parties\' solicitors, both sides having approved the draft completion undertakings.',
+                      trap: 'Forgetting that the purchaser inspects again, shortly before completion, to ensure vacant possession.',
+                    },
+                    points: [
+                      'The assignment is drafted by the purchaser\'s solicitors and approved by the vendor\'s.',
+                      'It is usually executed in escrow by the purchaser first and sent to the vendor.',
+                      'Both parties must approve the draft completion undertakings.',
+                      'A completion statement is sent by the vendor\'s solicitors to the purchaser\'s.',
+                      'The mortgage is finalised and executed, and the cheque for the loan sum is sent to the purchaser\'s solicitors.',
+                    ],
+                  },
+                  {
+                    label: 'Stages 20 to 23: completion, the deeds, registration and the accounts',
+                    detail: 'On the completion date the balance of the purchase price is sent by cashier order, usually by messenger, against the vendor\'s solicitors\' undertaking to send the executed assignment together with the title deeds within 21 days. The vendor usually provides the keys at this point.',
+                    why: 'The 21 days exist because the assignment has to be stamped before it can be registered and handed over. The undertaking bridges that gap for the purchaser.',
+                    exam: {
+                      write: 'On completion the balance of [sum] was paid by cashier order against the vendor\'s solicitors\' undertaking to send the executed assignment and title deeds within 21 days.',
+                      trap: 'Assuming payment may be by ordinary cheque. It is by cashier order unless a cheque is expressly agreed.',
+                    },
+                    points: [
+                      'Original title deeds relating exclusively to the property are sent in accordance with s13A of the Conveyancing and Property Ordinance, or under the common law (De Monsa) if so expressly provided.',
+                      'The assignment, any discharge of the vendor\'s mortgage, and the purchaser\'s mortgage are registered.',
+                      'The solicitors for the parties send their accounts for payment.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The preliminary agreement requires stamping unless followed within 14 days by a formal agreement — a date worth checking on any fact pattern that gives you both dates.',
+                'Whether one firm may act for both parties is governed by rule 5C of the Solicitors Practice Rules (Cap. 159H), not by general principle.',
+                'Consent to sell, where one is needed, must be obtained before the time for completion — not at it.',
+                'The purchaser\'s own inspection does real work later: it is what decides whether a defect was patent, and whether a requisition could have been raised earlier with due diligence.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the stage the facts have reached.',
+                'Say what should have happened by that stage and what has not.',
+                'Identify which duty is engaged — giving title or showing it.',
+                'State the consequence: a requisition, a refusal to complete, or a claim in negligence against the solicitor.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the preliminary agreement as non-binding. Whether it binds is a live question, and a limiting clause cannot be added later if it does.',
+                'Putting the purchaser\'s investigations after the formal agreement. Stages 8 to 12 run in parallel and before execution.',
+                'Forgetting that the mortgage discharge is an additional sequence, not part of the simple one.',
+                'Describing completion as an exchange of documents. It is an exchange of undertakings.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Stage', 'Source', 'What it establishes'],
+                rows: [
+                  ['Preliminary agreement', 's45, Estate Agents Ordinance (Cap. 511)', 'The agreement with the licensed estate agent must comply with it'],
+                  ['Stamping the preliminary agreement', 'Lecture note', 'Required unless followed within 14 days by a formal sale and purchase agreement'],
+                  ['Joint or separate representation', 'rule 5C, Solicitors Practice Rules (Cap. 159H)', 'Governs whether one firm may act for both parties'],
+                  ['Consent to sell', 'The Consent Scheme', 'Where consent is needed it must be obtained before the time for completion'],
+                  ['Delivery of originals', 's13A, Conveyancing and Property Ordinance (Cap. 219)', 'What the vendor must deliver at completion, unless the common law is expressly adopted'],
+                  ['The common law alternative', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd (2013) 16 HKCFAR 419', 'Applies where the parties expressly so provide'],
+                  ['Proof of title', 's13, Conveyancing and Property Ordinance (Cap. 219)', 'What must be produced by way of showing title'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'twin-duties', label: 'The twin duties of giving and showing title' },
+              { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+              { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+            ],
+          },
+          {
+            id: 'twin-duties',
+            title: 'The twin duties of giving and showing title',
+            summary: 'Two separate and independent duties. Breach of either lets the purchaser rescind, and a good title is no answer to a bad requisition answer.',
+            triggers: {
+              bullets: [
+                'The vendor in fact has a perfect title but has answered the purchaser\'s requisition with a bare assertion.',
+                'The purchaser never raised a requisition at all, and at completion the vendor cannot give good title.',
+                'A requisition was raised out of time and the vendor was entitled to refuse to answer it.',
+                'The purchaser refuses to complete on the ground that the vendor has not produced a document the agreement required.',
+                'The vendor says he has answered every requisition and so must be taken to have given good title.',
+                'The agreement requires the vendor to give title in accordance with s13A and to prove title in accordance with s13.',
+                'The purchaser purports to rescind at completion over a defect he knew about all along.',
+                'The vendor has removed the defect but has produced no evidence that it has gone.',
+                'The dispute is whether the breach is repudiatory or sounds only in damages.',
+              ],
+              routes: [
+                { when: 'The question is the content of the duty to give good title', session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
+                { when: 'The question is what must be produced by way of proof of title', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The complaint is about the quality of the answer to a requisition', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+                { when: 'The question is whether the title is good at all', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Separating the two duties',
+                steps: [
+                  {
+                    label: 'State the twin duties',
+                    detail: 'Unless the sale and purchase agreement provides otherwise, the vendor has the twin duties of showing and giving title.',
+                    why: 'They answer different questions. Showing title is evidential — can the purchaser satisfy himself? Giving title is substantive — is the thing being sold actually free of defects? A vendor can succeed at one and fail at the other.',
+                    exam: {
+                      write: 'Unless the sale and purchase agreement provides otherwise, the vendor is under the twin duties of showing and giving title, which are separate and independent.',
+                      trap: 'Running the two together. Almost every question in this topic is testing whether you keep them apart.',
+                    },
+                    points: [
+                      {
+                        text: 'The duty to SHOW good title has two limbs.',
+                        points: [
+                          'Producing to the purchaser the required documents of title.',
+                          'Answering any requisitions reasonably raised.',
+                        ],
+                      },
+                      {
+                        text: 'The duty to GIVE (or make) good title is to prove the title.',
+                        points: [
+                          'Removing any title defect.',
+                          'Providing any necessary conveyancing evidence to establish that the title is not defective as being either encumbered or defeasible.',
+                        ],
+                      },
+                      'The parties may exclude or modify these duties in the agreement.',
+                    ],
+                  },
+                  {
+                    label: 'Confirm they are separate and distinct',
+                    detail: 'The duty to give good title and the duty to show title, usually in compliance with s13 of the Conveyancing and Property Ordinance, are separate and distinct. The applicable case law on whether a good title has been given or shown was summarised in Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654.',
+                    why: 'Independence is what produces the two counter-intuitive results below. If the duties were one, a good title would answer everything and a waived requisition would end the matter.',
+                    exam: {
+                      write: 'The duties to give and to show good title are separate and distinct: Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654.',
+                      trap: 'Treating compliance with s13 as discharging the duty to give title. Section 13 is about showing.',
+                    },
+                    points: [
+                      'Showing is usually in compliance with s13 of the Conveyancing and Property Ordinance.',
+                      'Giving is usually in compliance with s13A of that Ordinance, or the common law.',
+                    ],
+                  },
+                  {
+                    label: 'Result one: a good title is no answer to a failure to show it',
+                    detail: 'A purchaser is entitled to rescind where the vendor has failed to show good title — for example by failing adequately to answer the purchaser\'s requisitions — even if the vendor actually has a good title: Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396.',
+                    why: 'The purchaser bargained for a title he could be satisfied about, not merely for one that would survive litigation. A vendor who will not explain himself has not delivered that.',
+                    exam: {
+                      write: 'Although the vendor may in fact have a good title, his failure adequately to answer the requisition is a failure to SHOW title, and the purchaser may rescind: Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396.',
+                      trap: 'Letting the vendor argue that the defect turned out to be harmless. That goes to giving title, not showing it.',
+                    },
+                    points: [
+                      'The failure is in the answering, not in the title.',
+                      'It is no excuse that the vendor actually had a good title: Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA.',
+                    ],
+                  },
+                  {
+                    label: 'Result two: no requisition, or a late one, does not save the vendor',
+                    detail: 'A purchaser is entitled to rescind even where he has failed to raise a requisition, or has raised it out of time so that the vendor is entitled to refuse to answer, where the vendor does not establish a good title at or before completion: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                    why: 'Le Pichon JA\'s reasoning is that the contrary rule would reverse the legal burden of giving good title, handing the vendor a windfall for the purchaser\'s inaction. The vendor either can give good title at completion or he cannot; requisitions cannot alter the nature of that obligation.',
+                    exam: {
+                      write: 'The purchaser\'s failure to raise the requisition in time does not constitute acceptance of the vendor\'s title; the vendor either was in a position to give good title at completion or he was not: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                      trap: 'Confusing this with waiver. Failing to raise a requisition is not a waiver, but a purchaser who knows of the defect and its legal significance and acts unequivocally may still waive.',
+                    },
+                    points: [
+                      'There is no obligation on a purchaser to raise any requisition.',
+                      'The contrary rule would impose a positive obligation to raise requisitions timeously and would reverse the legal burden of giving good title: Flywin Co Ltd v Strong & Associates Ltd (2002) 5 HKCFAR, CFA.',
+                      'Requisitions provide the vendor with the opportunity to extricate himself by returning the deposit if the requisitions throw up defects that cannot be cleared in time.',
+                    ],
+                  },
+                  {
+                    label: 'Classify the breach, and state the remedy',
+                    detail: 'Breach of either duty may constitute a repudiatory breach entitling the purchaser to rescind: Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599.',
+                    why: 'Not every defect ends the contract. Whether the breach is repudiatory, or merely a breach of warranty sounding in damages, depends on the significance of the breach — which is why the classification comes last, after the defect has been identified.',
+                    exam: {
+                      write: 'The vendor\'s failure [to deliver the originals required by s13A / to answer the requisition adequately] is a repudiatory breach entitling the purchaser to rescind: Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599.',
+                      trap: 'Asserting rescission without addressing significance. An encumbered title constitutes a repudiatory breach only if the encumbrance is significant.',
+                    },
+                    points: [
+                      'Failure to provide the originals in compliance with s13A of the Conveyancing and Property Ordinance is a repudiatory breach: Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599.',
+                      'Whether a defect makes the breach repudiatory, or a breach of warranty sounding only in damages, depends on the significance of the breach.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The duties can be excluded or modified by the agreement — so read the agreement before stating either of them.',
+                'Section 13 is showing; section 13A is giving. The one-letter difference carries the whole distinction.',
+                'Active Keen is about the answer to a requisition; Profit World is about the absence of one. Do not cite them for each other.',
+                'A requisition the vendor may lawfully refuse to answer still does not cure a failure to give good title at completion.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State the twin duties and their content.',
+                'Identify which duty the facts engage — or both.',
+                'For showing: was the document produced, and was the requisition adequately answered?',
+                'For giving: was the title free of encumbrance and defeasibility at completion?',
+                'Say whether the breach is repudiatory, and state the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Holding that a vendor with a good title cannot be in breach.',
+                'Holding that a purchaser who raised no requisition has accepted the title.',
+                'Citing s13 for the duty to give title.',
+                'Jumping to rescission without asking whether the breach was significant.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Separate and distinct', 'Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654', 'Summarises the case law on whether good title has been given or shown'],
+                  ['Good title is no answer', 'Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396', 'Purchaser may rescind for failure to show title even though the vendor had a good title'],
+                  ['Same', 'Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA', 'It is no excuse that the vendor actually had a good title'],
+                  ['No requisition needed', 'Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA', 'Failure to raise a requisition, or raising it late, does not constitute acceptance of the title'],
+                  ['Burden not reversed', 'Flywin Co Ltd v Strong & Associates Ltd (2002) 5 HKCFAR, CFA', 'The legal burden of giving good title rests on the vendor'],
+                  ['Repudiatory breach', 'Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599', 'Failure to provide originals under s13A is a repudiatory breach; either duty may be breached repudiatorily'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              { session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
+              { session: 'LG4', issue: 'showing-vs-giving', label: 'Showing title: production and requisitions' },
+            ],
+          },
+          {
+            id: 'what-is-good-title',
+            title: 'What constitutes a good title?',
+            summary: 'Not a perfect title. The test is whether there is a real risk the title is encumbered or defeasible, or whether the risk is merely illusory.',
+            triggers: {
+              bullets: [
+                'A purchaser refuses to complete over a possibility of an encumbrance that nobody has ever asserted.',
+                'A title document dating from the 1920s is missing and the Government has no record of it either.',
+                'The vendor says the risk of the alleged encumbrance being asserted is fanciful.',
+                'An unauthorised cockloft has stood in a shop in an older district for decades without any enforcement action.',
+                'The purchaser demands that every conceivable blemish be cleared before he will complete.',
+                'A deed of mutual covenant executed twenty years ago may have been invalidly executed, and nobody has ever complained.',
+                'The court is asked to declare in favour of good title on a vendor and purchaser summons.',
+                'The alleged defect is one of defeasibility — a right of re-entry — rather than an encumbrance.',
+                'Both sides are said to have intended to see the transaction through to completion on the terms of their bargain.',
+              ],
+              routes: [
+                { when: 'The argument is that the defect makes the title liable to be taken away', session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+                { when: 'The defect is a breach of a Government lease covenant', session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does the breach defeat title? The "no real risk" approach' },
+                { when: 'The complaint is that the vendor answered the requisition with a bare assertion', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Applying the good title standard',
+                steps: [
+                  {
+                    label: 'State the standard: a title the purchaser can hold against any challenger',
+                    detail: 'A good title is such as will enable the purchaser to hold the property against any challenger. It need not be a perfect title.',
+                    why: 'Perfection is unattainable in a system of deeds registration where documents go back a century and can be lost. A standard of perfection would make most Hong Kong property unsaleable.',
+                    exam: {
+                      write: 'A good title is one that will enable the purchaser to hold the property against any challenger; it need not be a perfect title free from every possible blemish.',
+                      trap: 'Stating the standard as "free from defect". The degree of imperfection tolerated is the whole question.',
+                    },
+                    points: [
+                      'The title need not be perfect.',
+                      'The degree of imperfection tolerated was explained by Lord Russell in MEPC Ltd v Christian Edwards [1981] AC 205, HL.',
+                    ],
+                  },
+                  {
+                    label: 'Apply MEPC: beyond reasonable doubt, no risk of successful assertion',
+                    detail: 'In MEPC Ltd v Christian Edwards [1981] AC 205, HL, Lord Russell held that if the facts and circumstances are so compelling to the mind of the court that it concludes beyond reasonable doubt that the purchaser will not be at risk of a successful assertion against him of the encumbrance, the court should declare in favour of a good title.',
+                    why: 'Note what the test is about: the risk of a SUCCESSFUL assertion, not the existence of an argument. Somebody may always be able to make a claim; the question is whether it would get anywhere.',
+                    exam: {
+                      write: 'Applying MEPC Ltd v Christian Edwards [1981] AC 205, HL, the facts are so compelling that beyond reasonable doubt the purchaser will not be at risk of a successful assertion against him of [the encumbrance], and the court should declare in favour of a good title.',
+                      trap: 'Confining MEPC to encumbrances. The lecture extends the test to embrace the concept that there is no real risk of the title being held defeasible, not merely encumbered.',
+                    },
+                    points: [
+                      'The test is directed at the risk of a successful assertion.',
+                      'It is extended to cover defeasibility as well as encumbrance.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Kan Wing Yau: an illusory risk may be ignored',
+                    detail: 'Godfrey J said in Kan Wing Yau v Hong Kong Housing Society HCMP 2436/1987, 1/12/1987, that if in a particular case the facts and circumstances are so compelling that, beyond any reasonable doubt, the risk is for all practical purposes illusory, the court can and should be prepared to ignore it and dismiss any objections to title founded upon it.',
+                    why: 'This is the practical formulation the Hong Kong cases actually use. It puts the emphasis where a conveyancer needs it — on what could happen in practice, not on what is theoretically arguable.',
+                    exam: {
+                      write: 'The risk is, for all practical purposes, illusory, and the court can and should be prepared to ignore it and dismiss the objection to title founded upon it: Kan Wing Yau v Hong Kong Housing Society HCMP 2436/1987, 1/12/1987.',
+                      trap: 'Asserting that the risk is illusory without setting out the facts that make it so. Polyson shows a bald assertion failing for exactly this reason.',
+                    },
+                    points: [
+                      'Set out the facts and circumstances that make the risk illusory; do not simply assert it.',
+                      'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643 is the worked example: two letters from the Director of Public Works dated 1923 to 1930 were missing and the Government had no record of them; it was unimaginable that the Government would assert further terms, and the risk of successful assertion of unknown encumbrances and obligations was nil.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Mexon: the willing vendor and willing purchaser',
+                    detail: 'In Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA, Litton PJ held that title defects must be approached from the standpoint of a willing vendor and a willing purchaser, both possessed of reasonably robust common sense, both intending to see the transaction through to completion in terms of their own bargain.',
+                    why: 'The standpoint is a device for keeping the analysis commercial. It rules out both the purchaser looking for an excuse to escape a bad bargain and the vendor hoping the purchaser will not look closely.',
+                    exam: {
+                      write: 'The question is to be approached from the standpoint of a willing vendor and a willing purchaser, both possessed of reasonably robust common sense, both intending to see the transaction through to completion in terms of their own bargain: Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA, per Litton PJ.',
+                      trap: 'Using Mexon only on good title. It does the same work on the time within which requisitions must be raised, and on whether a purchaser who suspects a defect should raise one.',
+                    },
+                    points: [
+                      'The standard is robust common sense, not maximum caution.',
+                      'Mexon is also used on the reasonableness of the time for raising requisitions: Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795.',
+                    ],
+                  },
+                  {
+                    label: 'Put the question in the form the lecture gives it',
+                    why: 'Reducing the topic to one question is what makes it usable under exam conditions: everything above feeds into a single sentence that can be applied to any alleged defect.',
+                    exam: {
+                      write: 'The question is whether there is a real risk that the vendor\'s title is defective by reason of being encumbered or defeasible, or whether the risk is merely illusory.',
+                      trap: 'Answering the question without naming which kind of defect is alleged. Encumbered and defeasible are different, and the consequences differ.',
+                    },
+                    points: [
+                      'Is there a real risk that the title is encumbered?',
+                      'Is there a real risk that the title is defeasible?',
+                      'Or is the risk merely illusory?',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'MEPC is a House of Lords decision on encumbrances; the extension to defeasibility is made in the Hong Kong materials, so present it as such.',
+                'Kingdom Miles shows the standard applied to a document nearly a century old — the age of the missing document and the Government\'s own lack of a record were both material.',
+                'The willing-purchaser standpoint cuts both ways: it also means a purchaser who suspects a defect and stays silent is not behaving as a willing purchaser.',
+                'Whether a defect goes to the root of the vendor\'s title, for late requisitions, is a related but distinct question — see the separate issue type.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the alleged defect precisely.',
+                'Classify it as an encumbrance or a ground of defeasibility.',
+                'State the MEPC standard and the Kan Wing Yau formulation.',
+                'Set out the facts and circumstances bearing on the risk of successful assertion.',
+                'Apply the willing vendor and willing purchaser standpoint.',
+                'Conclude whether the risk is real or illusory.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Requiring a perfect title.',
+                'Asserting that a risk is illusory without the supporting facts.',
+                'Applying MEPC to encumbrances only, and ignoring defeasibility.',
+                'Treating the standard as a subjective one for the particular purchaser rather than the robust-common-sense standpoint.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'In my opinion, if the facts and circumstances of a case are so compelling to the mind of the court that the court concludes beyond reasonable doubt that the purchaser will not be at risk of a successful assertion against him of the incumbrance, the court should declare in favour of a good title.', cite: 'MEPC Ltd v Christian Edwards [1981] AC 205, HL, per Lord Russell, as reproduced in the LG3 notes' },
+                { text: 'A good title does not mean a perfect title, free from every possible blemish. Whenever a question like this arises, it must be approached from the standpoint of a willing purchaser and a willing vendor, both possessed of reasonably robust common sense, both intending to see the transaction through to completion in terms of their own bargain.', cite: 'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935 at 942, per Litton PJ, as reproduced in the LG3 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The standard', 'MEPC Ltd v Christian Edwards [1981] AC 205, HL', 'No risk beyond reasonable doubt of a successful assertion of the encumbrance; extended in Hong Kong to defeasibility'],
+                  ['Illusory risk', 'Kan Wing Yau v Hong Kong Housing Society HCMP 2436/1987, 1/12/1987', 'A risk that is for all practical purposes illusory may be ignored, per Godfrey J'],
+                  ['The standpoint', 'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA', 'Willing vendor and willing purchaser with robust common sense, per Litton PJ'],
+                  ['Applied to an ancient document', 'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643', 'Letters of 1923-1930 missing and unrecorded by Government; risk of successful assertion nil'],
+                  ['Bald assertion insufficient', 'Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183, CA', 'All the surrounding circumstances must be taken into account; the key points must at least be referred to in the correspondence'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG1', issue: 'good-title-no-real-risk', label: 'Does the breach defeat title? The "no real risk" approach' },
+            ],
+          },
+          {
+            id: 'duty-to-give-title',
+            title: 'The duty to give good title',
+            summary: 'No rule of law compels it — the agreement does. And where it does, ask whether the legal estate or only the equitable interest must pass.',
+            triggers: {
+              bullets: [
+                'The agreement adopts condition 9 of Part A of the Second Schedule to the Conveyancing and Property Ordinance.',
+                'The sale and purchase agreement says nothing at all about title.',
+                'The vendor argues that he never promised good title, only such title as he happens to have.',
+                'The vendor can assign only an equitable interest because no certificate of compliance has yet issued.',
+                'An uncompleted unit in a development is being sold under the Consent Scheme after consent to assign but before the certificate of compliance.',
+                'The purchaser insists on being assigned the legal estate and the vendor says the equitable interest is enough.',
+                'The agreement is an open contract with no express provision about the vendor\'s obligations.',
+                'A pre-sale under the Consent Scheme is in issue and the developer has not yet had the legal estate vested in it.',
+                'The parties dispute what was in their contemplation about the legal estate when the Government gave consent to assign.',
+              ],
+              routes: [
+                { when: 'The vendor relies on a clause cutting the duty down', session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+                { when: 'The question is what standard a good title has to meet', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+                { when: 'The question is what the vendor must physically hand over', session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+                { when: 'The missing document is the certificate of compliance itself', session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Finding and sizing the duty to give title',
+                steps: [
+                  {
+                    label: 'Start from the proposition that the duty is contractual, not legal',
+                    detail: 'There is no rule of law that requires a vendor to give good title. The extent of the obligation depends upon the terms of the sale and purchase agreement.',
+                    why: 'Everything else in this issue type follows from that. If the duty comes from the contract, then the contract can enlarge it, cut it down, or be silent and let a term be implied — and the first job is always to read the document.',
+                    exam: {
+                      write: 'There is no rule of law requiring a vendor to give good title; the extent of the obligation depends on the terms of the sale and purchase agreement.',
+                      trap: 'Asserting the duty as a matter of general law and never looking at the agreement.',
+                    },
+                    points: [
+                      'Read the agreement before stating the duty.',
+                      'The duty may be express, implied, excluded or limited.',
+                    ],
+                  },
+                  {
+                    label: 'Look for an express clause requiring good title',
+                    detail: 'It is very common for the agreement to contain an express clause requiring the vendor to give good title, and such a term may perhaps be incorporated by adopting condition 9 of Part A of the Second Schedule to the Conveyancing and Property Ordinance, headed "GOOD TITLE": "The vendor shall give title to the property in accordance with section 13A of the Conveyancing and Property Ordinance."',
+                    why: 'Condition 9 does two things at once: it imposes the duty and it chooses the statutory standard over the common law one. That second choice matters, because after De Monsa the common law duty may be the lighter of the two.',
+                    exam: {
+                      write: 'By clause [x], adopting condition 9 of Part A of the Second Schedule to the Conveyancing and Property Ordinance, the vendor is to give title to the property in accordance with s13A of that Ordinance.',
+                      trap: 'Missing that the express clause fixes WHICH duty applies, not merely THAT one applies. The parties may instead contract for the common law duty.',
+                    },
+                    points: [
+                      'Condition 9 of Part A of the Second Schedule points the duty at s13A of the Conveyancing and Property Ordinance.',
+                      'The parties may instead expressly adopt the common law duty.',
+                    ],
+                  },
+                  {
+                    label: 'If the agreement is silent, imply the term',
+                    detail: 'Where the agreement is silent as to title, as in an open contract, there will be an implied term that the vendor must give good title: Timmins v Moreland Street Property Co Ltd [1958] 1 Ch 110, confirmed in De Monsa Investments Ltd v Whole Win Management Fund Ltd (2013) 16 HKCFAR 419.',
+                    why: 'The implication reflects what a purchaser is obviously buying. Nobody pays a market price for whatever title the vendor happens to have.',
+                    exam: {
+                      write: 'The agreement being silent as to title, there is an implied term that the vendor must give good title: Timmins v Moreland Street Property Co Ltd [1958] 1 Ch 110, confirmed in De Monsa Investments Ltd v Whole Win Management Fund Ltd (2013) 16 HKCFAR 419.',
+                      trap: 'Treating silence as the absence of a duty. Silence produces the implied duty, not no duty.',
+                    },
+                    points: [
+                      'Silence produces an implied term to give good title.',
+                      'De Monsa confirmed the position in Hong Kong.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the legal estate, or only the equitable interest, must pass',
+                    detail: 'Whether an agreement to give good title means an agreement to pass the legal estate as distinct from merely the equitable interest depends upon the intention of the parties as evidenced by the terms of the agreement — an objective test — taking into account the context in which the transaction is to have effect.',
+                    why: 'The agreement is invariably silent on this, so the intention has to be inferred from extrinsic circumstances. The default inference is the legal estate; the exception is where the context shows the parties knew it could not yet be vested.',
+                    exam: {
+                      write: 'Normally a vendor who agrees to give good title is construed as having agreed to assign the legal estate: Chen Paul v Lord Energy [1999] 1 HKC 1, [1999] 1 HKLRD 205, CFA.',
+                      trap: 'Noting without qualification that Chen Paul decides the point. The Court of Final Appeal so held albeit on a concession by counsel.',
+                    },
+                    points: [
+                      'The test is objective, on the terms of the agreement in context.',
+                      'The agreement will invariably be silent, so the intention is inferred from extrinsic circumstances.',
+                      'Normally the vendor is construed as having agreed to pass the legal estate.',
+                      'Chen Paul v Lord Energy [1999] 1 HKC 1, [1999] 1 HKLRD 205, CFA, so held, albeit on a concession by counsel; the same conclusion was reached by Recorder Edward Chan SC in Tin Shui Wai Development Ltd v Polykin Ltd HCA 561/2004, 9/5/2006.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether the context displaces the legal-estate inference',
+                    detail: 'In Tin Shui Wai Development Ltd v Polykin Ltd HCA 561/2004, 9/5/2006, it was held that, where an uncompleted unit in a development is sold under the Consent Scheme following consent to assign but before the certificate of compliance has been issued, it would be in the contemplation of the parties that, when Government gave its consent to assign, the legal estate might not yet be vested in the developer.',
+                    why: 'The inference is about what the parties must have meant, and parties who know a certificate of compliance has not issued cannot have meant the legal estate. The Consent Scheme timing is what supplies that knowledge.',
+                    exam: {
+                      write: 'The sale being of an uncompleted unit under the Consent Scheme following consent to assign but before the certificate of compliance, it was in the parties\' contemplation that the legal estate might not yet be vested in the developer, which therefore gave good title by assigning the equitable interest.',
+                      trap: 'Confining this to sales by a developer of an uncompleted unit. That is where the two decisions arose, so do not extend it further than the facts support.',
+                    },
+                    points: [
+                      'The developer would give good title even where it was only in a position to assign the equitable interest.',
+                      'The same conclusion was reached by the Court of Appeal on a pre-sale under the Consent Scheme in Pang Moon Kwan v Concord Property Development Ltd CACV 55/2006, 30/11/2006.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Condition 9 of Part A of the Second Schedule is the standard route to an express good-title clause, and it selects s13A rather than the common law.',
+                'Chen Paul was decided on a concession by counsel on this point — say so rather than presenting it as full argument.',
+                'Where the vendor holds only an equitable interest because positive conditions have not been complied with, there may be no intermediate root document at all, which has consequences for showing title.',
+                'A vendor who knows his title is defective should exclude or limit the duty rather than rely on argument later.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Read the agreement for an express good-title clause, and identify which standard it selects.',
+                'If silent, imply the duty under Timmins and De Monsa.',
+                'Decide whether the legal estate or the equitable interest must pass, objectively and in context.',
+                'Check whether a Consent Scheme timing point displaces the ordinary inference.',
+                'Then apply the good title standard to the alleged defect.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Stating the duty to give good title as a rule of law.',
+                'Ignoring the choice condition 9 makes between s13A and the common law.',
+                'Assuming the equitable interest always suffices, or never does.',
+                'Forgetting that a vendor with only an equitable interest may have no intermediate root to produce.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Source', 'What it establishes'],
+                rows: [
+                  ['No rule of law', 'Lecture note', 'The extent of the duty depends on the terms of the sale and purchase agreement'],
+                  ['Express clause', 'Condition 9, Part A, Second Schedule, Conveyancing and Property Ordinance (Cap. 219)', '"The vendor shall give title to the property in accordance with section 13A"'],
+                  ['Implied term', 'Timmins v Moreland Street Property Co Ltd [1958] 1 Ch 110; De Monsa Investments Ltd v Whole Win Management Fund Ltd (2013) 16 HKCFAR 419', 'Where the agreement is silent, good title is an implied term'],
+                  ['Legal estate normally', 'Chen Paul v Lord Energy [1999] 1 HKC 1, [1999] 1 HKLRD 205, CFA', 'A vendor who agrees to give good title has an obligation to assign the legal estate (on a concession by counsel)'],
+                  ['Same', 'Tin Shui Wai Development Ltd v Polykin Ltd HCA 561/2004, 9/5/2006', 'Recorder Edward Chan SC reached the same conclusion'],
+                  ['Context may displace it', 'Tin Shui Wai Development Ltd v Polykin Ltd', 'Consent Scheme sale of an uncompleted unit before the certificate of compliance; equitable interest sufficed'],
+                  ['Same on a pre-sale', 'Pang Moon Kwan v Concord Property Development Ltd CACV 55/2006, 30/11/2006', 'Court of Appeal, pre-sale under the Consent Scheme'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+              { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+              { session: 'LG1', issue: 'certificate-of-compliance', label: 'Proving compliance and the 1 January 1970 divide' },
+            ],
+          },
+          {
+            id: 'exclusion-clauses',
+            title: 'Excluding or limiting the duty to give title',
+            summary: 'Contra proferentem, and a clause that would let the vendor mislead the purchaser will not be construed to do it.',
+            triggers: {
+              bullets: [
+                'The agreement says the purchaser will accept the title of the vendor and agrees to raise no requisitions thereon.',
+                'The agreement says the vendor agrees to sell only such title as he holds.',
+                'The purchaser is deemed to purchase with full knowledge of all defects and to assume that a named power of attorney was valid and unrevoked.',
+                'The clause excludes defects in the condition of the property and the defect complained of is one of title.',
+                'The vendor\'s solicitors knew of the defect and the purchaser did not.',
+                'The purchaser was acting for a professional speculator and bought several houses in the same development.',
+                'The vendor gave no warranty as to unauthorised structures and the purchaser now complains of illegal structures.',
+                'An occupation permit restricted the premises to office use and they were plainly being run as a karaoke bar.',
+                'The formal agreement contains a limiting clause that the binding preliminary agreement did not.',
+                'The agreement contains an "as is" clause and the complaint is about unauthorised building works.',
+              ],
+              routes: [
+                { when: 'The question is whether the purchaser accepted the defect after the contract', session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+                { when: 'The question is whether there is a duty to give good title at all', session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
+                { when: 'The argument is that the defect was visible on inspection', session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing an exclusion or limiting clause',
+                steps: [
+                  {
+                    label: 'Identify the clause and read it contra proferentem',
+                    detail: 'It is a matter of construction whether a particular exclusion or limiting clause has been drafted with sufficient width and clarity to limit the title that a vendor must show and give. Exclusion clauses are construed contra proferentem, against the party seeking to rely upon them.',
+                    why: 'The vendor wrote the clause and takes the benefit of it, so any looseness in the drafting is his problem. That is also why a clause about the condition of the property will not stretch to cover title.',
+                    exam: {
+                      write: 'Clause [x] falls to be construed contra proferentem against the vendor, who seeks to rely upon it.',
+                      trap: 'Letting a condition clause do the work of a title clause. An exclusion clause which embraces defects in the condition of the property will not be construed as extending to defects in the title, and vice versa.',
+                    },
+                    points: [
+                      'The words must be of sufficient ambit and precision to limit the title the vendor is contractually bound to give.',
+                      'A clause about the condition of the property does not extend to title, and vice versa.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the clause would allow the purchaser to be misled',
+                    detail: 'The courts may decide that the limiting clause does not, as a matter of construction, extend to protect the vendor, notwithstanding the ambit of the words used, on the ground that the purchaser has been misled: Jumbo King Ltd v Faithful Properties Ltd [1999] 3 HKLRD 757, [1999] 4 HKC 707, CFA.',
+                    why: 'Lord Hoffmann put it as construction rather than as a rule of public policy: no purchaser would sign a contract bare-faced enough to stipulate that the vendor need not disclose serious defects of which he had actual knowledge, so the clause is not read that way.',
+                    exam: {
+                      write: 'Following Jumbo King, the only rule of construction is that the courts will avoid construing a contract so as to enable a purchaser to be misled; the question is whether the purchaser would have been aware of the risk he was being asked to take.',
+                      trap: 'Presenting this as a rule invalidating the clause. It is a rule of construction — the clause is read as not covering the case, not struck down.',
+                    },
+                    points: [
+                      'The vendor must not mislead the purchaser in any way; a sufficient indication of the risk must be given before the contract is made.',
+                      'It is inconceivable that a term will be construed as enabling a vendor to impose upon a purchaser a serious defect in title of which he actually knew.',
+                      'The position is different if the vendor did not actually know of the defect but had the means of knowledge, or if the matter was technically a defect but something a purchaser might reasonably accept.',
+                      'If the vendor relies on the contract to shift the risk of a defect to the purchaser, the language must clearly do so.',
+                    ],
+                  },
+                  {
+                    label: 'Work out what each party knew',
+                    detail: 'Knowledge may be actual, constructive (Becker v Partridge [1966] 2 QB 155) or imputed — knowledge held by one\'s agent or servant. The sophistication of the parties in conveyancing matters may be relevant to whether a party has constructive knowledge.',
+                    why: 'The inquiry is comparative. What matters is not that the vendor knew, but that he knew and the purchaser did not — because that is what makes the clause a means of misleading.',
+                    exam: {
+                      write: 'The vendor had [actual / constructive / imputed] knowledge of [the defect] which the purchaser did not share, so the limiting clause is not, as a matter of construction, effective against the purchaser.',
+                      trap: 'Ignoring the purchaser\'s own sophistication. An experienced dealer in real estate is likely to have constructive knowledge of unauthorised building works where an inexperienced buyer is not.',
+                    },
+                    points: [
+                      'Constructive knowledge: Becker v Partridge [1966] 2 QB 155.',
+                      'Imputed knowledge: Rignall Developments Ltd v Halil [1987] 3 All ER 170 — the vendor\'s solicitors knew of a defect unknown to the purchaser, and the purchaser was not bound by the limiting clause.',
+                      'Ip Kam Wah v Fair City Group Ltd [2005] 4 HKLRD 168: the purchaser acted for a professional speculator; the limiting clause was clear and the purchaser an experienced dealer in real estate, so it was effective — though it would be good practice for the vendor to list all possible illegal structures.',
+                      'Kamos Ltd v Chan Chun Chung Howard HCA 9184/2000, 30/12/2004: "purchaser accepts such title as vendor has" was effective, the parties being capable adults who should look after their own interests, per Reyes J.',
+                    ],
+                  },
+                  {
+                    label: 'Note that there is no free-standing duty of disclosure',
+                    detail: 'In Join Union Investment Ltd v China Tree Investment Ltd [2016] 2 HKLRD 901, Anderson Chow J observed that the issue of the vendor\'s knowledge of a defect only became relevant when the vendor sought to rely on a contractual provision limiting the title to be proved or given.',
+                    why: 'This is the tidy statement of the whole topic: knowledge is not a duty, it is a filter on the clause. Without the clause, the vendor\'s knowledge is beside the point, because he must give good title regardless.',
+                    exam: {
+                      write: 'There is no implied term that a vendor who agrees to give good title must make full and frank disclosure of all latent defects; the vendor\'s knowledge matters only where he seeks to rely on a limiting provision: Join Union Investment Ltd v China Tree Investment Ltd [2016] 2 HKLRD 901.',
+                      trap: 'Allowing the vendor to plead his own ignorance. Where a vendor agrees to give good title, it is no defence that he did not know of any defects when the contract was made.',
+                    },
+                    points: [
+                      'No implied term of full and frank disclosure of latent defects where the vendor agrees to give good title.',
+                      'It is no defence that the vendor did not know of the defects at the time of contracting.',
+                      'Where the vendor relies on an exclusion or limiting provision, his knowledge — actual and perhaps constructive — may affect whether he can rely on it.',
+                      'The proper inquiry is whether, on the true construction of the limitation provision, it was intended to apply to the relevant defect notwithstanding the vendor\'s knowledge of it: Jumbo King Ltd v Faithful Properties Ltd (1999) 2 HKCFAR 279 at 299.',
+                    ],
+                  },
+                  {
+                    label: 'Check the two clauses that do not work',
+                    detail: 'A limiting clause may not be added to the formal agreement where there is already a binding preliminary agreement in which the vendor has expressly or impliedly agreed to give good title, unless the purchaser agrees. And an "as is" clause is not a limiting clause at all.',
+                    why: 'Both are the same point in different clothes: the vendor cannot improve his position unilaterally after the bargain is struck, and a clause about the state of the property was never about title in the first place.',
+                    exam: {
+                      write: 'The binding preliminary agreement having contained an [express / implied] obligation to give good title, the limiting clause could not be added to the formal agreement without the purchaser\'s agreement: DH Shuttlecocks Ltd v Keung Shiu Tang [1994] 1 HKC 286, CA.',
+                      trap: 'Reading an "as is" clause as an exclusion of title obligations. It simply means the vendor is not required to improve the property before sale.',
+                    },
+                    points: [
+                      'Chu Wing Ning v Ngan Hing Cheung HCA 9409/1991, 6/11/1992; DH Shuttlecocks Ltd v Keung Shiu Tang [1994] 1 HKC 286, CA.',
+                      '"As is" means only that the vendor need not improve the property prior to sale: Leung Wing Fai v Onlink Investment Ltd [2000] 1 HKLRD 725.',
+                      'It has no effect as an exclusion clause in respect of unauthorised building works: All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630.',
+                    ],
+                  },
+                  {
+                    label: 'Advise the vendor on what to do about it',
+                    why: 'The topic is at bottom a drafting problem, and the drafting answer is short: identify the defect in the contract or before it. That is what turns a clause the court will read down into one it will enforce.',
+                    exam: {
+                      write: 'To render the exclusion clause effective, the vendor should bring [the defect] to the purchaser\'s attention either in the sale and purchase agreement or before the agreement is concluded.',
+                      trap: 'Advising a general exclusion where the vendor knows of a specific defect. Specificity is what defeats the misleading argument.',
+                    },
+                    points: [
+                      'Where the vendor has actual knowledge of a defect, he should bring it to the purchaser\'s attention in or before the agreement.',
+                      'It is good practice, though not a rule of law, to list all possible illegal structures where that is the defect relied on: Ip Kam Wah v Fair City Group Ltd [2005] 4 HKLRD 168.',
+                      'Consider whether removing the unauthorised structure before completion would remedy the defect instead.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Jumbo King appears in this course in two quite different roles — construing a deed of mutual covenant in LG2, and construing a limiting clause here. The reports differ too: [1999] 3 HKLRD 757, [1999] 4 HKC 707 for the limiting-clause point.',
+                'Billion Profit Enterprises Ltd v Global Fly Development Ltd HCA 712/1999, 4/8/1999: the limiting clause worked even though the vendor had not told the purchaser of the change of use, because use as a karaoke bar was patent.',
+                'Wah Ying Properties Ltd v Sound Cash [1994] 1 HKC 786 is the other way: the clause was ineffective where a remedial order had been issued by the Building Authority, known to the vendor and not the purchaser.',
+                'Exclusion clauses in respect of misrepresentation or misstatement are a separate topic, dealt with later in the course.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Set out the clause verbatim before construing it. The argument is always about its exact words.',
+                'Deal with the two limbs in order: is the clause wide enough, and would it mislead? A clause can fail on either.',
+                'When advising a vendor, draft the disclosure into the agreement rather than relying on a general exclusion.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Set out the clause and identify what it purports to exclude.',
+                'Construe it contra proferentem and test its ambit against the defect alleged.',
+                'Establish the vendor\'s knowledge — actual, constructive or imputed.',
+                'Establish the purchaser\'s knowledge and sophistication.',
+                'Ask whether the purchaser would have been aware of the risk he was being asked to take.',
+                'Check for a binding preliminary agreement and for an "as is" clause.',
+                'Conclude on whether the clause protects the vendor.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the misleading point as a rule of law rather than of construction.',
+                'Applying a condition-of-property clause to a title defect.',
+                'Allowing a limiting clause to be introduced for the first time in the formal agreement.',
+                'Treating an "as is" clause as an exclusion of title obligations.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'it is inconceivable that a term will be construed as enabling a vendor to impose upon a purchaser a serious defect in title of which he actually knew. No purchaser would sign a contract which was bare-faced enough to stipulate expressly that the vendor need not disclose serious defects in title of which he had actual knowledge and, even if there was no objection on grounds of public policy, nothing less than the most express language would do.', cite: 'Jumbo King Ltd v Faithful Properties Ltd, as reproduced in the LG3 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Construction against the vendor', 'Contra proferentem', 'The words must be of sufficient ambit and precision; a condition clause does not cover title'],
+                  ['Misleading the purchaser', 'Jumbo King Ltd v Faithful Properties Ltd [1999] 3 HKLRD 757, [1999] 4 HKC 707, CFA', 'The clause is construed so as not to let the purchaser be misled; the test is whether he would have been aware of the risk'],
+                  ['Constructive knowledge', 'Becker v Partridge [1966] 2 QB 155', 'Knowledge includes constructive knowledge'],
+                  ['Imputed knowledge', 'Rignall Developments Ltd v Halil [1987] 3 All ER 170', 'The vendor\'s solicitor\'s knowledge imputed to the client; purchaser not bound'],
+                  ['Sophisticated purchaser', 'Ip Kam Wah v Fair City Group Ltd [2005] 4 HKLRD 168', 'Clear clause plus an experienced dealer in real estate; clause effective'],
+                  ['Capable adults', 'Kamos Ltd v Chan Chun Chung Howard HCA 9184/2000, 30/12/2004', '"Purchaser accepts such title as vendor has" effective, per Reyes J'],
+                  ['Vendor knew, purchaser did not', 'Wah Ying Properties Ltd v Sound Cash [1994] 1 HKC 786', 'Clause ineffective where a Building Authority remedial order was known only to the vendor'],
+                  ['Patent change of use', 'Billion Profit Enterprises Ltd v Global Fly Development Ltd HCA 712/1999, 4/8/1999', 'Clause effective despite non-disclosure, the karaoke use being patent'],
+                  ['No duty of disclosure', 'Join Union Investment Ltd v China Tree Investment Ltd [2016] 2 HKLRD 901', 'No implied term of full and frank disclosure; knowledge matters only when relying on a limiting provision'],
+                  ['Not in the formal agreement alone', 'Chu Wing Ning v Ngan Hing Cheung HCA 9409/1991, 6/11/1992; DH Shuttlecocks Ltd v Keung Shiu Tang [1994] 1 HKC 286, CA', 'A limiting clause cannot be added where a binding preliminary agreement already imposed the duty'],
+                  ['"As is"', 'Leung Wing Fai v Onlink Investment Ltd [2000] 1 HKLRD 725; All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630', 'Not a limiting clause; means only that the vendor need not improve the property; no effect on unauthorised building works'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+              { session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+              { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+            ],
+          },
+          {
+            id: 'purchaser-waiver',
+            title: 'Waiver by the purchaser of his right to object',
+            summary: 'Three requirements: knowledge of the defect, knowledge of its legal significance, and an unequivocal act. Not raising a requisition is none of them.',
+            triggers: {
+              bullets: [
+                'The purchaser, knowing of the defect, sent the draft assignment to the vendor for execution.',
+                'Clear words in correspondence between the parties show the purchaser accepting the title notwithstanding the defect.',
+                'The purchaser had been informed of the alterations and the contractual time limit for raising requisitions had passed.',
+                'The purchaser wrote letters that did not raise the cockloft point but reserved the right to raise further requisitions.',
+                'The purchaser inspected the flat before entering into the agreement and only later raised a requisition about unauthorised partitioning.',
+                'An experienced buyer signed the provisional agreement knowing the cockloft was an irremovable unauthorised structure.',
+                'The purchaser never raised any requisition and the vendor says he has thereby accepted the title.',
+                'The purchaser knew the facts but says he did not understand their legal consequences.',
+                'The vendor argues that the purchaser elected to affirm the contract with full knowledge of his right to rescind.',
+              ],
+              routes: [
+                { when: 'The argument is about a clause in the contract rather than conduct after it', session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+                { when: 'The argument is that the vendor waived his objection to a late requisition', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+                { when: 'The question is whether there is a defect at all', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing a waiver by the purchaser',
+                steps: [
+                  {
+                    label: 'State the three requirements',
+                    detail: 'To constitute waiver: the purchaser must have knowledge of the defect in title; he must have knowledge of the legal significance of that defect; and he must unequivocally, by words or conduct, waive his right to rescind based upon it.',
+                    why: 'The middle requirement is what makes waiver hard to establish and is the one candidates drop. A purchaser can see a cockloft without knowing that it is a blot on title he could rescind for.',
+                    exam: {
+                      write: 'Waiver requires (i) knowledge of the defect in title, (ii) knowledge of its legal significance, and (iii) an unequivocal waiver, by words or conduct, of the right to rescind based upon it.',
+                      trap: 'Establishing knowledge of the facts and stopping there. Regent Summit requires the purchaser to have understood the legal consequences of those facts.',
+                    },
+                    points: [
+                      'The act must show that the purchaser has unequivocally accepted the vendor\'s title notwithstanding the defect.',
+                      'This is a question of fact in each case: Chan Kin Leung v Lok Kar Cheong HCMP 3993/1997, 14/5/1998.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Regent Summit on the knowledge requirement',
+                    detail: 'In Regent Summit (Hong Kong) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718 it was held that there was no waiver by the purchaser until he not only knew of the alleged facts which might give rise to a requisition but understood the legal consequences of those facts. The holding was not disturbed on appeal, CACV 138/1998.',
+                    why: 'Without the second limb, a purchaser would lose his rights simply by being told something he did not understand. The requirement keeps waiver an election rather than an accident.',
+                    exam: {
+                      write: 'The purchaser knew of [the facts], but there is no evidence that he understood their legal consequences, so there is no waiver: Regent Summit (Hong Kong) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718.',
+                      trap: 'Missing that the knowledge in question presumably includes constructive and imputed knowledge — the lecture flags both limbs as open on that point.',
+                    },
+                    points: [
+                      'In Regent Summit the purchaser had been informed of the alterations and the contractual time limit for raising requisitions had passed, yet the evidence of understanding of the legal implications was insufficient.',
+                      'Poon Mee Kuen v Luk Yuk Chun HCMP 1431/2004, 18/1/2005: the purchaser had inspected a partitioned flat before contracting; before his knowledge of the facts could prejudice his position he must also be aware of the legal consequences, per Arjan Sakhrani J.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the election analysis from The Kanchenjunga',
+                    detail: 'In Large Land Investments Ltd v Cheung Siu Kwai Pansy [2003] 1 HKLRD 313, Yuen JA approved the tests for waiver laid down by the House of Lords in Motor Oil Hellas (Corinth) Refineries SA v Shipping Corpn of India ("The Kanchenjunga") [1990] 1 Lloyd\'s Rep 391, HL, at 397, per Lord Goff.',
+                    why: 'Framing waiver as election explains why communication matters: a party who abandons a right has to tell the other side, in clear and unequivocal terms, or the other side cannot order its affairs.',
+                    exam: {
+                      write: 'Applying The Kanchenjunga as approved in Large Land Investments Ltd v Cheung Siu Kwai Pansy [2003] 1 HKLRD 313, the purchaser [has / has not] communicated an election to abandon his right in clear and unequivocal terms.',
+                      trap: 'Forgetting that a reservation defeats the unequivocal element. In Large Land the letters did not raise the cockloft point but reserved the right to raise further requisitions, and that was not waiver.',
+                    },
+                    points: [
+                      'A waiver by election occurs when a state of affairs comes into existence in which one party becomes entitled, under the contract or the general law, to exercise a right and must decide whether to do so.',
+                      'It is a prerequisite that the party electing is first aware of the facts giving rise to the right.',
+                      'It may be that he must also be aware of his legal right of affirming or rescinding where there has been repudiation by the other party.',
+                      'Since a party who elects not to exercise a right is abandoning it, he will only be held to have done so if he communicated his election to the other party in clear and unequivocal terms.',
+                    ],
+                  },
+                  {
+                    label: 'Look for conduct that is unequivocal',
+                    detail: 'Waiver may occur, for example, where the purchaser in full knowledge of a defect sends the draft assignment to the vendor for execution: Chan Kam Hung v Light Ltd DCCJ 16919/1992, 1/6/1993.',
+                    why: 'Sending the assignment for execution is a step that only makes sense if you intend to complete. That is what makes it unequivocal in a way that silence never is.',
+                    exam: {
+                      write: 'By sending the draft assignment to the vendor for execution with full knowledge of [the defect], the purchaser unequivocally accepted the vendor\'s title.',
+                      trap: 'Inferring waiver from correspondence that merely notes an answer. "Noted" is an acknowledgment, not an abandonment.',
+                    },
+                    points: [
+                      'Clear words in correspondence may suffice: Chan Kin Leung v Lok Kar Cheong HCMP 3993/1997, 14/5/1998.',
+                      'Sending the draft assignment for execution with knowledge of the defect: Chan Kam Hung v Light Ltd DCCJ 16919/1992, 1/6/1993.',
+                      'Billion Best (Hong Kong) Ltd v Amity Investment Co Ltd HCMP 2263/1998 is also cited on waiver.',
+                    ],
+                  },
+                  {
+                    label: 'Note how easily the requirements can be met in practice',
+                    detail: 'The lecture warns that these requirements can be easily satisfied in the conveyancing context. In Cheer Sky Ltd v Chan Yuet Sheung [2019] HKCFI 606, DHCJ A. To held that a waiver was inferred from the purchaser\'s conduct of entering into a provisional agreement with knowledge of an irrevocable defect caused by unauthorised building works.',
+                    why: 'Cheer Sky is the counterweight to Regent Summit. Where the purchaser is experienced and the defect is plainly irremovable, the court will infer both limbs of knowledge from the decision to contract at all.',
+                    exam: {
+                      write: 'The purchaser, with his experience, must have known that the [cockloft] was unauthorised building works and that the defect was irremovable, and by entering into the provisional agreement with that knowledge waived the implied obligation to give good title arising out of it.',
+                      trap: 'Treating Cheer Sky as inconsistent with Regent Summit. The difference is the experience of the purchaser and the obviousness that the defect could not be cured.',
+                    },
+                    points: [
+                      'The structures stood no chance of being legalised by the Building Authority, and the defect could not be removed by the parties to the provisional agreement.',
+                      'By inference, with his experience, the purchaser must have known the defect was irremovable.',
+                      'The waiver was of the implied obligation on the vendor to give good title arising out of the structures.',
+                    ],
+                  },
+                  {
+                    label: 'Rule out the two things that are NOT waiver',
+                    detail: 'There is no duty upon a purchaser to raise a requisition, and failure to do so will not constitute a waiver of his right to object to the vendor\'s title at completion and rescind: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                    why: 'The contrary rule would reverse the legal burden of giving good title. That is the same reasoning that keeps the duties of giving and showing title independent.',
+                    exam: {
+                      write: 'The purchaser\'s failure to raise a requisition is not a waiver of his right to object to the title at completion: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                      trap: 'Overlooking the tension the lecture itself notes: a purchaser who suspects a defect and stays silent may not be behaving as a willing purchaser under Mexon, which may be a repudiatory breach or a waiver.',
+                    },
+                    points: [
+                      'Failure to raise a requisition is not a waiver.',
+                      'A reservation of the right to raise further requisitions is not a waiver: Large Land Investments Ltd v Cheung Siu Kwai Pansy [2003] 1 HKLRD 313.',
+                      'But no willing purchaser would remain silent suspecting a defect and refuse to complete; such conduct might be a repudiatory breach or a waiver: Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Construction and waiver are different questions. Construction asks what the clause means; waiver asks whether, there being a breach, the purchaser has decided to complete anyway.',
+                'The lecture leaves open whether the knowledge required is actual only, or includes constructive and imputed knowledge — flag it rather than assuming.',
+                'Regent Summit and Cheer Sky are the two poles. The purchaser\'s experience and the curability of the defect are what separate them.',
+                'Waiver by the purchaser and waiver by the vendor of a late requisition are separate topics with different tests.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the defect and when the purchaser learned of the facts.',
+                'Establish knowledge of the legal significance, not merely of the facts.',
+                'Identify the act or words said to constitute waiver and test them for unequivocality.',
+                'Apply the election analysis and the requirement of communication.',
+                'Rule out the non-waivers: failure to raise a requisition, a reservation of rights.',
+                'Conclude, and say what the purchaser can still do at completion.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating knowledge of the facts as enough.',
+                'Inferring waiver from silence or from failure to raise a requisition.',
+                'Reading a reservation of the right to raise further requisitions as an acceptance.',
+                'Confusing waiver by the purchaser of a defect with waiver by the vendor of a late requisition.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'On my finding by inference, Luk Yu Wa knew that the cockloft constituted unauthorised building works which is a blot in title. This defect in title cannot be removed by the parties to the Provisional Agreement. It can only be removed by removing the Structures which was part of what the parties had contracted to buy and sell or by seeking approval from the Building Authority to have the Structure "legalized".', cite: 'Cheer Sky Ltd v Chan Yuet Sheung [2019] HKCFI 606 at [114], as reproduced in the LG3 notes' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The three requirements', 'Lecture conclusion', 'Knowledge of the defect, knowledge of its legal significance, unequivocal waiver'],
+                  ['Question of fact', 'Chan Kin Leung v Lok Kar Cheong HCMP 3993/1997, 14/5/1998', 'Waiver by clear words in correspondence'],
+                  ['Sending the assignment', 'Chan Kam Hung v Light Ltd DCCJ 16919/1992, 1/6/1993', 'Sending the draft assignment for execution with knowledge of the defect'],
+                  ['Legal consequences required', 'Regent Summit (Hong Kong) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718; CACV 138/1998', 'No waiver until the purchaser understood the legal consequences of the facts'],
+                  ['Same', 'Poon Mee Kuen v Luk Yuk Chun HCMP 1431/2004, 18/1/2005', 'Knowledge of facts insufficient without awareness of legal consequences, per Arjan Sakhrani J'],
+                  ['Election', 'Large Land Investments Ltd v Cheung Siu Kwai Pansy [2003] 1 HKLRD 313; The Kanchenjunga [1990] 1 Lloyd\'s Rep 391, HL at 397', 'Awareness of the facts, and communication of the election in clear and unequivocal terms'],
+                  ['Inferred waiver', 'Cheer Sky Ltd v Chan Yuet Sheung [2019] HKCFI 606', 'Waiver inferred from entering the provisional agreement with knowledge of an irremovable defect'],
+                  ['Not a waiver', 'Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA', 'Failure to raise a requisition is not a waiver'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+              { session: 'LG3', issue: 'twin-duties', label: 'The twin duties of giving and showing title' },
+              { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+            ],
+          },
+          {
+            id: 'encumbered-or-defeasible',
+            title: 'Encumbered and defeasible titles',
+            summary: 'An encumbrance is a third-party interest in the land; defeasibility is a real risk the title will be taken away. Different labels, different consequences.',
+            triggers: {
+              bullets: [
+                'A third party claims an equitable interest in the flat under a resulting trust.',
+                'An uncompleted sale and purchase agreement is registered against the title.',
+                'The original title deeds were deposited with a lender and nothing was registered.',
+                'The Government has served a notice of re-entry for breach of a covenant in the Conditions of Grant.',
+                'The Building Authority has remedied unauthorised building works and may sell the property to recover its expenses.',
+                'The incorporated owners are threatening enforcement action over a significant breach of the deed of mutual covenant.',
+                'A mortgagee is exercising its power of sale over the property being sold.',
+                'The assignment to the present owner is liable to be set aside as a conveyance to defraud creditors.',
+                'A right of way and a restrictive covenant are both registered against the property.',
+              ],
+              routes: [
+                { when: 'The question is the standard the title must meet', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+                { when: 'The interest complained of was registrable and was never registered', session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+                { when: 'The sale is expressly subject to the interest, or it is visible on inspection', session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+                { when: 'The vendor could remove the interest himself before completion', session: 'LG4', issue: 'mere-conveyance', label: 'Matters of mere conveyance' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Classifying the defect',
+                steps: [
+                  {
+                    label: 'Identify the interest or risk complained of',
+                    detail: 'There are very many factors that might cause a title to be defective. The distinction between an encumbered and a defeasible title must be understood at the outset.',
+                    why: 'The label is not decorative. An encumbrance leaves the owner with the land but burdened; defeasibility means he may lose it altogether. The second is far more likely to be repudiatory.',
+                    exam: {
+                      write: 'The defect alleged is [the equitable interest of X / the right of re-entry / the mortgagee\'s power of sale], which renders the title [encumbered / defeasible].',
+                      trap: 'Using "defect" as the whole answer. Both encumbered and defeasible titles are defective; the question is which.',
+                    },
+                    points: [
+                      'All titles which are either encumbered or defeasible are defective, that is not good titles.',
+                      'Classify first, then ask about significance.',
+                    ],
+                  },
+                  {
+                    label: 'Test for an encumbrance: a third party has an interest in the land',
+                    detail: 'A title is encumbered where, for example, a third party has an equitable interest in the property by way of an express, resulting or constructive trust; or there is an uncompleted sale and purchase agreement or right of way registered against the title; or there is a restrictive covenant or lease affecting the title. An equitable mortgage by deposit of original title deeds will also render the title encumbered.',
+                    why: 'An encumbrance is something the purchaser would take subject to. The list is a list of interests that survive a sale and bind the buyer.',
+                    exam: {
+                      write: '[X] has an interest in the property by way of [a resulting trust / a registered right of way / an equitable mortgage by deposit of title deeds], so the title is encumbered.',
+                      trap: 'Calling every encumbrance a defeasibility. An encumbrance that leaves no real risk of the title being taken away is an encumbrance, not a defeasibility.',
+                    },
+                    points: [
+                      'Express, resulting or constructive trusts.',
+                      'An uncompleted sale and purchase agreement registered against the title.',
+                      'A right of way, restrictive covenant or lease affecting the title.',
+                      'An equitable mortgage by deposit of original title deeds.',
+                    ],
+                  },
+                  {
+                    label: 'Test for defeasibility: a real risk the title will be taken away',
+                    detail: 'A title is rendered defeasible where it can be taken away from the owner by some other person.',
+                    why: 'The consequence is what separates the two: an encumbered owner keeps the land, a defeasible owner may not. That is why the lecture insists the encumbrance must NOT carry a real risk of the title being taken away, or it is defeasibility instead.',
+                    exam: {
+                      write: 'The [right of re-entry / power of sale / risk that the assignment be set aside] means the title may be taken away from the owner, and is accordingly defeasible rather than merely encumbered.',
+                      trap: 'Forgetting the "real risk" qualifier. A theoretical right of re-entry that will never be exercised is the "no real risk" case from LG1.',
+                    },
+                    points: [
+                      'Re-entry by the Government for breach of covenant in a Government lease or condition in Conditions of Grant.',
+                      'Sale by the Building Authority to recover expenses incurred in remedying unauthorised building works.',
+                      'A right of enforcement action by the manager or incorporated owners in respect of a significant breach of the deed of mutual covenant.',
+                      'A right of sale by a mortgagee.',
+                      'Title set aside because there has been a conveyance to defraud creditors.',
+                    ],
+                  },
+                  {
+                    label: 'Draw the boundary between the two',
+                    detail: 'To be merely encumbered, the encumbrance must be such as will not lead to the consequence that there is a real risk that title will be taken away. If it does, the title is not encumbered but defeasible.',
+                    why: 'The two categories are exclusive, not cumulative, and the test that separates them is the same "real risk" standard that governs good title generally. One coherent question runs through the whole topic.',
+                    exam: {
+                      write: 'The encumbrance [does not / does] carry a real risk that the title will be taken away, so the title is [encumbered only / defeasible].',
+                      trap: 'Labelling a DMC charge for arrears as a mere encumbrance. A right of enforcement action for a significant breach is listed as a ground of defeasibility.',
+                    },
+                    points: [
+                      'The dividing line is the real risk that the title will be taken away.',
+                      'That is the same standard as the good title test in MEPC and Kan Wing Yau.',
+                    ],
+                  },
+                  {
+                    label: 'Assess significance, and state the remedy',
+                    detail: 'An encumbered title may render the title defective and constitute a repudiatory breach if the encumbrance is significant. Whether the defect renders the breach repudiatory, or merely a breach of warranty entitling the innocent party only to damages, depends upon the significance of the breach.',
+                    why: 'Classification decides what kind of defect it is; significance decides what the purchaser can do about it. Skipping the second step gets the remedy wrong.',
+                    exam: {
+                      write: 'The [encumbrance / defeasibility] being significant, the vendor\'s failure to give good title is a repudiatory breach and the purchaser may rescind; otherwise the purchaser is confined to damages.',
+                      trap: 'Assuming every defect entitles the purchaser to rescind.',
+                    },
+                    points: [
+                      'A significant encumbrance may be a repudiatory breach.',
+                      'An insignificant one may sound only in damages.',
+                      'Ask also whether the defect is one the vendor can remove himself before completion, which makes it a matter of mere conveyance.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An equitable mortgage by deposit of original title deeds is the encumbrance that lies behind the whole missing-deeds topic — it is why the absence of originals matters at all.',
+                'A registrable encumbrance that was never registered is usually void against a purchaser, so it is not an encumbrance at all: see the separate issue type.',
+                'A defect the vendor can cure on his own before completion is a matter of mere conveyance and does not make the title defective.',
+                'The vendor may sell expressly subject to identified encumbrances such as the deed of mutual covenant, which is why every multi-storey sale is.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the interest or risk precisely and say who holds it.',
+                'Classify it as an encumbrance or a ground of defeasibility.',
+                'Apply the real-risk boundary between the two.',
+                'Check whether it is a registrable interest that was never registered.',
+                'Check whether it is a matter of mere conveyance.',
+                'Assess significance and state the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating "defective" as a single category.',
+                'Calling a right of re-entry an encumbrance.',
+                'Forgetting that an unregistered registrable interest is generally void against a purchaser.',
+                'Concluding with rescission without addressing significance.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Category', 'Examples from the lecture', 'Consequence'],
+                rows: [
+                  ['Encumbered', 'Express, resulting or constructive trust; uncompleted sale and purchase agreement; registered right of way; restrictive covenant; lease; equitable mortgage by deposit of title deeds', 'A third party has an interest in the property; repudiatory only if significant'],
+                  ['Defeasible', 'Re-entry by Government for breach of a Government lease covenant or Condition; sale by the Building Authority to recover expenses of remedying unauthorised building works; enforcement by the manager or incorporated owners for a significant DMC breach; mortgagee\'s power of sale; conveyance to defraud creditors', 'The title can be taken away from the owner'],
+                  ['The boundary', 'Real risk that title will be taken away', 'An encumbrance carrying that risk is defeasibility, not encumbrance'],
+                  ['Both', 'Defective title', 'Not a good title; remedy depends on the significance of the breach'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+              { session: 'LG4', issue: 'mere-conveyance', label: 'Matters of mere conveyance' },
+              { session: 'LG2', issue: 'remedies-and-charge', label: 'Remedies: injunction, damages and the charge' },
+            ],
+          },
+          {
+            id: 'title-in-vendor',
+            title: 'Title in the vendor, consents, and assigning the whole interest',
+            summary: 'Three checks before anything else: does he own it, may he sell it without asking anyone, and can he pass it free of third-party interests?',
+            triggers: {
+              bullets: [
+                'The land the vendor has agreed to assign is still in the ownership of a t\'so.',
+                'No consent of the Land Officer has been obtained under s15 of the New Territories Ordinance.',
+                'The property is owned by a company rather than by the vendor, but the vendor controls the company absolutely.',
+                'The consent of a t\'so is required before the manager may sell.',
+                'The property is being sold under the Consent Scheme and the Director of Lands has not yet consented.',
+                'The vendor has agreed to sell land he does not own but says he can compel the owner to assign.',
+                'The purchaser asks whether the vendor can assign free from all encumbrances.',
+                'A third party\'s consent is needed before the assignment can be executed at all.',
+                'The sale includes adjoining land held in a different ownership from the flat itself.',
+              ],
+              routes: [
+                { when: 'The encumbrance was registrable and never registered', session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+                { when: 'The sale is expressly made subject to the interest', session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+                { when: 'The consent needed is a Government consent to assign under the Consent Scheme', session: 'LG3', issue: 'duty-to-give-title', label: 'The duty to give good title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Three preliminary checks on the vendor\'s position',
+                steps: [
+                  {
+                    label: 'Check that the title is in the vendor, or in someone he can compel',
+                    detail: 'Title must be in the vendor or some other person whom the vendor can compel to assign in accordance with his instructions.',
+                    why: 'A vendor who can direct the owner is in substance able to convey, so the law looks at control rather than at the name on the assignment.',
+                    exam: {
+                      write: 'Title [is / is not] in the vendor, [nor is it in a person whom the vendor can compel to assign in accordance with his instructions].',
+                      trap: 'Treating separate legal ownership as fatal. In Harold Elliott v Pierson [1948] Ch 452 the property was owned by a company and not the vendor, but the vendor had sole and absolute control of the company and the title was good.',
+                    },
+                    points: [
+                      'Enway Development Ltd v Light Ocean Investments Ltd [1994] 3 HKC 31, CA: other land the vendor had agreed to assign was still in the ownership of a t\'so and no consent of the Land Officer had been obtained as required by s15 of the New Territories Ordinance.',
+                      'Contrast Harold Elliott v Pierson [1948] Ch 452: sole and absolute control of the owning company sufficed.',
+                    ],
+                  },
+                  {
+                    label: 'Check that no third party\'s consent is needed to execute the assignment',
+                    detail: 'The vendor must be entitled to assign the property without the necessary consent of any third person. The most obvious case is a sale where the property is subject to the Consent Scheme.',
+                    why: 'A consent that has not been obtained is a condition the vendor does not control. Until it is given, he cannot promise to complete on the contractual date.',
+                    exam: {
+                      write: 'The assignment cannot be executed without the consent of [the Director of Lands under the Consent Scheme / the t\'so / the Land Officer under s15 of the New Territories Ordinance], which has not been obtained.',
+                      trap: 'Leaving the consent to be obtained at completion. The vendor\'s solicitors should identify the need for consent early and obtain it in good time, before the time for completion.',
+                    },
+                    points: [
+                      'Tang Yau Yi Tong v Tang Mou Shau Tso [1996] 2 HKLR 212, CA: consent of the t\'so required before the manager could sell.',
+                      'Section 15 of the New Territories Ordinance: consent of the Land Officer.',
+                      'The Consent Scheme: the consent of the Director of Lands.',
+                    ],
+                  },
+                  {
+                    label: 'Check that the whole interest can be assigned free from encumbrances',
+                    detail: 'The general principle where the vendor agrees to give good title is that he must be able to assign the property free from all encumbrances.',
+                    why: 'This is the positive statement of the encumbrance rule, and everything in the next two issue types is an exception to it.',
+                    exam: {
+                      write: 'The vendor having agreed to give good title must be able to assign the property free from all encumbrances, subject to the three recognised exceptions.',
+                      trap: 'Stating the rule without the exceptions. Three of them are recognised, and a well-drafted agreement relies on at least one.',
+                    },
+                    points: [
+                      {
+                        text: 'The three exceptions:',
+                        points: [
+                          'Registrable encumbrances which are unregistered, and therefore void against a bona fide purchaser for valuable consideration.',
+                          'Encumbrances to which the sale is made expressly subject.',
+                          'Patent grounds of defeasibility and patent encumbrances.',
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Enway is cited twice in this topic: for title being in a t\'so rather than the vendor, and for the missing s15 consent. Both points are live on the same facts.',
+                'The Consent Scheme appears at two different stages — consent to pre-sell and consent to assign. Identify which one the facts are about.',
+                'Control of the owning company is a question of fact. "Sole and absolute control" is the language Harold Elliott used.',
+                'Where the vendor holds only an equitable interest, this check becomes the question whether he can nonetheless give good title — see the duty to give title.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify who holds the legal title to each parcel being sold.',
+                'If it is not the vendor, ask whether he can compel that person to assign.',
+                'Identify any consent required and whether it has been obtained in good time.',
+                'State the free-from-encumbrances rule and the three exceptions.',
+                'Apply whichever exception the facts raise.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Assuming that a vendor who does not hold the legal title cannot give good title.',
+                'Overlooking a required consent because the assignment itself looks straightforward.',
+                'Stating the free-from-encumbrances rule as absolute.',
+                'Confusing consent to pre-sell with consent to assign.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Check', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Title in the vendor', 'Enway Development Ltd v Light Ocean Investments Ltd [1994] 3 HKC 31, CA', 'Land still owned by a t\'so and no s15 New Territories Ordinance consent obtained'],
+                  ['Or in someone he controls', 'Harold Elliott v Pierson [1948] Ch 452', 'Property owned by a company the vendor controlled absolutely; title good'],
+                  ['Consent required', 'Tang Yau Yi Tong v Tang Mou Shau Tso [1996] 2 HKLR 212, CA', 'Consent of the t\'so required before the manager could sell'],
+                  ['Consent required', 's15, New Territories Ordinance', 'Consent of the Land Officer'],
+                  ['Consent required', 'The Consent Scheme', 'Consent of the Director of Lands'],
+                  ['Free from encumbrances', 'General principle', 'Subject to three exceptions: unregistered registrable encumbrances; encumbrances expressly subject to; patent defects'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+              { session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+              { session: 'LG1', issue: 'ddh-and-approvals', label: 'DDH clauses, alienation and other required approvals' },
+            ],
+          },
+          {
+            id: 'unregistered-encumbrances',
+            title: 'Registrable encumbrances that are unregistered',
+            summary: 'Void against a purchaser for value under s3(2) of the Land Registration Ordinance — and his knowledge of them is irrelevant.',
+            triggers: {
+              bullets: [
+                'A five-year lease was granted and never registered, and the reversion has now been sold.',
+                'A declaration of trust in writing was never registered against the property.',
+                'An option to renew in a tenancy agreement was not registered and the reversion has been assigned.',
+                'The assignment of the reversion was expressly stated to be subject to tenancies the landlord had failed to register.',
+                'A right to exclusive use and occupation of the roof was omitted from the memorial on registration.',
+                'The purchaser knew about the unregistered tenancy before he bought and the tenant says that defeats him.',
+                'A written tenancy for two years was granted at a rent 15 per cent below market.',
+                'A tenancy for three years or less was created orally and the landlord never registered anything.',
+                'The purchaser and vendor are alleged to have connived to evict a tenant whose lease was unregistered.',
+              ],
+              routes: [
+                { when: 'The interest was registered and the complaint is that the vendor has not produced the document', session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+                { when: 'The sale was expressly made subject to the interest', session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+                { when: 'The question is how to classify the interest in the first place', session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing an unregistered interest',
+                steps: [
+                  {
+                    label: 'Ask whether the interest was registrable',
+                    detail: 'Registrable encumbrances which are not registered are void as against a bona fide purchaser or mortgagee for valuable consideration: s3(2) of the Land Registration Ordinance. They therefore do not constitute encumbrances.',
+                    why: 'The Ordinance makes the register the place to look. An interest that could have been put there and was not cannot be allowed to ambush someone who did look.',
+                    exam: {
+                      write: 'The [lease / option / declaration of trust] was registrable and was not registered, and is accordingly void as against a bona fide purchaser for valuable consideration: s3(2) of the Land Registration Ordinance (Cap. 128).',
+                      trap: 'Calling the unregistered interest an encumbrance the vendor must clear. It is not an encumbrance at all as against the purchaser.',
+                    },
+                    points: [
+                      'Kwok Siu Lau v Kang Yang Chee [1913] HKLR 52: a five-year unregistered lease void against a bona fide purchaser.',
+                      'Chu Yam On v Li Tam Toi Hing (1956) 40 HKLR 250: a declaration of trust in writing, not registered.',
+                      'Markfaith Investment Ltd v Chiap Hua Flashlights Ltd [1990] AC 76, PC: an option to renew void when unregistered.',
+                      'Fast Forward Ltd v Magicsound Co Ltd [1991] 2 HKLR 529: a right to exclusive use of a roof omitted from the memorial on registration; the first purchaser lost the right when the property was sold to another.',
+                    ],
+                  },
+                  {
+                    label: 'Note that the purchaser\'s knowledge is irrelevant',
+                    detail: 'Knowledge of the existence of the unregistered interest on the part of the purchaser is irrelevant unless fraud is involved — for example connivance between vendor and purchaser to evict a tenant.',
+                    why: 'Section 3(2) is not a doctrine of notice. As the lecture puts it, it is not referring to equity\'s darling: the register governs, so what the purchaser happened to know does not.',
+                    exam: {
+                      write: 'The purchaser\'s knowledge of the unregistered [tenancy] is irrelevant, no fraud being alleged: Keep Point Development Ltd v Chan Chi Yim [2000] 2 HKC 53.',
+                      trap: 'Thinking an express reference in the assignment saves the interest. In Creator (HK) Ltd the property was expressly assigned subject to the tenancies and they were still void.',
+                    },
+                    points: [
+                      'Keep Point Development Ltd v Chan Chi Yim [2000] 2 HKC 53: unless fraud is involved, the purchaser is conferred a complete and unfettered title by an assignment even if he had notice of a prior unregistered interest.',
+                      'Creator (HK) Ltd v Kwong Wing Food Industries Stainless Steel Engineering Ltd [2008] 2 HKC 245, [2008] 2 HKLRD 475, CA: tenancies of more than 3 years were void against the purchaser even though he was aware of them and the property was expressly assigned subject to them.',
+                      'Wellmake Investments Ltd v Chan Yiu Tong [1996] 1 HKC 528, CA: an unregistered option to renew; the purchaser of the reversion took free even though the assignment was stated to be subject to it.',
+                    ],
+                  },
+                  {
+                    label: 'Check the short-term tenancy exemption',
+                    detail: 'The principle does not apply to short-term tenancies, because tenancies for 3 years or less are exempted from registration and excluded from the effect of s3(2) of the Land Registration Ordinance.',
+                    why: 'Short tenancies are too numerous and too ephemeral for a deeds register to cope with. The exemption is the price of keeping the register usable.',
+                    exam: {
+                      write: 'The tenancy being for [2] years, it is a short-term tenancy exempt from registration and is not avoided by s3(2) of the Land Registration Ordinance.',
+                      trap: 'Applying the exemption to a tenancy at a discounted rent. The exemption requires a rack rent under s3(2), or the best rent reasonably obtainable under s6(2).',
+                    },
+                    points: [
+                      'A written short-term tenancy must be granted at a "rack rent" (s3(2)) or "the best rent reasonably obtainable" (s6(2)).',
+                      'Tse Siu Hoi v Lee Dick Gold and Jewellery Ltd LDPE 1132/2014, 27/8/2015: a two-year tenancy at $57,000 per month was, on expert evidence, 15 per cent below market rent; falling below a rack rent, it required writing or a deed and fell outside the exceptions in ss6(2) and 3(2).',
+                      'A short-term tenancy created orally must additionally take effect in possession.',
+                    ],
+                  },
+                  {
+                    label: 'State the consequence for the transaction',
+                    why: 'The point of the exercise is practical: an unregistered registrable interest is one requisition the purchaser does not need to raise, and one defect the vendor does not need to clear.',
+                    exam: {
+                      write: 'The interest being void against the purchaser, the vendor\'s title is not encumbered by it and no requisition on it needs to be answered.',
+                      trap: 'Overlooking the unregistrable interests that are NOT cured this way — resulting and constructive trusts, and short-term tenancies. Those are why the site visit matters.',
+                    },
+                    points: [
+                      'Unregistrable interests such as resulting and constructive trusts are not caught by s3(2) and remain a risk.',
+                      'Leases, easements and similar interests would usually be expressly identified in the sale and purchase agreement.',
+                      'That is why the purchaser or his solicitors visit the property to check for occupiers with interests.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Section 3(2) protects a bona fide purchaser or mortgagee for valuable consideration — a volunteer is not protected.',
+                'Fraud is the only exception the lecture gives, and the example is connivance between vendor and purchaser to evict a tenant.',
+                'Fast Forward shows the danger runs the other way too: an interest omitted from the memorial on registration may be lost even though the instrument was lodged.',
+                'Registration is dealt with in detail in its own later set of notes; here it is only the effect on the vendor\'s duty that matters.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the interest and whether it was registrable.',
+                'Check the register: was it registered, and does the memorial describe it?',
+                'If unregistered, apply s3(2) and state that it is void against the purchaser.',
+                'Deal with knowledge, and with fraud if alleged.',
+                'Check the short-term tenancy exemption, including the rack rent condition.',
+                'State the consequence for the vendor\'s duty and for any requisition.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the purchaser\'s notice as decisive. Section 3(2) is not about equity\'s darling.',
+                'Assuming an express "subject to" in the assignment revives an unregistered interest.',
+                'Applying the short-term exemption without checking the rent.',
+                'Forgetting the interests s3(2) does not touch, which are the ones a site visit is for.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The rule', 's3(2), Land Registration Ordinance (Cap. 128)', 'Registrable but unregistered instruments are void against a bona fide purchaser or mortgagee for valuable consideration'],
+                  ['Unregistered lease', 'Kwok Siu Lau v Kang Yang Chee [1913] HKLR 52', 'Five-year unregistered lease void against a bona fide purchaser'],
+                  ['Unregistered trust', 'Chu Yam On v Li Tam Toi Hing (1956) 40 HKLR 250', 'Declaration of trust in writing, unregistered'],
+                  ['Unregistered option', 'Markfaith Investment Ltd v Chiap Hua Flashlights Ltd [1990] AC 76, PC', 'Option to renew void when unregistered'],
+                  ['Defective memorial', 'Fast Forward Ltd v Magicsound Co Ltd [1991] 2 HKLR 529', 'Right to exclusive use of a roof omitted from the memorial; first purchaser lost the right'],
+                  ['Knowledge irrelevant', 'Keep Point Development Ltd v Chan Chi Yim [2000] 2 HKC 53', 'Unless fraud, notice of a prior unregistered interest does not bind the purchaser'],
+                  ['Express "subject to" does not save it', 'Creator (HK) Ltd v Kwong Wing Food Industries Stainless Steel Engineering Ltd [2008] 2 HKC 245, [2008] 2 HKLRD 475, CA; Wellmake Investments Ltd v Chan Yiu Tong [1996] 1 HKC 528, CA', 'Tenancies and an option void against the purchaser despite express reference in the assignment'],
+                  ['Short-term exemption', 'ss3(2) and 6(2), Land Registration Ordinance (Cap. 128)', 'Tenancies of 3 years or less exempt, if at a rack rent or the best rent reasonably obtainable'],
+                  ['Rack rent condition', 'Tse Siu Hoi v Lee Dick Gold and Jewellery Ltd LDPE 1132/2014, 27/8/2015', 'A rent 15 per cent below market fell below a rack rent; exemption unavailable'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+            ],
+          },
+          {
+            id: 'patent-defects',
+            title: 'Encumbrances expressly subject to, and patent defects',
+            summary: 'The other two exceptions: what the contract names, and what anyone could see by looking.',
+            triggers: {
+              bullets: [
+                'The Schedule to the formal agreement identifies the deed of mutual covenant, a right of way and a restrictive covenant.',
+                'Every sale of a unit in the multi-storey building is made expressly subject to the covenants in the deed of mutual covenant.',
+                'A light well has been converted into actual structure, visible to anyone who looks at the building.',
+                'A right of passage over a staircase and hallway inside a multi-storey building is in dispute.',
+                'The vendor did not tell the purchaser about a defect he says was obvious.',
+                'The premises were plainly being run as a karaoke bar although the occupation permit allowed only office use.',
+                'The purchaser says he could not have been expected to notice the encroachment.',
+                'The encumbrance was disclosed in the agreement and the purchaser now objects to it.',
+                'The vendor relies on the defect being "patent to the eye".',
+              ],
+              routes: [
+                { when: 'The interest was registrable and never registered', session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+                { when: 'The vendor relies on a clause rather than on the defect being obvious', session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+                { when: 'The argument is that the purchaser should have raised the requisition earlier', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Applying the second and third exceptions',
+                steps: [
+                  {
+                    label: 'Look for encumbrances the sale is expressly made subject to',
+                    detail: 'The vendor can sell expressly subject to identified encumbrances such as the deed of mutual covenant, rights of way and restrictive covenants. These are properly identified in the Schedule to the formal sale and purchase agreement and in the assignment.',
+                    why: 'An encumbrance the purchaser has agreed to take is not a defect: he has priced it in. The requirement that it be identified is what makes the agreement real rather than a blanket disclaimer.',
+                    exam: {
+                      write: 'The sale is expressly made subject to [the deed of mutual covenant / the right of way registered by memorial no. [n]], which is identified in the Schedule to the agreement and in the assignment, so the purchaser cannot object to it.',
+                      trap: 'Confusing this with an exclusion clause. Here the encumbrance is identified and accepted; an exclusion clause tries to cover defects that are not.',
+                    },
+                    points: [
+                      'The encumbrances must be properly identified in the Schedule to the formal agreement and in the assignment.',
+                      'Every sale of a unit in a multi-storey building will be made expressly subject to the covenants in the deed of mutual covenant, which are encumbrances.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the defect was patent',
+                    detail: '"Patent to the eye" means clear, or easily seen by looking: Yandle & Sons v Sutton [1922] 2 Ch 199 at 210.',
+                    why: 'A purchaser who could have seen the defect by looking cannot complain that he was not told about it. The test is what an inspection would reveal, not what a title search would.',
+                    exam: {
+                      write: '[The conversion of the light well into structure] was patent to the eye, that is clear or easily seen by looking: Yandle & Sons v Sutton [1922] 2 Ch 199 at 210.',
+                      trap: 'Assuming unauthorised building works are always patent. Whether they are is a question of fact, and the two decisions below went opposite ways.',
+                    },
+                    points: [
+                      'Perhaps certain rights of way and unauthorised building works might be included.',
+                      'Kensel Ltd v Charmfast Investment Ltd HCMP 6890/1999, 22/9/2001: unauthorised building works comprising the conversion of a light well into actual structure were a patent defect, so there was no obligation on the vendor to bring it to the purchaser\'s attention if he wished to rely on an exclusion clause.',
+                      'Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266: a right of passage over a staircase and hallway within a multi-storey building was NOT patent.',
+                    ],
+                  },
+                  {
+                    label: 'Connect the patency point to the exclusion clause argument',
+                    detail: 'Where the defect is patent, the vendor need not bring it to the purchaser\'s attention in order to rely on an exclusion clause.',
+                    why: 'The misleading argument in Jumbo King depends on the purchaser being unaware of the risk. A patent defect gives him the awareness without anyone having to tell him.',
+                    exam: {
+                      write: 'The defect being patent, the purchaser cannot say he was misled, and the vendor may rely on the exclusion clause notwithstanding that he did not disclose it.',
+                      trap: 'Forgetting that the same reasoning bears on late requisitions: a defect the purchaser could have seen is one he should have raised in time, exercising due diligence.',
+                    },
+                    points: [
+                      'Billion Profit Enterprises Ltd v Global Fly Development Ltd HCA 712/1999, 4/8/1999: a limiting clause could be relied upon despite the vendor not informing the purchaser of the change of use, the use as a karaoke bar being patent.',
+                      'A patent defect also bears on whether a requisition could have been raised earlier with due diligence.',
+                    ],
+                  },
+                  {
+                    label: 'Stand back and check which of the three exceptions applies',
+                    why: 'The three exceptions do different work and are pleaded differently: the first is a matter of the register, the second of the contract, the third of the facts on the ground. Naming the wrong one wastes the point.',
+                    exam: {
+                      write: 'The vendor is able to assign free from all encumbrances save [the encumbrance], which falls within the [first / second / third] exception because [it is registrable but unregistered / the sale is expressly made subject to it / it is patent].',
+                      trap: 'Running the three together as a single "the purchaser knew about it" argument. They rest on different sources.',
+                    },
+                    points: [
+                      'Exception one: registrable encumbrances which are unregistered — a matter of the register and s3(2) of the Land Registration Ordinance.',
+                      'Exception two: encumbrances to which the sale is expressly made subject — a matter of the contract.',
+                      'Exception three: patent grounds of defeasibility and patent encumbrances — a matter of what can be seen.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Goldenwick is the case for a defect inside a building not being patent, and it is worth having precisely because so much of the case law concerns visible external works.',
+                'The lecture hedges: "perhaps certain rights of way and unauthorised building works might be included". Do not state patency as a category rule.',
+                'An identified encumbrance in the Schedule is an agreed term, not an exclusion clause, so contra proferentem does not bite on it in the same way.',
+                'The vendor who wants to rely on patency should still consider whether removing the structure before completion is the safer course.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the encumbrance or ground of defeasibility.',
+                'Check the Schedule to the agreement and the assignment for an express subjection.',
+                'If not, ask whether the defect was patent, on the Yandle test.',
+                'Apply the closest decided case on the type of defect.',
+                'Connect the conclusion to the exclusion clause and late requisition arguments.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating all unauthorised building works as patent.',
+                'Confusing an express subjection with an exclusion clause.',
+                'Forgetting that a patent defect also undermines a late requisition.',
+                'Applying the patency test to something only a title search would reveal.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Expressly subject to', 'The Schedule to the formal agreement and the assignment', 'Identified encumbrances such as the DMC, rights of way and restrictive covenants'],
+                  ['Meaning of patent', 'Yandle & Sons v Sutton [1922] 2 Ch 199 at 210', '"Patent to the eye" means clear, or easily seen by looking'],
+                  ['Patent works', 'Kensel Ltd v Charmfast Investment Ltd HCMP 6890/1999, 22/9/2001', 'Conversion of a light well into structure was patent; no duty to disclose it to rely on an exclusion clause'],
+                  ['Not patent', 'Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266', 'Right of passage over a staircase and hallway within a building not patent'],
+                  ['Patent use', 'Billion Profit Enterprises Ltd v Global Fly Development Ltd HCA 712/1999, 4/8/1999', 'Karaoke use patent despite an occupation permit restricted to office use; limiting clause effective'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+              { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+              { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+            ],
+          },
+          {
+            id: 'original-title-deeds',
+            title: 'Original title deeds: common law and section 13A',
+            summary: 'Handing over the originals is part of GIVING title. De Monsa cut the common law duty down; s13A cut it down by period instead.',
+            triggers: {
+              bullets: [
+                'The vendor can produce certified copies but not the originals of several assignments in the chain.',
+                'The sale and purchase agreement was signed before 11 July 2008.',
+                'The agreement expressly provides that the vendor shall give title in accordance with the common law rather than s13A.',
+                'A statutory declaration has been made by the vendor\'s solicitor saying that after extensive searches he cannot explain how the documents came to be missing.',
+                'The purchaser says the missing originals may have been deposited to secure an equitable mortgage.',
+                'Two registered sale and purchase agreements on the register were never completed and both purchasers were finance companies.',
+                'The property is a Home Ownership Scheme flat subject to alienation restrictions.',
+                'Originals of pre-intermediate root documents are missing and the vendor says he need not account for them.',
+                'The vendor offers a certified copy of a certified copy, and the purchaser objects.',
+              ],
+              routes: [
+                { when: 'The question is what must be PRODUCED as proof of title rather than delivered', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The question is which documents count as documents of title at all', session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+                { when: 'The originals and certified copies are all missing', session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working out what originals must be handed over',
+                steps: [
+                  {
+                    label: 'Decide which regime applies',
+                    detail: 'Handing over the original title deeds which relate exclusively to the property forms part of the vendor\'s duty to GIVE good title. The statutory duty in s13A of the Conveyancing and Property Ordinance applies unless excluded or modified.',
+                    why: 'The two regimes now cut the duty down in different directions — De Monsa by purpose, s13A by period — so which applies can change the answer on the same facts.',
+                    exam: {
+                      write: 'The agreement having been made on [date], [s13A of the Conveyancing and Property Ordinance applies / the common law applies, the agreement pre-dating 11 July 2008 / the parties have expressly adopted the common law duty].',
+                      trap: 'Applying s13A to an old agreement. Section 13A does not have retrospective effect and applies only to agreements signed after 11 July 2008: Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915, CA.',
+                    },
+                    points: [
+                      'The common law applies where the agreement pre-dated 11 July 2008.',
+                      'It also applies where the parties expressly agree to give title in accordance with the common law, thereby excluding the statutory provision.',
+                      'Otherwise s13A governs.',
+                    ],
+                  },
+                  {
+                    label: 'State the old understanding, and what De Monsa did to it',
+                    detail: 'There used to be a widely held understanding, thought to emanate from Yiu Ping Fong v Lam Lai Hing Lana [1998] 4 HKC 476, that a vendor had to deliver the originals of all title deeds relating exclusively to the property right back to the ultimate root, and to make a statutory declaration under Re Halifax for any that were missing.',
+                    why: 'The old duty was unworkable in Hong Kong, where originals were lost in the Japanese invasion or simply to weather and storage. That practical problem is what produced both the legislation and the Court of Final Appeal\'s reinterpretation.',
+                    exam: {
+                      write: 'The former understanding, that all originals back to the ultimate root had to be delivered or accounted for under Re Halifax, has been overruled by De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA.',
+                      trap: 'Saying flatly that De Monsa overruled Yiu Ping Fong. The Court of Final Appeal explained that Yuen J was not concerned with pre-intermediate root documents and that later decisions had taken her judgment out of context.',
+                    },
+                    points: [
+                      'The old duty was massively onerous, especially where originals had been lost or destroyed.',
+                      'Loyal Hope Ltd v Leung Pui Ming HCA 136/2007 had applied that understanding.',
+                      'De Monsa explained that all judgments must be read bearing in mind the question the court had to decide.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the common law as restated in De Monsa',
+                    detail: 'The Court of Final Appeal ruled that the vendor has a duty to deliver at completion the original title documents which relate exclusively to the property, because the purchaser has a proprietary right to them: Re Williams and Newcastle\'s Contract [1897] 2 Ch 144.',
+                    why: 'The right is proprietary, so it extends only to what the vendor actually has. For what he does not have, the question becomes one of risk, not of ownership.',
+                    exam: {
+                      write: 'At common law the vendor must hand over at completion the originals of the title deeds relating exclusively to the property that are actually in his possession or power.',
+                      trap: 'Requiring an explanation for every missing original. The duty to explain arises only where the absence would indicate the realistic possibility of some transaction affecting the land which could affect the purchaser if he took title.',
+                    },
+                    points: [
+                      'A purchaser is entitled to receive the originals of title documents relating exclusively to the property at completion, by virtue of his proprietary right to them.',
+                      'The vendor need normally only supply the originals in his possession or power.',
+                      'As regards missing originals in both the pre- and post-intermediate root period, the vendor must explain their absence only where that absence would indicate the realistic possibility of some transaction affecting the land which could affect the purchaser.',
+                      'It follows that resort to Re Halifax will at best be rare and may never be necessary.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with the equitable mortgage risk, which is what the rule is about',
+                    detail: 'Litton NPJ observed in De Monsa that an equitable mortgage or charge can be created by deposit of original title deeds accompanied by a memorandum of deposit, or by deposit unaccompanied by one.',
+                    why: 'The whole worry about missing originals is a lender emerging from the dark with the deeds in his hands. Litton NPJ\'s analysis shows why that worry is usually unfounded — and Zhang shows when it is not.',
+                    exam: {
+                      write: 'Any memorandum of deposit would be a registrable instrument which, if unregistered, would be void against a subsequent bona fide purchaser under s3(2) of the Land Registration Ordinance, so there is no realistic risk to the purchaser\'s title.',
+                      trap: 'Presenting that analysis as settled. Zhang Xueshuai queried whether it holds where the memorandum only EVIDENCED the equitable mortgage rather than created it, since s3(2) avoids the instrument, not the underlying transaction.',
+                    },
+                    points: [
+                      'With a memorandum: registrable, and void against a subsequent bona fide purchaser if unregistered, so no realistic risk.',
+                      'Without a memorandum: nothing can be registered, but there is no instance in the law reports of equitable mortgagees by deposit defeating the title of purchasers.',
+                      'It is difficult to imagine a person lending a substantial sum on nothing more than an oral commitment and a deposit of deeds when he could have taken and registered a memorandum.',
+                      'The risk is that of a lender emerging from the dark with an original title deed in his hands and registering a memorandum of deposit ahead of the purchaser; whether the degree of risk is fanciful depends on the circumstances.',
+                    ],
+                  },
+                  {
+                    label: 'Apply s13A where it governs',
+                    detail: 'Section 13A of the Conveyancing and Property Ordinance was enacted in June 2008. Under it, unless a contrary intention is expressed, the purchaser is entitled to require delivery of only two things: the Government lease if it relates exclusively to the land, and any document that relates exclusively to the land and is required to be produced under s13(1)(a) and (c).',
+                    why: 'The cut is temporal rather than purposive: it stops the duty at the intermediate root. Since the Government lease or Conditions will not usually relate exclusively to the property being sold, all that is left in practice are the chain-of-title documents.',
+                    exam: {
+                      write: 'Under s13A(1) of the Conveyancing and Property Ordinance the vendor need deliver only the Government lease, if it relates exclusively to the land, and the documents relating exclusively to the land required to be produced under s13(1)(a) and (c) — that is, those in the chain of title period.',
+                      trap: 'Forgetting the three remaining subsections. Section 13A(2) preserves the common law, s13A(3) removes the purchaser\'s proprietary right to documents not deliverable, and s13A(4) preserves third parties\' rights.',
+                    },
+                    points: [
+                      'Originals of title deeds falling within the pre-intermediate root period need not be supplied.',
+                      'The Government lease or Conditions of Grant will not usually relate exclusively to the property being sold.',
+                      'Section 13A(3) removes the common law right to the ownership of title deeds recognised in Re Duthy and Jesson\'s Contract [1898] 1 Ch 419, save for those that must be produced under s13A.',
+                      'Section 13A(4) preserves rights of third persons, such as an equitable mortgagee holding the original deeds.',
+                      'Section 13A does not have retrospective effect: Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915, CA.',
+                      'Failure to provide the originals in compliance with s13A is a repudiatory breach: Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599.',
+                    ],
+                  },
+                  {
+                    label: 'Address the unresolved question: does De Monsa apply to a s13A duty?',
+                    detail: 'Section 13A(2) states that s13A(1) does not affect any rule of common law under which the vendor may discharge his obligation to give title otherwise than by delivering the Government lease or document.',
+                    why: 'This is genuinely open, and the lecture presents both sides rather than one. Saying so, and saying why it matters, is worth more than picking a side.',
+                    exam: {
+                      write: 'Whether the De Monsa common law approach may be relied on where the parties have contracted for title in accordance with s13A turns on s13A(2); Chu Yin Fan v Inter Rivers Ltd held that it may, though the contrary view is that De Monsa\'s purposive restriction should not be read into the statutory duty.',
+                      trap: 'Presenting the "back door" result as settled. It rests on a District Court decision and a remark in De Monsa that the lecture itself calls mysterious.',
+                    },
+                    points: [
+                      'Ribeiro PJ and Gleeson NPJ noted in De Monsa "for future reference that section 13A(2) allows recourse to the common law if the specified originals cannot be delivered".',
+                      'Chu Yin Fan v Inter Rivers Ltd DCCJ 4314/2012, 19/8/2016, [2017] HKEC 789: s13A(2) preserved the De Monsa common law rule, which should be applied where the parties agreed to give title in accordance with s13A.',
+                      'The alternative view is that De Monsa\'s purposive approach does not apply to the statutory duty, so that the common law duty may now be LESS onerous than the statutory one.',
+                      'On that view solicitors may be well advised to contract for the common law duty instead — provided that does not contradict the preliminary agreement or the purchaser agrees.',
+                    ],
+                  },
+                  {
+                    label: 'Test the answer against Zhang, where the vendor lost',
+                    detail: 'In Zhang Xueshuai v Lai Chan Wing [2015] 2 HKC 125, [2015] 2 HKLRD 246, CA, the vendor agreed to give title in accordance with s13A but could supply only certified copies, with a statutory declaration by his solicitor that after extensive searches he could not explain how the documents came to be missing.',
+                    why: 'Zhang is the reminder that the De Monsa approach is not a blanket excuse. Where every original is gone and the property carries alienation restrictions, the equitable mortgage risk becomes real rather than fanciful.',
+                    exam: {
+                      write: 'The statutory declaration spoke only to the period after [the declarant] took over and could not properly explain the loss of the original title documents; all the deeds being missing, the risk of an equitable mortgage is real, and the requisition was properly raised but not satisfactorily answered.',
+                      trap: 'Overlooking why the alienation restrictions mattered. The flat was a Home Ownership Scheme flat under s17B of the Housing Ordinance, and an equitable mortgage over it would be void unless the Director of Housing had approved.',
+                    },
+                    points: [
+                      'Two registered sale and purchase agreements had not been completed and both purchasers were financial lending institutions, raising a suspicion that they were disguised lending transactions.',
+                      'The possibility that the then owner had used the original title documents for borrowing could not be excluded.',
+                      'The statutory declaration could not properly speak to the reason for the loss.',
+                      'Cheung CJHC queried whether Litton NPJ\'s analysis applies where the memorandum only evidenced the equitable mortgage rather than creating it, since s3(2) of the Land Registration Ordinance renders null and void a registrable but unregistered instrument, not the underlying transaction insofar as it can survive without the instrument.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Delivery of originals is part of GIVING title; production of originals or certified copies is part of SHOWING it. The same documents, two different duties.',
+                'A certified copy must be of the original or of a certified copy — never of a plain copy: De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA.',
+                'The De Monsa restriction is purposive (is there a realistic possibility of a transaction affecting the land?); the s13A restriction is temporal (does the document fall within the chain of title period?). They are different cuts.',
+                'Where no undertaking to return the deeds is taken, the purchaser has a lien on the deeds supplied for the return of the deposit — useful only if the originals were sent.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'State the date of the agreement first. It decides the regime, and the regime decides the rest.',
+                'When advising a vendor with missing originals, consider whether contracting for the common law duty is safer than the statutory one, and whether the preliminary agreement allows it.',
+                'When answering a requisition about a missing original, identify the specific transaction that is feared and explain why it is fanciful — a bare statutory declaration will not do.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Date the agreement and identify the governing regime.',
+                'Identify which documents relate exclusively to the property.',
+                'Under the common law: which originals are in the vendor\'s possession or power?',
+                'For those that are not, is there a realistic possibility of a transaction affecting the land?',
+                'Under s13A: are the documents within the chain of title period?',
+                'Address the equitable mortgage risk specifically.',
+                'Conclude on whether good title has been given, and on the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying s13A to a pre-11 July 2008 agreement.',
+                'Requiring a Re Halifax statutory declaration for every missing original.',
+                'Treating the Chu Yin Fan back door as settled law.',
+                'Forgetting that the Government lease and Conditions do not usually relate exclusively to the property.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Unless the contrary intention is expressed, a purchaser of land shall be entitled to require the vendor to deliver to him, for the purpose of giving title to that land, the original of both of the following only: (a) if there is a Government lease that relates exclusively to the land, the lease; and (b) any document that relates exclusively to the land and is required to be produced by the vendor as proof of title to that land under s 13(1)(a) and (c).', cite: 's13A(1), Conveyancing and Property Ordinance (Cap. 219), as reproduced in the LG3 notes and slides' },
+                { text: 'The vendor\'s inability to produce an original document of title rather than a certified copy and to account for the absence of the original to a standard of proof required for secondary evidence, would only have justified refusal to complete where the absence of the original would indicate the realistic possibility of some transaction affecting the land which could affect the purchaser if he took title.', cite: 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA, per Ribeiro PJ and Gleeson NPJ, as reproduced in the LG3 notes' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The old understanding', 'Yiu Ping Fong v Lam Lai Hing Lana [1998] 4 HKC 476; Loyal Hope Ltd v Leung Pui Ming HCA 136/2007', 'Thought to require all originals back to the ultimate root, with Re Halifax declarations for those missing'],
+                  ['Restated', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA', 'Originals in possession or power; explanation only where absence indicates a realistic possibility of a transaction affecting the land'],
+                  ['Proprietary right', 'Re Williams and Newcastle\'s Contract [1897] 2 Ch 144', 'The purchaser has a proprietary right to the documents relating exclusively to the property'],
+                  ['Certified copies', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA', 'A certified copy of a certified copy is acceptable; a certified copy of a plain copy is not'],
+                  ['The statute', 's13A, Conveyancing and Property Ordinance (Cap. 219)', 'Government lease relating exclusively to the land, plus documents required under s13(1)(a) and (c)'],
+                  ['No retrospective effect', 'Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915, CA', 'Section 13A applies only to agreements signed after 11 July 2008'],
+                  ['Breach', 'Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599', 'Failure to provide originals under s13A is a repudiatory breach'],
+                  ['Ownership of deeds', 'Re Duthy and Jesson\'s Contract [1898] 1 Ch 419; s13A(3)', 'The common law right to the deeds, removed save for those deliverable under s13A'],
+                  ['Common law preserved', 's13A(2); Chu Yin Fan v Inter Rivers Ltd DCCJ 4314/2012, 19/8/2016, [2017] HKEC 789', 'Held that De Monsa applies even to a s13A duty; the contrary view is also arguable'],
+                  ['Where it failed', 'Zhang Xueshuai v Lai Chan Wing [2015] 2 HKC 125, [2015] 2 HKLRD 246, CA', 'All originals missing; HOS flat under s17B Housing Ordinance; equitable mortgage risk real; requisition not satisfactorily answered'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+              { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+              { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+            ],
+          },
+          {
+            id: 'documents-of-title',
+            title: 'Which documents are documents of title?',
+            summary: 'A working list, and the question that runs through it: does this document relate exclusively to the property, and could it affect the purchaser?',
+            triggers: {
+              bullets: [
+                'The vendor refuses to produce the occupation permit for a building constructed in 1950.',
+                'The deed of mutual covenant for a small house development deals only with common areas and allocates no shares.',
+                'A sub-deed of mutual covenant exists for the floor on which the unit sits.',
+                'The certificate of compliance relates to Conditions dated before 1 January 1970.',
+                'The land was sectioned by deed poll and the purchaser asks for it.',
+                'The vendor offers a grant of probate and the purchaser says he wants letters of administration.',
+                'A car park layout plan has been superseded by an amended plan.',
+                'An instrument is registered only in the deeds pending registration section of the land register.',
+                'A permit was issued by Government allowing a balcony to overhang Government land.',
+                'The occupation permit does not mention the car parking space being sold.',
+              ],
+              routes: [
+                { when: 'The question is whether the ORIGINAL must be handed over', session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+                { when: 'The question is the period over which title must be shown', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The document is the Government lease, a modification or a surrender', session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Deciding whether a document must be produced',
+                steps: [
+                  {
+                    label: 'Ask whether the document relates exclusively to the property',
+                    detail: 'The following will normally NOT relate exclusively to the property: the Government lease and Conditions of Grant, the deed of mutual covenant, the occupation permit and the certificate of compliance. The following will normally relate exclusively to it: assignments, mortgages and discharges. Powers of attorney may fall into either category.',
+                    why: 'Exclusivity is the gate for the DELIVERY duty, not for production. A document can be a document of title that must be produced while not being one whose original must be handed over.',
+                    exam: {
+                      write: 'The [assignment / mortgage / discharge] relates exclusively to the property, so its original must be delivered; the [deed of mutual covenant / occupation permit] does not, and need only be produced.',
+                      trap: 'Merging the two duties. Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795 holds there is no duty to provide the ORIGINALS of title deeds which do not relate exclusively to the property sold.',
+                    },
+                    points: [
+                      'Not exclusive: Government lease, Conditions of Grant, deed of mutual covenant, occupation permit, certificate of compliance.',
+                      'Exclusive: assignments, mortgages, discharges.',
+                      'Powers of attorney may fall into either category.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the prima facie test for a registered instrument',
+                    detail: 'In Wong Bik Ching v Yu Hon Cheung [1997] 4 HKC 38, Recorder Edward Chan QC said that prima facie, where an instrument was registered against the property and it was not apparent from the land search that it had ceased to affect the property, the document ought to be treated as part of the title deeds which the vendor should make available.',
+                    why: 'The reasoning is practical: without actually seeing the document, how can the purchaser know in what way, if at all, he would be affected by it? The burden of showing it is harmless falls on the party who has it.',
+                    exam: {
+                      write: 'The instrument being registered against the property, and it not being apparent from the land search that it has ceased to affect it, it is prima facie part of the title deeds the vendor should make available: Wong Bik Ching v Yu Hon Cheung [1997] 4 HKC 38.',
+                      trap: 'Stating the test as absolute. Li CJ in Chen Paul emphasised that the matter is only prima facie and may be displaced on examination, and that the approach applies to instruments properly registrable under the Land Registration Ordinance.',
+                    },
+                    points: [
+                      'The approach was quoted with approval by Li CJ in Chen Paul v Lord Energy Ltd [1999] 1 HKC 1, [1999] 1 HKLRD 205, CFA.',
+                      'It is only prima facie and may be displaced on examination.',
+                      'It applies to registered instruments that are properly registrable under the Land Registration Ordinance.',
+                    ],
+                  },
+                  {
+                    label: 'Work through the list, document by document',
+                    detail: 'The lecture gives a worked list of the documents most commonly argued about.',
+                    why: 'Each entry carries its own qualification, and it is the qualification that the examiner is testing — the DMC only where it subdivides ownership, the certificate of compliance only for post-1970 Conditions, and so on.',
+                    exam: {
+                      write: 'The [document] is a document of title which the vendor must produce, [subject to the qualification that ...].',
+                      trap: 'Producing the list without its qualifications. Nearly every entry has one.',
+                    },
+                    points: [
+                      {
+                        text: 'Deed of mutual covenant, and any sub-deed.',
+                        points: [
+                          'Required: Lim Sui Chun v Billion Light Investment Ltd [2000] 2 HKC 621; sub-deeds, Silver Pioneer International Ltd v Good Onwards Co Ltd HCMP 4807/2003.',
+                          'But only where the deed involves the subdivision of ownership: Fortune Link Ltd v Grand House Ltd [2010] 1 HKC 253, where a small house development\'s DMC dealt only with common areas and no division of shares, and was held not a document of title, per Reyes J.',
+                        ],
+                      },
+                      {
+                        text: 'Certificate of compliance.',
+                        points: [
+                          'Chen Paul v Lord Energy Ltd [1999] 1 HKC 1, [1999] 1 HKLRD 205, CFA.',
+                          'It must be registered to provide evidence of the conversion of the equitable interest into a legal estate: Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198, applying s14(3)(a) of the Conveyancing and Property Ordinance.',
+                          'A certificate in respect of Conditions dated before 1 January 1970 need not be produced: Minchest Ltd v Lau Tsui Kwai [2008] 2 HKC 283, CFA, s14(2) providing that it need not be produced for the purpose of the deemed conversion.',
+                        ],
+                      },
+                      {
+                        text: 'Deeds poll whereby land was sectioned.',
+                        points: [
+                          'Choy Son Fai v Yeung Miu Kwan Brendy DCMP 1972/2013, 28/1/2015: deeds poll show how the land was physically sub-divided, and deeds of surrender how land was carved out and surrendered; it may not be necessary in every transaction to produce the deed poll, and there was no obligation on the facts because the identification of the land was not in challenge.',
+                          'Contrast Chan Ka Ching v Yiu Sui Fong DCCJ 4434/2014, 26/6/2015, where HH Judge Levy ruled that a deed poll, a deed of rectification of it and a building licence fell within the definition of "Crown lease" in s3(2) of the Interpretation and General Clauses Ordinance (Cap. 1).',
+                        ],
+                      },
+                      {
+                        text: 'Occupation permit.',
+                        points: [
+                          'No building may be occupied unless the Building Authority has issued one: s21 of the Buildings Ordinance; it confirms compliance with that Ordinance in construction: Lui Kwok Wai v Chan Yiu Hing [1995] 1 HKC 197.',
+                          'Not needed for a building constructed before the present Buildings Ordinance came into force in 1956, which was governed by the former Buildings Ordinance 1935, and where there is no real risk of enforcement: Forever Business Ltd v Long Surplus International [2007] 3 HKC 462, [2007] 2 HKLRD 700, CA.',
+                          'That the permit does not mention a car parking space does not render the title defective: Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795.',
+                        ],
+                      },
+                      {
+                        text: 'Certificate of exemption, for exempted small houses in the New Territories.',
+                        points: [
+                          'Issued under s5 of the Buildings Ordinance (Application to the New Territories) Ordinance (Cap. 121).',
+                          'Choy Son Fai v Yeung Miu Kwan Brendy DCMP 1972/2013, 28/1/2015: the vendor had a duty to supply the certificates for the building works, site formation works and drainage works.',
+                        ],
+                      },
+                      {
+                        text: 'Consents and permits.',
+                        points: [
+                          'Consent to alienate granted under the Consent Scheme, and any permit issued by Government.',
+                          'Lam Chung Yan v Wu Yuk Ying HCMP 1011/2005, 9/9/2005: a Government permit allowing a balcony to overhang Government land had to be provided by way of showing title.',
+                        ],
+                      },
+                      {
+                        text: 'Grants of representation.',
+                        points: [
+                          'A grant of probate is probably NOT a document of title: Chu Wing Yip v Leung Siu Yuk [1997] HKLRD 29, CA.',
+                          'Letters of administration ARE title documents.',
+                        ],
+                      },
+                      {
+                        text: 'Plans.',
+                        points: [
+                          'Plans mentioned in the Government lease, Conditions of Grant or deed of mutual covenant must be properly colour coded: Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198.',
+                          'Non-correspondence of the actual building with the plans might render the title defective: Fan Tony v Incorporated Owners of Kung Lok Building [2006] 3 HKC 240.',
+                          'Car park layout plans must be produced unless replaced by subsequent plans: Chen Paul v Lord Energy Ltd; Sunlink Group (HK) Co Ltd v Sorrayo Investments Ltd [1999] 2 HKLRD 468, followed in Chau So Man Sue v Chow Wai Fong Alice [2022] HKCE 793 and Ample Happiness Ltd v Sunrise Enterprises Holdings Ltd [2022] HKDC 1007.',
+                        ],
+                      },
+                      {
+                        text: 'Sale and purchase agreements in the chain of title period.',
+                        points: [
+                          'A vexed question. Kong King Ong Alexander v Kan Heung Wing [2013] 1 HKLRD 1136 held they must be produced so the purchaser can check whether all the terms have merged into the consequent assignments.',
+                        ],
+                      },
+                      {
+                        text: 'Documents pending registration.',
+                        points: [
+                          'An instrument registered against the title must be produced even where it is registered only in the deeds pending registration section: Wong Kum Chi v Lee Tit Ying [2003] 1 HKLRD 594; Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'Remember the pre-intermediate root documents Godfrey JA had in mind',
+                    detail: 'In the Court of Appeal in Chen Paul v Lord Energy Ltd [1998] 1 HKC 702, Godfrey JA said that documents such as occupation permits, certificates of compliance and other documents of that sort in the pre-intermediate root period, which demonstrate that the vendor was entitled to a legal estate and that his title was not defeasible, were instruments by which the premises might be affected and ought to be produced when the purchaser asked for them.',
+                    why: 'This keeps the list from being read as confined to the chain of title period. Many such documents will in any event have to be produced because the intermediate root refers to them, under s13(1)(b).',
+                    exam: {
+                      write: 'Although in the pre-intermediate root period, the [occupation permit / certificate of compliance] demonstrates that the vendor was entitled to a legal estate and that his title is not defeasible, and ought to be produced on request.',
+                      trap: 'Forgetting the s13(1)(b) route. Many such documents are required anyway because they are mentioned in the intermediate root of title document.',
+                    },
+                    points: [
+                      'The documents demonstrate the vendor\'s entitlement to a legal estate and that the title is not defeasible.',
+                      'Many will be required under s13(1)(b) of the Conveyancing and Property Ordinance as documents referred to in the intermediate root.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether the document has been superseded',
+                    detail: 'The Court of Appeal ruled in De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478 that there is no obligation on a vendor to produce certified copies of title documents which have been replaced by subsequent title documents duly produced.',
+                    why: 'A superseded document cannot affect the purchaser, so producing it would serve no purpose. The principle also disposes of the car park plan point where an amended plan exists.',
+                    exam: {
+                      write: 'The [1979 pump pit agreement / earlier car park layout plan] has been replaced by the [1988 agreement / amended plan], which has been duly produced, so there is no obligation to produce the earlier document.',
+                      trap: 'Confining this to chain of title documents. It applies both within the chain of title period and to pre-intermediate root documents in respect of which a requisition has been raised.',
+                    },
+                    points: [
+                      'The facts were a pump pit agreement dated 1979 replaced by one dated 1988.',
+                      'The principle may well apply to car park layout plans replaced by amended plans.',
+                      'It applies to documents within the chain of title period and to pre-intermediate root documents alike.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A deed of mutual covenant is a document of title only where it involves the subdivision of ownership — Fortune Link is the exception and it is a small house development.',
+                'Probate is probably not a title document but letters of administration are. The distinction is small and examinable.',
+                'A certificate of compliance for pre-1 January 1970 Conditions need not be produced, which dovetails with the deemed conversion point in LG1.',
+                'Goldmex does double duty here: no originals for non-exclusive documents, and no defect where the occupation permit omits a car space.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the document and what it does.',
+                'Ask whether it relates exclusively to the property, for the delivery duty.',
+                'Ask whether it is registered against the property and not shown to have ceased to affect it.',
+                'Apply the specific authority on that class of document, with its qualification.',
+                'Check whether it has been superseded by a later document duly produced.',
+                'Conclude whether it must be produced, delivered, or neither.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Requiring the original of a document that does not relate exclusively to the property.',
+                'Treating every deed of mutual covenant as a document of title.',
+                'Producing the list without the qualifications attached to each entry.',
+                'Requiring a superseded plan or agreement once the replacement has been produced.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Document', 'Authority', 'Position'],
+                rows: [
+                  ['Non-exclusive documents', 'Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795', 'No duty to provide originals of title deeds which do not relate exclusively to the property'],
+                  ['Registered instruments', 'Wong Bik Ching v Yu Hon Cheung [1997] 4 HKC 38; Chen Paul v Lord Energy Ltd [1999] 1 HKC 1, CFA', 'Prima facie part of the title deeds if not shown to have ceased to affect the property; displaceable on examination'],
+                  ['Deed of mutual covenant', 'Lim Sui Chun v Billion Light Investment Ltd [2000] 2 HKC 621; Silver Pioneer International Ltd v Good Onwards Co Ltd HCMP 4807/2003; Fortune Link Ltd v Grand House Ltd [2010] 1 HKC 253', 'Required, including sub-deeds, but only where it involves subdivision of ownership'],
+                  ['Certificate of compliance', 'Chen Paul v Lord Energy Ltd; Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198; Minchest Ltd v Lau Tsui Kwai [2008] 2 HKC 283, CFA', 'Required and must be registered; not needed for pre-1 January 1970 Conditions'],
+                  ['Deed poll', 'Choy Son Fai v Yeung Miu Kwan Brendy DCMP 1972/2013, 28/1/2015; Chan Ka Ching v Yiu Sui Fong DCCJ 4434/2014, 26/6/2015', 'Shows physical sub-division; not required in every case; may fall within the "Crown lease" definition'],
+                  ['Occupation permit', 's21, Buildings Ordinance; Lui Kwok Wai v Chan Yiu Hing [1995] 1 HKC 197; Forever Business Ltd v Long Surplus International [2007] 3 HKC 462, CA', 'Required; not for buildings constructed before 1956 with no real risk of enforcement'],
+                  ['Certificate of exemption', 's5, Buildings Ordinance (Application to the New Territories) Ordinance (Cap. 121)', 'Required for exempted small houses: building works, site formation works and drainage works'],
+                  ['Government permit', 'Lam Chung Yan v Wu Yuk Ying HCMP 1011/2005, 9/9/2005', 'A permit for a balcony overhanging Government land had to be provided'],
+                  ['Probate and letters of administration', 'Chu Wing Yip v Leung Siu Yuk [1997] HKLRD 29, CA', 'Probate probably not a document of title; letters of administration are'],
+                  ['Plans', 'Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198; Fan Tony v IO of Kung Lok Building [2006] 3 HKC 240', 'Must be properly colour coded; non-correspondence with the building may render title defective'],
+                  ['Car park layout plans', 'Chen Paul v Lord Energy Ltd; Sunlink Group (HK) Co Ltd v Sorrayo Investments Ltd [1999] 2 HKLRD 468', 'Must be produced unless replaced by subsequent plans'],
+                  ['Sale and purchase agreements', 'Kong King Ong Alexander v Kan Heung Wing [2013] 1 HKLRD 1136', 'Must be produced so the purchaser can check merger into the assignments'],
+                  ['Deeds pending registration', 'Wong Kum Chi v Lee Tit Ying [2003] 1 HKLRD 594; Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266', 'Must be produced even though registered only in that section'],
+                  ['Superseded documents', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478, CA', 'No obligation to produce a document replaced by a later one duly produced'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG2', issue: 'sub-dmc', label: 'Sub-deeds of mutual covenant' },
+            ],
+          },
+        ],
+      },
+    },
+    LG4: {
+      kind: 'LG',
+      date: '2026-09-24',
+      time: '09:00-11:30',
+      mode: 'Face-to-face',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Identify the period over which a vendor must show title, and the documents that period requires.',
+        'Locate the ultimate and intermediate roots of title on a given set of facts, and say what each brings with it.',
+        'Prove a link in the chain of title where a document is missing, using secondary evidence or a recital.',
+        'Advise a purchaser on raising a requisition, including whether a late one may still be raised.',
+        'Advise a vendor on answering a requisition adequately, with candour, and in time.',
+      ],
+      topicsCovered: [
+        'Showing title distinguished from giving title, and what production means',
+        'The statutory period under s13(1) of the Conveyancing and Property Ordinance, and varying it by agreement',
+        'The ultimate root of title: the Government lease, letters of modification, deeds of surrender, illegibility and marginal notes',
+        'The intermediate root of title, and the documents referred to in it under s13(1)(b)',
+        'The chain of title, proving each link, and which title documents must be registered',
+        'Pre-intermediate root title defects',
+        'Powers of attorney under s13(1)(c)',
+        'Originals and certified copies under s13(2), and missing deeds under the rule in Re Halifax',
+        'Recitals in proving title: ss13(3) and 13(4)',
+        'Matters of mere conveyance',
+        'Investigation of title by the purchaser\'s solicitor',
+        'Requisitions: time limits, express and implied',
+        'Raising requisitions out of time, and the "root of the vendor\'s title" exception',
+        'The subject matter of requisitions: specific, not speculative',
+        'The vendor\'s duty to answer with candour, and the time for answering',
+      ],
+      examNotes: {
+        intro: 'LG4 is the second half of one topic: LG3 was about GIVING good title, this is about SHOWING it. The duty has two limbs — producing the documents, and answering the requisitions — and the issue types below follow that split. Keep in mind throughout that a vendor who fails here loses the sale even if his title is in fact perfect.',
+        issueTypes: [
+          {
+            id: 'showing-vs-giving',
+            title: 'Showing title: production and requisitions',
+            summary: 'Two limbs: produce the documents, and answer the requisitions. A perfect title is no defence to failing either.',
+            triggers: {
+              bullets: [
+                'The vendor has produced every document the agreement required but has answered a requisition with a bare assertion.',
+                'The purchaser rescinded at completion although the vendor could in fact have proved a perfect title.',
+                'A requisition was raised out of time and the vendor refused to answer it; at completion the title was still not good.',
+                'The vendor says he has discharged his obligations because he complied with s13 of the Conveyancing and Property Ordinance.',
+                'The purchaser wants to know whether he must accept certified copies rather than originals.',
+                'The agreement requires proof of title in accordance with s13 and the giving of title in accordance with s13A.',
+                'The purchaser says the vendor must both produce the deeds and explain the gap in the chain.',
+                'The vendor asks whether answering a requisition cures a defect in the title itself.',
+                'A document produced by way of showing title turns out to reveal a defect in the title.',
+              ],
+              routes: [
+                { when: 'The question is the content of the duty to GIVE good title', session: 'LG3', issue: 'twin-duties', label: 'The twin duties of giving and showing title' },
+                { when: 'The question is the period over which title must be shown', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The complaint is about the adequacy of an answer', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working through the duty to show title',
+                steps: [
+                  {
+                    label: 'State the two limbs',
+                    detail: 'The applicable duty of the vendor to show title involves the production of title documents, originals or certified copies, and the satisfactory answering of requisitions reasonably raised.',
+                    why: 'Both limbs are about satisfying the purchaser rather than about the state of the land. That is why a vendor with a perfect title can fail this duty and lose the sale.',
+                    exam: {
+                      write: 'The vendor\'s duty to show title requires him both to produce the title documents, originals or certified copies, and to answer satisfactorily any requisitions reasonably raised.',
+                      trap: 'Treating production alone as discharging the duty. Half the litigation in this area is about the second limb.',
+                    },
+                    points: [
+                      'Limb one: production of title documents, originals or certified copies.',
+                      'Limb two: satisfactory answering of requisitions reasonably raised.',
+                      'The extent of the duty depends on the agreement; s13 of the Conveyancing and Property Ordinance supplies the default.',
+                    ],
+                  },
+                  {
+                    label: 'Keep the duty separate from the duty to give title',
+                    detail: 'The duty to give good title and the duty to show title, usually in compliance with s13 of the Conveyancing and Property Ordinance, are separate and distinct: Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654.',
+                    why: 'Their independence is what produces the results below. If they were one duty, a good title would cure a bad answer and a late requisition would end the matter.',
+                    exam: {
+                      write: 'The duties to show and to give good title are separate and distinct: Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654.',
+                      trap: 'Citing s13 for the duty to give title. It governs proof of title, which is showing.',
+                    },
+                    points: [
+                      'Showing: s13 of the Conveyancing and Property Ordinance.',
+                      'Giving: s13A of that Ordinance, or the common law.',
+                    ],
+                  },
+                  {
+                    label: 'Result one: failing to show it is enough, even with a good title',
+                    detail: 'A purchaser is entitled to rescind where the vendor has failed to show good title — for example by failing adequately to answer requisitions — even if the vendor actually has a good title: Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396.',
+                    why: 'The purchaser bought a title he could satisfy himself about, and the vendor who will not explain has not delivered that.',
+                    exam: {
+                      write: 'Although the vendor may have a good title, his failure adequately to answer the requisition is a failure to show title and the purchaser may rescind: Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396.',
+                      trap: 'Letting the vendor argue, after the event, that the defect turned out to be harmless.',
+                    },
+                    points: [
+                      'It is no excuse that the vendor actually had a good title: Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA.',
+                    ],
+                  },
+                  {
+                    label: 'Result two: no requisition, or a late one, does not save the vendor',
+                    detail: 'A purchaser is entitled to rescind even where he has failed to raise a requisition, or raised it out of time so that the vendor was entitled to refuse to answer, where the vendor does not establish a good title at or before completion: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                    why: 'Requisitions are the vendor\'s opportunity to extricate himself by returning the deposit if defects emerge that cannot be cleared in time. They are not a mechanism for shifting the burden of title onto the purchaser.',
+                    exam: {
+                      write: 'The vendor either was in a position to give good title at completion or he was not; requisitions cannot alter the nature of that obligation: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                      trap: 'Treating a refusal to answer a late requisition as the end of the matter. It is not: the duty to give title survives.',
+                    },
+                    points: [
+                      'There is no obligation on a purchaser to raise any requisition.',
+                      'The contrary rule would reverse the legal burden of giving good title: Flywin Co Ltd v Strong & Associates Ltd (2002) 5 HKCFAR, CFA.',
+                    ],
+                  },
+                  {
+                    label: 'Classify the breach and state the remedy',
+                    detail: 'Breach of either the duty to give good title or the duty to show title may constitute a repudiatory breach entitling the purchaser to rescind: Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599.',
+                    why: 'Rescission is not automatic. The significance of the breach is what decides between rescission and damages, and it is the step candidates skip.',
+                    exam: {
+                      write: 'The vendor\'s failure [to produce the document / to answer the requisition adequately] is a repudiatory breach entitling the purchaser to rescind.',
+                      trap: 'Confusing rescission here with rescission ab initio. The purchaser terminates for repudiatory breach.',
+                    },
+                    points: [
+                      'Either duty may be breached repudiatorily.',
+                      'Whether it is repudiatory depends on the significance of the breach.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The agreement governs. Section 13 applies "unless the contrary intention is expressed", so the express terms come first.',
+                'Section 13(2) lets the vendor produce a certified copy in place of an original for the purpose of SHOWING title — which is a different question from what must be DELIVERED.',
+                'Active Keen is about the answer; Profit World is about the absence of a requisition. Keep them apart.',
+                'Hui Kwok Hau [2023] HKCFI 1654 is the convenient modern summary of the case law on both duties.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State the two limbs of the duty to show title.',
+                'Read the agreement for express terms, then fall back on s13.',
+                'Identify which limb has been breached.',
+                'State that the duty is independent of the duty to give title.',
+                'Classify the breach and state the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating compliance with s13 as discharging the duty to give title.',
+                'Assuming a good title answers a complaint about showing.',
+                'Assuming a purchaser who raised no requisition has accepted the title.',
+                'Rescinding without asking whether the breach was significant.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Separate duties', 'Hui Kwok Hau v Hui Mei Mei [2023] HKCFI 1654', 'Summarises the case law on giving and showing good title'],
+                  ['Good title no answer', 'Active Keen Industries Ltd v Fok Chi Keung [1994] 1 HKLR 396', 'Rescission for failure to show title although the vendor had good title'],
+                  ['Same', 'Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA', 'It is no excuse that the vendor actually had a good title'],
+                  ['No requisition needed', 'Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA', 'Failure to raise, or lateness in raising, a requisition does not accept the title'],
+                  ['Burden', 'Flywin Co Ltd v Strong & Associates Ltd (2002) 5 HKCFAR, CFA', 'The legal burden of giving good title rests on the vendor'],
+                  ['Repudiatory breach', 'Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599', 'Either duty may be breached repudiatorily'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'twin-duties', label: 'The twin duties of giving and showing title' },
+              { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+            ],
+          },
+          {
+            id: 'statutory-period-s13',
+            title: 'The statutory period for showing title',
+            summary: 'Fifteen years, or since the grant if the grant is younger. Section 13(1) is the default; the agreement may lengthen or shorten it.',
+            triggers: {
+              bullets: [
+                'The Government lease was granted in 2018 and the sale and purchase agreement is dated 2026.',
+                'The Conditions of Grant date from 1962 and the vendor proposes to start the title at an assignment of 2007.',
+                'The agreement says the vendor shall prove title in accordance with s13 "commencing with the Government lease of the said premises".',
+                'The purchaser insists on being shown title back beyond the intermediate root.',
+                'A document is referred to in the intermediate root assignment and has not been produced.',
+                'A power of attorney was used to execute an assignment eleven years ago.',
+                'The vendor refuses to produce any document dating from before the intermediate root.',
+                'The vendor offers a certified copy of a certified copy of an assignment.',
+                'The vendor offers a certified copy of a plain photocopy of an assignment.',
+              ],
+              routes: [
+                { when: 'The question is which single document is the ultimate root', session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+                { when: 'The question is which document is the intermediate root', session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+                { when: 'The question is which ORIGINALS must be delivered at completion', session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+                { when: 'The defect complained of is in the pre-intermediate root period', session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Fixing the period and the documents',
+                steps: [
+                  {
+                    label: 'Read the agreement first',
+                    detail: 'The vendor\'s duty to show title depends upon the terms of the sale and purchase agreement. In the absence of any express term, the extent of the duty is determined by s13(1) of the Conveyancing and Property Ordinance, which applies "unless the contrary intention is expressed".',
+                    why: 'Section 13 is a default, not a floor or a ceiling. The parties can agree a longer or a shorter period, and a purchaser with bargaining power will often want a longer one.',
+                    exam: {
+                      write: 'The agreement [is silent, so s13(1) of the Conveyancing and Property Ordinance applies / provides expressly that title shall be proved [as stated], displacing the statutory period].',
+                      trap: 'Reciting s13 without checking the agreement. The statutory period yields to an express term either way.',
+                    },
+                    points: [
+                      'The statutory period is subject to any express term, longer or shorter.',
+                      'C & W Watch Co Ltd v Chu Kwok Tai [2005] 4 HKC 78: the vendor agreed to prove title in accordance with s13 "commencing with the Government lease of the said premises", which showed an intention to prove title by providing originals or certified copies of all title documents back to the Government lease.',
+                    ],
+                  },
+                  {
+                    label: 'Fix the period under s13(1)(a)',
+                    detail: 'Unless the contrary intention is expressed, a purchaser is entitled to require from the vendor, as proof of title, only production of the Government lease relating to the land sold, plus proof of title extending either since the grant (where the grant was less than 15 years before the contract of sale) or not less than 15 years before the contract (in any other case), commencing with an assignment, a mortgage by assignment or a legal charge, each dealing with the whole estate and interest in the land.',
+                    why: 'The 15 years is a compromise between certainty and workability: long enough that most hidden interests would have surfaced, short enough that the search is possible. The lecture notes the period used to be sixty years.',
+                    exam: {
+                      write: 'The Government lease having been granted [more / less] than 15 years before the contract of sale dated [date], the vendor must show title [from the intermediate root, being the [assignment] dated [date] / for the whole period since the grant].',
+                      trap: 'Forgetting that "Government lease" includes Conditions: s3 of the Interpretation and General Clauses Ordinance (Cap. 1).',
+                    },
+                    points: [
+                      'Grant less than 15 years before the contract: the period runs since the grant.',
+                      'In any other case: not less than 15 years before the contract, commencing with the intermediate root.',
+                      'The intermediate root must be an assignment, a mortgage by assignment or a legal charge, each dealing with the whole estate and interest in the land.',
+                      'The present period is generous; it used to be 60 years.',
+                    ],
+                  },
+                  {
+                    label: 'Add the documents s13(1)(b) brings with the intermediate root',
+                    detail: 'Section 13(1)(b) requires production of any document referred to in the intermediate root assignment, mortgage or charge, creating or disposing of an interest, power or obligation, which is not shown to have ceased or expired, and subject to which any part of the land is disposed of.',
+                    why: 'The intermediate root is a doorway, not a wall. Whatever it names as still affecting the land comes through with it, however old that document is.',
+                    exam: {
+                      write: 'The intermediate root assignment refers to [the deed registered by memorial no. [n]], which is not shown to have ceased or expired, so it must be produced under s13(1)(b) of the Conveyancing and Property Ordinance.',
+                      trap: 'Refusing to produce a document merely because it is older than the intermediate root. If the root refers to it, s13(1)(b) requires it.',
+                    },
+                    points: [
+                      'It applies, for example, to a deed creating an easement or restrictive covenant referred to in the intermediate root.',
+                      'The intermediate root may mention the first assignment, the deed of mutual covenant and the certificate of compliance.',
+                      'Greatek Investments Ltd v Lam Kit Sum HCA 8817/1998, 7/11/2000: an assignment and plan referred to in the intermediate root were not provided and the vendor had failed to show good title.',
+                    ],
+                  },
+                  {
+                    label: 'Add the powers of attorney under s13(1)(c)',
+                    detail: 'Section 13(1)(c) requires production of any power of attorney under which any document produced is executed, where that document was executed less than 15 years before the contract of sale.',
+                    why: 'A document executed under a power is only as good as the power. Within the last 15 years the power is close enough to matter and recent enough to be findable.',
+                    exam: {
+                      write: 'The [assignment] dated [date] was executed under a power of attorney less than 15 years before the contract of sale, so the power must be produced under s13(1)(c) of the Conveyancing and Property Ordinance.',
+                      trap: 'Demanding the power of attorney under which the purchaser executes. The duty is on the vendor\'s side.',
+                    },
+                    points: [
+                      'See the separate issue type for the exceptions and the present transaction.',
+                    ],
+                  },
+                  {
+                    label: 'Confirm what form the documents may take under s13(2)',
+                    detail: 'Section 13(2) of the Conveyancing and Property Ordinance provides that the vendor may produce either the original or a certified copy — or an attested copy pre-1 November 1984 — of any title deed required to be produced by way of showing title.',
+                    why: 'Showing title is an evidential exercise, so a reliable copy will do. That is precisely why the delivery duty under s13A is a separate question about originals.',
+                    exam: {
+                      write: 'By s13(2) of the Conveyancing and Property Ordinance the vendor may produce the original or a certified copy of any title deed required by way of showing title.',
+                      trap: 'Accepting a certified copy of a plain copy. A certified copy must be of the original, or of a certified copy: De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA.',
+                    },
+                    points: [
+                      'A certified copy of an original: acceptable.',
+                      'A certified copy of a certified copy: acceptable.',
+                      'A certified copy of a plain copy: not acceptable.',
+                      'For pre-1 November 1984 documents, an attested copy.',
+                    ],
+                  },
+                  {
+                    label: 'Note what the vendor need NOT produce',
+                    detail: 'There is no duty upon a vendor to produce title documents prior to the date fixed by s13 of the Ordinance: Dawson Properties Ltd v Hong Kong Niiroku Ltd [1997] 2 HKC 800.',
+                    why: 'The whole point of a statutory period is that it ends. Without this rule the 15 years would be advisory.',
+                    exam: {
+                      write: 'The vendor is under no duty to produce title documents prior to the date fixed by s13: Dawson Properties Ltd v Hong Kong Niiroku Ltd [1997] 2 HKC 800.',
+                      trap: 'Reading that as immunity from pre-intermediate root requisitions. Where the purchaser discovers a pre-intermediate root defect from his own checking, the vendor must answer the requisition.',
+                    },
+                    points: [
+                      'The limit is on production, not on the duty to answer requisitions.',
+                      'See the separate issue type on pre-intermediate root defects.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                '"Government lease" includes Conditions by virtue of s3 of the Interpretation and General Clauses Ordinance (Cap. 1) — and, as the ultimate root issue type shows, letters of modification and deeds of surrender too.',
+                'The intermediate root must deal with the WHOLE estate and interest, so an equitable mortgage or charge will not do, nor will a discharge.',
+                'A vendor holding only an equitable interest may have no qualifying intermediate root at all, and should insert a limiting clause.',
+                'Section 13 is about showing; s13A is about giving. The overlap between them is the commonest confusion in this topic.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Read the agreement for an express term on proof of title.',
+                'Date the Government lease or Conditions against the contract of sale.',
+                'Fix the period and identify the qualifying intermediate root.',
+                'Add the documents referred to in the root under s13(1)(b).',
+                'Add any power of attorney under s13(1)(c).',
+                'Confirm the form of the documents under s13(2).',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying 15 years mechanically where the grant is more recent.',
+                'Accepting an equitable mortgage or a discharge as the intermediate root.',
+                'Refusing a document referred to in the intermediate root because it is older than the root.',
+                'Accepting a certified copy of a plain copy.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'Unless the contrary intention is expressed, a purchaser of land shall be entitled to require from the vendor, as proof of title to that land, only production of the Government lease relating to the land sold and: (a) proof of title to that land (i) where the grant of the Government lease was less than 15 years before the contract of sale of that land, extending for the period since that grant; or (ii) in any other case, extending not less than 15 years before the contract of sale of that land commencing with an assignment, a mortgage by assignment or a legal charge, each dealing with the whole estate and interest in that land', cite: 's13(1)(a), Conveyancing and Property Ordinance (Cap. 219), as reproduced in the LG4 notes and slides' },
+              ],
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['The period', 's13(1)(a), Conveyancing and Property Ordinance (Cap. 219)', 'Since the grant if less than 15 years old; otherwise not less than 15 years, from a qualifying intermediate root'],
+                  ['What counts as a root', 's13(1)(a)(ii)', 'An assignment, a mortgage by assignment or a legal charge dealing with the whole estate and interest'],
+                  ['Documents in the root', 's13(1)(b); Greatek Investments Ltd v Lam Kit Sum HCA 8817/1998, 7/11/2000', 'Documents referred to in the root, not shown to have ceased or expired, must be produced'],
+                  ['Powers of attorney', 's13(1)(c)', 'Any power under which a produced document was executed less than 15 years before the contract'],
+                  ['Form of production', 's13(2); De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA', 'Original or certified copy; a certified copy of a certified copy is acceptable, of a plain copy is not'],
+                  ['Varying the period', 'C & W Watch Co Ltd v Chu Kwok Tai [2005] 4 HKC 78', 'An express term may lengthen the period, here back to the Government lease'],
+                  ['No duty beyond the period', 'Dawson Properties Ltd v Hong Kong Niiroku Ltd [1997] 2 HKC 800', 'No duty to produce documents prior to the s13 date'],
+                  ['"Government lease"', 's3, Interpretation and General Clauses Ordinance (Cap. 1)', 'Includes Conditions'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG4', issue: 'powers-of-attorney', label: 'Powers of attorney under section 13(1)(c)' },
+              { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+            ],
+          },
+          {
+            id: 'ultimate-root',
+            title: 'The ultimate root of title',
+            summary: 'The Government lease or Conditions — plus anything the Interpretation Ordinance folds into that definition, including modifications, surrenders and marginal notes.',
+            triggers: {
+              bullets: [
+                'A letter of modification varying the Conditions of Grant has not been produced.',
+                'A deed of surrender was executed in 1978 and the vendor says it is outside the title period.',
+                'Two letters from the Director of Public Works dated 1923 to 1930 which contained terms of the Conditions of Grant are missing.',
+                'The Lands Department has no record of the missing letters either.',
+                'The certified copy of the Crown lease produced by the vendor omits a marginal note.',
+                'A marginal note refers to a licence granted after the lease which varied its terms.',
+                'The Government lease is illegible and the vendor has produced the illegible copy.',
+                'The agreement expressly required the vendor to provide a legible copy of the Conditions.',
+                'The Government lease itself cannot be found at all.',
+              ],
+              routes: [
+                { when: 'The question is which document starts the 15-year period', session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+                { when: 'The document is missing and the question is how to prove it', session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+                { when: 'A recital in a later document refers to the missing one', session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+                { when: 'The question is whether the missing terms create a real risk', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Identifying and proving the ultimate root',
+                steps: [
+                  {
+                    label: 'Identify the ultimate root and everything the definition sweeps in',
+                    detail: 'The Government lease or Conditions of Grant constitute the ultimate root of title. Any letters of modification or deeds of surrender must also be produced, since they fall within the definition of "Government lease" in s3 of the Interpretation and General Clauses Ordinance (Cap. 1).',
+                    why: 'The statutory definition includes any instrument by which the term may have been extended or the provisions varied. So the "ultimate root" is not one document but everything that has altered the grant.',
+                    exam: {
+                      write: 'The ultimate root is the [Government lease / Conditions of Grant] dated [date], together with the letter of modification dated [date] and the deed of surrender dated [date], each falling within the definition of "Government lease" in s3 of the Interpretation and General Clauses Ordinance (Cap. 1).',
+                      trap: 'Producing the grant alone. A modification or surrender is part of the ultimate root, however old.',
+                    },
+                    points: [
+                      'Letters of modification: Earning Code Ltd v Lau King Lin HCA 3874/1991, 28/7/1995.',
+                      'Deeds of surrender: Grand Money Ltd v Tang Tak Shun HCA 7791/1995, 14/5/1996.',
+                      'The definition covers instruments whereby the term may have been extended and the provisions varied.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with marginal notes on the grant',
+                    detail: 'In Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011, 14/10/2011, a vendor produced a certified copy of a Crown lease from which a marginal note was omitted; the note referred to a licence varying the terms of the lease.',
+                    why: 'A marginal note that varies the grant is part of the grant, so a copy without it is not a copy of the lease at all. That is the reasoning even though the vendor had separately supplied a certified copy of the licence.',
+                    exam: {
+                      write: 'The certified copy produced omits the marginal note, which forms part of the [Crown lease] and which the purchaser is entitled to see, so the vendor has failed to show good title: Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011, 14/10/2011.',
+                      trap: 'Stating Kan Yui Man without its qualification. The lecture says the decision needs to be qualified by Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643.',
+                    },
+                    points: [
+                      'The vendor had supplied a certified copy of the licence separately, and that was still not enough.',
+                      'The purchaser was entitled to know the full terms of the lease, including anything provided by way of a marginal note.',
+                      'Dty Judge Lo relied on the s3(2) Interpretation and General Clauses Ordinance definition.',
+                      'The decision needs to be qualified by Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643.',
+                    ],
+                  },
+                  {
+                    label: 'Apply Kingdom Miles where part of the root is missing',
+                    detail: 'In Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643, two letters from the Director of Public Works dated 1923 to 1930 which contained terms and conditions relating to the Conditions of Grant were missing, and formed part of the Conditions by reason of the s3 definition.',
+                    why: 'The Court of Appeal did not dispute that the letters were part of the root. It held the risk was nil — which is the good title standard doing the work, not a rule about roots.',
+                    exam: {
+                      write: 'It is unimaginable that the Government would assert, almost a century later, that there were further terms not set out in the Conditions of Grant based on the two letters, especially when the Government has no record of them; the risk of successful assertion of unknown encumbrances and obligations is nil: Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643.',
+                      trap: 'Treating Kingdom Miles as dispensing with the ultimate root. It is an application of the no-real-risk standard to particular missing documents.',
+                    },
+                    points: [
+                      'The Government itself had no record of the two letters.',
+                      'The age of the documents and the absence of any Government record were both material.',
+                      'Kingdom Miles is also authority on recitals under s13(4).',
+                    ],
+                  },
+                  {
+                    label: 'Deal with an illegible ultimate root',
+                    detail: 'If the Government lease or Conditions are illegible, the illegible copy must be produced and secondary evidence will be admissible as to its contents: Wong Wai Man v Tang Tat Chi [1993] HKCFI 166.',
+                    why: 'An illegible document is not a missing one. Producing it, however unreadable, is what allows secondary evidence of its contents to be received.',
+                    exam: {
+                      write: 'The Conditions being illegible, the vendor must produce the illegible copy, and secondary evidence of its contents is admissible: Wong Wai Man v Tang Tat Chi [1993] HKCFI 166.',
+                      trap: 'Applying that where the vendor has contracted to provide a LEGIBLE copy. Then secondary evidence will not be admitted: Mak Yiu Hei Karl v Ho Chi Ming HCMP 1177/1998.',
+                    },
+                    points: [
+                      'The illegible copy must still be produced.',
+                      'Secondary evidence is admissible as to its contents.',
+                      'Not where the vendor has expressly contracted to provide a legible copy.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with a missing ultimate root',
+                    detail: 'In Wu Wing Kuen v Leung Kwai Lin Cindy [2001] 1 HKLRD 212, it was held that s13(1) was enacted to facilitate conveyancing: it is an enabling provision and does not preclude clear and cogent evidence of the existence, due execution and contents of a document referred to in s13(1), such as a power of attorney, nor the production of secondary evidence.',
+                    why: 'The section fixes how far back the vendor must go; it does not say that only the document itself will prove the title. Reading it otherwise would defeat the purpose the legislature had.',
+                    exam: {
+                      write: 'A failure to produce a document referred to in s13(1) is not necessarily fatal; clear and cogent secondary evidence of its existence, due execution and contents may suffice, unless a contrary intention is expressed in the contract of sale.',
+                      trap: 'Forgetting the contractual override. If the agreement expressly requires the document itself, secondary evidence will not do.',
+                    },
+                    points: [
+                      'Section 13(1) is an enabling provision to facilitate conveyancing.',
+                      'It does not preclude secondary evidence.',
+                      'The rule in Re Halifax Commercial Banking Co Ltd and Wood (1898) 79 LT 536, CA, supplies the procedure.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Letters of modification and deeds of surrender are part of the ultimate root and are outside the 15-year period — do not assume the period excuses them.',
+                'Kan Yui Man and Kingdom Miles pull in different directions on a missing part of the root. Cite the later one as qualifying the earlier.',
+                'The illegibility rule and the missing-document rule are different: one produces the document and adds evidence, the other replaces the document with evidence.',
+                'Kingdom Miles appears in this topic twice — on the good title standard here, and on s13(4) recitals later.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the Government lease or Conditions and their date.',
+                'Add every instrument within the s3 definition: modifications, surrenders, and marginal notes.',
+                'Say which parts are missing or illegible.',
+                'For illegibility: produce the copy and adduce secondary evidence.',
+                'For missing parts: apply Wu Wing Kuen, Re Halifax and, if available, a recital.',
+                'Apply the no-real-risk standard to what remains unproved.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Producing the grant and stopping there.',
+                'Treating a marginal note as extraneous to the lease.',
+                'Reading Kingdom Miles as a rule that ancient documents need not be produced.',
+                'Offering secondary evidence where the contract required the document itself, or a legible copy.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['What the root is', 'The Government lease or Conditions of Grant', 'The ultimate root of title'],
+                  ['The definition', 's3, Interpretation and General Clauses Ordinance (Cap. 1)', 'Includes instruments extending the term or varying the provisions'],
+                  ['Letters of modification', 'Earning Code Ltd v Lau King Lin HCA 3874/1991, 28/7/1995', 'Must be produced as part of the root'],
+                  ['Deeds of surrender', 'Grand Money Ltd v Tang Tak Shun HCA 7791/1995, 14/5/1996', 'Must be produced as part of the root'],
+                  ['Marginal notes', 'Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011, 14/10/2011', 'A certified copy omitting a marginal note that varied the lease did not show good title; qualified by Kingdom Miles'],
+                  ['Missing part of the root', 'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643', 'Letters of 1923-1930 missing and unrecorded; risk of successful assertion nil'],
+                  ['Illegible root', 'Wong Wai Man v Tang Tat Chi [1993] HKCFI 166', 'Produce the illegible copy; secondary evidence admissible as to contents'],
+                  ['Contract for a legible copy', 'Mak Yiu Hei Karl v Ho Chi Ming HCMP 1177/1998', 'Secondary evidence not admitted where the vendor contracted to provide a legible copy'],
+                  ['Missing root', 'Wu Wing Kuen v Leung Kwai Lin Cindy [2001] 1 HKLRD 212', 'Section 13(1) is enabling; clear and cogent secondary evidence may suffice'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+              { session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+              { session: 'LG1', issue: 'lease-or-conditions', label: 'Government lease or Conditions? Legal estate or equitable interest' },
+            ],
+          },
+          {
+            id: 'intermediate-root',
+            title: 'The intermediate root of title',
+            summary: 'An assignment, a mortgage by assignment or a legal charge, each dealing with the whole estate and interest. Nothing less will do.',
+            triggers: {
+              bullets: [
+                'The vendor proposes to start the title at a discharge of mortgage dated just over 15 years before the contract.',
+                'The only document more than 15 years old dealing with the property is an equitable mortgage.',
+                'The vendor holds only an equitable interest because the positive conditions have never been complied with.',
+                'There is no document in existence that could serve as an intermediate root.',
+                'The intermediate root assignment refers to a deed of assignment registered by a memorial number and that deed is missing.',
+                'All the chain of title assignments say the shop is sold subject to exceptions and reservations set out in an earlier assignment.',
+                'The intermediate root mentions the first assignment, the deed of mutual covenant and the certificate of compliance.',
+                'The Government lease is only eight years old and the purchaser asks for an intermediate root anyway.',
+                'The vendor refuses to explain why s13(1)(b) does not apply to a document referred to in the root.',
+              ],
+              routes: [
+                { when: 'The question is the Government lease and everything folded into it', session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+                { when: 'The defect complained of predates the intermediate root', session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+                { when: 'The question is the period itself rather than the root document', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The missing document may be cured by a recital', session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Finding the intermediate root',
+                steps: [
+                  {
+                    label: 'Ask whether an intermediate root is needed at all',
+                    detail: 'Where the Government lease is less than 15 years old, measured from the date of the present agreement, only the Government lease and all the more recent documents of title need be produced. Where it is more than 15 years old, the vendor must produce the Government lease and also the intermediate root of title: s13(1)(a)(ii).',
+                    why: 'The intermediate root exists to spare the vendor proving a century of dealings. If the grant is recent enough, there is nothing to spare him from.',
+                    exam: {
+                      write: 'The Government lease dating from [year], more than 15 years before the agreement dated [date], the vendor must produce both the ultimate root and an intermediate root under s13(1)(a)(ii) of the Conveyancing and Property Ordinance.',
+                      trap: 'Measuring the 15 years from completion. It runs from the contract of sale.',
+                    },
+                    points: [
+                      'Less than 15 years: the Government lease and everything since the grant.',
+                      'More than 15 years: the Government lease plus the intermediate root and the chain from it.',
+                    ],
+                  },
+                  {
+                    label: 'Test the candidate document against the statutory description',
+                    detail: 'The intermediate root document must be either an assignment, a mortgage or a charge dealing with the whole of the estate and interest in the land.',
+                    why: 'A root has to be a document that could only have been executed by someone with the entire title. That is what makes it safe to start from, and it is why part-interest documents are excluded.',
+                    exam: {
+                      write: 'The [assignment] dated [date] deals with the whole estate and interest in the land and is accordingly a qualifying intermediate root under s13(1)(a)(ii).',
+                      trap: 'Accepting an equitable mortgage. It does not deal with the whole estate or interest in the property, and nor will a discharge of a mortgage or charge.',
+                    },
+                    points: [
+                      'An assignment, a mortgage by assignment, or a legal charge.',
+                      'Each must deal with the whole estate and interest in the land.',
+                      'An equitable mortgage or charge will not satisfy the requirement.',
+                      'Nor will a discharge of a mortgage or charge.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with the vendor who has only an equitable interest',
+                    detail: 'Where the vendor holds only an equitable title — for example because his interest under Conditions of Grant has never been converted into a legal estate for want of compliance with the positive conditions — there will be no title document dealing with the whole of the estate and interest, that is both the legal estate and the equitable interest, other than the Conditions of Grant.',
+                    why: 'The definition of a root assumes a legal estate. Where there is none, the statutory shortcut simply does not engage, and the vendor is back at the ultimate root.',
+                    exam: {
+                      write: 'The vendor holding only an equitable interest, there is no document dealing with the whole estate and interest other than the Conditions of Grant, so he must presumably show title right back to the ultimate root.',
+                      trap: 'Leaving the vendor there. A prudent vendor should insert an appropriate limiting clause, or argue that the purchaser must have agreed to accept an intermediate root dealing only with the equitable interest since the agreement shows only an equitable interest to be sold.',
+                    },
+                    points: [
+                      'Presumably title must be shown back to the ultimate root.',
+                      'A prudent vendor should insert an appropriate limiting clause.',
+                      'Alternatively the vendor may argue that the purchaser agreed to accept a root dealing only with the equitable interest, the agreement showing only an equitable interest to be sold.',
+                      'Where no intermediate root document exists at all, the vendor should insert a special term limiting his duty under s13: Chan Chu Hang Arden v Man Yun Sau [1997] 2 HKC 144.',
+                    ],
+                  },
+                  {
+                    label: 'Produce the documents the root refers to, under s13(1)(b)',
+                    detail: 'Section 13(1)(b) requires, subject to any expressed contrary intention, production of any document referred to in the intermediate root document, creating or disposing of an interest, power or obligation, which is not shown to have ceased or expired and subject to which any part of the land is disposed of.',
+                    why: 'As Greatek puts it, the vendor is deemed to know the conditions of his own title. A document his own root names as still binding the land is one he must explain or produce.',
+                    exam: {
+                      write: 'The intermediate root refers to [the assignment registered by memorial no. [n]], which is not shown to have ceased or expired, so the vendor is obliged to produce it under s13(1)(b) of the Conveyancing and Property Ordinance.',
+                      trap: 'Refusing production without explanation. In Greatek no attempt was made to explain why sub-section (b) did not apply, and the vendor failed to show good title.',
+                    },
+                    points: [
+                      'It applies to a deed creating an easement or restrictive covenant referred to in the root.',
+                      'The root may mention the first assignment, the deed of mutual covenant and the certificate of compliance.',
+                      'Greatek Investments Ltd v Lam Kit Sum HCA 8817/1998, 7/11/2000: all the chain of title assignments and the intermediate root said the shop was subject to exceptions, reservations, easements and other appurtenant rights set out in a deed registered by memorial no. 392952, which was missing; the vendor had failed to show good title.',
+                      'The vendor is deemed to know the conditions of his own title.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Do not confuse "root of title" in this sense with a requisition going to "the root of the vendor\'s title", which is the test for raising a requisition out of time. The slides flag exactly this confusion.',
+                'Where the root refers to a missing document, the vendor cannot simply decline; he must explain why s13(1)(b) does not apply.',
+                'The intermediate root is the source of much of the rest of the title bundle, which is why the first assignment, the DMC and the certificate of compliance so often come in through it.',
+                'For a vendor with only an equitable interest, the limiting clause has to be in place before the formal agreement — and cannot be added if the preliminary agreement already binds.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Date the Government lease against the contract of sale.',
+                'If more than 15 years, identify the candidate intermediate root.',
+                'Test it: assignment, mortgage by assignment or legal charge, dealing with the whole estate and interest.',
+                'If the vendor has only an equitable interest, address the limiting clause.',
+                'List the documents the root refers to and require them under s13(1)(b).',
+                'Say what follows if one of them is missing.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Accepting an equitable mortgage or a discharge as the intermediate root.',
+                'Measuring the 15 years from completion rather than the contract of sale.',
+                'Missing the s13(1)(b) documents that the root brings with it.',
+                'Confusing the intermediate root with a requisition going to the root of the vendor\'s title.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'production of any document referred to in the assignment, mortgage or charge mentioned in paragraph (a) creating or disposing of an interest, power or obligation, which is not shown to have ceased or expired and subject to which any part of that land is disposed of', cite: 's13(1)(b), Conveyancing and Property Ordinance (Cap. 219), as reproduced in the LG4 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['When needed', 's13(1)(a)(ii), Conveyancing and Property Ordinance (Cap. 219)', 'Where the Government lease is more than 15 years old at the contract of sale'],
+                  ['What qualifies', 's13(1)(a)(ii)', 'An assignment, mortgage by assignment or legal charge dealing with the whole estate and interest'],
+                  ['What does not', 'Lecture note', 'An equitable mortgage or charge; a discharge of a mortgage or charge'],
+                  ['No root in existence', 'Chan Chu Hang Arden v Man Yun Sau [1997] 2 HKC 144', 'The vendor should insert a special term limiting his duty under s13'],
+                  ['Documents in the root', 's13(1)(b)', 'Production of documents referred to in the root and not shown to have ceased or expired'],
+                  ['Failure to produce', 'Greatek Investments Ltd v Lam Kit Sum HCA 8817/1998, 7/11/2000', 'Missing assignment referred to in the root; no explanation offered; vendor failed to show good title'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG4', issue: 'chain-of-title', label: 'The chain of title and registration of title documents' },
+              { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+            ],
+          },
+          {
+            id: 'chain-of-title',
+            title: 'The chain of title and registration of title documents',
+            summary: 'Produce every document in the period, prove every link — and make sure the ones that pass title have actually been registered.',
+            triggers: {
+              bullets: [
+                'The assignment to the present vendor remains in the Land Registry as a deed pending registration.',
+                'A discharge of charge in the chain of title was never registered.',
+                'A sale and purchase agreement in the chain was never registered but a properly registered assignment followed it.',
+                'An unregistered mortgage appears among the documents supplied.',
+                'The vendor has produced the documents but has not explained how the property passed from one owner to the next.',
+                'A 1979 pump pit agreement has been replaced by a 1988 agreement, and the purchaser demands both.',
+                'A car park layout plan has been amended and the purchaser wants the superseded version.',
+                'The certificate of compliance is unregistered and the purchaser questions the conversion of the equitable interest.',
+                'The deed of mutual covenant is unregistered and the purchaser questions the enforceability of its covenants.',
+              ],
+              routes: [
+                { when: 'The question is where the chain starts', session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+                { when: 'A link cannot be proved because a document is missing', session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+                { when: 'The unregistered instrument is a third party\'s interest rather than the vendor\'s own title', session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Proving the chain',
+                steps: [
+                  {
+                    label: 'Identify the chain of title period',
+                    detail: 'Unless otherwise agreed, the vendor must produce the original or certified copies of all documents affecting title, whether registered or not, in the chain of title period — from the ultimate root where that is less than 15 years old, or otherwise from the intermediate root, to the present agreement.',
+                    why: 'The chain is the story of how the title reached the vendor. Producing the root without the chain proves that somebody once owned the land, not that this vendor does.',
+                    exam: {
+                      write: 'The chain of title period runs from [the intermediate root dated [date]] to the present agreement, and the vendor must produce originals or certified copies of all documents affecting title in that period, registered or not.',
+                      trap: 'Producing only the registered documents. The obligation covers documents affecting title whether registered or not.',
+                    },
+                    points: [
+                      'From the ultimate root, where it is less than 15 years before the agreement.',
+                      'Otherwise from the intermediate root.',
+                      'All documents affecting title, whether registered or not.',
+                    ],
+                  },
+                  {
+                    label: 'Prove each link by proper conveyancing evidence',
+                    detail: 'In addition to providing the documents, the vendor must prove by proper conveyancing evidence each link in the chain of title during that period. This involves the complex task of proving that each transfer of title in the period has been validly effected.',
+                    why: 'A stack of documents does not by itself show that the person who signed each one was entitled to. Execution, capacity, authority and identity all have to hold at every step.',
+                    exam: {
+                      write: 'The vendor must prove by proper conveyancing evidence that each transfer of title in the chain of title period was validly effected.',
+                      trap: 'Forgetting what the LG3 stage list flagged as common defects: defective execution by companies or under powers of attorney, and discrepancies in names and signatures.',
+                    },
+                    points: [
+                      'Check execution, including by companies and under powers of attorney.',
+                      'Check for discrepancies in names and signatures across the documents.',
+                      'Check that any power of attorney used within the last 15 years has been produced.',
+                    ],
+                  },
+                  {
+                    label: 'Check that the documents which pass title are registered',
+                    detail: 'There is little authority on whether a vendor fails to prove good title because documents provided by way of showing title are unregistered. The answer depends on the nature and function of the title deed: those which directly affect the passing of title must be registered.',
+                    why: 'Registration is what gives an assignment priority. An unregistered assignment leaves open the possibility that an encumbrance could have been registered ahead of it, which is a defect in the vendor\'s own title rather than a documentary gap.',
+                    exam: {
+                      write: 'The vendor must ensure that the assignment to him has been duly registered, so that no encumbrance has or could have gained priority over it; it having remained a deed pending registration, the vendor has failed to show good title: Chan Wing Nga v Chung Chi Wai DCCJ 5656/2005, 4/8/2006.',
+                      trap: 'Treating every unregistered document as fatal. An unregistered charge or encumbrance would clearly not adversely affect the vendor\'s title — it is void against him.',
+                    },
+                    points: [
+                      'Assignments in the chain of title must be registered.',
+                      'The same reasoning applies to a discharge of a charge.',
+                      'Failure to register a sale and purchase agreement in the chain may not matter where it has been superseded by a properly registered assignment.',
+                      'An unregistered charge or encumbrance would clearly not adversely affect the vendor\'s title.',
+                    ],
+                  },
+                  {
+                    label: 'Check the other documents it is prudent to have registered',
+                    detail: 'It is also prudent for other documents of title to be registered.',
+                    why: 'Each has a different reason. The certificate of compliance may need registration for the deemed conversion to operate at all, and the DMC needs it for the covenants to bind successors.',
+                    exam: {
+                      write: 'The certificate of compliance should be registered to effect the deemed conversion of the equitable interest into the legal estate: Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198.',
+                      trap: 'Forgetting the DMC. It should be registered to ensure the enforceability of its covenants against successors — the s41(9) point from LG2.',
+                    },
+                    points: [
+                      'Certificate of compliance: may need registration to effect the deemed conversion: Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198.',
+                      'The occupation permit and any required consents should be registered.',
+                      'Deeds of mutual covenant should be registered to ensure the enforceability of their covenants.',
+                    ],
+                  },
+                  {
+                    label: 'Exclude what has been superseded',
+                    detail: 'There is no obligation on a vendor to produce certified copies of title documents which have been replaced by subsequent title documents duly produced: De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478, CA.',
+                    why: 'A superseded document can no longer affect the purchaser, so requiring it serves no purpose. This is the practical answer to a requisition about an old plan or agreement.',
+                    exam: {
+                      write: 'The [1979 pump pit agreement] having been replaced by the [1988] agreement, which has been duly produced, there is no obligation to produce the earlier document: De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478, CA.',
+                      trap: 'Confining the principle to the chain of title period. It applies to pre-intermediate root documents in respect of which a requisition has been raised as well.',
+                    },
+                    points: [
+                      'The facts were a 1979 pump pit agreement replaced by one of 1988.',
+                      'The principle may well apply to car park layout plans replaced by amended plans.',
+                      'It applies both within the chain of title period and to pre-intermediate root documents.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The obligation covers documents whether registered or not, so the vendor cannot limit himself to what a land search throws up.',
+                'Chan Wing Nga is about the vendor\'s OWN assignment sitting in the deeds pending registration section — a defect in his title, not merely in his paperwork.',
+                'A document registered only in the deeds pending registration section must still be produced: Wong Kum Chi and Goldenwick.',
+                'Proving each link is where powers of attorney, company execution and name discrepancies actually bite — they are later topics in the course.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Fix the chain of title period.',
+                'List every document affecting title in it, registered or not.',
+                'Prove each link by proper conveyancing evidence.',
+                'Check registration of the documents that pass title, and of the prudent extras.',
+                'Exclude any document superseded by one duly produced.',
+                'Identify any link that cannot be proved and turn to the missing-deeds rules.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Producing documents without proving the links between them.',
+                'Treating every unregistered instrument as a defect.',
+                'Overlooking the vendor\'s own assignment sitting as a deed pending registration.',
+                'Requiring a superseded document once its replacement has been produced.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The period', 'Lecture note on the chain of title', 'From the ultimate or intermediate root to the present agreement; all documents affecting title, registered or not'],
+                  ['Proving the links', 'Lecture note', 'Each transfer in the period must be proved validly effected by proper conveyancing evidence'],
+                  ['Registration of assignments', 'Chan Wing Nga v Chung Chi Wai DCCJ 5656/2005, 4/8/2006', 'Assignment left as a deed pending registration; vendor failed to show good title'],
+                  ['Certificate of compliance', 'Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198', 'Registration may be needed to effect the deemed conversion of the equitable interest'],
+                  ['Superseded documents', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478, CA', 'No obligation to produce a document replaced by a later one duly produced'],
+                  ['Deeds pending registration', 'Wong Kum Chi v Lee Tit Ying [2003] 1 HKLRD 594; Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266', 'Must be produced even where registered only in that section'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'intermediate-root', label: 'The intermediate root of title' },
+              { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+              { session: 'LG3', issue: 'unregistered-encumbrances', label: 'Registrable encumbrances that are unregistered' },
+              { session: 'LG2', issue: 'enforceability-s41', label: 'Does the covenant run? Section 41 of the Conveyancing and Property Ordinance' },
+            ],
+          },
+          {
+            id: 'pre-intermediate-defects',
+            title: 'Pre-intermediate root title defects',
+            summary: 'The vendor need not produce documents before the root — but if the purchaser finds a defect there, the vendor must still answer for it.',
+            triggers: {
+              bullets: [
+                'The purchaser obtained pre-intermediate root documents from the Land Registry himself.',
+                'During the pre-intermediate root period an attorney wrongfully made a gift of the property.',
+                'A deed in the pre-intermediate root period was executed by only one director of a company.',
+                'The vendor says he need not answer because the defect falls outside the statutory period.',
+                'The vendor argues that the burden is on the purchaser to prove the pre-intermediate root defect first.',
+                'The purchaser raises a requisition on a document the vendor was never obliged to supply.',
+                'A severance of a joint tenancy in the pre-intermediate root period cannot be proved.',
+                'The occupation permit from the pre-intermediate root period is missing.',
+                'A recital in a later assignment refers to the pre-intermediate root document in issue.',
+              ],
+              routes: [
+                { when: 'The question is what the vendor must produce in the first place', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The defect may be cured by a recital in a later document', session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+                { when: 'The requisition was raised outside the contractual time limit', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Handling a defect before the root',
+                steps: [
+                  {
+                    label: 'Confirm that the vendor need not PRODUCE those documents',
+                    detail: 'A vendor is not required, unless he has otherwise agreed, to show title prior to the period stipulated in s13(1) of the Conveyancing and Property Ordinance.',
+                    why: 'The statutory period would be meaningless if the purchaser could simply requisition his way behind it. The limit is real — but it is a limit on production, not on answering.',
+                    exam: {
+                      write: 'The vendor is not obliged to produce title documents prior to the s13 period: Dawson Properties Ltd v Hong Kong Niiroku Ltd [1997] 2 HKC 800.',
+                      trap: 'Treating that as the end of the argument. The duty to show good title includes answering a requisition on a defect the purchaser has found for himself.',
+                    },
+                    points: [
+                      'The limit is on the obligation to produce.',
+                      'It yields to an express agreement to show title for a longer period.',
+                    ],
+                  },
+                  {
+                    label: 'But require the vendor to answer a requisition on a defect the purchaser finds',
+                    detail: 'Where the purchaser discovers from his own checking of the title that there is a pre-intermediate root title defect, he should raise a requisition on it and the vendor must, by virtue of his obligation to show good title, answer it satisfactorily: Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA.',
+                    why: 'The purchaser is expected to obtain the title documents back to the ultimate root himself. Having done so, he cannot be told that what he found is none of his business.',
+                    exam: {
+                      write: 'The purchaser having obtained the pre-intermediate root documents himself, there is nothing to prevent him raising proper requisitions upon them, and the vendor must answer satisfactorily: Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA at 730.',
+                      trap: 'Accepting the burden-of-proof argument. It was rejected: if the purchaser had to prove the defect first there would hardly be any point to a requisition.',
+                    },
+                    points: [
+                      'The purchaser\'s solicitor should obtain from the Land Registry copies of the title deeds going back to the ultimate root, not merely those the vendor supplies.',
+                      'The vendors were obliged to show good title; the burden does not shift to the purchaser to prove the defect first.',
+                    ],
+                  },
+                  {
+                    label: 'Identify the kind of defect, and look for a cure',
+                    detail: 'The lecture gives two worked examples of pre-intermediate root defects the vendor had to answer for.',
+                    why: 'Both are defects in the passing of title rather than encumbrances — which is why they survive the intermediate root at all. A break in the chain before the root can still mean the root itself was executed by someone without title.',
+                    exam: {
+                      write: 'The [wrongful gift by the attorney / execution by one director alone] in the pre-intermediate root period is a defect the vendor must answer for, and he has [not] responded adequately to the requisition.',
+                      trap: 'Forgetting that ss13(3) and 13(4) of the Conveyancing and Property Ordinance exist precisely for this situation — a recital may prove the missing pre-intermediate root document.',
+                    },
+                    points: [
+                      'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA: during the pre-intermediate root period an attorney had wrongfully made a gift of the property; the vendor failed to respond adequately to the requisition.',
+                      'Ho So Yung v Lei Chon Un [1998] 2 HKC 697: a requisition as to a pre-intermediate root defect relating to the execution of a deed by one director had to be answered.',
+                      'Section 13(3) creates a rebuttable presumption from a recital of a pre-intermediate root document.',
+                      'Section 13(4) makes a recital of fact in a pre-intermediate root document sufficient evidence of the truth of that recital.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the good title standard to what remains',
+                    why: 'A pre-intermediate root defect is still only a defect if it carries a real risk. Kingdom Miles is the worked example of an ancient gap that carried none.',
+                    exam: {
+                      write: 'Even taking the pre-intermediate root [gap] at its highest, there is no real risk of a successful assertion against the purchaser, and the title is good.',
+                      trap: 'Answering the requisition with the bare point that the document is outside the statutory period. That is a refusal, not an answer, and the purchaser may rescind for failure to show title.',
+                    },
+                    points: [
+                      'Apply MEPC and Kan Wing Yau to the residual risk.',
+                      'Set out the facts and circumstances; a bald assertion will not do: Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183, CA.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The purchaser\'s solicitor is expected to obtain pre-intermediate root documents from the Land Registry himself — failure to search at all may be negligence.',
+                'Lo Hung Biu at 730 is the passage that rejects the burden-shifting argument. It is short and worth quoting.',
+                'A pre-intermediate root defect is where the recital provisions in ss13(3) and 13(4) earn their keep.',
+                'The superseded-document principle in De Monsa (CA) applies to pre-intermediate root documents in respect of which a requisition has been raised.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Confirm that production is not required for the pre-intermediate root period.',
+                'Establish that the purchaser found the defect from his own checking.',
+                'State the duty to answer the requisition satisfactorily.',
+                'Reject any burden-shifting argument.',
+                'Look for a recital under s13(3) or s13(4) to cure the gap.',
+                'Apply the no-real-risk standard to what is left, with the facts set out.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the statutory period as excusing the vendor from answering.',
+                'Accepting that the purchaser must prove the defect before the vendor need respond.',
+                'Overlooking the recital provisions.',
+                'Answering with the bare assertion that the document is too old to matter.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['No duty to produce', 'Dawson Properties Ltd v Hong Kong Niiroku Ltd [1997] 2 HKC 800', 'No duty to produce documents prior to the s13 period'],
+                  ['But must answer', 'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA at 730', 'Nothing prevents proper requisitions on pre-intermediate root documents the purchaser holds; the burden does not shift to him'],
+                  ['Worked example', 'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA', 'Attorney wrongfully made a gift of the property; vendor failed to respond adequately'],
+                  ['Worked example', 'Ho So Yung v Lei Chon Un [1998] 2 HKC 697', 'Requisition as to execution of a deed by one director had to be answered'],
+                  ['Cure by recital', 'ss13(3) and 13(4), Conveyancing and Property Ordinance (Cap. 219)', 'Presumptions from recitals of and in pre-intermediate root documents'],
+                  ['Bald assertion insufficient', 'Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183, CA', 'The surrounding circumstances must be referred to in the correspondence'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+              { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+            ],
+          },
+          {
+            id: 'powers-of-attorney',
+            title: 'Powers of attorney under section 13(1)(c)',
+            summary: 'Produce any power under which a produced document was executed in the last 15 years — the vendor\'s side, and the present assignment too.',
+            triggers: {
+              bullets: [
+                'An assignment in the chain of title was executed under a power of attorney eleven years ago.',
+                'The present assignment is to be executed by the vendor\'s attorney.',
+                'The purchaser demands the power of attorney under which he himself is executing.',
+                'Conditions of Grant were executed by way of a power of attorney on behalf of a purchaser.',
+                'A power of attorney used sixteen years ago is the only one in the chain.',
+                'The purchaser is asked to assume, by a limiting clause, that a named power of attorney was valid and unrevoked.',
+                'The vendor cannot locate the power under which an assignment in the chain was signed.',
+                'A power of attorney relates exclusively to the property and the question is whether the original must be handed over.',
+                'The attorney who executed a pre-intermediate root document is said to have exceeded his authority.',
+              ],
+              routes: [
+                { when: 'The question is the period and documents generally', session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+                { when: 'The purchaser is asked to assume the power was valid', session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+                { when: 'The defect in the power is in the pre-intermediate root period', session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Applying section 13(1)(c)',
+                steps: [
+                  {
+                    label: 'State the rule',
+                    detail: 'The vendor must produce any power of attorney under which any document has been executed in the last 15 years: s13(1)(c) of the Conveyancing and Property Ordinance.',
+                    why: 'A document executed by an attorney is only as good as the attorney\'s authority. Within 15 years the power is recent enough to be traceable and close enough to the present title to matter.',
+                    exam: {
+                      write: 'The [assignment] dated [date] having been executed under a power of attorney less than 15 years before the contract of sale, s13(1)(c) of the Conveyancing and Property Ordinance requires the vendor to produce the power.',
+                      trap: 'Measuring the 15 years from the date of the power. The subsection looks at when the DOCUMENT was executed.',
+                    },
+                    points: [
+                      'The trigger is the execution of a produced document less than 15 years before the contract of sale.',
+                      'The duty is to produce the power itself.',
+                    ],
+                  },
+                  {
+                    label: 'Note the exclusion for the purchaser\'s side',
+                    detail: 'The duty excludes any Conditions of Grant or assignment executed by way of a power of attorney on behalf of a purchaser: Lau Kwok Cheong Dinnes & Anor v Tse Ming Chiu [2001] 3 HKC 196.',
+                    why: 'The title being proved is the vendor\'s. How a past purchaser signed does not bear on whether title passed to him, because the assignor\'s execution is what conveys.',
+                    exam: {
+                      write: 'The power of attorney was used on the purchaser\'s side, and is accordingly outside the duty: Lau Kwok Cheong Dinnes & Anor v Tse Ming Chiu [2001] 3 HKC 196.',
+                      trap: 'Applying the exclusion to the vendor\'s attorney. The duty is very much alive on that side.',
+                    },
+                    points: [
+                      'Excluded: Conditions of Grant or an assignment executed by power of attorney on behalf of a purchaser.',
+                      'The duty is on the vendor\'s side.',
+                    ],
+                  },
+                  {
+                    label: 'Include the power for the present assignment',
+                    detail: 'A vendor has a duty to produce any power of attorney under which the present assignment will be executed: Big Boss Investment Ltd v So Lai Kei [2010] 1 HKLRD 793.',
+                    why: 'The present assignment is the one that actually conveys to this purchaser. A defect in the authority to execute it defeats the conveyance itself.',
+                    exam: {
+                      write: 'The present assignment being executed by the vendor\'s attorney, the power under which it will be executed must be produced: Big Boss Investment Ltd v So Lai Kei [2010] 1 HKLRD 793.',
+                      trap: 'Thinking the duty is confined to historic documents. Big Boss extends it to the assignment about to be executed.',
+                    },
+                    points: [
+                      'The duty covers the power for the present transaction.',
+                    ],
+                  },
+                  {
+                    label: 'Consider whether the original must be delivered as well as produced',
+                    detail: 'Powers of attorney may fall into either category for the purposes of the exclusivity test — they may or may not relate exclusively to the property.',
+                    why: 'A general power covering a person\'s whole affairs plainly does not relate exclusively to one flat; a power granted for a single sale may. The classification decides whether s13A requires the original to be handed over.',
+                    exam: {
+                      write: 'The power of attorney [does / does not] relate exclusively to the property, so its original [must / need not] be delivered under s13A(1)(b) of the Conveyancing and Property Ordinance.',
+                      trap: 'Assuming powers of attorney never relate exclusively to the property. The lecture expressly says they may fall into either category.',
+                    },
+                    points: [
+                      'Section 13A(1)(b) requires delivery of documents relating exclusively to the land and required under s13(1)(a) and (c).',
+                      'Powers of attorney may fall into either category.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A limiting clause deeming the purchaser to assume a named power was valid and unrevoked is one of the standard examples of an exclusion clause — the two topics meet here.',
+                'Defective execution under a power of attorney is one of the common defects the LG3 stage list flags for the purchaser\'s solicitor to look for.',
+                'The subject is dealt with more fully in the later notes on execution of documents; here only the s13(1)(c) duty is in play.',
+                'The exclusion in Lau Kwok Cheong covers both Conditions of Grant and an assignment, so long as the power was used on the purchaser\'s side.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify every produced document executed under a power of attorney.',
+                'Date each execution against the contract of sale.',
+                'Exclude powers used on the purchaser\'s side.',
+                'Include the power for the present assignment.',
+                'Decide whether the power relates exclusively to the property for delivery purposes.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Dating the 15 years from the power rather than from the document executed under it.',
+                'Demanding the power under which the purchaser executes.',
+                'Overlooking the power for the present assignment.',
+                'Assuming a power of attorney can never relate exclusively to the property.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The duty', 's13(1)(c), Conveyancing and Property Ordinance (Cap. 219)', 'Production of any power under which a produced document was executed less than 15 years before the contract'],
+                  ['Purchaser\'s side excluded', 'Lau Kwok Cheong Dinnes & Anor v Tse Ming Chiu [2001] 3 HKC 196', 'Excludes Conditions of Grant or an assignment executed by power on behalf of a purchaser'],
+                  ['The present assignment', 'Big Boss Investment Ltd v So Lai Kei [2010] 1 HKLRD 793', 'The vendor must produce the power under which the present assignment will be executed'],
+                  ['Delivery of the original', 's13A(1)(b), Conveyancing and Property Ordinance (Cap. 219)', 'Depends on whether the power relates exclusively to the land'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
+              { session: 'LG3', issue: 'exclusion-clauses', label: 'Excluding or limiting the duty to give title' },
+              { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
+            ],
+          },
+          {
+            id: 'missing-deeds-re-halifax',
+            title: 'Missing title deeds and the rule in Re Halifax',
+            summary: 'Three things: a statutory declaration explaining the loss, secondary evidence of the contents, and proof of due execution.',
+            triggers: {
+              bullets: [
+                'Neither the original nor a certified copy of an assignment in the chain can be found.',
+                'The vendor offers the old form memorial as a substitute for the missing title document.',
+                'The Government lease itself has been lost and the vendor proposes secondary evidence.',
+                'A statutory declaration has been made by someone who has no personal knowledge of how the documents were lost.',
+                'Original title deeds were lost in the Japanese invasion or destroyed by damp and storage.',
+                'The vendor produces a statutory declaration but no evidence of due execution.',
+                'The purchaser accepts the contents of the missing deed but disputes that it was properly executed.',
+                'The vendor says De Monsa means he need not account for the missing originals at all.',
+                'The absence of the original suggests a deposit of title deeds to secure a loan.',
+              ],
+              routes: [
+                { when: 'The question is whether the ORIGINAL had to be delivered in the first place', session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+                { when: 'A recital in a later document refers to the missing one', session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+                { when: 'The missing document is the Government lease or part of it', session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Proving a missing document',
+                steps: [
+                  {
+                    label: 'Confirm that a memorial will not do as a substitute',
+                    detail: 'The originals or certified copies of all title documents falling within the scope of s13 of the Conveyancing and Property Ordinance must be produced, and a memorial of a missing title document will not suffice as a substitute: Lai Chung Yue v Chau Shing [1987] 3 HKC 406.',
+                    why: 'A memorial is a summary prepared for the register, not a record of the instrument\'s terms. It can serve as secondary evidence of the contents, but it is not the document.',
+                    exam: {
+                      write: 'The memorial is not a substitute for the missing title document: Lai Chung Yue v Chau Shing [1987] 3 HKC 406, though it may serve as secondary evidence of its contents.',
+                      trap: 'Treating those two roles as the same. The memorial fails as a substitute and succeeds as evidence — the lecture says both.',
+                    },
+                    points: [
+                      'A memorial is not a substitute for the document.',
+                      'The old form memorial will often suffice as secondary evidence of the contents.',
+                    ],
+                  },
+                  {
+                    label: 'Do the three things the rule requires',
+                    detail: 'If the originals and certified copies cannot be found, the vendor may do three things, in the procedure first approved in Re the Halifax Commercial Banking Co Ltd and Wood (1898) 79 LT 536, CA.',
+                    why: 'Each limb answers a different objection: why is it gone, what did it say, and was it validly made. Leaving one out leaves an objection unanswered.',
+                    exam: {
+                      write: 'The vendor should (a) establish by statutory declaration how the documents came to be lost, (b) produce secondary evidence of their contents, and (c) produce proof of their due execution: Re the Halifax Commercial Banking Co Ltd and Wood (1898) 79 LT 536, CA.',
+                      trap: 'Letting anyone make the declaration. It should be made by the person with the best knowledge of how the document came to be missing.',
+                    },
+                    points: [
+                      'Establish by statutory declaration, made by the person with the best knowledge of how the document came to be missing, explaining how it was lost.',
+                      'Produce secondary evidence of the contents; often the old form memorial will suffice.',
+                      'Produce proof of due execution.',
+                    ],
+                  },
+                  {
+                    label: 'Note the Hong Kong adoption and the standard required',
+                    detail: 'The procedure was adopted in Hong Kong in Wu Wing Kuen v Leung Kwai Lin Cindy [2001] 1 HKLRD 212, and in Ip Foo Keung Michael v Chan Pak Kai [1999] 3 HKLRD 738, [1999] 4 HKC 565, CA, where Godfrey JA observed that s13(1) was intended simply to facilitate conveyancing by reducing the length of time for which the vendor has to prove his title.',
+                    why: 'Godfrey JA\'s point is that the section shortens the period, not the standard. Within the period the vendor still has to prove what he is producing.',
+                    exam: {
+                      write: 'The vendor must start with the Government lease from which he derives his title; if it is lost or cannot be found, he must produce clear and cogent secondary evidence of its contents and due execution: Ip Foo Keung Michael v Chan Pak Kai [1999] 3 HKLRD 738, CA, per Godfrey JA.',
+                      trap: 'Applying a lower standard than "clear and cogent". That is the phrase the Court of Appeal used and the Court of Final Appeal endorsed.',
+                    },
+                    points: [
+                      'Endorsed by the Court of Final Appeal in Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212, CFA.',
+                      'Section 13(1) reduces the period, not the standard of proof.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the rule needs to be invoked at all',
+                    detail: 'After De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA, resort to Re Halifax will at best be rare and may never be necessary.',
+                    why: 'The rule was invoked so often because the old understanding required every original back to the root. Once the duty is restricted to originals in the vendor\'s possession or power, plus those whose absence indicates a realistic risk, there is far less to account for.',
+                    exam: {
+                      write: 'The absence of the original [not indicating] the realistic possibility of some transaction affecting the land which could affect the purchaser, no Re Halifax explanation is required.',
+                      trap: 'Assuming the rule is dead. Zhang Xueshuai shows it alive where every original is missing and the property carries alienation restrictions.',
+                    },
+                    points: [
+                      'De Monsa restricted the duty to explain to cases where the absence indicates a realistic possibility of a transaction affecting the land.',
+                      'The rule remains relevant where that condition is met.',
+                      'A statutory declaration that cannot properly speak to the reason for the loss is not enough: Zhang Xueshuai v Lai Chan Wing [2015] 2 HKC 125, [2015] 2 HKLRD 246, CA.',
+                    ],
+                  },
+                  {
+                    label: 'Consider whether a recital will do the work instead',
+                    detail: 'Sections 13(3) and 13(4) of the Conveyancing and Property Ordinance assist a vendor in proving his title by means of recitals in conveyancing documents.',
+                    why: 'A recital is evidence already in the chain, so it costs nothing to use and is not vulnerable to the objection that a declarant lacks personal knowledge.',
+                    exam: {
+                      write: 'The [assignment] of [year] recites [the missing document], so by s13([3]/[4]) of the Conveyancing and Property Ordinance the purchaser must assume the recital correct / it is sufficient evidence of the truth of that fact.',
+                      trap: 'Reaching for a statutory declaration before checking the recitals. Chan Kin Leung and Chu Wai Ming both turned on a recital curing a missing document.',
+                    },
+                    points: [
+                      'See the separate issue type for the detail of ss13(3) and 13(4).',
+                      'Chan Kin Leung v Lok Kar Cheong HCMP 3993/97, 7/5/1998: a recital in a pre-intermediate root document as to a missing Crown lease sufficed.',
+                      'Chu Wai Ming Alexander v Ng Yau Yee Connie DCMP 2449/2007, 14/11/2007: a missing distribution agreement cured by a recital in a subsequent assignment.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The declaration must come from the person with the best knowledge. In Zhang the solicitor\'s declaration could speak only to the period after his client took over, and that was fatal.',
+                'The memorial does double duty in this topic — useless as a substitute, useful as secondary evidence.',
+                'Wu Wing Kuen appears both as a first-instance decision and in the Court of Final Appeal as Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212. Cite the level you need.',
+                'The rule applies to showing title; whether an ORIGINAL had to be delivered at all is the separate s13A question.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the missing document and what it does in the chain.',
+                'Ask whether its absence indicates a realistic possibility of a transaction affecting the land.',
+                'Check for a recital in a later document under ss13(3) and 13(4).',
+                'If the rule is needed, do all three limbs and identify the right declarant.',
+                'State the standard: clear and cogent secondary evidence of contents and due execution.',
+                'Conclude on whether title has been shown.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Offering a memorial as a substitute for the document.',
+                'Doing the declaration and stopping, without evidence of contents or of due execution.',
+                'Having the declaration sworn by someone without the best knowledge.',
+                'Treating Re Halifax as obsolete after De Monsa.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Memorial not a substitute', 'Lai Chung Yue v Chau Shing [1987] 3 HKC 406', 'A memorial of a missing document will not suffice as a substitute'],
+                  ['The procedure', 'Re the Halifax Commercial Banking Co Ltd and Wood (1898) 79 LT 536, CA', 'Statutory declaration as to the loss, secondary evidence of contents, and proof of due execution'],
+                  ['Adopted in Hong Kong', 'Wu Wing Kuen v Leung Kwai Lin Cindy; Ip Foo Keung Michael v Chan Pak Kai [1999] 3 HKLRD 738, [1999] 4 HKC 565, CA', 'Clear and cogent secondary evidence of contents and due execution, per Godfrey JA'],
+                  ['Endorsed', 'Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212, CFA', 'The Court of Final Appeal endorsed that view'],
+                  ['Rarely needed now', 'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2013] 5 HKC 350, CFA', 'Resort to Re Halifax will at best be rare and may never be necessary'],
+                  ['Still alive', 'Zhang Xueshuai v Lai Chan Wing [2015] 2 HKC 125, [2015] 2 HKLRD 246, CA', 'A declaration that could not speak to the reason for the loss was insufficient'],
+                  ['Recital as an alternative', 'Chan Kin Leung v Lok Kar Cheong HCMP 3993/97, 7/5/1998; Chu Wai Ming Alexander v Ng Yau Yee Connie DCMP 2449/2007, 14/11/2007', 'Recitals cured a missing Crown lease and a missing distribution agreement'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'recitals', label: 'Using recitals in proving title' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+              { session: 'LG3', issue: 'original-title-deeds', label: 'Original title deeds: common law and section 13A' },
+            ],
+          },
+          {
+            id: 'recitals',
+            title: 'Using recitals in proving title',
+            summary: 'Two provisions, two different jobs: s13(3) presumes a recited pre-root document; s13(4) proves a fact recited in one.',
+            triggers: {
+              bullets: [
+                'An assignment in the chain recites a Crown lease that cannot be found.',
+                'A recital in a subsequent assignment refers to a distribution agreement which is missing.',
+                'A deed of mutual covenant of 1931 and an assignment of 1932 recite that the terms of the Grant were duly accepted and deposited in the Land Office.',
+                'Two letters referred to in a pre-intermediate root document cannot be located.',
+                'A severance of a joint tenancy in the pre-intermediate root period cannot be directly proved.',
+                'The occupation permit from the pre-intermediate root period is missing but is recited in a later deed.',
+                'The purchaser says a recital proves nothing because the underlying document has never been seen.',
+                'The vendor relies on a recital and the purchaser offers no evidence to the contrary.',
+                'The document containing the recital is itself more than 15 years old.',
+              ],
+              routes: [
+                { when: 'The document is missing and there is no recital to rely on', session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+                { when: 'The missing document is part of the ultimate root', session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+                { when: 'The defect the recital addresses lies before the intermediate root', session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Using a recital to fill a gap',
+                steps: [
+                  {
+                    label: 'Identify the recital and which subsection it engages',
+                    detail: 'Recitals may be narrative or introductory and are introduced by the word "WHEREAS". Two provisions of the Conveyancing and Property Ordinance assist a vendor in proving his title by means of them.',
+                    why: 'The two subsections look alike but do different work: one is about a recited DOCUMENT, the other about a recited FACT. Picking the wrong one means proving the wrong thing.',
+                    exam: {
+                      write: 'The [assignment] of [year] recites [the document / the fact], engaging s13([3]/[4]) of the Conveyancing and Property Ordinance.',
+                      trap: 'Using s13(3) for a recited fact. Section 13(3) is about a recital OF a pre-intermediate root document; s13(4) is about a recital of fact IN one.',
+                    },
+                    points: [
+                      'Section 13(3): a recital, in a document produced as proof of title, of a document dated or made before the date from which the vendor must prove title.',
+                      'Section 13(4): a recital of fact in a pre-intermediate root document.',
+                    ],
+                  },
+                  {
+                    label: 'Apply s13(3): three presumptions about the recited document',
+                    detail: 'Section 13(3) provides that where any document produced as proof of title contains a recital of a document dated or made before the date from which the vendor is required to prove title, the purchaser must assume, unless the contrary is proved, three things.',
+                    why: 'The presumptions are rebuttable, which is what keeps them fair: the purchaser is relieved of proving a negative, but may still displace the recital with evidence.',
+                    exam: {
+                      write: 'By s13(3) of the Conveyancing and Property Ordinance the purchaser must assume, unless the contrary is proved, that the recital is correct, that it gives all the material contents of the document recited, and that the document recited was duly executed.',
+                      trap: 'Treating the presumption as irrebuttable. It applies "unless the contrary is proved".',
+                    },
+                    points: [
+                      'That the recital is correct.',
+                      'That the recital gives all the material contents of the document recited.',
+                      'That the document recited was duly executed.',
+                      'The presumption assists where an important pre-intermediate root document is missing — proof of severance of a joint tenancy, a missing occupation permit, a certificate of compliance.',
+                    ],
+                  },
+                  {
+                    label: 'Apply s13(4): a recital of fact is sufficient evidence of its truth',
+                    detail: 'Section 13(4) provides that a recital of fact in a pre-intermediate root document shall be sufficient evidence of the truth of that recital.',
+                    why: 'As the Court of Appeal put it in Kingdom Miles, the purpose is to facilitate proof of title by enabling conveyancers to rely on recitals in a document of title more than 15 years old, unless the contrary is proved.',
+                    exam: {
+                      write: 'The recital in the [deed of 1931] that the terms and conditions of the Grant were duly accepted and deposited in the Land Office as the Conditions of Grant is, by s13(4), sufficient evidence of the truth of that fact unless the contrary is proved.',
+                      trap: 'Treating the absence of the recited document as evidence to the contrary. In Kingdom Miles the mere fact that the two letters were missing could not be evidence to the contrary.',
+                    },
+                    points: [
+                      'The document containing the recital must be a pre-intermediate root document, that is more than 15 years before the contract of sale.',
+                      'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643: the vendor was entitled to rely on s13(4) as to the recitals in a deed of covenants of 1931 and an assignment of 1932.',
+                      'The mere fact that the recited documents were missing could not be evidence to the contrary.',
+                    ],
+                  },
+                  {
+                    label: 'Check the decided examples of recitals curing a gap',
+                    why: 'Both worked examples involve exactly the sort of document that goes missing: a Crown lease and a distribution agreement on an intestacy. That is the pattern to recognise.',
+                    exam: {
+                      write: 'The missing [Crown lease / distribution agreement] is cured by the recital in the [pre-intermediate root document / subsequent assignment], which is sufficient proof of title.',
+                      trap: 'Forgetting to look for the recital at all. It is cheaper and more robust than a statutory declaration and should be the first resort.',
+                    },
+                    points: [
+                      'Chan Kin Leung v Lok Kar Cheong HCMP 3993/97, 7/5/1998: a recital in a pre-intermediate root document as to a missing Crown lease sufficed by way of proof of title.',
+                      'Chu Wai Ming Alexander v Ng Yau Yee Connie DCMP 2449/2007, 14/11/2007: a missing distribution agreement cured by a recital in a subsequent assignment.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Kingdom Miles is the case where s13(4) was the real answer and the argument had been run on s13(3) — the Court of Appeal noted the Recorder had not grappled with sub-section (4).',
+                'Both provisions operate only on pre-intermediate root material. They will not help with a gap inside the chain of title period.',
+                'A recital is not a substitute for production where the document exists and can be obtained. It fills a gap; it does not excuse laziness.',
+                'The recital route sits alongside Re Halifax, not instead of it — check the recitals first, then fall back.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the missing document or unproved fact.',
+                'Search the produced documents for a recital of it.',
+                'Classify the recital: of a document (s13(3)) or of a fact (s13(4)).',
+                'Apply the relevant presumption and state that it is rebuttable.',
+                'Say why the absence of the recited document is not itself evidence to the contrary.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using s13(3) where the recital is of a fact rather than a document.',
+                'Applying either subsection to a document inside the chain of title period.',
+                'Treating the presumptions as conclusive.',
+                'Arguing that the loss of the recited document rebuts the recital.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'The purpose of sub-s.(4) is to facilitate the proof of title by enabling conveyancers to rely on recitals in a document of title of more than 15 years before the contract of sale. Its effect is to treat such recitals as sufficient evidence of the truth of any fact or matter contained in the recitals unless the contrary is proved.', cite: 'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643 at [125], as reproduced in the LG4 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Provision or case', 'What it establishes'],
+                rows: [
+                  ['Recital of a document', 's13(3), Conveyancing and Property Ordinance (Cap. 219)', 'Rebuttable presumptions that the recital is correct, gives all material contents, and that the document was duly executed'],
+                  ['Recital of a fact', 's13(4), Conveyancing and Property Ordinance (Cap. 219)', 'A recital of fact in a pre-intermediate root document is sufficient evidence of its truth'],
+                  ['Purpose of s13(4)', 'Kingdom Miles Ltd v Ever Crystal Ltd [2019] 1 HKLRD 643', 'Recitals in documents more than 15 years old are sufficient evidence unless the contrary is proved; a missing recited document is not evidence to the contrary'],
+                  ['Missing Crown lease', 'Chan Kin Leung v Lok Kar Cheong HCMP 3993/97, 7/5/1998', 'A recital in a pre-intermediate root document sufficed'],
+                  ['Missing distribution agreement', 'Chu Wai Ming Alexander v Ng Yau Yee Connie DCMP 2449/2007, 14/11/2007', 'Cured by a recital in a subsequent assignment'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'missing-deeds-re-halifax', label: 'Missing title deeds and the rule in Re Halifax' },
+              { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              { session: 'LG4', issue: 'ultimate-root', label: 'The ultimate root of title' },
+            ],
+          },
+          {
+            id: 'mere-conveyance',
+            title: 'Matters of mere conveyance',
+            summary: 'A defect the vendor can remove on his own, without anyone else\'s concurrence, does not make the title defective.',
+            triggers: {
+              bullets: [
+                'The property is still subject to a mortgage which the vendor intends to discharge before completion.',
+                'Trespassers are occupying the land the vendor has agreed to sell with vacant possession.',
+                'Licensees are on the land and the vendor says he can remove them.',
+                'Trespassers occupy wall stalls outside a shop in a multi-storey building.',
+                'The occupants of the property are tenants under a registered lease rather than trespassers.',
+                'The purchaser refuses to complete because of a subsisting charge the vendor has undertaken to discharge.',
+                'The vendor says the defect will be gone by completion and the purchaser says that is too late.',
+                'The vendor needs a third party\'s cooperation to remove the defect.',
+                'An unauthorised structure could be demolished before completion.',
+              ],
+              routes: [
+                { when: 'The defect cannot be removed without a third party\'s concurrence', session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+                { when: 'The vendor proposes to remedy the defect AFTER completion', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+                { when: 'The question is whether a required consent has been obtained', session: 'LG3', issue: 'title-in-vendor', label: 'Title in the vendor, consents, and assigning the whole interest' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing whether a defect is a matter of mere conveyance',
+                steps: [
+                  {
+                    label: 'State the test',
+                    detail: 'Matters of mere conveyance will not render a title defective. They are defects which the vendor can remove independently of the concurrence of any other person: Re Jackson & Oakshot (1880) 14 Ch D 851.',
+                    why: 'A defect the vendor controls is not a risk to the purchaser at all: by the time he takes the property it will be gone. The independence requirement is what makes that safe to assume.',
+                    exam: {
+                      write: 'The [subsisting mortgage] is a matter of mere conveyance, being a defect the vendor can remove independently of the concurrence of any other person: Re Jackson & Oakshot (1880) 14 Ch D 851.',
+                      trap: 'Applying the label to something the vendor cannot in fact remove alone. Independence from any other person is the whole test.',
+                    },
+                    points: [
+                      'The paradigm example is the discharge of a mortgage prior to completion.',
+                      'The defect must be removable independently of anyone else\'s concurrence.',
+                    ],
+                  },
+                  {
+                    label: 'Apply it to occupiers, where the line is drawn',
+                    detail: 'In Sharneyford Supplies Ltd v Edge [1985] 1 All ER 976, there was a duty on the vendor to give vacant possession and there were trespassers or licensees present on the land to be sold; since it was within the vendor\'s power to remove them, this was a matter of mere conveyance.',
+                    why: 'A trespasser has no right the purchaser could be bound by, and a licensee\'s permission can be withdrawn. A tenant is different because the tenancy is an interest in the land.',
+                    exam: {
+                      write: 'The occupants being [trespassers / licensees], their removal is within the vendor\'s power and is a matter of mere conveyance; the conclusion would be different if they were tenants.',
+                      trap: 'Extending it to tenants. Sharneyford expressly reaches a different conclusion where the occupants are tenants.',
+                    },
+                    points: [
+                      'Applied in Ip Fai Man v Lui Kit Man HCA 13661/1998.',
+                      'City Chain Properties Ltd v Speedy Port Ltd HCA 2221/1998: trespassers occupying wall stalls outside a shop constituted a matter of mere conveyance and did not adversely affect the vendor\'s title.',
+                      'A different conclusion follows if the occupants are tenants.',
+                    ],
+                  },
+                  {
+                    label: 'Distinguish it from an undertaking to remedy after completion',
+                    detail: 'In the absence of an express agreement to that effect, it will not usually be a sufficient answer to a requisition that the vendor undertakes to remedy the defect after completion: Liu Tak Kin v Chan Yiu Kai [1998] 4 HKC 362.',
+                    why: 'A matter of mere conveyance is cured BEFORE completion; an undertaking pushes the risk past the moment the purchaser pays. The two look similar and are not.',
+                    exam: {
+                      write: 'The vendor\'s undertaking to remedy the defect after completion is not a sufficient answer to the requisition, absent express agreement: Liu Tak Kin v Chan Yiu Kai [1998] 4 HKC 362.',
+                      trap: 'Ignoring the exception. In Hu Mei Yu Anastasia v King Best Enterprise Ltd HCA 9317/1998, 10/7/2000, a s27A Buildings Ordinance order to investigate and repair a slope was an encumbrance, but an undertaking by the vendor to pay his share should have satisfied a purchaser with robust common sense — though he could properly be asked to give security to fortify the undertaking.',
+                    },
+                    points: [
+                      'Mere conveyance: cured before completion, independently.',
+                      'An undertaking: a promise about the future, generally insufficient.',
+                      'Hu Mei Yu Anastasia is the exception, on facts involving an investigation and repair order rather than a charge.',
+                    ],
+                  },
+                  {
+                    label: 'State the consequence for the transaction',
+                    why: 'Classifying a defect as a matter of mere conveyance is how a vendor defeats a requisition without doing anything more than he was always going to do at completion.',
+                    exam: {
+                      write: 'The defect being a matter of mere conveyance, the title is not defective and the purchaser is not entitled to refuse to complete on account of it.',
+                      trap: 'Forgetting that the vendor still has to actually do it. The classification assumes the removal happens by completion.',
+                    },
+                    points: [
+                      'The title is not rendered defective.',
+                      'The vendor must still effect the removal or discharge by completion.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The doctrine turns on the vendor\'s power, not on the size of the defect. A large mortgage is a matter of mere conveyance; a small tenancy is not.',
+                'Where a consent is required from a third party, the defect is by definition not within the vendor\'s sole power.',
+                'Removal of an unauthorised structure before completion is the version of this point that arises on unauthorised building works, dealt with in the later notes.',
+                'Hu Mei Yu Anastasia is confined to an order under s27A of the Buildings Ordinance for investigation and repair, and the charge stage under s33 had not been reached.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the defect and who controls its removal.',
+                'Ask whether the vendor can remove it without anyone else\'s concurrence.',
+                'For occupiers, classify them as trespassers, licensees or tenants.',
+                'Distinguish an undertaking to remedy after completion.',
+                'Conclude on whether the title is defective.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating a tenancy as a matter of mere conveyance.',
+                'Accepting an undertaking to remedy after completion as equivalent.',
+                'Applying the doctrine where a third party\'s consent is needed.',
+                'Assuming the classification excuses the vendor from actually clearing the defect.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The test', 'Re Jackson & Oakshot (1880) 14 Ch D 851', 'A defect the vendor can remove independently of anyone else\'s concurrence, such as a discharge of mortgage before completion'],
+                  ['Occupiers', 'Sharneyford Supplies Ltd v Edge [1985] 1 All ER 976', 'Trespassers or licensees removable by the vendor; a different conclusion for tenants'],
+                  ['Applied', 'Ip Fai Man v Lui Kit Man HCA 13661/1998; City Chain Properties Ltd v Speedy Port Ltd HCA 2221/1998', 'Trespassers occupying wall stalls did not adversely affect the vendor\'s title'],
+                  ['Not an undertaking', 'Liu Tak Kin v Chan Yiu Kai [1998] 4 HKC 362', 'An undertaking to remedy after completion is generally not a sufficient answer'],
+                  ['The exception', 'Hu Mei Yu Anastasia v King Best Enterprise Ltd HCA 9317/1998, 10/7/2000', 's27A Buildings Ordinance order; undertaking to pay a share should have satisfied a purchaser with robust common sense, with security to fortify it'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG3', issue: 'title-in-vendor', label: 'Title in the vendor, consents, and assigning the whole interest' },
+            ],
+          },
+          {
+            id: 'investigating-title',
+            title: 'Investigating title: what the purchaser\'s solicitor must do',
+            summary: 'Two searches, documents back to the ultimate root, a site visit, the plans — then reasonable requisitions. Failing to search may be negligence.',
+            triggers: {
+              bullets: [
+                'A lis pendens was registered against the property and the purchaser\'s solicitor never searched.',
+                'Only one Land Registry search was carried out, three months before completion.',
+                'The solicitor relied on the documents the vendor supplied and obtained nothing from the Land Registry himself.',
+                'An encumbrance was registered in the week before completion.',
+                'The plans annexed to the Government lease are not colour coded.',
+                'Nobody has visited the property to see who is in occupation.',
+                'A purchaser is suing his own solicitor for failing to discover a defect before completion.',
+                'The solicitor did not check whether there was a right of way giving access to the property.',
+                'No structural survey was arranged before the agreement was signed.',
+              ],
+              routes: [
+                { when: 'The defect found lies before the intermediate root', session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+                { when: 'The question is when the requisition must be raised', session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+                { when: 'The argument is that the purchaser should have found the defect earlier', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'The purchaser\'s investigation, step by step',
+                steps: [
+                  {
+                    label: 'Search the Land Registry at least twice',
+                    detail: 'In checking title the solicitor for the purchaser should conduct at least two searches in the Land Registry, historical rather than current; the second should be carried out just before completion, to check for encumbrances recently registered.',
+                    why: 'Priority in a deeds system is a race. A search at the time of the agreement says nothing about what was lodged the following month, which is why the second search sits immediately before completion.',
+                    exam: {
+                      write: 'The purchaser\'s solicitor should have conducted at least two historical searches in the Land Registry, the second just before completion, to check for recently registered encumbrances.',
+                      trap: 'Conducting a current search. The lecture specifies historical rather than current searches.',
+                    },
+                    points: [
+                      'Historical, not current.',
+                      'The second search just before completion.',
+                      'Failure to conduct such a search may give rise to an action in negligence: Wong Chick Keung v Woo Man Sang HCMP 3490/1991, 13/2/2001, where the solicitor was negligent in failing to carry out a search which would have revealed a registered lis pendens.',
+                    ],
+                  },
+                  {
+                    label: 'Obtain the documents back to the ultimate root yourself',
+                    detail: 'The purchaser\'s solicitor should obtain from the Land Registry copies of the title deeds going back to the ultimate root of title, and not merely those provided by the vendor from the intermediate root to the present.',
+                    why: 'The vendor is only obliged to produce from the intermediate root. Anything wrong before that is the purchaser\'s to find — and, once found, the vendor\'s to answer for.',
+                    exam: {
+                      write: 'The purchaser\'s solicitor should obtain copies of the title deeds going back to the ultimate root, and not rely on what the vendor has supplied from the intermediate root.',
+                      trap: 'Assuming the vendor\'s bundle is the whole title. The pre-intermediate root period is where several of the reported defects were found.',
+                    },
+                    points: [
+                      'The vendor need only produce from the intermediate root.',
+                      'A pre-intermediate root defect the purchaser finds must still be answered: Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA.',
+                    ],
+                  },
+                  {
+                    label: 'Note the defects on the title',
+                    detail: 'The solicitor should note any defects on title: missing title documents, encumbrances, reasons why the title might be defeasible, improper execution of documents, signature discrepancies and occupiers\' rights.',
+                    why: 'Each of these is a category rather than a single check, and each corresponds to a later topic in the course. Missing them at this stage is what produces a late requisition.',
+                    exam: {
+                      write: 'On investigating title the purchaser\'s solicitor should note [the missing assignment / the unregistered discharge / the signature discrepancy], and raise a reasonable requisition upon it.',
+                      trap: 'Requisitioning the execution of documents that do not matter. Improper execution is usually checked on the title documents but not on sale and purchase agreements, nor on execution by purchasers.',
+                    },
+                    points: [
+                      'Missing title documents.',
+                      'Encumbrances.',
+                      'Reasons why the title might be defeasible — including a site visit to check for unauthorised building works.',
+                      'Improper execution of documents, but not usually of sale and purchase agreements nor execution by purchasers.',
+                      'Signature discrepancies.',
+                      'Occupiers\' rights — a visit is necessary.',
+                    ],
+                  },
+                  {
+                    label: 'Check the plans and the access',
+                    detail: 'The solicitor should check the plans carefully: are they properly colour coded? He should also check rights of way for the purchaser to enter his property.',
+                    why: 'A plan that is not colour coded may not identify what is being sold, and a property with no right of access is worth a great deal less than one with it. Both have produced reported requisitions.',
+                    exam: {
+                      write: 'The plans annexed to the [Government lease / deed of mutual covenant] must be properly colour coded: Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198, and the right of way giving access to the property must be checked.',
+                      trap: 'Treating the access point as minor. A requisition as to whether there was a right of way permitting ingress and egress has been held to go to the root of the vendor\'s title.',
+                    },
+                    points: [
+                      'Plans must be properly colour coded.',
+                      'Non-correspondence of the actual building with the plans might render the title defective.',
+                      'Check the rights of way giving the purchaser access.',
+                    ],
+                  },
+                  {
+                    label: 'Then raise reasonable requisitions',
+                    why: 'The investigation exists to produce requisitions. Everything above is preparation for the one step that actually protects the purchaser.',
+                    exam: {
+                      write: 'Having investigated the title, the purchaser\'s solicitor should raise reasonable requisitions on the defects identified, within the time the agreement allows.',
+                      trap: 'Forgetting the due diligence consequence. A defect that could have been identified at this stage may not be requisitioned late, even if it goes to the root of the vendor\'s title.',
+                    },
+                    points: [
+                      'Requisitions must be raised within the time the agreement allows.',
+                      'A defect discoverable at this stage may not support a late requisition: Tread East Ltd v Hillier Development Ltd [1993] 1 HKC 285, CA.',
+                      'What amounts to due diligence is judged against usual Hong Kong practice: Billion Best (Hong Kong) Ltd v Amity Investment Co Ltd [2002] 1 HKLRD 392.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The two-search rule is a professional standard with a negligence consequence attached, not merely good practice.',
+                'Dty Judge Wooley in Billion Best observed how rarely purchasers in Hong Kong arrange a structural survey, and concluded that a purchaser following the usual procedure has not failed in due diligence.',
+                'The site visit does double work: occupiers\' interests, and unauthorised building works.',
+                'The purchaser is expected to go behind the vendor\'s bundle to the ultimate root — which is why the pre-intermediate root issue type exists at all.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Time the second search to the day before completion, not to the week of it.',
+                'Record what the site visit showed, with dates. It is the evidence that later decides patency and due diligence.',
+                'Draft each requisition to identify the defect and suggest how it should be remedied, rather than asking an open question.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Conduct at least two historical Land Registry searches, the second just before completion.',
+                'Obtain the title deeds back to the ultimate root.',
+                'Note the defects, by category.',
+                'Visit the property for occupiers and unauthorised works.',
+                'Check the plans and the access.',
+                'Raise reasonable requisitions within time.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Relying solely on the documents supplied by the vendor.',
+                'Conducting a single search at the outset.',
+                'Skipping the site visit because the title looks clean on paper.',
+                'Raising general requisitions instead of specific ones on the defects identified.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Step', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Two searches', 'Lecture note', 'At least two historical searches, the second just before completion'],
+                  ['Negligence', 'Wong Chick Keung v Woo Man Sang HCMP 3490/1991, 13/2/2001', 'Solicitor negligent in failing to search; a registered lis pendens would have been revealed'],
+                  ['Back to the ultimate root', 'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA', 'The purchaser may raise requisitions on pre-intermediate root documents he obtains himself'],
+                  ['Plans', 'Tai Wai Kin v Cheung Wan Wah [2004] 3 HKC 198; Fan Tony v IO of Kung Lok Building [2006] 3 HKC 240', 'Plans must be colour coded; non-correspondence may render title defective'],
+                  ['Due diligence', 'Tread East Ltd v Hillier Development Ltd [1993] 1 HKC 285, CA; Billion Best (Hong Kong) Ltd v Amity Investment Co Ltd [2002] 1 HKLRD 392', 'A defect discoverable with due diligence may not be requisitioned late; usual Hong Kong practice sets the standard'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG4', issue: 'pre-intermediate-defects', label: 'Pre-intermediate root title defects' },
+              { session: 'LG3', issue: 'conveyancing-stages', label: 'The stages of a simple conveyancing transaction' },
+            ],
+          },
+          {
+            id: 'raising-requisitions',
+            title: 'Raising requisitions: the time limits',
+            summary: 'No duty to raise one — but if you do, do it within the express time, or within a reasonable time if the agreement is silent.',
+            triggers: {
+              bullets: [
+                'The agreement adopts condition 7 of Part A of the Second Schedule to the Conveyancing and Property Ordinance.',
+                'The agreement requires requisitions to be raised within 7 days after receipt of the title deeds.',
+                'Title deeds arrived in three batches and the purchaser waited for the last before raising anything.',
+                'The agreement allowed 9 days from agreement to completion and the title deeds arrived 7 days before completion.',
+                'The agreement is silent as to when requisitions must be raised.',
+                'The vendor supplied the title deeds two months before completion and the requisitions were raised 9 days before it.',
+                'A requisition was properly raised two days before the completion date.',
+                'The purchaser suspects a defect and is minded to say nothing until completion.',
+                'The purchaser was six minutes late completing because the vendor gave directions for split cheques at 11:13 am.',
+              ],
+              routes: [
+                { when: 'The requisition is outside the time limit and the purchaser wants to raise it anyway', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+                { when: 'The question is what a requisition may properly be about', session: 'LG4', issue: 'subject-matter-of-requisitions', label: 'The subject matter of requisitions' },
+                { when: 'The complaint is about the vendor\'s answer rather than the purchaser\'s timing', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+                { when: 'The purchaser is said to have accepted the title by his conduct', session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Timing a requisition',
+                steps: [
+                  {
+                    label: 'Start from the duty, and the absence of a duty on the purchaser',
+                    detail: 'The vendor\'s duty to show title includes a duty to answer requisitions reasonably raised by the purchaser, either from the documents produced by the vendor or from his own investigation of the title: Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA. There is no duty on the purchaser to raise one.',
+                    why: 'The asymmetry is deliberate: the burden of title is on the vendor, so the purchaser\'s failure to ask cannot relieve him of it.',
+                    exam: {
+                      write: 'The vendor must answer requisitions reasonably raised, whether arising from the documents he produced or from the purchaser\'s own investigation; there is no duty on the purchaser to raise any.',
+                      trap: 'Forgetting the counterweight. No willing purchaser would remain silent suspecting a defect and refuse to complete; such conduct might be a repudiatory breach, or a waiver: Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA.',
+                    },
+                    points: [
+                      'The duty covers requisitions arising from the purchaser\'s own investigation.',
+                      'No failure to raise a requisition constitutes a waiver of the right to object at completion: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                      'But playing games and staying silent is not the conduct of a willing purchaser.',
+                    ],
+                  },
+                  {
+                    label: 'Find the express time limit',
+                    detail: 'There is usually an express term giving the purchaser the right to raise requisitions up to a specified number of days before completion — see condition 7 of Part A of the Second Schedule to the Conveyancing and Property Ordinance, under which a requisition must be raised not later than 14 days prior to completion.',
+                    why: 'The limit exists so the vendor has time to answer and, if he cannot, to return the deposit. A requisition landing on the completion date defeats that purpose.',
+                    exam: {
+                      write: 'By [clause [x] / condition 7 of Part A of the Second Schedule to the Conveyancing and Property Ordinance] the requisition had to be raised [not later than 14 days prior to completion / within 7 days after receipt of the title deeds].',
+                      trap: 'Reading a "within 7 days of receipt of the title deeds" clause as running from the last batch. It does not.',
+                    },
+                    points: [
+                      'Ko Lan v Hoo Man Kuen Martin HCMP 4416/1998, 19/1/1999: where the term provides for requisitions within 7 days after receipt of the title deeds, the purchaser may not wait until all the deeds have been supplied; he must raise those requisitions relevant from the documents supplied within 7 days of receipt of the first documents.',
+                      'First Shanghai Enterprises Ltd v Dahlia Properties Pte Ltd [2002] 3 HKLRD 461, CA: requisitions to be delivered as soon as practicable within 7 working days after receipt; the deeds were received only 7 days before completion; the provision was binding, the parties having clearly contemplated a very speedy completion.',
+                    ],
+                  },
+                  {
+                    label: 'If the agreement is silent, imply a reasonable time',
+                    detail: 'Where the agreement is silent as to the time within which requisitions must be raised, the court will imply a term that the requisition must be raised within a reasonable time before completion: Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795.',
+                    why: 'Reasonableness is measured against the willing purchaser standard, which is what turns an open-ended implied term into a workable one.',
+                    exam: {
+                      write: 'The agreement being silent, a term is implied that requisitions be raised within a reasonable time before completion, assessed on the footing of a willing purchaser and a willing vendor possessed of robust common sense.',
+                      trap: 'Assuming a long gap before completion gives the purchaser latitude. In Goldmex the deeds came two months before completion and requisitions raised 9 days before it were out of time.',
+                    },
+                    points: [
+                      'What is reasonable depends on the circumstances of each case.',
+                      'The court assumes a willing purchaser and a willing vendor with robust common sense: Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA.',
+                      'In Goldmex the purchaser was held not to be a willing purchaser and the requisitions need not be answered.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with the completion date where a requisition lands late but in time',
+                    detail: 'Where a requisition has been properly raised just before the completion date, the time for completion should be extended for a reasonable period to permit the vendor to answer it: Regent Summit (HK) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718.',
+                    why: 'A properly raised requisition is the purchaser exercising a contractual right. He should not lose the benefit of it because the calendar is tight.',
+                    exam: {
+                      write: 'The requisition having been properly raised on [date], the time for completion should be extended for a reasonable period to permit the vendor to answer it: Regent Summit (HK) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718.',
+                      trap: 'Assuming the extension is automatic. First Shanghai shows a tight timetable the parties chose being enforced against a purchaser who could have acted quicker.',
+                    },
+                    points: [
+                      'Kensland Realty Ltd v Whale View Investment Ltd (2001) 4 HKCFAR 381: a person is not permitted to take advantage of his own wrong; the purchaser was six minutes late because the vendor gave directions for split cheques only at 11:13 am, although no deadline for such directions was stipulated.',
+                      'In First Shanghai the purchaser raised requisitions one day before completion and, given the tight schedule the parties had chosen, could have acted quicker.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Condition 7 of Part A of the Second Schedule is the standard 14-day formula, and is what an agreement adopting the Second Schedule brings in.',
+                'A clause tied to receipt of the title deeds bites on each batch as it arrives, not on the last.',
+                'The willing-purchaser standard cuts both ways: it is used against a purchaser who sits on a requisition and against a vendor who manufactures delay.',
+                'Even a requisition out of time does not relieve the vendor of the duty to give good title at completion.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Find the express time limit in the agreement, or condition 7 if the Second Schedule is adopted.',
+                'Identify when the title deeds were received, batch by batch.',
+                'If silent, imply a reasonable time on the willing-purchaser standard.',
+                'Date the requisition and test it against the limit.',
+                'If properly raised close to completion, consider an extension of the completion date.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Running a "7 days from receipt" clause from the final batch of deeds.',
+                'Assuming a long run-up to completion makes a late requisition reasonable.',
+                'Treating an extension of the completion date as automatic.',
+                'Advising a purchaser to stay silent about a suspected defect.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Duty to answer', 'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723, CA', 'Requisitions arising from the documents or from the purchaser\'s own investigation'],
+                  ['No duty to raise', 'Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA', 'Failure to raise a requisition is not a waiver'],
+                  ['But not silence either', 'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935, CFA', 'No willing purchaser would stay silent suspecting a defect and refuse to complete'],
+                  ['Standard express limit', 'Condition 7, Part A, Second Schedule, Conveyancing and Property Ordinance (Cap. 219)', 'Not later than 14 days prior to completion'],
+                  ['Batch by batch', 'Ko Lan v Hoo Man Kuen Martin HCMP 4416/1998, 19/1/1999', 'Requisitions relevant from documents supplied must be raised within 7 days of the first documents'],
+                  ['Tight timetables enforced', 'First Shanghai Enterprises Ltd v Dahlia Properties Pte Ltd [2002] 3 HKLRD 461, CA', 'A 7-working-day clause binding where the parties contemplated a very speedy completion'],
+                  ['Silent agreement', 'Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795', 'A reasonable time is implied; deeds two months early and requisitions 9 days before completion were too late'],
+                  ['Extension', 'Regent Summit (HK) Ltd v Smart Business (Asia) Ltd [1998] 2 HKC 718', 'Completion should be extended a reasonable period to allow the vendor to answer'],
+                  ['No advantage from one\'s own wrong', 'Kensland Realty Ltd v Whale View Investment Ltd (2001) 4 HKCFAR 381', 'Purchaser six minutes late because of the vendor\'s late directions'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+            ],
+          },
+          {
+            id: 'requisitions-out-of-time',
+            title: 'Raising requisitions out of time',
+            summary: 'The exception is a requisition going to the root of the vendor\'s title — and the exception to that is one the purchaser should have raised with due diligence.',
+            triggers: {
+              bullets: [
+                'The Government lease is missing and the purchaser raises the point after the contractual deadline.',
+                'A cockloft in a shop in an older district is the subject of a requisition raised late.',
+                'An illegal staircase has been demolished and a cockloft converted into an additional storey.',
+                'There is significant encroachment over a public street.',
+                'The purchaser asks late whether there is a right of way giving him ingress and egress.',
+                'A co-owner has sued over demolition of part of an external wall to create an additional building entrance used for 30 years.',
+                'An unauthorised swimming pool has been built and there is no real risk of re-entry by Government.',
+                'The purchaser repeats an earlier requisition in different words after the deadline.',
+                'The defect could have been spotted from the title deeds supplied weeks earlier.',
+                'The vendor answers a late requisition without saying anything about his right to refuse.',
+              ],
+              routes: [
+                { when: 'The requisition was raised in time', session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+                { when: 'The purchaser is said to have accepted the defect rather than merely been late', session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+                { when: 'The argument is that the defect was obvious on inspection', session: 'LG3', issue: 'patent-defects', label: 'Encumbrances expressly subject to, and patent defects' },
+                { when: 'The question is whether the defect makes the title bad at all', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'The rule, the exception, and the exception to the exception',
+                steps: [
+                  {
+                    label: 'State the rule',
+                    detail: 'The principal rule is that contracts must be abided by and requisitions must be raised within the time agreed — often within 7 days of receipt of the title deeds.',
+                    why: 'The time limit is a term of the contract the purchaser signed. Starting anywhere else inverts the analysis.',
+                    exam: {
+                      write: 'The requisition was raised on [date], outside the [7-day / 14-day] period the agreement allows, and the vendor is prima facie entitled to refuse to answer it.',
+                      trap: 'Going straight to the exception. Set out the rule first; the exception has to be argued for.',
+                    },
+                    points: [
+                      'The vendor is prima facie entitled to refuse to answer.',
+                      'But refusal does not cure a failure to give good title at completion.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the exception: does the requisition go to the root of the vendor\'s title?',
+                    detail: 'Notwithstanding a time limitation, requisitions may be raised out of time where the subject matter goes to the root of the vendor\'s title. According to Emmet and Farrand on Title at paragraph 5.064, if the requisition goes to the root of the title — that is, the power of the vendor to sell or to give the purchaser what is intended by the contract he shall have — a condition limiting the time will not preclude the purchaser from making it after the time has expired.',
+                    why: 'A time limit cannot convert a vendor who cannot sell into one who can. Perhaps the test means requisitions in respect of matters which would constitute a repudiatory breach.',
+                    exam: {
+                      write: 'The requisition goes to the root of the vendor\'s title, being directed at [his power to sell / whether the purchaser will get what the contract intended], and may accordingly be raised out of time.',
+                      trap: 'Confusing this "root of title" with the ultimate or intermediate root. The slides flag the confusion expressly.',
+                    },
+                    points: [
+                      {
+                        text: 'Held TO go to the root:',
+                        points: [
+                          'Gold Check Investments Ltd v Star Investment Ltd HCMP 592/1992, 8/4/1992: a missing Government lease, the vendor being obliged under s13(1) to deliver it.',
+                          'Lucky Dragon Corpn Ltd v Speedy Vantage Ltd [2009] 5 HKLRD 501, CA: demolition of an illegal staircase and conversion of a cockloft into an additional storey, applying the test in Spark Rich v Valrose [2006] 2 HKC 589.',
+                          'Yes Profit Investment Ltd v Mainly Tone Co Ltd [2013] 4 HKLRD 570: significant encroachment over Government land, a public street.',
+                          'Cheung Fuk Yu Danny v Vu Poi Van DCCJ 2817/2013, 19/3/2015: whether there was a right of way permitting ingress and egress to the property.',
+                          'Recall International Ltd v Panten Ltd HCA 1896/2012, 23/1/2017: a co-owner\'s action alleging that part of an external wall, a common part, had been demolished in breach of the deed of mutual covenant to provide an additional exit, used as a common entrance for 30 years; the extent of the common areas defined by the DMC goes to title.',
+                        ],
+                      },
+                      {
+                        text: 'Held NOT to go to the root:',
+                        points: [
+                          'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 2 HKC 1, CFA: unauthorised partitioning.',
+                          'Leung Yun On v Popular Investments Ltd HCA 3970/1998: an unauthorised swimming pool, there being no real risk of re-entry by Government.',
+                          'Join Union Investment Ltd v China Tree Investment Ltd [2016] 2 HKLRD 901: a minor cockloft; unauthorised building works in retail premises in older districts are commonplace and do not appear significantly to affect market or capital values, so it would be contrary to market reality to treat it as going to the root.',
+                        ],
+                      },
+                      'Big Foundation Development Ltd v Wong Shu Kei HCMP 4536/1997, 16/6/1998, per Recorder Ribeiro SC: where it is only a minor unauthorised building work which can be readily removed and properly reinstated, the defect does not go to the root of the title.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the exception to the exception: due diligence',
+                    detail: 'The right is lost if the purchaser should, from the documents of title supplied to him or from his own inspection of the documents and premises, have been aware of the need for the particular requisition to be raised within the time agreed: Tread East Ltd v Hillier Development Ltd [1993] 1 HKC 285, CA.',
+                    why: 'The exception exists for defects that could not reasonably have been found in time, not as a second bite for a purchaser who did not look.',
+                    exam: {
+                      write: 'The defect could have been identified from [the title deeds supplied on [date] / the purchaser\'s own inspection], so the requisition should have been raised within time notwithstanding that it goes to the root.',
+                      trap: 'Setting the due diligence bar too high. Dty Judge Wooley in Billion Best found it difficult to say a purchaser had not used due diligence where he merely followed the usual Hong Kong procedure of not arranging a structural survey.',
+                    },
+                    points: [
+                      'The question is whether the defect could have been identified earlier using due diligence: Billion Best (Hong Kong) Ltd v Amity Investment Co Ltd [2002] 1 HKLRD 392.',
+                      'Purchasers in Hong Kong rarely arrange a structural survey, and following the usual procedure is not a failure of due diligence.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether the "new" requisition is new at all',
+                    detail: 'A repetition of, or request for clarification or mere elaboration of, a previously raised requisition will not constitute a fresh requisition and will not be out of time if the earlier requisition was raised within the time prescribed: So Ka Hung Sam v Leung Chee Yin [2012] 1 HKLRD 465, DC.',
+                    why: 'Requisition and answer are a correspondence, not a single exchange. Treating every follow-up letter as a fresh requisition would make the process unworkable.',
+                    exam: {
+                      write: 'The letter of [date] is a request for clarification or elaboration of the requisition raised on [date], not a fresh requisition, and is therefore not out of time.',
+                      trap: 'Conceding lateness for a follow-up letter that merely presses an answered point.',
+                    },
+                    points: [
+                      'The earlier requisition must itself have been raised within time.',
+                    ],
+                  },
+                  {
+                    label: 'Ask whether the vendor has waived his objection by answering',
+                    detail: 'The vendor might waive his right to object to a requisition being raised out of time by purporting to answer it.',
+                    why: 'The authorities are not uniform, and the later view puts the burden on the purchaser. That is the safer statement of the law and the one Goldmex approved.',
+                    exam: {
+                      write: 'The vendor answered the late requisition [without prejudice / without qualification]; the burden rests on the purchaser to show that the vendor intended unequivocally to waive his right to object on the ground that it was out of time.',
+                      trap: 'Citing Ultra Eternal as settled. Recorder Ribeiro disagreed with it in Big Foundation, and that approach was approved in Goldmex.',
+                    },
+                    points: [
+                      'Ultra Eternal Ltd v Liu Tai Cheong [1997] 1 HKC 258: a purported answer operated as a waiver of the objection; Century Legend Ltd v Chu Chung Shing Investment Co Ltd HCMP 606/1998, 2/8/1999, to the same effect.',
+                      'An answer given expressly "without prejudice" will not constitute a waiver: Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795.',
+                      'Big Foundation Development Ltd v Wong Shu Kei HCMP 4536/1997, 16/6/1998: giving answers, even not without prejudice, does not automatically constitute a waiver; the burden is on the purchaser. Approved in Goldmex.',
+                      'The practical advice is for the vendor to answer without prejudice to his objection, since he must give good title at completion in any event.',
+                    ],
+                  },
+                  {
+                    label: 'Remember the vendor is not home yet',
+                    detail: 'A purchaser may still reject the vendor\'s title for failure to give good title at completion where he failed to raise a requisition at all, or raised one out of time which the vendor was entitled to refuse to answer.',
+                    why: 'Profit World is the case that makes this whole issue type less decisive than it looks: winning the timing argument does not win the transaction.',
+                    exam: {
+                      write: 'Although the requisition was out of time and could have been raised earlier with due diligence, the vendor\'s obligations to show and to give good title are separate and independent; the vendor has breached the latter and the purchaser may rescind: Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA.',
+                      trap: 'Ending the answer once lateness is established. Profit World is exactly that fact pattern and the purchaser still won.',
+                    },
+                    points: [
+                      'In Profit World the requisition went to the root but should have been raised in time with due diligence; the purchaser nevertheless succeeded on the duty to give title.',
+                      'Requisitions provide the vendor with the opportunity to extricate himself by returning the deposit if defects emerge that cannot be cleared in time.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                '"Root of the vendor\'s title" here has nothing to do with the ultimate or intermediate root of title. The slides flag the confusion expressly.',
+                'The unauthorised building works cases split on scale and removability: a minor, readily removable cockloft does not go to the root; a converted storey or a demolished staircase does.',
+                'Join Union reasons from market reality — that such works are commonplace in older retail districts and do not significantly affect value.',
+                'Recall International shows a DMC dispute going to the root, because the extent of the common areas defined by the DMC goes to title.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Set out the rule, the exception and the exception to the exception in that order. Each has its own authority and its own facts.',
+                'For a vendor, answer a late requisition expressly without prejudice to the objection — it costs nothing and preserves the point.',
+                'Do not stop at lateness. Address the duty to give good title at completion separately.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Date the requisition against the contractual limit.',
+                'Ask whether the subject matter goes to the root of the vendor\'s title.',
+                'Match the facts to the decided cases on either side of the line.',
+                'Ask whether the purchaser could have raised it in time with due diligence.',
+                'Check whether it is a fresh requisition or an elaboration.',
+                'Consider whether the vendor waived the objection by answering.',
+                'Deal separately with the duty to give good title at completion.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Confusing the root of the vendor\'s title with the root of title in the s13 sense.',
+                'Treating all unauthorised building works the same way.',
+                'Ending the answer once lateness is established.',
+                'Citing Ultra Eternal as though Big Foundation and Goldmex had not qualified it.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'If the requisition goes to the root of the title, that is the power of the vendor to sell or to give to the purchaser what is intended by the contract he shall have, a condition limiting the time will not preclude the purchaser from making it after the time has expired.', cite: 'Emmet and Farrand on Title at para 5.064, as reproduced in the LG4 notes' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The rule', 'Lecture note', 'Requisitions must be raised within the time agreed'],
+                  ['The exception', 'Emmet and Farrand on Title, para 5.064', 'A requisition going to the root of the vendor\'s title may be raised out of time'],
+                  ['Goes to the root', 'Gold Check Investments Ltd v Star Investment Ltd HCMP 592/1992, 8/4/1992', 'Missing Government lease'],
+                  ['Goes to the root', 'Lucky Dragon Corpn Ltd v Speedy Vantage Ltd [2009] 5 HKLRD 501, CA; Spark Rich v Valrose [2006] 2 HKC 589', 'Demolished illegal staircase and cockloft converted into an additional storey'],
+                  ['Goes to the root', 'Yes Profit Investment Ltd v Mainly Tone Co Ltd [2013] 4 HKLRD 570', 'Significant encroachment over a public street'],
+                  ['Goes to the root', 'Cheung Fuk Yu Danny v Vu Poi Van DCCJ 2817/2013, 19/3/2015', 'Whether there was a right of way permitting ingress and egress'],
+                  ['Goes to the root', 'Recall International Ltd v Panten Ltd HCA 1896/2012, 23/1/2017', 'Extent of the common areas under the DMC; external wall demolished for an additional exit used for 30 years'],
+                  ['Does not', 'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 2 HKC 1, CFA', 'Unauthorised partitioning'],
+                  ['Does not', 'Leung Yun On v Popular Investments Ltd HCA 3970/1998', 'Unauthorised swimming pool; no real risk of re-entry'],
+                  ['Does not', 'Join Union Investment Ltd v China Tree Investment Ltd [2016] 2 HKLRD 901; Big Foundation Development Ltd v Wong Shu Kei HCMP 4536/1997, 16/6/1998', 'Minor cockloft readily removable; contrary to market reality to treat it as going to the root'],
+                  ['Due diligence', 'Tread East Ltd v Hillier Development Ltd [1993] 1 HKC 285, CA; Billion Best (Hong Kong) Ltd v Amity Investment Co Ltd [2002] 1 HKLRD 392', 'The right is lost if the purchaser should have been aware of the need in time; usual Hong Kong practice sets the standard'],
+                  ['Not a fresh requisition', 'So Ka Hung Sam v Leung Chee Yin [2012] 1 HKLRD 465, DC', 'Repetition, clarification or elaboration of an in-time requisition'],
+                  ['Waiver by answering', 'Ultra Eternal Ltd v Liu Tai Cheong [1997] 1 HKC 258; Century Legend Ltd v Chu Chung Shing Investment Co Ltd HCMP 606/1998, 2/8/1999', 'A purported answer operated as a waiver of the objection'],
+                  ['Qualified', 'Big Foundation Development Ltd v Wong Shu Kei HCMP 4536/1997, 16/6/1998; Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795', 'No automatic waiver; the burden is on the purchaser; an answer without prejudice is not a waiver'],
+                  ['Still must give title', 'Profit World Trading Ltd v Ho So Yung [2011] 2 HKC 473, CA', 'The duties to show and give title are separate; the purchaser may rescind at completion regardless'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              { session: 'LG3', issue: 'purchaser-waiver', label: 'Waiver by the purchaser of his right to object' },
+            ],
+          },
+          {
+            id: 'subject-matter-of-requisitions',
+            title: 'The subject matter of requisitions',
+            summary: 'Matters of title, specific and precisely formulated. Not speculative, not fishing, and not about the state of the building.',
+            triggers: {
+              bullets: [
+                'The purchaser asks whether the vendor knows of anything which might adversely affect his title.',
+                'The purchaser asks whether there have been any breaches of the height restriction applicable to the building.',
+                'The purchaser asks the vendor to advise whether there are any unauthorised or illegal structures or alterations in the property.',
+                'The requisition complains of a leaking roof and defective electrics.',
+                'The requisition is framed in general terms without identifying any specific defect.',
+                'The requisition identifies the defect but does not suggest how it should be remedied.',
+                'The vendor refuses to answer on the ground that the requisition is frivolous.',
+                'The purchaser raises a long list of questions hoping one will produce something.',
+                'The requisition relates to dry rot rather than to anything on the title.',
+              ],
+              routes: [
+                { when: 'The question is when the requisition may be raised', session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+                { when: 'The question is the quality of the vendor\'s answer', session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+                { when: 'The complaint is really that the title is defective', session: 'LG3', issue: 'encumbered-or-defeasible', label: 'Encumbered and defeasible titles' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Testing a requisition\'s subject matter',
+                steps: [
+                  {
+                    label: 'Confirm it is about title',
+                    detail: 'Requisitions must relate to matters of title. Requisitions relating to the condition of the property agreed to be sold — a leaking roof, dry rot, defective electrics — should not be raised, as those are not matters of title.',
+                    why: 'The vendor warrants his title, not the state of the building. The purchaser buys the physical condition as he finds it, which is what an "as is" clause restates.',
+                    exam: {
+                      write: 'The requisition relates to [the condition of the property], which is not a matter of title, and need not be answered.',
+                      trap: 'Missing the overlap. Unauthorised building works ARE a title matter, because of the risk of enforcement; a leaking roof is not.',
+                    },
+                    points: [
+                      'Condition of the property: not a matter of title.',
+                      'Unauthorised building works are a title matter, because of the defeasibility risk.',
+                    ],
+                  },
+                  {
+                    label: 'Require specificity, not generality',
+                    detail: 'Requisitions must be specific, not general: it would not be permissible to raise a requisition saying "Does the vendor know of anything which might adversely affect the title of the purchaser?"',
+                    why: 'A general question shifts the whole investigation onto the vendor. The purchaser is expected to investigate the title himself and then ask about what he found.',
+                    exam: {
+                      write: 'The requisition is framed generally and does not identify any specific defect, and is accordingly not one the vendor need answer.',
+                      trap: 'Forgetting that the vendor must still give good title at completion. A general requisition being unanswerable does not make the title good.',
+                    },
+                    points: [
+                      'A general requisition is not permissible.',
+                      'Requisitions must be precisely formulated: Chan Chik-sum v Great Pearl Industries Ltd [1997] 1 HKC 27, CA.',
+                      'Ideally a requisition should identify the defect and suggest how it should be remedied.',
+                    ],
+                  },
+                  {
+                    label: 'Rule out the speculative or fishing requisition',
+                    detail: 'Nor should requisitions be speculative.',
+                    why: 'Fishing shifts the burden of the purchaser\'s own inquiry onto the vendor, and the willing-purchaser standard is against it: the parties are not there to trick each other.',
+                    exam: {
+                      write: 'The requisition asking whether there are any unauthorised or illegal structures in the property is speculative and fishing, and requires no answer: Continental Zone Ltd v More Glory International Ltd HCMP 446/2012, 18/4/2013.',
+                      trap: 'Treating a specific question about a known structure as fishing. The vice is asking whether anything exists, not asking about something identified.',
+                    },
+                    points: [
+                      'Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795: a requisition asking whether there had been any breaches of the height restriction applicable to the building was a fishing requisition and, being speculative, required no answer.',
+                      'Continental Zone Ltd v More Glory International Ltd HCMP 446/2012, 18/4/2013: "Please take instructions from your client and advise us whether there is/are any unauthorised or illegal structures or alterations of and in the property" was speculative.',
+                    ],
+                  },
+                  {
+                    label: 'Note what the vendor need not answer at all',
+                    detail: 'There is no duty to answer requisitions which are unnecessary, frivolous or vexatious: Queen Energy Ltd v Chan Shu Keung [2000] 3 HKLRD 152.',
+                    why: 'The duty is to answer requisitions REASONABLY raised. Unreasonable ones fall outside the duty altogether rather than being answered badly.',
+                    exam: {
+                      write: 'The requisition being [unnecessary / frivolous / vexatious], the vendor is under no duty to answer it: Queen Energy Ltd v Chan Shu Keung [2000] 3 HKLRD 152.',
+                      trap: 'Using this as a general excuse. A vendor who wrongly characterises a proper requisition as frivolous has failed to show title.',
+                    },
+                    points: [
+                      'Unnecessary, frivolous or vexatious requisitions need not be answered.',
+                      'The duty is to answer requisitions reasonably raised.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The best requisition identifies the defect AND suggests the remedy — that is the standard Chan Chik-sum sets and it is also good practice.',
+                'Goldmex does a great deal of work in this topic: fishing requisitions, reasonable time, and waiver by answering are all in it.',
+                'The line between condition and title is not always obvious: unauthorised building works look like condition but are title, because of enforcement risk.',
+                'A vendor who declines to answer takes a risk. If the requisition was proper, he has failed to show title.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Classify the subject matter: title or condition?',
+                'Test the requisition for specificity.',
+                'Test it for speculation or fishing.',
+                'Ask whether it is unnecessary, frivolous or vexatious.',
+                'If proper, say what an adequate answer would look like.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Requisitioning the physical state of the property.',
+                'Asking an open question about anything that might affect title.',
+                'Treating a specific question about a known structure as fishing.',
+                'Refusing to answer a proper requisition on the ground that it is vexatious.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Matters of title only', 'Lecture note', 'Condition of the property — leaking roof, dry rot, defective electrics — is not a matter of title'],
+                  ['Specific not general', 'Lecture note', '"Does the vendor know of anything which might adversely affect the title?" is impermissible'],
+                  ['Precisely formulated', 'Chan Chik-sum v Great Pearl Industries Ltd [1997] 1 HKC 27, CA', 'Ideally identify the defect and suggest how it should be remedied'],
+                  ['Fishing', 'Goldmex Ltd v Edward Wong Finance Co Ltd [2006] 2 HKLRD 795', 'A requisition as to breaches of the height restriction was speculative and required no answer'],
+                  ['Speculative', 'Continental Zone Ltd v More Glory International Ltd HCMP 446/2012, 18/4/2013', 'Asking whether there are any unauthorised or illegal structures required no answer'],
+                  ['No duty at all', 'Queen Energy Ltd v Chan Shu Keung [2000] 3 HKLRD 152', 'No duty to answer unnecessary, frivolous or vexatious requisitions'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'answering-requisitions', label: 'Answering requisitions with candour' },
+              { session: 'LG4', issue: 'raising-requisitions', label: 'Raising requisitions: the time limits' },
+              { session: 'LG4', issue: 'investigating-title', label: 'Investigating title: what the purchaser\'s solicitor must do' },
+            ],
+          },
+          {
+            id: 'answering-requisitions',
+            title: 'Answering requisitions with candour',
+            summary: 'Adequately, with candour, in time, and with the facts set out. A bald assertion is a failure to show title even if the title is good.',
+            triggers: {
+              bullets: [
+                'The occupation permit shows seven flats and there are nine on the floor.',
+                'The vendor began responding four days before completion and sent an authorised person\'s certificate two days before it.',
+                'The vendor says a possible invalidity in the execution of a deed of mutual covenant is not a defect because the deed is over 20 years old.',
+                'The vendor replies that he has removed the unauthorised structure but produces no evidence of removal.',
+                'The vendor did not check the Conditions of Grant before answering a requisition about the number of storeys.',
+                'The vendor suggests that the point be resolved by a vendor and purchaser summons.',
+                'The vendor undertakes to remedy the defect after completion.',
+                'A certificate the agreement required was provided at 6.07 pm on the completion date.',
+                'The purchaser wrote "noted" in response to the vendor\'s answer.',
+                'The purchaser extended time for answering by enclosing the draft assignment subject to compliance by completion.',
+              ],
+              routes: [
+                { when: 'The question is whether the requisition was properly raised in the first place', session: 'LG4', issue: 'subject-matter-of-requisitions', label: 'The subject matter of requisitions' },
+                { when: 'The requisition was raised outside the contractual limit', session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+                { when: 'The defect is one the vendor can clear himself before completion', session: 'LG4', issue: 'mere-conveyance', label: 'Matters of mere conveyance' },
+                { when: 'The question is whether the title is good at all', session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Answering a requisition properly',
+                steps: [
+                  {
+                    label: 'State the standard: adequately and with candour',
+                    detail: 'Requisitions must be answered adequately and with candour: Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, CA, per Litton JA. Failure to answer adequately entitles the purchaser to rescind, and it is no excuse that the vendor actually had a good title: Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA.',
+                    why: 'The contractual duty to answer properly is not an onerous one: all that is required is candour and common sense. The purchaser is not an adversary.',
+                    exam: {
+                      write: 'Requisitions must be answered adequately and with candour: Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, CA; it is no excuse that the vendor in fact had a good title.',
+                      trap: 'Treating the standard as demanding. The Court of Appeal described the duty as not onerous — candour and common sense.',
+                    },
+                    points: [
+                      'The vendor\'s duty is to bring forward facts and circumstances known to him which might be material to the title.',
+                      'In Active Keen the vendor began responding four days before completion and sent an authorised person\'s certificate two days before it, which merely said the unit was self-contained and the walls were not illegal structures.',
+                      'The Court of Appeal held there was good title because there was no real risk of enforcement, a demolition order not being lawfully available under s24(1) of the Buildings Ordinance — but the vendor had not SHOWN good title.',
+                    ],
+                  },
+                  {
+                    label: 'Set out the facts, not a bald proposition',
+                    detail: 'In Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183, CA, the vendor met a requisition about the possible invalidity of the execution of a deed of mutual covenant by asserting that this was not a defect since the deed had been in existence for more than 20 years.',
+                    why: 'Rogers V-P\'s point is that the no-real-risk conclusion depends on all the surrounding circumstances, so the key points have to be in the correspondence. A conclusion asserted without its premises is not an answer.',
+                    exam: {
+                      write: 'It is not sufficient simply to assert a bald proposition; all the surrounding circumstances leading to the conclusion that there is no realistic possibility of successful litigation must be taken into consideration, and the key points at least referred to in the correspondence.',
+                      trap: 'Relying on the passage of time alone. In Polyson a 20-year gap, on its own, was not sufficient.',
+                    },
+                    points: [
+                      'One relevant factor in Polyson would have been whether the form of execution of the deed of mutual covenant had caused difficulties in the past.',
+                      'The approach follows MEPC Ltd v Christian-Edwards [1981] AC 205, HL, per Lord Russell.',
+                    ],
+                  },
+                  {
+                    label: 'Do the research before answering',
+                    detail: 'In order to reply adequately, the vendor must carry out thorough research by checking the title deeds.',
+                    why: 'An answer given without checking is an assertion about something the vendor has not looked at. Lai Ke Bin is the case where the check would have supplied the complete answer.',
+                    exam: {
+                      write: 'The vendor failed to check the Conditions of Grant; had he done so he would have discovered that the ground floor car park was excluded from calculating the permitted number of storeys, and he has not responded adequately to the requisition.',
+                      trap: 'Answering a requisition about removal without evidence. Where the vendor replies that he has removed the structure, he should provide evidence that it has been properly removed: Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594.',
+                    },
+                    points: [
+                      'Lai Ke Bin v Capital Project Development Ltd [2009] 1 HKC 93, [2009] 2 HKLRD 49: requisition as to the wrong number of storeys; the vendor had not checked the Conditions of Grant.',
+                      'Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594: evidence of proper removal must be provided.',
+                    ],
+                  },
+                  {
+                    label: 'Rule out the two answers that are not answers',
+                    detail: 'A vendor who responds merely by suggesting that the matter should be resolved by an application to the court by way of vendor and purchaser summons might be held to have answered inadequately: Yeung Yun Choi v Lam Pa Kin HCMP 554/2016, 23/6/2016. And an undertaking to remedy the defect after completion will not usually suffice.',
+                    why: 'Both push the problem past the moment the purchaser has to decide whether to pay. Neither tells him whether the title is good now.',
+                    exam: {
+                      write: 'Suggesting a vendor and purchaser summons is not an adequate answer, nor, absent express agreement, is an undertaking to remedy the defect after completion: Liu Tak Kin v Chan Yiu Kai [1998] 4 HKC 362.',
+                      trap: 'Overlooking the Hu Mei Yu exception, and the security point in it: the vendor could properly be asked to give security to fortify his undertaking.',
+                    },
+                    points: [
+                      'Hu Mei Yu Anastasia v King Best Enterprise Ltd HCA 9317/1998, 10/7/2000: a building order under s27A of the Buildings Ordinance requiring investigation and repair of a slope was an encumbrance, but the vendor\'s undertaking to pay his share should have satisfied a purchaser with robust common sense, subject to security to fortify the undertaking.',
+                      'The parties may agree that completion be delayed until a vendor and purchaser summons has been concluded: Chan Siu Keung v Yu Tai Wai [2003] 3 HKLRD 237.',
+                    ],
+                  },
+                  {
+                    label: 'Answer in time, and leave the purchaser time to consider',
+                    detail: 'If there is an express provision as to the time for answering, it must be complied with. If not, requisitions must be answered within a reasonable time after being received and sufficiently long in advance of the completion date to allow the purchaser to consider them.',
+                    why: 'An answer that arrives too late to be considered is worth little more than no answer. The purchaser\'s solicitor should not be required to make a snap decision.',
+                    exam: {
+                      write: 'The [certificate / answer] was provided only [at 6.07 pm on the completion date], which did not allow the purchaser\'s solicitors a reasonable time to consider it before proceeding to completion, and was a repudiatory breach.',
+                      trap: 'Confusing the midnight rule with the reasonable-time rule. In Guo Jianjun the midnight rule meant the certificate was in time, but it was still not provided a reasonable time before completion.',
+                    },
+                    points: [
+                      'Tang Wing Lam David v Chung Chi Keung Frederick [1999] 3 HKC 553: where answers are given very close to the completion date, the date should be extended by common agreement; applied in Smart Max Enterprise Ltd v Speedy Way Ltd [2011] 4 HKC 29, [2011] 3 HKLRD 675, CA, and Summit Link Ltd v Sunlink Group (HK) Co Ltd [2000] 2 HKLRD 724, CA.',
+                      {
+                        text: 'Guo Jianjun v Dragon Fame Investment Ltd CACV 131/2014, 23/9/2015, is the worked example.',
+                        points: [
+                          'Four office units; the vendor had expressly agreed to provide a certificate from an authorised person proving the legality of re-partitioning.',
+                          'The certificate was provided only at 6.07 pm on the date of completion; the midnight rule applied so it was in time.',
+                          'The purchaser\'s solicitor nevertheless needed to check whether it was a proper certificate having the required effect, and should not have been required to make a snap decision.',
+                          'The principle applied even though the certificate was not a document of title.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    label: 'Watch the purchaser\'s response, and what it does or does not waive',
+                    detail: 'Where the agreement grants the purchaser a specific time to respond to the vendor\'s answer, he must be allowed the time agreed: Smart Max Enterprise Ltd v Speedy Way Ltd [2011] 4 HKC 29, [2011] 3 HKLRD 675, CA.',
+                    why: 'The correspondence runs both ways, and the purchaser can lose rights by how he replies — or, as Donpower shows, can fail to lose them despite an ambiguous word.',
+                    exam: {
+                      write: 'The purchaser\'s [enclosure of the draft assignment subject to satisfactory compliance by completion] granted an extension of time for answering the requisition until the completion date.',
+                      trap: 'Reading "noted" as a waiver. In Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915 the Court of Appeal held it was no more than an acknowledgment.',
+                    },
+                    points: [
+                      'In Smart Max no time had been agreed for answering, so a reasonable time applied; but the purchaser had written enclosing the draft assignment for approval subject to satisfactory compliance with the requisition by completion, and had thereby granted an extension until the completion date.',
+                      'Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915: the purchaser responded "noted"; held at first instance to be a waiver, reversed on appeal — the purchaser had consistently insisted on the document and there was no abandonment.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Active Keen is the case where the vendor HAD good title and still lost, because he had not shown it. That is the whole topic in one decision.',
+                'Litton JA\'s formulation is worth remembering: candour and common sense, and the purchaser is not an adversary.',
+                'The midnight rule can make an answer technically in time and still leave it too late to be a proper answer.',
+                'A vendor\'s answer given "without prejudice" preserves an objection to lateness without becoming a waiver: Goldmex.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Answer with the facts, not the conclusion: name the provision, the dates and the documents checked.',
+                'Where the answer is that the structure has been removed, attach the evidence of removal rather than asserting it.',
+                'Send answers early enough that the purchaser\'s solicitor can consider them without a snap decision — and if that is impossible, propose an extension.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Confirm the requisition was properly raised and in time.',
+                'Research the title deeds before answering.',
+                'Set out the facts and circumstances supporting the conclusion, not the conclusion alone.',
+                'Avoid a vendor and purchaser summons or a post-completion undertaking as the answer.',
+                'Answer within the express or a reasonable time, leaving time to consider.',
+                'Conclude on whether title has been shown, and on the remedy.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Asserting that the risk is illusory without giving the surrounding circumstances.',
+                'Answering without checking the Conditions of Grant or the title deeds.',
+                'Claiming removal of a structure without evidence.',
+                'Providing the answer so late that the purchaser must make a snap decision.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                { text: 'The contractual duty to answer requisitions properly is not an onerous one. All that is required of the vendor is candour and commonsense. The purchaser is not an adversary.', cite: 'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, CA, as reproduced in the LG4 slides' },
+              ],
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['The standard', 'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, CA', 'Adequately and with candour, per Litton JA; the vendor had good title but had not shown it'],
+                  ['No excuse', 'Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423, CA', 'It is no excuse that the vendor actually had a good title'],
+                  ['Facts, not assertion', 'Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183, CA', 'All the surrounding circumstances must be taken into account and the key points referred to in the correspondence'],
+                  ['Research required', 'Lai Ke Bin v Capital Project Development Ltd [2009] 1 HKC 93, [2009] 2 HKLRD 49', 'Vendor had not checked the Conditions of Grant; inadequate answer'],
+                  ['Evidence of removal', 'Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594', 'Evidence must be provided that the structure has been properly removed'],
+                  ['Not a summons', 'Yeung Yun Choi v Lam Pa Kin HCMP 554/2016, 23/6/2016', 'Suggesting a vendor and purchaser summons may be an inadequate answer'],
+                  ['Not an undertaking', 'Liu Tak Kin v Chan Yiu Kai [1998] 4 HKC 362; Hu Mei Yu Anastasia v King Best Enterprise Ltd HCA 9317/1998, 10/7/2000', 'Generally insufficient, save on the s27A facts of Hu Mei Yu, with security to fortify'],
+                  ['No duty to answer', 'Queen Energy Ltd v Chan Shu Keung [2000] 3 HKLRD 152', 'Unnecessary, frivolous or vexatious requisitions'],
+                  ['Time to answer', 'Tang Wing Lam David v Chung Chi Keung Frederick [1999] 3 HKC 553; Smart Max Enterprise Ltd v Speedy Way Ltd [2011] 3 HKLRD 675, CA; Summit Link Ltd v Sunlink Group (HK) Co Ltd [2000] 2 HKLRD 724, CA', 'A reasonable time, sufficiently in advance for the purchaser to consider'],
+                  ['Too late to consider', 'Guo Jianjun v Dragon Fame Investment Ltd CACV 131/2014, 23/9/2015', 'Certificate at 6.07 pm on the completion date; in time under the midnight rule but not a reasonable time before completion'],
+                  ['Purchaser\'s response', 'Smart Max Enterprise Ltd v Speedy Way Ltd [2011] 3 HKLRD 675, CA; Donpower Trading Ltd v Apexcom [2010] 1 HKLRD 915', 'An extension may be granted by the purchaser\'s conduct; "noted" is an acknowledgment, not a waiver'],
+                  ['Delay by agreement', 'Chan Siu Keung v Yu Tai Wai [2003] 3 HKLRD 237', 'The parties may agree to delay completion until a vendor and purchaser summons has concluded'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG4', issue: 'subject-matter-of-requisitions', label: 'The subject matter of requisitions' },
+              { session: 'LG4', issue: 'requisitions-out-of-time', label: 'Raising requisitions out of time' },
+              { session: 'LG3', issue: 'what-is-good-title', label: 'What constitutes a good title?' },
+              { session: 'LG4', issue: 'mere-conveyance', label: 'Matters of mere conveyance' },
             ],
           },
         ],

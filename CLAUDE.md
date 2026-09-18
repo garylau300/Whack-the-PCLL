@@ -68,7 +68,7 @@ not what the code does.
 - **A session has three possible note formats, and `sessionDetailHtml`
   picks the first one authored**, in this order: `examNotes` (current),
   `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). As of
-  the last count: 46 sessions declared, 10 with `examNotes`, **3** with
+  the last count: 48 sessions declared, 12 with `examNotes`, **3** with
   `legalIssues` (PCLL8010/LG1, PCLL8020/LG1, PCLL8030/LG0), and **0** with
   `fullNotes`. The three mindmap sessions predate `examNotes` and are
   deliberately left as they are — a new format alongside them, not a
