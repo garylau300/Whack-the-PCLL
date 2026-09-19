@@ -1237,40 +1237,22 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-trigger-routes a:hover, .exam-trigger-routes a:focus-visible { text-decoration: underline; }
 .exam-route-to { color: var(--text-muted); font-weight: 600; }
 
-/* issue.html navigation: a compact quicknav above the notes and a fuller
-   pager below them. Both are driven from the same renderNav() in issue.js,
-   so the position count and the prev/next targets can never drift apart. */
+/* The issue type's own heading, moved into the body so the topbar's h1 can
+   stay the (shorter) session heading -- see #issueTitle's comment in
+   issue.html. Sized above the generic .course-section h2 (0.95rem, used for
+   things like course.html's "Sessions" label) because this IS the page's
+   subject, not a section label; an #id selector is enough to outrank that
+   descendant rule without needing !important. */
+.issue-heading { font-size: 1.2rem; line-height: 1.35; font-weight: 700; margin: 2px 0 14px; }
 
-/* Top: breadcrumb on the left, an icon-only prev/next + "N of M" on the
-   right, so moving to an adjacent issue type never requires scrolling past
-   a long flowchart to reach the bottom nav. Collapses to its own row under
-   the breadcrumb once the two can't share one line. */
-.issue-topline {
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  justify-content: space-between; gap: 4px 14px;
-  margin: 4px 0 14px;
-}
-.issue-topline .session-subtitle { margin: 0; }
-.issue-quicknav { display: flex; align-items: center; gap: 8px; }
-.issue-quicknav-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; border-radius: 999px;
-  color: var(--accent-text); border: 1px solid var(--border);
-  background: var(--surface);
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-.issue-quicknav-btn svg { width: 16px; height: 16px; }
-.issue-quicknav-btn:hover, .issue-quicknav-btn:focus-visible {
-  border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface));
-}
-.issue-quicknav-pos {
-  font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap;
-}
-
-/* Bottom: two full prev/next cards (title, not just an arrow) above a meta
-   row -- "all issue types", the same position count, and a way back to the
-   top without re-scrolling past everything just read. */
-.issue-pager { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+/* issue.html's ONE nav design, used identically at the top and bottom of
+   the notes (issue.js's pagerHtml() generates both from the same data, so
+   they can't drift into two different components). Two full prev/next
+   cards -- title, not just an arrow -- above a meta row: "all issue types",
+   a position count, and (bottom only) a way back up without re-scrolling
+   past everything just read. */
+.issue-pager--top { margin: 2px 0 20px; }
+.issue-pager--bottom { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
 .issue-pager-row { display: flex; gap: 10px; margin-bottom: 12px; }
 .issue-pager-card {
   flex: 1 1 0; min-width: 0;
@@ -1641,13 +1623,13 @@ summary::marker { color: var(--text-muted); }
   }
 
   /* Screen chrome that means nothing on paper. The <h1> stays — it carries
-     the issue code and title, and so is the document's own heading. */
+     the page's own heading (on issue.html that's the session; the issue
+     type's own heading is `.issue-heading` in the body, and prints with it). */
   .topbar-controls,
   .topbar-brand,
   .back-link,
   .footer,
   .issue-nav,
-  .issue-quicknav,
   .exam-index-filter,
   .spinner { display: none !important; }
 

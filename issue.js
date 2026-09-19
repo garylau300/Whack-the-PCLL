@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
-    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks,
+    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -30,52 +30,55 @@
     $('status').textContent = message;
   }
 
-  // Drives both nav clusters from one place, so the top quicknav and the
-  // bottom pager can never disagree about what's adjacent or where you are.
-  // `code`/`details`/`key` are only needed to derive prev/next's own issue
-  // codes (issueCode is positional, so it has to be re-run per index).
+  // One HTML generator for the pager, called for both the top and bottom
+  // slots so they can never drift into two different designs — same
+  // reasoning as examIssueListHtml being the one issue-index renderer.
+  // `backTop` is the only difference between the two calls: a "back to top"
+  // control makes sense after the notes, not before them.
+  function pagerHtml(prevItem, nextItem, allHref, posLabel, backTop) {
+    const card = (dir, item) => {
+      if (!item) return '';
+      const arrow = `<span class="issue-pager-arrow" aria-hidden="true">${dir === 'prev' ? '&#8592;' : '&#8594;'}</span>`;
+      const copy = `<span class="issue-pager-copy">
+          <span class="issue-pager-kicker">${dir === 'prev' ? 'Previous' : 'Next'}</span>
+          <span class="issue-pager-title">${escapeHtml(item.label)}</span>
+        </span>`;
+      return `<a class="issue-pager-card issue-pager-card--${dir}" href="${escapeHtml(item.href)}">${dir === 'prev' ? arrow + copy : copy + arrow}</a>`;
+    };
+    return `<div class="issue-pager-row">${card('prev', prevItem)}${card('next', nextItem)}</div>
+      <div class="issue-pager-meta">
+        <a class="issue-pager-all" href="${escapeHtml(allHref)}">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+          All issue types
+        </a>
+        <span class="issue-pager-pos">${escapeHtml(posLabel)}</span>
+        ${backTop ? `<button type="button" class="issue-backtop" data-action="back-top">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M5 13l7-7 7 7"/></svg>
+          Back to top
+        </button>` : ''}
+      </div>`;
+  }
+
+  // Renders the identical pager into both slots from one set of prev/next
+  // data, so the top copy and the bottom copy can never disagree about
+  // what's adjacent or where you are in the list.
   function renderNav(issueTypes, index, ev, foundDate, code, details, key) {
-    const prev = issueTypes[index - 1];
-    const next = issueTypes[index + 1];
     const total = issueTypes.length;
-    const posText = `${index + 1} of ${total}`;
+    const prevType = issueTypes[index - 1];
+    const nextType = issueTypes[index + 1];
+    const prevItem = prevType
+      ? { href: issueHref(ev, foundDate, prevType.id), label: `${issueCode(code, details, key, index - 1)} — ${prevType.title}` }
+      : null;
+    const nextItem = nextType
+      ? { href: issueHref(ev, foundDate, nextType.id), label: `${issueCode(code, details, key, index + 1)} — ${nextType.title}` }
+      : null;
+    const allHref = sessionHref(ev, foundDate);
+    const posLabel = `Issue ${index + 1} of ${total}`;
 
-    const prevEl = $('issuePrev');
-    const nextEl = $('issueNext');
-    const quickPrevEl = $('issueQuickPrev');
-    const quickNextEl = $('issueQuickNext');
-    if (prev) {
-      const href = issueHref(ev, foundDate, prev.id);
-      const prevCode = issueCode(code, details, key, index - 1);
-      prevEl.href = href;
-      $('issuePrevTitle').textContent = `${prevCode} — ${prev.title}`;
-      prevEl.hidden = false;
-      quickPrevEl.href = href;
-      quickPrevEl.hidden = false;
-    } else {
-      prevEl.hidden = true;
-      quickPrevEl.hidden = true;
-    }
-    if (next) {
-      const href = issueHref(ev, foundDate, next.id);
-      const nextCode = issueCode(code, details, key, index + 1);
-      nextEl.href = href;
-      $('issueNextTitle').textContent = `${nextCode} — ${next.title}`;
-      nextEl.hidden = false;
-      quickNextEl.href = href;
-      quickNextEl.hidden = false;
-    } else {
-      nextEl.hidden = true;
-      quickNextEl.hidden = true;
-    }
-
-    $('issueUp').href = sessionHref(ev, foundDate);
-    $('issuePagerPos').textContent = `Issue ${posText}`;
-    $('issueQuickPos').textContent = posText;
-    // Only worth showing when there's somewhere else to go — a session with
-    // one issue type gets no quicknav at all rather than two disabled arrows.
-    $('issueQuicknav').hidden = !(prev || next);
-    $('issueNav').hidden = false;
+    $('issuePagerTop').innerHTML = pagerHtml(prevItem, nextItem, allHref, posLabel, false);
+    $('issuePagerBottom').innerHTML = pagerHtml(prevItem, nextItem, allHref, posLabel, true);
+    $('issuePagerTop').hidden = false;
+    $('issuePagerBottom').hidden = false;
   }
 
   function renderIssue(data) {
@@ -94,6 +97,14 @@
     const courseName = code ? (data.meta.courses[code] || ELECTIVE_NAMES[code] || '') : '';
     $('courseLink').textContent = courseName ? `${code} · ${courseName}` : code;
     $('courseLink').href = `course.html?code=${encodeURIComponent(code)}`;
+
+    // The topbar carries the SESSION heading (matching what session.html's
+    // own header shows for the same session, since the back arrow returns
+    // there) rather than this issue type's own title — that title is long
+    // enough on some pages to wrap to three lines in a bar that also holds
+    // the print/font/theme buttons, and it is the body's own subject, not
+    // the page's location in the site.
+    $('issueSessionTitle').textContent = `${ev.no ? ev.no + ' — ' : ''}${ev.topic || 'Session'}`;
 
     const key = sessionKeyFor(ev.no);
     const sessionDetail = details && details.sessions && key && details.sessions[key];
@@ -181,10 +192,12 @@
     reclose = [];
   });
   $('printBtn').addEventListener('click', () => window.print());
-  // Explicit behavior:'smooth' bypasses the CSS scroll-behavior property
-  // (and so the global prefers-reduced-motion reset in styles.css), so the
-  // choice is made here instead of leaving it to CSS.
-  $('issueBackTop').addEventListener('click', () => {
+  // Delegated because the button lives inside pagerHtml()'s innerHTML and is
+  // re-created on every render. Explicit behavior:'smooth' bypasses the CSS
+  // scroll-behavior property (and so the global prefers-reduced-motion reset
+  // in styles.css), so the choice is made here instead of leaving it to CSS.
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.issue-backtop')) return;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
