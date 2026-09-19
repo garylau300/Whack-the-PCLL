@@ -121,18 +121,19 @@ not what the code does.
   Both renderers resolve through `resolveIssueRef`, so the
   degrade-to-plain-text rule is implemented once.
 - **Never repeat the session or code in a `label`.** `resolveIssueRef`
-  prepends the target's own issue code (`"CIV-LG4.11 — "`) itself, so
-  `label: 'LG4 — Amending pleadings'` renders as "CIV-LG4.11 — LG4 —
+  prepends the target's own issue code (`"CIV-4.11 — "`) itself, so
+  `label: 'LG4 — Amending pleadings'` renders as "CIV-4.11 — LG4 —
   Amending pleadings". Write the bare title. This applies to `crossRefs` and
   `routes` alike, and cross-session refs are where it goes wrong — both
   verification scripts assert no rendered link text carries two such tags.
-- **Every issue type has a derived code: `<PREFIX>-<sessionKey>.<NN>`**
-  (e.g. `CIV-LG4.11`), built by `issueCode(code, details, sessionKey, index)`
-  in `common-core.js` from the course's `codePrefix` and the issue's 1-based
-  position. It is **derived, never authored** — so it cannot drift out of
-  step with the notes, and there is nothing to keep in sync when an issue is
-  added. The trade-off is deliberate: **reordering or inserting an issue
-  renumbers everything after it**, so don't reorder a session's issueTypes
+- **Every issue type has a derived code: `<PREFIX>-<sessionNum>.<NN>`**
+  (e.g. `CIV-4.11`, from session key `LG4` with the leading "LG" stripped),
+  built by `issueCode(code, details, sessionKey, index)` in `common-core.js`
+  from the course's `codePrefix` and the issue's 1-based position. It is
+  **derived, never authored** — so it cannot drift out of step with the
+  notes, and there is nothing to keep in sync when an issue is added. The
+  trade-off is deliberate: **reordering or inserting an issue renumbers
+  everything after it**, so don't reorder a session's issueTypes
   once students may have written a code down. It appears on the session-page
   index cards, the course roll-up cards, the issue page's `<h1>`, and as the
   tag on every `crossRefs`/`routes` link. Adding a course means adding a

@@ -212,12 +212,13 @@
     return 'n' + h.toString(36);
   }
 
-  // The short human-facing code for an issue type: `<PREFIX>-<sessionKey>.<NN>`,
-  // e.g. "CIV-LG4.11". Derived from the course's `codePrefix`, the session key
-  // and the issue's 1-based position -- never authored, so it cannot drift out
-  // of step with the notes or be typed inconsistently. `codePrefix` falls back
-  // to the numeric tail of the course code so a course that hasn't declared one
-  // still produces something unique.
+  // The short human-facing code for an issue type: `<PREFIX>-<sessionNum>.<NN>`,
+  // e.g. "CIV-4.11" (session key "LG4" with the "LG" stripped). Derived from
+  // the course's `codePrefix`, the session key and the issue's 1-based
+  // position -- never authored, so it cannot drift out of step with the notes
+  // or be typed inconsistently. `codePrefix` falls back to the numeric tail of
+  // the course code so a course that hasn't declared one still produces
+  // something unique.
   function coursePrefix(code, details) {
     if (details && details.codePrefix) return details.codePrefix;
     const m = /(\d{2})(\d)$/.exec(code || '');
@@ -225,7 +226,8 @@
   }
 
   function issueCode(code, details, sessionKey, index) {
-    return `${coursePrefix(code, details)}-${sessionKey}.${String(index + 1).padStart(2, '0')}`;
+    const num = String(sessionKey).replace(/^LG/, '');
+    return `${coursePrefix(code, details)}-${num}.${String(index + 1).padStart(2, '0')}`;
   }
 
   // Every leaf checkbox id in an issue type's answering flowchart, in the

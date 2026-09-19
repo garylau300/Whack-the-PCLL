@@ -1174,7 +1174,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-crossrefs a { color: var(--accent-text); text-decoration: none; font-weight: 600; }
 .exam-crossrefs a:hover, .exam-crossrefs a:focus-visible { text-decoration: underline; }
 
-/* The derived issue code (e.g. CIV-LG4.11), shown on every index card and in
+/* The derived issue code (e.g. CIV-4.11), shown on every index card and in
    the page title. Monospace and tabular so a column of them lines up and the
    session/number parts stay scannable at a glance. */
 .exam-issue-code {

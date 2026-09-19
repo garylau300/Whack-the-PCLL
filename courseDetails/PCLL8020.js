@@ -4,7 +4,7 @@
 window.COURSE_DETAILS = window.COURSE_DETAILS || {};
 window.COURSE_DETAILS.PCLL8020 = {
   name: 'Corporate and Commercial Transactions',
-  // Short tag for the derived issue codes (e.g. CCT-LG4.11) — see issueCode
+  // Short tag for the derived issue codes (e.g. CCT-4.11) — see issueCode
   // in common-core.js. Must be unique across courses.
   codePrefix: 'CCT',
 

@@ -74,7 +74,7 @@ that one is *the conventions and rules for changing it*.
   (step > point > sub-point) that remembers what you've ticked, and every step
   carries two collapsed coaching blocks: *why* the rule is shaped that way,
   and what to *write* in the exam plus the *trap* at that step.
-- Issue types get a derived code — `CIV-LG4.11` — built from the course
+- Issue types get a derived code — `CIV-4.11` — built from the course
   prefix, session key and position. Derived, never authored, so it can't drift
   out of step with the notes.
 - Notes cross-link. `crossRefs` says "this is also dealt with over there";

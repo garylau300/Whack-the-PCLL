@@ -8,7 +8,7 @@
 window.COURSE_DETAILS = window.COURSE_DETAILS || {};
 window.COURSE_DETAILS.PCLL8010 = {
   name: 'Civil Litigation',
-  // Short tag for the derived issue codes (e.g. CIV-LG4.11) — see issueCode
+  // Short tag for the derived issue codes (e.g. CIV-4.11) — see issueCode
   // in common-core.js. Must be unique across courses.
   codePrefix: 'CIV',
 

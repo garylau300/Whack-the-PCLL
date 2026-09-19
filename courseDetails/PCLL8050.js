@@ -13,7 +13,7 @@
 window.COURSE_DETAILS = window.COURSE_DETAILS || {};
 window.COURSE_DETAILS.PCLL8050 = {
   name: 'Criminal Litigation',
-  // Short tag for the derived issue codes (e.g. CRM-LG5.02) — see issueCode
+  // Short tag for the derived issue codes (e.g. CRM-5.02) — see issueCode
   // in common-core.js. Must be unique across courses.
   codePrefix: 'CRM',
 
