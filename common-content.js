@@ -322,14 +322,19 @@
 
   // The fixed running order of an exam-notes issue type, and the only place
   // these headings are defined. Order is the order you'd actually work a
-  // question: spot it -> work it -> work it well -> write it -> don't blow
-  // it -> look it up. `notes` is the catch-all and stays last.
+  // question: spot it (triggers) -> sketch the answer (skeleton) -> work it
+  // in full (the flowchart) -> work it carefully (look-out) -> write it well
+  // (skills) -> don't blow it (mistakes) -> look it up (authorities). The
+  // skeleton sits right after the triggers, before the flowchart, because
+  // it's the shape of the answer you'd sketch on scrap paper the moment you
+  // spot the issue -- read it before working through the flowchart in full,
+  // not after. `notes` is the catch-all and stays last.
   const EXAM_SECTIONS = [
     { key: 'triggers', heading: 'Fact Pattern Triggers' },
+    { key: 'skeleton', heading: 'Model Answer Skeleton' },
     { key: 'answering', heading: 'Answering Flowchart' },
     { key: 'lookOut', heading: 'Things to Look Out For' },
     { key: 'skills', heading: 'Answering Skills' },
-    { key: 'skeleton', heading: 'Model Answer Skeleton' },
     { key: 'mistakes', heading: 'Common Mistakes' },
     { key: 'authorities', heading: 'Key Law & Authorities' },
   ];
