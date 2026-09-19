@@ -153,6 +153,21 @@ not what the code does.
   multi-part test). The best source of sub-points is an enumeration already
   embedded in an existing point — lifting `(a)…(b)…(c)` out of a long
   sentence is a restructure of verified text, not new content.
+- **Every flowchart step carries a `detail` paragraph, and it is the first
+  thing a reader sees.** `detail` is one prose sentence or two stating the
+  rule the step applies, rendered by `flowchartHtml` as a `.exam-flow-detail`
+  span between the step's label and its coaching blocks. It exists because a
+  bare label followed by two collapsed `<details>` and a column of checkboxes
+  never states the rule anywhere: an audit found 96% of PRP LG1's steps in
+  that condition and unreadable as a result. All 732 steps across the four
+  courses now carry one, so treat it as required rather than optional when
+  authoring a new step. Two rules:
+  - **It is a restructure of the step's own verified content**, drawn from
+    that step's `why`, `points` and `branches` — never a new proposition, and
+    never a provision the step has not already cited.
+  - **It is not a checkbox, and adding one cannot reset saved ticks**, for
+    the same reason `why`/`exam` cannot: `flowLeafIds` walks only the
+    step > point > sub-point chain, so no checkbox id is derived from it.
 - **Every flowchart step carries two coaching blocks, and they are NOT part
   of the checklist.** A step may author `why` (a sentence or two on why the
   rule is shaped this way — the reasoning that makes it memorable rather

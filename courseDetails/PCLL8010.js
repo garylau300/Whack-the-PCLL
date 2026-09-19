@@ -597,6 +597,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'direction',
                     label: 'First ask: is the act required to be done AFTER a date, or BEFORE one?',
+                    detail: 'O.3 r.2 counts the two directions differently. Where an act must be done within a period after or from a date, r.2(2) makes the period begin immediately after that date. Where it must be done within, or not less than, a period before a date, r.2(3) makes the period end immediately before that date.',
                     why: 'Everything else in the counting rules depends on this, because the two directions exclude different ends. A period running AFTER an event excludes the event day, since the party could not realistically act on the day the thing happened; a period running BEFORE a date excludes the target date, since the act has to be complete before it arrives.',
                     exam: {
                       write: 'The writ having been served on [date], the period runs from that date and, by O.3 r.2(2), begins immediately after it, so day 1 is [date+1].',
@@ -620,6 +621,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'short',
                     label: 'Is the period 7 days or less? Then strip out the specified days',
+                    detail: 'By O.3 r.2(5), where a period of 7 days or less would include a specified day, that day is excluded from the count. Rule 2(6) defines the specified days, and a period of 8 days or more gets no such treatment.',
                     why: 'A short period can be wiped out entirely by a weekend or a typhoon, so the rule strips non-working days out of it. The 7-day cut-off is the point: over a longer period the odd closure does not materially reduce the time available, so every day counts.',
                     exam: {
                       write: 'The period being one of 7 days or less, [date] is a specified day within it and is excluded: O.3 r.2(5), r.2(6).',
@@ -645,6 +647,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'vacation',
                     label: 'Is the Summer Vacation in the window?',
+                    detail: 'By O.3 r.3, unless the Court otherwise directs, the Summer Vacation is excluded in reckoning any period for serving, filing or amending any pleading. For anything that is not a pleading the source is instead s31(1) of the High Court Ordinance.',
                     why: 'The vacation exclusion exists because pleadings are drafted by lawyers, and August is when they are away. It is confined to serving, filing and amending pleadings for that reason — other steps do not depend on the same availability, so they get the narrower s31(1) HCO treatment instead.',
                     exam: {
                       write: 'The period for [serving/filing/amending the pleading] runs across the Summer Vacation (1-31 August), which is excluded in reckoning it: O.3 r.3.',
@@ -661,6 +664,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'extend',
                     label: 'Can the period be moved?',
+                    detail: 'The timetable belongs to the Court, so O.3 r.5 keeps the power to move it: the Court may extend or abridge a period on such terms as it thinks just, and may do so even after the period has expired. Time for serving, filing or amending a pleading may also be extended by written consent.',
                     why: 'The timetable is the Court\'s, not the parties\', so the Court keeps the power to move it — including after it has expired, since a rule that could never be relaxed retrospectively would turn every missed deadline into a final one. Consent is allowed for document deadlines because nobody but the parties is affected.',
                     exam: {
                       write: 'The Plaintiff applies under O.3 r.5(1) to extend the time for [step] to [date]; the application may be made notwithstanding that the period has already expired: r.5(2).',
@@ -792,6 +796,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'rule',
                     label: 'Start from the rule: personal service',
+                    detail: 'By O.10 r.1(1) a writ must be served personally on each defendant by the plaintiff or his agent. O.65 r.1(1) confirms that a document need not be served personally unless the rules or an order require it, and an originating process is such a document.',
                     why: 'Personal service is the baseline because the writ is what brings a defendant into an action he has had no say in joining. Everything else in O.10 is a concession to practicality, and each concession carries its own safeguard — which is why you must always say which route was used.',
                     exam: {
                       write: 'The writ was served personally on the Defendant on [date] by leaving a copy of it with him: O.10 r.1(1), O.65 r.2.',
@@ -808,6 +813,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'howpersonal',
                     label: 'If served personally, how is it done in practice?',
+                    detail: 'Personal service is effected by leaving a copy with the person to be served: O.65 r.2. The server must satisfy himself that he has found the correct person and must make clear what the document is, though refusal to take it does not defeat service.',
                     why: 'The point of handing the document over is that the recipient understands he has been served, not that he consents. That is why refusal does not defeat service, but silently thrusting a document at someone does — the server must have identified the right person and conveyed what the document is.',
                     exam: {
                       write: 'The process server satisfied himself that the person served was the Defendant, informed him that the documents were court documents and left a copy with him: Cheung Ping v Cheung Wai Kit.',
@@ -823,6 +829,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'alternatives',
                     label: 'Or use one of the two alternatives for a defendant within the jurisdiction (O.10 r.1(2))',
+                    detail: 'O.10 r.1(2) offers two alternatives to personal service: sending a copy of the writ by registered post to the defendant at his usual or last known address, or, where there is a letter box for that address, inserting a copy through it in a sealed envelope addressed to the defendant.',
                     why: 'These two exist so that a defendant cannot defeat an action simply by avoiding the process server. They are deliberately tied to an address rather than to the person, which is exactly why they only ever produce a rebuttable presumption rather than proof of notice.',
                     exam: {
                       write: 'The writ was served by [sending a copy by registered post to / inserting through the letter box at] the Defendant\'s [usual/last known] address at [address] on [date]: O.10 r.1(2)([a]/[b]).',
@@ -840,6 +847,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'deemed',
                     label: 'If an alternative was used, apply the deeming provision (O.10 r.1(3))',
+                    detail: 'Where an alternative method is used, O.10 r.1(3)(a) deems the date of service to be the seventh day after the copy was sent or inserted, unless the contrary is shown, and r.1(3)(b) requires the affidavit of service to state the deponent\'s belief about the writ reaching the defendant.',
                     why: 'The seventh-day rule gives a fixed, checkable date so that the acknowledgement clock can start without anyone proving actual receipt. O.3 r.2(5) is expressly disapplied because the 7 days are a proxy for postal delivery, which does not pause for weekends.',
                     exam: {
                       write: 'Service by [post/letter box] on [date] is deemed to have been effected on the seventh day thereafter, namely [date], unless the contrary is shown: O.10 r.1(3)(a).',
@@ -861,6 +869,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'rebut',
                     label: 'Test "unless the contrary is shown" both ways',
+                    detail: 'The deeming provision is a convenience, not a fiction. It yields to evidence in either direction: an earlier actual receipt displaces the deemed date, and evidence that the writ never reached the defendant means there was no good service at all.',
                     why: '\'Unless the contrary is shown\' cuts both ways, and that is the whole architecture: the deeming provision is a convenience, not a fiction to be defended. If the facts show the writ arrived earlier, or never arrived at all, the facts win.',
                     exam: {
                       write: 'The writ having been returned through the post undelivered, it was not deemed served, and the deemed date under O.10 r.1(3)(a) cannot be relied on.',
@@ -876,6 +885,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'other',
                     label: 'Two routes that produce their own date',
+                    detail: 'Two further routes fix their own date of service. Under O.10 r.1(4) a solicitor\'s indorsement accepting service means the writ is deemed served on the date of the indorsement; under r.1(5) an acknowledgement of service of a writ not duly served deems it served on the date of acknowledgement, unless the contrary is shown.',
                     why: 'Both routes solve the same problem from opposite ends: the solicitor\'s indorsement lets a represented defendant accept service without the theatre of personal service, and r.1(5) rescues a plaintiff whose service was defective but whose defendant has engaged anyway.',
                     exam: {
                       write: 'The Defendant\'s solicitor having indorsed on the writ a statement accepting service on his behalf, the writ is deemed duly served on the date of that indorsement: O.10 r.1(4).',
@@ -992,6 +1002,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'company',
                     label: 'A Hong Kong limited company — two alternative routes',
+                    detail: 'A company may be served either under s827 of the Companies Ordinance, by leaving the document at or posting it to the registered office, or under the rules by O.10 r.1 read with O.65 r.3. The two routes produce different deemed dates and require different things to be proved.',
                     why: 'A company has no body to hand a writ to, so the law substitutes a place — the registered office it is itself obliged to maintain. That is why s827 asks only whether the statutory steps were taken, and not whether any human being actually read the document.',
                     exam: {
                       write: 'The writ was served on the Defendant company by [leaving it at / sending it by post to] its registered office at [address] on [date]: s827 of the Companies Ordinance (Cap. 622).',
@@ -1010,6 +1021,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'whichroute',
                     label: 'Which company route to use, and why it matters',
+                    detail: 'The two routes are alternatives, and the rule you serve under decides the deemed date and what you must establish. The affidavit of service is where you commit to one of them, so the choice has to be made deliberately rather than discovered afterwards.',
                     why: 'The two routes are alternatives with different consequences, and the affidavit of service is where you commit to one. Once committed, you take that route\'s deemed date and that route\'s vulnerabilities — which is the whole lesson of C&S Dental.',
                     exam: {
                       write: 'Service is relied on under [s827 CO / O.10 r.1(2)], and the deemed date accordingly falls under [PD 19.2 and s8 IGCO / O.10 r.1(3)(a)].',
@@ -1027,6 +1039,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'overseasco',
                     label: 'An overseas company — s803 CO, in a cascade',
+                    detail: 'Section 803 of the Companies Ordinance works down a cascade, from the authorised representative shown in the Companies Registry, to any place of business established in Hong Kong, to the registered office, and finally to a place where the company had a place of business within the preceding period.',
                     why: 'The cascade exists because an overseas company may have no Hong Kong presence at all, so the law works down from the most likely point of contact to the least. You must exhaust each rung before descending — otherwise you are serving at a place the company has no reason to watch.',
                     exam: {
                       write: 'There being no authorised representative shown in the Companies Registry, the writ was [left at / sent by post to] the Defendant\'s place of business at [address]: s803 CO.',
@@ -1042,6 +1055,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'firm',
                     label: 'A partnership sued in the firm\'s name — O.81 r.3',
+                    detail: 'Where a partnership is sued in the firm\'s name, O.81 r.3(1) allows service on any one or more of the partners, at the principal place of business on whoever has control or management there, or by registered post to the firm at that address — and service is good whether or not a member of the firm is out of the jurisdiction.',
                     why: 'Suing a firm in its own name is a convenience, so the service rules mirror it: you can reach the partnership through any partner, through whoever is running the business, or through the business address itself. Which you choose has consequences beyond service.',
                     exam: {
                       write: 'The writ was served on the firm by [serving partner X personally / leaving it with the person having control or management of the business at its principal place of business]: O.81 r.3(1)([a]/[b]).',
@@ -1071,6 +1085,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'disability',
                     label: 'A person under disability — O.80',
+                    detail: 'A minor or mentally incapacitated person cannot conduct litigation in person. By O.80 r.2 such a person defends only by a guardian ad litem who, except where the Official Solicitor is acting, must act by a solicitor — so service is effected on those solicitors.',
                     why: 'A minor or mentally incapacitated person cannot conduct litigation, so the law inserts someone who can. Service therefore has to reach the person who will actually act — which is the next friend or guardian ad litem, acting by a solicitor.',
                     exam: {
                       write: 'The Defendant being a person under disability within O.80 r.1, service was effected on [the guardian ad litem\'s solicitor], he being unable to defend except by a guardian ad litem: O.80 r.2(1), r.2(3).',
@@ -1086,6 +1101,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'agent',
                     label: 'An overseas principal with a Hong Kong agent — O.10 r.2',
+                    detail: 'O.10 r.2 lets the Court authorise service on a Hong Kong agent instead of an overseas principal where a contract was entered into within the jurisdiction with or through that agent. It is a substitute for service out of the jurisdiction, and the order must limit a time for acknowledging service.',
                     why: 'This is a substitute for service out of the jurisdiction where the dispute has a real Hong Kong connection through the agent who made the contract. Because it deprives the principal of the usual foreign-service protections, the Court controls it and insists he still gets a copy abroad.',
                     exam: {
                       write: 'The contract having been entered into within the jurisdiction by or through the Defendant\'s agent, the Plaintiff applies ex parte under O.10 r.2 for leave to serve the agent, the order to limit the time for acknowledging service: r.2(2).',
@@ -1101,6 +1117,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'contract',
                     label: 'A contractually agreed method — O.10 r.3',
+                    detail: 'Where the contract gives the Court of First Instance jurisdiction and provides for the manner or place of service, O.10 r.3(1) treats a writ served in accordance with it as duly served. But agreement cannot substitute for leave to serve out of the jurisdiction: r.3(2).',
                     why: 'Parties who have agreed how they will be served should be held to it — the agreement is evidence that the method will work. But agreement cannot manufacture jurisdiction over someone abroad, which is why r.3(2) still requires leave for service out.',
                     exam: {
                       write: 'The contract providing for service in the manner used, the writ is deemed duly served on the Defendant: O.10 r.3(1).',
@@ -1114,6 +1131,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'land',
                     label: 'A possession claim where nobody is in occupation — O.10 r.4',
+                    detail: 'Where a possession claim concerns premises nobody appears to occupy and service cannot otherwise be effected, O.10 r.4 lets the Court authorise service by affixing a copy to the premises. In any event a copy must be posted in a conspicuous place at the entrance, in addition to any other service.',
                     why: 'Where a possession claim concerns premises nobody occupies there may be no person to serve at all. The rule therefore lets the premises themselves carry the notice — and insists on the conspicuous posting in every case, because that is what a returning occupier would actually see.',
                     exam: {
                       write: 'No person appearing to be in possession and service being otherwise impracticable, the Plaintiff applies ex parte under O.10 r.4 for leave to serve by affixing a copy of the writ to the premises.',
@@ -1236,6 +1254,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gate',
                     label: 'The gateway: is it IMPRACTICABLE to serve in the prescribed manner?',
+                    detail: 'O.65 r.4(1) gives the Court power to order substituted service where it appears impracticable for any reason to serve the document in the prescribed manner. Impracticability is the gateway: it is what gives rise to the discretion in the first place.',
                     why: 'Substituted service is an exception to the principle that a defendant must actually be reached, so the Court needs a reason to allow it. Impracticability is that reason: it is what converts the plaintiff\'s difficulty into a discretion the Court can exercise.',
                     exam: {
                       write: 'Service in the prescribed manner being impracticable because [D cannot be located / D is evading service / there is no letter box at the address], the Plaintiff applies under O.65 r.4(1) for an order for substituted service.',
@@ -1250,6 +1269,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'apply',
                     label: 'Make the application',
+                    detail: 'The application is made ex parte, supported by an affidavit stating the facts on which it is founded: O.65 r.4(2). Because the Court hears only one side, the affidavit has to show the steps actually taken and why they failed.',
                     why: 'The application is ex parte, so the Court hears only one side and must rely on the affidavit. That is why it has to show the steps actually taken rather than assert a conclusion — and why proposing a method likely to reach D is part of the applicant\'s job, not the Court\'s.',
                     exam: {
                       write: 'The affidavit sets out the inquiries made and the attempts to serve at [address] on [dates], and proposes service by [method] as likely to bring the writ to the Defendant\'s notice: O.65 r.4(2).',
@@ -1264,6 +1284,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'method',
                     label: 'Choose a method the Court will accept',
+                    detail: 'Substituted service is effected by taking such steps as the Court may direct to bring the document to the notice of the person to be served: O.65 r.4(3). The test is whether the proposed method will actually do that, not whether it is a traditional one.',
                     why: 'The test is whether the method will bring the document to the person\'s notice, not whether it is traditional. That is why newspaper advertising — once the default — is now refused where something more direct will plainly work better.',
                     exam: {
                       write: 'Substituted service is effected by taking such steps as the Court may direct to bring the writ to the Defendant\'s notice: O.65 r.4(3).',
@@ -1373,6 +1394,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'how',
                     label: 'How ordinary service is effected (O.65 r.5(1))',
+                    detail: 'Once a defendant is in the action, documents may be served by the ordinary methods in O.65 r.5(1): leaving the document at the proper address, posting it, leaving it at a numbered document exchange box, or in such other manner as the Court may direct.',
                     why: 'Once a defendant is in the action he has told the Court where to find him, so documents after the writ do not need the ceremony of personal service. The methods are simply the ordinary ways of delivering paper to a known address.',
                     exam: {
                       write: 'The document was served by [leaving it at / posting it to] the Defendant\'s proper address at [address] on [date]: O.65 r.5(1).',
@@ -1388,6 +1410,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'proper',
                     label: 'Identify the "proper address" (O.65 r.5(2))',
+                    detail: 'The proper address is the person\'s own address for service — the one given in the writ, the acknowledgement of service or a notice of change of solicitor. Only where there is none does r.5(2) fall back on a solicitor\'s business address, an individual\'s usual or last known address, and so on.',
                     why: 'The address for service is the one the party themselves nominated, which is why it comes first: a party cannot complain about delivery to the address he gave. The fallbacks descend only where he has given none.',
                     exam: {
                       write: 'The Defendant\'s proper address is the address for service given in [his acknowledgement of service], namely [address]: O.65 r.5(2).',
@@ -1401,6 +1424,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'when',
                     label: 'Work out when it is deemed served',
+                    detail: 'Deemed-service dates let the next deadline be calculated without arguing about delivery. A document left at a document exchange is deemed served on the following business day (O.65 r.5(2A)), and one served on a specified day or after 4 p.m. is treated as served on the next day that is not a specified day (r.7).',
                     why: 'Deemed-service dates exist so that the next deadline can be calculated without arguing about delivery. The after-4pm and specified-day rules recognise that a document arriving when the office is shut has not really arrived until it reopens.',
                     exam: {
                       write: 'The document having been served after 4 p.m. on [date], it is deemed to have been served on the next following day, not being a specified day: O.65 r.7.',
@@ -1415,6 +1439,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'prove',
                     label: 'Prove it (O.65 r.8)',
+                    detail: 'An affidavit of service must state by whom the document was served, the day of the week and date on which it was served, where and how — O.65 r.8. It is the only record of something that happened outside court, which is why the contents are prescribed.',
                     why: 'The affidavit of service is the only record of something that happened outside court, so the rule prescribes its contents. Each required statement is there to let the Court check the deemed date for itself rather than take it on trust.',
                     exam: {
                       write: 'The affidavit of service states by whom the document was served, the day of the week and date of service, where it was served and how: O.65 r.8.',
@@ -1438,6 +1463,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'sunday',
                     label: 'And the Sunday rule (O.65 r.10)',
+                    detail: 'No process may be served or executed within the jurisdiction on a Sunday except, in case of urgency, with the leave of the Court: O.65 r.10(1). The prohibition is absolute unless leave is obtained, and "process" is defined widely by r.10(2).',
                     why: 'The Sunday prohibition is a survival of the idea that legal process should not intrude on a day of rest. It matters because it is absolute unless the Court gives leave — so a service otherwise perfect can be bad simply because of the day.',
                     exam: {
                       write: 'No process may be served within the jurisdiction on a Sunday except, in case of urgency, with the leave of the Court: O.65 r.10(1).',
@@ -1546,6 +1572,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'plaintiff',
                     label: 'For the plaintiff: ask the Court to cure it',
+                    detail: 'Non-compliance with the rules is an irregularity, not a nullity, so the plaintiff\'s answer to a defective service is to ask the Court to validate it under O.2 r.1. Retrospective leave is available even where a writ was served out of the jurisdiction without leave.',
                     why: 'If the defendant plainly knew about the proceedings and lost nothing, setting the service aside achieves nothing except delay and cost. That is why the Court\'s instinct is to cure a purely technical defect rather than to reward the point-taking.',
                     exam: {
                       write: 'The irregularity being purely technical and having caused the Defendant no prejudice, the Plaintiff asks the Court to exercise its powers under O.2 r.1 to validate the service.',
@@ -1570,6 +1597,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'cases',
                     label: 'Read the cases for where the line falls',
+                    detail: 'The cases mark where the line falls, and the common thread is prejudice rather than precision: where the defendant plainly knew of the proceedings and suffered no harm, technical non-compliance is unlikely to be fatal.',
                     why: 'The cases are worth knowing because they mark where the line actually falls, and the common thread is prejudice rather than precision. Where the defendant plainly knew of the proceedings and suffered no harm, technical non-compliance has not been fatal.',
                     exam: {
                       write: 'As in [Hong Kong and Shanghai Banking Corp Ltd v Ong Tong Sing / 3D Gold v PwC], the Defendant was plainly aware of the proceedings and suffered no prejudice, so the irregularity should be cured.',
@@ -1585,6 +1613,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'cured',
                     label: 'And remember the rules cure some defects themselves',
+                    detail: 'Two rules cure defects automatically and work together. O.10 r.1(5) deems a writ not duly served to have been served on the date of acknowledgement, and O.12 r.7 makes clear that acknowledging is not a waiver of any irregularity.',
                     why: 'Two rules do the curing automatically, and they work together: r.1(5) fixes the date of a defective service, while O.12 r.7 makes clear the defendant has not thereby surrendered the objection. He keeps the point provided he then applies in time.',
                     exam: {
                       write: 'The writ not having been duly served, it is deemed duly served on the date the Defendant acknowledged service, unless the contrary is shown: O.10 r.1(5); and that acknowledgement is not a waiver of the irregularity: O.12 r.7.',
@@ -1683,6 +1712,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'leaveneeded',
                     label: 'Is leave needed at all?',
+                    detail: 'The general rule is that leave is required: O.11 r.1(1) permits service out only with the leave of the Court. The exception is r.1(2)(b), where every claim in the writ is one the Court of First Instance has power to hear by virtue of a written law.',
                     why: 'Serving a writ abroad is an assertion of Hong Kong jurisdiction over someone outside it, so the Court controls it. Leave is the mechanism for that control — and the exceptions exist only where a statute has already decided the Court has jurisdiction.',
                     exam: {
                       write: 'Leave is required to serve the writ out of the jurisdiction: O.11 r.1(1), no written law conferring jurisdiction so as to engage r.1(2)(b).',
@@ -1699,6 +1729,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gateway',
                     label: 'Identify the gateway in O.11 r.1(1) — there are 17 of them',
+                    detail: 'O.11 r.1(1) sets out seventeen gateways, each a connection that makes it fair for Hong Kong to hear a claim against someone outside it — a contract made or broken here, a tort here, land here, and so on. Identify the specific paragraph relied on.',
                     why: 'The gateways are the connections that make it fair for Hong Kong to hear a claim against a foreigner — a contract made here, a tort committed here, property here. You have to land in one of them squarely, because the gateway is what justifies the jurisdiction.',
                     exam: {
                       write: 'The claim falls within O.11 r.1(1)([letter]) because [the contract was made within the jurisdiction / the tort was committed here / the Defendant is a necessary and proper party to the claim against the 1st Defendant].',
@@ -1726,6 +1757,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'Apply the three-part test for leave',
+                    detail: 'Leave requires three things cumulatively: a good arguable case that the claim falls within a gateway, a serious issue to be tried on the merits, and that Hong Kong is the forum conveniens. The statutory overlay in O.11 r.4(2) adds that the case must appear to be a proper one for service out.',
                     why: 'The three limbs ask three different questions: may we (the gateway), is it worth it (the merits), and should we (forum). They are cumulative because each protects a different interest — the foreign defendant\'s, the Court\'s time, and the appropriateness of the forum.',
                     exam: {
                       write: 'There is a good arguable case that the claim falls within gateway [X], a serious issue to be tried on the merits, and Hong Kong is the forum conveniens.',
@@ -1741,6 +1773,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'application',
                     label: 'Make the application: ex parte, on affidavit, with full and frank disclosure',
+                    detail: 'The application is made ex parte to a master, supported by an affidavit whose contents are prescribed by O.11 r.4(1). Because the defendant is not there to answer, the duty of full and frank disclosure applies, and the order must limit a time for acknowledging service: r.4(4).',
                     why: 'Because the defendant is not there to answer, the Court is relying entirely on the applicant. Full and frank disclosure is the price of an ex parte order, and r.4(4)\'s time limit exists because a defendant abroad cannot be held to the ordinary 14 days.',
                     exam: {
                       write: 'The application is made ex parte to a master on affidavit stating the matters required by O.11 r.4(1), and the order sought limits the time for acknowledging service as required by r.4(4).',
@@ -1764,6 +1797,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'method',
                     label: 'Choose a method that is lawful in the place of service',
+                    detail: 'Hong Kong process has no force abroad, so O.11 r.5(3)(a) does not require personal service so long as service accords with the law of the place where it is effected. The overriding limit is r.5(2): nothing may be done there that is contrary to that place\'s law.',
                     why: 'Hong Kong process has no force abroad, so service must be something the foreign legal system tolerates. That is why personal service is not required and why compliance with local law suffices — the constraint is the other country\'s sovereignty, not our formalities.',
                     exam: {
                       write: 'The writ need not be served personally provided it is served in accordance with the law of [country]: O.11 r.5(3)(a).',
@@ -1780,6 +1814,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'mainland',
                     label: 'If service is in the Mainland or Macao: O.11 r.5A, and it is MANDATORY',
+                    detail: 'Service in the Mainland or Macao is not one option among several. By O.11 r.5A(1) the writ must be served through the judicial authorities there, on a request lodged in the Registry with the prescribed copies, translations and undertaking as to expenses.',
                     why: 'This is not one option among several. Service in the Mainland or Macao must go through the judicial authorities, because that is what the mutual arrangements require — a privately effected service there is simply not good service.',
                     exam: {
                       write: 'Service being in the Mainland, the writ must be served through the judicial authorities of the Mainland: O.11 r.5A(1), a request being lodged in the Registry with the copies required by r.5A(2).',
@@ -1798,6 +1833,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'abroad',
                     label: 'Otherwise: service through governments, judicial authorities or consuls (O.11 r.6)',
+                    detail: 'Elsewhere, O.11 r.6 routes service through governments, judicial authorities or consuls, and which route applies depends on the treaty position — a Hague Convention country, a country with some other Civil Procedure Convention, or no convention at all.',
                     why: 'Which route applies depends on what the two states have agreed, so the first question is always the treaty position. The Hague route, the bilateral-convention route and the no-convention route are alternatives determined by that, not by preference.',
                     exam: {
                       write: '[Country] being a Hague Convention country, service may be effected through [route]: O.11 r.6(2A)(a)-(b).',
@@ -1834,6 +1870,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'proof',
                     label: 'Prove the service',
+                    detail: 'Service abroad happens out of the Court\'s sight, so the rules substitute an official certificate for the usual affidavit. A certificate under O.11 r.5(5) or (6) is evidence of the facts stated, and a document purporting to be one is deemed to be one until the contrary is proved: r.5(7).',
                     why: 'Service abroad happens out of the Court\'s sight, so the rules substitute an official certificate for the usual affidavit. The certificate is evidence of the facts stated precisely because its author is answerable in a way a party\'s deponent is not.',
                     exam: {
                       write: 'An official certificate of the [judicial authorities of that place] that the writ was served on [date] in accordance with the law of that place is evidence of the facts stated: O.11 r.7.',
@@ -1991,6 +2028,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'who',
                     label: 'Who may acknowledge?',
+                    detail: 'A natural person acknowledges by a solicitor or in person: O.12 r.1(1). A body corporate acknowledges by a solicitor or by a person duly authorised to act on its behalf, but that authorised person may take no further step in the action without leave.',
                     why: 'The rule is about who can speak for the party. A company is not a person, so someone must be authorised — but allowing a non-solicitor to go further than acknowledging would let a lay representative conduct the litigation, which is why r.1(2) stops them there.',
                     exam: {
                       write: 'The Defendant company acknowledged service by a person duly authorised to act on its behalf, who may take no further step in the action without leave: O.12 r.1(2).',
@@ -2014,6 +2052,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'form',
                     label: 'Get the form and its contents right',
+                    detail: 'The acknowledgement is made in the prescribed form, signed by the solicitor acting or by the defendant in person, and must indicate whether he intends to contest the proceedings and give an address for service: O.12 r.3.',
                     why: 'The acknowledgement does two jobs: it tells the Court the defendant exists, and it tells the plaintiff whether there is going to be a fight. The requirement to indicate an intention to contest is what makes the second job possible.',
                     exam: {
                       write: 'The Defendant acknowledged service in Form No. 14, signed by his solicitor and indicating that he intends to contest the proceedings: O.12 r.3(1).',
@@ -2031,6 +2070,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'when',
                     label: 'Calculate the deadline',
+                    detail: 'For a defendant within the jurisdiction the time is 14 days after service of the writ, including the day of service: O.12 r.5(a). That is the one deadline in this lecture that does not follow the ordinary counting rule in O.3 r.2(2), which r.5(a) displaces expressly.',
                     why: 'This is the one deadline in the lecture that does not follow the ordinary counting rule, and r.5(a) says so expressly: the 14 days INCLUDE the day of service. Getting it wrong by one day is the difference between a good default judgment and an irregular one.',
                     exam: {
                       write: 'The writ having been served on [date], the time for acknowledging service expired on [date], the 14 days including the day of service: O.12 r.5(a).',
@@ -2048,6 +2088,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'file',
                     label: 'File it — and note the date that counts',
+                    detail: 'Service is acknowledged by handing the completed acknowledgement in at, or posting it to, the Registry: O.12 r.1(3). The date that counts is the date it is received at the Registry (r.1(5)), not the date it was signed or posted.',
                     why: 'What matters is when the Registry receives it, not when the defendant signed or posted it, because the Court\'s record is the only thing either side can check. A defendant who posts on the last day has not necessarily acknowledged in time.',
                     exam: {
                       write: 'Service was acknowledged on [date], that being the date the acknowledgement was received at the Registry: O.12 r.1(5).',
@@ -2062,6 +2103,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'late',
                     label: 'If it is late, or after judgment',
+                    detail: 'Nothing precludes acknowledging out of time, but a defendant may not give notice of intention to defend after judgment except with leave: O.12 r.6(1). A late acknowledgement also buys no extra time for the defence.',
                     why: 'Lateness is not itself fatal — the rules let a defendant acknowledge out of time, because shutting him out would be disproportionate. The real risk is what the plaintiff may have done in the meantime, which is why the bar bites only once judgment is obtained.',
                     exam: {
                       write: 'The Defendant may acknowledge service out of time, but may not give notice of intention to defend after judgment has been obtained except with leave: O.12 r.6(1)-(2).',
@@ -2076,6 +2118,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'effect',
                     label: 'Understand what filing does and does not do',
+                    detail: 'Acknowledging is not a waiver of any irregularity in the writ, in its service, or in an order giving leave to serve out: O.12 r.7. But unless the defendant applies under O.12 r.8, the acknowledgement is treated as a submission to the jurisdiction.',
                     why: 'There is a deliberate tension here: acknowledging does not waive an irregularity (r.7), but doing nothing about it does. The defendant keeps his objection only if he uses it, which is what turns the O.12 r.8 deadline into the real one.',
                     exam: {
                       write: 'Acknowledging service is not a waiver of any irregularity in the writ or its service: O.12 r.7; but absent an application under r.8 within the time for serving a defence, it is treated as a submission to the jurisdiction: r.8(7).',
@@ -2102,6 +2145,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'notserved',
                     label: 'If the defendant is named but never served: O.12 r.8A',
+                    detail: 'A person named as a defendant but never served may serve a notice requiring the plaintiff, within a period of not less than 14 days, either to serve the writ or to discontinue: O.12 r.8A. If the plaintiff does not comply, the Court may dismiss the action.',
                     why: 'A person named as a defendant but never served is in limbo: he is publicly associated with a claim he cannot answer. r.8A gives him a way to force the plaintiff either to get on with it or to let him out.',
                     exam: {
                       write: 'Having been named as a defendant but not served, the Defendant serves notice under O.12 r.8A requiring the Plaintiff to serve the writ or discontinue within [N] days.',
@@ -2251,6 +2295,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'limb',
                     label: 'Which limb of O.12 r.8 is this?',
+                    detail: 'The two limbs answer different questions. O.12 r.8(1) is for a case where the Court has no jurisdiction, or the writ or its service was irregular; r.8(2) is for a case where the Court has jurisdiction but should not exercise it.',
                     why: 'The two limbs answer different questions: r.8(1) says the Court cannot hear this, r.8(2) says it should not. Choosing the wrong one means asking for relief the limb does not offer, which is why the limb has to be settled before the summons is drafted.',
                     exam: {
                       write: 'The Defendant applies under O.12 r.8([1]/[2]) on the ground that [the writ was not duly served / the Court should not exercise its jurisdiction, Hong Kong not being the forum conveniens].',
@@ -2273,6 +2318,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'relief',
                     label: 'Ask for the right relief',
+                    detail: 'The relief available differs between the limbs, because they rest on different premises: you cannot ask the Court to set aside a writ it had power to issue, and you cannot ask it to stay proceedings it never had jurisdiction over.',
                     why: 'The relief available differs between the limbs because they rest on different premises — you cannot ask the Court to set aside a writ it had power to issue, nor to stay proceedings that were never validly begun. Naming the alternative forum is required because a stay presupposes somewhere else to go.',
                     exam: {
                       write: 'The Defendant seeks an order that [the writ and service be set aside / the proceedings be stayed in favour of the courts of [country], which is named in the summons].',
@@ -2307,6 +2353,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'procedure',
                     label: 'Follow the procedure exactly — it is what preserves the objection',
+                    detail: 'The procedure is the objection. Give notice of intention to defend, then apply by summons within the time limited for service of a defence, stating the grounds and supported by an affidavit: O.12 r.8(3) and (4). Do that and the acknowledgement is no submission: r.8(6).',
                     why: 'The procedure is the objection. Acknowledging preserves the right to object, and applying within the time for the defence is what stops the acknowledgement hardening into a submission — which is why the deadline is the defence deadline, not the acknowledgement one.',
                     exam: {
                       write: 'The Defendant gave notice of intention to defend and, within the time limited for serving a defence, applied by summons stating the grounds: O.12 r.8(1), r.8(3).',
@@ -2323,6 +2370,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'outcome',
                     label: 'Know what happens if the application fails',
+                    detail: 'A failed challenge does not put the defendant out of court. If the Court makes no order or dismisses the application, the notice of intention to defend stands unless the Court directs otherwise, and directions may be given for the defence and further conduct: O.12 r.8(6A).',
                     why: 'A failed jurisdiction challenge does not put the defendant out of court: his acknowledgement stands and he defends on the merits. Knowing that lets you advise realistically about the downside of making the application at all.',
                     exam: {
                       write: 'The application having been dismissed, the notice of intention to defend stands and the Defendant may serve a defence pursuant to directions under O.12 r.8(6A).',
@@ -2337,6 +2385,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'spiliada',
                     label: 'Forum non conveniens: the Spiliada stages',
+                    detail: 'Forum non conveniens runs in stages that allocate the burden. The defendant must show Hong Kong is not the natural forum and that another available forum is clearly more appropriate; only then does the burden shift to the plaintiff to show a juridical advantage he would lose.',
                     why: 'The stages allocate the burden, which is the practical heart of the doctrine. D must displace Hong Kong and point to somewhere clearly better; only then does P have to justify staying — which is why P\'s juridical advantages are irrelevant until stage 3.',
                     exam: {
                       write: 'Hong Kong is not the natural and appropriate forum, and the courts of [country] are clearly or distinctly more appropriate: Spiliada stages 1 and 2.',
@@ -2353,6 +2402,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'factors',
                     label: 'Work the factors, and weight them the way the cases now do',
+                    detail: 'The weighting has shifted with technology and with the courts\' confidence in applying foreign law, so factors that once carried real weight — witnesses abroad, foreign governing law — now carry much less. Reciting the old list as though nothing had changed is the error.',
                     why: 'The weighting has shifted with technology and with the courts\' confidence in applying foreign law. Reciting the old factors as though they still carried their old force is what separates a dated answer from a current one.',
                     exam: {
                       write: 'Although the witnesses are located in [country], that now carries less weight since evidence may be given over the internet; the connecting factors pointing away from Hong Kong are [X].',
@@ -2368,6 +2418,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'clause',
                     label: 'If there is a jurisdiction clause, it changes the weighting',
+                    detail: 'A jurisdiction clause is the parties\' own answer to the forum question, so the Court starts from it rather than from a blank sheet. An exclusive clause puts a heavy burden on the party resisting it; a non-exclusive clause naming Hong Kong needs very strong reasons to displace.',
                     why: 'A jurisdiction clause is the parties\' own answer to the forum question, so the Court starts from it rather than from a blank sheet. That is why the burden flips: the party resisting the agreed forum has to justify departing from his bargain.',
                     exam: {
                       write: 'The parties having agreed an exclusive jurisdiction clause in favour of [country], there is a heavy burden on the Plaintiff to show strong cause why the Court should not hold him to it.',
@@ -2382,6 +2433,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'arbitration',
                     label: 'If there is an arbitration agreement, the test is different',
+                    detail: 'A stay for arbitration is not a forum discretion at all: the parties have contracted out of the courts, so the questions are contractual. Four questions follow, and if all are answered in the defendant\'s favour the stay follows.',
                     why: 'A stay for arbitration is not a forum discretion at all: the parties have contracted out of the courts, so the questions are contractual. That is why the four Tommy Sze questions are about the agreement\'s existence and scope, not about convenience.',
                     exam: {
                       write: 'There is an arbitration agreement, it is not null and void, inoperative or incapable of being performed, and the dispute falls within its scope: Tommy C P Sze & Co v Li & Fung Trading Ltd [2003] 1 HKC 418.',
@@ -2575,6 +2627,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'what',
                     label: 'Identify the document',
+                    detail: 'A pleading is a formal written document in which the parties formulate their claim or defence, running in the sequence statement of claim, defence and counterclaim, reply and defence to counterclaim, and then nothing further without leave: O.18 r.4. Knowing which document you are looking at fixes which rules apply.',
                     why: 'Knowing which document you are looking at fixes which rules apply — O.18 r.8 bites only on pleadings subsequent to the statement of claim, and O.41A verification reaches particulars as well. Getting the label right is the first filter.',
                     exam: {
                       write: 'The document in question is [a defence and counterclaim], a pleading within O.18, and further and better particulars are also pleadings for these purposes: O.41A r.1.',
@@ -2590,6 +2643,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'purpose',
                     label: 'State the purpose, with authority',
+                    detail: 'The core function of pleadings is to define the real issues between the parties in advance of trial. Everything else the Order requires is a means to that end, and the practical consequence that decides most problem questions is that a party is bound by its pleaded case.',
                     why: 'Every pleading rule in the Order is a means to one end: defining the real issues before trial. Once you can state that purpose with authority, the individual rules stop being arbitrary and the consequences — especially being bound by your pleaded case — follow naturally.',
                     exam: {
                       write: 'The function of pleadings is to define the real issues between the parties in advance of trial: Poon Hau Kei v Hsin Cheong Construction Co Ltd, and the parties are bound by the case they have pleaded.',
@@ -2604,6 +2658,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'consequence',
                     label: 'Work out the consequence on the facts',
+                    detail: 'A pleadings question almost always ends in one of three applications — particulars under O.18 r.12, amendment under O.20, or striking out under O.18 r.19. Naming the right route, rather than merely criticising the pleading, is the answer.',
                     why: 'A pleadings question almost always ends in one of three applications, and the choice between them is the answer. Naming the route rather than merely criticising the pleading is what converts analysis into advice.',
                     exam: {
                       write: 'The Defendant\'s case as pleaded does not include [X]; it cannot be run at trial without an amendment under O.20, and the appropriate application is [amendment / further and better particulars under O.18 r.12 / striking out under O.18 r.19].',
@@ -2699,6 +2754,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'scenario',
                     label: 'First: was the writ generally or specially indorsed?',
+                    detail: 'Everything downstream hangs on this. A generally indorsed writ carries no statement of claim, so one must be served separately; a specially indorsed writ delivers the statement of claim with the writ itself and so starts the defence clock at once.',
                     why: 'Everything downstream hangs on this, because a specially indorsed writ delivers the statement of claim with the writ itself and so starts the defence clock earlier. Fixing the indorsement first is what makes the rest of the timetable computable.',
                     exam: {
                       write: 'The writ was [generally/specially] indorsed, so the statement of claim was served [separately on [date] / with the writ on [date]].',
@@ -2713,6 +2769,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'defence',
                     label: 'Then the defence — and read the rule, because it is a "whichever is the later" test',
+                    detail: 'By O.18 r.2(1) a defendant who gives notice of intention to defend must serve a defence before the expiration of 28 days after the time limited for acknowledging service or after the statement of claim is served on him, whichever is the later. Both dates must be computed.',
                     why: 'The rule is a \'whichever is the later\' test because a defendant cannot plead to a claim he has not yet seen, nor before he has entered the action. Both events must therefore have happened before the 28 days can start.',
                     exam: {
                       write: 'The time for serving the defence is 28 days after the later of the time limited for acknowledging service and service of the statement of claim, namely [date]: O.18 r.2(1).',
@@ -2728,6 +2785,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'reply',
                     label: 'Reply and defence to counterclaim',
+                    detail: 'A reply is not the default: it is required only where O.18 r.8 makes it necessary to plead something specifically. A plaintiff served with a counterclaim who intends to defend it must serve a defence to counterclaim, and where both are served they go in the same document: O.18 r.3.',
                     why: 'A reply is not the default: the plaintiff already has his case on the record, so he replies only where silence would concede something under O.18 r.8. Requiring reply and defence to counterclaim in one document keeps the record tidy.',
                     exam: {
                       write: 'No reply is required, nothing in the defence needing to be met under O.18 r.8; had a counterclaim been served, the defence to counterclaim would be in the same document as any reply: O.18 r.3(3).',
@@ -2743,6 +2801,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'close',
                     label: 'Fix the close of pleadings — this is the date that matters most',
+                    detail: 'O.18 r.20(1) fixes close of pleadings at 14 days after the reply or defence to counterclaim, or, if neither is served, 28 days after the defence. It is the hinge date for the whole Order: it ends the right to amend without leave and triggers the implied joinder of issue.',
                     why: 'Close of pleadings is the hinge date for the whole Order: it ends the right to amend without leave and triggers the implied joinder of issue. r.20(2) makes it immovable by an outstanding particulars request, so that the timetable cannot be stalled indefinitely.',
                     exam: {
                       write: 'Neither a reply nor a defence to counterclaim having been served, pleadings closed 28 days after service of the defence, namely [date]: O.18 r.20(1)(b).',
@@ -2758,6 +2817,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'filing',
                     label: 'Do not forget filing, which is separate from service',
+                    detail: 'Serving tells the other side; filing tells the Court. By O.18 r.5A(1) every pleading must be filed in the Registry within the time during which it may be served, and a party who misses that time may not file without leave: r.5A(3).',
                     why: 'Serving tells the other side; filing tells the Court. They are different acts with different audiences, and a party who serves punctually but never files has still not complied with r.5A(1).',
                     exam: {
                       write: 'The pleading was filed in the Registry within the time during which it might be served: O.18 r.5A(1).',
@@ -2774,6 +2834,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'compute',
                     label: 'Compute the dates under O.3, and mind the two different counting rules',
+                    detail: 'Two different counting rules operate within the same timetable. The acknowledgement period includes the day of service (O.12 r.5(a)); the 28-day pleading periods do not, because O.3 r.2(2) begins them immediately after the relevant date.',
                     why: 'Two different counting rules operate within the same timetable, and mixing them shifts every subsequent date by a day. The acknowledgement period includes the day of service; the 28-day pleading periods do not.',
                     exam: {
                       write: 'The 28 days run from the day after [the later event], O.3 r.2(2) applying, in contrast to the acknowledgement period which includes the day of service: O.12 r.5(a).',
@@ -2911,6 +2972,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'face',
                     label: 'What must appear on its face: O.18 r.6(1)',
+                    detail: 'O.18 r.6(1) prescribes what must appear on the face of every pleading: the year and number of the action, the title of the action, the description of the pleading, and the date on which it was served.',
                     why: 'The face of the pleading is how the Registry and the other side identify what it is and where it belongs. These are not decorative: a document that cannot be matched to an action cannot be filed in it.',
                     exam: {
                       write: 'The pleading bears the year and number of the action, the title of the action and the description \'Statement of Claim\': O.18 r.6(1).',
@@ -2927,6 +2989,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'body',
                     label: 'How the body must be set out',
+                    detail: 'By O.18 r.6(2) a pleading must, if necessary, be divided into consecutively numbered paragraphs, each allegation being so far as convenient in a separate paragraph; and by r.6(3) dates, sums and other numbers must be expressed in figures, not words.',
                     why: 'Numbered paragraphs, each confined to a distinct allegation, are what make a pleading answerable — the defence traverses paragraph by paragraph. Figures rather than words exist for the same reason: they are unambiguous and quick to check.',
                     exam: {
                       write: 'The pleading is divided into consecutively numbered paragraphs, each allegation being so far as convenient in a separate paragraph: O.18 r.6(2); dates, sums and numbers are in figures: r.6(3).',
@@ -2940,6 +3003,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'indorse',
                     label: 'The indorsement: O.18 r.6(4)',
+                    detail: 'O.18 r.6(4) requires the pleading to be indorsed with the name and address of a party suing or defending in person, or otherwise with the name or firm and business address of the solicitor by whom it was served — and, where that solicitor is another\'s agent, the principal\'s too.',
                     why: 'The indorsement says who to contact and, critically, who is actually responsible. The agent limb exists because a pleading served by a town agent must still identify the principal solicitor conducting the case.',
                     exam: {
                       write: 'The pleading is indorsed with the name and business address of the solicitor by whom it was served, and of his principal: O.18 r.6(4).',
@@ -2954,6 +3018,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'sign',
                     label: 'The signature: O.18 r.6(5)',
+                    detail: 'By O.18 r.6(5) every pleading must be signed by counsel if settled by him, and if not by the party\'s solicitor or by the party in person. The signature attributes professional responsibility for the contents, and is a different thing from the statement of truth.',
                     why: 'The signature attributes professional responsibility for the contents. That is why it runs up the chain — counsel if he settled it, otherwise the solicitor, otherwise the party — and why the statement of truth did not displace it.',
                     exam: {
                       write: 'The pleading is signed by counsel, having been settled by him: O.18 r.6(5); a printed name at the end is acceptable and remains so notwithstanding the statement of truth: PD 19.3(3).',
@@ -2969,6 +3034,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'amended',
                     label: 'If it is an amended pleading, two further requirements',
+                    detail: 'An amended pleading must show its amendments in the conventional colours and, by O.20 r.10(2), be indorsed with a statement that it has been amended, specifying the date and the authority for the amendment. The amendment must also be verified by a statement of truth.',
                     why: 'The colour convention and the indorsement let anyone see at a glance what changed and when, without comparing drafts. Where the changes are too extensive for that to work, r.10(1) allows a clean redraft instead.',
                     exam: {
                       write: 'The amended pleading is indorsed with a statement that it has been amended, specifying the date and the authority for the amendment: O.20 r.10(2), the amendments being shown in red: PD 19.1 §2.',
@@ -3075,6 +3141,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'which',
                     label: 'Which documents must be verified?',
+                    detail: 'By O.41A r.2(1) a statement of truth is required for a pleading, a witness statement, an expert report, and any other document a rule or practice direction requires to be verified. O.18 r.20A extends it to the particulars of a pleading, and O.20 r.13 to amendments.',
                     why: 'Verification exists to make someone personally answerable for the assertions in a document. It therefore reaches every document the Court will act on — pleadings, particulars and amendments alike — not just the principal pleadings.',
                     exam: {
                       write: 'The pleading must be verified by a statement of truth: O.41A r.2(1); so must its particulars (O.18 r.20A) and any amendment to either (O.20 r.13(1)-(2)).',
@@ -3091,6 +3158,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'who',
                     label: 'Who signs?',
+                    detail: 'O.41A r.3 identifies the signatory: the party putting the document forward or his legal representative, the maker of a witness statement or expert report, a person holding a senior position in a corporate or unincorporate body, or a partner or manager of a partnership.',
                     why: 'The signatory must be someone who can actually vouch for the contents, which is why a corporate body needs a person in a senior position rather than any employee. The definition in r.3(4) is there to stop the requirement being met by a junior signature.',
                     exam: {
                       write: 'The statement of truth is signed by [the party / a person holding a senior position in the Defendant company within O.41A r.3(4)].',
@@ -3116,6 +3184,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'lawyer',
                     label: 'If the legal representative signs, understand what that signature means',
+                    detail: 'A legal representative must sign in his own name and not merely in the name of his firm: O.41A r.3(10). By r.4(3) the Court treats his signature as his own statement about the client\'s instructions and belief, so he is exposed if the statement is false.',
                     why: 'A legal representative\'s signature is not a formality: r.4(3) converts it into his own statement about the client\'s instructions and belief. That is why he is personally exposed if it turns out to be false, and why the three matters must be confirmed in writing first.',
                     exam: {
                       write: 'The statement of truth is signed by the legal representative in his own name, which the Court treats as his statement of the matters in O.41A r.4(3): r.3(10).',
@@ -3137,6 +3206,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'form',
                     label: 'Get the form right',
+                    detail: 'O.41A r.5 prescribes the wording, and it is the prescribed wording that makes the statement actionable as a contempt. A statement of truth in a separate document must be headed with the title and action number and identify the document it verifies: r.5(3).',
                     why: 'The prescribed wording is what makes the statement actionable as a contempt, so departing from it weakens the very thing it exists to provide. A separate-document statement needs the title and the document\'s description for the same reason: it must be tied to what it verifies.',
                     exam: {
                       write: 'The statement of truth reads: \'I believe that the facts stated in this Statement of Claim are true.\'',
@@ -3152,6 +3222,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'missing',
                     label: 'If it is missing',
+                    detail: 'The consequences differ by document. An unverified pleading may be struck out, or the person ordered to verify it — both discretionary, under O.41A rr.6 and 8. An unverified witness statement or expert report is simply not admissible unless the Court otherwise orders: r.7.',
                     why: 'The consequences are deliberately different because the documents do different work. An unverified pleading can be cured, so striking out is discretionary and verification is the proportionate alternative; an unverified witness statement is simply not evidence.',
                     exam: {
                       write: 'The pleading not being verified, the Court may by order strike it out on the application of any party (O.41A r.6(1)-(2)) or, alternatively, order the person to verify it (r.8).',
@@ -3166,6 +3237,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'false',
                     label: 'If it is false — and note the gatekeeping',
+                    detail: 'By O.41A r.9(1) contempt proceedings may be brought against a person who makes a false statement in a verified document without an honest belief in its truth, but only through the gates in r.9(2), and only where punishment is proportionate and appropriate: r.9(3).',
                     why: 'Contempt is a serious sanction, so the rule puts two gates in front of it and then adds a proportionality test. Knowing the gates is what lets you advise that a false statement is serious without overstating how readily proceedings follow.',
                     exam: {
                       write: 'Proceedings for contempt may be brought against a person making a false statement without an honest belief in its truth: O.41A r.9(1), but only with leave and where punishment is proportionate and appropriate: rr.9(2)-(3).',
@@ -3292,6 +3364,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'rule',
                     label: 'Start with the rule, in full',
+                    detail: 'O.18 r.7(1) requires every pleading to contain, and contain only, a statement in summary form of the material facts on which the party relies, but not the evidence by which they are to be proved. Three separate commands: material facts, not evidence, and brevity.',
                     why: 'r.7(1) contains three separate commands, and an exam point can turn on any of them. Reading the opening words matters too: the rule is expressly subject to rr.7A, 10, 11 and 12, so points of law and particulars are not exceptions smuggled in but part of the scheme.',
                     exam: {
                       write: 'Every pleading must contain, and contain only, a statement in summary form of the material facts on which the party relies, but not the evidence by which they are to be proved: O.18 r.7(1).',
@@ -3306,6 +3379,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'material',
                     label: 'Is it a material fact?',
+                    detail: 'Material facts are those necessary for the purpose of formulating a complete cause of action. So run the elements of the cause of action and ask whether the claim would be incomplete without this fact — materiality is decided by the cause of action, not by interest.',
                     why: 'Materiality is decided by the cause of action, not by interest. A fact is material if the claim is incomplete without it, which is why the reliable method is to run the elements and test each fact against them.',
                     exam: {
                       write: 'The fact that [X] is material because it is necessary to formulate a complete cause of action in [negligence]: Bruce v Odhams Press Ltd.',
@@ -3320,6 +3394,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'evidence',
                     label: 'Or is it evidence?',
+                    detail: 'Evidence is how a material fact would be proved — a document, a recording, a witness. Pleading it bloats the document and commits the party to a method of proof rather than to the fact itself, which is why r.7(1) excludes it.',
                     why: 'Pleading evidence bloats the document and commits the party to a way of proving the fact rather than to the fact itself. The distinction is between what happened (plead it) and how you will show it happened (do not).',
                     exam: {
                       write: 'That the Plaintiff agreed to buy and the Defendant agreed to sell 100 tonnes is the material fact and is pleaded; the correspondence by which the agreement was made is evidence and is not: O.18 r.7(1); Ng Kam Chuen v Attorney General.',
@@ -3335,6 +3410,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'docs',
                     label: 'If a document or conversation is involved: O.18 r.7(2)',
+                    detail: 'By O.18 r.7(2) the effect of a document, or the purport of a conversation, must if material be briefly stated, and the precise words must not be set out except where those words are themselves material — as in libel, where the words are the cause of action.',
                     why: 'Reciting documents verbatim would defeat the summary-form requirement, so the rule asks for the effect. The exception for material words exists because in a libel or a warranty claim the precise wording IS the fact in issue.',
                     exam: {
                       write: 'The effect of the agreement, so far as material, is briefly stated; the precise words are not set out, not being themselves material: O.18 r.7(2).',
@@ -3349,6 +3425,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'nonpleadable',
                     label: 'What need NOT be pleaded: O.18 r.7(3) and r.7(4)',
+                    detail: 'The rule tracks the burden of proof. By r.7(3) a party need not plead a fact presumed by law or one the other party must disprove; by r.7(4) a statement that something was done implies the allegation of any condition precedent necessary for its doing.',
                     why: 'The rule tracks the burden of proof: you plead what you must prove. A fact presumed by law, or one the other side must disprove, is not part of your case to make out, so requiring it would be pointless duplication.',
                     exam: {
                       write: 'The Plaintiff need not plead [mitigation], the burden of disproving it lying on the Defendant: O.18 r.7(3).',
@@ -3365,6 +3442,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'law',
                     label: 'Points of law: permitted, but only as points',
+                    detail: 'O.18 r.11 is a single sentence: a party may by his pleading raise any point of law. A legal conclusion stated as a proposition is permissible; argument for that conclusion, or an explanation of the law, is not, because that is submission rather than pleading.',
                     why: 'A point of law is a conclusion, and conclusions belong in a pleading; the reasoning that supports them does not, because that is submission. The line is between asserting a legal result and arguing for it.',
                     exam: {
                       write: 'The Defendant owed the Plaintiff a duty of care — a point of law properly raised: O.18 r.11.',
@@ -3475,6 +3553,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'r8',
                     label: 'O.18 r.8(1) — and read its two limits, because the outline\'s shorthand hides them',
+                    detail: 'O.18 r.8(1) applies only to a pleading subsequent to a statement of claim, and it is not a closed list: it requires specific pleading of any matter falling within one of three limbs, of which the named examples — performance, release, limitation, fraud, illegality — are only illustrations.',
                     why: 'r.8(1) is not a general requirement: it bites only on pleadings after the statement of claim, because it is aimed at matters that would ambush a plaintiff who has already committed to his case. The three limbs are what identify such a matter.',
                     exam: {
                       write: 'Limitation being a matter which if not pleaded might take the Plaintiff by surprise, it must be pleaded specifically in the defence: O.18 r.8(1).',
@@ -3497,6 +3576,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'r8list',
                     label: 'The matters the course expects you to plead specifically',
+                    detail: 'Each item on the list is a defence or allegation that changes the shape of the trial, which is why it cannot be sprung late: fraud, limitation, contributory negligence, set-off, failure to mitigate, exemplary or provisional damages, and interest.',
                     why: 'The list is worth memorising because each item is a defence or allegation that changes the shape of the trial. If a party can spring it late, the other side has prepared for the wrong case.',
                     exam: {
                       write: 'Contributory negligence must be specifically pleaded: Chow Wai Hung v King Rise Engineering Ltd, as must fraud, limitation, performance and release: O.18 r.8(1).',
@@ -3516,6 +3596,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'damages',
                     label: 'Know the two damages terms the lecture defines',
+                    detail: 'Both are exceptional remedies the defendant is entitled to notice of. Exemplary damages exceed what is needed to compensate, the excess being punishment; provisional damages are assessed on the assumption that the claimant\'s condition will not deteriorate, leaving him able to return.',
                     why: 'Both heads are exceptional remedies, so the defendant is entitled to notice that they are in play — exemplary damages because they are punitive rather than compensatory, provisional damages because they reserve a second bite on quantum.',
                     exam: {
                       write: 'Exemplary damages are claimed, and the facts relied on in support are pleaded: O.18 r.8(3).',
@@ -3530,6 +3611,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'r12',
                     label: 'O.18 r.12(1) — every pleading must contain the necessary particulars',
+                    detail: 'O.18 r.12(1) requires every pleading to contain the necessary particulars of any claim, defence or other matter pleaded, and then names the heads most likely to be alleged loosely: misrepresentation, fraud, breach of trust, wilful default, undue influence and any condition of the mind.',
                     why: 'Particulars are what make an allegation answerable. The specific heads in r.12(1) are the allegations most likely to be made loosely and most damaging if they are — fraud, misrepresentation, states of mind — so the rule names them.',
                     exam: {
                       write: 'The Plaintiff gives particulars of the misrepresentation relied on as required by O.18 r.12(1)(a), and of the Defendant\'s fraudulent intention: r.12(1)(b).',
@@ -3547,6 +3629,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'knowledge',
                     label: 'Knowledge and notice are a special case: O.18 r.12(4)',
+                    detail: 'Knowledge is carved out of the automatic requirement in r.12(1)(b), because it is so often inferred rather than directly known. But by r.12(4) the Court may still order particulars of the facts on which a party relies to allege knowledge or notice.',
                     why: 'Knowledge is carved out of the automatic requirement because it is so often inferred rather than directly known. But the Court can still order particulars, so withholding them buys an application rather than an advantage.',
                     exam: {
                       write: 'Particulars of the Defendant\'s knowledge are given, although not automatically required: O.18 r.12(4).',
@@ -3568,6 +3651,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'folios',
                     label: 'Long particulars go in a separate document: O.18 r.12(2)',
+                    detail: 'Where particulars of debt, expenses or damages exceed 3 folios, O.18 r.12(2) requires them to be set out in a separate document referred to in the pleading, and the pleading must say whether that document has already been served or is served with it.',
                     why: 'Long schedules of figures would swamp a pleading and defeat the summary-form rule, so they are moved to a separate document that is served alongside. The pleading must still say where they are, or the reader cannot find them.',
                     exam: {
                       write: 'The particulars of damages exceeding 3 folios, they are set out in a separate document referred to in the pleading, which states that it is served with it: O.18 r.12(2).',
@@ -3583,6 +3667,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'conviction',
                     label: 'Relying on a criminal conviction: O.18 r.7A',
+                    detail: 'A conviction is powerful evidence, so O.18 r.7A(1) requires a party who intends to rely on one to include a statement of that intention in his pleading, with particulars identifying the conviction and the issue to which it relates.',
                     why: 'A conviction is powerful evidence, so the other side must be told it is coming and given enough to identify it. The statement of intention is the notice mechanism the Evidence Ordinance presupposes.',
                     exam: {
                       write: 'The Plaintiff includes in his pleading a statement of his intention to rely on the Defendant\'s conviction, with the particulars required by O.18 r.7A(1).',
@@ -3732,6 +3817,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'identify',
                     label: 'Identify the deficiency precisely',
+                    detail: 'Further and better particulars are sought where the other side has failed to plead the necessary particulars of its claim, defence or other matter. The request must identify what is deficient allegation by allegation; a general complaint that the pleading is inadequate will not do.',
                     why: 'A request is only as good as its precision: the Court is being asked to order a party to say more about a specific allegation, so the request must be tied to that allegation. A general complaint gives the Court nothing to order.',
                     exam: {
                       write: 'Of paragraph [N], where it is alleged that [X]: state [precisely what is sought].',
@@ -3746,6 +3832,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'letter',
                     label: 'Write the letter FIRST — this is the step that decides applications',
+                    detail: 'By O.18 r.12(6), where the applicant did not apply by letter for the particulars he requires, the Court may refuse to make the order unless it is of the opinion that there were sufficient reasons for not doing so. It is a discretion to refuse, with a narrow escape hatch.',
                     why: 'The letter exists so that the Court is not troubled with something the parties could have settled between themselves. r.12(6) makes the omission a reason to refuse costs, which is why the letter is a step you take before, not instead of, applying.',
                     exam: {
                       write: 'Particulars were requested by letter dated [date] and not provided, so the Plaintiff applies under O.18 r.12(3): see r.12(6) and Law Wing Ping v Prudential Insurance Co Ltd.',
@@ -3760,6 +3847,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'apply',
                     label: 'If refused, apply — and note who may apply',
+                    detail: 'O.18 r.12(3) lets the Court order a party to serve particulars of any claim, defence or other matter stated in his pleading, and by r.12(3A) it may do so on the application of a party or of its own motion — particulars are not merely a party\'s weapon.',
                     why: 'The own-motion power signals that particulars are not merely a party\'s weapon: the Court has its own interest in a record that defines the issues. That is the same interest O.1A protects.',
                     exam: {
                       write: 'The Court may order a party to serve particulars of any matter stated in his pleading, on the application of a party or of its own motion: O.18 r.12(3), (3A).',
@@ -3773,6 +3861,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'Apply the test and know who carries the burden',
+                    detail: 'Relevance is not the test; necessity is. By O.18 r.12(3B) no order may be made unless the Court is of the opinion that it is necessary either for disposing fairly of the cause or matter or for saving costs, and the burden of showing that lies on the party seeking them.',
                     why: 'Relevance is not the test; necessity is. r.12(3B) is a filter designed to stop particulars being used as an interrogatory-by-other-means, and the burden of getting through it is on the party asking.',
                     exam: {
                       write: 'The order is necessary for disposing fairly of the cause or matter, the Defendant being unable otherwise to know the case he has to meet: O.18 r.12(3B); Well Joint Trading Ltd.',
@@ -3787,6 +3876,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'timing',
                     label: 'Timing: normally not before the defence',
+                    detail: 'By O.18 r.12(5) an order is not to be made before service of the defence unless the Court thinks it necessary or desirable to enable the defendant to plead. Until the defence is served nobody knows which allegations are actually in dispute.',
                     why: 'Particulars are normally a post-defence exercise because until the defence is served nobody knows which allegations are actually in dispute. The exception is where the statement of claim is so bad that no defence can be drafted at all.',
                     exam: {
                       write: 'No order will be made before service of the defence unless necessary to enable the Defendant to plead: O.18 r.12(5).',
@@ -3802,6 +3892,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'form',
                     label: 'Formal requirements for the particulars themselves',
+                    detail: 'Particulars are a pleading, so every formal rule follows them. In addition, O.18 r.12(7) requires the request or order to be incorporated with the particulars, and they must be verified by a statement of truth.',
                     why: 'Particulars are a pleading, so every formal rule follows them — including verification. r.12(7) requires the request or order to be incorporated so that the answer can be read without hunting for the question.',
                     exam: {
                       write: 'The particulars incorporate the request and are verified by a statement of truth: O.18 r.12(7); O.18 r.20A.',
@@ -3816,6 +3907,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'noncompliance',
                     label: 'If the order is not complied with',
+                    detail: 'The sanctions escalate because the purpose is compliance, not punishment: fresh responses, possibly on an unless basis; refusal of permission to adduce evidence at trial on the unparticularised pleading; and ultimately striking out.',
                     why: 'The sanctions escalate because the purpose is compliance, not punishment. An unless order and an evidential bar both aim at the same thing: a party should not be able to run at trial a case he refused to particularise.',
                     exam: {
                       write: 'The Defendant having failed to comply, the Plaintiff seeks an order for fresh responses on an unless basis: Tenzer v Goh.',
@@ -3926,6 +4018,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'which',
                     label: 'Ask first: inconsistent with a PREVIOUS pleading, or within the SAME one?',
+                    detail: 'Two different rules govern two different situations and point opposite ways. O.18 r.10(1) forbids an allegation inconsistent with a party\'s own previous pleading; O.18 r.12A permits inconsistent allegations within the same pleading where they are pleaded in the alternative.',
                     why: 'Two different rules govern two different situations, and they point opposite ways: you may not contradict your own earlier pleading, but you may plead inconsistent alternatives within one. Identifying which is engaged is the whole question.',
                     exam: {
                       write: 'The inconsistency is [with the Defendant\'s own earlier pleading, engaging O.18 r.10(1) / within the same pleading, permitted by O.18 r.12A].',
@@ -3946,6 +4039,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'meaning',
                     label: 'What "inconsistent" means',
+                    detail: '"Inconsistent" means new or different; the allegations need not be mutually exclusive. That is a deliberately wide test, because the mischief is a party shifting his account rather than merely contradicting himself outright.',
                     why: 'The test is deliberately wide — new or different, not mutually exclusive — because the mischief is a party shifting his account, not merely contradicting himself. A materially different version of the same events is caught.',
                     exam: {
                       write: 'The allegation is inconsistent within the meaning of O.18 r.10(1), \'inconsistent\' meaning new or different and the allegations not needing to be mutually exclusive: Goldon Investment Ltd v NPH International Ltd.',
@@ -3959,6 +4053,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'remedy',
                     label: 'If it is inconsistent with a previous pleading, the remedy is amendment',
+                    detail: 'O.18 r.10(2) is easily misread as permission. It preserves the route back rather than licensing the inconsistency: the earlier pleading is amended under O.20, which brings the amendment rules and their timing into play.',
                     why: 'r.10(2) is easily misread as permission. It is the opposite: it preserves the route back, which is to amend the earlier pleading — and that brings the O.20 regime, and the close of pleadings, into play.',
                     exam: {
                       write: 'The Defendant must apply to amend his earlier pleading rather than plead the inconsistent allegation in the later one: O.18 r.10(2), and being after the close of pleadings that requires leave under O.20 r.5.',
@@ -3973,6 +4068,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'goodbad',
                     label: 'Test the alternatives against the lecture\'s two examples',
+                    detail: 'Alternatives are proper where each is a complete answer on a different factual footing, and improper where the second simply contradicts a fact the first asserted. The two worked examples in the lecture are built to show exactly that line.',
                     why: 'Proper alternatives each stand as a complete answer on a different factual footing; improper ones assert a fact and then deny it. The two worked examples are the cleanest way to show you can tell them apart.',
                     exam: {
                       write: 'The alternatives are properly pleaded, each being a complete answer on a different factual footing, rather than an assertion of a fact followed by its denial.',
@@ -4083,6 +4179,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'relief',
                     label: 'The prayer for relief: O.18 r.15(1)',
+                    detail: 'By O.18 r.15(1) a statement of claim must state specifically the relief or remedy claimed, though costs need not be specifically claimed. It matters because the Court cannot grant relief that has not been claimed at all.',
                     why: 'The prayer is what the Court is actually being asked to do, and it cannot give what has not been asked for. That is the practical reason the rule exists, and the reason an omitted head of relief is not a technicality.',
                     exam: {
                       write: 'The Plaintiff claims [damages / the sum of $X / an injunction restraining the Defendant from...]: O.18 r.15(1).',
@@ -4098,6 +4195,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'causes',
                     label: 'The cause-of-action constraint: O.18 r.15(2), and note its second limb',
+                    detail: 'A statement of claim must not raise a cause of action unless it is mentioned in the writ or arises from facts that are the same as, or include or form part of, facts giving rise to one that is. Subject to that, the plaintiff may alter, modify or extend a claim without amending the indorsement.',
                     why: 'The writ defines the action, so the statement of claim cannot introduce a cause of action the writ never mentioned. The second limb is the flexibility: within the same factual substratum the claim may be altered, modified or extended.',
                     exam: {
                       write: 'The cause of action in [X] is mentioned in the indorsement, and the statement of claim alters and extends that claim as permitted: O.18 r.15(2).',
@@ -4112,6 +4210,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'date',
                     label: 'The issue date: O.18 r.15(3)',
+                    detail: 'By O.18 r.15(3) every statement of claim must bear on its face a statement of the date on which the writ was issued. That is separate from, and additional to, the O.18 r.6(1) heading requirements, and it matters because the issue date fixes limitation.',
                     why: 'This is separate from the r.6(1) heading requirements and is easy to drop from a draft. It matters because the issue date fixes limitation, so the document that opens the case states it on its face.',
                     exam: {
                       write: 'This Statement of Claim bears on its face the date on which the writ was issued, namely [date]: O.18 r.15(3).',
@@ -4126,6 +4225,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'pi',
                     label: 'If it is a personal injuries claim',
+                    detail: 'In a personal injuries claim the defendant cannot evaluate the claim without the medical evidence and the loss schedule, so O.18 r.12(1A) requires the plaintiff to serve a medical report and a statement of the special damages claimed with the statement of claim.',
                     why: 'In a personal injuries claim the defendant cannot evaluate the claim without the medical evidence and the loss schedule, so the rules make them travel with the statement of claim rather than waiting for discovery.',
                     exam: {
                       write: 'The Plaintiff serves with this Statement of Claim a medical report and a statement of the special damages claimed: O.18 r.12(1A).',
@@ -4146,6 +4246,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'body',
                     label: 'Then the body, on the ordinary rules',
+                    detail: 'Once the special rules are dealt with, the statement of claim is governed by the ordinary drafting rules: material facts in summary form under O.18 r.7(1), particulars under r.12(1), points of law under r.11, the formal requirements of r.6, and a statement of truth.',
                     why: 'Once the special rules are dealt with, the statement of claim is governed by the ordinary drafting rules. Saying so explicitly is what stops an answer treating the statement of claim as a special case throughout.',
                     exam: {
                       write: 'The body states the material facts in summary form, with particulars of the matters within O.18 r.12(1) and of special damages: O.18 r.7(1).',
@@ -4258,6 +4359,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'traverse',
                     label: 'The defence: start from "deemed admitted unless traversed"',
+                    detail: 'By O.18 r.13(1) an allegation of fact is deemed admitted by the opposite party unless it is traversed. Silence is agreement, and by r.13(2) a traverse may be made either by a denial or by a statement of non-admission, expressly or by necessary implication.',
                     why: 'Silence is agreement in pleading, which is why the defence has real work to do. The vocabulary matters: \'traverse\' is the category, and denial and non-admission are its two species used for different reasons.',
                     exam: {
                       write: 'An allegation of fact is deemed admitted unless traversed, whether by denial or by non-admission: O.18 r.13(1)-(2).',
@@ -4272,6 +4374,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'specific',
                     label: 'And the traverse must be SPECIFIC',
+                    detail: 'By O.18 r.13(3) every allegation of fact the party served does not intend to admit must be specifically traversed. That is the rule that kills the blanket paragraph denying each and every allegation in the statement of claim.',
                     why: 'A general denial tells the plaintiff nothing and defines no issue, which defeats the purpose of pleading altogether. r.13(3) is what makes the defence a usable document.',
                     exam: {
                       write: 'Each allegation not admitted is traversed specifically, paragraph by paragraph: O.18 r.13(3).',
@@ -4285,6 +4388,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'deny',
                     label: 'If you deny, r.13(5) imposes two further duties',
+                    detail: 'A bare denial leaves the plaintiff guessing at the defendant\'s own account, so O.18 r.13(5) requires the denying party to set out his positive case. The sanction is evidential: without it he is not entitled to call evidence of fact contrary to the plaintiff\'s contention.',
                     why: 'A bare denial leaves the plaintiff guessing at the defendant\'s own account, so r.13(5) requires the positive case. The sanction is evidential: without it, the defendant cannot call evidence contradicting the plaintiff.',
                     exam: {
                       write: 'The Defendant denies that [X] and avers that [his positive case]: O.18 r.13(5).',
@@ -4315,6 +4419,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'setoff',
                     label: 'Set-off: O.18 r.17',
+                    detail: 'By O.18 r.17, where a defendant\'s claim to a sum of money, whether of an ascertained amount or not, is relied on as a defence to the plaintiff\'s claim, it may be included in the defence and set off — whether or not it is also a counterclaim.',
                     why: 'Set-off avoids a multiplicity of proceedings by letting a cross-claim reduce the claim in the same action. Both parentheses matter: the cross-claim need not be liquidated, and pleading it as a set-off does not stop it also being a counterclaim.',
                     exam: {
                       write: 'The Defendant relies on the sum of $[X] as a set-off against the Plaintiff\'s claim, and also counterclaims for it: O.18 r.17.',
@@ -4331,6 +4436,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'counterclaim',
                     label: 'Counterclaim: O.15 rr.2-3',
+                    detail: 'A counterclaim is a separate action running inside the defence. By O.15 r.2 a defendant with a claim against the plaintiff may include it in his defence instead of bringing a separate action, and by r.2(3) it may be proceeded with even if the claim itself is stayed or discontinued.',
                     why: 'A counterclaim is a separate action running inside the defendant\'s defence, which is why it survives judgment for the plaintiff or a stay of the claim. That independence is the point of pleading it rather than issuing separately.',
                     exam: {
                       write: 'The Defendant counterclaims against the Plaintiff in respect of [X]: O.15 r.2(1); the counterclaim may be proceeded with notwithstanding judgment for the Plaintiff on the claim: r.2(3).',
@@ -4349,6 +4455,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'reply',
                     label: 'Reply and joinder of issue: O.18 r.14',
+                    detail: 'Joinder of issue is the mechanism by which an unanswered pleading is nevertheless put in dispute. By O.18 r.14(1) there is an implied joinder of issue on a defence not replied to, and by r.14(4) a joinder operates as a non-admission of every material allegation in the pleading joined on.',
                     why: 'Joinder of issue is the mechanism by which an unanswered pleading is nevertheless put in dispute, so the absence of a reply does not concede the defence. Knowing that explains why a reply is the exception rather than the rule.',
                     exam: {
                       write: 'No reply having been served, there is an implied joinder of issue on the defence: O.18 r.14(1).',
@@ -4487,6 +4594,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'why',
                     label: 'Identify why the amendment is wanted',
+                    detail: 'The reason for the amendment is the first thing the Court weighs, because the discretion is directed at determining the real question in controversy between the parties. New facts, errors found, issues to be clarified, or a pleading under threat of striking out are the usual reasons.',
                     why: 'The reason for the amendment is the first thing the Court weighs, because the discretion is directed at determining the real question in controversy. An amendment with no articulated purpose is hard to justify and easy to oppose.',
                     exam: {
                       write: 'The amendment is sought because [new facts have come to light / the pleading contains an error], and is necessary to determine the real question in controversy between the parties.',
@@ -4500,6 +4608,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'noleave',
                     label: 'Route 1 — without leave, ONCE, before the close of pleadings',
+                    detail: 'By O.20 r.3(1) a party may without leave amend any pleading of his once at any time before the pleadings are deemed closed, and must then serve the amended pleading on the other parties. The plaintiff has a parallel right to amend the writ under O.20 r.1(1).',
                     why: 'Before the close of pleadings the issues are still being settled, so one free amendment costs nobody anything. After that date the other side has committed to a case, which is why leave becomes necessary.',
                     exam: {
                       write: 'The Plaintiff amends his statement of claim once without leave, the pleadings not yet being deemed closed: O.20 r.3(1).',
@@ -4523,6 +4632,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'disallow',
                     label: 'The other side\'s answer to a without-leave amendment: O.20 r.4',
+                    detail: 'The right to amend without leave is not unchecked. Within 14 days after service the other party may apply to disallow the amendment, and the test is counterfactual: whether leave would have been refused had it been sought at the date the amendment was made.',
                     why: 'The right to amend without leave is not unchecked: r.4 lets the other side test it after the event, on the counterfactual of what the Court would have done had leave been sought. That is what keeps the free amendment honest.',
                     exam: {
                       write: 'The Defendant applies within 14 days of service of the amended pleading to disallow the amendment: O.20 r.4(1).',
@@ -4537,6 +4647,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'agreement',
                     label: 'Route 2 — by agreement',
+                    detail: 'By O.20 r.12(1) any pleading may be amended at any stage by written agreement between the parties. The exception in r.12(2) is an amendment adding, omitting or substituting a party, which always needs the Court because it affects someone who has not agreed.',
                     why: 'If both parties agree, there is usually no one for the Court to protect. The exception is a change of party, which affects someone who has not agreed to anything — hence r.12(2).',
                     exam: {
                       write: 'The pleading is amended by written agreement between the parties: O.20 r.12(1).',
@@ -4550,6 +4661,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'leave',
                     label: 'Route 3 — with leave',
+                    detail: 'By O.20 r.5(1) the Court may at any stage of the proceedings allow a party to amend his writ or any pleading, in such manner and on such terms as may be just. After the close of pleadings this is the only route, because the other side has shaped its case around what is on the record.',
                     why: 'After the close of pleadings the Court controls amendment because the other side has shaped its case around what is on the record. \'At any stage\' is deliberately wide, but width is matched by the discretion in the next step.',
                     exam: {
                       write: 'The Plaintiff applies by summons under O.20 r.5(1) for leave to amend the statement of claim in the terms of the draft exhibited.',
@@ -4564,6 +4676,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'ketteman',
                     label: 'The discretion: "as may be just"',
+                    detail: 'Amendments should be allowed so far as necessary to enable the real questions in controversy to be decided, provided the other side can be compensated in costs. In Hong Kong that is now read subject to the O.1A underlying objectives, so prejudice is assessed twice over.',
                     why: 'Ketteman states the balance — amendments should be allowed so the real dispute is decided, provided the other side can be compensated in costs — and O.1A now adds the Court\'s own interest in time and resources. So prejudice is assessed twice.',
                     exam: {
                       write: 'Amendment should be allowed to enable the real question in controversy to be decided, the Defendant being compensable in costs: Ketteman v Hansel Properties Ltd at 212F, read subject to the O.1A underlying objectives.',
@@ -4585,6 +4698,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'limitation',
                     label: 'After the limitation period has expired: O.20 r.5(2)-(5)',
+                    detail: 'Allowing an amendment after limitation has expired would let a party evade the time bar, so the general answer is no. O.20 rr.5(3), (4) and (5) create three narrow exceptions: correcting a name, altering a capacity, and adding a cause of action arising out of substantially the same facts.',
                     why: 'Allowing an amendment after limitation has expired would let a party evade the time bar, so the general answer is no. The three exceptions are narrow and each corrects something that was in substance already before the Court.',
                     exam: {
                       write: 'Although the limitation period current at the date of issue has expired, the amendment merely corrects the name of a party and the Court may allow it: O.20 r.5(3).',
@@ -4602,6 +4716,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'after',
                     label: 'After leave is granted — two traps',
+                    detail: 'Leave is not the end. By O.20 r.9(1) the order lapses if the document is not amended within the period specified, and the amended pleading must then carry the conventional colours, the r.10(2) indorsement and a statement of truth.',
                     why: 'Leave is not the end: the order has a deadline, and missing it makes the leave lapse. The formatting and verification requirements then apply to the amended document exactly as they did to the original.',
                     exam: {
                       write: 'The amended pleading was served within the period specified in the order, indorsed under O.20 r.10(2), shown in red under PD 19.1 §2 and verified under O.20 r.13.',
@@ -4756,6 +4871,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'grounds',
                     label: 'Identify the ground — there are four, and they are not interchangeable',
+                    detail: 'O.18 r.19(1) gives four grounds: no reasonable cause of action or defence; scandalous, frivolous or vexatious; prejudicing, embarrassing or delaying a fair trial; and otherwise an abuse of process. They have different tests and, critically, different evidence rules.',
                     why: 'The four grounds have four different tests and, critically, different evidence rules. Naming the sub-paragraph is therefore not pedantry: it determines what you may put before the Court.',
                     exam: {
                       write: 'The pleading discloses no reasonable cause of action within O.18 r.19(1)(a), the claim being bound to fail as a matter of law.',
@@ -4772,6 +4888,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'threshold',
                     label: 'State the threshold — it is high, and it is the answer to most questions',
+                    detail: 'The power is drastic, to be used sparingly and only in plain and obvious cases, because striking out deprives a party of a trial. The question is not whether the claim will probably fail but whether it is plain and obvious that it must.',
                     why: 'The threshold is high because striking out deprives a party of a trial. The question is not whether the claim will probably fail but whether it is plain and obvious that it must — which is what most answers turn on.',
                     exam: {
                       write: 'The jurisdiction is drastic, to be used sparingly and only in plain and obvious cases: New China Hong Kong Group Ltd (in liq) v Ng Kwai Kai Kenneth.',
@@ -4786,6 +4903,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'evidence',
                     label: 'The evidence rule — this is what splits the procedure in two',
+                    detail: 'By O.18 r.19(2) no evidence is admissible on an application under paragraph (1)(a), so a ground (a) application is judged by the pleadings alone and issued without an affidavit. Grounds (b), (c) and (d) take an affidavit, because evidence is admissible on them.',
                     why: 'r.19(2) follows from the nature of ground (a): if the complaint is that the pleading discloses no cause of action, the pleading alone must answer it. Filing evidence on a ground (a) application both breaks the rule and signals the case is really a (b)-(d) case.',
                     exam: {
                       write: 'The application being made under r.19(1)(a), no evidence is admissible and it proceeds on the pleadings alone: O.18 r.19(2).',
@@ -4801,6 +4919,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'procedure',
                     label: 'Procedure and timing',
+                    detail: 'The Court may act of its own motion or on application, at any stage: O.18 r.19(1). The application should be made promptly, and the applicant must write to the respondent setting out the broad grounds at least five clear working days before the hearing.',
                     why: 'The Court can act at any stage and of its own motion because a hopeless pleading wastes everyone\'s time. The PD 19.1 §5 letter exists so the respondent can fix the problem before the costs of a hearing are incurred.',
                     exam: {
                       write: 'The applicant wrote to the respondent setting out the broad grounds of the intended application at least five clear working days before the hearing: Practice Direction 19.1 §5.',
@@ -4981,6 +5100,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'function',
                     label: 'Start from the function, because it decides what goes in',
+                    detail: 'The main function of a statement of claim is to set out all the material facts and necessary particulars that establish the plaintiff\'s cause of action, accurately, completely and concisely. That sentence contains three separate tests, and every paragraph has to pass the one that applies to it.',
                     why: 'The function dictates the contents. Because the document must establish a complete cause of action, every paragraph has to earn its place against one of the three tests — material fact, necessary particular, or neither. That is what stops a statement of claim turning into a narrative.',
                     exam: {
                       write: 'This Statement of Claim sets out the material facts and necessary particulars establishing the Plaintiff\'s cause of action in [breach of contract].',
@@ -5002,6 +5122,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'structure',
                     label: 'Lay out the four parts',
+                    detail: 'A statement of claim has four parts: an introduction to the parties and necessary background; the substantive contents telling the cause of action in the order it happened; the prayer for relief; and the statement of truth. The Basic Structures in the appendices map straight onto them.',
                     why: 'The four parts exist because a reader needs the cast before the plot: who the parties are, then what happened in order, then what it cost, then what is asked for. Following that shape is what makes the draft followable without the reader holding facts in suspense.',
                     exam: {
                       write: '1. At all material times the Plaintiff was [description] and the Defendant was [description].',
@@ -5018,6 +5139,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'coverage',
                     label: 'Test the draft for coverage against the legal ingredients',
+                    detail: 'A statement of claim is complete when every legal ingredient of the cause of action has at least one material fact pleaded in support of it. Completeness is therefore testable rather than a matter of impression, and it is exactly what Levels 3 and 4 of the case analysis give you.',
                     why: 'Completeness is testable rather than a matter of impression: every legal ingredient must have at least one material fact against it. A blank in that column is not a stylistic weakness — it is a claim that fails.',
                     exam: {
                       write: 'Each ingredient of the cause of action — [the contract, its material terms, the breach, causation and loss] — is supported by a pleaded material fact.',
@@ -5033,6 +5155,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'flex',
                     label: 'Remember the general note — there is no set right or wrong answer',
+                    detail: 'The lecture says expressly that with drafting there is no set right or wrong answer, and that although the tools help they should be used flexibly. A step may be skipped where it has nothing to say on the facts, and steps may be reordered where it reads better.',
                     why: 'The lecture says expressly that there is no set right or wrong answer, which matters for how you use the appendix. The marks go to a draft that is accurate, complete, logical and clear — not to reproducing a step order.',
                     exam: {
                       write: 'The structure adopted follows the chronology of the dispute, the Steps being a guide rather than a prescribed order.',
@@ -5130,6 +5253,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'dp',
                     label: 'Dramatis Personae — who is who',
+                    detail: 'The Dramatis Personae is a list of the persons involved in the case, with the defined term you will use for each one throughout the draft. It is what turns a pile of names into the introductory paragraphs, and it answers the question who should be the parties to the action.',
                     why: 'The Dramatis Personae is what turns a pile of names into the introductory paragraphs and the defined terms. Doing it first means the draft never has to stop and explain who someone is halfway through the narrative.',
                     exam: {
                       write: 'At all material times the 1st Defendant was employed by the 2nd Defendant as [role] (\'the Driver\').',
@@ -5153,6 +5277,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'chron',
                     label: 'Chronology — what happened, in date order',
+                    detail: 'The chronology is a list of the relevant events in date order, with a source column against each. The source column is the point of the exercise: it is where a fact with no proof shows up as a fact with an empty cell.',
                     why: 'The chronology supplies the order of the substantive paragraphs, because a statement of claim is told in the sequence the events happened. Building it first is what prevents the draft doubling back on itself.',
                     exam: {
                       write: 'On [date] the Plaintiff and the Defendant entered into [the Agreement]; on [date] the Defendant [did X]; on [date] the Plaintiff [suffered Y].',
@@ -5176,6 +5301,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'use',
                     label: 'Use them to drive the draft and the further-instructions letter',
+                    detail: 'The two tools feed different parts of the draft — the Dramatis Personae the introduction and defined terms, the chronology the order of the substantive paragraphs. Neither is filed and neither is a pleading; they are working documents.',
                     why: 'The two tools feed different parts of the draft — the Dramatis Personae the introduction, the chronology the body — and both expose gaps. A date or a role you cannot fill is a question for the client, which is why they also generate the further-instructions letter.',
                     exam: {
                       write: '[check with client] / [conduct a company search] against [the fact you cannot yet verify].',
@@ -5268,6 +5394,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'levels',
                     label: 'The five levels, in order',
+                    detail: 'The five levels descend from the abstract to the concrete: the area of law, the causes of action and remedies within it, the legal ingredients of each, the material facts supporting each ingredient, and the evidence for each material fact.',
                     why: 'The levels descend from the abstract to the concrete — area of law, cause of action, legal ingredients, material facts, evidence — so that nothing is invented at the bottom. Each level is derived from the one above it, which is what makes the analysis rigorous rather than intuitive.',
                     exam: {
                       write: 'Level 1: contract. Level 2: breach of contract, damages. Level 3: [the ingredients]. Level 4: [the material facts]. Level 5: [the evidence].',
@@ -5284,6 +5411,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'uses',
                     label: 'What the analysis is for — four jobs, not one',
+                    detail: 'The same grid serves four purposes: drafting the pleading from the Level 4 material facts, drafting affidavits and witness statements from the Level 5 evidence, analysing the merits of the claim, and deciding what further evidence should be obtained.',
                     why: 'The same grid serves four different documents, which is why it repays doing properly once. Levels 3 and 4 build the pleading; Level 5 builds the witness statements and the discovery list.',
                     exam: {
                       write: 'The Level 4 material facts are pleaded; the Level 5 evidence is reserved for the witness statements.',
@@ -5300,6 +5428,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'contract',
                     label: 'The Level 3 ingredients in a breach of contract claim',
+                    detail: 'The ingredients of a breach of contract claim are the existence of the contract, the material terms, breach of those terms, and recoverable loss within the defendant\'s contemplation at the time of the contract. They are the skeleton of every contract claim, so they double as a checklist.',
                     why: 'These ingredients are the skeleton of every contract claim, so they double as a checklist. If the draft does not plead the contract, its material terms, the breach, causation and loss, it is incomplete however well written.',
                     exam: {
                       write: 'The ingredients are the existence of the contract, its material terms, the breach, causation and loss and damage.',
@@ -5315,6 +5444,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'tort',
                     label: 'The Level 3 ingredients in a negligence claim',
+                    detail: 'The ingredients of a negligence claim are the duty of care, breach of it by each defendant taken separately, breach of any statutory provision relied on, causation and damages — plus, where the employer is sued, vicarious liability as an ingredient in its own right.',
                     why: 'The negligence ingredients differ from contract in one way that is easy to miss: where the employer is sued, vicarious liability is its own ingredient needing its own material facts, not something that follows automatically from the employment.',
                     exam: {
                       write: 'The ingredients are duty, breach, causation and loss; and, the 2nd Defendant being sued as employer, vicarious liability, which is a separate ingredient.',
@@ -5332,6 +5462,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'fill',
                     label: 'Fill it in as a grid, then read it both ways',
+                    detail: 'Reading the grid in two directions catches two different problems. A blank down the ingredient column is a claim that fails; a blank across from a material fact is a further-investigation point rather than a pleading problem.',
                     why: 'Reading the grid in two directions catches two different problems. A blank down the ingredient column is a claim that fails; a blank across from a material fact is only a further-investigation point. They call for different responses.',
                     exam: {
                       write: 'Against the ingredient [X] there is no material fact; further instructions are required before the claim can be pleaded.',
@@ -5431,6 +5562,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gather',
                     label: 'Steps 1-2 — gather, then organise',
+                    detail: 'Step 1 is to gather the client\'s facts and conduct the necessary investigations and research; Step 2 is to organise those facts and identify the relevant factual issues, using the Dramatis Personae and the chronology. These are where a missing document is cheapest to find.',
                     why: 'Drafting before the facts are organised produces a document that has to be rewritten. Steps 1 and 2 exist to get the raw material into a usable shape, which is what the Dramatis Personae and chronology do.',
                     exam: {
                       write: 'The facts having been organised into a Dramatis Personae and chronology, the factual issues are [X].',
@@ -5445,6 +5577,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'law',
                     label: 'Steps 3-4 — identify the law, then map it onto the facts',
+                    detail: 'Step 3 identifies the legal issues — the causes of action, the remedies, the parties and the legal ingredients of each claim. Step 4 prepares the 5-Level Case Analysis, which shows how the factual and legal issues inter-relate.',
                     why: 'Steps 3 and 4 are where the legal analysis happens, and doing them after the facts are organised is deliberate: you identify the causes of action that the facts can actually support, rather than looking for facts to fit a chosen claim.',
                     exam: {
                       write: 'The relevant cause of action is [X]; its legal ingredients are [Y]; the material facts supporting each are [Z].',
@@ -5459,6 +5592,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'plan',
                     label: 'Steps 5-6 — the summary, then the skeleton',
+                    detail: 'Step 5 is a succinct summary of the claim in two or three sentences, which is a test of whether the analysis is finished. Step 6 is a skeletal plan of the statement of claim following the basic structure, using the Level 4 material facts.',
                     why: 'The two-or-three-sentence summary is a test of whether you understand the claim: if you cannot state it that briefly, the analysis is not finished. The skeletal plan then converts the Level 4 facts into paragraph order before any drafting begins.',
                     exam: {
                       write: 'The Plaintiff claims damages for breach of an oral contract for the sale of [goods], the Defendant having supplied goods which were not of merchantable quality.',
@@ -5474,6 +5608,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'draft',
                     label: 'Step 7 — start drafting',
+                    detail: 'Step 7 is the drafting itself, done by reference to the relevant rules in O.18. Every paragraph should be a material fact, a necessary particular, a point of law or part of the prayer for relief; a paragraph that fits none of those categories probably does not belong.',
                     why: 'Step 7 is where the LG4 rules come back: every paragraph should be a material fact, a necessary particular, a point of law or part of the prayer. A paragraph that fits none of those categories probably should not be there.',
                     exam: {
                       write: 'Each paragraph states a material fact, a necessary particular or a point of law, and contains no evidence: O.18 r.7(1).',
@@ -5495,6 +5630,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'review',
                     label: 'Step 8 — review the completed draft, against questions and then against the Guide',
+                    detail: 'Step 8 reviews the completed draft twice over: first against a list of questions about whether it works as a document, and then against the Pleadings Drafting Guide as a checklist of what it must contain.',
                     why: 'Reviewing against questions first and the Guide second separates two different checks: whether the draft works as a document, and whether it satisfies the marking criteria. Doing only the second produces a compliant but unreadable pleading.',
                     exam: {
                       write: 'The draft is logical, accurate and complete, each ingredient being covered and each allegation particularised.',
@@ -5514,6 +5650,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'client',
                     label: 'Step 9 — to the client',
+                    detail: 'Step 9 sends the finalised draft to the client for approval and comments. It matters because the client signs the statement of truth, so the client must understand what they are signing.',
                     why: 'The client signs the statement of truth, so the client must understand what they are signing — the solicitor cannot verify belief on their behalf without instructions. Step 9 is therefore a professional obligation, not an administrative one.',
                     exam: {
                       write: 'The draft is sent to the client for approval, and the effect of the statement of truth is explained before signature.',
@@ -5615,6 +5752,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's1',
                     label: 'Step 1 — Introduction to parties and necessary background',
+                    detail: 'Save in a very simple claim, open with a concise introduction to the parties and the necessary background — in practice the "At all material times" paragraph. Where a background fact is itself an ingredient of the claim it is a material fact that has to be pleaded; where there is nothing of significance to say, the step can be skipped.',
                     why: 'The introduction exists so that every later paragraph can use a short defined term instead of re-describing a party. Where a background fact is itself an ingredient — a capacity, a relationship — it has to be pleaded here as a material fact, not as scene-setting.',
                     exam: {
                       write: 'At all material times the Plaintiff was a company incorporated in Hong Kong carrying on the business of [X], and the Defendant was [Y].',
@@ -5630,6 +5768,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's2',
                     label: 'Step 2 — The contract',
+                    detail: 'Identify the contract with enough precision that the defendant knows which agreement is meant: the documents if it is written, and how, when, where and between whom it was made if it is oral. Name any agents and their principals, and where the contract was varied plead the original first and then the variation.',
                     why: 'The contract is the foundation of the claim, so it must be identified with enough precision that the defendant knows which agreement is meant — parties, date, mode, subject matter and consideration. A written contract is identified by its documents.',
                     exam: {
                       write: 'By an agreement made orally on [date] between [A] on behalf of the Plaintiff and [B] on behalf of the Defendant, the Defendant agreed to sell and the Plaintiff agreed to buy [goods] at a price of $[X].',
@@ -5656,6 +5795,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's3',
                     label: 'Step 3 — The material terms',
+                    detail: 'Plead the terms relied on — a term breached, or a term giving the relief sought. Say whether each is express or implied, set out its substance, and for an implied term give the facts and any statutory provision relied on. Where breach of a condition founds a claim to repudiate, call it a condition rather than a term.',
                     why: 'A term is material only if the claim relies on it, so the test is purpose rather than importance. Pleading every clause invites the objection that the pleading is prolix; pleading too few leaves the breach unsupported.',
                     exam: {
                       write: 'It was an express term of the Agreement that [term], and an implied term that the goods would be of merchantable quality.',
@@ -5673,6 +5813,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's4',
                     label: 'Step 4 — D’s knowledge',
+                    detail: 'Knowledge is pleaded because remoteness depends on it: the defendant is liable for loss within the parties\' contemplation at the time of contracting. Where special circumstances are relied on, plead the defendant\'s knowledge of them — it may sit before Step 2 or between Steps 2 and 3, and is skipped if not applicable.',
                     why: 'Knowledge is pleaded here because remoteness depends on it: the defendant is liable for loss he had reason to contemplate. Without the knowledge pleaded, a special-damage claim has no foundation.',
                     exam: {
                       write: 'At the time the Agreement was made the Defendant knew that [the goods were required for X], and the loss suffered was accordingly within the parties\' contemplation.',
@@ -5688,6 +5829,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's5',
                     label: 'Step 5 — Material events after the contract',
+                    detail: 'Plead performance on the plaintiff\'s part where it is necessary or appropriate — that the price was paid, or the required notification given — and on the defendant\'s part where relevant. Performance is pleaded by reference to the express terms set out at Step 3.',
                     why: 'Performance matters where it is a condition of the defendant\'s obligation or where it disposes of an anticipated defence. Pleading it establishes that the plaintiff did his part before complaining that the defendant did not.',
                     exam: {
                       write: 'The Plaintiff duly paid the price of $[X] to the Defendant on [date].',
@@ -5702,6 +5844,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's6',
                     label: 'Step 6 — D’s breach',
+                    detail: 'Allege that the defendant was in breach of the terms identified, and then set out clearly the acts or omissions constituting the breach, with particulars. Where the breach is said to give a right to terminate and the plaintiff has terminated, plead repudiation and acceptance of it.',
                     why: 'The breach paragraph is the heart of the claim, and it is where particulars are mandatory. Alleging breach and then setting out the acts or omissions is what lets the defendant plead to it rather than merely deny it.',
                     exam: {
                       write: 'In breach of the said term the Defendant [did X]. PARTICULARS OF BREACH: (a) ...; (b) ...',
@@ -5717,6 +5860,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's7',
                     label: 'Step 7 — Material events after D’s breach',
+                    detail: 'This step bridges breach and loss by explaining how one led to the other. Failure to mitigate is for the defendant to raise in the defence, so the plaintiff generally need not plead mitigation — but must plead the facts and particulars where he relies on steps taken in mitigation, for instance to claim their cost.',
                     why: 'This step bridges breach and loss: it explains how one led to the other. Mitigation belongs to the defendant to prove, which is why the plaintiff need not plead it.',
                     exam: {
                       write: 'By reason of the said breach the Plaintiff was obliged to [X], and in consequence suffered the loss and damage set out below.',
@@ -5732,6 +5876,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's8',
                     label: 'Step 8 — The loss and damage',
+                    detail: 'Plead that the loss and damage arise as a result of the breach, identify each head separately and state the amount under each, showing how the figure is arrived at and any deduction allowed. Where damages cannot yet be quantified, say that particulars will be supplied later; distinguish a liquidated claim from unliquidated damages.',
                     why: 'Loss must be tied to the breach and broken into heads, because the defendant has to be able to admit some and dispute others. A single global figure cannot be pleaded to.',
                     exam: {
                       write: 'By reason of the matters aforesaid the Plaintiff has suffered loss and damage. PARTICULARS OF LOSS AND DAMAGE: (a) cost of replacement goods $[X]; (b) ...',
@@ -5749,6 +5894,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's9to11',
                     label: 'Steps 9-11 — Interest, prayer for relief, statement of truth',
+                    detail: 'The last three steps close the document. Discretionary interest under s48 of the High Court Ordinance or s49 of the District Court Ordinance may go in the prayer alone, while every other claim for interest needs its facts pleaded; the prayer summarises all relief sought under O.18 r.15; and the statement of truth verifies it.',
                     why: 'These three close the document, and each has a rule behind it: interest must be claimed to be recovered, the prayer defines what the Court may grant, and the statement of truth is what makes the document a pleading the Court will act on.',
                     exam: {
                       write: 'AND the Plaintiff claims: (1) $[X]; (2) interest thereon pursuant to s48 of the High Court Ordinance; (3) costs; (4) further or other relief.',
@@ -5859,6 +6005,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's1',
                     label: 'Step 1 — Introduction to parties and necessary background',
+                    detail: 'Save in a very simple claim, begin with a brief introduction to the parties and the necessary background. In tort the relationship between the parties very often has to be set out as well, because it is the relationship that gives rise to the duty.',
                     why: 'In tort the introduction usually has to establish the relationship as well as the parties, because the relationship is what gives rise to the duty. That makes it a material fact rather than background.',
                     exam: {
                       write: 'At all material times the Plaintiff was the owner of [the premises] and the 1st Defendant was employed by the 2nd Defendant as a driver.',
@@ -5881,6 +6028,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's2',
                     label: 'Step 2 — The accident or event leading to the claim',
+                    detail: 'Describe the accident succinctly — the parties\' roles, the date, the time, the location and what happened — and do so in neutral terms, avoiding any allegation of negligence at this stage so that the defendant may admit it.',
                     why: 'The accident paragraph is deliberately neutral: it says what happened, not whose fault it was. Keeping the allegation of negligence out of it means the defendant can admit the occurrence without admitting liability, which narrows the issues.',
                     exam: {
                       write: 'At about [time] on [date] at [location] the 1st Defendant drove [the vehicle] so that it [mounted the pavement and collided with the Plaintiff\'s premises].',
@@ -5897,6 +6045,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's3',
                     label: 'Step 3 — The existence and scope of duty',
+                    detail: 'Identify the specific duty breached and set out its scope, identifying the statutory provision where the duty arose under statute. The duty has to be identified before the breach, because breach is a departure from a standard.',
                     why: 'The duty has to be identified and scoped before the breach, because breach is a departure from a standard. Where the duty is statutory, the provision is the standard and must be named.',
                     exam: {
                       write: 'The 1st Defendant owed the Plaintiff a duty to take reasonable care in the driving of the said vehicle so as not to cause damage to property adjacent to the highway.',
@@ -5911,6 +6060,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's4',
                     label: 'Step 4 — D’s negligence or breach',
+                    detail: 'Now make clear allegations of negligence or breach in plain descriptive language, alleging that the accident was caused by it and then setting out the particulars — each defendant\'s acts and omissions in a separate paragraph, and each separate duty breached in its own.',
                     why: 'This is where the allegation of negligence finally appears, with particulars. Splitting it from the neutral accident paragraph is what makes both paragraphs do their own work.',
                     exam: {
                       write: 'The said collision was caused by the negligence of the 1st Defendant. PARTICULARS OF NEGLIGENCE: (a) driving at an excessive speed; (b) ...',
@@ -5929,6 +6079,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's5',
                     label: 'Step 5 — Material events after D’s breach',
+                    detail: 'Plead what happened as a result of the breach, leading to the loss and damage. This step may be skipped where the consequences have already been set out under Step 2.',
                     why: 'This step is often unnecessary because the consequences were already described in the accident paragraph. Recognising that it can be skipped is part of using the structure as a guide rather than a template.',
                     exam: {
                       write: 'By reason of the said negligence the Plaintiff was unable to trade from the premises for [six] weeks.',
@@ -5943,6 +6094,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's6',
                     label: 'Step 6 — The loss and damage',
+                    detail: 'Plead that the loss and damage arise as a result of the accident or breach, identifying each head of loss separately and stating the amount under each, showing how the figure is arrived at. A personal injuries action needs more: the injuries, the medical report and a statement of special damages.',
                     why: 'Each head of loss must be identified and quantified, with the arithmetic visible, so the defendant can dispute individual items. This is also where special damages are particularised.',
                     exam: {
                       write: 'By reason of the matters aforesaid the Plaintiff has suffered loss and damage. PARTICULARS: (a) cost of repairs $[X]; (b) loss of profits for [six] weeks at $[Y] per week, $[Z].',
@@ -5958,6 +6110,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 's7to9',
                     label: 'Steps 7-9 — Interest, prayer for relief, statement of truth',
+                    detail: 'The last three steps are interest, normally discretionary only in tort under s48 of the High Court Ordinance or s49 of the District Court Ordinance; the prayer summarising all the relief sought under O.18 r.15; and the statement of truth.',
                     why: 'In tort the interest claim is normally discretionary only, because there is no contract to provide for it. Knowing which kind of interest is available is what makes the prayer correct.',
                     exam: {
                       write: 'AND the Plaintiff claims: (1) damages; (2) interest pursuant to s48 of the High Court Ordinance; (3) costs; (4) further or other relief.',
@@ -6065,6 +6218,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'interest',
                     label: 'Interest: which kind is it?',
+                    detail: 'Interest is only recoverable if claimed, and the basis decides how it is pleaded. Discretionary interest is claimed under s48 of the High Court Ordinance or s49 of the District Court Ordinance; every other claim for interest requires the facts and matters it depends on to be set out.',
                     why: 'Interest is only recoverable if claimed, and the basis determines how it is pleaded. Contractual interest rests on a term and so must be pleaded as one; discretionary interest rests on the statute and is claimed in the prayer.',
                     exam: {
                       write: 'AND the Plaintiff claims interest on the said sum pursuant to s48 of the High Court Ordinance (Cap. 4) at such rate and for such period as the Court thinks fit.',
@@ -6081,6 +6235,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'prayer',
                     label: 'The prayer for relief',
+                    detail: 'The prayer summarises all the relief sought at the end of the pleading: O.18 r.15. Set out the sum claimed if the demand is liquidated, or claim "Damages" if it is not, then interest and costs. The Court cannot grant relief that has not been claimed at all.',
                     why: 'The prayer is the operative part: the Court cannot grant relief that has not been claimed. Distinguishing a liquidated sum from \'Damages\' matters because it determines what kind of judgment can be entered on a default.',
                     exam: {
                       write: 'AND the Plaintiff claims: (1) the sum of $[X] [or: Damages]; (2) interest; (3) costs; (4) such further or other relief as the Court thinks fit.',
@@ -6098,6 +6253,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'dc',
                     label: 'If the action is in the District Court, add the jurisdiction plea',
+                    detail: 'The District Court has a financial jurisdiction, so it must be told that the claim falls within it. Practice Direction 27 requires all writs and originating summonses to contain a plea to that effect, conveniently inserted as the last paragraph before the prayer.',
                     why: 'The District Court has a financial jurisdiction, so it must be told that the claim falls within it. The plea is a standing requirement of the Practice Direction rather than something the facts sometimes call for.',
                     exam: {
                       write: 'The Plaintiff\'s claim is within the jurisdiction of the District Court.',
@@ -6113,6 +6269,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'truth',
                     label: 'Then the statement of truth — the document is not finished at the prayer',
+                    detail: 'A pleading must be verified by a statement of truth in the form prescribed by O.41A r.5(1), signed by the person O.41A r.3 identifies. Without verification the pleading is vulnerable to being struck out or to an order to verify.',
                     why: 'The document is not finished at the prayer. Without verification the pleading is vulnerable to being struck out under O.41A r.6 or to an order to verify under r.8, so the statement of truth is part of the draft.',
                     exam: {
                       write: 'I believe that the facts stated in this Statement of Claim are true.',
@@ -6219,6 +6376,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'presentation',
                     label: 'Presentation — 30%',
+                    detail: 'Presentation carries 30% and covers grammar and spelling, succinctness and precision, appropriate language, organisation, the absence of internal contradictions, and full compliance with the formalities in O.18 r.6.',
                     why: 'Thirty per cent for presentation means grammar, spelling, numbering and layout are worth real marks. They are also what makes the document usable: a pleading that cannot be read cannot be pleaded to.',
                     exam: {
                       write: 'The draft uses numbered paragraphs, consistent defined terms, figures for sums and dates, and correct spelling throughout.',
@@ -6244,6 +6402,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'contents',
                     label: 'Contents — 40%',
+                    detail: 'Contents carries the largest share at 40%: all material facts supporting all ingredients of the causes of action, the necessary particulars under O.18 r.12, the relief claimed, the matters required by rr.7, 7A and 8 — and the exclusion of evidence, immaterial facts, law and argument.',
                     why: 'Contents carries the largest share because this is where the claim either works or does not. The criteria restate the coverage test: all material facts for all ingredients, plus the particulars O.18 r.12 requires.',
                     exam: {
                       write: 'All material facts supporting each ingredient are pleaded, with the necessary particulars under O.18 r.12.',
@@ -6261,6 +6420,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'overall',
                     label: 'Overall — 30%',
+                    detail: 'The remaining 30% asks whether the draft shows a clear understanding of the nature and purpose of pleadings, sets out a sustainable claim, and puts the client\'s case accurately, coherently, logically and effectively.',
                     why: 'The overall criterion asks whether the draft is a sustainable claim — one that could actually be run. That is a judgement about the whole document, which is why it is assessed separately from its parts.',
                     exam: {
                       write: 'The draft sets out a sustainable claim and demonstrates an understanding of the nature and purpose of pleadings.',
@@ -6275,6 +6435,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'use',
                     label: 'How the Guide is meant to be used',
+                    detail: 'The Guide is meant to be read before drafting and applied as a checklist afterwards, not discovered as a marking scheme after the event. The three blocks are best worked as three separate passes over the draft rather than one read-through.',
                     why: 'The Guide is a checklist to be read before drafting and applied after, not a marking scheme to be discovered afterwards. Knowing the weightings tells you where the marks actually are.',
                     exam: {
                       write: 'The completed draft is assessed against the Guide\'s criteria before it is finalised.',
@@ -6368,6 +6529,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'facts',
                     label: 'The facts, compressed',
+                    detail: 'A restaurant company bought two commercial dishwashers under an oral telephone agreement, having told the seller in that same call what they were for. Both machines were defective, and the restaurant lost a discount to its banquet customer, the repair cost and regular profits.',
                     why: 'Compressing the facts is the first analytical act: it forces you to separate what the claim depends on from what merely happened. Everything that survives compression is a candidate material fact.',
                     exam: {
                       write: 'The Plaintiff bought two commercial dishwashers from the Defendant under an oral agreement made by telephone on [date].',
@@ -6383,6 +6545,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'analysis',
                     label: 'The 5-Level Case Analysis',
+                    detail: 'The grid filled in on these facts runs from contract as the area of law, through breach of contract and damages, to the four ingredients — the contract, the material terms, breach, and recoverable loss — each with its material facts and then its evidence.',
                     why: 'Seeing the grid filled in on real facts is what makes the method concrete. Each ingredient draws a material fact from the story, and the ones with no fact against them are the questions for the client.',
                     exam: {
                       write: 'Ingredient: the contract. Material fact: an oral contract made by telephone on [date] between [A] and [B] for the sale of [goods].',
@@ -6400,6 +6563,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'summary',
                     label: 'The succinct summary',
+                    detail: 'The summary is one or two sentences: damages for breach of an oral sale-of-goods contract for failing to supply dishwashers of merchantable quality or fit for their purpose. It captures the shape of the claim rather than its content.',
                     why: 'The summary deliberately omits dates, figures and particulars because its job is to capture the shape. If the shape is wrong, no amount of detail will rescue the draft.',
                     exam: {
                       write: 'The Plaintiff claims damages for breach of an oral sale-of-goods contract, the machines supplied not being of merchantable quality.',
@@ -6413,6 +6577,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'plan',
                     label: 'The skeletal plan, and what its square brackets do',
+                    detail: 'The plan works through the contractual basic structure step by step, and its square brackets record what still has to be verified before the draft can be finalised — a company search, a figure to be confirmed with the client, a discrepancy in the deposit.',
                     why: 'The square brackets are the point of the plan: they record what still has to be verified before the draft can be finalised. They are the bridge between the skeletal plan and the letter seeking further instructions.',
                     exam: {
                       write: 'Step 1: introduce both companies [conduct a company search to confirm incorporation details].',
@@ -6431,6 +6596,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'draft',
                     label: 'What the draft does with the plan',
+                    detail: 'The draft turns each planned step into numbered paragraphs: the "At all material times" introduction, the agreement, the pre-contract conversation, the express and implied terms, performance, breach with particulars, the consequences, and the loss with a particulars of damages table.',
                     why: 'Watching the plan become paragraphs shows how each drafting decision was already taken at the planning stage. The \'At all material times\' opening and the five-element contract paragraph both come straight from the plan.',
                     exam: {
                       write: '1. At all material times the Plaintiff was [description] and the Defendant was [description], and [A] and [B] were respectively authorised to act on their behalf.',
@@ -6533,6 +6699,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'facts',
                     label: 'The facts, compressed',
+                    detail: 'A bus mounted the pavement and hit a parked vehicle, propelling both through an antique shop\'s frontage. The driver had fallen asleep having worked hours well in excess of the Transport Department guidelines, and the bus had a severely rusted steering component.',
                     why: 'The compression exercise is the same in tort, but the facts to keep are different: the mechanism of the accident, the relationships that create the duty, and the consequences that become the heads of loss.',
                     exam: {
                       write: 'A bus mounted the pavement and struck a vehicle parked outside the Plaintiff\'s shop, propelling both into the shopfront.',
@@ -6548,6 +6715,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'analysis',
                     label: 'The 5-Level Case Analysis',
+                    detail: 'The grid for this claim adds an ingredient the contract example does not have: the employer\'s vicarious liability, listed alongside the duty of care, the breaches by each defendant, causation and damages, each with its own material facts.',
                     why: 'This example adds vicarious liability to the grid, which is the ingredient students most often assume rather than plead. Seeing it listed separately is the reminder that it needs its own material facts.',
                     exam: {
                       write: 'Ingredient: vicarious liability. Material fact: the 1st Defendant was at the material time employed by the 2nd Defendant and acting in the course of that employment.',
@@ -6565,6 +6733,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'plan',
                     label: 'The skeletal plan',
+                    detail: 'The plan follows the tortious basic structure and shows where the two facts supporting vicarious liability belong — in the accident paragraph itself. Step 3 is marked not applicable, because in a traffic accident case the duty is obvious and the step may be skipped.',
                     why: 'The plan shows where the two facts supporting vicarious liability belong — in the accident paragraph, not in a separate assertion of liability. Placement is a drafting decision the plan makes deliberately.',
                     exam: {
                       write: 'Step 2: date, time, location, mechanism, plus that the driver was employed by the 2nd Defendant and driving in the course of his employment.',
@@ -6583,6 +6752,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'draft',
                     label: 'What the draft does with the plan',
+                    detail: 'The draft opens with three "At all material times" paragraphs, then the neutral accident paragraph, then the factual matters founding negligence, then the allegation of negligence with particulars under a lettered heading for each defendant, and finally the consequences and the loss.',
                     why: 'The neutral accident paragraph is the feature worth copying: it states what happened without alleging fault, so the allegation of negligence can follow separately with its particulars.',
                     exam: {
                       write: '4. At about [time] on [date] at [location] the 1st Defendant, in the course of his employment with the 2nd Defendant, drove the said bus so that it mounted the pavement and struck [the vehicle].',
@@ -6850,6 +7020,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'Ask the one question: must the Court assess the amount?',
+                    detail: 'A claim is liquidated if the Court does not have to assess the loss — a fixed debt, a fixed penalty, interest, or damages the contract itself liquidates — and unliquidated if it does. Size and precision are not the test, and the classification is taken from the indorsement of the writ, because O.13 rr.1-5 and O.19 rr.2-6 all key off what the writ claims.',
                     why: 'The distinction is not about how certain or precise the figure looks — it is about who has to do the arithmetic. A court can enter judgment for a sum only where the sum is already fixed by the parties or by statute; where it has to be assessed, the most the court can give on a default is liability, because nobody has yet proved the amount.',
                     exam: {
                       write: 'The Plaintiff\'s claim is for $[X] due under [the loan agreement/the invoice], a sum fixed by the contract and requiring no assessment by the Court. It is therefore a claim for a liquidated demand.',
@@ -6872,6 +7043,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'interest',
                     label: 'Check whether interest spoils the classification — usually it does not',
+                    detail: 'By O.13 r.1(2) a claim is not prevented from being treated as a liquidated demand by reason only that part of it is for interest under s48 at a rate not exceeding the judgment-debt rate, and O.19 r.2(2) applies the same saving in default of defence. Interest on another basis or at a higher rate falls outside the saving, so read the rate claimed.',
                     why: 'Almost every debt claim carries interest, so without a saving the word \'interest\' would push ordinary debt claims into \'damages to be assessed\' and destroy the summary route. r.1(2) therefore carves out the ordinary case — but only the ordinary case, which is why it is pinned to s48 at or below the judgment-debt rate.',
                     exam: {
                       write: 'The claim includes interest under s48 of the Ordinance at a rate no higher than that payable on judgment debts at the date of the writ, which by O.13 r.1(2) does not prevent it being treated as a claim for a liquidated demand.',
@@ -6887,6 +7059,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'mixed',
                     label: 'Is it a MIXED claim? The answer differs between O.13A and O.13/O.19',
+                    detail: 'O.13 and O.19 enter judgment head by head, so a mixed writ is not reclassified and the judgment is part final and part interlocutory. O.13A r.1(2) does the opposite, treating a claim that is partly liquidated and partly unliquidated as unliquidated — so the same writ can be mixed for one Order and unliquidated for the other.',
                     why: 'The two regimes pull in opposite directions because they are doing different jobs. O.13 and O.19 enter judgment head by head, so each head keeps its own character and the judgment is simply part final and part interlocutory. O.13A produces a single settlement judgment, so a mixed claim has to collapse into one classification — and it collapses downwards, to unliquidated.',
                     exam: {
                       write: 'The writ is indorsed with both a liquidated demand and a claim for unliquidated damages. Under O.13 r.5 the Plaintiff may enter against the Defendant such judgment on each claim as he would be entitled to enter if it were the only claim indorsed — final as to [the debt], interlocutory as to [the damages].',
@@ -6902,6 +7075,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'consequence',
                     label: 'Read off the consequence',
+                    detail: 'The classification decides what the Court can enter today: a liquidated demand gives final judgment for a sum not exceeding that claimed with costs, unliquidated damages give interlocutory judgment with damages to be assessed, detention of goods gives the plaintiff an option, and possession of land gives judgment on the prescribed certificate. Anything else falls outside default judgment altogether.',
                     why: 'The classification is not a label to record but a decision about what the Court can actually enter today. Final judgment ends the claim and can be enforced at once; interlocutory judgment buys only liability and leaves the plaintiff to prove quantum at an assessment.',
                     exam: {
                       write: 'Accordingly the Plaintiff may, after the prescribed time, enter final judgment against the Defendant for a sum not exceeding that claimed by the writ in respect of the demand and for costs: O.13 r.1(1).',
@@ -7030,6 +7204,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gate',
                     label: 'Is O.13A available at all?',
+                    detail: 'O.13A r.2(1) is a gateway: the Order applies only where the only remedy the plaintiff seeks is the payment of money, so a writ that also seeks delivery up or possession is outside it. Within that gateway both liquidated and unliquidated money claims are covered, and r.1(2) treats a partly liquidated claim as unliquidated for rr.6(1)(b) and 7(1)(b).',
                     why: 'O.13A buys a defendant a cheap and quick exit, but only where the whole dispute is about money. If anything else is sought the Court cannot dispose of the action by entering a money judgment on an admission, so the Order simply does not engage — which is why r.2(1) is drafted with the word \'only\' in it.',
                     exam: {
                       write: 'The only remedy the Plaintiff seeks on the writ is the payment of $[X], so O.13A r.2(1) is engaged and the Defendant may make an admission under r.4, 5, 6 or 7.',
@@ -7053,6 +7228,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'timing',
                     label: 'Is the defendant in time — and if not, is the late route still open?',
+                    detail: 'The primary period is the time for service of the defence on a writ: O.13A r.3(1)(a). But a late admission is still possible under r.3(2)(a) so long as the plaintiff has not obtained a default judgment, and by r.3(3) it is then treated as if made in time — so the real race is against the default judgment rather than the calendar.',
                     why: 'The deadline is not really a deadline. The Order exists to promote settlement, so it keeps working for as long as settlement is still possible — and it stops being possible the moment the plaintiff has judgment. That is why the race is against the default judgment rather than against the calendar, and why a plaintiff who wants to shut the route down enters judgment promptly.',
                     exam: {
                       write: 'Although the period for filing the admission under O.13A r.3(1)(a) has expired, no default judgment under O.13 or O.19 has been obtained, so the Defendant may still file an admission: r.3(2)(a), and it takes effect as if made within the primary period: r.3(3).',
@@ -7070,6 +7246,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'which',
                     label: 'Pick the right rule and the right form',
+                    detail: 'The four rules split on two axes, liquidated or unliquidated and whole or part: r.4 for the whole of a liquidated claim, r.5 for part of one in satisfaction of the whole, r.6 for liability on the whole of an unliquidated claim with no figure offered, and r.7 where a liquidated sum is offered in satisfaction. Form No. 16 serves the first two, Form No. 16C the last two, and in every case the defendant must both file and serve.',
                     why: 'The four rules split on two axes — liquidated or unliquidated, whole or part — because the plaintiff\'s options genuinely differ in each case. The form follows the axis, not the amount: Form No. 16 for liquidated, Form No. 16C for unliquidated, whichever fraction of the claim is admitted.',
                     exam: {
                       write: 'The claim being liquidated and the Defendant admitting the whole of it, he admits under O.13A r.4 by filing an admission in Form No. 16 in the Registry and serving a copy on the Plaintiff: r.4(2).',
@@ -7087,6 +7264,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'commit',
                     label: 'Advise the defendant what the admission actually commits him to',
+                    detail: 'An admission is not the end of the case. Under r.6 the defendant concedes liability only, so he has not capped his exposure and still faces an assessment; under r.7 he puts a figure on it, but judgment goes for an amount to be decided by the Court if the plaintiff does not accept it. An admission is not lightly undone — amendment or withdrawal needs the Court to think it just.',
                     why: 'Clients hear \'admission\' and assume the case is over. It is not: under r.6 the defendant has conceded liability and nothing else, so he still faces an assessment and his exposure is uncapped. Under r.5 he has made an offer to settle the whole claim, which the plaintiff can simply refuse.',
                     exam: {
                       write: 'The Defendant should be advised that an admission under O.13A r.6 goes to liability only: judgment will be for an amount to be decided by the Court and costs (r.6(6)), so admitting does not cap his exposure.',
@@ -7104,6 +7282,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'serve',
                     label: 'If acting for the plaintiff: what must go out with the writ',
+                    detail: 'By O.13A r.13(2) the originating process must be accompanied by a copy of the appropriate admission form where the only remedy sought is the payment of money, and PD 24.1 para.8 requires the affidavit of service on an O.13 application to depose that those forms were served with the writ. A failure to serve them therefore shows up as a gap in the affidavit the default judgment rests on.',
                     why: 'A defendant can only use a mechanism he knows exists, so the admission forms must travel with the writ. PD 24.1 then makes any omission visible, by requiring the very affidavit on which the default judgment is sought to depose that the forms went out.',
                     exam: {
                       write: 'The writ, the only remedy sought being the payment of money, was accompanied by a copy of Form No. 16 [Form No. 16C] for admitting the claim as required by O.13A r.13(2).',
@@ -7222,6 +7401,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'clock',
                     label: 'Start the clock and note what happens if it runs out',
+                    detail: 'In every case the 14 days run from the date the copy of the admission is served on the plaintiff, not from filing, and the sanction for missing them is a stay rather than dismissal: rr.4(4), 5(4), 6(4) and 7(4). The stay lifts as soon as the plaintiff files the request or notice, so it suspends the claim rather than destroying it.',
                     why: 'The sanction is a stay rather than a dismissal because the plaintiff\'s inactivity should suspend his claim, not destroy it. That is also why it is self-lifting: he cures it simply by filing the document he should have filed, with no application and no indulgence needed.',
                     exam: {
                       write: 'More than 14 days having elapsed since the copy admission was served on the Plaintiff without a [request for judgment/notice] being filed, the claim is stayed until he files it: O.13A r.4(4).',
@@ -7237,6 +7417,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'whole-liq',
                     label: 'Whole of a liquidated claim admitted (r.4) — Form No. 16A',
+                    detail: 'On a full admission of a liquidated sum there is nothing to accept or reject, so the plaintiff simply files a request in Form No. 16A and by r.4(6) the Court shall enter judgment, without hearing or discretion. He may specify a payment date or instalments in the request; if he specifies none the judgment is payable immediately.',
                     why: 'On a full admission of a liquidated sum there is nothing to accept or reject — the amount is agreed and the only question is the paperwork. That is why the Court \'shall\' enter judgment on receipt of the request: it is an administrative act, with no hearing and no discretion.',
                     exam: {
                       write: 'The Plaintiff obtains judgment by filing a request in Form No. 16A: O.13A r.4(3); on receipt the Court shall enter judgment for the amount of the claim less any payments made, and costs: rr.4(6)-(7).',
@@ -7253,6 +7434,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'part-liq',
                     label: 'Part of a liquidated claim admitted in satisfaction of the whole (r.5) — Form No. 16B',
+                    detail: 'A part admission is an offer to settle the whole claim, so the plaintiff must within 14 days file and serve a notice in Form No. 16B saying whether he accepts it: r.5(3). Accepting produces judgment for the amount admitted and costs; refusing puts the case back on the ordinary defended track; doing neither stays the whole claim until he complies.',
                     why: 'A part admission is an offer to settle the whole claim, not a payment towards it. Because the plaintiff is being asked to give up the balance, the rule makes him state a position rather than merely request judgment — hence a notice with three options rather than a bare request.',
                     exam: {
                       write: 'Within 14 days the Plaintiff shall file a notice in Form No. 16B and serve a copy on the Defendant, stating that he accepts the amount admitted in satisfaction of the whole claim, does not accept it and wishes the proceedings to continue, or accepts the amount but not the Defendant\'s proposals as to payment: O.13A r.5(3).',
@@ -7276,6 +7458,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'whole-unliq',
                     label: 'Liability on the whole of an unliquidated claim admitted (r.6) — Form No. 16D',
+                    detail: 'Here the admission puts no figure on the table, so the only thing the plaintiff can obtain is liability plus an assessment. He files a request in Form No. 16D within 14 days, the Court shall enter judgment, and that judgment is for an amount to be decided by the Court and costs — the same shape of outcome as an interlocutory default judgment.',
                     why: 'There is no figure on the table to accept, so the only thing the plaintiff can obtain is liability plus an assessment. The outcome therefore has exactly the same shape as an interlocutory default judgment, which is why r.8 lets the Court give directions on quantum.',
                     exam: {
                       write: 'The Plaintiff files a request in Form No. 16D and the Court shall enter judgment for an amount to be decided by the Court and costs: O.13A rr.6(3), (5)-(6).',
@@ -7291,6 +7474,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'part-unliq',
                     label: 'Liability on an unliquidated claim admitted with a sum offered (r.7) — Form No. 16E',
+                    detail: 'The plaintiff must file and serve a notice in Form No. 16E saying whether he accepts the sum offered. The asymmetry with r.5 is that liability is already admitted, so rejecting the figure cannot put liability back in issue: by r.7(9) he may still obtain judgment, for an amount to be decided by the Court.',
                     why: 'The asymmetry with r.5 exists because liability is already admitted here. Rejecting the figure cannot put liability back in issue, so the plaintiff does not lose his judgment by refusing the offer — he simply gets one for an amount the Court will decide.',
                     exam: {
                       write: 'The Plaintiff does not accept the sum offered in satisfaction and may obtain judgment by filing a request in Form No. 16E: O.13A r.7(9); that judgment is for an amount to be decided by the Court and costs: r.7(10).',
@@ -7415,6 +7599,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'make',
                     label: 'Make the request properly, and note which admissions can carry one',
+                    detail: 'A request for time to pay is a proposal about the date of payment or about instalments, available on an admission under r.4, r.5 or r.7 — not r.6, where no sum has yet been fixed. By r.9(3) it must be filed WITH the admission, because the plaintiff is being asked to accept the amount and the terms as one package.',
                     why: 'The request has to be filed with the admission because the two are one package: the plaintiff is being asked to accept the amount and the terms together. Letting a defendant admit first and propose terms later would give him a second bite after the plaintiff had already committed.',
                     exam: {
                       write: 'The Defendant admits the claim under O.13A r.4 and, filed with that admission, makes a request for time to pay proposing payment by instalments of $[X] per month: rr.9(1)-(3).',
@@ -7430,6 +7615,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'accepted',
                     label: 'If the plaintiff ACCEPTS the proposal',
+                    detail: 'The plaintiff obtains judgment by filing a request in Form No. 16A, 16B or 16E and the Court shall enter it: r.9(4)-(5). Judgment goes for the amount of the claim, the amount admitted or the amount offered as the case may be, less payments made, plus costs — payable on the defendant\'s own terms. That is the practical prize of admitting.',
                     why: 'This is the practical prize of admitting. Where the plaintiff accepts, it is the defendant — not the plaintiff and not the Court — whose payment terms are written into the judgment, and it is that fact which later triggers the automatic stay of execution.',
                     exam: {
                       write: 'The Plaintiff having accepted the proposal, judgment is entered for [the amount of the claim / the amount admitted / the amount offered] less any payments made, and costs, payable at the times and rate specified in the Defendant\'s own request: O.13A r.9(6).',
@@ -7444,6 +7630,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'refused',
                     label: 'If the plaintiff DOES NOT accept the proposal',
+                    detail: 'Refusal moves the timing, not the amount: the plaintiff files a notice and the Court enters judgment for the amount admitted, payable by the date or at the times and rate it determines. That determination may be made without a hearing on the prescribed considerations, and where it was, either party may apply under r.11(1) for a re-determination.',
                     why: 'Refusal moves the timing, not the amount. The admission has already settled what is owed, so the Court is asked only when it is to be paid — which is why it can decide on the papers, and why the defendant does not lose the benefit of having admitted.',
                     exam: {
                       write: 'The Plaintiff not accepting the proposal files a notice, and on receiving it the Court shall enter judgment for the amount admitted less any payments made, payable by the date or at the times and rate the Court determines: O.13A rr.10(2)-(3).',
@@ -7468,6 +7655,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'stay',
                     label: 'The stay of execution — what it is worth and how it is lost',
+                    detail: 'Where judgment is for instalments at the times and rate specified in the defendant\'s own request, execution is stayed for so long as he pays: r.9(7). The stay is fragile — failing to pay an instalment or part of one makes it cease immediately, and the whole outstanding balance becomes enforceable, not merely the arrears.',
                     why: 'The stay is what converts a judgment into a payment plan, and it is the real answer to \'can they take my assets?\'. It is conditional on performance, and r.9(8) is deliberately harsh: the whole balance falls in at once, so the plaintiff is not left suing for arrears instalment by instalment.',
                     exam: {
                       write: 'Judgment being for payment by instalments at the times and rate specified in the Defendant\'s own request, execution is stayed pending payment: O.13A r.9(7); but on failure to pay an instalment or part of one the stay immediately ceases and the Plaintiff may enforce the whole unpaid balance: r.9(8).',
@@ -7484,6 +7672,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Advise on the costs of admitting',
+                    detail: 'Where the plaintiff obtains judgment under O.13A without a hearing, the fixed scale in O.62, 2nd Schedule, Part II applies, so the costs are a known and modest figure rather than an open-ended bill — subject to para.2, which allows no costs at all in a para.1 or 1A case unless the Court orders otherwise. Weigh that against the cost of defending.',
                     why: 'Fixed costs are the other half of the commercial case for admitting: a known, modest figure instead of an open-ended bill. That is what you weigh against the value of any defence when the question is whether the defendant \'should\' admit.',
                     exam: {
                       write: 'Judgment being obtained under O.13A without a hearing, costs are fixed by O.62, 2nd Sch., Pt II — $10,000 in the High Court where the Plaintiff is legally represented [$6,500 in the District Court], plus $500 [$350] for each additional defendant after the first.',
@@ -7609,6 +7798,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'stage',
                     label: 'Confirm the stage of the default — O.13 is about the acknowledgement, not the defence',
+                    detail: 'O.13 and O.19 are consecutive stages of the same timetable rather than alternatives. Notice of intention to defend is given by filing an acknowledgement of service, and O.13 bites where none is given at all; where the defendant acknowledged but served no defence, the Order is O.19, which carries a notice requirement O.13 does not have.',
                     why: 'The whole lecture forks here. O.13 and O.19 are not alternatives but consecutive stages of the same timetable, and almost every difference between them follows from one fact: whether the defendant has engaged with the action at all. That is why only O.19 carries a notice requirement.',
                     exam: {
                       write: 'No acknowledgement of service having been filed within the time limited, the default is at the acknowledgement stage and O.13 applies, not O.19.',
@@ -7623,6 +7813,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'prescribed',
                     label: 'Work out "the prescribed time" — it is defined, and it is not always 14 days',
+                    detail: 'Every one of O.13 rr.1-6 lets the plaintiff act only after "the prescribed time", which r.6A defines in two limbs: the time limited for acknowledging service, or, where the defendant has returned an acknowledgement stating that he does not intend to contest, the time of that return. A defendant who says he will not contest therefore brings the prescribed time forward.',
                     why: 'The rules never say "14 days" here — they say "after the prescribed time", and then define it. The definition has two limbs because the 14 days exist to give the defendant a chance to decide whether to fight: a defendant who returns an acknowledgement saying he does not intend to contest has already made that decision, so there is nothing left for the rest of the period to protect and the clock closes early.',
                     exam: {
                       write: 'The prescribed time under O.13 r.6A expired on [date], being the last day limited for the 2nd Defendant to acknowledge service, and no acknowledgement having been filed the Plaintiff was entitled to enter judgment on [date].',
@@ -7639,6 +7830,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'type',
                     label: 'Match the claim to the rule, and read off final or interlocutory',
+                    detail: 'Each claim type takes its own rule and its own judgment: r.1 final judgment on a liquidated demand, r.2 interlocutory judgment on unliquidated damages, r.3(1) the plaintiff\'s option on detention of goods, r.4(1) possession of land on the prescribed certificate, and r.5 a part-final part-interlocutory judgment on a combination. A claim of a description outside rr.1-4 gets no default judgment at all: r.6(1).',
                     why: 'The four claim types are separated because each needs a different judgment. The Court can enter a sum only where no assessment is needed; it can order delivery of goods only subject to the reversioner rule; and it will not order possession without being satisfied that no mortgage relief is in play.',
                     exam: {
                       write: 'The writ being indorsed with a liquidated demand only, the Plaintiff may after the prescribed time enter final judgment against the Defendant for a sum not exceeding that claimed and for costs, and proceed with the action against the other defendants: O.13 r.1(1).',
@@ -7657,6 +7849,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'codefendants',
                     label: 'Check the effect on the other defendants — this is a standard exam sub-question',
+                    detail: 'A default judgment is a judgment against one defendant, not a decision about the action: each of rr.1-5 lets the plaintiff proceed against the other defendants. The one express qualification is possession of land, where a judgment under r.4 may not be enforced against any defendant until judgment for possession has been obtained against all of them.',
                     why: 'A default judgment is a judgment against one defendant, not a decision about the action. The closing words of each rule preserve the claim against everyone else, because the defaulting defendant\'s silence says nothing about the others\' liability. Land is the exception, since possession cannot sensibly be split between defendants.',
                     exam: {
                       write: 'Judgment against the 2nd Defendant does not dispose of the claim against the 1st Defendant: the Plaintiff may enter judgment against the defaulting defendant \'and proceed with the action against the other defendants, if any\': O.13 r.2.',
@@ -7672,6 +7865,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'late',
                     label: 'Watch the two timing traps at either end',
+                    detail: 'At one end the defendant may still acknowledge late right up until judgment is obtained — after that he needs leave under O.12 r.6(1) — so a judgment sealed after a late acknowledgement is vulnerable. At the other end the plaintiff\'s own delay bites: O.3 r.6 requires notice to the other parties before proceeding after a year\'s inactivity.',
                     why: 'The two traps sit at opposite ends of the same period. The defendant can still act right up until judgment is obtained, so a judgment sealed after a late acknowledgement is exposed; and the plaintiff can lose the right to act by sitting on the action for a year.',
                     exam: {
                       write: 'The Defendant acknowledged service out of time but before judgment was obtained, so leave was not required: O.12 r.6(1)-(2); the judgment having been sealed only after that acknowledgement, it is vulnerable: Kwan Tat Chung v Ho Cheuk Kwan.',
@@ -7816,6 +8010,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'when',
                     label: 'Confirm that O.19 is the right Order, and that the time has run',
+                    detail: 'O.19 bites at the pleadings stage, where the defendant has failed to serve a defence — and it also catches the defendant who never acknowledged where the claim falls outside O.13 rr.1-5, because O.13 r.6(1) puts the plaintiff back on the ordinary track. The plaintiff may act only after the period fixed for service of the defence, so compute that period first.',
                     why: 'O.19 bites at the pleadings stage, but it also catches the defendant who never acknowledged at all where the claim is outside O.13 rr.1-5 — because O.13 r.6(1) puts the plaintiff back on the ordinary track, and O.19 r.7 is then his route to judgment.',
                     exam: {
                       write: 'The Defendant acknowledged service on [date] but has served no defence, and the period fixed by the Rules for service of the defence expired on [date], so the Plaintiff may enter judgment under O.19.',
@@ -7831,6 +8026,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'type',
                     label: 'Match the claim to the rule — the structure mirrors O.13',
+                    detail: 'The rules mirror O.13 head for head: r.2(1) final judgment on a liquidated demand with the same interest saving, r.3 interlocutory judgment on unliquidated damages, r.4(1) the options on detention of goods, r.5(1) possession of land, and r.6 a combination. Only r.7 differs in kind — a claim outside rr.2-5 requires an application to the Court, which gives such judgment as the plaintiff appears entitled to.',
                     why: 'The structure deliberately mirrors O.13, so the classification work already done carries straight across. Only r.7 differs in kind: a claim outside rr.2-5 needs the Court to look at the statement of claim and decide what the plaintiff is actually entitled to.',
                     exam: {
                       write: 'The claim being for a liquidated demand only, the Plaintiff may after expiry of the period for service of the defence enter final judgment for a sum not exceeding that claimed and costs: O.19 r.2(1), O.13 r.1(2) applying by virtue of r.2(2).',
@@ -7849,6 +8045,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'notice',
                     label: 'The notice of intention to enter judgment — read r.8A, not the shorthand',
+                    detail: 'This defendant has engaged by acknowledging service, so r.8A(1) entitles him to be told before judgment is entered: not less than 2 clear days\' notice under (a), AND evidence of that service by affidavit filed in Court under (b). The second limb is routinely left out of summaries of the rule, and the familiar shorthand about defendants who never acknowledged is not among the r.8A(2) exceptions.',
                     why: 'The notice exists because this defendant has engaged: he filed an acknowledgement giving notice of intention to defend, so he is entitled to be told before judgment is taken against him. The affidavit limb is what makes the requirement enforceable rather than merely aspirational.',
                     exam: {
                       write: 'Not less than 2 clear days before entering judgment the Plaintiff served written notice of his intention to do so on the Defendant\'s solicitors, and has filed in Court an affidavit of that service: O.19 r.8A(1)(a)-(b).',
@@ -8008,6 +8205,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'scope',
                     label: 'This is the O.13 procedure — only two pieces of it carry over to O.19',
+                    detail: 'The two Orders prove different things because they start from different facts: O.13 must prove the writ reached a defendant who never responded, while under O.19 service is already conceded by the acknowledgement, so what must be proved is service of the r.8A notice. Only the form-of-judgment rule and the fixed-costs scale genuinely apply to both.',
                     why: 'The two Orders prove different things because they start from different facts. O.13 has to prove the writ reached the defendant, because he never responded to it. O.19 does not, because his acknowledgement already concedes that it did — so what is proved there is service of the r.8A notice instead.',
                     exam: {
                       write: 'This being a default under O.13, the Plaintiff must prove due service of the writ itself: O.13 r.7(1)(b). Had the Defendant acknowledged service, the relevant proof would be service of the O.19 r.8A notice.',
@@ -8022,6 +8220,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'gate',
                     label: 'Clear the O.13 r.7(1) gate first (O.13 only) — judgment "shall not be entered" unless one of three things is true',
+                    detail: 'Judgment shall not be entered unless the defendant has acknowledged service, or an affidavit proving due service of the writ is filed, or the plaintiff produces the writ indorsed by the defendant\'s solicitor accepting service. Proof of service is therefore the condition on which judgment is entered, not paperwork produced afterwards — it is the whole justification for giving judgment without a hearing.',
                     why: 'Proof of service is the condition on which judgment is entered, not paperwork produced afterwards. The whole justification for giving judgment without a hearing is that the defendant was given his chance to appear — so the Court must first be satisfied that he was.',
                     exam: {
                       write: 'An affidavit having been filed on behalf of the Plaintiff proving due service of the writ on the Defendant, the requirement in O.13 r.7(1)(b) is satisfied and judgment may be entered.',
@@ -8038,6 +8237,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'docs',
                     label: 'Prepare the application: summons plus affidavit (this part applies whichever Order the default is under)',
+                    detail: 'The summons must ask for the judgment the classification permits, because the Court can enter no other. Where Appendix A prescribes a form the judgment must be in it (O.42 r.1(1), Forms 39-42 serving both Orders), and by O.42 r.1(2) the party entering judgment may have the manner and place of service recited in it.',
                     why: 'The summons and the judgment have to match the classification, because the Court can only enter the judgment the rules permit for that kind of claim. A prayer that asks for the wrong one invites the Registry to refuse it.',
                     exam: {
                       write: 'The Plaintiff applies by summons for an order that interlocutory judgment on liability be entered in his favour with damages to be assessed, and that costs be to the Plaintiff.',
@@ -8061,6 +8261,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'affidavit',
                     label: 'Draft the affidavit of service of the WRIT with the set-aside application in mind (O.13 only)',
+                    detail: 'This affidavit is the document the defendant will attack months later, so state who served, on whom, when, where and by what method, and assert no more than the deponent knows. Where service was by post or letter box it must state the deponent\'s opinion that the writ would have come to the defendant\'s knowledge — an opinion that must be reasonable, or the Court may hold there was no proper service.',
                     why: 'This affidavit is the document the defendant will attack months later on a set-aside application, so it should never assert more than the deponent can stand behind. C&S Dental is the cautionary example: the affirmation was framed on a deemed-service rule the facts went on to contradict.',
                     exam: {
                       write: 'The writ was served by insertion into the letter box at [address] on [date], and in the Plaintiff\'s opinion it would have come to the Defendant\'s knowledge within 7 days of that date.',
@@ -8078,6 +8279,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'returned',
                     label: 'If the posted writ comes back undelivered, O.13 r.7(3)-(5) imposes a duty (O.13 only — no O.19 counterpart)',
+                    detail: 'The plaintiff is the only person who knows the writ came back, so the duty is his: where a writ posted under O.10 r.1(2)(a) is returned undelivered after judgment, he must either request that the judgment be set aside or apply for directions. The set-aside under r.7(4) is administrative and automatic on filing the affidavit — not a discretion.',
                     why: 'The duty is on the plaintiff because he is the only person who knows the writ came back. Making the set-aside automatic on filing the affidavit removes any incentive to press on regardless and hope the defendant never finds out.',
                     exam: {
                       write: 'The copy writ having been returned through the post undelivered, the Plaintiff must, before taking any step or further step in the action or in its enforcement, either request that the judgment be set aside or apply to the Court for directions: O.13 r.7(3).',
@@ -8093,6 +8295,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'costs',
                     label: 'Work out the costs on the fixed scale (this step DOES apply to an O.19 judgment too)',
+                    detail: 'The scale in O.62, 2nd Schedule, Part II applies where the writ was indorsed with a debt or liquidated demand only and the plaintiff obtains judgment on default, and also to an O.13A judgment without a hearing. Fixed costs keep undefended debt claims proportionate, but para.2 allows no costs at all in such a case unless the Court orders otherwise.',
                     why: 'Fixed costs keep undefended debt claims proportionate — the work is largely clerical, so the scale replaces taxation. Para.2 is what stops the scale becoming a windfall: it withholds costs entirely unless the judgment was obtained promptly.',
                     exam: {
                       write: 'Costs are fixed by O.62, 2nd Sch., Pt II at $10,000, the Plaintiff being legally represented, plus $500 for each additional defendant after the first [and $1,000 for each defendant served where substituted service was ordered and effected].',
@@ -8110,6 +8313,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'after',
                     label: 'Say what happens next — an interlocutory judgment is not the end (whichever Order it was entered under)',
+                    detail: 'A final judgment can be enforced at once; an interlocutory judgment fixes liability only, and the plaintiff must still prove quantum at an assessment of damages. In the District Court that is before a master on the automatic directions, followed by an application for an appointment and leave to set down, and then a Notice of Appointment served on the defendant.',
                     why: 'An interlocutory judgment is a milestone, not an outcome. Liability is fixed, but the plaintiff must still prove quantum at an assessment — usually with the defendant absent, which makes it easy to forget that it has to be proved at all.',
                     exam: {
                       write: 'Interlocutory judgment having been entered, damages fall to be assessed before a master, the automatic directions under O.37 r.1A of the Rules of the District Court applying unless otherwise ordered: O.37 r.1.',
@@ -8243,6 +8447,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'question',
                     label: 'Ask the right question: was the service of the writ defective?',
+                    detail: 'A judgment is irregular because the service of the writ did not comply with the rules, and regular where the plaintiff served properly and the defendant simply failed to respond. The question is about the plaintiff\'s compliance rather than the defendant\'s diligence, so a wholly blameless defendant can still face a regular judgment.',
                     why: 'The question is about the plaintiff\'s compliance, not the defendant\'s diligence. A wholly blameless defendant can still face a regular judgment — and that is precisely why the costs order follows the classification rather than the sympathy of the facts.',
                     exam: {
                       write: 'Service was effected by [method] in accordance with [rule], so the judgment is regular and the Defendant must bring himself within the discretionary test.',
@@ -8258,6 +8463,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'presumption',
                     label: 'Where the trouble usually comes from: the O.10 alternatives to personal service',
+                    detail: 'Posting the writ and inserting it through a letter box are permitted alternatives to personal service under O.10, allowed so that a defendant cannot defeat service by avoiding the process server. They give rise only to a presumption of good service, and the defendant may lead evidence that he was in fact unaware of it.',
                     why: 'Posting and letter-box service are conveniences the rules allow so that a defendant cannot defeat service by avoiding the process server. They can therefore only raise a presumption — otherwise a defendant who genuinely never received the writ would have no answer at all.',
                     exam: {
                       write: 'The writ was served by insertion into the letter box, a method which gives rise to a presumption of good service only, and the Defendant may lead evidence that he was in fact unaware of the service.',
@@ -8272,6 +8478,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'test',
                     label: 'State the test, in the terms the cases use',
+                    detail: 'The purpose of service is to tell the defendant he is being sued, so the test is whether the writ was brought to his notice — not merely whether it was delivered to his usual or last known address. A defendant may assert he did not know of the writ provided he gives convincing evidence, and the quality of that evidence is what the Court weighs.',
                     why: 'The purpose of service is to tell the defendant he is being sued. Delivery to an address he was not at achieves nothing of the sort, which is why the cases fix on notice rather than on delivery.',
                     exam: {
                       write: 'The test is whether the writ was brought to the Defendant\'s notice by the service, not whether it was merely delivered to his usual or last known address: Chu Kam Lun v Yap Lisa Susanto.',
@@ -8286,6 +8493,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'mode',
                     label: 'Then take account of the MODE of service, because it changes the strength of the case',
+                    detail: 'Substituted service is court-sanctioned precisely on the footing that it will bring the document to the defendant\'s attention, so it is a strong answer. A posted writ returned undelivered is the opposite. Where a company is served, the O.10 r.1 and s827 routes are alternatives, so hold the plaintiff to the route his affidavit chose.',
                     why: 'The mode changes the strength of the case because some modes are court-sanctioned precisely on the footing that they will bring the document to the defendant\'s attention. Substituted service was ordered on that basis, so it is hard to turn round and say it failed.',
                     exam: {
                       write: 'Service having been effected under an order for substituted service, there is a strong argument that the writ was thereby brought to the Defendant\'s notice, and it will be difficult to persuade the Court otherwise: Melco Crown Gaming.',
@@ -8301,6 +8509,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'other',
                     label: 'Remember that irregularity is not only about service',
+                    detail: 'Irregularity is about whether the judgment was properly obtained, and defective service is only the commonest way that goes wrong. A judgment entered after the defendant had in fact acknowledged service is vulnerable, as is one signed after a year\'s inactivity without the notice O.3 r.6 requires.',
                     why: 'Irregularity is about whether the judgment was properly obtained, and defective service is only the commonest way that goes wrong. A judgment entered at the wrong moment — after an acknowledgement, or after a year\'s silence without notice — is just as vulnerable.',
                     exam: {
                       write: 'The Defendant acknowledged service on [date], before the judgment was sealed on [date], and the judgment is accordingly vulnerable: Kwan Tat Chung v Ho Cheuk Kwan.',
@@ -8316,6 +8525,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'consequence',
                     label: 'Read off what the classification decides',
+                    detail: 'On an irregular judgment the defendant sets aside ex debito justitiae, without his merits being considered, and the plaintiff usually pays the costs. On a regular judgment the Court has a discretion, the defendant must explain the default and show a defence with a real prospect of success, and he usually pays. Settle the classification before writing anything else.',
                     why: 'The classification decides the test, the evidence that has to be filed and who pays the costs. All three follow from it, which is why it has to be settled before a word of the application is drafted.',
                     exam: {
                       write: 'The judgment being irregular, the Defendant is entitled to have it set aside ex debito justitiae without the merits of his defence being considered, and the Plaintiff will usually be ordered to pay his costs.',
@@ -8430,6 +8640,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'rule',
                     label: 'Name the governing rule, and match it to the default',
+                    detail: 'Default of notice of intention to defend is set aside under O.13 r.9, default of defence under O.19 r.9, both in materially the same discretionary words. Check first whether O.13 r.7(3)-(4) applies instead: where a posted writ was returned undelivered the set-aside is administrative and does not depend on this application at all.',
                     why: 'Both rules are discretionary in form; ex debito justitiae is what the case law does with that discretion where the judgment was irregularly obtained, not a separate power. And before applying at all, check r.7(3)-(4), which needs no application whatsoever.',
                     exam: {
                       write: 'The application is made under O.13 r.9, by which the Court may, on such terms as it thinks just, set aside or vary any judgment entered in pursuance of the Order.',
@@ -8445,6 +8656,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'entitlement',
                     label: 'State the entitlement — this is the whole point of the classification',
+                    detail: 'An irregular judgment is set aside ex debito justitiae, as of right and without the merits of the defence being considered, because bad service means the defendant never had his chance to defend. So the affidavit need not establish a defence, and the plaintiff cannot answer the application by saying the defence is hopeless.',
                     why: 'If service was bad the defendant never had his chance to defend, so the Court does not pause to weigh whether he would have won. To do so would be to decide the case against a party who was never properly brought before it.',
                     exam: {
                       write: 'The judgment having been irregularly obtained, the Defendant is entitled to have it set aside ex debito justitiae, as of right and without the merits of his defence being considered: Po Kwong Marble.',
@@ -8460,6 +8672,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'terms',
                     label: 'But expect terms — "as of right" does not mean unconditional',
+                    detail: '"As of right" governs entitlement, not conditions: the Court may still take the circumstances, and especially the defendant\'s conduct, into account in deciding what terms to impose. Where the defendant is in substance admitting the claim, or where his own conduct made the service irregular, the price of the set-aside may be payment into Court — so advise the client before applying.',
                     why: '\'As of right\' governs entitlement, not conditions. The Court can still do justice to the plaintiff — particularly where the defendant is in substance admitting the claim, or where his own conduct is what made the service go wrong.',
                     exam: {
                       write: 'The Defendant accepts that the Court may impose terms having regard to the circumstances and to his own conduct, and does not resist an order that on his paying $[X] into court within 14 days the judgment be set aside: Po Kwong Marble.',
@@ -8486,6 +8699,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'procedure',
                     label: 'Run the application',
+                    detail: 'Apply by summons supported by affidavit, headed with the governing rule, identifying each judgment by date — both the interlocutory and any final judgment on assessment — and asking for the costs order in the summons itself. A defendant usually learns of the action only when enforcement begins, so seek a stay of execution at the same time and deal with any listed enforcement hearing.',
                     why: 'A defendant usually learns of the action only when enforcement starts, so the set-aside and a stay of execution travel together — and any enforcement hearing already in the list has to be dealt with first, or the application may be overtaken before it is heard.',
                     exam: {
                       write: 'The Defendant applies by summons under O.13 r.9, supported by affidavit, for an order that the judgment in default entered on [date] be set aside and that execution be stayed in the meantime.',
@@ -8617,6 +8831,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'power',
                     label: 'Start from the power and the purpose',
+                    detail: 'The power is the same as in the irregular case — O.13 r.9 or O.19 r.9, on such terms as the Court thinks just — but here the defendant has no entitlement to rely on. The discretion is exercised to avoid injustice to the defendant, so the application is an exercise in persuasion on evidence, which is why the affidavit does the work.',
                     why: 'The power is identical to the irregular case; what changes is that the defendant has no entitlement to rely on. The application therefore becomes an exercise in persuasion on evidence — which is why the affidavit, not the argument, does the work.',
                     exam: {
                       write: 'The judgment being regular, the Court has a discretion whether to set it aside, exercised so as to avoid injustice to the Defendant: L&M Specialist Construction.',
@@ -8631,6 +8846,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'factors',
                     label: 'Work through the discretionary factors',
+                    detail: 'The Court is being asked to reopen a judgment the plaintiff properly obtained, so it asks why the default happened, how the defendant has behaved since — including delay in applying and his regard for court processes — whether third parties would be prejudiced, and above all whether he can show a potential defence on the merits.',
                     why: 'The Court is being asked to reopen a judgment the plaintiff properly obtained, so it wants to know why the default happened, how the defendant has behaved since he found out, and whether anyone else has relied on the judgment in the meantime.',
                     exam: {
                       write: 'The default arose because [reason], the Defendant applied within [N] days of first learning of the judgment on [date], and no third party has acted on the faith of it.',
@@ -8646,6 +8862,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'merits',
                     label: 'The merits: state the test in the words the cases use',
+                    detail: 'The threshold is higher than arguability because a judgment already exists: the Court must form a provisional view that the defence has a real prospect of success, or carries some degree of conviction. So the affidavit must descend to the facts and exhibit what supports them; a defence going only to quantum is weaker than one going to liability.',
                     why: 'The threshold is higher than arguability because a judgment already exists and the plaintiff is entitled to keep it unless there is a real reason not to. The Court therefore forms a provisional view of whether the defence would actually succeed.',
                     exam: {
                       write: 'The proposed defence that [X] has a real prospect of success, or at least carries with it some degree of conviction: Young Bing Ching v Chow Yung Fong.',
@@ -8681,6 +8898,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'evidence',
                     label: 'Build the affidavit around the test',
+                    detail: 'The structure is the test in order: the deponent and his authority, the purpose, a full and documented explanation of the default, promptness from the moment of discovery, and then the defence fact by fact with the material supporting each limb. Correcting any continuing breach the default exposed goes to conduct, so exhibit proof of that too.',
                     why: 'Each section of the affidavit answers one limb of the test, so the structure is not a matter of style — it is the test in order. Delay in particular is measured from discovery, which is why fixing that date precisely does real work.',
                     exam: {
                       write: 'I first became aware of the Judgment on [date], when [event]; I instructed solicitors the same day and this application was issued on [date].',
