@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Whack the PCLL</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231e3a5f'/><g transform='translate(1.9 1.9) scale(0.84)' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 19 12.5 11.5'/><rect x='9' y='8' width='10' height='4.2' rx='1.2' transform='rotate(45 14 10.1)'/></g></svg>" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+  <!-- Quire Sans is self-hosted (fonts/*.woff2, see the @font-face block at
+       the top of styles.css) -- preloading the Regular weight, the one
+       every page uses for body text, gets it fetching in parallel with the
+       stylesheet instead of waiting to be discovered inside it. -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/QuireSans.woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <script src="common-core.js"></script>
   <script src="common-content.js"></script>

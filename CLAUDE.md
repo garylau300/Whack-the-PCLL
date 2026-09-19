@@ -402,6 +402,49 @@ not what the code does.
   override is in force, so an earlier `emulateMedia({ media: 'screen' })` in
   the same script silently renders the PDF with the on-screen chrome —
   reset with `emulateMedia({ media: null })` before generating.
+- **The typeface is Quire Sans, self-hosted from `fonts/*.woff2`.** The
+  `@font-face` block at the top of `styles.css` declares all nine weight/
+  style combinations under one `font-family: 'Quire Sans'` name, and
+  `body{}` is the only place that names it (every other selector inherits).
+  The source TTFs (in the original upload, not the repo) name three of the
+  weights as their OWN family — `Quire Sans Light`, `Quire Sans SemiBold`,
+  `Quire Sans Black` — because that is how this static-TTF family ships;
+  only Regular/Bold/Italic/Bold Italic share the "Quire Sans" name
+  internally. That internal name is irrelevant to `@font-face` when serving
+  via `src: url()` (it only matters for `local()` lookups of an
+  OS-installed font), so every weight is declared here under the one name
+  regardless of what its file calls itself, and the rest of the site just
+  asks for a `font-weight`. Files are `.woff2` (converted from the
+  uploaded `.ttf`s with `fontTools`, ~70% smaller; no TTF fallback needed
+  since the site's own CSS already assumes an evergreen browser via
+  `color-mix()`). `scripts/dev-server.js`'s MIME map needs its own
+  `.woff2` entry — Vercel's static file serving sets it automatically, but
+  the local dev server doesn't guess by extension.
+- **Headings are sized to actually look like headings**, which they did
+  not before: several were smaller than, or the same size as, the 1rem
+  body text they introduced (`.exam-section h3` — "Fact Pattern Triggers",
+  "Answering Flowchart" — was 0.85rem; `.session-detail-body h4` was
+  0.8rem; `.course-section h2`/`.dash-section h2` were 0.95rem), so a
+  heading read as a bolded label rather than a break in the page. The
+  scale now runs h1 1.5rem → the issue type's own h2 (`#issueTitle`) 1.7rem
+  → generic section h2 1.2rem → h3 1.25rem → h4 1.05rem, all weight 700.
+  The issue heading is the ONE heading bigger than the topbar's own h1,
+  because it is the page's real subject (see the next bullet on why it has
+  to be keyed to the id) — the topbar carries the session, not the issue.
+  Small-caps-style eyebrow labels implemented as a heading tag for
+  semantics (`.exam-index-session`, `.exam-route-heading`,
+  `.quiz-topic-heading`) are deliberately NOT part of this scale — they are
+  list-group/inline labels, not a break in the reading flow, and stay at
+  their own small explicit size.
+  - **A descendant selector can silently outrank a single class**, which is
+    what happened to the issue heading: `.course-section h2` (a class + a
+    type, specificity 0,1,1) beat `.issue-heading` (one class, 0,1,0) for
+    every property they both set, regardless of source order or which one
+    looks more specific to a reader. The fix was to key the rule to
+    `#issueTitle` instead (an id always wins). Reach for an id selector —
+    already used sparingly here (`#app`, `#dashboardBody`,
+    `#assessmentTableBody`) — whenever a heading needs to escape a
+    same-specificity descendant rule rather than adding `!important`.
 - **Text size is one CSS declaration, because every font-size is in `rem`.**
   `initFontScale(btn)` (`common-core.js`) cycles `:root`'s `data-font-scale`
   through normal → large → larger, persisted under `pcll.fontScale`, and
@@ -579,11 +622,13 @@ not what the code does.
    Playwright script in the scratchpad dir to click through the change —
    screenshot both light and dark themes, check for console errors.
    `npm test` deliberately covers none of this: layout, contrast and print
-   rendering still need a real browser. Two traps in this container:
+   rendering still need a real browser. One trap in this container:
    `playwright-core` isn't a dependency of this repo (install it in the
-   scratchpad, `--no-save`), and `waitUntil: 'networkidle'` never settles
-   because the Google Fonts request hangs — abort `fonts.g*` routes and
-   wait on `#status` being hidden instead.
+   scratchpad, `--no-save`). `waitUntil: 'networkidle'` is fine to use now
+   that fonts are self-hosted (see "Fonts and headings" below) — it used to
+   hang on the Google Fonts request, which is why older scripts in this repo
+   abort `fonts.g*` routes and wait on `#status` instead; that workaround is
+   no longer necessary but harmless if copied.
 4. Kill the dev server (`pkill -f "scripts/dev-server.js"`) before
    finishing up.
 5. Commit with a message that explains *why*, not just what.

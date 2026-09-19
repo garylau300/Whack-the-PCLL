@@ -116,9 +116,11 @@ A few things worth knowing:
   already set to. Both settings are reset for printing.
 - Statutory and case references are detected and highlighted automatically —
   nothing in `courseDetails` carries markup for it.
-- The Google Fonts stylesheet is loaded non-render-blocking (`media="print"`
-  swapped to `all` on load, with a `<noscript>` fallback), so a slow fonts CDN
-  can't delay first paint.
+- The typeface (Quire Sans) is self-hosted from `fonts/*.woff2` — no CDN
+  request, so there's no third-party font stylesheet in the loading path at
+  all. Each page preloads the Regular weight it needs for body text; every
+  other weight/style loads lazily, only if something on that page actually
+  uses it.
 - `legalSkills.js` is a static, hand-written set of legal-skills tips,
   modelled on the categories in Anthropic's
   [`claude-for-legal`](https://github.com/anthropics/claude-for-legal) repo —
