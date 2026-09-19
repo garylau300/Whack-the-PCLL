@@ -1130,9 +1130,15 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
    points that are the actual work. Both are plain <details>, so keyboard and
    screen-reader behaviour comes free and there is nothing to measure; issue.js
    opens them all before printing so a saved PDF is complete. */
+/* flex-grow: 0 keeps each pill sized to its own label, so "In the exam"
+   sits right beside "Why this matters" with just the container gap between
+   them, instead of the two splitting the row's leftover space and drifting
+   apart -- the summary inside is inline-flex and never stretched by its
+   parent's grown width, so a growing item just adds dead space to its own
+   right, not to the button itself. */
 .exam-coach { display: flex; flex-wrap: wrap; gap: 6px; margin: 5px 0 2px; }
 .exam-coach-item {
-  flex: 1 1 auto; min-width: 0;
+  flex: 0 0 auto; min-width: 0;
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
 }
