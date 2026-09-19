@@ -4778,12 +4778,13 @@ window.COURSE_DETAILS.PCLL8030 = {
                       trap: 'Naming the management committee as defendant. The legal person is the incorporated owners; the committee acts for it.',
                     },
                     points: [
-                      'Maintaining the common parts, employing a manager and insuring the building: s18.',
-                      'Establishing funds and a bank account: s20.',
+                      'Maintaining and insuring the common parts: s18(1).',
+                      'Engaging a manager, property management company or other professional to assist the corporation: s18(2).',
+                      'Establishing a general fund and, if it chooses to, a contingency fund: s20(1)-(2); opening and maintaining an interest-bearing bank account: s20(3).',
                       'Preparing the annual budget: Schedule 5.',
-                      'Keeping accounts: s27.',
-                      'Ordering supplies: s20A.',
-                      'Enforcing the terms of the DMC: s22.',
+                      'Keeping proper books and records of account and preparing the financial statements: s27(1).',
+                      'Procuring supplies, goods or services, including the mandatory duty to invite tenders above the value threshold the section specifies: s20A(2).',
+                      'Determining and recovering the owners\' contributions to the funds — this is what the DMC\'s management-fee machinery is enforced through: s22(1)-(3).',
                     ],
                   },
                 ],
@@ -7274,6 +7275,27 @@ window.COURSE_DETAILS.PCLL8030 = {
                 ],
               },
             },
+            notes: [
+              {
+                heading: 'Untangling three different duties: s13, s13A, and the common law',
+                bullets: [
+                  'All three answer a different question, and running them together is the single most common mistake on this topic.',
+                  's13 governs SHOWING title: an evidential, production duty. The vendor lets the purchaser see the paper trail, and s13(2) lets a certified copy do that job — nothing needs to change hands.',
+                  's13A and the common law both govern GIVING title: a physical, delivery duty. The vendor must actually hand over documents at completion, and only the original will do — a certified copy cannot discharge either duty, however good a job it does for showing title.',
+                  's13A and the common law are ALTERNATIVES, not two layers of the same duty on top of each other. Which one applies turns on the date of the agreement, or an express choice — never both at once on the same document.',
+                ],
+                table: {
+                  headers: ['', 's13 — showing title', 's13A — giving title', 'Common law — giving title'],
+                  rows: [
+                    ['What it is', 'Production: let the purchaser see the documents', 'Delivery: hand over the originals', 'Delivery: hand over the originals'],
+                    ['Form that satisfies it', 'Original or a certified copy: s13(2)', 'Only the original — a certified copy will not do', 'Only the original — a certified copy will not do'],
+                    ['What must be produced or delivered', 'Everything from the intermediate root forward, i.e. within the s13(1) period', 'Only two things: the Government lease if it relates exclusively to the land, and the s13(1)(a) and (c) documents: s13A(1)', 'Everything relating exclusively to the property that is actually in the vendor\'s possession or power, as restated in De Monsa'],
+                    ['When it applies', 'Always, subject to the agreement', 'Agreements made on or after 11 July 2008, unless the parties adopt the common law instead: s13A(2)', 'Agreements made before 11 July 2008, or where the parties expressly adopt it instead of s13A'],
+                    ['A missing document', 'Not in issue — a certified copy is all s13 ever asked for', 'No duty to deliver anything outside those two categories at all, so there is nothing to explain', 'Explain only where the absence indicates a realistic possibility of a transaction affecting the land, e.g. an equitable mortgage by deposit'],
+                  ],
+                },
+              },
+            ],
             crossRefs: [
               { session: 'LG3', issue: 'documents-of-title', label: 'Which documents are documents of title?' },
               { session: 'LG4', issue: 'statutory-period-s13', label: 'The statutory period for showing title' },
