@@ -37,17 +37,63 @@
     <div id="status" class="status"><div class="spinner"></div>Loading…</div>
 
     <section class="course-section" id="issueSection" hidden>
-      <p class="session-subtitle muted">
-        <a id="courseLink" href="course.html">Course</a>
-        <span aria-hidden="true"> &middot; </span>
-        <a id="sessionLink" href="session.html">Session</a>
-      </p>
+      <div class="issue-topline">
+        <p class="session-subtitle muted">
+          <a id="courseLink" href="course.html">Course</a>
+          <span aria-hidden="true"> &middot; </span>
+          <a id="sessionLink" href="session.html">Session</a>
+        </p>
+        <!-- Icon-only prev/next plus a position count, so moving to an
+             adjacent issue type never requires scrolling to the bottom nav
+             first -- the two navs share one renderNav() in issue.js and can
+             never disagree about what's next. -->
+        <nav class="issue-quicknav" id="issueQuicknav" aria-label="Adjacent issue types" hidden>
+          <a id="issueQuickPrev" class="issue-quicknav-btn" href="#" hidden aria-label="Previous issue type">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>
+          <span class="issue-quicknav-pos" id="issueQuickPos"></span>
+          <a id="issueQuickNext" class="issue-quicknav-btn" href="#" hidden aria-label="Next issue type">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </nav>
+      </div>
       <p id="issueSummary" class="muted" hidden></p>
       <div id="issueBody" class="session-detail-body detail-content"></div>
-      <nav class="issue-nav" id="issueNav" aria-label="Other issue types" hidden>
-        <a id="issuePrev" class="issue-nav-link" href="#" hidden></a>
-        <a id="issueUp" class="issue-nav-link issue-nav-link--up" href="#">All issue types</a>
-        <a id="issueNext" class="issue-nav-link issue-nav-link--next" href="#" hidden></a>
+
+      <!-- Bottom pager: full prev/next cards (title, not just an arrow), plus
+           a meta row with the "all issue types" link, the same position
+           count as the top quicknav, and a way back up without re-scrolling
+           past a long flowchart. Class list keeps `issue-nav` so the
+           existing print rule (hide all page navigation on paper) still
+           matches without change. -->
+      <nav class="issue-nav issue-pager" id="issueNav" aria-label="Other issue types" hidden>
+        <div class="issue-pager-row">
+          <a id="issuePrev" class="issue-pager-card issue-pager-card--prev" href="#" hidden>
+            <span class="issue-pager-arrow" aria-hidden="true">&#8592;</span>
+            <span class="issue-pager-copy">
+              <span class="issue-pager-kicker">Previous</span>
+              <span class="issue-pager-title" id="issuePrevTitle"></span>
+            </span>
+          </a>
+          <a id="issueNext" class="issue-pager-card issue-pager-card--next" href="#" hidden>
+            <span class="issue-pager-copy">
+              <span class="issue-pager-kicker">Next</span>
+              <span class="issue-pager-title" id="issueNextTitle"></span>
+            </span>
+            <span class="issue-pager-arrow" aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+        <div class="issue-pager-meta">
+          <a id="issueUp" class="issue-pager-all" href="#">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            All issue types
+          </a>
+          <span class="issue-pager-pos" id="issuePagerPos"></span>
+          <button type="button" id="issueBackTop" class="issue-backtop">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M5 13l7-7 7 7"/></svg>
+            Back to top
+          </button>
+        </div>
       </nav>
     </section>
   </main>

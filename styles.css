@@ -1237,14 +1237,88 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-trigger-routes a:hover, .exam-trigger-routes a:focus-visible { text-decoration: underline; }
 .exam-route-to { color: var(--text-muted); font-weight: 600; }
 
-.issue-nav {
-  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-  margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border);
+/* issue.html navigation: a compact quicknav above the notes and a fuller
+   pager below them. Both are driven from the same renderNav() in issue.js,
+   so the position count and the prev/next targets can never drift apart. */
+
+/* Top: breadcrumb on the left, an icon-only prev/next + "N of M" on the
+   right, so moving to an adjacent issue type never requires scrolling past
+   a long flowchart to reach the bottom nav. Collapses to its own row under
+   the breadcrumb once the two can't share one line. */
+.issue-topline {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 4px 14px;
+  margin: 4px 0 14px;
 }
-.issue-nav-link { font-size: 0.82rem; color: var(--accent-text); text-decoration: none; font-weight: 600; }
-.issue-nav-link:hover, .issue-nav-link:focus-visible { text-decoration: underline; }
-.issue-nav-link--up { color: var(--text-muted); }
-.issue-nav-link--next { margin-left: auto; text-align: right; }
+.issue-topline .session-subtitle { margin: 0; }
+.issue-quicknav { display: flex; align-items: center; gap: 8px; }
+.issue-quicknav-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 999px;
+  color: var(--accent-text); border: 1px solid var(--border);
+  background: var(--surface);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.issue-quicknav-btn svg { width: 16px; height: 16px; }
+.issue-quicknav-btn:hover, .issue-quicknav-btn:focus-visible {
+  border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+}
+.issue-quicknav-pos {
+  font-size: 0.75rem; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
+/* Bottom: two full prev/next cards (title, not just an arrow) above a meta
+   row -- "all issue types", the same position count, and a way back to the
+   top without re-scrolling past everything just read. */
+.issue-pager { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+.issue-pager-row { display: flex; gap: 10px; margin-bottom: 12px; }
+.issue-pager-card {
+  flex: 1 1 0; min-width: 0;
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface); text-decoration: none; color: var(--text);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.issue-pager-card:hover, .issue-pager-card:focus-visible {
+  border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+.issue-pager-card--next { text-align: right; justify-content: flex-end; }
+.issue-pager-arrow { color: var(--accent-text); font-size: 1.1rem; flex: 0 0 auto; }
+.issue-pager-copy { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.issue-pager-kicker {
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.issue-pager-title { font-size: 0.85rem; font-weight: 600; }
+.issue-pager-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+  font-size: 0.82rem;
+}
+.issue-pager-all {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text-muted); text-decoration: none; font-weight: 600;
+}
+.issue-pager-all svg { width: 15px; height: 15px; }
+.issue-pager-all:hover, .issue-pager-all:focus-visible { color: var(--accent-text); text-decoration: underline; }
+.issue-pager-pos {
+  color: var(--text-muted); font-variant-numeric: tabular-nums;
+  margin-right: auto;
+}
+.issue-backtop {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: inherit; font-size: 0.82rem; font-weight: 600; color: var(--accent-text);
+  background: none; border: none; padding: 0; cursor: pointer;
+}
+.issue-backtop svg { width: 15px; height: 15px; }
+.issue-backtop:hover, .issue-backtop:focus-visible { text-decoration: underline; }
+
+@media (max-width: 560px) {
+  /* Stack prev above next rather than shrinking both into a sliver -- a
+     card's title needs room to wrap, not a narrower column. */
+  .issue-pager-row { flex-direction: column; }
+  .issue-pager-card--next { text-align: left; justify-content: flex-start; }
+  .issue-pager-pos { margin-right: 0; order: 1; flex-basis: 100%; }
+}
 
 /* Flashcards (quiz.html) — a click-to-flip card per principle, the same
    shape/size regardless of front/back text length via a fixed min-height
@@ -1573,6 +1647,7 @@ summary::marker { color: var(--text-muted); }
   .back-link,
   .footer,
   .issue-nav,
+  .issue-quicknav,
   .exam-index-filter,
   .spinner { display: none !important; }
 

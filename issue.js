@@ -30,26 +30,51 @@
     $('status').textContent = message;
   }
 
-  function renderNav(issueTypes, index, ev, foundDate) {
+  // Drives both nav clusters from one place, so the top quicknav and the
+  // bottom pager can never disagree about what's adjacent or where you are.
+  // `code`/`details`/`key` are only needed to derive prev/next's own issue
+  // codes (issueCode is positional, so it has to be re-run per index).
+  function renderNav(issueTypes, index, ev, foundDate, code, details, key) {
     const prev = issueTypes[index - 1];
     const next = issueTypes[index + 1];
+    const total = issueTypes.length;
+    const posText = `${index + 1} of ${total}`;
+
     const prevEl = $('issuePrev');
     const nextEl = $('issueNext');
+    const quickPrevEl = $('issueQuickPrev');
+    const quickNextEl = $('issueQuickNext');
     if (prev) {
-      prevEl.href = issueHref(ev, foundDate, prev.id);
-      prevEl.innerHTML = `<span aria-hidden="true">&#8592; </span>${index}. ${prev.title}`;
+      const href = issueHref(ev, foundDate, prev.id);
+      const prevCode = issueCode(code, details, key, index - 1);
+      prevEl.href = href;
+      $('issuePrevTitle').textContent = `${prevCode} — ${prev.title}`;
       prevEl.hidden = false;
+      quickPrevEl.href = href;
+      quickPrevEl.hidden = false;
     } else {
       prevEl.hidden = true;
+      quickPrevEl.hidden = true;
     }
     if (next) {
-      nextEl.href = issueHref(ev, foundDate, next.id);
-      nextEl.innerHTML = `${index + 2}. ${next.title}<span aria-hidden="true"> &#8594;</span>`;
+      const href = issueHref(ev, foundDate, next.id);
+      const nextCode = issueCode(code, details, key, index + 1);
+      nextEl.href = href;
+      $('issueNextTitle').textContent = `${nextCode} — ${next.title}`;
       nextEl.hidden = false;
+      quickNextEl.href = href;
+      quickNextEl.hidden = false;
     } else {
       nextEl.hidden = true;
+      quickNextEl.hidden = true;
     }
+
     $('issueUp').href = sessionHref(ev, foundDate);
+    $('issuePagerPos').textContent = `Issue ${posText}`;
+    $('issueQuickPos').textContent = posText;
+    // Only worth showing when there's somewhere else to go — a session with
+    // one issue type gets no quicknav at all rather than two disabled arrows.
+    $('issueQuicknav').hidden = !(prev || next);
     $('issueNav').hidden = false;
   }
 
@@ -106,7 +131,7 @@
       triggers: examTriggerRoutesHtml(issue, data, code, details),
     }, { checkable: true, checked: loadCheckedIds(notesKey) }) + examCrossRefsHtml(issue, data, code, details);
     wireFlowChecks($('issueBody'), () => loadCheckedIds(notesKey), (set) => saveCheckedIds(notesKey, set));
-    renderNav(issueTypes, index, ev, foundDate);
+    renderNav(issueTypes, index, ev, foundDate, code, details, key);
 
     $('status').hidden = true;
     $('issueSection').hidden = false;
@@ -156,5 +181,12 @@
     reclose = [];
   });
   $('printBtn').addEventListener('click', () => window.print());
+  // Explicit behavior:'smooth' bypasses the CSS scroll-behavior property
+  // (and so the global prefers-reduced-motion reset in styles.css), so the
+  // choice is made here instead of leaving it to CSS.
+  $('issueBackTop').addEventListener('click', () => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
   load();
 })();
