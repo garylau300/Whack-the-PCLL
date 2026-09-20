@@ -91,7 +91,12 @@ that one is *the conventions and rules for changing it*.
   questions across the four courses, and a new issue type is covered the
   moment it's authored. Wrong answers for the last two kinds are drawn from
   the same issue type, so you have to know which step or which case — not
-  merely which topic. Questions come one at a time, like a flashcard, with a
+  merely which topic. The dashboard's **Test Yourself** card opens a setup
+  screen where you build the round — which course, which sessions (or the
+  whole course), which question types, and how many — with a running count
+  of how many questions your filters leave. It remembers what you picked.
+  Opening the quiz from a session instead just asks questions straight away,
+  scoped to that session. Questions come one at a time, like a flashcard, with a
   progress bar and a Next button — answering shows the explanation and waits
   for you rather than skipping on. Finish a round and you get a results card: the score,
   which of the four kinds you were weak on, the issue types you missed as

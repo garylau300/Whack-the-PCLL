@@ -370,6 +370,27 @@ not what the code does.
     guards this with a per-kind coverage floor across sessions.
   - The caller resolves hrefs (`quiz.js` has the timetable, the content
     layer does not) — same division of labour as `examIssueListHtml`.
+  - **`examQuestionBank`'s third argument is a SCOPE**: one session key, an
+    array of them, or nothing for the whole course. It narrows only what the
+    questions are ABOUT — distractors and route targets still come from the
+    whole course, because narrowing those too would make a one-session round
+    answerable by elimination.
+  - **quiz.html is two views.** Reached with session params (the session
+    button, the issue page's button, the course page's per-session links) it
+    goes straight to questions. Reached bare — from the dashboard's Test
+    Yourself card — it opens the setup screen, because the dashboard spans
+    every course and the course is one of the things setup asks for.
+    `quizSetupHtml`/`wireQuizSetup` offer course, sessions, question types
+    and length, with a live count of what the current filters leave; the
+    choice persists under `pcll.quizSetup`, so the dashboard button reopens
+    on whatever was last used. Two rules:
+    - **Never let a filter empty the bank silently.** Turning every question
+      type off falls back to all of them, all sessions on means the whole
+      course, and the Start button disables itself with an explanatory count
+      when nothing matches.
+    - **Only courses that actually have exam notes get a chip.** PCLL8050
+      has courseDetails but no `examNotes` sessions, so it is absent rather
+      than offered-then-empty.
   - **One question at a time, like a flashcard.** All of the round is
     rendered up front but every card except the current one carries
     `hidden`, so stepping is a visibility change rather than a re-render —

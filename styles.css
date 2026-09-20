@@ -1725,6 +1725,40 @@ summary::marker { color: var(--text-muted); }
 .quiz-kind-chip:focus-visible, .cloze-group-chip:focus-visible,
 .quiz-option:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
+/* Round setup — the screen quiz.html opens on when it was reached without a
+   session, and what "Customise this round" returns to. */
+.quiz-setup { display: grid; gap: 18px; }
+.quiz-setup h3 { margin: 0; }
+.quiz-setup-group { display: grid; gap: 7px; }
+.quiz-setup-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--text-muted);
+}
+.quiz-setup-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.quiz-setup-hint { font-size: 0.75rem; }
+.quiz-setup .tag-chip {
+  cursor: pointer; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text-muted); font-family: inherit;
+}
+.quiz-setup .tag-chip.is-on {
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 35%, var(--surface));
+}
+.quiz-setup .tag-chip:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.quiz-setup-count { margin: 0; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); }
+.quiz-setup-start {
+  justify-self: start; cursor: pointer; font-family: inherit;
+  font-weight: 700; font-size: 0.95rem; padding: 11px 20px; border-radius: var(--radius-sm);
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, var(--surface));
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text);
+}
+.quiz-setup-start:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 24%, var(--surface)); }
+.quiz-setup-start:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.quiz-setup-start:disabled { cursor: default; opacity: 0.5; }
+
+.quiz-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
 /* One question at a time: a progress bar carries the sense of position
    that a visible list used to give for free. */
 .quiz-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }

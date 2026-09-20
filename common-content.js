@@ -637,10 +637,17 @@
     return refs.map((r) => r.session + '/' + r.issue);
   }
 
-  function examQuestionBank(code, details, sessionKey) {
+  // `scope` is what the questions are ABOUT: one session key, an array of
+  // them, or nothing for the whole course. Distractors and route targets
+  // are always drawn from the whole course regardless, because narrowing
+  // those too would make a one-session round answerable by elimination.
+  function examQuestionBank(code, details, scope) {
     const universe = examIssueIndex(code, details);
     const byRef = new Map(universe.map((e) => [e.sessionKey + '/' + e.id, e]));
-    const pool = sessionKey ? universe.filter((e) => e.sessionKey === sessionKey) : universe;
+    const keys = scope == null ? null : (Array.isArray(scope) ? scope : [scope]);
+    const pool = keys && keys.length
+      ? universe.filter((e) => keys.includes(e.sessionKey))
+      : universe;
     const qs = [];
 
     pool.forEach((e) => {
@@ -834,6 +841,103 @@
     authority: 'Authorities',
   };
 
+  // ---------------------------------------------------------------------
+  // Round setup. The quiz page opens here when it was reached without a
+  // session (the dashboard button), and is reachable from a running round
+  // via "Customise". The chosen setup persists, so the dashboard button
+  // reopens on whatever was last used rather than a fixed default.
+  // ---------------------------------------------------------------------
+  const QUIZ_SIZES = [5, 10, 20, 50];
+  const QUIZ_SETUP_KEY = 'pcll.quizSetup';
+
+  function loadQuizSetup() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(QUIZ_SETUP_KEY) || 'null');
+      if (!raw || typeof raw !== 'object') return null;
+      return raw;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveQuizSetup(setup) {
+    try { localStorage.setItem(QUIZ_SETUP_KEY, JSON.stringify(setup)); } catch { /* no-op */ }
+  }
+
+  function chipRow(items, cls) {
+    return items.map((it) => `<button type="button" class="tag-chip ${cls}${it.on ? ' is-on' : ''}"`
+      + ` data-value="${escapeHtml(String(it.value))}" aria-pressed="${it.on ? 'true' : 'false'}">`
+      + `${escapeHtml(it.label)}</button>`).join('');
+  }
+
+  // `model` is { courses: [{ code, name, sessions: [key] }], setup, count }.
+  // The caller builds `courses` because only it knows which courses the
+  // timetable actually names.
+  function quizSetupHtml(model) {
+    const { courses, setup, count } = model;
+    const course = courses.find((c) => c.code === setup.code) || courses[0];
+    if (!course) {
+      return '<div class="quiz-setup"><p class="muted">No course has exam notes to build questions from yet.</p></div>';
+    }
+    const sessionsOn = setup.sessions && setup.sessions.length ? setup.sessions : course.sessions;
+    const kindsOn = setup.kinds && setup.kinds.length ? setup.kinds : QUIZ_KINDS;
+    const asking = Math.min(setup.size, count);
+
+    return `<div class="quiz-setup">
+      <h3>Build a round</h3>
+      <div class="quiz-setup-group">
+        <span class="quiz-setup-label">Course</span>
+        <div class="quiz-setup-chips">${chipRow(courses.map((c) => ({
+          value: c.code, label: c.name ? `${c.code} · ${c.name}` : c.code, on: c.code === course.code,
+        })), 'quiz-course-chip')}</div>
+      </div>
+      <div class="quiz-setup-group">
+        <span class="quiz-setup-label">Sessions</span>
+        <div class="quiz-setup-chips">${chipRow(course.sessions.map((s) => ({
+          value: s, label: s, on: sessionsOn.includes(s),
+        })), 'quiz-session-chip')}</div>
+        <span class="quiz-setup-hint muted">All of them is the whole course.</span>
+      </div>
+      <div class="quiz-setup-group">
+        <span class="quiz-setup-label">Question types</span>
+        <div class="quiz-setup-chips">${chipRow(QUIZ_KINDS.map((k) => ({
+          value: k, label: KIND_LABELS[k] || k, on: kindsOn.includes(k),
+        })), 'quiz-setup-kind-chip')}</div>
+      </div>
+      <div class="quiz-setup-group">
+        <span class="quiz-setup-label">How many</span>
+        <div class="quiz-setup-chips">${chipRow(QUIZ_SIZES.map((n) => ({
+          value: n, label: String(n), on: n === setup.size,
+        })), 'quiz-size-chip')}</div>
+      </div>
+      <p class="quiz-setup-count" role="status">${count
+        ? `${count} question${count === 1 ? '' : 's'} match — asking ${asking}`
+        : 'Nothing matches these filters. Turn a question type or a session back on.'}</p>
+      <button type="button" class="quiz-setup-start"${count ? '' : ' disabled'}>Start round →</button>
+    </div>`;
+  }
+
+  // Toggling re-renders the whole panel, which is fine because it is small
+  // and keeps the rendered chips and the stored setup from drifting apart.
+  // Focus is restored to the chip that was clicked so keyboard use survives
+  // the re-render.
+  function wireQuizSetup(container, handlers) {
+    const setupEl = container.querySelector('.quiz-setup');
+    if (!setupEl) return;
+    const h = handlers || {};
+
+    setupEl.addEventListener('click', (e) => {
+      if (e.target.closest('.quiz-setup-start')) { if (h.onStart) h.onStart(); return; }
+      const chip = e.target.closest('.tag-chip');
+      if (!chip) return;
+      const value = chip.dataset.value;
+      if (chip.classList.contains('quiz-course-chip')) h.onChange({ code: value, sessions: [] });
+      else if (chip.classList.contains('quiz-size-chip')) h.onChange({ size: Number(value) });
+      else if (chip.classList.contains('quiz-session-chip')) h.onChange({ toggleSession: value });
+      else if (chip.classList.contains('quiz-setup-kind-chip')) h.onChange({ toggleKind: value });
+    });
+  }
+
   function quizQuestionHtml(q, i, hrefFor) {
     const href = hrefFor ? hrefFor(q.answer) : '';
     const why = q.kind === 'authority' && q.note ? `<span class="quiz-why-note">${citeHtml(q.note)}</span>` : '';
@@ -983,7 +1087,10 @@
         <button type="button" class="quiz-next" disabled>Next →</button>
         <span class="quiz-nav-hint muted">Pick an answer to continue</span>
       </div>
-      <div class="quiz-actions"><button type="button" class="link-btn quiz-again">Start over →</button></div>
+      <div class="quiz-actions">
+        <button type="button" class="link-btn quiz-again">Start over →</button>
+        <button type="button" class="link-btn quiz-customise">Customise this round →</button>
+      </div>
       <!-- Results, shown once the last question is answered. Same
            settings-panel/settings-card shell every other dialog on the site
            uses, so initDialog's focus trap and Escape handling apply here
@@ -1081,6 +1188,8 @@
       if (e.target.closest('.quiz-result-review')) { if (dialog) dialog.close(); return; }
 
       if (e.target.closest('.quiz-next')) { advance(); return; }
+
+      if (e.target.closest('.quiz-customise')) { if (h.onCustomise) h.onCustomise(); return; }
 
       const again = e.target.closest('.quiz-again');
       if (again) { if (h.onAgain) h.onAgain(); return; }
@@ -1276,6 +1385,7 @@
     examIssueSectionsHtml, wireFlowChecks, examIssueListHtml, wireIssueFilter,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
     examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex, QUIZ_KINDS,
+    quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, QUIZ_SIZES,
     noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
   });
 })();
