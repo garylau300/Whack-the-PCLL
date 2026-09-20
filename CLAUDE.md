@@ -488,6 +488,14 @@ not what the code does.
   - **Masked text prints revealed**, on the same reasoning as the ticks: a
     printed page of hatched boxes records nothing. The choice persists
     under `pcll.cloze`; the reveals are deliberately ephemeral.
+  - **The bar is NOT sticky — don't pin it back.** It was, on the argument
+    that the controls should stay reachable in a forty-row flowchart. With
+    the read-aloud row beside the cloze row that is two rows of chrome
+    standing between the reader and the notes for the whole of a long page,
+    and the notes are what the screen is for. Both settings persist, so
+    scrolling back up for them is rare. The only things still pinned on any
+    page are the topbar (page chrome) and the timetable's own `.week-nav`
+    and `.day-col-head`.
 - **Read-aloud is a DOM pass, and the hard part is the citations.**
   `wireNoteSpeech` (`common-content.js`) injects a play button on every
   `.exam-section > h3` and every `.exam-flow-step` on the issue page, and

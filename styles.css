@@ -1958,11 +1958,13 @@ summary::marker { color: var(--text-muted); }
 .quiz-result-again:hover { background: color-mix(in srgb, var(--accent) 24%, var(--surface)); }
 .quiz-result-again:focus-visible, .quiz-result-review:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
-/* The clozing bar on issue.html. Sticky under the topbar so the controls
-   stay reachable in a forty-row flowchart -- --topbar-h is measured, never
-   a literal (see trackTopbarHeight). */
+/* The study-tools bar on issue.html -- cloze groups and the read-aloud
+   voice/speed. It scrolls away with the page and is deliberately NOT sticky:
+   it is two rows of controls you set once at the start of a session, and
+   pinned under the topbar it stood between the reader and the notes for the
+   whole of a forty-row flowchart. Both settings persist, so scrolling back
+   for them is rare; the notes are what the screen is for. */
 .note-cloze-bar {
-  position: sticky; top: var(--topbar-h, 64px); z-index: 5;
   display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
   padding: 8px 10px; margin-bottom: 16px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
