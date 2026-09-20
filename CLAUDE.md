@@ -315,6 +315,22 @@ not what the code does.
 
 ## UI conventions
 
+- **No pills.** A selection is a real `<input>` — a checkbox for "any number
+  of these", a radio for "exactly one" — rendered by `checkRow(items, cls,
+  type)` in `common-content.js` into `.check-option` labels. Don't build a
+  row of rounded `<button>`s carrying `aria-pressed`: a native control
+  already states its own arity in every browser's own affordance, and brings
+  the platform's keyboard handling, hit target and focus ring with it, none
+  of which a styled button gets for free. `accent-color: var(--accent-text)`
+  is what themes them. The quiz setup screen (course / sessions / issue
+  types) and the issue page's cloze bar are the worked examples; a
+  `<fieldset>`/`<legend>` groups each set. Two things are *not* a selection
+  and stay buttons: an action that fires once (the 5/10/20/50
+  `.quiz-spread-btn` presets, "Select all", "Reveal all"), and anything that
+  navigates. The only `border-radius: 999px` left in `styles.css` is on
+  progress and meter **bars** (`.exam-issue-bar`, `.quiz-progress-bar`,
+  `.quiz-stat-bar`) — a rounded bar is a bar, not a pill; keep it that way
+  and don't reintroduce the shape for anything clickable.
 - A timetable session is a real, separately addressable, linkable page
   (`session.html?code=...&no=...&date=...&start=...`) — never a modal or
   popup for the session's own content.
@@ -392,8 +408,9 @@ not what the code does.
     dashboard button reopens on whatever was last used. Three rules:
     - **The sliders ARE the length.** Each sets how many questions of that
       kind, and the round is their sum — so any total is reachable and there
-      is no separate size to reconcile against the mix. The 5/10/20/50 chips
-      are only a shortcut that spreads that many across the kinds
+      is no separate size to reconcile against the mix. The 5/10/20/50
+      `.quiz-spread-btn` buttons are only a shortcut that spreads that many
+      across the kinds
       (`spreadCounts`), rolling leftover off a capped kind onto the others.
       A slider's max is `min(available, QUIZ_KIND_MAX)`: a kind with 430
       questions behind it still needs a usable slider, and the "of N"
@@ -401,13 +418,13 @@ not what the code does.
     - **Sliders report on `input`, and that handler must not re-render.**
       Rebuilding the panel mid-drag pulls the thumb out from under the
       pointer, so the handler patches its own readout, the total and the
-      Start button in place. Only chips re-render.
+      Start button in place. Only a scope change re-renders.
     - **Never let a filter empty the bank silently.** A remembered mix is
       clamped to what the current scope can supply (`reconcile`), and one
       that clamps to nothing falls back to an even spread — so changing
       course or sessions never lands on an empty round. Start disables
       itself with an explanatory line when every slider is at zero.
-    - **Only courses that actually have exam notes get a chip.** PCLL8050
+    - **Only courses that actually have exam notes are offered.** PCLL8050
       has courseDetails but no `examNotes` sessions, so it is absent rather
       than offered-then-empty.
   - **One question at a time, like a flashcard.** All of the round is
@@ -450,8 +467,8 @@ not what the code does.
     to hang it off — that warning was written when a round had no completion
     state at all. It has one now, and it is real, but a 7/12 is not a
     celebration, so only 100% gets the raccoon.
-- **The notes can be clozed in place on the issue page.** A chip row
-  (`noteClozeControlsHtml`/`wireNoteCloze`) blanks a chosen kind of content
+- **The notes can be clozed in place on the issue page.** A row of
+  checkboxes (`noteClozeControlsHtml`/`wireNoteCloze`) blanks a chosen kind of content
   — Rules (`.exam-flow-detail`), Points, Traps, Model sentences,
   Authorities — and any blank reveals on click. Four rules:
   - **It is a pass over the already-rendered DOM, not a renderer option.**
@@ -469,10 +486,10 @@ not what the code does.
     masked flowchart point sits inside its `<label>`, so without this the
     click that reveals it would also tick the checkbox.
   - **Masked text prints revealed**, on the same reasoning as the ticks: a
-    printed page of hatched boxes records nothing. The chip choice persists
+    printed page of hatched boxes records nothing. The choice persists
     under `pcll.cloze`; the reveals are deliberately ephemeral.
 - **Don't write copy that the interface already says.** A line telling the
-  reader that all the session chips on means the whole course, or that they
+  reader that every session ticked means the whole course, or that they
   should pick an answer to continue, or to tap a node to open it, is read
   once and then in the way forever. A sentence earns its place only by
   carrying a fact the reader cannot see — "Saved on this device only" stays

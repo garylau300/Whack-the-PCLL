@@ -900,10 +900,16 @@
     try { localStorage.setItem(QUIZ_SETUP_KEY, JSON.stringify(setup)); } catch { /* no-op */ }
   }
 
-  function chipRow(items, cls) {
-    return items.map((it) => `<button type="button" class="tag-chip ${cls}${it.on ? ' is-on' : ''}"`
-      + ` data-value="${escapeHtml(String(it.value))}" aria-pressed="${it.on ? 'true' : 'false'}">`
-      + `${escapeHtml(it.label)}</button>`).join('');
+  // Selections are real checkboxes and radios, not chip buttons you toggle.
+  // A checkbox already says "several of these" and a radio "one of these",
+  // in every browser's own affordance, and both come with the platform's
+  // keyboard handling and hit target — none of which a styled <button>
+  // carrying aria-pressed gets for free.
+  function checkRow(items, cls, type) {
+    return items.map((it) => `<label class="check-option ${cls}${it.on ? ' is-on' : ''}">`
+      + `<input type="${type}" ${type === 'radio' ? `name="${escapeHtml(cls)}" ` : ''}`
+      + `value="${escapeHtml(String(it.value))}"${it.on ? ' checked' : ''} />`
+      + `<span>${it.html || escapeHtml(it.label)}</span></label>`).join('');
   }
 
   // A slider's top end. A kind with 300 questions behind it still gets a
@@ -942,40 +948,39 @@
 
     return `<div class="quiz-setup">
       <h3>Build a round</h3>
-      <div class="quiz-setup-group">
-        <span class="quiz-setup-label">Course</span>
-        <div class="quiz-setup-chips">${chipRow(courses.map((c) => ({
+      <fieldset class="quiz-setup-group">
+        <legend class="quiz-setup-label">Course</legend>
+        <div class="check-row">${checkRow(courses.map((c) => ({
           value: c.code, label: c.name ? `${c.code} · ${c.name}` : c.code, on: c.code === course.code,
-        })), 'quiz-course-chip')}</div>
-      </div>
-      <div class="quiz-setup-group">
-        <span class="quiz-setup-label">Sessions</span>
-        <div class="quiz-setup-chips">${chipRow(course.sessions.map((s) => ({
+        })), 'quiz-course-check', 'radio')}</div>
+      </fieldset>
+      <fieldset class="quiz-setup-group">
+        <legend class="quiz-setup-label">Sessions</legend>
+        <div class="check-row">${checkRow(course.sessions.map((s) => ({
           value: s, label: s, on: sessionsOn.includes(s),
-        })), 'quiz-session-chip')}</div>
-      </div>
-      <div class="quiz-setup-group">
-        <span class="quiz-setup-label">Issue types<span class="quiz-issue-picked">${setup.issues && setup.issues.length
-          ? `${setup.issues.length} of ${model.issues.length}` : `all ${model.issues.length}`}</span></span>
-        <div class="quiz-issue-box">${model.issues.map((it) => {
-          const on = !setup.issues || !setup.issues.length || setup.issues.includes(it.key);
-          return `<button type="button" class="tag-chip quiz-issue-chip${on ? ' is-on' : ''}"`
-            + ` data-value="${escapeHtml(it.key)}" aria-pressed="${on ? 'true' : 'false'}">`
-            + `<span class="quiz-issue-code">${escapeHtml(it.code9)}</span> ${escapeHtml(it.title)}</button>`;
-        }).join('')}</div>
+        })), 'quiz-session-check', 'checkbox')}</div>
+      </fieldset>
+      <fieldset class="quiz-setup-group">
+        <legend class="quiz-setup-label">Issue types<span class="quiz-issue-picked">${setup.issues && setup.issues.length
+          ? `${setup.issues.length} of ${model.issues.length}` : `all ${model.issues.length}`}</span></legend>
+        <div class="quiz-issue-box">${checkRow(model.issues.map((it) => ({
+          value: it.key,
+          on: !setup.issues || !setup.issues.length || setup.issues.includes(it.key),
+          html: `<span class="quiz-issue-code">${escapeHtml(it.code9)}</span> ${escapeHtml(it.title)}`,
+        })), 'quiz-issue-check', 'checkbox')}</div>
         <div class="quiz-setup-presets">
-          <button type="button" class="link-btn quiz-issue-all">All</button>
-          <button type="button" class="link-btn quiz-issue-none">None</button>
+          <button type="button" class="link-btn quiz-issue-all">Select all</button>
+          <button type="button" class="link-btn quiz-issue-none">Clear</button>
         </div>
-      </div>
-      <div class="quiz-setup-group">
-        <span class="quiz-setup-label">How many of each type</span>
+      </fieldset>
+      <fieldset class="quiz-setup-group">
+        <legend class="quiz-setup-label">How many of each type</legend>
         <div class="quiz-kind-sliders">${sliders}</div>
         <div class="quiz-setup-presets">
           <span class="quiz-setup-hint muted">Spread evenly</span>
-          ${QUIZ_SIZES.map((n) => `<button type="button" class="tag-chip quiz-size-chip" data-value="${n}">${n}</button>`).join('')}
+          ${QUIZ_SIZES.map((n) => `<button type="button" class="quiz-spread-btn" data-value="${n}">${n}</button>`).join('')}
         </div>
-      </div>
+      </fieldset>
       <p class="quiz-setup-count" role="status">${total
         ? `${total} question${total === 1 ? '' : 's'} in this round`
         : (anyAvail
@@ -1008,17 +1013,24 @@
       if (h.onCount) h.onCount(slider.dataset.kind, val);
     });
 
+    // Checkboxes and radios report on `change`, so the handler reads the
+    // control's own checked state rather than tracking a class.
+    setupEl.addEventListener('change', (e) => {
+      const input = e.target.closest('.check-option input');
+      if (!input) return;
+      const box = input.closest('.check-option');
+      const value = input.value;
+      if (box.classList.contains('quiz-course-check')) h.onChange({ code: value, sessions: [] });
+      else if (box.classList.contains('quiz-session-check')) h.onChange({ toggleSession: value });
+      else if (box.classList.contains('quiz-issue-check')) h.onChange({ toggleIssue: value });
+    });
+
     setupEl.addEventListener('click', (e) => {
       if (e.target.closest('.quiz-setup-start')) { if (h.onStart) h.onStart(); return; }
       if (e.target.closest('.quiz-issue-all')) { h.onChange({ allIssues: true }); return; }
       if (e.target.closest('.quiz-issue-none')) { h.onChange({ noIssues: true }); return; }
-      const chip = e.target.closest('.tag-chip');
-      if (!chip) return;
-      const value = chip.dataset.value;
-      if (chip.classList.contains('quiz-course-chip')) h.onChange({ code: value, sessions: [] });
-      else if (chip.classList.contains('quiz-size-chip')) h.onChange({ spread: Number(value) });
-      else if (chip.classList.contains('quiz-session-chip')) h.onChange({ toggleSession: value });
-      else if (chip.classList.contains('quiz-issue-chip')) h.onChange({ toggleIssue: value });
+      const spread = e.target.closest('.quiz-spread-btn');
+      if (spread) h.onChange({ spread: Number(spread.dataset.value) });
     });
   }
 
@@ -1146,7 +1158,7 @@
     const tips = res.weak.slice(0, 2).map((k) => `<li>${escapeHtml(KIND_TIPS[k.kind] || '')}</li>`).join('');
     const tipBlock = tips
       ? `<div class="quiz-tips"><h4>What to work on</h4><ul>${tips}</ul></div>`
-      : `<div class="quiz-tips"><h4>What to work on</h4><ul><li>Nothing from this round — try another, or switch on a different question kind with the chips.</li></ul></div>`;
+      : `<div class="quiz-tips"><h4>What to work on</h4><ul><li>Nothing from this round — try another, or raise a different question type in Customise.</li></ul></div>`;
 
     const missed = res.missed.length
       ? `<div class="quiz-missed"><h4>Issue types you missed</h4><ul>${res.missed.map((e) => {
@@ -1402,10 +1414,12 @@
 
   function noteClozeControlsHtml(active) {
     const on = active || new Set();
-    const chips = CLOZE_GROUPS.map((g) => `<button type="button" class="tag-chip cloze-group-chip${on.has(g.key) ? ' is-on' : ''}" data-cloze="${g.key}" aria-pressed="${on.has(g.key) ? 'true' : 'false'}">${escapeHtml(g.label)}</button>`).join('');
+    const boxes = checkRow(CLOZE_GROUPS.map((g) => ({
+      value: g.key, label: g.label, on: on.has(g.key),
+    })), 'cloze-group-check', 'checkbox');
     return `<div class="note-cloze-bar">
       <span class="note-cloze-label">Hide to test yourself</span>
-      <div class="note-cloze-chips">${chips}</div>
+      <div class="check-row note-cloze-checks">${boxes}</div>
       <button type="button" class="link-btn note-cloze-reveal">Reveal all</button>
     </div>`;
   }
@@ -1439,19 +1453,18 @@
     syncAll();
 
     bar.addEventListener('click', (e) => {
-      const reveal = e.target.closest('.note-cloze-reveal');
-      if (reveal) {
-        scope.querySelectorAll('.cloze-mask').forEach((el) => el.classList.add('is-revealed'));
-        return;
-      }
-      const chip = e.target.closest('.cloze-group-chip');
-      if (!chip) return;
-      const g = CLOZE_GROUPS.find((x) => x.key === chip.dataset.cloze);
+      if (!e.target.closest('.note-cloze-reveal')) return;
+      scope.querySelectorAll('.cloze-mask').forEach((el) => el.classList.add('is-revealed'));
+    });
+
+    bar.addEventListener('change', (e) => {
+      const input = e.target.closest('.cloze-group-check input');
+      if (!input) return;
+      const g = CLOZE_GROUPS.find((x) => x.key === input.value);
       if (!g) return;
-      const on = !active.has(g.key);
+      const on = input.checked;
       if (on) active.add(g.key); else active.delete(g.key);
-      chip.classList.toggle('is-on', on);
-      chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+      input.closest('.check-option').classList.toggle('is-on', on);
       saveClozeGroups(active);
       apply(g, on);
     });

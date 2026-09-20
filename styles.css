@@ -1078,7 +1078,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .exam-index-count {
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0; color: var(--text-muted);
-  background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1px 7px;
 }
 /* Pushed to the far end of the session heading, so every session row offers
    its derived Test Yourself round without competing with the session key. */
@@ -1261,7 +1261,7 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 .exam-coach-item > summary {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 3px 9px 3px 7px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   list-style: none;
   font-weight: 700; font-size: 0.72rem;
@@ -1711,19 +1711,26 @@ summary::marker { color: var(--text-muted); }
   border-radius: var(--radius-sm); padding: 3px 10px; white-space: nowrap;
 }
 .quiz-intro { font-size: 0.85rem; margin: 6px 0 10px; }
-.quiz-kinds { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 /* A filter chip is a real control, unlike the inert .tag-chip it borrows
    its shape from, so it needs a pointer, a border and an off/on state. */
-.quiz-kind-chip, .cloze-group-chip {
-  cursor: pointer; border: 1px solid var(--border);
-  background: var(--surface); color: var(--text-muted); font-family: inherit;
-}
-.quiz-kind-chip.is-on, .cloze-group-chip.is-on {
-  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
-  color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 35%, var(--surface));
-}
-.quiz-kind-chip:focus-visible, .cloze-group-chip:focus-visible,
 .quiz-option:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+/* Selections are real checkboxes and radios rather than chip buttons. The
+   box carries the state, so the surrounding label needs no pressed styling
+   of its own — just a hit area, and accent-color to theme the control. */
+.check-row { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.check-option {
+  display: inline-flex; align-items: flex-start; gap: 7px;
+  cursor: pointer; font-size: 0.85rem; line-height: 1.4;
+  padding: 3px 2px; border-radius: var(--radius-sm);
+}
+.check-option input {
+  accent-color: var(--accent-text); cursor: pointer;
+  margin: 1px 0 0; flex: 0 0 auto;
+}
+.check-option:hover { color: var(--accent-text); }
+.check-option.is-on { font-weight: 700; }
+.check-option:focus-within { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
 /* Round setup — the screen quiz.html opens on when it was reached without a
    session, and what "Customise this round" returns to. */
@@ -1734,17 +1741,19 @@ summary::marker { color: var(--text-muted); }
   font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.04em; color: var(--text-muted);
 }
-.quiz-setup-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .quiz-setup-hint { font-size: 0.75rem; }
-.quiz-setup .tag-chip {
-  cursor: pointer; border: 1px solid var(--border);
-  background: var(--surface); color: var(--text-muted); font-family: inherit;
+/* fieldset/legend for grouping, with the browser's own box stripped back. */
+.quiz-setup-group { border: 0; padding: 0; margin: 0; min-width: 0; }
+.quiz-setup-group > .quiz-setup-label { padding: 0; }
+/* A small square button for the even-spread shortcuts — an action, not a
+   selection, so neither a checkbox nor a chip. */
+.quiz-spread-btn {
+  cursor: pointer; font-family: inherit; font-size: 0.78rem; font-weight: 700;
+  padding: 3px 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-muted);
 }
-.quiz-setup .tag-chip.is-on {
-  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
-  color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 35%, var(--surface));
-}
-.quiz-setup .tag-chip:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.quiz-spread-btn:hover { border-color: var(--accent-text); color: var(--accent-text); }
+.quiz-spread-btn:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 /* One slider per question type. `accent-color` does the theming for the
    native track and thumb in one declaration, which is why these are plain
    <input type="range"> rather than a hand-built control — it inherits the
@@ -1771,12 +1780,11 @@ summary::marker { color: var(--text-muted); }
    rather than pushing the rest of the setup off the screen; the count in
    the label is what tells you the selection without scrolling it. */
 .quiz-issue-box {
-  display: flex; flex-wrap: wrap; gap: 6px;
-  max-height: 190px; overflow-y: auto;
-  padding: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  display: grid; gap: 2px;
+  max-height: 210px; overflow-y: auto;
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm);
   background: var(--bg);
 }
-.quiz-issue-chip { text-align: left; }
 .quiz-issue-code { font-variant-numeric: tabular-nums; opacity: 0.75; }
 .quiz-issue-picked {
   margin-left: 8px; font-weight: 400; text-transform: none; letter-spacing: 0;
@@ -1833,7 +1841,7 @@ summary::marker { color: var(--text-muted); }
 .quiz-round.is-review .quiz-q-num {
   display: inline-block;
   margin-left: auto; font-size: 0.7rem; font-weight: 700; color: var(--text-muted);
-  background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1px 8px;
 }
 /* The progress bar is a stepping control; in review it has nothing to say. */
 .quiz-round.is-review .quiz-progress { display: none; }
@@ -1960,7 +1968,7 @@ summary::marker { color: var(--text-muted); }
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
 }
 .note-cloze-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
-.note-cloze-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.note-cloze-checks { flex: 1 1 auto; }
 .note-cloze-bar .link-btn { margin-left: auto; }
 
 /* A masked span keeps its own box so hiding a rule does not reflow the
