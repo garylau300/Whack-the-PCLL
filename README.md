@@ -93,8 +93,10 @@ that one is *the conventions and rules for changing it*.
   the same issue type, so you have to know which step or which case — not
   merely which topic. The dashboard's **Test Yourself** card opens a setup
   screen where you build the round — which course, which sessions (or the
-  whole course), which question types, and how many — with a running count
-  of how many questions your filters leave. It remembers what you picked.
+  whole course), and a slider per question type setting how many of each you
+  want. The round is their sum, so any length is reachable; the 5/10/20/50
+  buttons just spread that many evenly. Each slider shows how many questions
+  of that type the chosen scope actually has. It remembers what you picked.
   Opening the quiz from a session instead just asks questions straight away,
   scoped to that session. Questions come one at a time, like a flashcard, with a
   progress bar and a Next button — answering shows the explanation and waits

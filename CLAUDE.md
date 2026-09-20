@@ -380,14 +380,26 @@ not what the code does.
     goes straight to questions. Reached bare — from the dashboard's Test
     Yourself card — it opens the setup screen, because the dashboard spans
     every course and the course is one of the things setup asks for.
-    `quizSetupHtml`/`wireQuizSetup` offer course, sessions, question types
-    and length, with a live count of what the current filters leave; the
-    choice persists under `pcll.quizSetup`, so the dashboard button reopens
-    on whatever was last used. Two rules:
-    - **Never let a filter empty the bank silently.** Turning every question
-      type off falls back to all of them, all sessions on means the whole
-      course, and the Start button disables itself with an explanatory count
-      when nothing matches.
+    `quizSetupHtml`/`wireQuizSetup` offer course, sessions and **a slider per
+    question type**; the choice persists under `pcll.quizSetup`, so the
+    dashboard button reopens on whatever was last used. Three rules:
+    - **The sliders ARE the length.** Each sets how many questions of that
+      kind, and the round is their sum — so any total is reachable and there
+      is no separate size to reconcile against the mix. The 5/10/20/50 chips
+      are only a shortcut that spreads that many across the kinds
+      (`spreadCounts`), rolling leftover off a capped kind onto the others.
+      A slider's max is `min(available, QUIZ_KIND_MAX)`: a kind with 430
+      questions behind it still needs a usable slider, and the "of N"
+      readout keeps the real size visible.
+    - **Sliders report on `input`, and that handler must not re-render.**
+      Rebuilding the panel mid-drag pulls the thumb out from under the
+      pointer, so the handler patches its own readout, the total and the
+      Start button in place. Only chips re-render.
+    - **Never let a filter empty the bank silently.** A remembered mix is
+      clamped to what the current scope can supply (`reconcile`), and one
+      that clamps to nothing falls back to an even spread — so changing
+      course or sessions never lands on an empty round. Start disables
+      itself with an explanatory line when every slider is at zero.
     - **Only courses that actually have exam notes get a chip.** PCLL8050
       has courseDetails but no `examNotes` sessions, so it is absent rather
       than offered-then-empty.

@@ -1745,6 +1745,31 @@ summary::marker { color: var(--text-muted); }
   color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 35%, var(--surface));
 }
 .quiz-setup .tag-chip:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+/* One slider per question type. `accent-color` does the theming for the
+   native track and thumb in one declaration, which is why these are plain
+   <input type="range"> rather than a hand-built control — it inherits the
+   theme, the focus ring and the platform's own touch target for free. */
+.quiz-kind-sliders { display: grid; gap: 10px; }
+.quiz-kind-row { display: grid; grid-template-columns: 8.5rem 1fr 5.5rem; align-items: center; gap: 12px; }
+.quiz-kind-row.is-empty { opacity: 0.55; }
+.quiz-kind-name { font-size: 0.85rem; font-weight: 700; }
+.quiz-kind-slider { width: 100%; accent-color: var(--accent-text); cursor: pointer; }
+.quiz-kind-slider:disabled { cursor: default; }
+.quiz-kind-slider:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+.quiz-kind-out { font-size: 0.82rem; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.quiz-kind-avail { color: var(--text-muted); font-weight: 400; }
+@media (max-width: 520px) {
+  /* The label needs the full width once the column is this narrow, or a
+     two-word type name wraps into two lines beside a squashed slider. */
+  .quiz-kind-row { grid-template-columns: 1fr 4.5rem; grid-template-areas: 'name name' 'slider out'; }
+  .quiz-kind-name { grid-area: name; }
+  .quiz-kind-slider { grid-area: slider; }
+  .quiz-kind-out { grid-area: out; text-align: right; }
+}
+
+.quiz-setup-presets { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.quiz-setup-presets .quiz-setup-hint { margin-right: 2px; }
+
 .quiz-setup-count { margin: 0; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); }
 .quiz-setup-start {
   justify-self: start; cursor: pointer; font-family: inherit;

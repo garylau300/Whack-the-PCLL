@@ -802,8 +802,38 @@
   // One round: `size` questions spread across whichever kinds are available
   // (round-robin, so a session with 200 trigger bullets and 8 authority rows
   // still asks some of each), each with its options already shuffled.
+  function withOptions(q, bank, universe) {
+    const options = q.answerText
+      ? [{ text: q.answerText, correct: true }]
+        .concat(textDistractors(q, bank, 3).map((t) => ({ text: t, correct: false })))
+      : [{ text: issueOptionText(q.answer), correct: true, entry: q.answer }]
+        .concat(issueDistractors(q, universe, 3).map((e) => ({ text: issueOptionText(e), correct: false, entry: e })));
+    return Object.assign({}, q, { options: shuffled(options) });
+  }
+
+  // Two ways to draw a round.
+  //
+  //   opts.perKind: { spot: 4, route: 3, ... } — take exactly that many of
+  //     each kind, which is what the setup sliders produce. The mix IS the
+  //     length: the round is the sum, so there is no separate size to
+  //     reconcile against it.
+  //   opts.size (+ optional opts.kinds) — the older even spread, kept for
+  //     callers that just want "n questions across whatever is available".
+  //     verify-data.js samples rounds this way.
   function examQuizRound(bank, opts) {
     const o = opts || {};
+    const universe = o.universe || [];
+
+    if (o.perKind) {
+      const chosen = [];
+      for (const kind of QUIZ_KINDS) {
+        const want = Math.max(0, Number(o.perKind[kind]) || 0);
+        if (!want) continue;
+        chosen.push(...shuffled(bank.filter((q) => q.kind === kind)).slice(0, want));
+      }
+      return shuffled(chosen).map((q) => withOptions(q, bank, universe));
+    }
+
     const size = o.size || 12;
     const kinds = (o.kinds && o.kinds.length) ? o.kinds : null;
     const src = bank.filter((q) => !kinds || kinds.includes(q.kind));
@@ -820,15 +850,7 @@
       lists.forEach((l) => { if (chosen.length < size && l.length) chosen.push(l.pop()); });
     }
 
-    const universe = o.universe || [];
-    return shuffled(chosen).map((q) => {
-      const options = q.answerText
-        ? [{ text: q.answerText, correct: true }]
-          .concat(textDistractors(q, bank, 3).map((t) => ({ text: t, correct: false })))
-        : [{ text: issueOptionText(q.answer), correct: true, entry: q.answer }]
-          .concat(issueDistractors(q, universe, 3).map((e) => ({ text: issueOptionText(e), correct: false, entry: e })));
-      return Object.assign({}, q, { options: shuffled(options) });
-    });
+    return shuffled(chosen).map((q) => withOptions(q, bank, universe));
   }
 
   // Fixed order, so the filter chips don't reshuffle between rounds.
@@ -870,18 +892,39 @@
       + `${escapeHtml(it.label)}</button>`).join('');
   }
 
-  // `model` is { courses: [{ code, name, sessions: [key] }], setup, count }.
-  // The caller builds `courses` because only it knows which courses the
-  // timetable actually names.
+  // A slider's top end. A kind with 300 questions behind it still gets a
+  // usable slider rather than one where every practical value sits in the
+  // first two pixels; the "of N" readout keeps the real size visible.
+  const QUIZ_KIND_MAX = 25;
+
+  // `model` is { courses: [{ code, name, sessions: [key] }], setup, avail }
+  // where `avail` is { kind: howManyExist } for the current scope. The
+  // caller builds both, because only it knows the timetable and the bank.
   function quizSetupHtml(model) {
-    const { courses, setup, count } = model;
+    const { courses, setup, avail } = model;
     const course = courses.find((c) => c.code === setup.code) || courses[0];
     if (!course) {
       return '<div class="quiz-setup"><p class="muted">No course has exam notes to build questions from yet.</p></div>';
     }
     const sessionsOn = setup.sessions && setup.sessions.length ? setup.sessions : course.sessions;
-    const kindsOn = setup.kinds && setup.kinds.length ? setup.kinds : QUIZ_KINDS;
-    const asking = Math.min(setup.size, count);
+    const total = QUIZ_KINDS.reduce((n, k) => n + (setup.counts[k] || 0), 0);
+    const anyAvail = QUIZ_KINDS.some((k) => (avail[k] || 0) > 0);
+
+    const sliders = QUIZ_KINDS.map((k) => {
+      const have = avail[k] || 0;
+      const max = Math.min(have, QUIZ_KIND_MAX);
+      const val = Math.min(setup.counts[k] || 0, max);
+      const id = `quizKind-${k}`;
+      return `<div class="quiz-kind-row${have ? '' : ' is-empty'}">
+        <label class="quiz-kind-name" for="${id}">${escapeHtml(KIND_LABELS[k] || k)}</label>
+        <input class="quiz-kind-slider" type="range" id="${id}" data-kind="${k}"
+          min="0" max="${max}" step="1" value="${val}"${have ? '' : ' disabled'}
+          aria-describedby="${id}-out" />
+        <output class="quiz-kind-out" id="${id}-out" for="${id}">${have
+          ? `${val} <span class="quiz-kind-avail">of ${have}</span>`
+          : '<span class="quiz-kind-avail">none here</span>'}</output>
+      </div>`;
+    }).join('');
 
     return `<div class="quiz-setup">
       <h3>Build a round</h3>
@@ -899,32 +942,44 @@
         <span class="quiz-setup-hint muted">All of them is the whole course.</span>
       </div>
       <div class="quiz-setup-group">
-        <span class="quiz-setup-label">Question types</span>
-        <div class="quiz-setup-chips">${chipRow(QUIZ_KINDS.map((k) => ({
-          value: k, label: KIND_LABELS[k] || k, on: kindsOn.includes(k),
-        })), 'quiz-setup-kind-chip')}</div>
+        <span class="quiz-setup-label">How many of each type</span>
+        <div class="quiz-kind-sliders">${sliders}</div>
+        <div class="quiz-setup-presets">
+          <span class="quiz-setup-hint muted">Or spread evenly:</span>
+          ${QUIZ_SIZES.map((n) => `<button type="button" class="tag-chip quiz-size-chip" data-value="${n}">${n}</button>`).join('')}
+        </div>
       </div>
-      <div class="quiz-setup-group">
-        <span class="quiz-setup-label">How many</span>
-        <div class="quiz-setup-chips">${chipRow(QUIZ_SIZES.map((n) => ({
-          value: n, label: String(n), on: n === setup.size,
-        })), 'quiz-size-chip')}</div>
-      </div>
-      <p class="quiz-setup-count" role="status">${count
-        ? `${count} question${count === 1 ? '' : 's'} match — asking ${asking}`
-        : 'Nothing matches these filters. Turn a question type or a session back on.'}</p>
-      <button type="button" class="quiz-setup-start"${count ? '' : ' disabled'}>Start round →</button>
+      <p class="quiz-setup-count" role="status">${total
+        ? `${total} question${total === 1 ? '' : 's'} in this round`
+        : (anyAvail
+          ? 'Nothing selected — raise a slider, or use one of the spreads.'
+          : 'No questions here. Turn a session back on, or pick another course.')}</p>
+      <button type="button" class="quiz-setup-start"${total ? '' : ' disabled'}>Start round →</button>
     </div>`;
   }
 
-  // Toggling re-renders the whole panel, which is fine because it is small
-  // and keeps the rendered chips and the stored setup from drifting apart.
-  // Focus is restored to the chip that was clicked so keyboard use survives
-  // the re-render.
+  // Chips and the Start button are clicks; the sliders report on `input`, so
+  // dragging updates the total live rather than only on release. A slider
+  // change patches its own readout and the total in place — re-rendering
+  // mid-drag would tear the thumb out from under the pointer.
   function wireQuizSetup(container, handlers) {
     const setupEl = container.querySelector('.quiz-setup');
     if (!setupEl) return;
     const h = handlers || {};
+
+    setupEl.addEventListener('input', (e) => {
+      const slider = e.target.closest('.quiz-kind-slider');
+      if (!slider) return;
+      const val = Number(slider.value);
+      const row = slider.closest('.quiz-kind-row');
+      const out = row && row.querySelector('.quiz-kind-out');
+      if (out) {
+        const availEl = out.querySelector('.quiz-kind-avail');
+        out.textContent = `${val} `;
+        if (availEl) out.appendChild(availEl);
+      }
+      if (h.onCount) h.onCount(slider.dataset.kind, val);
+    });
 
     setupEl.addEventListener('click', (e) => {
       if (e.target.closest('.quiz-setup-start')) { if (h.onStart) h.onStart(); return; }
@@ -932,10 +987,34 @@
       if (!chip) return;
       const value = chip.dataset.value;
       if (chip.classList.contains('quiz-course-chip')) h.onChange({ code: value, sessions: [] });
-      else if (chip.classList.contains('quiz-size-chip')) h.onChange({ size: Number(value) });
+      else if (chip.classList.contains('quiz-size-chip')) h.onChange({ spread: Number(value) });
       else if (chip.classList.contains('quiz-session-chip')) h.onChange({ toggleSession: value });
-      else if (chip.classList.contains('quiz-setup-kind-chip')) h.onChange({ toggleKind: value });
     });
+  }
+
+  // Share `size` questions out across the kinds that have any, never asking
+  // for more of a kind than exists. Leftover from a capped kind rolls onto
+  // the others, so "spread 50" over a thin scope still returns 50 where the
+  // bank can supply them.
+  function spreadCounts(size, avail) {
+    const counts = {};
+    QUIZ_KINDS.forEach((k) => { counts[k] = 0; });
+    let left = size;
+    let open = QUIZ_KINDS.filter((k) => (avail[k] || 0) > 0);
+    while (left > 0 && open.length) {
+      const each = Math.max(1, Math.floor(left / open.length));
+      const before = left;
+      for (const k of open) {
+        if (left <= 0) break;
+        const room = Math.min(avail[k], QUIZ_KIND_MAX) - counts[k];
+        const add = Math.min(each, room, left);
+        counts[k] += add;
+        left -= add;
+      }
+      open = open.filter((k) => counts[k] < Math.min(avail[k], QUIZ_KIND_MAX));
+      if (left === before) break; // nothing could be placed — the bank is spent
+    }
+    return counts;
   }
 
   function quizQuestionHtml(q, i, hrefFor) {
@@ -1067,14 +1146,12 @@
     if (!round.length) {
       return '<div class="quiz-round"><p class="muted">No questions could be built from these notes yet.</p></div>';
     }
-    const chips = (o.kinds || []).map((k) => `<button type="button" class="tag-chip quiz-kind-chip${o.active && o.active.includes(k) ? ' is-on' : ''}" data-kind="${escapeHtml(k)}">${escapeHtml(KIND_LABELS[k] || k)}</button>`).join('');
     return `<div class="quiz-round">
       <div class="quiz-head">
         <h3>Test Yourself</h3>
         <span class="quiz-score" role="status">0 answered</span>
       </div>
       <p class="quiz-intro muted">Questions are built from these notes — the fact patterns, the routes between issue types, the flowchart traps and the authorities tables.</p>
-      ${chips ? `<div class="quiz-kinds">${chips}</div>` : ''}
       <div class="quiz-progress">
         <span class="quiz-progress-bar"><span class="quiz-progress-fill" style="width:${(100 / round.length).toFixed(2)}%"></span></span>
         <span class="quiz-progress-text">1 / ${round.length}</span>
@@ -1112,7 +1189,7 @@
   }
 
   // Delegated: first click on a question locks it in, marks right/wrong,
-  // reveals the explanation and updates the score. `onAgain`/`onKinds` let
+  // reveals the explanation and updates the score. `onAgain`/`onCustomise` let
   // the page rebuild the round, since only it can resolve hrefs.
   function wireExamQuiz(container, handlers) {
     const round = container.querySelector('.quiz-round');
@@ -1193,15 +1270,6 @@
 
       const again = e.target.closest('.quiz-again');
       if (again) { if (h.onAgain) h.onAgain(); return; }
-
-      const chip = e.target.closest('.quiz-kind-chip');
-      if (chip) {
-        chip.classList.toggle('is-on');
-        if (h.onKinds) {
-          h.onKinds([...round.querySelectorAll('.quiz-kind-chip.is-on')].map((c) => c.dataset.kind));
-        }
-        return;
-      }
 
       const btn = e.target.closest('.quiz-option');
       if (!btn) return;
@@ -1385,7 +1453,7 @@
     examIssueSectionsHtml, wireFlowChecks, examIssueListHtml, wireIssueFilter,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
     examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex, QUIZ_KINDS,
-    quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, QUIZ_SIZES,
+    quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, QUIZ_SIZES, spreadCounts,
     noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
   });
 })();

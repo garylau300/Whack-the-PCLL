@@ -6,9 +6,11 @@
     findSessionInTimetable, flashcardSectionHtml, wireFlashcardSection,
     clozeSectionHtml, wireClozeSection,
     examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex,
-    sessionEventsByKey, issueHref, QUIZ_KINDS, QUIZ_SIZES,
-    quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup,
+    sessionEventsByKey, issueHref, QUIZ_KINDS,
+    quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, spreadCounts,
   } = window.PCLL;
+
+  const DEFAULT_ROUND = 10;
 
   const $ = (id) => document.getElementById(id);
   const params = new URLSearchParams(location.search);
@@ -99,8 +101,7 @@
       // Opening from a session scopes to it; otherwise fall back to what was
       // last used, and finally to the whole course.
       sessions: entry && openedSession ? [openedSession] : (Array.isArray(saved.sessions) ? saved.sessions : []),
-      kinds: Array.isArray(saved.kinds) && saved.kinds.length ? saved.kinds : QUIZ_KINDS.slice(),
-      size: QUIZ_SIZES.includes(saved.size) ? saved.size : 10,
+      counts: (saved.counts && typeof saved.counts === 'object') ? { ...saved.counts } : null,
     };
 
     // Drop any remembered session that this course does not have.
@@ -113,21 +114,56 @@
       const details = detailsFor(setup.code);
       if (!details) return [];
       const picked = validSessions();
-      const bank = examQuestionBank(setup.code, details, picked.length ? picked : null);
-      return bank.filter((q) => setup.kinds.includes(q.kind));
+      return examQuestionBank(setup.code, details, picked.length ? picked : null);
     }
 
-    function setCourseLinkFor(c) { setCourseLink(data, c); }
+    const availOf = (bank) => {
+      const a = {};
+      QUIZ_KINDS.forEach((k) => { a[k] = 0; });
+      bank.forEach((q) => { a[q.kind] = (a[q.kind] || 0) + 1; });
+      return a;
+    };
+
+    // A remembered mix can outrun the scope it is now applied to — switch to
+    // a session with no authorities table and that slider has to come down.
+    // Anything that would clamp to nothing falls back to an even spread, so
+    // changing scope never lands on an empty round.
+    function reconcile(avail) {
+      if (!setup.counts) { setup.counts = spreadCounts(DEFAULT_ROUND, avail); return; }
+      let total = 0;
+      QUIZ_KINDS.forEach((k) => {
+        const capped = Math.max(0, Math.min(Number(setup.counts[k]) || 0, avail[k] || 0));
+        setup.counts[k] = capped;
+        total += capped;
+      });
+      if (!total) setup.counts = spreadCounts(DEFAULT_ROUND, avail);
+    }
 
     function showSetup() {
-      setCourseLinkFor(setup.code);
+      setCourseLink(data, setup.code);
       setHeading('Test Yourself');
       setup.sessions = validSessions();
-      bodyEl.innerHTML = quizSetupHtml({ courses, setup, count: bankFor().length });
+      const avail = availOf(bankFor());
+      reconcile(avail);
+      bodyEl.innerHTML = quizSetupHtml({ courses, setup, avail });
       wireQuizSetup(bodyEl, {
+        // Live while dragging: record the value but do NOT re-render, or the
+        // thumb is pulled out from under the pointer mid-drag.
+        onCount: (kind, n) => {
+          setup.counts[kind] = n;
+          saveQuizSetup(setup);
+          const total = QUIZ_KINDS.reduce((s, k) => s + (setup.counts[k] || 0), 0);
+          const countEl = bodyEl.querySelector('.quiz-setup-count');
+          const startEl = bodyEl.querySelector('.quiz-setup-start');
+          if (countEl) {
+            countEl.textContent = total
+              ? `${total} question${total === 1 ? '' : 's'} in this round`
+              : 'Nothing selected — raise a slider, or use one of the spreads.';
+          }
+          if (startEl) startEl.disabled = !total;
+        },
         onChange: (change) => {
           if (change.code) { setup.code = change.code; setup.sessions = []; }
-          if (change.size) setup.size = change.size;
           if (change.toggleSession) {
             const course = courses.find((c) => c.code === setup.code);
             const all = course ? course.sessions : [];
@@ -136,13 +172,7 @@
             if (i >= 0) on.splice(i, 1); else on.push(change.toggleSession);
             setup.sessions = on.length === all.length ? [] : on;
           }
-          if (change.toggleKind) {
-            const on = setup.kinds.slice();
-            const i = on.indexOf(change.toggleKind);
-            if (i >= 0) on.splice(i, 1); else on.push(change.toggleKind);
-            // Never let every type be off — there would be nothing to ask.
-            setup.kinds = on.length ? on : QUIZ_KINDS.slice();
-          }
+          if (change.spread) setup.counts = spreadCounts(change.spread, availOf(bankFor()));
           saveQuizSetup(setup);
           showSetup();
         },
@@ -155,9 +185,10 @@
     function showRound() {
       const details = detailsFor(setup.code);
       const bank = bankFor();
+      reconcile(availOf(bank));
       if (!bank.length) { showSetup(); return; }
 
-      setCourseLinkFor(setup.code);
+      setCourseLink(data, setup.code);
       const picked = validSessions();
       const scopeLabel = picked.length === 1 ? picked[0]
         : picked.length ? `${picked.length} sessions` : setup.code;
@@ -169,18 +200,15 @@
         return found ? issueHref(found.ev, found.dateIso, e.id) : '';
       };
       const universe = examIssueIndex(setup.code, details);
-      const available = QUIZ_KINDS.filter((k) => bank.some((q) => q.kind === k));
-      let active = available.slice();
 
       const draw = () => {
-        const round = examQuizRound(bank, { size: setup.size, universe, kinds: active });
-        bodyEl.innerHTML = examQuizHtml(round, { hrefFor, kinds: available, active });
+        const round = examQuizRound(bank, { perKind: setup.counts, universe });
+        bodyEl.innerHTML = examQuizHtml(round, { hrefFor });
         wireExamQuiz(bodyEl, {
           questions: round,
           hrefFor,
           onAgain: draw,
           onCustomise: showSetup,
-          onKinds: (p) => { active = p.length ? p : available.slice(); draw(); },
         });
       };
       draw();
