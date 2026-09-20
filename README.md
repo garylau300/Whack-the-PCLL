@@ -91,7 +91,9 @@ that one is *the conventions and rules for changing it*.
   questions across the four courses, and a new issue type is covered the
   moment it's authored. Wrong answers for the last two kinds are drawn from
   the same issue type, so you have to know which step or which case — not
-  merely which topic. Finish a round and you get a results card: the score,
+  merely which topic. Questions come one at a time, like a flashcard, with a
+  progress bar and a Next button — answering shows the explanation and waits
+  for you rather than skipping on. Finish a round and you get a results card: the score,
   which of the four kinds you were weak on, the issue types you missed as
   links straight back to them, and a tip or two on where in the notes to go
   next. Nothing is stored between rounds, so it only ever reports on the

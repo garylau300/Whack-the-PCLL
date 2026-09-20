@@ -1725,6 +1725,43 @@ summary::marker { color: var(--text-muted); }
 .quiz-kind-chip:focus-visible, .cloze-group-chip:focus-visible,
 .quiz-option:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 
+/* One question at a time: a progress bar carries the sense of position
+   that a visible list used to give for free. */
+.quiz-progress { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.quiz-progress-bar { flex: 1; height: 6px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.quiz-progress-fill {
+  display: block; height: 100%; border-radius: 999px; background: var(--accent-text);
+  transition: width 0.3s ease;
+}
+.quiz-progress-text { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.quiz-nav { display: flex; align-items: center; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.quiz-next {
+  cursor: pointer; font-family: inherit; font-weight: 700; font-size: 0.9rem;
+  padding: 10px 18px; border-radius: var(--radius-sm);
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, var(--surface));
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text);
+}
+.quiz-next:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 24%, var(--surface)); }
+.quiz-next:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.quiz-next:disabled { cursor: default; opacity: 0.5; }
+.quiz-nav-hint { font-size: 0.78rem; }
+.quiz-nav[hidden] { display: none; }
+
+/* Only in review, where the whole round is on screen at once and the cards
+   need numbering. While stepping through, the progress bar directly above
+   already says which question this is, and two readings of the same number
+   is the sort of chrome the issue index dropped its summaries to avoid. */
+.quiz-q-num { display: none; }
+.quiz-round.is-review .quiz-q-num {
+  display: inline-block;
+  margin-left: auto; font-size: 0.7rem; font-weight: 700; color: var(--text-muted);
+  background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 1px 8px;
+}
+/* The progress bar is a stepping control; in review it has nothing to say. */
+.quiz-round.is-review .quiz-progress { display: none; }
+
 .quiz-questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
 .quiz-q { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; background: var(--surface); }
 .quiz-q-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }

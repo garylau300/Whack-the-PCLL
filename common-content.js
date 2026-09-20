@@ -842,9 +842,10 @@
     const link = href
       ? `<a class="quiz-why-link" href="${escapeHtml(href)}">Open ${escapeHtml(q.answer.code9)} →</a>`
       : '';
-    return `<li class="quiz-q" data-idx="${i}">
+    return `<li class="quiz-q" data-idx="${i}"${i === 0 ? '' : ' hidden'}>
       <div class="quiz-q-head">
         <span class="quiz-kind">${escapeHtml(KIND_LABELS[q.kind] || q.kind)}</span>
+        <span class="quiz-q-num">${i + 1}</span>
         ${q.context ? `<span class="quiz-context">${escapeHtml(q.context)}</span>` : ''}
       </div>
       <p class="quiz-ask">${escapeHtml(q.ask)}</p>
@@ -970,8 +971,19 @@
       </div>
       <p class="quiz-intro muted">Questions are built from these notes — the fact patterns, the routes between issue types, the flowchart traps and the authorities tables.</p>
       ${chips ? `<div class="quiz-kinds">${chips}</div>` : ''}
+      <div class="quiz-progress">
+        <span class="quiz-progress-bar"><span class="quiz-progress-fill" style="width:${(100 / round.length).toFixed(2)}%"></span></span>
+        <span class="quiz-progress-text">1 / ${round.length}</span>
+      </div>
+      <!-- All questions are rendered, but only the current one is shown --
+           hidden rather than re-rendered, so the answered ones keep their
+           marked state and can all be unhidden at the end for review. -->
       <ol class="quiz-questions">${round.map((q, i) => quizQuestionHtml(q, i, o.hrefFor)).join('')}</ol>
-      <div class="quiz-actions"><button type="button" class="link-btn quiz-again">New round →</button></div>
+      <div class="quiz-nav">
+        <button type="button" class="quiz-next" disabled>Next →</button>
+        <span class="quiz-nav-hint muted">Pick an answer to continue</span>
+      </div>
+      <div class="quiz-actions"><button type="button" class="link-btn quiz-again">Start over →</button></div>
       <!-- Results, shown once the last question is answered. Same
            settings-panel/settings-card shell every other dialog on the site
            uses, so initDialog's focus trap and Escape handling apply here
@@ -1002,8 +1014,15 @@
     const score = round.querySelector('.quiz-score');
     let answered = 0;
     let right = 0;
-    const total = round.querySelectorAll('.quiz-q').length;
+    const cards = [...round.querySelectorAll('.quiz-q')];
+    const total = cards.length;
     const outcomes = [];
+    let current = 0;
+
+    const nextBtn = round.querySelector('.quiz-next');
+    const navHint = round.querySelector('.quiz-nav-hint');
+    const progressFill = round.querySelector('.quiz-progress-fill');
+    const progressText = round.querySelector('.quiz-progress-text');
 
     const panel = round.querySelector('[data-quiz-result]');
     const card = panel && panel.querySelector('.quiz-result-card');
@@ -1014,8 +1033,36 @@
       labelledBy: 'quizResultTitle',
     });
 
+    const isLast = () => current === total - 1;
+
+    function showQuestion(i) {
+      cards.forEach((c, n) => { c.hidden = n !== i; });
+      current = i;
+      const answered = cards[i].classList.contains('is-answered');
+      nextBtn.disabled = !answered;
+      nextBtn.textContent = isLast() ? 'See results →' : 'Next →';
+      navHint.textContent = answered ? '' : 'Pick an answer to continue';
+      progressFill.style.width = `${((i + 1) / total) * 100}%`;
+      progressText.textContent = `${i + 1} / ${total}`;
+    }
+
+    function advance() {
+      if (nextBtn.disabled) return;
+      if (isLast()) { showResults(); return; }
+      showQuestion(current + 1);
+      // Bring the new question up if the previous one pushed it out of view.
+      // Instant when the reader has asked for reduced motion.
+      const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      cards[current].scrollIntoView({ block: 'nearest', behavior: smooth ? 'smooth' : 'auto' });
+    }
+
     function showResults() {
       if (!dialog || !h.questions) return;
+      // Reviewing is the one time the whole round should be on screen at
+      // once, so "Review answers" has something to return to.
+      round.classList.add('is-review');
+      cards.forEach((c) => { c.hidden = false; });
+      round.querySelector('.quiz-nav').hidden = true;
       const res = quizResults(h.questions, outcomes);
       panel.querySelector('#quizResultTitle').textContent = quizVerdict(res.pct);
       panel.querySelector('.quiz-result-body').innerHTML = quizResultsHtml(res, h.hrefFor);
@@ -1032,6 +1079,8 @@
         return;
       }
       if (e.target.closest('.quiz-result-review')) { if (dialog) dialog.close(); return; }
+
+      if (e.target.closest('.quiz-next')) { advance(); return; }
 
       const again = e.target.closest('.quiz-again');
       if (again) { if (h.onAgain) h.onAgain(); return; }
@@ -1063,12 +1112,30 @@
       answered++;
       if (correct) right++;
       outcomes[Number(q.dataset.idx)] = correct;
-      score.textContent = `${right} / ${answered} correct${answered === total ? ' — round complete' : ''}`;
+      score.textContent = `${right} / ${answered} correct`;
 
-      // Let the last answer's own right/wrong styling land before the
-      // dialog covers it, so the round doesn't appear to skip a beat.
-      if (answered === total) setTimeout(showResults, 450);
+      // Advancing is always the reader's call — the explanation under the
+      // question is the most useful part of getting one wrong, and
+      // auto-advancing would scroll it away before it had been read.
+      nextBtn.disabled = false;
+      navHint.textContent = '';
+      nextBtn.focus();
     });
+
+    // Enter or the right arrow advances, which is the gesture this reads
+    // as once it is one card at a time. Ignored while the results dialog
+    // is open, since initDialog owns the keyboard there.
+    round.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== 'ArrowRight') return;
+      if (panel && panel.classList.contains('open')) return;
+      if (round.classList.contains('is-review')) return;
+      if (e.target.closest('.quiz-option') && e.key === 'Enter') return; // let the button take it
+      if (nextBtn.disabled) return;
+      e.preventDefault();
+      advance();
+    });
+
+    showQuestion(0);
   }
 
   // ---------------------------------------------------------------------

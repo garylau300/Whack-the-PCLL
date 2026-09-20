@@ -370,6 +370,20 @@ not what the code does.
     guards this with a per-kind coverage floor across sessions.
   - The caller resolves hrefs (`quiz.js` has the timetable, the content
     layer does not) — same division of labour as `examIssueListHtml`.
+  - **One question at a time, like a flashcard.** All of the round is
+    rendered up front but every card except the current one carries
+    `hidden`, so stepping is a visibility change rather than a re-render —
+    which is what lets the answered cards keep their marked state and all
+    be unhidden together at the end. Two rules:
+    - **Answering never auto-advances.** The explanation under a question
+      is the most useful part of getting it wrong, and advancing on its own
+      would scroll that away before it had been read. `Next` (or Enter /
+      right-arrow) is always the reader's own call, and on the last
+      question it reads "See results".
+    - **Finishing switches the round into `is-review`**, which unhides
+      every card, hides the stepper and the progress bar, and shows the
+      per-card number instead. That is what the results dialog's "Review
+      answers" returns you to.
   - **A finished round opens a results dialog** (`quizResults`,
     `quizResultsHtml`), wired through the shared `initDialog` like every
     other popup. It reports the score, a per-kind accuracy breakdown, the
