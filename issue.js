@@ -5,6 +5,7 @@
     ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
     issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml,
+    noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -138,10 +139,15 @@
     // sub-point), persisted per issue page. Only leaves are stored; every
     // parent's state is derived by wireFlowChecks from its descendants.
     const notesKey = issueNotesKey(code, key, issue.id);
-    $('issueBody').innerHTML = examIssueSectionsHtml(issue, {
-      triggers: examTriggerRoutesHtml(issue, data, code, details),
-    }, { checkable: true, checked: loadCheckedIds(notesKey) }) + examCrossRefsHtml(issue, data, code, details);
+    $('issueBody').innerHTML = noteClozeControlsHtml(loadClozeGroups())
+      + examIssueSectionsHtml(issue, {
+        triggers: examTriggerRoutesHtml(issue, data, code, details),
+      }, { checkable: true, checked: loadCheckedIds(notesKey) })
+      + examCrossRefsHtml(issue, data, code, details);
     wireFlowChecks($('issueBody'), () => loadCheckedIds(notesKey), (set) => saveCheckedIds(notesKey, set));
+    // Masking runs over the rendered notes, so it has to come after the
+    // body exists — and the bar lives inside the same container it masks.
+    wireNoteCloze($('issueBody'), $('issueBody'));
     renderNav(issueTypes, index, ev, foundDate, code, details, key);
 
     $('status').hidden = true;

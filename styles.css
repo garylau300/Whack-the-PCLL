@@ -1664,6 +1664,113 @@ summary::marker { color: var(--text-muted); }
 .legal-skill-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
 
 /* ---------------------------------------------------------------------------
+   Test Yourself — the derived multiple-choice round on quiz.html, and the
+   in-place clozing bar on issue.html. Both are built from the exam notes
+   rather than from authored quiz content, so every issue type gets them.
+   --------------------------------------------------------------------------- */
+.quiz-round { margin-top: 4px; }
+.quiz-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.quiz-head h3 { margin: 0; }
+.quiz-score {
+  font-size: 0.85rem; font-weight: 700; color: var(--accent-text);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border-radius: var(--radius-sm); padding: 3px 10px; white-space: nowrap;
+}
+.quiz-intro { font-size: 0.85rem; margin: 6px 0 10px; }
+.quiz-kinds { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+/* A filter chip is a real control, unlike the inert .tag-chip it borrows
+   its shape from, so it needs a pointer, a border and an off/on state. */
+.quiz-kind-chip, .cloze-group-chip {
+  cursor: pointer; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text-muted); font-family: inherit;
+}
+.quiz-kind-chip.is-on, .cloze-group-chip.is-on {
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text); border-color: color-mix(in srgb, var(--accent) 35%, var(--surface));
+}
+.quiz-kind-chip:focus-visible, .cloze-group-chip:focus-visible,
+.quiz-option:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
+.quiz-questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.quiz-q { border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; background: var(--surface); }
+.quiz-q-head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }
+.quiz-kind {
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.quiz-context { font-size: 0.72rem; color: var(--text-muted); font-weight: 700; }
+.quiz-ask { margin: 0 0 8px; font-weight: 700; font-size: 0.95rem; }
+.quiz-prompt {
+  margin: 0 0 12px; padding: 10px 12px; border-left: 3px solid var(--border);
+  background: var(--bg); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.95rem; line-height: 1.55;
+}
+.quiz-options { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.quiz-option {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface); color: var(--text); font-family: inherit;
+  font-size: 0.92rem; line-height: 1.5; padding: 9px 12px;
+}
+.quiz-option:hover:not(:disabled) { border-color: var(--accent-text); background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.quiz-option:disabled { cursor: default; }
+/* Right and wrong are never colour alone: the chosen answer also gains a
+   thicker border and a leading mark, so the state survives a monochrome
+   print and does not depend on distinguishing green from red. */
+.quiz-option.is-answer {
+  border-color: var(--ok, #2f855a); border-width: 2px;
+  background: color-mix(in srgb, var(--ok, #2f855a) 12%, var(--surface));
+}
+.quiz-option.is-chosen-wrong {
+  border-color: var(--now-line); border-width: 2px;
+  background: color-mix(in srgb, var(--now-line) 12%, var(--surface));
+}
+.quiz-option.is-answer::before { content: '✓ '; font-weight: 700; color: var(--ok, #2f855a); }
+.quiz-option.is-chosen-wrong::before { content: '✕ '; font-weight: 700; color: var(--now-line-text); }
+.quiz-why {
+  margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border);
+  font-size: 0.86rem; line-height: 1.55; display: grid; gap: 6px;
+}
+.quiz-why-note { color: var(--text); }
+.quiz-why-link { color: var(--accent-text); font-weight: 700; text-decoration: none; justify-self: start; }
+.quiz-why-link:hover, .quiz-why-link:focus-visible { text-decoration: underline; }
+.quiz-actions { margin-top: 18px; }
+
+/* The clozing bar on issue.html. Sticky under the topbar so the controls
+   stay reachable in a forty-row flowchart -- --topbar-h is measured, never
+   a literal (see trackTopbarHeight). */
+.note-cloze-bar {
+  position: sticky; top: var(--topbar-h, 64px); z-index: 5;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 8px 10px; margin-bottom: 16px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.note-cloze-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.note-cloze-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.note-cloze-bar .link-btn { margin-left: auto; }
+
+/* A masked span keeps its own box so hiding a rule does not reflow the
+   page around it; the text is made invisible rather than removed. */
+.cloze-mask {
+  cursor: pointer; border-radius: var(--radius-sm);
+  background: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--accent) 10%, var(--surface)),
+    color-mix(in srgb, var(--accent) 10%, var(--surface)) 6px,
+    color-mix(in srgb, var(--accent) 16%, var(--surface)) 6px,
+    color-mix(in srgb, var(--accent) 16%, var(--surface)) 12px);
+  color: transparent !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 25%, var(--surface));
+}
+.cloze-mask .cite { color: transparent !important; }
+.cloze-mask:hover { box-shadow: inset 0 0 0 1px var(--accent-text); }
+.cloze-mask:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.cloze-mask.is-revealed {
+  background: none; color: inherit !important; box-shadow: none; cursor: default;
+}
+.cloze-mask.is-revealed .cite { color: var(--cite-text) !important; }
+
+/* ---------------------------------------------------------------------------
    Print / "Save as PDF" (issue.html's print button, and Ctrl+P anywhere).
    There is no PDF library here and there should not be one: every browser's
    print dialog already offers "Save as PDF" as a destination, so the whole
@@ -1721,7 +1828,18 @@ summary::marker { color: var(--text-muted); }
   .footer,
   .issue-nav,
   .exam-index-filter,
+  .note-cloze-bar,
   .spinner { display: none !important; }
+
+  /* A printed page of blurred boxes records nothing, for the same reason a
+     printed checklist that dropped its ticks would. Whatever is masked on
+     screen prints as the text it hides. */
+  .cloze-mask {
+    background: none !important;
+    color: inherit !important;
+    box-shadow: none !important;
+  }
+  .cloze-mask .cite { color: var(--cite-text) !important; }
 
   .topbar {
     position: static;

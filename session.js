@@ -49,9 +49,15 @@
       : sessionFallbackHtml(ev, foundDate, weekNumber, dayName);
     wireSessionDetail(bodyEl, sessionDetail, code, ev);
 
+    // Exam-notes sessions author no cloze or flashcards, but their test is
+    // derived from the notes themselves (examQuestionBank), so they get the
+    // button too — with wording that says which one you are about to open.
     const studyLink = $('studyLink');
-    if (sessionDetail && (sessionDetail.cloze || sessionDetail.flashcards)) {
+    const hasQuiz = sessionDetail && (sessionDetail.cloze || sessionDetail.flashcards);
+    const hasExamNotes = !!(sessionDetail && sessionDetail.examNotes);
+    if (hasQuiz || hasExamNotes) {
       studyLink.href = quizHref(ev, foundDate);
+      studyLink.textContent = hasExamNotes && !hasQuiz ? 'Test yourself →' : 'Quiz & flashcards →';
       studyLink.hidden = false;
     } else {
       studyLink.hidden = true;

@@ -272,4 +272,86 @@ for (const [code, details] of Object.entries(COURSE_DETAILS)) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// N. The derived Test Yourself bank. Every question is built out of authored
+//    notes rather than authored questions, which is what keeps it honest --
+//    but it also means a courseDetails edit can silently starve or corrupt
+//    it: rename an authorities header and a whole question kind vanishes,
+//    cite one case twice in a table and a stem gains two right answers.
+//    Neither shows up as a broken page, so check it here.
+// ---------------------------------------------------------------------------
+const kindSessions = new Map(PCLL.QUIZ_KINDS.map((k) => [k, 0]));
+let bankSessions = 0;
+
+for (const [code, details] of Object.entries(COURSE_DETAILS)) {
+  const universe = PCLL.examIssueIndex(code, details);
+  for (const [sessionKey, session] of Object.entries(details.sessions || {})) {
+    if (!session.examNotes || !(session.examNotes.issueTypes || []).length) continue;
+    const where = `${code}/${sessionKey}`;
+    bankSessions++;
+
+    const bank = PCLL.examQuestionBank(code, details, sessionKey);
+    for (const k of PCLL.QUIZ_KINDS) {
+      if (bank.some((q) => q.kind === k)) kindSessions.set(k, kindSessions.get(k) + 1);
+    }
+    if (!bank.length) {
+      run.fail('empty question bank', where, 'an exam-notes session produced no questions — the Test Yourself page would be empty');
+      continue;
+    }
+    run.count('question banks');
+
+    // A stem with two different right answers is unanswerable as multiple
+    // choice. examQuestionBank drops those, so any that survive are a bug in
+    // the dropper rather than in the notes.
+    const byStem = new Map();
+    for (const q of bank) {
+      const stem = `${q.kind}${NUL}${q.prompt}`;
+      const answer = q.answerText || `${q.answer.sessionKey}/${q.answer.id}`;
+      if (!byStem.has(stem)) byStem.set(stem, new Set());
+      byStem.get(stem).add(answer);
+    }
+    for (const [stem, answers] of byStem) {
+      if (answers.size > 1) {
+        run.fail('ambiguous question', where, `"${stem.split(NUL)[1].slice(0, 60)}…" has ${answers.size} different right answers`);
+      }
+    }
+
+    // Rounds are randomised, so sample rather than reason about them.
+    for (let i = 0; i < 25; i++) {
+      for (const q of PCLL.examQuizRound(bank, { size: 12, universe })) {
+        run.count('questions sampled');
+        const correct = q.options.filter((o) => o.correct);
+        if (q.options.length !== 4) {
+          run.fail('option count', where, `a ${q.kind} question offered ${q.options.length} options, not 4`);
+        }
+        if (correct.length !== 1) {
+          run.fail('right answers', where, `a ${q.kind} question had ${correct.length} correct options`);
+        }
+        const texts = q.options.map((o) => o.text);
+        if (new Set(texts).size !== texts.length) {
+          run.fail('duplicate options', where, `a ${q.kind} question listed the same option twice`);
+        }
+        if (!q.prompt || !q.ask) run.fail('empty stem', where, `a ${q.kind} question has no prompt`);
+      }
+    }
+  }
+}
+
+// A whole question kind can go missing without any individual session
+// looking wrong — rename the "Authority" column in the tables and the
+// authority questions just stop being generated, quietly. The per-kind
+// coverage is the only thing that notices, so it gets a floor with real
+// headroom rather than an exact count that would churn on every new
+// session. (Today: spot/route/trap in all 12, authority in 11 — the
+// exception is a practice-scenario session whose tables aren't authority
+// tables at all.)
+const KIND_FLOOR = Math.max(1, Math.ceil(bankSessions * 0.6));
+for (const [kind, n] of kindSessions) {
+  if (n === 0) {
+    run.fail('question kind absent', kind, `no session in the whole corpus produces a "${kind}" question — the generator has stopped matching the notes`);
+  } else if (n < KIND_FLOOR) {
+    run.fail('question kind starved', kind, `only ${n} of ${bankSessions} sessions produce a "${kind}" question (expected at least ${KIND_FLOOR}) — a shape the generator relies on has probably drifted`);
+  }
+}
+
 run.done();

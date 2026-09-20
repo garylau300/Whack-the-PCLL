@@ -81,6 +81,22 @@ that one is *the conventions and rules for changing it*.
   `routes` says "if the facts look like *this*, you're on the wrong page, go
   here". Both resolve through the live timetable, and degrade to plain text
   rather than a dead link if a target moves.
+- **You can test yourself on any of it, and none of the questions were
+  written by hand.** A session's Test Yourself page builds a multiple-choice
+  round out of the notes themselves: a fact pattern and "which issue type is
+  this?", a `routes` entry and "which one actually deals with it?" (that one
+  comes free — a route is *already* authored as a near-miss, so the page it
+  sits on is a ready-made wrong answer), a flowchart step and "which mistake
+  loses marks here?", a case and "what does it establish?". Around 3,400
+  questions across the four courses, and a new issue type is covered the
+  moment it's authored. Wrong answers for the last two kinds are drawn from
+  the same issue type, so you have to know which step or which case — not
+  merely which topic.
+- The notes can also be **clozed in place**: on an issue page, hide the
+  rules, the checklist points, the traps, the model sentences or the case
+  names, and click any blank to reveal it. What's left is the prompt — the
+  step label stays when its rule goes, the authorities table keeps the
+  proposition and hides the case.
 - Two earlier formats are still supported alongside it: an interactive
   mindmap (`legalIssues`), used by three sessions that predate exam notes and
   deliberately left as they are, and a flat accordion (`fullNotes`), which
@@ -95,7 +111,7 @@ that one is *the conventions and rules for changing it*.
 | `timetable.html` | `app.js` | The full week-grid / day-view timetable, plus the settings panel for filtering electives |
 | `course.html` | `course.js` | One course: info, assessment, the course-wide issue-type roll-up, homework, every session across the programme, materials |
 | `session.html` | `session.js` | One session's own page — real and linkable, never a modal |
-| `quiz.html` | `quiz.js` | That session's cloze/flashcards, where authored |
+| `quiz.html` | `quiz.js` | Test Yourself — a multiple-choice round derived from that session's exam notes; falls back to authored cloze/flashcards for the older mindmap sessions |
 | `issue.html` | `issue.js` | One issue type's notes, with the checklist and a print button |
 
 Shared logic is split across three files that **must load in that order** —

@@ -330,7 +330,67 @@ not what the code does.
 - Quiz/flashcards for a session live on a dedicated `quiz.html` page (not
   inline on `session.html`), reached via the `.study-cta` button. They are
   optional: `session.js` hides the button when a session authors neither
-  `cloze` nor `flashcards`, so an exam-notes session can simply omit them.
+  `cloze` nor `flashcards` **nor `examNotes`** — an exam-notes session gets
+  the button too, labelled "Test yourself", because its questions are
+  derived (next bullet) rather than authored.
+- **Test Yourself questions are DERIVED from the notes, never authored.**
+  `examQuestionBank(code, details, sessionKey)` in `common-content.js`
+  builds ~3,400 multiple-choice questions across the corpus out of content
+  the issue types already carry. Same trade-off as `issueCode`, for the same
+  reason: a derived bank cannot drift out of step with the notes, a newly
+  authored issue type is covered the moment it lands, and — the one that
+  matters most here — nothing in the generator can invent course content,
+  so the no-fabrication rule is satisfied structurally rather than by
+  review. **Do not add an authored `questions` section to courseDetails.**
+  Four kinds, each from a different shape:
+  - `spot` — a `triggers.bullets` fact pattern; which issue type is it?
+  - `route` — a `triggers.routes` entry. These are the best questions in the
+    bank and cost nothing, because `routes` is *already* authored as "these
+    neighbouring facts mean you are on the WRONG page, and here is the right
+    one": the target is the answer and the page the route is authored on is
+    a deliberate distractor.
+  - `trap` — a flowchart step's `exam.trap`; which mistake loses marks here?
+  - `authority` — a row of an `authorities.table`; what does this establish?
+  - **A stem must have exactly ONE right answer, or it is dropped.**
+    `dropAmbiguous` removes any stem that resolves to two different answers.
+    This is not hypothetical: the same case is often cited on several rows
+    of one table for different propositions, which would make "what does
+    De Monsa establish?" unanswerable.
+  - **`trap` and `authority` distractors come from the stem's OWN issue
+    type**, backfilled from the session only when a short flowchart or a
+    two-row table cannot supply four options. Drawing them from across the
+    course makes a trivial question — only one option would be on topic at
+    all, so it can be picked without knowing the step or the case.
+  - **An `authorities.table` only qualifies when its columns really are
+    authority → effect**: three headers, the middle matching
+    `AUTH_SOURCE_COL` and the last `AUTH_EFFECT_COL`. Several tables are
+    Step / What is pleaded / Rule, with the authority in the *last* column,
+    and must not be read backwards. **Renaming an authorities column is
+    therefore a silent way to delete a whole question kind** — `verify-data.js`
+    guards this with a per-kind coverage floor across sessions.
+  - The caller resolves hrefs (`quiz.js` has the timetable, the content
+    layer does not) — same division of labour as `examIssueListHtml`.
+- **The notes can be clozed in place on the issue page.** A chip row
+  (`noteClozeControlsHtml`/`wireNoteCloze`) blanks a chosen kind of content
+  — Rules (`.exam-flow-detail`), Points, Traps, Model sentences,
+  Authorities — and any blank reveals on click. Four rules:
+  - **It is a pass over the already-rendered DOM, not a renderer option.**
+    So no renderer changes, no data changes, no new checkbox ids, and it
+    covers every issue type ever authored including future ones. The
+    Authorities group finds its cells by reading the rendered `<thead>` with
+    the same test `examQuestionBank` uses, rather than by a class the table
+    renderer would have to emit.
+  - **What stays visible has to be a usable prompt.** The step label
+    survives when its rule is hidden, the `TRAP` tag survives when the trap
+    is hidden, and the authorities table hides the *authority* column, not
+    the effect column — naming the case from the proposition is the
+    direction students actually lose marks on.
+  - **Click interception is capture-phase with `preventDefault()`.** A
+    masked flowchart point sits inside its `<label>`, so without this the
+    click that reveals it would also tick the checkbox.
+  - **Masked text prints revealed**, on the same reasoning as the ticks: a
+    printed page of hatched boxes records nothing. The chip choice persists
+    under `pcll.cloze`; the reveals are deliberately ephemeral.
 - **The issue-type index is ONE renderer: `examIssueListHtml(groups)` in
   `common-content.js`**, used by both the session page (`examNotesIndexHtml`)
   and the course-wide roll-up (`course.js`). It used to be two copies of the
@@ -600,6 +660,12 @@ not what the code does.
      (`common-core.js`) and the rendered markup (`common-content.js`) to
      agree — they walk the same tree in two files that can't call each
      other, so nothing but a check keeps them in step.
+     It also builds the derived Test Yourself bank for every exam-notes
+     session and samples rounds out of it, asserting four options, exactly
+     one right answer and no duplicates — plus a per-kind coverage floor
+     across sessions, which is the only thing that notices when a whole
+     question kind stops being generated (rename the "Authority" column in
+     the tables and the authority questions just quietly stop appearing).
    - `verify-pages.js` — page wiring. All six pages load the same scripts
      in the required order, every `courseDetails/*.js` on disk is on every
      page, every DOM id a page's scripts look up is declared by that page,

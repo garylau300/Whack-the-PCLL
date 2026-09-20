@@ -5,6 +5,8 @@
     ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref,
     findSessionInTimetable, flashcardSectionHtml, wireFlashcardSection,
     clozeSectionHtml, wireClozeSection,
+    examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex,
+    sessionEventsByKey, issueHref, QUIZ_KINDS,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -36,14 +38,22 @@
     $('courseLink').textContent = courseName ? `${code} · ${courseName}` : code;
     $('courseLink').href = `course.html?code=${encodeURIComponent(code)}`;
 
-    const heading = `${ev.no ? ev.no + ' — ' : ''}Quiz & Flashcards`;
+    const key = sessionKeyFor(ev.no);
+    const sessionDetail = details && details.sessions && key && details.sessions[key];
+    const bodyEl = $('quizBody');
+
+    // An exam-notes session authors no cloze or flashcards, so its test is
+    // DERIVED from the notes instead — see examQuestionBank. A session with
+    // both would show both; in practice the two formats don't overlap.
+    const bank = sessionDetail && sessionDetail.examNotes
+      ? examQuestionBank(code, details, key)
+      : [];
+
+    const heading = `${ev.no ? ev.no + ' — ' : ''}${bank.length ? 'Test Yourself' : 'Quiz & Flashcards'}`;
     document.title = `${heading} — Whack the PCLL`;
     $('quizTitle').textContent = heading;
 
-    const key = sessionKeyFor(ev.no);
-    const sessionDetail = details && details.sessions && key && details.sessions[key];
-
-    if (!sessionDetail || (!sessionDetail.cloze && !sessionDetail.flashcards)) {
+    if (!sessionDetail || (!bank.length && !sessionDetail.cloze && !sessionDetail.flashcards)) {
       section.hidden = true;
       $('status').hidden = false;
       $('status').className = 'status';
@@ -51,10 +61,32 @@
       return;
     }
 
-    const bodyEl = $('quizBody');
-    bodyEl.innerHTML = flashcardSectionHtml(sessionDetail.flashcards) + clozeSectionHtml(sessionDetail.cloze);
-    wireFlashcardSection(bodyEl);
-    wireClozeSection(bodyEl);
+    if (bank.length) {
+      // Only this page knows the live event, so it resolves the "open the
+      // issue" links — same division of labour as examIssueListHtml.
+      const eventsByKey = sessionEventsByKey(data, code);
+      const hrefFor = (entry) => {
+        const found = eventsByKey.get(entry.sessionKey);
+        return found ? issueHref(found.ev, found.dateIso, entry.id) : '';
+      };
+      const universe = examIssueIndex(code, details);
+      const available = QUIZ_KINDS.filter((k) => bank.some((q) => q.kind === k));
+      let active = available.slice();
+
+      const draw = () => {
+        const round = examQuizRound(bank, { size: 12, universe, kinds: active });
+        bodyEl.innerHTML = examQuizHtml(round, { hrefFor, kinds: available, active });
+        wireExamQuiz(bodyEl, {
+          onAgain: draw,
+          onKinds: (picked) => { active = picked.length ? picked : available.slice(); draw(); },
+        });
+      };
+      draw();
+    } else {
+      bodyEl.innerHTML = flashcardSectionHtml(sessionDetail.flashcards) + clozeSectionHtml(sessionDetail.cloze);
+      wireFlashcardSection(bodyEl);
+      wireClozeSection(bodyEl);
+    }
 
     $('status').hidden = true;
     section.hidden = false;

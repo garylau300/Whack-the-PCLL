@@ -12,7 +12,7 @@
 (() => {
   'use strict';
 
-  const { escapeHtml, citeHtml, noteCheckId } = window.PCLL;
+  const { escapeHtml, citeHtml, noteCheckId, issueCode } = window.PCLL;
 
   function listSection(heading, items) {
     if (!items || !items.length) return '';
@@ -569,9 +569,486 @@
     });
   }
 
+  // ---------------------------------------------------------------------
+  // Test Yourself: questions DERIVED from the exam notes, never authored.
+  //
+  // Same trade-off as issueCode: because every question is built out of
+  // content an issue type already carries, the bank cannot drift out of
+  // step with the notes, a newly authored issue is covered the moment it
+  // lands, and nothing here can invent course content -- which is what
+  // makes this safe under the no-fabrication rule. Four kinds:
+  //
+  //   spot      triggers.bullets   -> which issue type do these facts raise?
+  //   route     triggers.routes    -> the near-miss. `routes` is already
+  //                                   authored as "these neighbouring facts
+  //                                   mean you are on the WRONG page, and
+  //                                   here is the right one", so the home
+  //                                   issue is a deliberate distractor
+  //                                   rather than a random one.
+  //   trap      flowchart exam.trap-> which mistake loses marks at this step?
+  //   authority authorities.table  -> what does this case/provision establish?
+  //
+  // A question is only sound if its stem has exactly ONE right answer, so
+  // the bank drops any stem that resolves to two different answers (the
+  // same authority cited twice in one table for different propositions is
+  // the case that actually occurs).
+  // ---------------------------------------------------------------------
+
+  // An authorities table earns an `authority` question only when its middle
+  // column really is the authority and its last column really is what that
+  // authority does. Most tables follow Point / Authority / What it
+  // establishes, but a fair few are Step / What is pleaded / Rule -- where
+  // the authority is in the LAST column -- and those must not be read
+  // backwards. Anything that doesn't match is simply skipped.
+  const AUTH_SOURCE_COL = /^(authority|provision|source|provision or case|case|test)$/i;
+  const AUTH_EFFECT_COL = /establish|provide|decide|effect|outcome|position/i;
+
+  function examIssueIndex(code, details) {
+    const out = [];
+    const sessions = (details && details.sessions) || {};
+    Object.keys(sessions).forEach((sessionKey) => {
+      const notes = sessions[sessionKey].examNotes;
+      ((notes && notes.issueTypes) || []).forEach((issue, i) => {
+        out.push({
+          sessionKey,
+          id: issue.id,
+          issue,
+          title: issue.title,
+          code9: issueCode(code, details, sessionKey, i),
+        });
+      });
+    });
+    return out;
+  }
+
+  // Issue types this one already points at — its routes' targets and its
+  // crossRefs. They make the best wrong answers, being related enough to be
+  // tempting rather than obviously off-topic.
+  function relatedKeys(entry) {
+    const t = entry.issue.triggers || {};
+    const refs = [].concat(t.routes || [], entry.issue.crossRefs || []);
+    return refs.map((r) => r.session + '/' + r.issue);
+  }
+
+  function examQuestionBank(code, details, sessionKey) {
+    const universe = examIssueIndex(code, details);
+    const byRef = new Map(universe.map((e) => [e.sessionKey + '/' + e.id, e]));
+    const pool = sessionKey ? universe.filter((e) => e.sessionKey === sessionKey) : universe;
+    const qs = [];
+
+    pool.forEach((e) => {
+      const trig = e.issue.triggers || {};
+
+      (trig.bullets || []).forEach((b) => qs.push({
+        kind: 'spot',
+        ask: 'Which issue type do these facts raise?',
+        prompt: b,
+        answer: e,
+        related: relatedKeys(e),
+      }));
+
+      (trig.routes || []).forEach((r) => {
+        const target = byRef.get(r.session + '/' + r.issue);
+        // Same degrade rule as the rendered links: an unresolved ref is
+        // skipped rather than guessed at.
+        if (!target || target === e) return;
+        qs.push({
+          kind: 'route',
+          // Deliberately not "these facts": a `routes` entry's `when` is
+          // usually a fact pattern but is sometimes a framing ("The question
+          // is how to classify the interest"), and the stem has to read
+          // properly either way.
+          ask: 'Which issue type actually deals with this?',
+          prompt: r.when,
+          answer: target,
+          // The page the route is authored ON is the tempting wrong answer.
+          decoy: e,
+          related: relatedKeys(e),
+        });
+      });
+
+      const steps = (e.issue.answering && e.issue.answering.flowchart && e.issue.answering.flowchart.steps) || [];
+      steps.forEach((s) => {
+        if (!s.exam || !s.exam.trap) return;
+        qs.push({
+          kind: 'trap',
+          ask: 'At this step of the answering flowchart, which mistake loses marks?',
+          context: `${e.code9} — ${e.title}`,
+          prompt: s.label,
+          answerText: s.exam.trap,
+          answer: e,
+        });
+      });
+
+      const tbl = e.issue.authorities && e.issue.authorities.table;
+      if (tbl && tbl.headers && tbl.headers.length === 3
+          && AUTH_SOURCE_COL.test(String(tbl.headers[1]).trim())
+          && AUTH_EFFECT_COL.test(String(tbl.headers[2]))) {
+        (tbl.rows || []).forEach((row) => {
+          if (!row[1] || !row[2]) return;
+          qs.push({
+            kind: 'authority',
+            ask: 'What does this establish?',
+            context: `${e.code9} — ${e.title}`,
+            prompt: row[1],
+            answerText: row[2],
+            note: row[0],
+            answer: e,
+          });
+        });
+      }
+    });
+
+    return dropAmbiguous(qs);
+  }
+
+  function answerKeyOf(q) {
+    return q.answerText || (q.answer.sessionKey + '/' + q.answer.id);
+  }
+
+  // A stem that appears twice with two different answers cannot be asked as
+  // multiple choice, because both options would be right. Drop the whole
+  // group rather than picking one arbitrarily.
+  function dropAmbiguous(qs) {
+    const answers = new Map();
+    qs.forEach((q) => {
+      const stem = q.kind + '\u0000' + q.prompt;
+      if (!answers.has(stem)) answers.set(stem, new Set());
+      answers.get(stem).add(answerKeyOf(q));
+    });
+    const kept = new Set();
+    return qs.filter((q) => {
+      const stem = q.kind + '\u0000' + q.prompt;
+      if (answers.get(stem).size > 1) return false;
+      const dup = stem + '\u0000' + answerKeyOf(q);
+      if (kept.has(dup)) return false;
+      kept.add(dup);
+      return true;
+    });
+  }
+
+  function shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function issueOptionText(e) { return `${e.code9} — ${e.title}`; }
+
+  // Wrong answers, best first: the route's own decoy, then issue types this
+  // one cross-refers to, then its session neighbours, then anything. A
+  // distractor drawn from the far side of the course is easy to eliminate
+  // and teaches nothing.
+  function issueDistractors(q, universe, want) {
+    const taken = new Set([q.answer.sessionKey + '/' + q.answer.id]);
+    const out = [];
+    const push = (e) => {
+      if (!e) return;
+      const k = e.sessionKey + '/' + e.id;
+      if (taken.has(k) || out.length >= want) return;
+      taken.add(k);
+      out.push(e);
+    };
+    push(q.decoy);
+    shuffled(q.related || []).forEach((k) => push(universe.find((e) => e.sessionKey + '/' + e.id === k)));
+    shuffled(universe.filter((e) => e.sessionKey === q.answer.sessionKey)).forEach(push);
+    shuffled(universe).forEach(push);
+    return out;
+  }
+
+  // For trap/authority the options are other answer TEXT, and they come from
+  // the stem's OWN issue type first. Drawing them from elsewhere in the
+  // course makes an easy question: only one option would be about the topic
+  // at all, so it can be picked without knowing the step or the case. Within
+  // one issue the reader has to know which step the trap belongs to, or
+  // which of four propositions this authority is cited for — and the stems
+  // are already unique within the issue, because dropAmbiguous removed any
+  // that were not.
+  function textDistractors(q, bank, want) {
+    const mine = q.answer.sessionKey + '/' + q.answer.id;
+    const seen = new Set([q.answerText]);
+    const pick = [];
+    const consider = (o) => {
+      if (pick.length >= want || o.kind !== q.kind || !o.answerText) return;
+      if (seen.has(o.answerText)) return;
+      seen.add(o.answerText);
+      pick.push(o.answerText);
+    };
+    const sameIssue = bank.filter((o) => o.answer.sessionKey + '/' + o.answer.id === mine);
+    shuffled(sameIssue).forEach(consider);
+    // A short flowchart or a two-row table can't fill four options on its
+    // own, so the rest of the session backfills.
+    shuffled(bank).forEach(consider);
+    return pick;
+  }
+
+  // One round: `size` questions spread across whichever kinds are available
+  // (round-robin, so a session with 200 trigger bullets and 8 authority rows
+  // still asks some of each), each with its options already shuffled.
+  function examQuizRound(bank, opts) {
+    const o = opts || {};
+    const size = o.size || 12;
+    const kinds = (o.kinds && o.kinds.length) ? o.kinds : null;
+    const src = bank.filter((q) => !kinds || kinds.includes(q.kind));
+    if (!src.length) return [];
+
+    const byKind = new Map();
+    shuffled(src).forEach((q) => {
+      if (!byKind.has(q.kind)) byKind.set(q.kind, []);
+      byKind.get(q.kind).push(q);
+    });
+    const lists = [...byKind.values()];
+    const chosen = [];
+    for (let i = 0; chosen.length < size && lists.some((l) => l.length); i++) {
+      lists.forEach((l) => { if (chosen.length < size && l.length) chosen.push(l.pop()); });
+    }
+
+    const universe = o.universe || [];
+    return shuffled(chosen).map((q) => {
+      const options = q.answerText
+        ? [{ text: q.answerText, correct: true }]
+          .concat(textDistractors(q, bank, 3).map((t) => ({ text: t, correct: false })))
+        : [{ text: issueOptionText(q.answer), correct: true, entry: q.answer }]
+          .concat(issueDistractors(q, universe, 3).map((e) => ({ text: issueOptionText(e), correct: false, entry: e })));
+      return Object.assign({}, q, { options: shuffled(options) });
+    });
+  }
+
+  // Fixed order, so the filter chips don't reshuffle between rounds.
+  const QUIZ_KINDS = ['spot', 'route', 'trap', 'authority'];
+
+  const KIND_LABELS = {
+    spot: 'Issue spotting',
+    route: 'Near misses',
+    trap: 'Step traps',
+    authority: 'Authorities',
+  };
+
+  function quizQuestionHtml(q, i, hrefFor) {
+    const href = hrefFor ? hrefFor(q.answer) : '';
+    const why = q.kind === 'authority' && q.note ? `<span class="quiz-why-note">${citeHtml(q.note)}</span>` : '';
+    const summary = (q.kind === 'spot' || q.kind === 'route') && q.answer.issue.summary
+      ? `<span class="quiz-why-note">${citeHtml(q.answer.issue.summary)}</span>` : '';
+    const link = href
+      ? `<a class="quiz-why-link" href="${escapeHtml(href)}">Open ${escapeHtml(q.answer.code9)} →</a>`
+      : '';
+    return `<li class="quiz-q" data-idx="${i}">
+      <div class="quiz-q-head">
+        <span class="quiz-kind">${escapeHtml(KIND_LABELS[q.kind] || q.kind)}</span>
+        ${q.context ? `<span class="quiz-context">${escapeHtml(q.context)}</span>` : ''}
+      </div>
+      <p class="quiz-ask">${escapeHtml(q.ask)}</p>
+      <blockquote class="quiz-prompt">${citeHtml(q.prompt)}</blockquote>
+      <ul class="quiz-options">${q.options.map((o, j) => `<li><button type="button" class="quiz-option" data-correct="${o.correct ? '1' : '0'}" data-opt="${j}">${citeHtml(o.text)}</button></li>`).join('')}</ul>
+      <div class="quiz-why" hidden>${summary}${why}${link}</div>
+    </li>`;
+  }
+
+  function examQuizHtml(round, opts) {
+    const o = opts || {};
+    if (!round.length) {
+      return '<div class="quiz-round"><p class="muted">No questions could be built from these notes yet.</p></div>';
+    }
+    const chips = (o.kinds || []).map((k) => `<button type="button" class="tag-chip quiz-kind-chip${o.active && o.active.includes(k) ? ' is-on' : ''}" data-kind="${escapeHtml(k)}">${escapeHtml(KIND_LABELS[k] || k)}</button>`).join('');
+    return `<div class="quiz-round">
+      <div class="quiz-head">
+        <h3>Test Yourself</h3>
+        <span class="quiz-score" role="status">0 answered</span>
+      </div>
+      <p class="quiz-intro muted">Questions are built from these notes — the fact patterns, the routes between issue types, the flowchart traps and the authorities tables.</p>
+      ${chips ? `<div class="quiz-kinds">${chips}</div>` : ''}
+      <ol class="quiz-questions">${round.map((q, i) => quizQuestionHtml(q, i, o.hrefFor)).join('')}</ol>
+      <div class="quiz-actions"><button type="button" class="link-btn quiz-again">New round →</button></div>
+    </div>`;
+  }
+
+  // Delegated: first click on a question locks it in, marks right/wrong,
+  // reveals the explanation and updates the score. `onAgain`/`onKinds` let
+  // the page rebuild the round, since only it can resolve hrefs.
+  function wireExamQuiz(container, handlers) {
+    const round = container.querySelector('.quiz-round');
+    if (!round) return;
+    const h = handlers || {};
+    const score = round.querySelector('.quiz-score');
+    let answered = 0;
+    let right = 0;
+    const total = round.querySelectorAll('.quiz-q').length;
+
+    round.addEventListener('click', (e) => {
+      const again = e.target.closest('.quiz-again');
+      if (again) { if (h.onAgain) h.onAgain(); return; }
+
+      const chip = e.target.closest('.quiz-kind-chip');
+      if (chip) {
+        chip.classList.toggle('is-on');
+        if (h.onKinds) {
+          h.onKinds([...round.querySelectorAll('.quiz-kind-chip.is-on')].map((c) => c.dataset.kind));
+        }
+        return;
+      }
+
+      const btn = e.target.closest('.quiz-option');
+      if (!btn) return;
+      const q = btn.closest('.quiz-q');
+      if (q.classList.contains('is-answered')) return;
+
+      q.classList.add('is-answered');
+      const correct = btn.dataset.correct === '1';
+      q.classList.add(correct ? 'is-right' : 'is-wrong');
+      btn.classList.add(correct ? 'is-chosen-right' : 'is-chosen-wrong');
+      q.querySelectorAll('.quiz-option').forEach((b) => {
+        b.disabled = true;
+        if (b.dataset.correct === '1') b.classList.add('is-answer');
+      });
+      q.querySelector('.quiz-why').hidden = false;
+
+      answered++;
+      if (correct) right++;
+      score.textContent = `${right} / ${answered} correct${answered === total ? ` — round complete` : ''}`;
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Clozing the notes in place: blank out a chosen kind of content on the
+  // issue page and click any blank to reveal it. Implemented as a pass over
+  // the ALREADY-RENDERED DOM rather than as a renderer option, so no
+  // renderer, no data shape and no checkbox id changes — which also means
+  // it covers every issue type ever authored, including future ones.
+  //
+  // The groups are chosen so that what stays visible is a usable prompt:
+  // the step label survives when its rule is hidden, the Point column of an
+  // authorities table survives when the case name is hidden, and so on.
+  // ---------------------------------------------------------------------
+  const CLOZE_GROUPS = [
+    { key: 'rules', label: 'Rules', sel: '.exam-flow-detail' },
+    { key: 'points', label: 'Points', sel: '.exam-flow-points .exam-flow-check > span, .exam-flow-subpoints .exam-flow-check > span' },
+    { key: 'traps', label: 'Traps', sel: '.exam-coach-line--trap' },
+    { key: 'write', label: 'Model sentences', sel: '.exam-coach-line--write' },
+    // The authority column only, and found by reading the rendered header
+    // rather than by a class, so the table renderer needs no change and the
+    // same authority/provision/source test as examQuestionBank decides which
+    // tables qualify. Hiding what it establishes would leave the case name
+    // as the prompt, which is the easy direction; naming the case from the
+    // proposition is what actually gets dropped in exams.
+    {
+      key: 'authorities',
+      label: 'Authorities',
+      find(scope) {
+        const out = [];
+        scope.querySelectorAll('table.session-table').forEach((t) => {
+          const heads = [...t.querySelectorAll('thead th')].map((h) => h.textContent.trim());
+          if (heads.length !== 3 || !AUTH_SOURCE_COL.test(heads[1]) || !AUTH_EFFECT_COL.test(heads[2])) return;
+          t.querySelectorAll('tbody tr').forEach((tr) => {
+            const cell = tr.children[1];
+            if (cell) out.push(cell);
+          });
+        });
+        return out;
+      },
+    },
+  ];
+
+  const CLOZE_KEY = 'pcll.cloze';
+
+  function loadClozeGroups() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(CLOZE_KEY) || '[]');
+      return new Set(Array.isArray(raw) ? raw : []);
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveClozeGroups(set) {
+    try { localStorage.setItem(CLOZE_KEY, JSON.stringify([...set])); } catch { /* no-op */ }
+  }
+
+  function noteClozeControlsHtml(active) {
+    const on = active || new Set();
+    const chips = CLOZE_GROUPS.map((g) => `<button type="button" class="tag-chip cloze-group-chip${on.has(g.key) ? ' is-on' : ''}" data-cloze="${g.key}" aria-pressed="${on.has(g.key) ? 'true' : 'false'}">${escapeHtml(g.label)}</button>`).join('');
+    return `<div class="note-cloze-bar">
+      <span class="note-cloze-label">Hide to test yourself</span>
+      <div class="note-cloze-chips">${chips}</div>
+      <button type="button" class="link-btn note-cloze-reveal">Reveal all</button>
+    </div>`;
+  }
+
+  // `scope` is the rendered notes container. Masking is applied and removed
+  // per group, so turning a chip off restores exactly what it hid.
+  function wireNoteCloze(container, scope) {
+    const bar = container.querySelector('.note-cloze-bar');
+    if (!bar || !scope) return;
+    const active = loadClozeGroups();
+
+    const apply = (g, on) => {
+      const nodes = g.find ? g.find(scope) : scope.querySelectorAll(g.sel);
+      nodes.forEach((el) => {
+        if (on) {
+          if (el.classList.contains('cloze-mask')) return;
+          el.classList.add('cloze-mask');
+          el.setAttribute('role', 'button');
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('aria-label', 'Hidden — reveal');
+        } else {
+          el.classList.remove('cloze-mask', 'is-revealed');
+          el.removeAttribute('role');
+          el.removeAttribute('tabindex');
+          el.removeAttribute('aria-label');
+        }
+      });
+    };
+
+    const syncAll = () => CLOZE_GROUPS.forEach((g) => apply(g, active.has(g.key)));
+    syncAll();
+
+    bar.addEventListener('click', (e) => {
+      const reveal = e.target.closest('.note-cloze-reveal');
+      if (reveal) {
+        scope.querySelectorAll('.cloze-mask').forEach((el) => el.classList.add('is-revealed'));
+        return;
+      }
+      const chip = e.target.closest('.cloze-group-chip');
+      if (!chip) return;
+      const g = CLOZE_GROUPS.find((x) => x.key === chip.dataset.cloze);
+      if (!g) return;
+      const on = !active.has(g.key);
+      if (on) active.add(g.key); else active.delete(g.key);
+      chip.classList.toggle('is-on', on);
+      chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+      saveClozeGroups(active);
+      apply(g, on);
+    });
+
+    // CAPTURE phase, and preventDefault: a masked flowchart point sits
+    // inside its <label>, so without this the click that reveals it would
+    // also tick the checkbox.
+    scope.addEventListener('click', (e) => {
+      const mask = e.target.closest('.cloze-mask');
+      if (!mask || mask.classList.contains('is-revealed')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      mask.classList.add('is-revealed');
+    }, true);
+
+    scope.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const mask = e.target.closest('.cloze-mask');
+      if (!mask || mask.classList.contains('is-revealed')) return;
+      e.preventDefault();
+      mask.classList.add('is-revealed');
+    });
+
+    return syncAll;
+  }
+
   window.PCLL = Object.assign(window.PCLL || {}, {
     listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml,
     examIssueSectionsHtml, wireFlowChecks, examIssueListHtml, wireIssueFilter,
     clozeSectionHtml, wireClozeSection, flashcardSectionHtml, wireFlashcardSection,
+    examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex, QUIZ_KINDS,
+    noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
   });
 })();
