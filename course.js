@@ -7,11 +7,18 @@
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
     COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, quizHref, sessionEventsByKey, issueCode,
     issueProgress, examIssueListHtml, wireIssueFilter,
+    loadCourseDetails, wireSiteSearch,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
   const code = (new URLSearchParams(location.search).get('code') || '').trim().toUpperCase();
-  const details = (window.COURSE_DETAILS && window.COURSE_DETAILS[code]) || null;
+  // The notes for this one course, fetched on their own rather than shipped
+  // with the page. Started here at module scope so the request goes out in
+  // parallel with the timetable's, and awaited in load() before anything
+  // renders. Resolves to null for a course with no authored notes, which is
+  // the case every dead-end message below already handles.
+  let details = null;
+  const detailsReady = loadCourseDetails(code);
 
   let homeworkChecklistWired = false;
 
@@ -227,9 +234,13 @@
       $('status').textContent = 'No course specified.';
       return;
     }
+    details = await detailsReady;
     await loadTimetable({
       onData: (data, isStale) => {
         renderCourse(data);
+        // Search needs the live timetable to turn a hit into a link, so it
+        // is wired here rather than at load. It no-ops on a repeat call.
+        wireSiteSearch(data);
         setSyncStatus(isStale
           ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
           : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);

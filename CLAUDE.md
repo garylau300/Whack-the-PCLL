@@ -41,12 +41,44 @@ not what the code does.
     (core β†’ content β†’ session, never the reverse) if it needs to call
     something from another file.
 - `courseDetails/PCLL8010.js`, `PCLL8020.js`, `PCLL8030.js`, `PCLL8050.js` —
-  one file per course, each extends the same `window.COURSE_DETAILS`. Adding
-  a new course means a new file under `courseDetails/` plus a new `<script>`
-  tag on every HTML page that currently loads the others — **six pages**:
-  course.html, index.html, issue.html, quiz.html, session.html,
-  timetable.html. It also needs a `codePrefix` (CIV / CCT / PRP / CRM so far)
-  and, unless one already exists, a `COURSE_COLORS` hue.
+  one file per course, each extends the same `window.COURSE_DETAILS`.
+  **No page carries a `<script>` for one**: they are fetched at runtime, one
+  course at a time, by `loadCourseDetails` (see the bullet below). Adding a
+  course means a new file under `courseDetails/`, `npm run build:index`, a
+  `codePrefix` (CIV / CCT / PRP / CRM so far) and, unless one already
+  exists, a `COURSE_COLORS` hue — the six `<script>` lists that used to need
+  editing no longer exist, and `verify-pages.js` now fails a page that puts
+  one back.
+- **The notes are fetched per course, never shipped with the page.** Every
+  page used to load all four course files, so opening the timetable
+  downloaded and parsed **2,540KB** of exam notes (560KB gzipped) to read the
+  **2.3KB** of deadlines it uses — 1,088x more than needed, synchronously, in
+  `<head>`, before anything rendered. Two generated files fix this and are
+  **committed, not built at deploy time**, so the site is still a zero-build
+  static clone:
+  - `courseIndex.js` (826 bytes gzipped) — name, `codePrefix`, `deadlines`
+    and `examSessions` per course. Loaded by all six pages. It is what lets
+    the dashboard show deadlines, the timetable name a course, and quiz.html's
+    setup screen offer every course and session *before* any notes exist.
+  - `searchIndex.js` (47KB gzipped) — one row per issue type. Deliberately
+    **not** on any page: `loadSearchIndex` fetches it the first time search is
+    opened, because putting it on every page would give back a chunk of what
+    lazy-loading just saved.
+  - Both are derived by `buildIndexes` in `scripts/verify-lib.js`, which
+    `npm run build:index` writes out and `verify-data.js` re-derives and
+    compares **byte for byte**. A stale index is the obvious failure mode here
+    — it does not throw, does not show up in a browser and is invisible in
+    review — so it fails CI instead.
+  - `loadCourseDetails(code)` (`common-core.js`) injects the `<script>`, and
+    `loadScriptOnce` guarantees one request and one shared promise per URL.
+    Two rules: **a page that renders notes must await it before reading
+    `window.COURSE_DETAILS`** (course.js/session.js/issue.js start the fetch
+    at module scope and await it in `load()`, so it races the timetable
+    rather than following it); and it **resolves, never rejects** — a course
+    with no authored notes is a normal state on this site, so a miss is a
+    `null` the caller already knows how to render, not an error path that
+    would blank an otherwise fine page. It also refuses any code that is not
+    in `courseIndex.js`, so a bad param cannot inject a script URL.
 - **PCLL8050 is only half of what the Faculty calls the "Criminal Litigation
   Core Practice Course".** That course is three subjects: Criminal Procedure
   and Criminal Litigation are taught and assessed together as one 50%
@@ -496,6 +528,32 @@ not what the code does.
     scrolling back up for them is rare. The only things still pinned on any
     page are the topbar (page chrome) and the timetable's own `.week-nav`
     and `.day-col-head`.
+- **Site-wide search is the way into 126 issue types.** `wireSiteSearch`
+  (`common-session.js`) puts a magnifier in every topbar and opens on `/` or
+  Ctrl/Cmd-K. It lives in the session layer because a result is only useful
+  as a link and `issueHref` needs the live timetable. Five rules:
+  - **It searches the FACT PATTERNS, not just titles.** The index carries
+    each issue type's `triggers.bullets` alongside its title and summary,
+    which is the whole point: you have a problem question in front of you,
+    you type what you can see in it — "equitable mortgage missing originals"
+    — and the issue type whose triggers describe those facts comes back.
+    Searching titles alone only ever finds what you could already name,
+    which is not the case you need help in.
+  - **Ranked, and every term must match.** Exact code > code prefix > title
+    prefix > title > anywhere in the facts; terms are ANDed, so adding a word
+    always narrows. Don't make it fuzzy — a near-miss on a statutory
+    reference is worse than no result.
+  - **A result with no timetable event is dropped, not shown dead.** Same
+    degrade-or-drop rule `crossRefs` follows.
+  - **It reuses `examIssueListHtml`** (with `filterFrom: Infinity` to
+    suppress the nested filter box), so search results and the issue index
+    can never drift into two different row designs. Results carry
+    `total: 0`, which renders no progress meter — correct, because progress
+    lives in the course file and search must not fetch all four to answer.
+  - **The panel has no `hidden` attribute.** `initDialog` toggles an `open`
+    class and nothing else, and `hidden` outranks the class's visibility
+    rules — the panel opens and stays invisible. The closed state is CSS, as
+    it is for the settings sheet. (This cost a test cycle.)
 - **Read-aloud is a DOM pass, and the hard part is the citations.**
   `wireNoteSpeech` (`common-content.js`) injects a play button on every
   `.exam-section > h3` and every `.exam-flow-step` on the issue page, and
@@ -803,7 +861,9 @@ not what the code does.
 ## Verification workflow — do this before every commit
 
 1. `npm run check` (syntax-checks every tracked `.js` file),
-   `npm run lint`, and `npm test`.
+   `npm run lint`, and `npm test`. If you touched `courseDetails/`, run
+   `npm run build:index` first — `npm test` fails on a stale index and tells
+   you so, but running it first saves the round trip.
 2. `npm test` is four plain Node programs under `scripts/` — no test
    framework, same zero-build reasoning as the site itself — sharing one
    harness, `verify-lib.js` (`createRun` for the pass/fail reporting,

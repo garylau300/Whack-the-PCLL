@@ -105,6 +105,18 @@ that one is *the conventions and rules for changing it*.
   links straight back to them, and a tip or two on where in the notes to go
   next. Nothing is stored between rounds, so it only ever reports on the
   round you just did.
+- **You can search all of it from anywhere.** A magnifier in the topbar, or
+  `/`, opens a search over every issue type in every course. It matches the
+  derived code, the title, and — the part that matters — the *fact patterns*
+  in each issue type's triggers, so you can type what you can see in a
+  problem question rather than having to already know what the issue is
+  called. The index is generated from the notes, so a new issue type is
+  findable the moment it lands.
+- **A page only downloads the course it is showing.** The dashboard and the
+  timetable download none of the notes at all — they read a 826-byte index of
+  course names and deadlines. Opening a course, session or issue page fetches
+  that one course. Before this, every page loaded all four course files:
+  2,540KB of exam notes, synchronously, to draw a calendar.
 - The notes can also be **clozed in place**: on an issue page, hide the
   rules, the checklist points, the traps, the model sentences or the case
   names, and click any blank to reveal it. What's left is the prompt — the
@@ -179,25 +191,28 @@ npm run dev     # site + API at http://localhost:3000
 ## Checks
 
 ```
-npm run check   # node --check every tracked .js
-npm run lint    # eslint
-npm test        # the four verify-*.js scripts below
+npm run check        # node --check every tracked .js
+npm run lint         # eslint
+npm test             # the four verify-*.js scripts below
+npm run build:index  # regenerate courseIndex.js / searchIndex.js after editing notes
 ```
 
 `npm test` is four plain Node programs under `scripts/` — no test framework,
 same reasoning as the site having no bundler. They catch the cross-file
 mistakes that produce no error anywhere:
 
-- **`verify-data.js`** — a note section whose key the renderer doesn't know
+- **`verify-data.js`** — that the two committed index files still match the
+  notes they summarise (a stale one doesn't throw and isn't visible in
+  review); a note section whose key the renderer doesn't know
   (silently dropped), a `crossRefs` entry pointing at a renamed issue id
   (silently degraded to prose), two identically worded rows under one step
   (silently sharing one checkbox). It also derives every checkbox id a third
   time, from the data, and requires `flowLeafIds` and the rendered markup to
   agree — they walk the same tree in two files that can't call each other.
 - **`verify-pages.js`** — all six pages load the same scripts in the required
-  order, every `courseDetails/*.js` is on every page, every DOM id a script
-  reaches for is declared by that page, `COURSE_COLORS` matches the API's
-  course list.
+  order, *no* page ships a course file and every page ships `courseIndex.js`,
+  every course on disk is in that index, every DOM id a script reaches for is
+  declared by that page, `COURSE_COLORS` matches the API's course list.
 - **`verify-parser.js`** — `lib/parseTimetable.js` and `lib/xlsxLite.js`
   against hand-built fixtures.
 - **`verify-styles.js`** — brace balance, and two motion rules: the

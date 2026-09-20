@@ -10,7 +10,7 @@
 // id degrades to plain text. That is exactly what needs a machine to notice.
 
 const path = require('path');
-const { createRun, loadSite, walk } = require('./verify-lib');
+const { createRun, loadSite, walk, buildIndexes } = require('./verify-lib');
 
 const ROOT = path.join(__dirname, '..');
 const { PCLL, COURSE_DETAILS } = loadSite(ROOT);
@@ -351,6 +351,34 @@ for (const [kind, n] of kindSessions) {
     run.fail('question kind absent', kind, `no session in the whole corpus produces a "${kind}" question — the generator has stopped matching the notes`);
   } else if (n < KIND_FLOOR) {
     run.fail('question kind starved', kind, `only ${n} of ${bankSessions} sessions produce a "${kind}" question (expected at least ${KIND_FLOOR}) — a shape the generator relies on has probably drifted`);
+  }
+}
+
+// ---------------------------------------------------------------------
+// The two generated index files must still match the notes they summarise.
+//
+// Both are committed rather than built at deploy time, which keeps the site
+// a zero-build static clone — and makes staleness the obvious failure mode.
+// A stale courseIndex.js means a deadline that has moved still shows its old
+// date on the dashboard; a stale searchIndex.js means search returns a
+// renamed issue type and links to a page that no longer exists. Neither
+// throws, neither shows up in a browser, and both are invisible in review.
+//
+// Compared byte for byte against a fresh derivation, so the fix is always
+// the same one line.
+// ---------------------------------------------------------------------
+{
+  const fs = require('fs');
+  const path = require('path');
+  const fresh = buildIndexes(global.window);
+  for (const [file, want] of [['courseIndex.js', fresh.courseIndexJs], ['searchIndex.js', fresh.searchIndexJs]]) {
+    run.count('generated indexes');
+    const target = path.join(__dirname, '..', file);
+    const have = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : '';
+    if (have !== want) {
+      run.fail('stale generated index', file,
+        have ? 'no longer matches courseDetails — run `npm run build:index`' : 'is missing — run `npm run build:index`');
+    }
   }
 }
 

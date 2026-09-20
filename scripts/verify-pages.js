@@ -15,12 +15,16 @@ const { createRun, loadSite } = require('./verify-lib');
 const ROOT = path.join(__dirname, '..');
 const run = createRun('page wiring');
 
-// Every page that renders course content loads the same shared scripts in
-// the same order, then its own entry point last. Adding a course means
-// adding a <script> to all of them — the bug this catches is adding it to
-// five and forgetting the sixth, which leaves that page silently missing a
-// course.
+// Every page loads the same shared scripts in the same order, then the
+// generated course index, then its own entry point last.
+//
+// Adding a course no longer means editing six <script> lists: the notes are
+// fetched per course at runtime, so a new course file is picked up by
+// `npm run build:index` and nothing else. What these checks now defend is
+// the other direction — that no page quietly puts the corpus back on the
+// critical path.
 const SHARED = ['common-core.js', 'common-content.js', 'common-session.js'];
+const INDEX_SCRIPT = 'courseIndex.js';
 const PAGES = {
   'index.html': 'dashboard.js',
   'timetable.html': 'app.js',
@@ -30,10 +34,10 @@ const PAGES = {
   'issue.html': 'issue.js',
 };
 
-const courseFiles = fs.readdirSync(path.join(ROOT, 'courseDetails'))
+const courseCodes = fs.readdirSync(path.join(ROOT, 'courseDetails'))
   .filter((f) => f.endsWith('.js'))
-  .sort()
-  .map((f) => `courseDetails/${f}`);
+  .map((f) => f.replace(/\.js$/, ''))
+  .sort();
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 
@@ -50,18 +54,25 @@ for (const [page, entry] of Object.entries(PAGES)) {
     run.fail('shared script order', page, 'common-core -> common-content -> common-session is the required load order');
   }
 
-  // 2. Every courseDetails file on disk is loaded by every page.
-  for (const cf of courseFiles) {
-    if (!scripts.includes(cf)) {
-      run.fail('missing course script', page, `does not load ${cf} — that course is invisible on this page`);
-    } else if (sharedPos[2] !== -1 && scripts.indexOf(cf) < sharedPos[2]) {
-      run.fail('course script order', page, `${cf} loads before common-session.js`);
+  // 2. No page ships the notes, and every page ships the index.
+  //
+  //    This inverts the rule it replaces ("every course file is on every
+  //    page"). That rule was what made the timetable download 2,540KB of
+  //    exam notes to read 2.3KB of deadlines; the notes are now fetched per
+  //    course by loadCourseDetails, so a <script> per course is no longer a
+  //    completeness requirement but a performance bug. Both halves matter:
+  //    without courseIndex.js a page has no deadlines and no course names,
+  //    and with a courseDetails <script> it is back to shipping the corpus.
+  for (const s of scripts) {
+    if (s.startsWith('courseDetails/')) {
+      run.fail('course script on a page', page,
+        `loads ${s} — the notes are fetched per course by loadCourseDetails; pages carry courseIndex.js only`);
     }
   }
-  for (const s of scripts) {
-    if (s.startsWith('courseDetails/') && !courseFiles.includes(s)) {
-      run.fail('stale course script', page, `loads ${s}, which is not in courseDetails/`);
-    }
+  if (!scripts.includes(INDEX_SCRIPT)) {
+    run.fail('missing index script', page, `does not load ${INDEX_SCRIPT} — no deadlines and no course names`);
+  } else if (sharedPos[2] !== -1 && scripts.indexOf(INDEX_SCRIPT) < sharedPos[2]) {
+    run.fail('index script order', page, `${INDEX_SCRIPT} loads before common-session.js`);
   }
 
   // 3. The page's own entry point loads last.
@@ -82,6 +93,24 @@ for (const [page, entry] of Object.entries(PAGES)) {
       run.fail('missing element', page, `${entry} looks up #${id}, which this page does not declare`);
     }
     run.count('id lookups');
+  }
+}
+
+// The index is now the only thing standing between a page and a course's
+// notes, so a course file that it does not list is unreachable from the
+// whole site — loadCourseDetails refuses to fetch a code it has never heard
+// of, precisely so that a typo cannot inject an arbitrary script URL.
+const indexJs = read(INDEX_SCRIPT);
+const indexed = new Set([...indexJs.matchAll(/"(PCLL\d{4})":\s*\{/g)].map((m) => m[1]));
+for (const code of courseCodes) {
+  run.count('courses indexed');
+  if (!indexed.has(code)) {
+    run.fail('course not indexed', INDEX_SCRIPT, `courseDetails/${code}.js exists but is not in the index — run npm run build:index`);
+  }
+}
+for (const code of indexed) {
+  if (!courseCodes.includes(code)) {
+    run.fail('stale index entry', INDEX_SCRIPT, `${code} is indexed but courseDetails/${code}.js does not exist`);
   }
 }
 

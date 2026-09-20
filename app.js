@@ -5,11 +5,14 @@
     todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, eventCardHtml, initTheme, initFontScale,
     loadTimetable, loadMyElectives, eventIsFilteredOut, initElectiveSettings,
     buildDeadlinesIndex, deadlineChipsHtml, isDeadlineDone, emptyStateHtml,
+    courseIndex, wireSiteSearch,
   } = window.PCLL;
 
   // Doesn't depend on the (async) timetable fetch, so it's ready before the
   // first render — a single Map lookup per day thereafter, never a scan.
-  const deadlinesIndex = buildDeadlinesIndex(window.COURSE_DETAILS || {});
+  // From courseIndex.js, not the course files: this page shows deadlines,
+  // never notes, and the deadlines are 2.3KB of the 2,540KB the notes weigh.
+  const deadlinesIndex = buildDeadlinesIndex(courseIndex());
   function dayDeadlineChips(dateIso) {
     return deadlineChipsHtml((deadlinesIndex.get(dateIso) || []).filter((d) => !isDeadlineDone(d)));
   }
@@ -133,6 +136,9 @@
       onData: (data, isStale) => {
         timetable = data;
         $('status').hidden = true;
+        // Search needs the live timetable to turn a hit into a link, so it
+        // is wired here rather than at load. It no-ops on a repeat call.
+        wireSiteSearch(data);
         if (!navInitialized) {
           const requestedDate = new URLSearchParams(location.search).get('date');
           const found = requestedDate && findDateIndex(timetable.weeks, requestedDate);

@@ -8,6 +8,7 @@
     examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex,
     sessionEventsByKey, issueHref, QUIZ_KINDS,
     quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, spreadCounts,
+    loadCourseDetails, courseIndex, wireSiteSearch,
   } = window.PCLL;
 
   const DEFAULT_ROUND = 10;
@@ -27,20 +28,45 @@
 
   // Every course that actually has exam notes to build questions from, with
   // the sessions that carry them. The timetable supplies the display names.
+  //
+  // Read from courseIndex.js, not the course files: the setup screen's
+  // course and session pickers can therefore render before a single note has
+  // been fetched, and only the course you actually pick is downloaded.
   function examCourses(data) {
-    return Object.keys(window.COURSE_DETAILS || {}).map((c) => {
-      const d = window.COURSE_DETAILS[c];
-      const sessions = Object.keys(d.sessions || {}).filter((k) => {
-        const notes = d.sessions[k].examNotes;
-        return notes && (notes.issueTypes || []).length;
-      });
-      return { code: c, name: data.meta.courses[c] || ELECTIVE_NAMES[c] || '', sessions };
-    }).filter((c) => c.sessions.length);
+    const idx = courseIndex();
+    return Object.keys(idx).map((c) => ({
+      code: c,
+      name: data.meta.courses[c] || idx[c].name || ELECTIVE_NAMES[c] || '',
+      sessions: idx[c].examSessions || [],
+    })).filter((c) => c.sessions.length);
   }
 
   // The whole page is one of two views. `session` is the timetable entry the
   // page was opened from, or null when it was reached from the dashboard.
-  function render(data) {
+  //
+  // Async because the notes are no longer on the page: whichever course this
+  // view is about has to arrive first. loadCourseDetails caches and
+  // de-duplicates, so the awaits below cost nothing after the first.
+  // Which course this view is about, before anything has been fetched: the
+  // session's when the page was opened from one, otherwise the remembered
+  // choice, otherwise the first course that has notes. renderNow re-derives
+  // the same answer into setup.code — they must not disagree, so both go
+  // through here.
+  function startCourse(data, entry) {
+    const saved = loadQuizSetup() || {};
+    const courses = examCourses(data);
+    if (entry && code) return code;
+    if (courses.some((c) => c.code === saved.code)) return saved.code;
+    return courses.length ? courses[0].code : '';
+  }
+
+  async function render(data) {
+    const entry = code ? findSessionInTimetable(data, code, no, dateIso, start) : null;
+    await loadCourseDetails(startCourse(data, entry));
+    renderNow(data);
+  }
+
+  function renderNow(data) {
     const section = $('quizSection');
     const bodyEl = $('quizBody');
     const courses = examCourses(data);
@@ -95,7 +121,7 @@
     // ---- setup state ----
     const saved = loadQuizSetup() || {};
     const openedSession = entry ? sessionKeyFor(entry.ev.no) : '';
-    const startCode = (entry && code) || (courses.some((c) => c.code === saved.code) ? saved.code : courses[0].code);
+    const startCode = startCourse(data, entry);
     const setup = {
       code: startCode,
       // Opening from a session scopes to it; otherwise fall back to what was
@@ -160,7 +186,9 @@
       if (!total) setup.counts = spreadCounts(DEFAULT_ROUND, avail);
     }
 
-    function showSetup() {
+    async function showSetup() {
+      // The picked course may not be the one this page loaded with.
+      await loadCourseDetails(setup.code);
       setCourseLink(data, setup.code);
       setHeading('Test Yourself');
       setup.sessions = validSessions();
@@ -219,7 +247,9 @@
       section.hidden = false;
     }
 
-    function showRound() {
+    async function showRound() {
+      // The picked course may not be the one this page loaded with.
+      await loadCourseDetails(setup.code);
       const details = detailsFor(setup.code);
       const bank = bankFor();
       reconcile(availOf(bank));
@@ -277,6 +307,9 @@
     await loadTimetable({
       onData: (data, isStale) => {
         render(data);
+        // Search needs the live timetable to turn a hit into a link, so it
+        // is wired here rather than at load. It no-ops on a repeat call.
+        wireSiteSearch(data);
         setSyncStatus(isStale
           ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
           : `Last synced ${new Date(data.meta.syncedAt).toLocaleString()}`);

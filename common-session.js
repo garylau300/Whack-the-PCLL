@@ -19,6 +19,7 @@
   } = window.PCLL;
   const { listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml } = window.PCLL;
   const { examIssueListHtml, wireIssueFilter } = window.PCLL;
+  const { loadSearchIndex, courseMeta, ELECTIVE_NAMES } = window.PCLL;
 
   // Positions two concentric rings of `.mindmap-node` buttons around the
   // hub, sized to the container's actual pixel dimensions (not percentages
@@ -405,8 +406,181 @@
     wireChecklist(container, prepKey, render);
   }
 
+  // ---------------------------------------------------------------------
+  // Site-wide search over every issue type.
+  //
+  // The reason this exists: there are 126 issue types across four courses,
+  // and until now the only way to reach one was to already know its course
+  // AND its session. The per-list filter box narrows a list you are looking
+  // at; it cannot find a page you have not navigated to.
+  //
+  // What makes it worth the 47KB index is that it searches the TRIGGER FACT
+  // PATTERNS, not just titles. You have a problem question in front of you,
+  // you type what you can see in the facts -- "equitable mortgage missing
+  // originals" -- and the issue type whose triggers describe those facts
+  // comes back. Searching titles alone would only ever find what you could
+  // already name, which is not the case you need help in.
+  //
+  // It lives in the session layer for the usual reason: a result is only
+  // useful as a link, and issueHref needs the live timetable, which the
+  // content layer does not know about (core -> content -> session).
+  // ---------------------------------------------------------------------
+  const SEARCH_MAX = 40;
+
+  // Ranked, so the row you meant is first rather than merely present. An
+  // exact code beats a title match beats a hit anywhere in the fact
+  // patterns; every term must match somewhere (AND), so adding a word always
+  // narrows.
+  function searchRank(row, terms) {
+    const [code, , , , title, hay] = row;
+    const lcCode = code.toLowerCase();
+    const lcTitle = title.toLowerCase();
+    let score = 0;
+    for (const t of terms) {
+      if (lcCode === t) score += 1000;
+      else if (lcCode.startsWith(t)) score += 400;
+      else if (lcTitle.startsWith(t)) score += 200;
+      else if (lcTitle.includes(t)) score += 100;
+      else if (hay.includes(t)) score += 10;
+      else return -1;
+    }
+    return score;
+  }
+
+  function searchResults(index, query, data) {
+    const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return [];
+    const scored = [];
+    for (const row of index) {
+      const n = searchRank(row, terms);
+      if (n > 0) scored.push([n, row]);
+    }
+    scored.sort((a, b) => b[0] - a[0] || a[1][0].localeCompare(b[1][0]));
+
+    // One events-by-key map per course rather than per row: resolving 40
+    // results otherwise walks the whole timetable 40 times.
+    const byKeyFor = new Map();
+    const groups = new Map();
+    for (const [, row] of scored.slice(0, SEARCH_MAX)) {
+      const [code, courseCode, sessionKey, issueId, title] = row;
+      if (!byKeyFor.has(courseCode)) byKeyFor.set(courseCode, sessionEventsByKey(data, courseCode));
+      const found = byKeyFor.get(courseCode).get(sessionKey);
+      // A result whose session is not in the live timetable has nowhere to
+      // link to, so it is dropped rather than rendered as a dead row -- the
+      // same degrade-or-drop rule crossRefs follows.
+      if (!found) continue;
+      const meta = courseMeta(courseCode);
+      const label = `${courseCode} · ${(data.meta.courses || {})[courseCode] || (meta && meta.name) || ELECTIVE_NAMES[courseCode] || ''}`;
+      if (!groups.has(label)) groups.set(label, []);
+      // total: 0 means examIssueListHtml renders no progress meter, which is
+      // correct here -- progress lives in the course file, and the point of
+      // search is to answer without fetching all four of them.
+      groups.get(label).push({
+        href: issueHref(found.ev, found.dateIso, issueId),
+        code, title, done: 0, total: 0,
+      });
+    }
+    return [...groups].map(([label, items]) => ({ label, items }));
+  }
+
+  function siteSearchHtml() {
+    // No `hidden` attribute: initDialog toggles the `open` class and nothing
+    // else, and `hidden` outranks the class's visibility rules -- the panel
+    // would open and stay invisible. The closed state is CSS (see
+    // .site-search-panel), exactly as it is for the settings sheet.
+    return `<div class="site-search-panel">
+      <div class="site-search-dialog">
+        <div class="site-search-head">
+          <h2 id="siteSearchTitle" class="site-search-title">Find an issue type</h2>
+          <button type="button" class="icon-btn site-search-close" aria-label="Close search">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <input type="search" class="site-search-input" autocomplete="off" spellcheck="false"
+          placeholder="A code, a title, or the facts from a question" aria-label="Search issue types" />
+        <div class="site-search-results" aria-live="polite"></div>
+      </div>
+    </div>`;
+  }
+
+  // `data` is the live timetable. Injects the trigger into the topbar and
+  // the dialog into the body, so a page opts in with one call and carries no
+  // markup of its own.
+  function wireSiteSearch(data) {
+    const controls = document.querySelector('.topbar-controls');
+    if (!controls || !data || document.querySelector('.site-search-panel')) return;
+
+    // Found by class, not by id: every DOM id a page's scripts look up has
+    // to be declared by that page (verify-pages.js), and this button is
+    // created here rather than written into any of the six.
+    controls.insertAdjacentHTML('afterbegin', `<button type="button" class="icon-btn site-search-btn" title="Search issue types (press /)" aria-label="Search issue types">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>`);
+    document.body.insertAdjacentHTML('beforeend', siteSearchHtml());
+
+    const panel = document.querySelector('.site-search-panel');
+    const dialog = panel.querySelector('.site-search-dialog');
+    const input = panel.querySelector('.site-search-input');
+    const results = panel.querySelector('.site-search-results');
+    const btn = controls.querySelector('.site-search-btn');
+
+    const dlg = initDialog({
+      panel, dialog, closeBtn: panel.querySelector('.site-search-close'), labelledBy: 'siteSearchTitle',
+    });
+
+    let index = null;
+    const render = () => {
+      const q = input.value.trim();
+      if (!index || q.length < 2) { results.innerHTML = ''; return; }
+      const groups = searchResults(index, q, data);
+      results.innerHTML = groups.length
+        ? examIssueListHtml(groups, { filterFrom: Infinity })
+        // Says something the screen does not: that the search ran and the
+        // corpus has nothing, rather than that it is still thinking.
+        : `<p class="site-search-none">Nothing in the notes matches “${escapeHtml(q)}”.</p>`;
+    };
+
+    const open = (trigger) => {
+      dlg.open(trigger);
+      input.value = '';
+      results.innerHTML = '';
+      input.focus();
+      // Fetched on first open, not with the page: 47KB is small enough to
+      // feel instant here and far too big to add to every page load.
+      if (!index) loadSearchIndex().then((rows) => { index = rows; render(); });
+    };
+
+    btn.addEventListener('click', () => open(btn));
+    input.addEventListener('input', render);
+
+    // Enter opens the top result, so the common case is type-and-go without
+    // reaching for the mouse.
+    input.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== 'ArrowDown') return;
+      const first = results.querySelector('.exam-issue-card');
+      if (!first) return;
+      e.preventDefault();
+      if (e.key === 'Enter') first.click();
+      else first.focus();
+    });
+
+    // "/" is the shortcut every reader already knows from every other
+    // document-shaped site; Ctrl/Cmd-K is the one they know from every app.
+    // Neither may steal a keystroke meant for a field the reader is typing
+    // in -- including the search field itself.
+    document.addEventListener('keydown', (e) => {
+      const t = e.target;
+      const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable);
+      const shortcut = (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !e.altKey)
+        || (e.key.toLowerCase() === 'k' && (e.ctrlKey || e.metaKey));
+      if (!shortcut) return;
+      e.preventDefault();
+      open(btn);
+    });
+  }
+
   window.PCLL = Object.assign(window.PCLL || {}, {
     sessionDetailHtml, sessionFallbackHtml, wireSessionDetail, examCrossRefsHtml,
-    examTriggerRoutesHtml,
+    examTriggerRoutesHtml, wireSiteSearch, searchResults,
   });
 })();

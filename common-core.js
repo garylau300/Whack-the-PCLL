@@ -528,6 +528,80 @@
   }
 
   // ---------------------------------------------------------------------
+  // Loading a course's notes on demand.
+  //
+  // Every page used to carry a <script> per course, so opening the timetable
+  // downloaded and parsed 2,540KB of exam notes (560KB gzipped) to read the
+  // 2.3KB of deadlines it actually uses -- 1,088x more than needed, before
+  // anything rendered. The notes are now fetched by the pages that show
+  // them, for the one course they show.
+  //
+  // What every page still carries is courseIndex.js: name, codePrefix,
+  // deadlines and which sessions have exam notes, for every course. 826
+  // bytes gzipped. It is generated (npm run build:index) and checked for
+  // staleness by npm test, so it cannot drift from the notes it summarises.
+  //
+  // Two rules if you touch this:
+  //  - A page that renders notes MUST await loadCourseDetails before it
+  //    reads window.COURSE_DETAILS, and must handle null (a course with no
+  //    authored notes, or a failed fetch) the same way it already handles
+  //    "nothing authored here yet".
+  //  - Resolve, never reject. A missing course is a normal state on this
+  //    site -- most electives have no notes at all -- so a failure is a null
+  //    the caller already knows how to render, not an error path that would
+  //    blank a page that was otherwise fine.
+  // ---------------------------------------------------------------------
+  const scriptOnce = new Map();
+
+  // One <script> per URL however many callers ask, and the same promise
+  // handed to each -- two widgets wanting the same course must not race two
+  // copies of a 950KB file onto the page.
+  function loadScriptOnce(src) {
+    if (scriptOnce.has(src)) return scriptOnce.get(src);
+    const p = new Promise((resolve) => {
+      const el = document.createElement('script');
+      el.src = src;
+      el.onload = () => resolve(true);
+      el.onerror = () => resolve(false);
+      document.head.appendChild(el);
+    });
+    scriptOnce.set(src, p);
+    return p;
+  }
+
+  function courseIndex() {
+    return window.COURSE_INDEX || {};
+  }
+
+  // Name/prefix/deadlines without the notes, for the pages that only need to
+  // label a course or count its deadlines.
+  function courseMeta(code) {
+    return courseIndex()[code] || null;
+  }
+
+  function courseHasNotes(code) {
+    return !!courseIndex()[code];
+  }
+
+  async function loadCourseDetails(code) {
+    if (!code) return null;
+    const loaded = (window.COURSE_DETAILS || {})[code];
+    if (loaded) return loaded;
+    if (!courseHasNotes(code)) return null;
+    await loadScriptOnce(`courseDetails/${encodeURIComponent(code)}.js`);
+    return (window.COURSE_DETAILS || {})[code] || null;
+  }
+
+  // The search index is 47KB gzipped -- small enough to feel instant on the
+  // first search, far too big to put on every page when the point of all of
+  // the above was to stop shipping data a page does not use.
+  async function loadSearchIndex() {
+    if (window.SEARCH_INDEX) return window.SEARCH_INDEX;
+    await loadScriptOnce('searchIndex.js');
+    return window.SEARCH_INDEX || [];
+  }
+
+  // ---------------------------------------------------------------------
   // Statutory and case references, marked up for emphasis in the notes.
   //
   // Detection runs over the RAW string and yields character ranges; citeHtml
@@ -1326,7 +1400,8 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, citeSpeech, proseSpeech, speechText, field, isHappeningNow, isMyGroupSession,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, citeSpeech, proseSpeech, speechText, field,
+    courseIndex, courseMeta, courseHasNotes, loadCourseDetails, loadSearchIndex, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, effectiveFontScale, setFontScale, initFontScale, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,

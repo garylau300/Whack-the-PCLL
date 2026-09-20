@@ -8,12 +8,15 @@
     COURSE_COLORS, DEFAULT_COLOR, isMyGroupSession, emptyStateHtml,
     buildDeadlinesIndex, isDeadlineDone, daysUntil, countdownBadgeHtml,
     courseSessionProgress,
+    courseIndex, wireSiteSearch,
   } = window.PCLL;
   const LEGAL_SKILLS = window.LEGAL_SKILLS;
 
   // Independent of the (async) timetable fetch, so it's ready before first
   // render.
-  const deadlinesIndex = buildDeadlinesIndex(window.COURSE_DETAILS || {});
+  // From courseIndex.js, not the course files: this page shows deadlines,
+  // never notes, and the deadlines are 2.3KB of the 2,540KB the notes weigh.
+  const deadlinesIndex = buildDeadlinesIndex(courseIndex());
 
   const ADVOCACY_CODES = new Set(['PCLL8051', 'PCLL8014']);
   const WATCH_RE = /assessment|exam\b|provisional|hand in|deadline|separate notice|holiday|court attendance/i;
@@ -272,6 +275,9 @@
         timetable = data;
         $('status').hidden = true;
         $('dashboardBody').hidden = false;
+        // Search needs the live timetable to turn a hit into a link, so it
+        // is wired here rather than at load. It no-ops on a repeat call.
+        wireSiteSearch(data);
         render();
         setSyncStatus(isStale
           ? `Showing cached data from ${new Date(data.meta.syncedAt).toLocaleString()} — refreshing…`
