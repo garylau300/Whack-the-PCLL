@@ -137,7 +137,7 @@ not what the code does.
   once students may have written a code down. It appears on the session-page
   index cards, the course roll-up cards, the issue page's `<h1>`, and as the
   tag on every `crossRefs`/`routes` link. Adding a course means adding a
-  `codePrefix` (CIV / CCT / PRP so far) distinct from the others;
+  `codePrefix` (CIV / CCT / PRP / CRM so far) distinct from the others;
   `coursePrefix` falls back to the course code's numeric tail if one is
   missing.
 - **The answering flowchart is a three-level checklist; nothing else is.**
@@ -160,7 +160,7 @@ not what the code does.
   span between the step's label and its coaching blocks. It exists because a
   bare label followed by two collapsed `<details>` and a column of checkboxes
   never states the rule anywhere: an audit found 96% of PRP LG1's steps in
-  that condition and unreadable as a result. All 732 steps across the four
+  that condition and unreadable as a result. All 733 steps across the four
   courses now carry one, so treat it as required rather than optional when
   authoring a new step. Two rules:
   - **It is a restructure of the step's own verified content**, drawn from
@@ -804,10 +804,12 @@ not what the code does.
 
 1. `npm run check` (syntax-checks every tracked `.js` file),
    `npm run lint`, and `npm test`.
-2. `npm test` is three plain Node programs under `scripts/` — no test
-   framework, same zero-build reasoning as the site itself. They cover the
-   cross-file invariants nothing else can see, and CI runs them on every
-   push:
+2. `npm test` is four plain Node programs under `scripts/` — no test
+   framework, same zero-build reasoning as the site itself — sharing one
+   harness, `verify-lib.js` (`createRun` for the pass/fail reporting,
+   `loadSite` for the browser stub that lets the render code run in Node).
+   They cover the cross-file invariants nothing else can see, and CI runs
+   them on every push:
    - `verify-data.js` — courseDetails structure. A section key the renderer
      doesn't know is dropped silently, a `crossRefs` entry at a renamed
      issue id degrades to plain text, two identically worded rows under one
@@ -829,6 +831,11 @@ not what the code does.
    - `verify-parser.js` — `lib/parseTimetable.js` and `lib/xlsxLite.js`
      against hand-built fixtures. This is what those modules' otherwise
      unused exports are for.
+   - `verify-styles.js` — `styles.css` itself: brace balance, and the two
+     motion rules a rendered page would not obviously betray — the
+     `prefers-reduced-motion` block must neutralise delays and not only
+     durations, and a looping animation's keyframes must start *and* end at
+     the resting pose.
    When adding a check, make it fail on purpose first — a check that can't
    fail is worse than none, because it reads as coverage.
    Bulk-editing courseDetails by script is normal here (they are too big to
