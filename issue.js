@@ -5,7 +5,7 @@
     ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref, quizHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
     issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml,
-    noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
+    noteClozeControlsHtml, wireNoteCloze, loadClozeGroups, wireNoteSpeech,
   } = window.PCLL;
 
   const $ = (id) => document.getElementById(id);
@@ -151,6 +151,10 @@
     // Masking runs over the rendered notes, so it has to come after the
     // body exists — and the bar lives inside the same container it masks.
     wireNoteCloze($('issueBody'), $('issueBody'));
+    // Read-aloud is the same kind of pass, and runs after masking so a
+    // clozed page still reads its real text (the print rule's reasoning:
+    // a blank recorded aloud teaches nothing either).
+    wireNoteSpeech($('issueBody'), $('issueBody'));
     renderNav(issueTypes, index, ev, foundDate, code, details, key);
 
     $('status').hidden = true;

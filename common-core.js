@@ -639,6 +639,323 @@
     return out + escapeHtml(str.slice(last));
   }
 
+  // ---------------------------------------------------------------------
+  // How a citation is SAID, as the sibling of how it is written.
+  //
+  // Every speech engine reads "O.18 r.19(1)(a)" as "oh dot eighteen r dot
+  // nineteen bracket one bracket a", and a premium cloud voice does it just
+  // as badly as a free local one -- so this, not the choice of voice, is what
+  // decides whether these notes are listenable. It is also why the read-aloud
+  // feature needs nothing authored: citeHtml has already wrapped all 1,173
+  // references in a <span class="cite">, so the read-aloud pass hands that
+  // span's own text straight to citeSpeech and no second detector has to be
+  // written or kept in step with the first.
+  //
+  // Expansion runs in a fixed order because the prefixes nest: "ss" has to go
+  // before "s" and "rr" before "r", or the longer form is eaten a character
+  // at a time.
+  const CITE_PREFIXES = [
+    [/\bL\.N\.\s?/g, 'Legal Notice '],
+    [/\bO\.\s?(\d+[A-Z]?)/g, 'Order $1'],
+    [/\brr\.\s?(?=\d)/g, 'rules '],
+    [/\br\.\s?(?=\d)/g, 'rule '],
+    [/\bss\.?\s?(?=\d)/g, 'sections '],
+    [/\bs\.?\s?(?=\d)/g, 'section '],
+    [/\bMA\s?(?=\d)/g, 'Model Article '],
+    [/\bCap\.?\s?(?=\d)/g, 'Chapter '],
+    [/\bPD\s?(?=\d)/g, 'Practice Direction '],
+    [/\bArts?\.?\s?(?=\d)/g, 'Article '],
+    [/§\s?/g, 'paragraph '],
+  ];
+  // The unit word decides what its first bracketed group is called: a section
+  // has subsections, everything else has paragraphs. Groups after the first
+  // are just read out, because "section 19, subsection 1, paragraph a,
+  // sub-paragraph i" is longer than the sentence it sits in.
+  const CITE_UNIT = /\b(sections?|rules?|Orders?|Model Articles?|Articles?|paragraphs?|Chapters?)\s(\d+[A-Z]*)((?:\([^()\s]{1,8}\))+)/g;
+  const PARA_GROUP = /\(([^()\s]{1,8})\)/g;
+  // An all-caps run is a reporter or a court ("HKCFA", "AC", "WLR") and is
+  // spelled out; left whole, an engine either invents a word for it or drops
+  // it. Anything already expanded above has stopped being all-caps by now.
+  const ABBREV = /\b([A-Z]{2,6})\b/g;
+
+  function citeSpeech(text) {
+    let s = ' ' + String(text).replace(/\s+/g, ' ').trim() + ' ';
+    for (const [re, to] of CITE_PREFIXES) s = s.replace(re, to);
+    // " v " and " v. " are the one thing every engine gets wrong in a case
+    // name, and the one that makes it unrecognisable when it does.
+    s = s.replace(/\sv\.?\s/g, ' versus ');
+    s = s.replace(CITE_UNIT, (m, unit, num, groups) => {
+      const gs = groups.match(PARA_GROUP).map((g) => g.slice(1, -1));
+      const first = /^sections?$/i.test(unit) ? 'subsection' : 'paragraph';
+      return `${unit} ${num}, ${first} ${gs[0]}` + gs.slice(1).map((g) => `, ${g}`).join('');
+    });
+    // A bracketed range has to be resolved while the brackets are still
+    // there: once each group has become ", j" and ", p" the hyphen between
+    // them is no longer between two words, and the generic range rule below
+    // cannot see it. "(j)-(p)" was reading as "j dash, p".
+    s = s.replace(/,?\s*\(([^()\s]{1,8})\)\s*[-–]\s*\(([^()\s]{1,8})\)/g, ', $1 to $2');
+    // "MA22(4)(a) and (b)" -- the conjunction is already the separator, so
+    // the group after it must not bring a comma of its own ("and, b").
+    s = s.replace(/\b(and|or|to)\s*\(([^()\s]{1,8})\)/g, '$1 $2');
+    s = s.replace(PARA_GROUP, ', $1');
+    // A range is "to", whether written with a hyphen or an en dash.
+    s = s.replace(/([\w)])\s*[-–]\s*(?=[\w(])/g, '$1 to ');
+    // A court file number is said "123 of 2019", not "123 slash 2019".
+    s = s.replace(/(\d+)\/(\d{4})\b/g, '$1 of $2');
+    // "Order 18 rule 19" runs together without the pause a reader takes.
+    s = s.replace(/\b(Orders? \d+[A-Z]?) (?=rules?\b)/g, '$1, ');
+    s = s.replace(/[[\]]/g, ' ');
+    s = s.replace(ABBREV, (m, a) => a.split('').join(' '));
+    return s.replace(/\s*,\s*(?=,)/g, '').replace(/\s+/g, ' ').replace(/\s+([,.])/g, '$1').trim();
+  }
+
+  // The same job for ordinary note prose: the handful of abbreviations and
+  // symbols that are written to be read rather than said.
+  const PROSE_SAY = [
+    [/\be\.g\.\s*/gi, 'for example, '],
+    [/\bi\.e\.\s*/gi, 'that is, '],
+    [/\bcf\.\s*/gi, 'compare '],
+    [/\betc\./gi, 'et cetera'],
+    [/\bNB\b/g, 'note'],
+    [/\bHK\$\s?([\d,.]+)/g, '$1 Hong Kong dollars'],
+    [/\s&\s/g, ' and '],
+    [/→\s*/g, 'go to '],
+    // A derived issue code carries a full stop, which a sentence splitter
+    // reads as the end of a sentence -- "...deliveredPRP-4." then ".02, The
+    // statutory period". Spelling the prefix and saying the dot removes both
+    // the wrong break and the unpronounceable run of capitals.
+    [/\b([A-Z]{2,4})-(\d+)\.(\d+)\b/g, (m, a, b, c) => a.split('').join(' ') + ' ' + b + ' point ' + c],
+    // A bracket run written straight onto a number -- "13(1)", "13(1)(a)" --
+    // is a provision's own subdivision. It reaches here rather than
+    // citeSpeech when the detector did not mark it, which is what happens to
+    // a capitalised "Section 13(1)": the detector is case-sensitive, so that
+    // form is not highlighted on screen either. Said flat as "13, 1" it loses
+    // the word that makes it a provision.
+    [/(\d[A-Z]?)((?:\((?:\d{1,2}|[a-z]{1,4})\))+)/g, (m, num, groups) => {
+      const gs = groups.match(/\(([^)]+)\)/g).map((g) => g.slice(1, -1));
+      return `${num}, subsection ${gs[0]}` + gs.slice(1).map((g) => `, ${g}`).join('');
+    }],
+    // A bare "(a)" or "(iii)" in prose is a statutory paragraph marker -- the
+    // verbatim quote boxes are full of them, because a quote is rendered
+    // unmarked on purpose and so never reaches citeSpeech. One to four
+    // lower-case letters or one to two digits excludes a real parenthetical
+    // like "(CA)" or a year like "(2015)".
+    [/\((\d{1,2}|[a-z]{1,4})\)/g, ', $1,'],
+    // An em/en dash between words is a pause, not a word; without this an
+    // engine either says "dash" or runs the two clauses together.
+    [/\s[—–]\s/g, ', '],
+  ];
+
+  function proseSpeech(text) {
+    let s = String(text).replace(/\s+/g, ' ').trim();
+    for (const [re, to] of PROSE_SAY) s = s.replace(re, to);
+    return tidySpeech(s);
+  }
+
+  function tidySpeech(text) {
+    return String(text)
+      .replace(/\s+/g, ' ')
+      .replace(/\s+([,.;:)])/g, '$1')
+      .replace(/\(\s+/g, '(')
+      .replace(/,\s*(?=[,.;:])/g, '')
+      // "...and: (a) proof" becomes "and:, a," without this -- a colon or
+      // semicolon is already the pause the comma was adding.
+      .replace(/([:;])\s*,\s*/g, '$1 ')
+      .trim();
+  }
+
+  // What a whole line of notes should say: every statutory and case reference
+  // in it read as a lawyer reads it, and the prose between them expanded.
+  //
+  // It finds the references itself with findRanges rather than reading the
+  // <span class="cite"> marks already in the DOM, because the one place those
+  // marks are deliberately absent is the place citations are densest: a
+  // `statutes` quote box renders its body with escapeHtml, since bolding
+  // inside a verbatim quote would alter the quote. Reading the marks would
+  // have left exactly those provisions unspoken.
+  function speechText(text) {
+    const str = String(text);
+    const ranges = findRanges(str);
+    if (!ranges.length) return proseSpeech(str);
+    let out = '';
+    let last = 0;
+    for (const [a, b] of ranges) {
+      out += ' ' + proseSpeech(str.slice(last, a)) + ' ' + citeSpeech(str.slice(a, b)) + ' ';
+      last = b;
+    }
+    return tidySpeech(out + ' ' + proseSpeech(str.slice(last)));
+  }
+
+  // ---------------------------------------------------------------------
+  // Read-aloud, on the browser's own speechSynthesis.
+  //
+  // No key, no network, no dependency and no cost, which is what lets it ship
+  // under the zero-build rule -- and on the devices this is actually revised
+  // on (Siri voices on a Mac or iPhone, Microsoft Natural in Edge, Google TTS
+  // on Android) it is as good as anything paid. The quality that is missing
+  // from legal text comes from citeSpeech above, not from the voice.
+  //
+  // Three engine quirks are handled here rather than at the call site:
+  //  - getVoices() is empty on the first call in Chrome and fills in later,
+  //    so the list is re-read on `voiceschanged` and never cached as empty.
+  //  - Chrome drops a REMOTE voice's utterance after about 15 seconds
+  //    (crbug 41294170), so text is chunked at sentence boundaries and each
+  //    chunk is spoken as its own utterance, chained by onend. Chaining
+  //    rather than queueing is also what makes stop exact.
+  //  - cancel() immediately followed by speak() can wedge the engine, and a
+  //    paused engine silently ignores speak(), so a start always resumes and
+  //    defers past the cancel.
+  // ---------------------------------------------------------------------
+  const SPEECH_KEY = 'pcll.speech';
+  const SPEECH_RATES = [0.8, 0.9, 1, 1.15, 1.3, 1.5, 1.75];
+  // Comfortably inside Chrome's remote-voice cutoff at every rate offered.
+  const SPEECH_CHUNK = 170;
+
+  let voiceList = [];
+  let speechRun = 0;
+
+  function speechSupported() {
+    return typeof window !== 'undefined'
+      && typeof window.speechSynthesis !== 'undefined'
+      && typeof window.SpeechSynthesisUtterance !== 'undefined';
+  }
+
+  // Higher is better. Hong Kong legal English is read in British English, a
+  // "Natural"/"Siri"/"Premium" voice is a different engine from the fallback
+  // that shares its language tag, and a local voice is immune to the Chrome
+  // cutoff above -- so all three are worth ranking for.
+  function scoreVoice(v) {
+    const name = v.name || '';
+    const lang = v.lang || '';
+    let n = 0;
+    if (/natural|neural|siri|premium|enhanced/i.test(name)) n += 40;
+    if (/google/i.test(name)) n += 12;
+    if (/^en[-_]HK/i.test(lang)) n += 25;
+    else if (/^en[-_]GB/i.test(lang)) n += 20;
+    else if (/^en[-_](AU|IE|NZ|ZA|IN)/i.test(lang)) n += 10;
+    else if (/^en[-_]US/i.test(lang)) n += 8;
+    if (v.localService) n += 6;
+    if (v.default) n += 2;
+    if (/compact|espeak|festival/i.test(name)) n -= 40;
+    return n;
+  }
+
+  function speechVoices() {
+    if (!speechSupported()) return [];
+    if (!voiceList.length) voiceList = window.speechSynthesis.getVoices() || [];
+    return voiceList
+      .filter((v) => /^en/i.test(v.lang || ''))
+      .slice()
+      .sort((a, b) => scoreVoice(b) - scoreVoice(a) || (a.name || '').localeCompare(b.name || ''));
+  }
+
+  function loadSpeechPrefs() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(SPEECH_KEY) || '{}');
+      return { voice: typeof raw.voice === 'string' ? raw.voice : '', rate: Number(raw.rate) || 1 };
+    } catch {
+      return { voice: '', rate: 1 };
+    }
+  }
+
+  function saveSpeechPrefs(prefs) {
+    try { localStorage.setItem(SPEECH_KEY, JSON.stringify(prefs)); } catch { /* no-op */ }
+  }
+
+  // The remembered voice may not exist on this device (a different browser,
+  // or a voice the OS has since removed), so a miss falls back to the best
+  // available rather than to nothing.
+  function currentVoice() {
+    const list = speechVoices();
+    if (!list.length) return null;
+    const want = loadSpeechPrefs().voice;
+    return list.find((v) => v.voiceURI === want) || list[0];
+  }
+
+  // Sentence first, then clause, then a hard cut: a chunk boundary is a
+  // breath, so putting it at punctuation is what stops the reading sounding
+  // like it was sliced by a character counter.
+  function chunkSpeech(text) {
+    const out = [];
+    const push = (s) => { const t = s.trim(); if (t) out.push(t); };
+    for (const sentence of String(text).match(/[^.!?]+(?:[.!?]+|$)/g) || []) {
+      if (sentence.trim().length <= SPEECH_CHUNK) { push(sentence); continue; }
+      let rest = sentence;
+      while (rest.length > SPEECH_CHUNK) {
+        const head = rest.slice(0, SPEECH_CHUNK);
+        let cut = Math.max(head.lastIndexOf('; '), head.lastIndexOf(', '), head.lastIndexOf(' — '));
+        if (cut < SPEECH_CHUNK * 0.4) cut = head.lastIndexOf(' ');
+        if (cut <= 0) cut = SPEECH_CHUNK;
+        push(rest.slice(0, cut + 1));
+        rest = rest.slice(cut + 1);
+      }
+      push(rest);
+    }
+    return out;
+  }
+
+  function speechStop() {
+    speechRun++;
+    if (!speechSupported()) return;
+    try {
+      window.speechSynthesis.resume();
+      window.speechSynthesis.cancel();
+    } catch { /* no-op */ }
+  }
+
+  // Speaks `parts` in order and calls opts.onend once, when the last chunk
+  // finishes or the run is superseded by another. Returns false if there was
+  // nothing to say.
+  function speechSpeak(parts, opts) {
+    if (!speechSupported()) return false;
+    const o = opts || {};
+    const chunks = [];
+    for (const p of parts || []) for (const c of chunkSpeech(p)) chunks.push(c);
+    if (!chunks.length) return false;
+
+    speechStop();
+    const run = speechRun;
+    const voice = currentVoice();
+    const rate = o.rate || loadSpeechPrefs().rate || 1;
+    let i = 0;
+
+    const next = () => {
+      if (run !== speechRun) return;
+      if (i >= chunks.length) { if (o.onend) o.onend(); return; }
+      const u = new window.SpeechSynthesisUtterance(chunks[i++]);
+      if (voice) { u.voice = voice; u.lang = voice.lang; }
+      u.rate = rate;
+      u.onend = next;
+      // An "interrupted"/"canceled" error IS a stop -- reacting to it would
+      // restart the chain the stop just ended. Anything else is one chunk
+      // the engine could not say, and skipping it is better than silence.
+      u.onerror = (e) => {
+        if (e && (e.error === 'interrupted' || e.error === 'canceled')) return;
+        next();
+      };
+      try {
+        window.speechSynthesis.resume();
+        window.speechSynthesis.speak(u);
+      } catch {
+        next();
+      }
+    };
+
+    // Deferred past the cancel above: Chrome wedges if speak() lands in the
+    // same task as cancel().
+    setTimeout(next, 0);
+    return true;
+  }
+
+  if (speechSupported()) {
+    const readVoices = () => { voiceList = window.speechSynthesis.getVoices() || []; };
+    readVoices();
+    window.speechSynthesis.addEventListener('voiceschanged', readVoices);
+    // Speech outlives a navigation in Chrome, so a link followed mid-sentence
+    // would otherwise keep talking over the next page.
+    window.addEventListener('pagehide', speechStop);
+  }
+
   function field(label, value) {
     return `<div class="field"><span class="field-label">${escapeHtml(label)}</span><span class="field-value">${escapeHtml(value)}</span></div>`;
   }
@@ -1009,13 +1326,15 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, field, isHappeningNow, isMyGroupSession,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, citeSpeech, proseSpeech, speechText, field, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, effectiveFontScale, setFontScale, initFontScale, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,
     issueNotesKey, noteCheckId, coursePrefix, issueCode, flowLeafIds, issueProgress,
     checklistHtml, wireChecklist, buildDeadlinesIndex, isDeadlineDone,
     deadlineChipsHtml, daysUntil, dueCountdownText, countdownBadgeHtml, courseSessionProgress, progressBarHtml,
+    speechSupported, speechVoices, speechSpeak, speechStop, chunkSpeech,
+    loadSpeechPrefs, saveSpeechPrefs, currentVoice, SPEECH_RATES,
     sessionHref, quizHref, issueHref, findSessionInTimetable, preRecordedSessionKey, sessionEventsByKey, sessionKeyFor, sessionPartLetter,
   });
 })();

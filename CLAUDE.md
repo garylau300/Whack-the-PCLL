@@ -488,6 +488,50 @@ not what the code does.
   - **Masked text prints revealed**, on the same reasoning as the ticks: a
     printed page of hatched boxes records nothing. The choice persists
     under `pcll.cloze`; the reveals are deliberately ephemeral.
+- **Read-aloud is a DOM pass, and the hard part is the citations.**
+  `wireNoteSpeech` (`common-content.js`) injects a play button on every
+  `.exam-section > h3` and every `.exam-flow-step` on the issue page, and
+  reads the block's own rendered text — same pass-over-the-DOM design as the
+  clozing, so no renderer, no data shape and no checkbox id changes, and
+  every issue type ever authored is covered the moment it lands. Six rules:
+  - **The engine is the browser's own `speechSynthesis`, deliberately.** No
+    key, no network, no dependency, no cost, so it ships under the zero-build
+    rule; and on the devices this is revised on (Siri voices, Microsoft
+    Natural in Edge, Google TTS on Android) it is as good as anything paid.
+    A cloud voice would need an API key, therefore a serverless function to
+    hold it, therefore caching — and would still read the citations wrongly.
+  - **`speechText(text)` in `common-core.js` is what makes it listenable.**
+    Every engine, free or $180/M characters, reads "O.18 r.19(1)(a)" as "oh
+    dot eighteen r dot nineteen bracket one bracket a". `speechText` runs
+    `findRanges` (the `citeHtml` detector) over the raw string and hands each
+    hit to `citeSpeech` — "Order 18, rule 19, paragraph 1, a" — and the prose
+    between to `proseSpeech`. It runs the detector rather than reading the
+    `<span class="cite">` marks already in the DOM **because the one place
+    those marks are deliberately absent is where citations are densest**: a
+    `statutes` quote box renders its body with `escapeHtml`, since bolding
+    inside a verbatim quote would alter the quote.
+  - **Chunk, don't trust the queue.** Chrome drops a *remote* voice's
+    utterance after ~15 seconds (crbug 41294170), so `chunkSpeech` cuts at
+    sentence, then clause, then a hard 170 characters, and each chunk is its
+    own utterance chained on the previous one's `onend`. Chaining rather than
+    queueing is also what makes stop exact. Two more engine quirks are
+    handled in `speechSpeak` and should not be "simplified" away:
+    `getVoices()` is empty on the first call in Chrome (hence `voiceschanged`),
+    and `cancel()` immediately followed by `speak()` wedges the engine (hence
+    the deferred start and the `resume()` before each utterance).
+  - **A step reads its rule and its points, never its coaching blocks.**
+    `SPEAK_SKIP` excludes `.exam-coach`: the `why`/`exam` blocks are
+    collapsed on screen and are not part of the step's work, so reading them
+    aloud would not match what is displayed.
+  - **Clozed text is spoken in full**, on exactly the reasoning that makes
+    masked text print revealed — a page read aloud as a row of blanks records
+    nothing either, and you have to press play deliberately.
+  - **No page player, and no word-level highlight.** The unit is always the
+    block whose button was pressed. A highlight would mean wrapping new spans
+    inside the very text the cloze pass also rewrites; the block-level
+    `.is-being-read` tint needs one class and no DOM surgery. The lit button
+    keys off `--accent-text`, not `--accent`, for the dark-mode reason given
+    further down.
 - **Don't write copy that the interface already says.** A line telling the
   reader that every session ticked means the whole course, or that they
   should pick an answer to continue, or to tap a node to open it, is read

@@ -1967,7 +1967,7 @@ summary::marker { color: var(--text-muted); }
   padding: 8px 10px; margin-bottom: 16px;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
 }
-.note-cloze-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.note-cloze-label, .note-tools-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
 .note-cloze-checks { flex: 1 1 auto; }
 .note-cloze-bar .link-btn { margin-left: auto; }
 
@@ -1998,7 +1998,72 @@ summary::marker { color: var(--text-muted); }
    print dialog already offers "Save as PDF" as a destination, so the whole
    feature is this stylesheet plus a window.print() call.
    --------------------------------------------------------------------------- */
+
+/* Read-aloud. A play button sits on every section heading and every
+   flowchart step; there is deliberately no transport bar, because the unit
+   being read is always the block whose button was pressed.
+
+   The step button lives in the 34px gutter the flowchart already reserves
+   for its step numbers, directly under the number -- the one column on the
+   page with nothing in it, so 30-odd buttons add no width and displace no
+   text. It is quiet until hovered and filled while speaking, which is what
+   lets it be permanently visible (a hover-only control does not exist on a
+   touch screen) without 733 speaker icons shouting across the corpus. */
+.note-speak {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; padding: 0;
+  border: 0; border-radius: var(--radius-sm);
+  background: transparent; color: var(--text-muted);
+  cursor: pointer; flex: 0 0 auto;
+}
+.note-speak:hover { color: var(--accent-text); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.note-speak:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.note-speak-icon { width: 15px; height: 15px; }
+.note-speak-icon--stop { display: none; width: 11px; height: 11px; }
+/* --accent is NOT redefined for dark mode (only --accent-text is), so a
+   solid #1e3a5f fill all but disappears on the #1d2129 surface. The lit
+   state therefore keys off --accent-text, which IS theme-aware, and takes
+   its foreground from --bg so the contrast flips with it. */
+.note-speak.is-speaking { color: var(--bg); background: var(--accent-text); }
+.note-speak.is-speaking .note-speak-icon--play { display: none; }
+.note-speak.is-speaking .note-speak-icon--stop { display: block; }
+/* Starts AND ends at the resting pose, so the global reduced-motion rule --
+   which collapses an animation to one 0.001ms run and snaps to its FINAL
+   keyframe -- lands on a fully opaque button rather than a half-faded one. */
+@keyframes speakPulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
+.note-speak.is-speaking { animation: speakPulse 1.6s ease-in-out infinite; }
+
+.note-speak--section { margin-left: 8px; vertical-align: middle; }
+.note-speak--step { position: absolute; left: -33px; top: 24px; }
+
+/* The block being read is tinted rather than having its sentences wrapped
+   and highlighted: a highlight needs new spans inside the very text the
+   cloze pass is also rewriting, and two passes fighting over the same nodes
+   is a bug waiting to happen. A tint needs one class and no DOM surgery. */
+.is-being-read {
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 7%, transparent);
+}
+
+/* Voice and speed, appended into the page's existing study-tools bar. Native
+   selects, per the no-pills rule -- and a select is the honest control for
+   "one of these many", which a voice list at 30-odd entries certainly is. */
+.note-speak-bar { display: flex; align-items: center; gap: 8px; flex: 1 0 100%; }
+.note-speak-select {
+  max-width: 190px; padding: 3px 6px;
+  font: inherit; font-size: 0.78rem;
+  color: var(--text); background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.note-speak-select:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.note-speak-rate { max-width: 74px; }
+
 @media print {
+  /* Screen furniture: a paper copy has nothing to press and no voice. */
+  .note-speak, .note-speak-bar { display: none !important; }
+  .is-being-read { background: none !important; box-shadow: none !important; }
   /* Paper gets the normal size whatever the reader had on screen — the same
      call this block already makes about dark mode. The screen scale is
      about reading on a backlit display at arm's length; a printed copy is a

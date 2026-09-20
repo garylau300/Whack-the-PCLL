@@ -12,7 +12,11 @@
 (() => {
   'use strict';
 
-  const { escapeHtml, citeHtml, noteCheckId, issueCode, initDialog, RACCOON } = window.PCLL;
+  const {
+    escapeHtml, citeHtml, noteCheckId, issueCode, initDialog, RACCOON,
+    speechText, speechSupported, speechVoices, speechSpeak, speechStop,
+    loadSpeechPrefs, saveSpeechPrefs, SPEECH_RATES,
+  } = window.PCLL;
 
   function listSection(heading, items) {
     if (!items || !items.length) return '';
@@ -1491,6 +1495,154 @@
     return syncAll;
   }
 
+  // ---------------------------------------------------------------------
+  // Read-aloud for the exam notes, one section or one flowchart step at a
+  // time.
+  //
+  // Like the clozing above, this is a pass over the ALREADY-RENDERED DOM
+  // rather than a renderer option: no renderer changes, no data changes, no
+  // new checkbox ids, and every issue type ever authored is covered the
+  // moment it lands, including ones not written yet. It also means the text
+  // that is spoken is exactly the text on the screen.
+  //
+  // Two consequences of reading the DOM rather than the data are deliberate:
+  //  - What is spoken is exactly what is on the screen, so a section can
+  //    never be read out in an order or a wording the page does not show.
+  //  - Masked (clozed) text is spoken in full, on the same reasoning as the
+  //    print rule: a page read aloud as a row of blanks teaches nothing, and
+  //    you have to press play deliberately to hear it.
+  //
+  // Each part goes through speechText, which is what turns "O.18 r.19(1)(a)"
+  // into "Order 18, rule 19, paragraph 1, a" rather than "oh dot eighteen r
+  // dot nineteen bracket one bracket a".
+  // ---------------------------------------------------------------------
+
+  // Never spoken: the coaching blocks, which are collapsed on screen and are
+  // not part of the step's work; the step's own number, which the reading
+  // announces itself; and the controls this pass adds.
+  const SPEAK_SKIP = '.exam-coach, .note-speak, .note-speak-bar, .exam-flow-num';
+  // Elements that end a spoken part. A part becomes its own utterance, so
+  // these are also where the reading takes a breath.
+  const SPEAK_BREAK = /^(P|LI|TR|DIV|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|FIGCAPTION)$/;
+
+  function speechPartsOf(el) {
+    const parts = [];
+    let buf = '';
+    const flush = () => {
+      const t = speechText(buf);
+      if (t) parts.push(t);
+      buf = '';
+    };
+    const walk = (node) => {
+      if (node.nodeType === 3) { buf += node.nodeValue; return; }
+      if (node.nodeType !== 1) return;
+      if (node.matches(SPEAK_SKIP)) return;
+      if (node.tagName === 'INPUT' || node.tagName === 'BUTTON') return;
+      if (node.hidden) return;
+      const breaks = SPEAK_BREAK.test(node.tagName)
+        || node.classList.contains('exam-flow-detail')
+        || node.classList.contains('exam-flow-label')
+        // A route is a "when" clause butted straight against the link it
+        // sends you to, with no whitespace between them in the markup --
+        // they run together into one word without a break here.
+        || node.classList.contains('exam-route-when');
+      if (breaks) flush();
+      node.childNodes.forEach(walk);
+      // A table row reads as one part with its cells separated, so a cell
+      // ends with a comma rather than a new utterance.
+      if (node.tagName === 'TD' || node.tagName === 'TH') buf += ', ';
+      if (breaks) flush();
+    };
+    walk(el);
+    flush();
+    return parts;
+  }
+
+  function speakBtnHtml(label, cls) {
+    return `<button type="button" class="note-speak ${cls}" aria-label="${escapeHtml('Read aloud: ' + label)}" title="Read aloud">
+      <svg class="note-speak-icon note-speak-icon--play" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      <svg class="note-speak-icon note-speak-icon--stop" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+    </button>`;
+  }
+
+  // Voice and speed. These live in the page's existing study-tools bar and
+  // are appended to it rather than rendered into it, so the cloze renderer
+  // needs no change and an unsupported browser gets no controls at all
+  // instead of dead ones.
+  function speechBarHtml() {
+    const prefs = loadSpeechPrefs();
+    const voices = speechVoices();
+    const opts = voices.map((v) => `<option value="${escapeHtml(v.voiceURI)}"${v.voiceURI === prefs.voice ? ' selected' : ''}>${escapeHtml(v.name)}</option>`).join('');
+    const rates = SPEECH_RATES.map((r) => `<option value="${r}"${r === prefs.rate ? ' selected' : ''}>${r}&#215;</option>`).join('');
+    return `<div class="note-speak-bar">
+      <span class="note-tools-label">Read aloud</span>
+      <select class="note-speak-select note-speak-voice" aria-label="Reading voice" title="Reading voice">${opts || '<option value="">Default voice</option>'}</select>
+      <select class="note-speak-select note-speak-rate" aria-label="Reading speed" title="Reading speed">${rates}</select>
+    </div>`;
+  }
+
+  // `scope` is the rendered notes container. Injects a play button on every
+  // section heading and every flowchart step, and drives all of them from
+  // one delegated handler -- so starting one reading always ends the one
+  // before it, and there is never more than one voice in the room.
+  function wireNoteSpeech(container, scope) {
+    if (!speechSupported() || !scope) return;
+
+    scope.querySelectorAll('.exam-section > h3').forEach((h) => {
+      h.insertAdjacentHTML('beforeend', speakBtnHtml(h.textContent.trim(), 'note-speak--section'));
+    });
+    scope.querySelectorAll('.exam-flow-step').forEach((li, i) => {
+      const label = li.querySelector('.exam-flow-label, .exam-flow-check--step > span');
+      li.insertAdjacentHTML('afterbegin', speakBtnHtml(`step ${i + 1}, ${label ? label.textContent.trim() : ''}`, 'note-speak--step'));
+    });
+
+    const bar = container.querySelector('.note-cloze-bar');
+    if (bar) bar.insertAdjacentHTML('beforeend', speechBarHtml());
+
+    let active = null;
+    const clear = () => {
+      if (!active) return;
+      active.btn.classList.remove('is-speaking');
+      active.btn.setAttribute('title', 'Read aloud');
+      active.block.classList.remove('is-being-read');
+      active = null;
+    };
+    const stop = () => { speechStop(); clear(); };
+
+    container.addEventListener('click', (e) => {
+      const btn = e.target.closest('.note-speak');
+      if (!btn) return;
+      e.preventDefault();
+      const wasActive = active && active.btn === btn;
+      stop();
+      if (wasActive) return;
+      const block = btn.closest('.exam-flow-step') || btn.closest('.exam-section');
+      if (!block) return;
+      if (!speechSpeak(speechPartsOf(block), { onend: clear })) return;
+      active = { btn, block };
+      btn.classList.add('is-speaking');
+      btn.setAttribute('title', 'Stop reading');
+      block.classList.add('is-being-read');
+    });
+
+    // Changing the voice or the speed mid-sentence would otherwise leave the
+    // rest of the block being read in the old one.
+    container.addEventListener('change', (e) => {
+      const voice = e.target.closest('.note-speak-voice');
+      const rate = e.target.closest('.note-speak-rate');
+      if (!voice && !rate) return;
+      const prefs = loadSpeechPrefs();
+      if (voice) prefs.voice = voice.value;
+      if (rate) prefs.rate = Number(rate.value) || 1;
+      saveSpeechPrefs(prefs);
+      stop();
+    });
+
+    // Printing opens the collapsed coaching blocks and prints the ticks; a
+    // voice still talking over a print dialog is just noise.
+    window.addEventListener('beforeprint', stop);
+  }
+
   window.PCLL = Object.assign(window.PCLL || {}, {
     listSection, resolveDeadlineFromDetails, fullNoteBodyHtml, referenceHtml, legalIssueNotesHtml,
     examIssueSectionsHtml, wireFlowChecks, examIssueListHtml, wireIssueFilter,
@@ -1498,5 +1650,6 @@
     examQuestionBank, examQuizRound, examQuizHtml, wireExamQuiz, examIssueIndex, QUIZ_KINDS,
     quizSetupHtml, wireQuizSetup, loadQuizSetup, saveQuizSetup, QUIZ_SIZES, spreadCounts,
     noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
+    wireNoteSpeech, speechPartsOf,
   });
 })();

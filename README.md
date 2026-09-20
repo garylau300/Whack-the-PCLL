@@ -110,6 +110,18 @@ that one is *the conventions and rules for changing it*.
   names, and click any blank to reveal it. What's left is the prompt — the
   step label stays when its rule goes, the authorities table keeps the
   proposition and hides the case.
+- **The notes read themselves aloud.** Every section and every flowchart
+  step on an issue page has a play button, using the browser's own speech
+  engine — no key, no network, nothing to install. The work isn't the voice,
+  it's the citations: every engine reads "O.18 r.19(1)(a)" as "oh dot
+  eighteen r dot nineteen bracket one bracket a", so the same detector that
+  highlights references on the page also expands them for speech — "Order 18,
+  rule 19, paragraph 1, a", "section 127, subsection 3", "Model Article 64,
+  paragraph 4", and `v` as "versus". Nothing is authored for it, so a new
+  issue type is readable the moment it lands. A step reads its rule and its
+  checklist points; the collapsed Why and In-the-exam blocks stay silent,
+  matching what's on screen. Voice and speed sit in the same bar as the cloze
+  controls.
 - Two earlier formats are still supported alongside it: an interactive
   mindmap (`legalIssues`), used by three sessions that predate exam notes and
   deliberately left as they are, and a flat accordion (`fullNotes`), which
