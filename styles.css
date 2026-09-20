@@ -1767,6 +1767,24 @@ summary::marker { color: var(--text-muted); }
   .quiz-kind-out { grid-area: out; text-align: right; }
 }
 
+/* The issue-type picker. A whole course is 126 of these, so the box scrolls
+   rather than pushing the rest of the setup off the screen; the count in
+   the label is what tells you the selection without scrolling it. */
+.quiz-issue-box {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  max-height: 190px; overflow-y: auto;
+  padding: 8px; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--bg);
+}
+.quiz-issue-chip { text-align: left; }
+.quiz-issue-code { font-variant-numeric: tabular-nums; opacity: 0.75; }
+.quiz-issue-picked {
+  margin-left: 8px; font-weight: 400; text-transform: none; letter-spacing: 0;
+  color: var(--text-muted);
+}
+
+.quiz-head-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
 .quiz-setup-presets { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .quiz-setup-presets .quiz-setup-hint { margin-right: 2px; }
 
@@ -1805,7 +1823,6 @@ summary::marker { color: var(--text-muted); }
 .quiz-next:hover:not(:disabled) { background: color-mix(in srgb, var(--accent) 24%, var(--surface)); }
 .quiz-next:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
 .quiz-next:disabled { cursor: default; opacity: 0.5; }
-.quiz-nav-hint { font-size: 0.78rem; }
 .quiz-nav[hidden] { display: none; }
 
 /* Only in review, where the whole round is on screen at once and the cards

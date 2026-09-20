@@ -93,7 +93,7 @@ that one is *the conventions and rules for changing it*.
   the same issue type, so you have to know which step or which case — not
   merely which topic. The dashboard's **Test Yourself** card opens a setup
   screen where you build the round — which course, which sessions (or the
-  whole course), and a slider per question type setting how many of each you
+  whole course), which issue types, and a slider per question type setting how many of each you
   want. The round is their sum, so any length is reachable; the 5/10/20/50
   buttons just spread that many evenly. Each slider shows how many questions
   of that type the chosen scope actually has. It remembers what you picked.

@@ -637,17 +637,31 @@
     return refs.map((r) => r.session + '/' + r.issue);
   }
 
-  // `scope` is what the questions are ABOUT: one session key, an array of
-  // them, or nothing for the whole course. Distractors and route targets
-  // are always drawn from the whole course regardless, because narrowing
-  // those too would make a one-session round answerable by elimination.
+  // `scope` is what the questions are ABOUT. One session key, an array of
+  // them, `{ sessions, issues }` to narrow to particular issue types (an
+  // issue is keyed "<sessionKey>/<issueId>"), or nothing for the whole
+  // course. An empty list at either level means "all of them".
+  //
+  // Distractors and route targets are always drawn from the whole course
+  // regardless, because narrowing those too would make a tight round
+  // answerable by elimination — every wrong answer would visibly be from
+  // outside the scope.
   function examQuestionBank(code, details, scope) {
     const universe = examIssueIndex(code, details);
     const byRef = new Map(universe.map((e) => [e.sessionKey + '/' + e.id, e]));
-    const keys = scope == null ? null : (Array.isArray(scope) ? scope : [scope]);
-    const pool = keys && keys.length
-      ? universe.filter((e) => keys.includes(e.sessionKey))
-      : universe;
+
+    let keys = null;
+    let issues = null;
+    if (scope && !Array.isArray(scope) && typeof scope === 'object') {
+      keys = (scope.sessions && scope.sessions.length) ? scope.sessions : null;
+      issues = (scope.issues && scope.issues.length) ? new Set(scope.issues) : null;
+    } else if (scope != null) {
+      keys = Array.isArray(scope) ? scope : [scope];
+      if (!keys.length) keys = null;
+    }
+
+    let pool = keys ? universe.filter((e) => keys.includes(e.sessionKey)) : universe;
+    if (issues) pool = pool.filter((e) => issues.has(e.sessionKey + '/' + e.id));
     const qs = [];
 
     pool.forEach((e) => {
@@ -939,13 +953,26 @@
         <div class="quiz-setup-chips">${chipRow(course.sessions.map((s) => ({
           value: s, label: s, on: sessionsOn.includes(s),
         })), 'quiz-session-chip')}</div>
-        <span class="quiz-setup-hint muted">All of them is the whole course.</span>
+      </div>
+      <div class="quiz-setup-group">
+        <span class="quiz-setup-label">Issue types<span class="quiz-issue-picked">${setup.issues && setup.issues.length
+          ? `${setup.issues.length} of ${model.issues.length}` : `all ${model.issues.length}`}</span></span>
+        <div class="quiz-issue-box">${model.issues.map((it) => {
+          const on = !setup.issues || !setup.issues.length || setup.issues.includes(it.key);
+          return `<button type="button" class="tag-chip quiz-issue-chip${on ? ' is-on' : ''}"`
+            + ` data-value="${escapeHtml(it.key)}" aria-pressed="${on ? 'true' : 'false'}">`
+            + `<span class="quiz-issue-code">${escapeHtml(it.code9)}</span> ${escapeHtml(it.title)}</button>`;
+        }).join('')}</div>
+        <div class="quiz-setup-presets">
+          <button type="button" class="link-btn quiz-issue-all">All</button>
+          <button type="button" class="link-btn quiz-issue-none">None</button>
+        </div>
       </div>
       <div class="quiz-setup-group">
         <span class="quiz-setup-label">How many of each type</span>
         <div class="quiz-kind-sliders">${sliders}</div>
         <div class="quiz-setup-presets">
-          <span class="quiz-setup-hint muted">Or spread evenly:</span>
+          <span class="quiz-setup-hint muted">Spread evenly</span>
           ${QUIZ_SIZES.map((n) => `<button type="button" class="tag-chip quiz-size-chip" data-value="${n}">${n}</button>`).join('')}
         </div>
       </div>
@@ -983,12 +1010,15 @@
 
     setupEl.addEventListener('click', (e) => {
       if (e.target.closest('.quiz-setup-start')) { if (h.onStart) h.onStart(); return; }
+      if (e.target.closest('.quiz-issue-all')) { h.onChange({ allIssues: true }); return; }
+      if (e.target.closest('.quiz-issue-none')) { h.onChange({ noIssues: true }); return; }
       const chip = e.target.closest('.tag-chip');
       if (!chip) return;
       const value = chip.dataset.value;
       if (chip.classList.contains('quiz-course-chip')) h.onChange({ code: value, sessions: [] });
       else if (chip.classList.contains('quiz-size-chip')) h.onChange({ spread: Number(value) });
       else if (chip.classList.contains('quiz-session-chip')) h.onChange({ toggleSession: value });
+      else if (chip.classList.contains('quiz-issue-chip')) h.onChange({ toggleIssue: value });
     });
   }
 
@@ -1147,11 +1177,16 @@
       return '<div class="quiz-round"><p class="muted">No questions could be built from these notes yet.</p></div>';
     }
     return `<div class="quiz-round">
+      <!-- Customise sits in the head, not at the foot: arriving here from a
+           session drops you straight into questions, and a control below ten
+           of them is a control nobody finds. -->
       <div class="quiz-head">
         <h3>Test Yourself</h3>
-        <span class="quiz-score" role="status">0 answered</span>
+        <div class="quiz-head-right">
+          <span class="quiz-score" role="status">0 answered</span>
+          <button type="button" class="link-btn quiz-customise">Customise →</button>
+        </div>
       </div>
-      <p class="quiz-intro muted">Questions are built from these notes — the fact patterns, the routes between issue types, the flowchart traps and the authorities tables.</p>
       <div class="quiz-progress">
         <span class="quiz-progress-bar"><span class="quiz-progress-fill" style="width:${(100 / round.length).toFixed(2)}%"></span></span>
         <span class="quiz-progress-text">1 / ${round.length}</span>
@@ -1162,11 +1197,9 @@
       <ol class="quiz-questions">${round.map((q, i) => quizQuestionHtml(q, i, o.hrefFor)).join('')}</ol>
       <div class="quiz-nav">
         <button type="button" class="quiz-next" disabled>Next →</button>
-        <span class="quiz-nav-hint muted">Pick an answer to continue</span>
       </div>
       <div class="quiz-actions">
         <button type="button" class="link-btn quiz-again">Start over →</button>
-        <button type="button" class="link-btn quiz-customise">Customise this round →</button>
       </div>
       <!-- Results, shown once the last question is answered. Same
            settings-panel/settings-card shell every other dialog on the site
@@ -1204,7 +1237,6 @@
     let current = 0;
 
     const nextBtn = round.querySelector('.quiz-next');
-    const navHint = round.querySelector('.quiz-nav-hint');
     const progressFill = round.querySelector('.quiz-progress-fill');
     const progressText = round.querySelector('.quiz-progress-text');
 
@@ -1225,7 +1257,6 @@
       const answered = cards[i].classList.contains('is-answered');
       nextBtn.disabled = !answered;
       nextBtn.textContent = isLast() ? 'See results →' : 'Next →';
-      navHint.textContent = answered ? '' : 'Pick an answer to continue';
       progressFill.style.width = `${((i + 1) / total) * 100}%`;
       progressText.textContent = `${i + 1} / ${total}`;
     }
@@ -1295,7 +1326,6 @@
       // question is the most useful part of getting one wrong, and
       // auto-advancing would scroll it away before it had been read.
       nextBtn.disabled = false;
-      navHint.textContent = '';
       nextBtn.focus();
     });
 

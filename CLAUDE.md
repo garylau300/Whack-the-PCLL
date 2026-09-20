@@ -371,17 +371,24 @@ not what the code does.
   - The caller resolves hrefs (`quiz.js` has the timetable, the content
     layer does not) — same division of labour as `examIssueListHtml`.
   - **`examQuestionBank`'s third argument is a SCOPE**: one session key, an
-    array of them, or nothing for the whole course. It narrows only what the
-    questions are ABOUT — distractors and route targets still come from the
-    whole course, because narrowing those too would make a one-session round
-    answerable by elimination.
+    array of them, `{ sessions, issues }` to narrow to particular issue
+    types (keyed `"<sessionKey>/<issueId>"`), or nothing for the whole
+    course; an empty list at either level means all of them. It narrows only
+    what the questions are ABOUT — distractors and route targets still come
+    from the whole course, because narrowing those too would make a tight
+    round answerable by elimination.
+    - **A `route` question scoped to one issue type answers to a DIFFERENT
+      one, and that is correct.** The question is drawn from the scoped
+      issue's own `routes`, and a route's whole point is that the facts
+      belong somewhere else. A scope check that expects every answer to sit
+      inside the scope will wrongly flag these.
   - **quiz.html is two views.** Reached with session params (the session
     button, the issue page's button, the course page's per-session links) it
     goes straight to questions. Reached bare — from the dashboard's Test
     Yourself card — it opens the setup screen, because the dashboard spans
     every course and the course is one of the things setup asks for.
-    `quizSetupHtml`/`wireQuizSetup` offer course, sessions and **a slider per
-    question type**; the choice persists under `pcll.quizSetup`, so the
+    `quizSetupHtml`/`wireQuizSetup` offer course, sessions, **issue types**
+    and **a slider per question type**; the choice persists under `pcll.quizSetup`, so the
     dashboard button reopens on whatever was last used. Three rules:
     - **The sliders ARE the length.** Each sets how many questions of that
       kind, and the round is their sum — so any total is reachable and there
@@ -464,6 +471,13 @@ not what the code does.
   - **Masked text prints revealed**, on the same reasoning as the ticks: a
     printed page of hatched boxes records nothing. The chip choice persists
     under `pcll.cloze`; the reveals are deliberately ephemeral.
+- **Don't write copy that the interface already says.** A line telling the
+  reader that all the session chips on means the whole course, or that they
+  should pick an answer to continue, or to tap a node to open it, is read
+  once and then in the way forever. A sentence earns its place only by
+  carrying a fact the reader cannot see — "Saved on this device only" stays
+  for exactly that reason, and so do empty states. The same instinct that
+  took the summaries off the issue index applies to prose everywhere.
 - **The issue-type index is ONE renderer: `examIssueListHtml(groups)` in
   `common-content.js`**, used by both the session page (`examNotesIndexHtml`)
   and the course-wide roll-up (`course.js`). It used to be two copies of the

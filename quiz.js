@@ -101,6 +101,9 @@
       // Opening from a session scopes to it; otherwise fall back to what was
       // last used, and finally to the whole course.
       sessions: entry && openedSession ? [openedSession] : (Array.isArray(saved.sessions) ? saved.sessions : []),
+      // Arriving from a session resets the issue picking — the remembered
+      // one belongs to whatever scope it was chosen in.
+      issues: entry ? [] : (Array.isArray(saved.issues) ? saved.issues : []),
       counts: (saved.counts && typeof saved.counts === 'object') ? { ...saved.counts } : null,
     };
 
@@ -110,11 +113,29 @@
       return (setup.sessions || []).filter((s) => course && course.sessions.includes(s));
     };
 
-    function bankFor() {
+    // Every issue type the chosen sessions contain, which is both what the
+    // chips offer and what a remembered issue selection is reconciled to.
+    function issuesInScope() {
       const details = detailsFor(setup.code);
       if (!details) return [];
       const picked = validSessions();
-      return examQuestionBank(setup.code, details, picked.length ? picked : null);
+      return examIssueIndex(setup.code, details)
+        .filter((e) => !picked.length || picked.includes(e.sessionKey))
+        .map((e) => ({ key: `${e.sessionKey}/${e.id}`, code9: e.code9, title: e.title }));
+    }
+
+    const validIssues = (inScope) => {
+      const keys = new Set(inScope.map((i) => i.key));
+      return (setup.issues || []).filter((k) => keys.has(k));
+    };
+
+    function bankFor() {
+      const details = detailsFor(setup.code);
+      if (!details) return [];
+      return examQuestionBank(setup.code, details, {
+        sessions: validSessions(),
+        issues: setup.issues || [],
+      });
     }
 
     const availOf = (bank) => {
@@ -143,9 +164,11 @@
       setCourseLink(data, setup.code);
       setHeading('Test Yourself');
       setup.sessions = validSessions();
+      const inScope = issuesInScope();
+      setup.issues = validIssues(inScope);
       const avail = availOf(bankFor());
       reconcile(avail);
-      bodyEl.innerHTML = quizSetupHtml({ courses, setup, avail });
+      bodyEl.innerHTML = quizSetupHtml({ courses, setup, avail, issues: inScope });
       wireQuizSetup(bodyEl, {
         // Live while dragging: record the value but do NOT re-render, or the
         // thumb is pulled out from under the pointer mid-drag.
@@ -163,7 +186,19 @@
           if (startEl) startEl.disabled = !total;
         },
         onChange: (change) => {
-          if (change.code) { setup.code = change.code; setup.sessions = []; }
+          if (change.code) { setup.code = change.code; setup.sessions = []; setup.issues = []; }
+          if (change.allIssues) setup.issues = [];
+          // "None" cannot mean an empty round, so it selects a single issue
+          // type to start narrowing from rather than nothing at all.
+          if (change.noIssues) setup.issues = inScope.length ? [inScope[0].key] : [];
+          if (change.toggleIssue) {
+            const all = inScope.map((i) => i.key);
+            const on = setup.issues.length ? setup.issues.slice() : all.slice();
+            const i = on.indexOf(change.toggleIssue);
+            if (i >= 0) on.splice(i, 1); else on.push(change.toggleIssue);
+            // All of them, or none of them, both mean "no issue filter".
+            setup.issues = (on.length === all.length || !on.length) ? [] : on;
+          }
           if (change.toggleSession) {
             const course = courses.find((c) => c.code === setup.code);
             const all = course ? course.sessions : [];
@@ -171,6 +206,8 @@
             const i = on.indexOf(change.toggleSession);
             if (i >= 0) on.splice(i, 1); else on.push(change.toggleSession);
             setup.sessions = on.length === all.length ? [] : on;
+            // The issue chips belong to the old session set.
+            setup.issues = [];
           }
           if (change.spread) setup.counts = spreadCounts(change.spread, availOf(bankFor()));
           saveQuizSetup(setup);
@@ -190,8 +227,11 @@
 
       setCourseLink(data, setup.code);
       const picked = validSessions();
-      const scopeLabel = picked.length === 1 ? picked[0]
-        : picked.length ? `${picked.length} sessions` : setup.code;
+      const narrowed = (setup.issues || []).length;
+      const scopeLabel = narrowed
+        ? `${narrowed} issue type${narrowed === 1 ? '' : 's'}`
+        : (picked.length === 1 ? picked[0]
+          : picked.length ? `${picked.length} sessions` : setup.code);
       setHeading(`${scopeLabel} — Test Yourself`);
 
       const eventsByKey = eventsByKeyFor(setup.code);

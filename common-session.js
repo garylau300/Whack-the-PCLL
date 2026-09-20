@@ -123,7 +123,6 @@
         <div class="mindmap-hub"><span>Legal Issues</span></div>
         ${nodesHtml}
       </div>
-      <p class="mindmap-hint muted small">Tap a topic, then a sub-topic, to open it.</p>
       <div class="mindmap-modal-panel settings-panel" data-mindmap-modal>
         <div class="settings-card mindmap-modal-card">
           <div class="settings-head">
