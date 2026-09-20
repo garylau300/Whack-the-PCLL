@@ -1088,8 +1088,32 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
 }
 .exam-index-quiz:hover, .exam-index-quiz:focus-visible { text-decoration: underline; }
 
-/* The issue page's breadcrumb link to the same round. */
-.session-subtitle #quizLink { font-weight: 700; white-space: nowrap; }
+/* The issue page's own way into the round — a button sitting above the
+   notes, not a link buried in the breadcrumb.
+
+   Deliberately tinted rather than filled with a flat --accent: that token
+   is NOT redefined for dark mode (only --accent-text is), so a solid
+   #1e3a5f panel would sit almost invisibly on the #1d2129 dark surface.
+   Both ingredients here are theme-aware — color-mix against --surface, and
+   --accent-text for the label — so it stays legible in either theme without
+   needing a dark-mode override of its own. The 2px border and the icon are
+   what make it read as a control rather than another callout. */
+.quiz-cta {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 18px; padding: 11px 16px;
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, var(--surface));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text); text-decoration: none; font-weight: 700;
+}
+.quiz-cta:hover, .quiz-cta:focus-visible {
+  background: color-mix(in srgb, var(--accent) 24%, var(--surface));
+  border-color: var(--accent-text);
+}
+.quiz-cta:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.quiz-cta-icon { font-size: 1.25rem; flex: 0 0 auto; }
+.quiz-cta-text { font-size: 0.92rem; }
+.quiz-cta-arrow { margin-left: auto; font-size: 1.1rem; flex: 0 0 auto; }
 
 /* A navigation ROW, not a card. At 26 issue types in one course the old
    card -- number badge, title, a line of summary, tag chips -- meant one
@@ -1839,6 +1863,7 @@ summary::marker { color: var(--text-muted); }
   .issue-nav,
   .exam-index-filter,
   .note-cloze-bar,
+  .quiz-cta,
   .spinner { display: none !important; }
 
   /* A printed page of blurred boxes records nothing, for the same reason a

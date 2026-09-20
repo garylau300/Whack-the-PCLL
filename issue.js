@@ -99,6 +99,8 @@
     $('courseLink').textContent = courseName ? `${code} · ${courseName}` : code;
     $('courseLink').href = `course.html?code=${encodeURIComponent(code)}`;
     $('quizLink').href = quizHref(ev, foundDate);
+    $('quizLink').querySelector('.quiz-cta-text').textContent = ev.no
+      ? `Test yourself on ${ev.no}` : 'Test yourself on this session';
 
     // The topbar carries the SESSION heading (matching what session.html's
     // own header shows for the same session, since the back arrow returns
