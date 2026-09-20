@@ -91,7 +91,11 @@ that one is *the conventions and rules for changing it*.
   questions across the four courses, and a new issue type is covered the
   moment it's authored. Wrong answers for the last two kinds are drawn from
   the same issue type, so you have to know which step or which case — not
-  merely which topic.
+  merely which topic. Finish a round and you get a results card: the score,
+  which of the four kinds you were weak on, the issue types you missed as
+  links straight back to them, and a tip or two on where in the notes to go
+  next. Nothing is stored between rounds, so it only ever reports on the
+  round you just did.
 - The notes can also be **clozed in place**: on an issue page, hide the
   rules, the checklist points, the traps, the model sentences or the case
   names, and click any blank to reveal it. What's left is the prompt — the

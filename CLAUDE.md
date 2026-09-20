@@ -370,6 +370,32 @@ not what the code does.
     guards this with a per-kind coverage floor across sessions.
   - The caller resolves hrefs (`quiz.js` has the timetable, the content
     layer does not) — same division of labour as `examIssueListHtml`.
+  - **A finished round opens a results dialog** (`quizResults`,
+    `quizResultsHtml`), wired through the shared `initDialog` like every
+    other popup. It reports the score, a per-kind accuracy breakdown, the
+    issue types that were missed (as links), and at most two tips. Three
+    rules:
+    - **Everything shown is measured from the round in front of you.** No
+      score history is stored, so nothing may claim a trend, a streak or a
+      "level" — there is no data for it and inventing one would be a lie
+      about the reader's progress.
+    - **Tips say where to look in the notes; they never state a rule of
+      law.** `KIND_TIPS` points at the Fact Pattern Triggers, the routes,
+      the "In the exam" blocks or the authorities cloze. A tip with legal
+      content in it would be fabricated course material by the back door.
+    - **Every animation ends at the resting pose, and the resting CSS
+      already holds the true value** — the ring's `stroke-dashoffset` and
+      each bar's `width` are set inline from the data, and the keyframes
+      only supply the approach from zero (no `to` block; the implicit final
+      keyframe resolves to the element's own value). So the global
+      reduced-motion rule, which snaps to the FINAL keyframe, lands on the
+      real figure rather than a frozen half-sweep. This is the same hazard
+      as the looping-animation rule below, in a one-shot form.
+  - **The celebrating raccoon appears only on a clean sweep.** The mascot
+    rule below warns against inventing a completion state for the quiz just
+    to hang it off — that warning was written when a round had no completion
+    state at all. It has one now, and it is real, but a 7/12 is not a
+    celebration, so only 100% gets the raccoon.
 - **The notes can be clozed in place on the issue page.** A chip row
   (`noteClozeControlsHtml`/`wireNoteCloze`) blanks a chosen kind of content
   — Rules (`.exam-flow-detail`), Points, Traps, Model sentences,

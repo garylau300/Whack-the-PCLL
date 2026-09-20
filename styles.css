@@ -1770,6 +1770,73 @@ summary::marker { color: var(--text-muted); }
 .quiz-why-link:hover, .quiz-why-link:focus-visible { text-decoration: underline; }
 .quiz-actions { margin-top: 18px; }
 
+/* Round results. Every animation here ENDS at the resting pose and the
+   resting CSS already carries the true value — the ring's dashoffset and
+   each bar's width are set inline from the data, and the keyframes only
+   supply the approach from zero. So the global prefers-reduced-motion rule,
+   which collapses an animation to a single 0.001ms run and snaps to its
+   FINAL keyframe, lands on the correct figure rather than a frozen
+   half-sweep. Nothing here loops. */
+.quiz-result-card { max-width: 520px; width: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  .settings-panel.open .quiz-result-card { animation: quizResultIn 0.32s cubic-bezier(0.2, 0.8, 0.3, 1) both; }
+}
+@keyframes quizResultIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+.quiz-result-body { display: grid; gap: 18px; }
+.quiz-mascot { display: flex; justify-content: center; }
+.quiz-mascot svg { width: 96px; height: 96px; }
+
+.quiz-result-score { position: relative; display: flex; align-items: center; justify-content: center; }
+.quiz-ring { width: 132px; height: 132px; transform: rotate(-90deg); }
+.quiz-ring-track { fill: none; stroke: var(--border); stroke-width: 10; }
+.quiz-ring-value {
+  fill: none; stroke: var(--accent-text); stroke-width: 10; stroke-linecap: round;
+  animation: quizRing 0.9s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+@keyframes quizRing {
+  from { stroke-dashoffset: var(--quiz-ring-c); }
+  /* No `to`: the element's own inline stroke-dashoffset is the target, and
+     an implicit final keyframe resolves to it. */
+}
+.quiz-ring-text {
+  position: absolute; display: flex; flex-direction: column; align-items: center; line-height: 1.1;
+}
+.quiz-ring-text strong { font-size: 1.9rem; font-weight: 700; }
+.quiz-ring-of { font-size: 1rem; color: var(--text-muted); font-weight: 700; }
+.quiz-ring-pct { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; }
+
+.quiz-stats { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.quiz-stat { display: grid; grid-template-columns: 8.5rem 1fr auto; align-items: center; gap: 10px; font-size: 0.82rem; }
+.quiz-stat-label { color: var(--text-muted); font-weight: 700; }
+.quiz-stat-bar { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; }
+.quiz-stat-fill {
+  display: block; height: 100%; border-radius: 999px; background: var(--accent-text);
+  animation: quizStat 0.8s 0.1s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+@keyframes quizStat { from { width: 0; } }
+.quiz-stat-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.quiz-tips h4, .quiz-missed h4 { margin: 0 0 6px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+.quiz-tips ul, .quiz-missed ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.quiz-tips li, .quiz-missed li { font-size: 0.86rem; line-height: 1.55; }
+.quiz-missed a { color: var(--accent-text); font-weight: 700; text-decoration: none; }
+.quiz-missed a:hover, .quiz-missed a:focus-visible { text-decoration: underline; }
+
+.quiz-result-actions { display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+.quiz-result-again {
+  cursor: pointer; font-family: inherit; font-weight: 700; font-size: 0.9rem;
+  padding: 9px 16px; border-radius: var(--radius-sm);
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, var(--surface));
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  color: var(--accent-text);
+}
+.quiz-result-again:hover { background: color-mix(in srgb, var(--accent) 24%, var(--surface)); }
+.quiz-result-again:focus-visible, .quiz-result-review:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+
 /* The clozing bar on issue.html. Sticky under the topbar so the controls
    stay reachable in a forty-row flowchart -- --topbar-h is measured, never
    a literal (see trackTopbarHeight). */

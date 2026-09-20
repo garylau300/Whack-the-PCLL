@@ -12,7 +12,7 @@
 (() => {
   'use strict';
 
-  const { escapeHtml, citeHtml, noteCheckId, issueCode } = window.PCLL;
+  const { escapeHtml, citeHtml, noteCheckId, issueCode, initDialog, RACCOON } = window.PCLL;
 
   function listSection(heading, items) {
     if (!items || !items.length) return '';
@@ -854,6 +854,109 @@
     </li>`;
   }
 
+  // What a round is worth reporting on. Everything here is measured from
+  // the round itself — no stored history, no streaks, no invented "level".
+  function quizResults(round, outcomes) {
+    const byKind = new Map();
+    const missed = [];
+    const seenMissed = new Set();
+    let right = 0;
+
+    round.forEach((q, i) => {
+      const okAnswer = outcomes[i] === true;
+      if (okAnswer) right++;
+      if (!byKind.has(q.kind)) byKind.set(q.kind, { kind: q.kind, right: 0, total: 0 });
+      const k = byKind.get(q.kind);
+      k.total++;
+      if (okAnswer) k.right++;
+      if (!okAnswer) {
+        const key = q.answer.sessionKey + '/' + q.answer.id;
+        if (!seenMissed.has(key)) { seenMissed.add(key); missed.push(q.answer); }
+      }
+    });
+
+    const total = round.length;
+    const kinds = QUIZ_KINDS.filter((k) => byKind.has(k)).map((k) => byKind.get(k));
+    // Weakest first, and only kinds actually got wrong — a tip about a kind
+    // you scored full marks on is noise.
+    const weak = kinds.filter((k) => k.right < k.total)
+      .sort((a, b) => (a.right / a.total) - (b.right / b.total));
+    return {
+      total,
+      right,
+      pct: total ? Math.round((right / total) * 100) : 0,
+      kinds,
+      weak,
+      missed,
+    };
+  }
+
+  // Verdicts are about effort on this round, never about the reader. No
+  // stored history exists, so nothing here can claim a trend.
+  function quizVerdict(pct) {
+    if (pct === 100) return 'Clean sweep';
+    if (pct >= 80) return 'Strong round';
+    if (pct >= 60) return 'Solid, with gaps';
+    if (pct >= 40) return 'Worth another pass';
+    return 'Back to the notes';
+  }
+
+  // Tips point at WHERE IN THE NOTES to go — they never state a rule of
+  // law. That keeps them honest: the site can't invent legal content, and
+  // a tip that said something substantive would be exactly that.
+  const KIND_TIPS = {
+    spot: 'Issue spotting is matching facts to a page. Re-read the Fact Pattern Triggers on the issue types below — they are written as facts you could meet in a problem, not as rules to recite.',
+    route: 'Near misses are the neighbouring issue types. Every Fact Pattern Triggers section ends with the facts that belong somewhere else, and says where — work down those before the exam, not during it.',
+    trap: 'Step traps live in the "In the exam" block under each flowchart step. Open them as you work down the checklist rather than skipping to the points.',
+    authority: 'Authorities are in the Key Law & Authorities table on each issue page. Turn on the Authorities cloze there: it hides the case names and leaves the propositions, which is the direction that actually gets tested.',
+  };
+
+  function quizResultsHtml(res, hrefFor) {
+    const C = 2 * Math.PI * 52;
+    const offset = C * (1 - res.pct / 100);
+    const ring = `<svg class="quiz-ring" viewBox="0 0 120 120" role="img" aria-label="${res.right} of ${res.total} correct">
+      <circle class="quiz-ring-track" cx="60" cy="60" r="52" />
+      <circle class="quiz-ring-value" cx="60" cy="60" r="52"
+        style="stroke-dasharray:${C.toFixed(1)};stroke-dashoffset:${offset.toFixed(1)};--quiz-ring-c:${C.toFixed(1)}" />
+    </svg>`;
+
+    const bars = res.kinds.map((k) => {
+      const pct = Math.round((k.right / k.total) * 100);
+      return `<li class="quiz-stat">
+        <span class="quiz-stat-label">${escapeHtml(KIND_LABELS[k.kind] || k.kind)}</span>
+        <span class="quiz-stat-bar"><span class="quiz-stat-fill" style="width:${pct}%"></span></span>
+        <span class="quiz-stat-num">${k.right}/${k.total}</span>
+      </li>`;
+    }).join('');
+
+    const tips = res.weak.slice(0, 2).map((k) => `<li>${escapeHtml(KIND_TIPS[k.kind] || '')}</li>`).join('');
+    const tipBlock = tips
+      ? `<div class="quiz-tips"><h4>What to work on</h4><ul>${tips}</ul></div>`
+      : `<div class="quiz-tips"><h4>What to work on</h4><ul><li>Nothing from this round — try another, or switch on a different question kind with the chips.</li></ul></div>`;
+
+    const missed = res.missed.length
+      ? `<div class="quiz-missed"><h4>Issue types you missed</h4><ul>${res.missed.map((e) => {
+        const href = hrefFor ? hrefFor(e) : '';
+        const label = `${e.code9} — ${e.title}`;
+        return `<li>${href ? `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>` : escapeHtml(label)}</li>`;
+      }).join('')}</ul></div>`
+      : '';
+
+    // The celebrating raccoon is kept for a clean sweep only — see CLAUDE.md
+    // on not hanging the mascot off an invented completion state. A finished
+    // round is a real one, but a half-right round is not a celebration.
+    const mascot = res.pct === 100 ? `<div class="quiz-mascot">${RACCOON.celebrate}</div>` : '';
+
+    return `${mascot}
+      <div class="quiz-result-score">
+        ${ring}
+        <span class="quiz-ring-text"><strong>${res.right}<span class="quiz-ring-of">/${res.total}</span></strong><span class="quiz-ring-pct">${res.pct}%</span></span>
+      </div>
+      <ul class="quiz-stats">${bars}</ul>
+      ${tipBlock}
+      ${missed}`;
+  }
+
   function examQuizHtml(round, opts) {
     const o = opts || {};
     if (!round.length) {
@@ -869,6 +972,23 @@
       ${chips ? `<div class="quiz-kinds">${chips}</div>` : ''}
       <ol class="quiz-questions">${round.map((q, i) => quizQuestionHtml(q, i, o.hrefFor)).join('')}</ol>
       <div class="quiz-actions"><button type="button" class="link-btn quiz-again">New round →</button></div>
+      <!-- Results, shown once the last question is answered. Same
+           settings-panel/settings-card shell every other dialog on the site
+           uses, so initDialog's focus trap and Escape handling apply here
+           too rather than being re-implemented. -->
+      <div class="quiz-result-panel settings-panel" data-quiz-result>
+        <div class="settings-card quiz-result-card">
+          <div class="settings-head">
+            <h3 id="quizResultTitle">Round complete</h3>
+            <button type="button" class="icon-btn quiz-result-close" aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+          </div>
+          <div class="quiz-result-body"></div>
+          <div class="quiz-result-actions">
+            <button type="button" class="quiz-result-again">Another round</button>
+            <button type="button" class="link-btn quiz-result-review">Review answers</button>
+          </div>
+        </div>
+      </div>
     </div>`;
   }
 
@@ -883,8 +1003,36 @@
     let answered = 0;
     let right = 0;
     const total = round.querySelectorAll('.quiz-q').length;
+    const outcomes = [];
+
+    const panel = round.querySelector('[data-quiz-result]');
+    const card = panel && panel.querySelector('.quiz-result-card');
+    const dialog = panel && initDialog({
+      panel,
+      dialog: card,
+      closeBtn: panel.querySelector('.quiz-result-close'),
+      labelledBy: 'quizResultTitle',
+    });
+
+    function showResults() {
+      if (!dialog || !h.questions) return;
+      const res = quizResults(h.questions, outcomes);
+      panel.querySelector('#quizResultTitle').textContent = quizVerdict(res.pct);
+      panel.querySelector('.quiz-result-body').innerHTML = quizResultsHtml(res, h.hrefFor);
+      dialog.open();
+    }
 
     round.addEventListener('click', (e) => {
+      // Both "again" buttons do the same thing; the dialog's one closes
+      // first so initDialog's document keydown listener is torn down before
+      // the page replaces the DOM it was wired to.
+      if (e.target.closest('.quiz-result-again')) {
+        if (dialog) dialog.close();
+        if (h.onAgain) h.onAgain();
+        return;
+      }
+      if (e.target.closest('.quiz-result-review')) { if (dialog) dialog.close(); return; }
+
       const again = e.target.closest('.quiz-again');
       if (again) { if (h.onAgain) h.onAgain(); return; }
 
@@ -914,7 +1062,12 @@
 
       answered++;
       if (correct) right++;
-      score.textContent = `${right} / ${answered} correct${answered === total ? ` — round complete` : ''}`;
+      outcomes[Number(q.dataset.idx)] = correct;
+      score.textContent = `${right} / ${answered} correct${answered === total ? ' — round complete' : ''}`;
+
+      // Let the last answer's own right/wrong styling land before the
+      // dialog covers it, so the round doesn't appear to skip a beat.
+      if (answered === total) setTimeout(showResults, 450);
     });
   }
 

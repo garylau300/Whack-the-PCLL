@@ -77,6 +77,10 @@
         const round = examQuizRound(bank, { size: 12, universe, kinds: active });
         bodyEl.innerHTML = examQuizHtml(round, { hrefFor, kinds: available, active });
         wireExamQuiz(bodyEl, {
+          // The widget needs the round itself to report on it, and hrefFor
+          // to link the issue types that were missed.
+          questions: round,
+          hrefFor,
           onAgain: draw,
           onKinds: (picked) => { active = picked.length ? picked : available.slice(); draw(); },
         });
