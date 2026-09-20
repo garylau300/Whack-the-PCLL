@@ -1080,6 +1080,16 @@ a.event-card:active { transform: translateY(-1px) scale(0.99); }
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0; color: var(--text-muted);
   background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 1px 7px;
 }
+/* Pushed to the far end of the session heading, so every session row offers
+   its derived Test Yourself round without competing with the session key. */
+.exam-index-quiz {
+  margin-left: auto; font-size: 0.7rem; font-weight: 700; letter-spacing: 0;
+  color: var(--accent-text); text-decoration: none; text-transform: none; white-space: nowrap;
+}
+.exam-index-quiz:hover, .exam-index-quiz:focus-visible { text-decoration: underline; }
+
+/* The issue page's breadcrumb link to the same round. */
+.session-subtitle #quizLink { font-weight: 700; white-space: nowrap; }
 
 /* A navigation ROW, not a card. At 26 issue types in one course the old
    card -- number badge, title, a line of summary, tag chips -- meant one

@@ -5,7 +5,7 @@
     ELECTIVE_NAMES, fmtShort, fmtTime, escapeHtml, isHappeningNow, isMyGroupSession,
     initTheme, initFontScale, loadTimetable, ICONS, loadCheckedIds, hwChecklistKey,
     checklistHtml, wireChecklist, checklistCompleteHtml, dueCountdownText, sessionHref, preRecordedSessionKey,
-    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, sessionEventsByKey, issueCode,
+    COURSE_COLORS, DEFAULT_COLOR, courseSessionProgress, progressBarHtml, issueHref, quizHref, sessionEventsByKey, issueCode,
     issueProgress, examIssueListHtml, wireIssueFilter,
   } = window.PCLL;
 
@@ -160,6 +160,7 @@
       if (!found || !issueTypes.length) return null;
       return {
         label: key,
+        quizHref: quizHref(found.ev, found.dateIso),
         items: issueTypes.map((issue, i) => {
           const { done, total } = issueProgress(code, key, issue);
           return {

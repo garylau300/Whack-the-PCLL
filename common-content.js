@@ -413,9 +413,16 @@
       // The label gets its own span so the count badge is not a bare sibling
       // text node — otherwise the heading's accessible name reads "LG39"
       // rather than "LG3, 9 issue types".
+      // `quizHref` is optional and resolved by the caller (only it has the
+      // timetable). It puts the session's derived Test Yourself round next
+      // to that session's issue list, which is where a reader revising the
+      // course is actually looking.
+      const quiz = g.quizHref
+        ? `<a class="exam-index-quiz" href="${escapeHtml(g.quizHref)}">Test yourself &#8594;</a>`
+        : '';
       const head = g.label
         ? `<h3 class="exam-index-session"><span class="exam-index-label">${escapeHtml(g.label)}</span>`
-          + `<span class="exam-index-count" aria-label="${g.items.length} issue types">${g.items.length}</span></h3>`
+          + `<span class="exam-index-count" aria-label="${g.items.length} issue types">${g.items.length}</span>${quiz}</h3>`
         : '';
       return `<div class="exam-issue-group" data-group="${escapeHtml(g.label || '')}">${head}<ol class="exam-issue-index">${rows}</ol></div>`;
     }).join('');

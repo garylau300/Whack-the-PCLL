@@ -57,7 +57,15 @@
     const hasExamNotes = !!(sessionDetail && sessionDetail.examNotes);
     if (hasQuiz || hasExamNotes) {
       studyLink.href = quizHref(ev, foundDate);
-      studyLink.textContent = hasExamNotes && !hasQuiz ? 'Test yourself →' : 'Quiz & flashcards →';
+      // Set the two label spans, NOT the anchor's own textContent: the
+      // button is an icon + title + subtitle + arrow, and assigning
+      // textContent to the anchor deletes all four.
+      const derived = hasExamNotes && !hasQuiz;
+      studyLink.querySelector('.study-cta-title').textContent = derived
+        ? 'Test Yourself' : 'Quiz & Flashcards';
+      studyLink.querySelector('.study-cta-sub').textContent = derived
+        ? 'Multiple-choice questions built from this session’s exam notes'
+        : 'Test yourself on this session’s key legal principles';
       studyLink.hidden = false;
     } else {
       studyLink.hidden = true;

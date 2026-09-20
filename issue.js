@@ -2,7 +2,7 @@
   'use strict';
 
   const {
-    ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref,
+    ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref, quizHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
     issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml,
     noteClozeControlsHtml, wireNoteCloze, loadClozeGroups,
@@ -98,6 +98,7 @@
     const courseName = code ? (data.meta.courses[code] || ELECTIVE_NAMES[code] || '') : '';
     $('courseLink').textContent = courseName ? `${code} · ${courseName}` : code;
     $('courseLink').href = `course.html?code=${encodeURIComponent(code)}`;
+    $('quizLink').href = quizHref(ev, foundDate);
 
     // The topbar carries the SESSION heading (matching what session.html's
     // own header shows for the same session, since the back arrow returns
