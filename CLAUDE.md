@@ -846,6 +846,20 @@ not what the code does.
     becomes `&amp;`, so a case name like "Tommy C P Sze & Co" has an entity
     in the middle of it. Only a fixed `<span>` is ever inserted, so no source
     text can reach the output unescaped.
+  - **A clause of an agreement counts as a reference.** The CCT LG6
+    shareholders'-agreement pages are read against the sample clauses rather
+    than against a statute, so before the `clauses?` pattern existed five of
+    its eleven issue types rendered with **no highlighting at all** —
+    `clause 9.1(a)` is the provision on those pages in exactly the sense
+    `s88(2)` is on the others. The number is dotted, the pattern is the one
+    case-insensitive member of `PATTERNS` (a sentence can open "Clause 5.1
+    subjects…"), and a digit is required immediately after the word so
+    "the clause is", "clause [x]" and the Control of Exemption *Clauses*
+    Ordinance stay untouched. A comma-separated continuation additionally
+    requires its next member to be dotted: "clauses 4.1, 5.1" is a list, but
+    "clause 8, 14 days later" is a clause followed by a sentence. The issue
+    page's `summary` is set with `textContent` and so carries no highlighting
+    at all — that is pre-existing and applies to statutes equally.
   - **A reference continues past its first paragraph.** `PARAS` absorbs
     `(a)-(c)`, `, (h), (j)-(p)` and ` and (b)`, so `r.1(1)(b), (h), (j)-(p)`
     marks as one span rather than stopping at `(b)`. The separator must be
@@ -856,7 +870,11 @@ not what the code does.
   `scratchpad/detector.js`, which loads the detector **out of
   `common-core.js`** rather than copying it, and diff old vs new matches: the
   total span count should stay put while individual spans get longer. 148
-  references were being truncated before `PARAS` existed.
+  references were being truncated before `PARAS` existed. A pattern that adds
+  a whole new KIND of reference is the one case where the count is meant to
+  grow (clauses took it from 7,508 to 7,867) — there the invariant to hold is
+  that **no pre-existing span is lost or shortened**, and that every added
+  span is of the kind you intended. Diff the sorted span lists both ways.
 - **`--cite-text` is dark red in light mode and a LIGHTER red in dark.** A
   true dark red (`#991b1b`) measures 1.98:1 on the dark surface and is
   unreadable, so the dark theme uses `#f28b82` (6.75:1). Same split as

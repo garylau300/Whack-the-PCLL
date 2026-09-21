@@ -695,6 +695,14 @@
   // is not absorbed.
   const MORE_PARAS = '(?:(?:\\s*,\\s*|\\s+and\\s+|\\s+or\\s+)' + PARA_RANGE + ')*';
   const PARAS = '(?:' + PARA + ')*(?:\\s*[-\u2013]\\s*' + PARA + ')?' + MORE_PARAS;
+  // A clause number is dotted: "9", "9.1", "8.2.1".
+  const CLAUSE_NUM = '\\d+(?:\\.\\d+)*';
+  // A list of clauses continues past its first member the same way a list of
+  // paragraphs does. A comma separator additionally requires the member after
+  // it to be DOTTED: "clauses 4.1, 5.1" is a list, but "clause 8, 14 days
+  // later" is a clause followed by a sentence, and a bare integer after a
+  // comma cannot be told from prose.
+  const CLAUSE_MORE = '(?:\\s+(?:and|or|to)\\s+' + CLAUSE_NUM + '|\\s*,\\s*\\d+(?:\\.\\d+)+)';
   // A rule range with no paragraph groups at all — "rr.2-3", "r.5-7".
   const RULE_RANGE = '(?:\\s*[-\u2013]\\s*(?:rr?\\.\\s?)?\\d+[A-Z]*(?:' + PARA + ')*)?';
 
@@ -707,6 +715,16 @@
     new RegExp('\\bss?\\.?\\s?\\d+[A-Z]*' + PARAS + '(?:\\s*[-\u2013]\\s*\\d+[A-Z]*)?(?:\\s+and\\s+\\d+[A-Z]*' + PARAS + ')?', 'g'),
     new RegExp('\\bsections?\\s\\d+[A-Z]*' + PARAS, 'g'),
     new RegExp('\\bMA\\s?\\d+[A-Z]?' + PARAS + '(?:\\s*[-\u2013]\\s*(?:MA)?\\d+' + PARAS + ')?', 'g'),
+    // A clause of an agreement. The CCT LG6 shareholders'-agreement pages are
+    // read against the sample clauses rather than against a statute, so
+    // without this five of the eleven issue types carry no highlighting at
+    // all -- "clause 9.1(a)" is the provision on those pages in exactly the
+    // sense "s88(2)" is on the others. The number is dotted ("9.1"), and the
+    // case-insensitive flag is what picks up a sentence opening "Clause 5.1
+    // subjects both to..."; a digit is required immediately after the word,
+    // so prose like "the clause is" and the Control of Exemption *Clauses*
+    // Ordinance are untouched.
+    new RegExp('\\bclauses?\\s' + CLAUSE_NUM + PARAS + '(?:' + CLAUSE_MORE + PARAS + ')*', 'gi'),
     /\bCap\.?\s?\d+[A-Z]?\b/g,
     /\b(?:Practice Direction|PD)\s?\d+(?:\.\d+)*(?:\s*§\s?\d+(?:\.\d+)*)?/g,
     /§\s?\d+(?:[/.]\d+)*/g,
@@ -797,7 +815,7 @@
   // has subsections, everything else has paragraphs. Groups after the first
   // are just read out, because "section 19, subsection 1, paragraph a,
   // sub-paragraph i" is longer than the sentence it sits in.
-  const CITE_UNIT = /\b(sections?|rules?|Orders?|Model Articles?|Articles?|paragraphs?|Chapters?)\s(\d+[A-Z]*)((?:\([^()\s]{1,8}\))+)/g;
+  const CITE_UNIT = /\b(sections?|rules?|Orders?|Model Articles?|Articles?|paragraphs?|Chapters?|[Cc]lauses?)\s(\d+(?:\.\d+)*[A-Z]*)((?:\([^()\s]{1,8}\))+)/g;
   const PARA_GROUP = /\(([^()\s]{1,8})\)/g;
   // An all-caps run is a reporter or a court ("HKCFA", "AC", "WLR") and is
   // spelled out; left whole, an engine either invents a word for it or drops
