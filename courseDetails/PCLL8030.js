@@ -3525,7 +3525,7 @@ window.COURSE_DETAILS.PCLL8030 = {
                   },
                   {
                     label: 'Say what follows once the part is classified',
-                    detail: 'The classification is never the client\'s question. It decides who may use the part, who repairs it, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the deed of mutual covenant.',
+                    detail: 'The classification is never the client\'s question. It decides who may use the part, who repairs it, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the deed of mutual covenant — a contravention of s34I(1) being deemed by s34I(2) to be a breach of the DMC itself.',
                     why: 'The classification is never the client\'s question. It decides who repairs the part, who may sue about it, and whether the owner who has taken it over is in breach of the Ordinance as well as of the DMC.',
                     exam: {
                       write: 'The [part] being a common part, [the owner\'s conversion of it is a breach of s34I(1)(a) of the Building Management Ordinance and, by s34I(2), a deemed breach of the deed of mutual covenant / the proper plaintiff is the incorporated owners under s16 of that Ordinance].',

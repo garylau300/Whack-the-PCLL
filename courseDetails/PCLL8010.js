@@ -4053,7 +4053,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     id: 'remedy',
                     label: 'If it is inconsistent with a previous pleading, the remedy is amendment',
-                    detail: 'O.18 r.10(2) is easily misread as permission. It preserves the route back rather than licensing the inconsistency: the earlier pleading is amended under O.20, which brings the amendment rules and their timing into play.',
+                    detail: 'O.18 r.10(2) is easily misread as permission. It preserves the route back rather than licensing the inconsistency: the earlier pleading is amended under O.20, which brings the amendment rules and their timing into play — after the close of pleadings that means leave under O.20 r.5(1), which the Court may give at any stage.',
                     why: 'r.10(2) is easily misread as permission. It is the opposite: it preserves the route back, which is to amend the earlier pleading — and that brings the O.20 regime, and the close of pleadings, into play.',
                     exam: {
                       write: 'The Defendant must apply to amend his earlier pleading rather than plead the inconsistent allegation in the later one: O.18 r.10(2), and being after the close of pleadings that requires leave under O.20 r.5.',

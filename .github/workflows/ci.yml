@@ -12,7 +12,10 @@ name: CI
 #     and the timetable parser's own behaviour;
 #   * stylesheet rules that only bite in one mode -- unbalanced braces, a
 #     reduced-motion block that forgets to reset delays, a looping animation
-#     that ends mid-motion (see npm test).
+#     that ends mid-motion (see npm test);
+#   * notes that do not agree with themselves -- a model sentence naming a
+#     provision the page never establishes, and a remedy asserted with
+#     nothing cited for it, which is the shape an unsourced claim takes.
 # Each of these has actually broken something in this repo's history.
 #
 # Still not covered: anything that needs a real browser (layout, contrast,
@@ -42,5 +45,5 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Verify data, page wiring, parser and styles
+      - name: Verify data, page wiring, parser, styles and sourcing
         run: npm test

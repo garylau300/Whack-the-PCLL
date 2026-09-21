@@ -349,6 +349,32 @@ not what the code does.
   one contiguous limb instead. Likewise `scratchpad/tblcheck.js` catches a
   `table` whose rows and `headers` have drifted out of step — easy to do
   when widening a two-column table to three.
+- **A rule of law the materials do not state does not go in, even when you
+  know it is right.** This is the no-fabrication rule applied to the place it
+  actually gets broken: not to a made-up case or a made-up section, but to
+  general law imported to fill a gap the course documents leave. A step on
+  CCT-6.09 once said a shareholder who missed the window was "left to its
+  ordinary contractual remedies for the underlying breach", with a model
+  sentence putting it as "its remedy would have been in damages". True enough
+  as contract law, absent from every uploaded document, and wrong on the
+  clause anyway, because six of its seven limbs are not breaches by anybody.
+  Every mechanical check passed it, because they read structure, markup and
+  quoted text, and this was prose. Three habits keep it out:
+  - **Say the gap is a gap.** The materials cover one consequence and stop —
+    write that, in a `lookOut` bullet, rather than supplying the rest from
+    general principle. A reader who knows the notes are silent will look it
+    up; one who reads an invented answer will not.
+  - **A remedy is a proposition of law and needs a source.** "Is entitled
+    to", "may recover", "is liable for", "is left to its remedies" are all
+    claims about what a court would do. Cite the provision or the case, or
+    do not make the claim.
+  - **Check the claim against the facts of the instrument, not just against
+    the law.** The damages sentence presupposed a breach; most of the clause
+    it was written under has nothing to do with breach. A claim can be good
+    law and still be wrong here.
+  `scripts/verify-sourcing.js` enforces the mechanical half of this (see the
+  verification workflow). It is a floor, not a guarantee — it cannot read the
+  course documents, which are uploads rather than repo files.
 - **`warnings` are for compliance-critical facts only** — a statutory
   deadline with real legal consequences, an offence/penalty, disciplinary
   risk. Not a stand-in for a `statutes` quote box, and not for routine
@@ -940,6 +966,28 @@ not what the code does.
      `prefers-reduced-motion` block must neutralise delays and not only
      durations, and a looping animation's keyframes must start *and* end at
      the resting pose.
+   - `verify-sourcing.js` — whether the notes agree with themselves about
+     where a claim came from, which is the only part of the no-fabrication
+     rule that is mechanically checkable here (the course documents are
+     uploads, not repo files). Two checks, both at zero today:
+     a **model sentence may not name a provision the rest of its page never
+     establishes** — a `write` is transcribed under exam pressure and a
+     provision only it carries is either a typo or invented; and **a remedy
+     asserted in prose must cite something**, which is the shape the CCT-6.09
+     error took. The second fires only when a form of relief is coupled with
+     an entitlement ("may recover damages", not "unliquidated damages"),
+     quoted specimens are excluded, and a page whose authorities already
+     mention that relief may discuss it freely. Matching relief alone fired
+     58 times across the corpus and was wrong essentially every time — these
+     notes are *about* remedies — which is why the wider version was dropped
+     rather than shipped with exceptions.
+     Both detectors are run against fixtures on every run, including the
+     exact sentences that went wrong, because a checker with no failing input
+     cannot report that it has stopped working. Note that the first check is
+     enforced per PAGE where CLAUDE.md states it per step: the page is what a
+     reader has in front of them, and 62 steps today cite their `write`'s
+     provision elsewhere on their own page. Per-step remains the better
+     authoring habit.
    When adding a check, make it fail on purpose first — a check that can't
    fail is worse than none, because it reads as coverage.
    Bulk-editing courseDetails by script is normal here (they are too big to
