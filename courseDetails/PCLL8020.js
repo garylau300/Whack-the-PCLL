@@ -4212,7 +4212,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'sp',
                     label: '2. Is there a sale or purchase — does consideration of some value pass?',
-                    detail: 'The presence or absence of valuable consideration is the fork in the road: where consideration passes there is a sale or purchase, contract notes are required under s19(1) and head 2(1) applies; where nothing passes, there are no contract notes and the analysis goes straight to voluntary disposition.',
+                    detail: 'The presence or absence of valuable consideration is the fork in the road: where consideration passes there is a sale or purchase within the s19(16) definition, contract notes are required under s19(1) and head 2(1) applies; where nothing passes, there are no contract notes and the analysis goes straight to voluntary disposition.',
                     why: 'The presence or absence of valuable consideration is the fork in the road: a sale or purchase goes to head 2(1) with contract notes, while a gift goes to head 2(3) as a voluntary disposition. Everything downstream depends on it.',
                     exam: {
                       write: 'Valuable consideration of $[X] passes, so there is a sale or purchase within s19(16).',
@@ -6526,7 +6526,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'effect',
                     label: 'State the effect on control, from the client\'s side of the table',
-                    detail: 'Put the seats, the quorum and the vote together and say who can actually get a decision made. On the sample clauses at 75/25 the majority controls every ordinary board decision on the numbers, but cannot convene a quorate meeting without the minority\'s nominee, and cannot break a tie with a casting vote.',
+                    detail: 'Put the seats, the quorum and the vote together and say who can actually get a decision made. On the sample clauses at 75/25 the majority controls every ordinary board decision on the numbers (clauses 3.1(a) and 3.2(c)), but cannot convene a quorate meeting without the minority\'s nominee (clause 3.2(a)), and cannot break a tie, because clause 3.2(b) expressly denies the chairperson of the Board a casting vote.',
                     why: 'The examiner is testing whether you can turn three clauses into one sentence of advice. Reciting the clauses separately is only half the answer.',
                     exam: {
                       write: 'On these holdings [majority] controls the Board on a majority vote, but [minority]\'s nominee is required for a quorum under clause 3.2(a), so [minority] can prevent a Board decision being taken at all.',
@@ -6682,7 +6682,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'board-or-members',
                     label: 'Notice that the list mixes board matters with members\' matters',
-                    detail: 'Several of the reserved matters would ordinarily be decided by the directors under their general authority to manage the business and affairs of the company, while others are matters the Ordinance gives to the members. Clause 5.1 subjects both to the same shareholder consent.',
+                    detail: 'Several of the reserved matters would ordinarily be decided by the directors under their general authority to manage the business and affairs of the company, while others are matters the Ordinance gives to the members. Clause 5.1 subjects both to the same shareholder consent, so limbs such as clause 5.1(a) reach decisions the Board would otherwise take alone.',
                     why: 'This is the clause\'s real bite and the lecture asks about it directly. Borrowing, lending, disposals and capital expenditure are management decisions; putting them behind a shareholder consent curtails the Board\'s powers, not just the members\'.',
                     exam: {
                       write: 'Although [borrowing] would ordinarily be a management decision for the Board under MA3(1), clause 5.1(a) subjects it to the prior written consent of Shareholders holding 25% or more, so the Board\'s power is curtailed.',
@@ -6692,15 +6692,15 @@ window.COURSE_DETAILS.PCLL8020 = {
                       'MA3(1): subject to the Ordinance and the articles, the business and affairs of the company are managed by the directors, who may exercise all the powers of the company.',
                       'Limbs (a) to (d) are ordinarily management decisions for the Board.',
                       'Altering the share capital engages the allotment regime: see s140 and s141, and note the clause 6.2(a) carve-out in limb (f).',
-                      'Altering the articles is a members\' matter requiring a special resolution.',
+                      'Altering the articles is a members\' matter: by s88(2) a company may only alter its articles by special resolution, except that by s88(3) an alteration to the maximum number of shares the company may issue may be made by ordinary resolution.',
                       'For what the Ordinance itself requires on each kind of resolution, use the catalogue on the shareholder decision-making page rather than re-deriving it here.',
                     ],
                   },
                   {
                     id: 'effect-minority',
                     label: 'State the effect, and who it protects',
-                    detail: 'The effect is that Board and shareholder powers alike are curtailed by a requirement for consent from every 25% holder. It is a minority protection, and it matters most to a shareholder whose shareholding size means it is likely to have no other lever.',
-                    why: 'A 25% holder cannot block an ordinary resolution and may not be able to block a special one; the contractual veto is what gives it a say on the decisions that would change its investment.',
+                    detail: 'The effect is that Board and shareholder powers alike are curtailed by clause 5.1\'s requirement for the prior written consent of every 25% holder. It is a minority protection, and it matters most to a shareholder whose shareholding size means it is likely to have no other lever.',
+                    why: 'An ordinary resolution is passed by a simple majority (s563(1)) and a special resolution by a majority of at least 75% (s564(1)), so a 25% holder cannot block the first and can only just block the second; the contractual veto is what gives it a say on the decisions that would change its investment.',
                     exam: {
                       write: 'Clause 5.1 gives [minority], as a 25% holder, a veto over [matter], which it could not obtain through its votes in general meeting.',
                       trap: 'Describing the clause as a majority protection. The majority already has the votes; the clause exists for the shareholder who does not.',
@@ -6828,7 +6828,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'running-undertakings',
                     label: 'Work through the running undertakings in clause 4.1',
-                    detail: 'Clause 4.1 also requires that directors be appointed, removed and replaced in accordance with clause 3.1; that Board meetings be held at least once each month and whenever any member of the Board so requests; that books and accounts be kept in accordance with generally accepted Hong Kong accounting principles consistently applied, with monthly management accounts, operating statistics and other trading and financial information furnished to the Shareholders in a timely fashion; and that bank accounts be operated as the Board may resolve from time to time.',
+                    detail: 'Clause 4.1 also requires that directors be appointed, removed and replaced in accordance with clause 3.1 (clause 4.1(b)); that Board meetings be held, under clause 4.1(c), at least once each month and whenever any member of the Board so requests; that books and accounts be kept in accordance with generally accepted Hong Kong accounting principles consistently applied, with monthly management accounts, operating statistics and other trading and financial information furnished to the Shareholders in a timely fashion; and that bank accounts be operated as the Board may resolve from time to time.',
                     why: 'These are the information and access rights of a shareholder who is not running the company day to day. They are how a minority finds out that something has gone wrong in time to use its other rights.',
                     exam: {
                       write: 'Clause 4.1(c) requires Board meetings at least monthly and whenever any member of the Board so requests; no meeting has been held since [date] despite [director]\'s request, so the undertaking has been broken.',
@@ -6844,7 +6844,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'consequence',
                     label: 'Say what follows from a breach',
-                    detail: 'A failure to observe these undertakings is a breach of contract by the party who gave it. Whether it is more than that depends on clause 9.1(a), which turns a material breach, unremedied within twenty (20) Business Days of notice where the breach is capable of remedy, into an Event of Default.',
+                    detail: 'A failure to observe these undertakings is a breach of contract by the party who gave it. Whether it is more than that depends on clause 9.1(a), which turns a material breach, unremedied within twenty (20) Business Days of notice where the breach is capable of remedy, into an Event of Default, and so into the clause 9.2 buy-out.',
                     why: 'The exam rarely asks only "is this a breach?". It asks what the client can do about it, and the answer runs through the default machinery to a compulsory transfer.',
                     exam: {
                       write: 'The failure is a breach of clause 4.1([letter]). If it is a breach of a material obligation and is not remedied within 20 Business Days of notice under clause 9.1(a), it becomes an Event of Default and clause 9.2 applies.',
@@ -7165,7 +7165,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'remedy',
                     label: 'Identify the remedy for a breach',
-                    detail: 'If distributable profits exist and the stated percentage has not been distributed, the shareholders who were to procure that result are in breach. Whether that reaches the default machinery depends on clause 9.1(a): a material breach, unremedied within 20 Business Days of notice where it is capable of remedy.',
+                    detail: 'If the stated percentage of distributable profits has not been distributed, the shareholders who undertook by clause 7 to procure that result are in breach. Whether that reaches the default machinery depends on clause 9.1(a): a material breach, unremedied within 20 Business Days of notice where it is capable of remedy.',
                     why: 'A dividend breach is usually remediable — the company can still declare — so the notice and cure period in clause 9.1(a) is likely to be engaged rather than bypassed.',
                     exam: {
                       write: 'The failure to distribute is a breach of clause 7. It is capable of remedy, so an Event of Default arises under clause 9.1(a) only if it is not remedied within 20 Business Days of notice demanding remedy.',
@@ -7280,7 +7280,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'transfer-notice',
                     label: 'The Transfer Notice — and notice that it offers the entire holding',
-                    detail: 'The Outgoing Shareholder proposing to transfer all or part of its holding (the Sale Shares) gives a written Transfer Notice to the Company stating its desire to transfer and specifying the number of Sale Shares and the price per Share (the Offered Price). The Transfer Notice constitutes the Company its agent, and constitutes the notice as an offer for the sale of the Outgoing Shareholder\'s ENTIRE holding of Shares to the Remaining Shareholder, at the Offered Price or, at the Remaining Shareholder\'s option, at the Transfer Price.',
+                    detail: 'Under clause 8.2(a) the Outgoing Shareholder proposing to transfer all or part of its holding (the Sale Shares) gives a written Transfer Notice to the Company stating its desire to transfer and specifying the number of Sale Shares and the price per Share (the Offered Price). The Transfer Notice constitutes the Company its agent, and constitutes the notice as an offer for the sale of the Outgoing Shareholder\'s ENTIRE holding of Shares to the Remaining Shareholder, at the Offered Price or, at the Remaining Shareholder\'s option, at the Transfer Price.',
                     why: 'The asymmetry is deliberate. A shareholder who wants out in part must be prepared to be taken out in whole, so the Remaining Shareholder is never left with a partner who has one foot out of the door.',
                     exam: {
                       write: 'Although the Sale Shares are [35] Shares, the Transfer Notice constitutes an offer of the Outgoing Shareholder\'s ENTIRE holding of [75] Shares to the Remaining Shareholder under clause 8.2(a), at the Offered Price or, at the Remaining Shareholder\'s option, the Transfer Price.',
@@ -7383,7 +7383,7 @@ window.COURSE_DETAILS.PCLL8020 = {
               bullets: [
                 'The full completion checklist for a transfer runs beyond the SHA: sale and purchase agreement, instrument of transfer and bought and sold notes, deed of adherence, stamping, board approval, cancellation of the old certificate and issue of the new, and updating the register of members and the significant controllers register.',
                 'Who controls the board at the moment of the registration decision is a practical question with a fiduciary dimension — a director appointed by the seller still owes duties to the company.',
-                'Work the consequences of the new cap table: after a 75/25 company becomes 40/25/35, each of the three holds 25% or more, so the newcomer acquires a Reserved Matters veto under clause 5.1 and a board seat under clause 3.1(a), while the former 75% holder can no longer pass an ordinary resolution alone.',
+                'Work the consequences of the new cap table: after a 75/25 company becomes 40/25/35, each of the three holds 25% or more, so the newcomer acquires a Reserved Matters veto under clause 5.1 and a board seat under clause 3.1(a), while the former 75% holder, now at 40%, can no longer pass an ordinary resolution alone (a simple majority, s563(1)) let alone a special one (at least 75%, s564(1)).',
                 'A partial exit is still an exit for these purposes — the question is always what the resulting percentages do.',
               ],
             },
@@ -7526,7 +7526,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'deemed-notice',
                     label: 'Apply the deeming: a Transfer Notice for all the shares, at the Transfer Price',
-                    detail: 'If called upon, the defaulting Shareholder is deemed to have served a Transfer Notice on the non-defaulting Shareholder and the clause 8 share transfer provisions apply, except that the deemed Transfer Notice is in respect of ALL its Shares and specifies the Transfer Price, determined under clause 8.2(d)(ii), as the desired sale price.',
+                    detail: 'If called upon, clause 9.2 deems the defaulting Shareholder to have served a Transfer Notice on the non-defaulting Shareholder and the clause 8 share transfer provisions then apply, except that the deemed Transfer Notice is in respect of ALL its Shares and specifies the Transfer Price, determined under clause 8.2(d)(ii), as the desired sale price.',
                     why: 'Both modifications take control away from the defaulter. It cannot sell a token parcel and stay, and it cannot name a price designed to be refused; an independent valuation is substituted for its asking price.',
                     exam: {
                       write: 'On being called upon, [defaulter] is deemed under clause 9.2 to have served a Transfer Notice in respect of all its Shares at the Transfer Price, and the clause 8 machinery then applies.',
@@ -7657,7 +7657,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'clause8',
                     label: 'Test clause 8.1 — and notice the words that confine it',
-                    detail: 'Clause 8.1 prohibits a Shareholder from disposing of "the legal and/or beneficial interest in its holding of Shares" or selling or transferring "its legal or beneficial interest in the Shares". Shares is a defined term meaning a share in the capital of the Company. A sale of shares in a parent is therefore not a disposal of Shares, and clause 8.1 is not engaged.',
+                    detail: 'Clause 8.1 prohibits a Shareholder from disposing of "the legal and/or beneficial interest in its holding of Shares" or selling or transferring "its legal or beneficial interest in the Shares". Shares is a defined term meaning a share in the capital of the Company. A sale of shares in a parent is therefore not a disposal of Shares, so clause 8.1 is not engaged and the clause 8.2 pre-emption machinery never starts.',
                     why: 'The clause was drafted against the register. It is a genuine gap rather than an oversight in this sample, which is precisely why the default clause has to carry the weight.',
                     exam: {
                       write: 'Clause 8.1 applies only to a disposal by a Shareholder of its interest in the Shares, being shares in the capital of the Company. The sale of [TopCo / HoldCo] shares is not such a disposal, so the pre-emption machinery in clause 8.2 is not triggered.',
@@ -7840,11 +7840,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                     detail: 'Clause 10 also provides that in the event of any such conflict the Shareholders shall take such steps as are required to amend the Articles so that the Articles are not in conflict with the provisions of the agreement.',
                     why: 'It converts a standing inconsistency into a task. Leaving the two documents at odds is what produces the litigation the clause is trying to avoid, so the agreement requires the conflict to be removed rather than merely ranked.',
                     exam: {
-                      write: 'Clause 10 requires the Shareholders to take the steps needed to amend the Articles so that they do not conflict with the agreement, which here means [a special resolution altering article [Y]].',
+                      write: 'Clause 10 requires the Shareholders to take the steps needed to amend the Articles so that they do not conflict with the agreement, which here means [a special resolution under s88(2) altering article [Y]].',
                       trap: 'Forgetting that amending the articles is itself a reserved matter under clause 5.1(g), so it needs the prior written consent of all 25% Shareholders as well as the resolution.',
                     },
                     points: [
-                      'Altering the Articles requires a special resolution of the members.',
+                      'Altering the Articles requires a special resolution of the members (s88(2)) — except an alteration to the maximum number of shares the company may issue, which s88(3) allows by ordinary resolution.',
                       'And it is a reserved matter under clause 5.1(g), so the consent threshold applies too.',
                       'The shareholders\' obligation to exercise their voting rights is what supplies the votes for that resolution.',
                     ],
