@@ -7541,11 +7541,11 @@ window.COURSE_DETAILS.PCLL8020 = {
                   {
                     id: 'consequence',
                     label: 'State the outcome, and the alternative if nobody calls',
-                    detail: 'If the non-defaulting Shareholder calls and accepts, it acquires the whole of the defaulter\'s holding at the independently determined price. If it does not call within the window, the Event of Default produces no transfer, and the non-defaulting Shareholder is left to its ordinary contractual remedies for the underlying breach.',
-                    why: 'The clause is a buy-out mechanism, not a penalty. It gives the innocent party an exit route from the relationship; it does not by itself compensate for the breach.',
+                    detail: 'If the non-defaulting Shareholder calls and the clause 8 machinery runs to acceptance, it acquires the whole of the defaulter\'s holding at the independently determined price. If it does not call within the window the deeming in clause 9.2 never operates, because it applies only "if so called upon", so no Transfer Notice arises and the parties remain in the relationship clause 9 existed to end.',
+                    why: 'The clause is a buy-out mechanism, not a penalty, and it is optional. It gives the other shareholder a route out of a relationship whose terms have changed under it. Note that six of the seven limbs of clause 9.1 are not breaches by anyone at all - a receiver, a winding-up, a death, a change of control upstream - so "default" here names a triggering event, not a fault.',
                     exam: {
-                      write: 'The Event of Default having been called, [non-defaulter] may acquire the whole of [defaulter]\'s holding at the Transfer Price; had it not called within 20 Business Days, its remedy would have been in damages for the underlying breach.',
-                      trap: 'Forgetting that a default which is not called still leaves an ordinary breach of contract to be sued on.',
+                      write: 'The Event of Default having been called within 20 Business Days, [non-defaulter] may acquire the whole of [defaulter]\'s holding at the Transfer Price; had it not called in time, the deeming in clause 9.2 would not have operated and no transfer would arise.',
+                      trap: 'Assuming an Event of Default is always somebody\'s fault. Only limb (a) is a breach; limbs (b) to (g) are insolvency and status events, so the question is whether the buy-out was validly called, not who is to blame.',
                     },
                     points: [
                       'Recompute the resulting percentages and run them through clauses 3.1(a), 3.2(a) and 5.1.',
@@ -7561,6 +7561,7 @@ window.COURSE_DETAILS.PCLL8020 = {
                 'Clause 6.2(b) expressly removes failure to subscribe from the material-breach route, so it never reaches clause 9.1(a).',
                 'Limb (e) means the death of an individual shareholder is a default event, so the estate can be bought out — worth spotting in a family company fact pattern.',
                 '"Business Days" is the unit throughout clause 9; do not convert it to calendar days without saying so.',
+                'Clause 9 gives one consequence - the buy-out - and the sample clauses provide for no other. Where limb (a) is engaged there is also a breach of the agreement, but what else might follow from that breach is general contract law, which these materials do not address.',
               ],
             },
             mistakes: {
