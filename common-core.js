@@ -189,6 +189,58 @@
     } catch {
       /* localStorage unavailable — checking just won't persist */
     }
+    // Ticking a box is the moment there is finally something worth keeping,
+    // which is why the persistent-storage request hangs off this and not off
+    // page load. See requestPersistentStorage.
+    requestPersistentStorage();
+  }
+
+  // ---------------------------------------------------------------------
+  // Asking the browser not to evict what has been ticked.
+  //
+  // Everything this site remembers -- 2,652 flowchart checkboxes, the cloze
+  // and read-aloud settings, the quiz mix -- is localStorage, which browsers
+  // are free to clear under storage pressure. navigator.storage.persist()
+  // asks for an exemption.
+  //
+  // WHEN it is called is the whole design, because the two engines behave
+  // oppositely: Firefox shows the reader a permission prompt, while Chrome
+  // never prompts and decides silently from its own engagement heuristics.
+  // Calling it at page load would therefore throw a dialog at a first-time
+  // visitor who has no data yet and no reason to say yes. So it is called
+  // from saveCheckedIds -- the first tick is the first moment the answer
+  // matters, and by then the reader has a reason to grant it.
+  //
+  // It does NOT fix Safari, whose seven-day cap on script-writable storage
+  // is a separate mechanism from quota eviction and is not lifted by this.
+  // The fix there is adding the site to the Home Screen, which is what the
+  // web app manifest is for.
+  // ---------------------------------------------------------------------
+  const PERSIST_KEY = 'pcll.persistAsked';
+  const PERSIST_RETRY_MS = 30 * 24 * 60 * 60 * 1000;
+  let persistTriedThisPage = false;
+
+  async function requestPersistentStorage() {
+    if (persistTriedThisPage) return null;
+    persistTriedThisPage = true;
+    const store = typeof navigator !== 'undefined' && navigator.storage;
+    if (!store || !store.persist || !store.persisted) return null;
+    try {
+      // Already granted: never ask again, and never prompt again.
+      if (await store.persisted()) return true;
+      // Chrome answers from heuristics that change as the site becomes more
+      // "important" to the reader (bookmarked, installed, used often), so a
+      // no today can be a yes later -- but Firefox prompts, so retrying must
+      // be rare enough not to nag. Once a month is the compromise.
+      const last = Number(localStorage.getItem(PERSIST_KEY)) || 0;
+      if (last && Date.now() - last < PERSIST_RETRY_MS) return null;
+      // Recorded BEFORE the await: a prompt the reader dismisses must not be
+      // re-thrown at them on the very next tick.
+      try { localStorage.setItem(PERSIST_KEY, String(Date.now())); } catch { /* no-op */ }
+      return await store.persist();
+    } catch {
+      return null;
+    }
   }
 
   // One canonical key-builder per checklist kind, so every page that reads
@@ -1401,7 +1453,8 @@
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
     todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, citeSpeech, proseSpeech, speechText, field,
-    courseIndex, courseMeta, courseHasNotes, loadCourseDetails, loadSearchIndex, isHappeningNow, isMyGroupSession,
+    courseIndex, courseMeta, courseHasNotes, loadCourseDetails, loadSearchIndex,
+    requestPersistentStorage, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, effectiveFontScale, setFontScale, initFontScale, fetchTimetable, loadTimetable,
     loadMyElectives, saveMyElectives, eventIsFilteredOut, initElectiveSettings, initDialog,
     loadCheckedIds, saveCheckedIds, hwChecklistKey, sgPrepChecklistKey,

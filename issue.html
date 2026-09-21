@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- viewport-fit=cover lets the navy topbar run under the status bar when
+       this is opened from the Home Screen; .topbar pads itself back down
+       with env(safe-area-inset-top), which is 0 in an ordinary browser. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Issue Type — Whack the PCLL</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%231e3a5f'/><g transform='translate(1.9 1.9) scale(0.84)' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 19 12.5 11.5'/><rect x='9' y='8' width='10' height='4.2' rx='1.2' transform='rotate(45 14 10.1)'/></g></svg>" />
   <!-- Quire Sans is self-hosted (fonts/*.woff2, see the @font-face block at
@@ -10,6 +13,20 @@
        every page uses for body text, gets it fetching in parallel with the
        stylesheet instead of waiting to be discovered inside it. -->
   <link rel="preload" as="font" type="font/woff2" href="fonts/QuireSans.woff2" crossorigin />
+  <!-- Installable from the Home Screen. This is not decoration: Safari
+       deletes all script-writable storage -- including the flowchart ticks --
+       after seven days without opening the site, and a web app added to the
+       Home Screen is exempt from that rule. Revision happens in bursts, so
+       the seven days is easy to hit.
+       iOS ignores the manifest's icons in favour of apple-touch-icon, which
+       must be a PNG with no transparency (iOS paints transparency black). -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <meta name="theme-color" content="#1e3a5f" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Whack PCLL" />
   <link rel="stylesheet" href="styles.css" />
   <script src="common-core.js"></script>
   <script src="common-content.js"></script>

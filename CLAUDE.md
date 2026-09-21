@@ -756,6 +756,40 @@ not what the code does.
   will silently see 0Γ—0. Use a `ResizeObserver` (see
   `wireLegalIssuesMindmap`) rather than a one-off call, so it self-corrects
   once the container actually gets a size.
+- **The site is installable, and that is a storage decision, not a vanity
+  one.** Safari deletes *all* script-writable storage — localStorage
+  included, so every flowchart tick — after **seven days** without the site
+  being opened. Revision happens in bursts, so seven days is easy to hit. A
+  web app added to the Home Screen has its own counter and is exempt, which
+  is the only real fix. `manifest.webmanifest` + `icons/` + the head block on
+  all six pages exist for that reason. Four rules:
+  - **The apple-touch-icon is a full-bleed 180x180 PNG with no rounding and
+    no transparency.** iOS ignores the manifest's icons in its favour, masks
+    it to its own squircle, and paints any transparency **black** — so a
+    pre-rounded icon shows black wedges in the corners.
+  - **`icons/` is generated from the same mark as the inline favicon**, by a
+    throwaway Playwright render (see the commit that added it). The maskable
+    variant keeps the hammer inside the inner ~80%, which is the safe zone
+    Android crops an adaptive icon to.
+  - **`viewport-fit=cover` + `env(safe-area-inset-*)`, never a literal.** The
+    topbar pads itself by `env(safe-area-inset-top)` so the navy bar runs
+    behind the status bar when installed instead of leaving a white strip;
+    both insets are `0` in an ordinary tab and on every desktop, so this
+    costs nothing there. The scratchpad suite asserts the padding is still
+    12px without a notch.
+  - **`scripts/dev-server.js` needs the MIME types.** Vercel sets them from
+    the extension; the dev server does not guess, and a manifest served as
+    `application/octet-stream` is silently ignored by the browser.
+- **`requestPersistentStorage` is called on the first TICK, never at load.**
+  (`common-core.js`, from `saveCheckedIds`.) The two engines behave
+  oppositely: Firefox shows a permission prompt, Chrome never prompts and
+  decides silently from engagement heuristics. Calling it at page load would
+  throw a dialog at a first-time reader who has no data yet and no reason to
+  say yes; the first tick is the first moment the answer matters. It records
+  *when* it asked and retries at most monthly — Chrome's heuristics warm up
+  as a site gets used, so a no today can be a yes later, but Firefox must not
+  be nagged. It does **not** fix Safari's seven-day cap, which is a different
+  mechanism from quota eviction; only installing does.
 - **Never truncate a page title with an ellipsis — let it wrap.** The
   `.topbar` is a three-column grid (`"title brand controls"`) so the
   centred `.topbar-brand` always has real reserved space either side and a

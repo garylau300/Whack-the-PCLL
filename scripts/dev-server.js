@@ -17,6 +17,11 @@ const MIME = {
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
   '.woff2': 'font/woff2',
+  // Vercel sets these from the extension; the dev server does not guess, and
+  // a manifest served as octet-stream is silently ignored by the browser.
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
 };
 
 const timetableHandler = require('../api/timetable.js');

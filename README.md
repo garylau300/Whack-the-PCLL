@@ -161,6 +161,12 @@ A few things worth knowing:
   calls `window.print()`; "Save as PDF" is a destination in the browser's own
   print dialog. How the page prints lives entirely in the `@media print`
   block at the foot of `styles.css`.
+- **Add it to your Home Screen.** Not for the icon: Safari wipes every
+  browser-stored thing a site has — including all your flowchart ticks —
+  after seven days of not opening it, and an installed web app is exempt.
+  Revision comes in bursts, so that is a real risk rather than a theoretical
+  one. On a desktop browser the site also asks, the first time you tick
+  something, for its storage not to be evicted.
 - Light is the default theme; dark applies only once you toggle it
   (persisted per browser). The **Aa** button beside it cycles the text
   through three sizes — every font-size in the stylesheet is in `rem`, so
