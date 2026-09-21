@@ -100,7 +100,7 @@ not what the code does.
 - **A session has three possible note formats, and `sessionDetailHtml`
   picks the first one authored**, in this order: `examNotes` (current),
   `legalIssues` (the mindmap), `fullNotes` (a flat legacy accordion). As of
-  the last count: 48 sessions declared, 12 with `examNotes`, **3** with
+  the last count: 48 sessions declared, 13 with `examNotes`, **3** with
   `legalIssues` (PCLL8010/LG1, PCLL8020/LG1, PCLL8030/LG0), and **0** with
   `fullNotes`. The three mindmap sessions predate `examNotes` and are
   deliberately left as they are — a new format alongside them, not a
@@ -332,6 +332,16 @@ not what the code does.
   - The **course outline still governs scope**: it decides what is
     examinable, and italicised/unexaminable topics stay out however
     interesting the statute is.
+- **A quote box can quote the course's own drafting, not only a statute.**
+  CCT LG6 is a document-reading topic, so 15 of its 24 quote boxes are the
+  LG6 sample clauses themselves, cited as `Sample clause 8.2(a), LG6 SHA
+  sample clauses`. The verbatim rule applies unchanged — they were checked
+  against the extracted PDF the same way statutory quotes are checked against
+  `aa_sample_b.txt` and the Cap. 622 extract. One trap when checking a PDF
+  quote: a clause that spans a page break has the page number, the copyright
+  line and the running header spliced into the middle of it, so a whole-quote
+  grep reports MISS on text that is in fact verbatim. Strip the repeated page
+  furniture before comparing, or test the halves.
 - **Verify every `statutes` quote box mechanically before committing.**
   `scratchpad/quotecheck.py` walks every quote box in a courseDetails file
   and greps its full normalised text against the extracted sources. An

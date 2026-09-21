@@ -6135,6 +6135,1773 @@ window.COURSE_DETAILS.PCLL8020 = {
       },
     },
 
+    LG6: {
+      kind: 'LG',
+      date: '16 September 2026',
+      time: '1.00 - 3.30 p.m.',
+      authors: ['Xin Fang', 'Stephane Hui Bon Hoa', 'Charmaine Yip'],
+      objectives: [
+        'Understand the nature of shareholders\' agreements, and the parties\' reasons for entering into them.',
+        'Understand the main provisions of a simple shareholders\' agreement.',
+        'Understand the legal issues relating to shareholders\' agreements and their related parties.',
+      ],
+      topicsCovered: [
+        'What is a shareholders\' agreement (SHA)? Nature, purpose, parties and privity',
+        'The relationship between the SHA, the articles and the Companies Ordinance',
+        'Typical provisions of a basic SHA',
+        'Scope of business',
+        'Corporate governance: the Board, conduct of the company\'s affairs, and Reserved Matters',
+        'Future financing: equity and debt',
+        'Dividend policy',
+        'Exit: voluntary share transfers (pre-emption) and compulsory transfers on default',
+        'Conflicting provisions: the SHA prevailing over the articles',
+      ],
+      prep: {
+        readings: [
+          'The LG6 lecture outline',
+          'The LG6 SHA sample clauses',
+        ],
+      },
+      keyTakeaways: [
+        'An SHA is a contract. It binds only its parties, which is why a new shareholder is made to sign a deed of adherence and why the analysis always starts with "who is a party".',
+        'Russell v Northern Bank splits the agreement in two: a promise by the COMPANY not to exercise a statutory power is an invalid fetter, but the same promise by the SHAREHOLDERS about how they will vote is a valid personal contract. That is why the sample clauses are drafted as shareholder undertakings.',
+        'An SHA can confer a right without conferring the means of exercising it. The right to appoint a director comes from the SHA; the appointment itself still has to be effected under the articles and the Ordinance.',
+        'Shareholding percentage is the hinge. Board seats, the Reserved Matters veto, ordinary resolutions and special resolutions all key off it, so any event that moves a percentage — dilution, a transfer, a default — has to be worked through all four.',
+        'The drafting that decides the most is often a single negative: clause 6.2(b) says failure to subscribe is NOT a breach of a material obligation, and that one word is the difference between being diluted and being bought out under clause 9.',
+      ],
+      examNotes: {
+        intro: 'LG6 is a document-reading topic. Almost every question is answered by reading a clause of the sample SHA precisely, then asking what the Ordinance and the Model Articles would have said instead, and then asking what the resulting shareholding percentage does to board seats, the Reserved Matters veto and resolution thresholds. The clause references below are to the LG6 sample clauses.',
+        issueTypes: [
+          {
+            id: 'sha-nature-and-parties',
+            title: 'What an SHA is, and who is bound by it',
+            summary: 'An SHA is a contract, so it binds only its parties — which makes "who signed, and in what capacity" the first question in every SHA problem.',
+            weighting: 'Underpins every other LG6 issue type',
+            triggers: {
+              bullets: [
+                'A third party has just acquired shares from an existing shareholder and has not signed anything beyond the sale and purchase agreement.',
+                'A shareholder who is not a party to the SHA refuses to vote the way the other shareholders say the agreement requires.',
+                'The company itself is named as a party to the SHA and has undertaken not to allot further shares without unanimous consent.',
+                'The SHA was signed by two of the three shareholders, and the third now proposes to do the very thing the agreement prohibits.',
+                'The company has allotted shares in breach of an SHA undertaking and the other shareholders want the allotment set aside.',
+                'A transferee has taken shares and the remaining shareholder wants to hold him to the transfer restrictions in clause 8.',
+                'Two shareholders signed the SHA, a third did not, and the two now want to enforce the reserved matters against the third.',
+              ],
+              routes: [
+                { when: 'The dispute is about whether the SHA or the articles governs', session: 'LG6', issue: 'sha-articles-and-co', label: 'SHA, articles and the Ordinance' },
+                { when: 'The transferee\'s position turns on the pre-emption machinery rather than on privity', session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+                { when: 'The question is really about who may be entered in the register of members', session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Working out who is bound',
+                steps: [
+                  {
+                    id: 'is-contract',
+                    label: 'Start from the proposition that an SHA is a contract',
+                    detail: 'An SHA is a contractual agreement between its parties, not part of the company\'s constitution. Everything that follows — who can enforce it, who is bound by it, what happens to a newcomer — is ordinary privity of contract, and the answer is never "it binds the shares".',
+                    why: 'The single most common error is to treat an SHA like the articles, which bind every member from time to time by force of statute. An SHA has no such statutory reach: it reaches exactly as far as the signatures on it.',
+                    exam: {
+                      write: 'The SHA is a contract. Its obligations bind only the parties to it, so the first question is whether [party] is a party.',
+                      trap: 'Saying the SHA binds a shareholder because he holds shares. He is bound because he signed, or because he has executed a deed of adherence, and for no other reason.',
+                    },
+                    points: [
+                      'The subject matter is the regulation of shareholders\' rights and obligations in respect of the management and operation of the company.',
+                      'Typical subject matter: corporate governance, financing, dividends and share transfers.',
+                    ],
+                  },
+                  {
+                    id: 'who-parties',
+                    label: 'Identify the parties',
+                    detail: 'The parties are the shareholders — in most cases all of them — and, in most cases, the company. Identify each of them before advising, because a promise is only enforceable by and against a party.',
+                    why: 'Whether ALL shareholders are parties decides whether the agreement actually achieves anything: an undertaking not to allot shares is worthless if the shareholder who controls the votes never signed it.',
+                    exam: {
+                      write: 'The parties to the SHA are [the shareholders] and [the Company]. [X] is / is not a party.',
+                      trap: 'Assuming all shareholders are parties. The outline says "in most cases", not always, and a question that tells you only two of three signed is telling you that for a reason.',
+                    },
+                    points: [
+                      'Existing shareholders, in most cases all of them.',
+                      'The company, in most cases — but see the next step for what its being a party can and cannot achieve.',
+                      'New shareholders are brought in by executing a deed of adherence, not by acquiring the shares.',
+                    ],
+                  },
+                  {
+                    id: 'company-as-party',
+                    label: 'If the company is a party, apply Russell v Northern Bank',
+                    detail: 'A company cannot bind itself not to exercise a statutory power; to that extent an undertaking by the company in an SHA is an invalid fetter and is unenforceable against it. The same undertaking given by the shareholders, as to how they will exercise their votes, is a valid personal contract between them and survives.',
+                    why: 'The rule protects the statutory scheme rather than the company: members cannot contract the legislature out of the Ordinance. But it leaves the commercial bargain standing in the only place it was ever going to be enforced in practice — between the shareholders.',
+                    exam: {
+                      write: 'On Russell v Northern Bank Development Corp Ltd [1992] 3 All ER 161, the Company\'s undertaking in clause [X] is an invalid fetter on its statutory power to [allot shares / alter its capital] and is unenforceable against the Company; the Shareholders\' undertaking to exercise their votes to the same effect is a valid personal contract between them.',
+                      trap: 'Concluding that the whole clause, or the whole agreement, is void. Russell invalidates the company\'s undertaking only, and expressly leaves the shareholders\' agreement inter se intact.',
+                    },
+                    points: [
+                      {
+                        text: 'The split the case draws',
+                        points: [
+                          'An agreement purporting to bind the company not to exercise a statutory power is invalid as against the company.',
+                          'An agreement between shareholders as to how they will exercise their voting rights is not thereby invalid, and remains enforceable between them.',
+                        ],
+                      },
+                      'This is why the sample clauses are drafted as shareholder undertakings — "The Shareholders shall exercise all rights available to them ... so as to procure (so far as they are able)" — rather than as prohibitions on the Company (clauses 4.1, 5.1).',
+                      'Note the qualifications the drafting carries: "so far as they are able" in clause 5.1, and "to the extent permissible by applicable law" as against the Company in clause 4.1.',
+                    ],
+                  },
+                  {
+                    id: 'newcomers',
+                    label: 'Deal with anyone who is not a party: the deed of adherence',
+                    detail: 'A transferee is not a party and is not bound by privity of contract. Clause 8.3 makes any transfer to a person who is not already a party conditional upon that transferee entering into a deed of adherence with the existing shareholders, agreeing to be bound by and to observe and perform the terms of the agreement.',
+                    why: 'Without it the restrictions unravel on the first transfer: the buyer takes the shares free of the transfer restrictions, the reserved matters and the default machinery, and the remaining shareholder is left with a co-owner it never agreed to.',
+                    exam: {
+                      write: 'Mr New is not a party to the SHA and is not bound by it. Under clause 8.3 the transfer is conditional on his entering into a deed of adherence in substantially the form set out in the Schedule.',
+                      trap: 'Forgetting the deed of adherence in a transaction checklist. It is a condition of the transfer, so it belongs in the completion steps alongside the instrument of transfer and the bought and sold notes.',
+                    },
+                    points: [
+                      'Applies to "any transfer of Shares to a person who is not a party to this Agreement" (clause 8.3).',
+                      'The transferee agrees to be bound by, and to observe and perform, the terms and conditions of the agreement.',
+                      'The form is substantially that set out in the Schedule.',
+                      'Because it is a condition of the transfer, a transfer completed without it leaves the transferee outside the agreement — which is the mischief.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Who might care about the terms of an SHA: existing shareholders (majority and minority separately), incoming shareholders, the company, and the directors. The right answer often depends on which of them you are advising.',
+                'An existing shareholder\'s stake can move up (allotment, whether pro rata or not; acquiring shares from another shareholder) or down (selling all or part; and involuntarily, by dilution or by a compulsory transfer on default).',
+                'A newcomer can arrive by subscribing for new shares or by acquiring existing shares, and the restrictions and procedures differ.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the SHA as though it were the articles. The articles bind the members from time to time as a statutory contract; the SHA binds signatories.',
+                'Reading Russell as authority that a company can never be a party to an SHA. It can, and usually is — what it cannot do is fetter a statutory power.',
+                'Advising that a transferee is bound by the SHA because the transferor was.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the agreement as a contract and identify its parties.',
+                'State whether the person you are asked about is a party.',
+                'If the company is a party and has given the undertaking in issue, apply Russell and split the clause.',
+                'If the person is not a party, consider the deed of adherence route under clause 8.3.',
+                'Conclude on who can enforce what, against whom.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'Any transfer of Shares to a person who is not a party to this Agreement shall be conditional upon the transferee entering into a deed of adherence with the existing Shareholder(s) under which the transferee shall agree to be bound by and to observe and perform the terms and conditions of this Agreement, which shall be in substantially the same form as that set out in the Schedule.',
+                  cite: 'Sample clause 8.3, LG6 SHA sample clauses',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['A company cannot fetter its statutory powers by contract, but its shareholders can bind their own votes', 'Russell v Northern Bank Development Corp Ltd [1992] 3 All ER 161', 'An undertaking by the company not to exercise a statutory power is an invalid fetter and unenforceable against it; the shareholders\' agreement inter se as to how they will vote is not thereby invalid and remains enforceable between them'],
+                  ['A newcomer is brought inside the agreement', 'Sample clause 8.3', 'Any transfer to a person who is not a party is conditional on the transferee executing a deed of adherence agreeing to be bound by and to perform the agreement, in substantially the form in the Schedule'],
+                  ['The undertakings are given by the shareholders, not the company', 'Sample clause 5.1', 'The Shareholders shall exercise all rights available to them so as to procure (so far as they are able) that the Company shall not do the listed things without the required consent'],
+                  ['The company\'s own undertaking is expressly qualified', 'Sample clause 4.1', 'The Company shall act only "to the extent permissible by applicable law", which is the drafter acknowledging the Russell limit'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-articles-and-co', label: 'SHA, articles and the Ordinance' },
+              { session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+            ],
+          },
+          {
+            id: 'sha-articles-and-co',
+            title: 'SHA, articles and the Ordinance: which governs?',
+            summary: 'The three overlap. Separate the question of substance (can the SHA change the rule?) from the question of procedure (the SHA gives you the right; the articles still tell you how to exercise it).',
+            triggers: {
+              bullets: [
+                'A shareholder has increased its holding from 15% to 25% and gives written notice to the other shareholder and the company secretary that it is appointing a director.',
+                'The SHA fixes a board quorum different from the one in the articles, and a meeting has been held on the SHA\'s footing.',
+                'A resolution has been passed in accordance with the articles but in breach of an undertaking in the SHA.',
+                'The parties want a provision kept out of the public domain and are deciding whether to put it in the articles or the SHA.',
+                'The SHA is to be amended and one shareholder objects that a special resolution would be needed.',
+                'The company has only one director and the SHA assumes there are four.',
+                'A clause of the SHA purports to remove a matter from the shareholders in general meeting altogether.',
+              ],
+              routes: [
+                { when: 'The conflict is squarely between the SHA and the articles and you need the tie-break', session: 'LG6', issue: 'sha-conflicting-provisions', label: 'Conflicting provisions: the agreement prevails' },
+                { when: 'The company is a party and the issue is whether its undertaking binds it at all', session: 'LG6', issue: 'sha-nature-and-parties', label: 'What an SHA is, and who is bound by it' },
+                { when: 'The question is what the articles themselves say about appointing a director', session: 'LG2', issue: 'directors-office', label: 'Directors: appointment, retirement and removal' },
+                { when: 'The question is what the articles say about a valid board decision', session: 'LG2', issue: 'board-decision-making', label: 'Getting a valid Board decision' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Placing the rule in the right instrument',
+                steps: [
+                  {
+                    id: 'overlap',
+                    label: 'Accept that the three overlap, and identify what each is for',
+                    detail: 'The content of the SHA, the articles and the Ordinance may overlap, but the focus and the level of detail differ. The Ordinance and the Model Articles are general and plain vanilla; an SHA is case-specific and tailor-made to the commercial bargain between these particular shareholders.',
+                    why: 'An examiner sets a clause that looks like it duplicates an article precisely so that you notice the difference in the detail — the quorum, the threshold, the casting vote — rather than treating them as the same rule.',
+                    exam: {
+                      write: 'Clause [X] of the SHA and article [Y] both address [topic], but on [the quorum / the threshold / the casting vote] they differ as follows: [ ].',
+                      trap: 'Saying "the SHA duplicates the articles" and stopping. The examinable point is always the place where they part company.',
+                    },
+                    points: [
+                      'Some overlap, but the focus might be different and the level of detail might be different.',
+                      'The SHA is usually more tailor-made.',
+                    ],
+                  },
+                  {
+                    id: 'substance',
+                    label: 'Substance: can the SHA modify the Ordinance at all?',
+                    detail: 'An SHA can supplement the articles and the Ordinance, and can modify the Ordinance to some extent, but not without limit. What decides it is the wording and legislative intent of the provision in question, the nature of the company, and — where the company is a party — whether the undertaking is binding on the company at all under Russell v Northern Bank.',
+                    why: 'Some provisions of the Ordinance exist to protect people who never signed the SHA, so a private contract cannot displace them. Working from the purpose of the provision, rather than from a list, is what lets you answer on a section you have not seen before.',
+                    exam: {
+                      write: 'Whether clause [X] can modify [section] depends on the wording and legislative intent of that section, the nature of the Company, and whether the undertaking binds the Company at all (Russell).',
+                      trap: 'Treating "an SHA can modify the CO" as a general licence. It is "to some extent", and the extent is the question.',
+                    },
+                    points: [
+                      'The wording of the Ordinance and the legislative intent behind the provision.',
+                      'The nature of the company — a quasi-partnership is a different case from a widely held one.',
+                      'Whether the undertaking is binding on the company: Russell v Northern Bank Development Corp Ltd [1992] 3 All ER 161.',
+                    ],
+                  },
+                  {
+                    id: 'procedure',
+                    label: 'Procedure: the SHA may confer a right, but exercising it may still require the articles and the Ordinance',
+                    detail: 'This is the point the lecture tests with the 15% to 25% example. Clause 3.1(a) gives a shareholder the right to appoint one director for every 25% of the issued share capital it holds, and clause 3.1(b) requires the appointment to be notified in writing. But notification is not appointment: under MA22(1) a director is appointed by ordinary resolution or by a decision of the directors, and clause 3.1(c) is the shareholders\' undertaking to exercise their voting rights so as to bring that about.',
+                    why: 'The SHA is a contract between shareholders; it cannot by itself alter the company\'s register or constitute somebody a director. It can only oblige the parties to use the corporate machinery to produce that result, which is exactly what clause 3.1(c) is drafted to do.',
+                    exam: {
+                      write: 'Clause 3.1(a) gives [shareholder] the right to appoint a Director, and clause 3.1(b) requires written notification. The appointment itself must still be effected under MA22(1) by ordinary resolution or by a decision of the directors, and clause 3.1(c) obliges the Shareholders to exercise their voting rights to procure that.',
+                      trap: 'Answering that the notice under clause 3.1(b) effects the appointment. It notifies it; MA22(1) effects it.',
+                    },
+                    points: [
+                      'Clause 3.1(b): every appointment and removal by a Shareholder under clause 3.1(a) is to be notified in writing to the other Shareholder and the company secretary.',
+                      'MA22(1): a person may be appointed a director by ordinary resolution, or by a decision of the directors.',
+                      'Clause 3.1(c): each Shareholder shall, and shall procure its appointed Director to, exercise voting rights to ensure the Board is constituted in accordance with clause 3.1(a).',
+                      'So the chain is: the SHA creates the entitlement, the shareholders\' undertaking supplies the votes, and the articles supply the appointment.',
+                    ],
+                  },
+                  {
+                    id: 'where-to-put-it',
+                    label: 'Ask why the provision is in the SHA rather than the articles',
+                    detail: 'SHA provisions could often be put in the articles instead. Two considerations decide it: the articles are in the public domain at the Companies Registry while the SHA is private, and the articles are amended by special resolution while the SHA is amended as the contract provides.',
+                    why: 'It is a drafting question with a commercial answer, and it is the natural short-essay part of an LG6 question: the parties keep the commercially sensitive bargain private and make it easier to change.',
+                    exam: {
+                      write: 'The provision sits in the SHA rather than the Articles because [it is commercially sensitive and the Articles are public / the parties want to be able to amend it without a special resolution].',
+                      trap: 'Treating privacy as the only reason. Ease of amendment is the other half, and it is the half that bites when the parties fall out.',
+                    },
+                    points: [
+                      'Matters to be kept private, as against matters in the public domain.',
+                      'Ease of amendment.',
+                      'The benefits of having an SHA at all: it supplements the articles and the Ordinance, modifies the Ordinance to some extent, better reflects the commercial arrangements and dynamics between the parties, and manages uncertainties and potential disagreements.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Ask who benefits most from having an SHA. On the sample clauses the answer is usually the minority: board representation, a quorum that requires its nominee, no casting vote and a 25% consent threshold are all minority protections.',
+                'The hierarchy question has two halves, and candidates who answer only "the SHA prevails" have answered the procedural half and missed the substantive one.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Reading the SHA as if it could appoint, remove, allot or transfer anything by itself. It can only oblige the parties to use their votes and powers to bring those things about.',
+                'Forgetting that a shareholder who crosses a percentage threshold acquires a contractual right, not a completed change in the company\'s affairs.',
+                'Saying the articles can never contain what the SHA contains. They usually can — the question is whether the parties want them to.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the topic and locate it in each of the SHA, the articles and the Ordinance.',
+                'Substance: ask whether the SHA can modify the statutory rule, by reference to its wording and purpose and to Russell.',
+                'Procedure: ask what still has to be done under the articles and the Ordinance to give the SHA right effect.',
+                'Identify the undertaking in the SHA that supplies the votes for that step.',
+                'Conclude on what the client must actually do, in order.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'Each Shareholder shall, and shall procure its appointed Director to, exercise voting rights to ensure that the Board is constituted in accordance with Clause 3.1(a).',
+                  cite: 'Sample clause 3.1(c), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'A person who is willing to act as a director, and is permitted by law to do so, may be appointed to be a director— (a) by ordinary resolution; or (b) by a decision of the directors.',
+                  cite: 'MA22(1), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['The SHA gives the right to appoint a director', 'Sample clause 3.1(a)', 'Each Shareholder has the right to appoint one Director for every 25% of the issued share capital of the Company held by it'],
+                  ['Notification is not appointment', 'Sample clause 3.1(b)', 'Every appointment and removal by a Shareholder under clause 3.1(a) is to be notified in writing to the other Shareholder and the company secretary'],
+                  ['The appointment itself is made under the articles', 'MA22(1)', 'A person may be appointed a director by ordinary resolution or by a decision of the directors'],
+                  ['A board appointment is limited in what it may do and how long it lasts', 'MA22(3), MA22(4)', 'An appointment by the directors may only fill a casual vacancy or add a director within the number fixed by the articles, and that director must retire at the next annual general meeting'],
+                  ['The SHA supplies the votes rather than the appointment', 'Sample clause 3.1(c)', 'Each Shareholder shall, and shall procure its appointed Director to, exercise voting rights to ensure the Board is constituted in accordance with clause 3.1(a)'],
+                  ['A company cannot contract out of its statutory powers', 'Russell v Northern Bank Development Corp Ltd [1992] 3 All ER 161', 'The company\'s undertaking is an invalid fetter; the shareholders\' voting agreement inter se survives'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-conflicting-provisions', label: 'Conflicting provisions: the agreement prevails' },
+              { session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              { session: 'LG2', issue: 'directors-office', label: 'Directors: appointment, retirement and removal' },
+              { session: 'LG2', issue: 'articles-and-constitution', label: 'Articles of association' },
+            ],
+          },
+          {
+            id: 'sha-board-composition',
+            title: 'Board composition and board control',
+            summary: 'Who gets to put directors on the board, what makes a meeting quorate, and who wins a vote — clause 3 against the Model Articles default.',
+            triggers: {
+              bullets: [
+                'A shareholder holding 25% of the issued share capital wants a seat on a board the 75% holder otherwise controls.',
+                'The minority\'s nominated director has stopped attending board meetings and the majority wants to press on without him.',
+                'The board is split two votes to two and the chairperson purports to exercise a casting vote.',
+                'A shareholder\'s holding has fallen below 25% after a share issue and its appointed director has not resigned.',
+                'A board meeting was held with only the majority\'s three nominees present and resolved to borrow HK$5 million.',
+                'The company has four directors, three appointed by the 75% holder and one by the 25% holder, and a resolution passed three to one.',
+                'A shareholder purports to remove its nominated director by letter to the company secretary alone.',
+              ],
+              routes: [
+                { when: 'The decision is one the SHA has reserved to the shareholders instead', session: 'LG6', issue: 'sha-reserved-matters', label: 'Reserved Matters: the consent threshold' },
+                { when: 'The question is whether the appointment has actually been effected', session: 'LG6', issue: 'sha-articles-and-co', label: 'SHA, articles and the Ordinance' },
+                { when: 'The question is the mechanics of a valid board decision under the articles', session: 'LG2', issue: 'board-decision-making', label: 'Getting a valid Board decision' },
+                { when: 'The question is appointment, retirement or removal under the Ordinance', session: 'LG2', issue: 'directors-office', label: 'Directors: appointment, retirement and removal' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Board representation, then board control',
+                steps: [
+                  {
+                    id: 'seats',
+                    label: 'Work out how many seats each shareholder is entitled to',
+                    detail: 'Under clause 3.1(a) each Shareholder has the right to appoint one Director for every twenty-five percent (25%) of the issued share capital of the Company held by it. The entitlement is arithmetical and it moves whenever the shareholding moves.',
+                    why: 'Making board representation a function of percentage is what converts a change in shareholding into a change in control, and it is why every dilution or transfer question in LG6 ends up back at clause 3.',
+                    exam: {
+                      write: 'Holding [X]% of the issued share capital, [shareholder] is entitled under clause 3.1(a) to appoint [n] Director(s).',
+                      trap: 'Rounding up. 40% gives one seat, not two: it is one director for every complete 25%.',
+                    },
+                    points: [
+                      'At 75% / 25% the majority appoints three directors and the minority one.',
+                      'At 40% / 35% / 25% each of the three appoints one, and the board shrinks from four to three.',
+                      'Below 25% a shareholder has no appointment right at all — which also removes it from the quorum requirement in clause 3.2(a).',
+                    ],
+                  },
+                  {
+                    id: 'quorum',
+                    label: 'Test the quorum before you test the votes',
+                    detail: 'Under clause 3.2(a) the quorum for any meeting of the Board is at least one Director appointed by each Shareholder who is entitled to appoint a Director, or his alternate. The Model Articles default is quite different: MA11(2) fixes the quorum at 2 unless the directors decide otherwise, and MA11(1) provides that unless a quorum is participating no proposal is to be voted on, except a proposal to call another meeting.',
+                    why: 'This is the minority\'s real protection, and it is stronger than a vote. The majority can always out-vote the minority three to one; what it cannot do is hold a quorate meeting at all without the minority\'s nominee in the room.',
+                    exam: {
+                      write: 'The meeting was inquorate under clause 3.2(a) because no Director appointed by [shareholder], who is entitled to appoint one, participated; under MA11(1) no proposal could be voted on except a proposal to call another meeting.',
+                      trap: 'Checking the number of directors present against MA11(2)\'s default of 2 when the SHA has replaced the quorum with an identity requirement. Three of the majority\'s nominees are two or more, and still inquorate.',
+                    },
+                    points: [
+                      'The requirement is about WHO is present, not how many.',
+                      'An alternate satisfies it, so a deliberate absence can be answered by appointing one.',
+                      'It bites only for a Shareholder "who is entitled to appoint a Director" — so it evaporates for a shareholder diluted below 25%.',
+                      'Contrast MA12: where the total number of directors is less than the quorum, the directors must not take any decision other than to appoint further directors or to call a general meeting. That is a different trigger — too few directors in office, not the wrong ones in the room.',
+                    ],
+                  },
+                  {
+                    id: 'votes',
+                    label: 'Then take the vote, and check for a casting vote',
+                    detail: 'Under clause 3.2(b) each Director has one vote at any meeting of the Board and the chairperson of the Board shall not have a casting vote in the event of an equality of voting; under clause 3.2(c) decisions are taken by majority vote. The Model Articles default is the opposite on the casting vote: MA14(1) gives the chairperson or other director chairing the meeting a casting vote where the numbers for and against are equal.',
+                    why: 'Removing the casting vote converts an even split from a win for whoever holds the chair into a deadlock. That is a deliberate minority protection, and the price of it is that the company can be paralysed.',
+                    exam: {
+                      write: 'The votes being equal, there is no casting vote (clause 3.2(b), contrast MA14(1)), so the resolution is not carried and the Board is deadlocked.',
+                      trap: 'Citing the casting-vote rule to clause 3.2(c). The no-casting-vote sentence sits in clause 3.2(b); clause 3.2(c) is the majority-vote rule.',
+                    },
+                    points: [
+                      'One vote per director (clause 3.2(b)) — not one vote per shareholder, and not weighted by shareholding.',
+                      'Decisions by majority vote (clause 3.2(c)), matching MA7(1)(a), under which a decision of the directors may only be taken by a majority of the directors at a meeting or in accordance with MA8.',
+                      'MA14(2) is worth knowing even where a casting vote survives: it does not apply if the chairperson is not to be counted as participating for quorum or voting purposes.',
+                    ],
+                  },
+                  {
+                    id: 'effect',
+                    label: 'State the effect on control, from the client\'s side of the table',
+                    detail: 'Put the seats, the quorum and the vote together and say who can actually get a decision made. On the sample clauses at 75/25 the majority controls every ordinary board decision on the numbers, but cannot convene a quorate meeting without the minority\'s nominee, and cannot break a tie with a casting vote.',
+                    why: 'The examiner is testing whether you can turn three clauses into one sentence of advice. Reciting the clauses separately is only half the answer.',
+                    exam: {
+                      write: 'On these holdings [majority] controls the Board on a majority vote, but [minority]\'s nominee is required for a quorum under clause 3.2(a), so [minority] can prevent a Board decision being taken at all.',
+                      trap: 'Advising the majority that it "controls the board" without mentioning that the minority can stop the meeting happening.',
+                    },
+                    points: [
+                      'Board representation: how many directors each shareholder may nominate or appoint.',
+                      'Board control: one vote per director, simple majority or supermajority, any second or casting vote, and any veto rights.',
+                      'Always ask the question from both sides: the incoming or existing 75% holder, and the 25% holder.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The appointment right is expressed by reference to the ISSUED SHARE CAPITAL held, so an allotment to somebody else changes it without the shareholder doing anything.',
+                'Clause 3.1(a) says "for every twenty-five percent (25%)", so a holding of 50% carries two seats and 75% carries three.',
+                'Removal is dealt with in the same clause as appointment: clause 3.1(b) covers "every appointment and removal", and both are notified to the other Shareholder and the company secretary.',
+                'Under the Ordinance a private company must have at least one director (s454(1)), so a structure that empties the board is not available.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying MA11(2)\'s quorum of 2 when clause 3.2(a) has replaced it with a requirement about which directors must be present.',
+                'Giving the chairperson a casting vote out of habit. The sample SHA takes it away; the Model Articles give it.',
+                'Forgetting that the quorum protection in clause 3.2(a) is conditional on the shareholder still being entitled to appoint a director, and so disappears on dilution below 25%.',
+                'Treating a board seat as giving control. Board control is the vote; the seat is only the entry ticket.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Calculate each shareholder\'s seat entitlement from its percentage under clause 3.1(a).',
+                'Ask whether the meeting was quorate under clause 3.2(a), and say what MA11(1) means if it was not.',
+                'Take the vote under clauses 3.2(b) and (c), and address any claimed casting vote.',
+                'State who controls the outcome, and identify the block the other side holds.',
+                'If the shareholding is about to change, redo all three.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'The quorum for any meeting of the Board shall be at least one Director appointed by each Shareholder who is entitled to appoint a Director (or his alternate).',
+                  cite: 'Sample clause 3.2(a), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'At any meeting of the Board, each Director shall be entitled to one vote. The chairperson of the Board shall not have a casting vote in the event of an equality of voting.',
+                  cite: 'Sample clause 3.2(b), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'If the numbers of votes for and against a proposal are equal, the chairperson or other director chairing the directors\' meeting has a casting vote.',
+                  cite: 'MA14(1), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+                {
+                  text: 'At a directors\' meeting, unless a quorum is participating, no proposal is to be voted on, except a proposal to call another meeting.',
+                  cite: 'MA11(1), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['How many directors there must be', 's454(1)', 'A private company must have at least one director'],
+                  ['Who appoints, under the articles', 'MA22(1)', 'A person may be appointed a director by ordinary resolution or by a decision of the directors'],
+                  ['Who appoints, under the SHA', 'Sample clause 3.1(a)', 'Each Shareholder may appoint one Director for every 25% of the issued share capital it holds'],
+                  ['Quorum, under the articles', 'MA11(2)', 'The quorum may be fixed from time to time by a decision of the directors, and unless otherwise fixed it is 2'],
+                  ['Quorum, under the SHA', 'Sample clause 3.2(a)', 'At least one Director appointed by each Shareholder entitled to appoint one, or his alternate — an identity requirement, not a number'],
+                  ['Too few directors in office', 'MA12', 'If the total number of directors is less than the quorum, the directors may only decide to appoint further directors or to call a general meeting'],
+                  ['How a board decision is taken', 'MA7(1)', 'A decision of the directors may only be taken by a majority of the directors at a meeting, or in accordance with MA8'],
+                  ['Casting vote, under the articles', 'MA14(1)', 'On an equality of votes the chairperson or other director chairing the meeting has a casting vote'],
+                  ['Casting vote, under the SHA', 'Sample clause 3.2(b)', 'The chairperson of the Board shall NOT have a casting vote on an equality of voting, so an even split is a deadlock'],
+                  ['When a casting vote is lost anyway', 'MA14(2)', 'MA14(1) does not apply if the chairperson is not to be counted as participating for quorum or voting purposes'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-reserved-matters', label: 'Reserved Matters: the consent threshold' },
+              { session: 'LG6', issue: 'sha-future-financing', label: 'Future financing and dilution' },
+              { session: 'LG2', issue: 'board-decision-making', label: 'Getting a valid Board decision' },
+              { session: 'LG2', issue: 'directors-office', label: 'Directors: appointment, retirement and removal' },
+            ],
+          },
+          {
+            id: 'sha-reserved-matters',
+            title: 'Reserved Matters: the consent threshold',
+            summary: 'Clause 5 takes a list of decisions away from the ordinary machinery and makes them conditional on the written consent of every shareholder with 25% or more.',
+            triggers: {
+              bullets: [
+                'The board has resolved to borrow HK$8 million from a third party and the 25% shareholder was not asked.',
+                'The company proposes to sell its principal operating asset and the majority says the board alone can decide it.',
+                'A shareholder holding 24% complains that its consent was not obtained for an alteration of the articles.',
+                'The articles are to be altered and a special resolution has been passed by the 75% holder alone.',
+                'The company wants to change the business it carries on and the SHA describes the Business by reference to a defined term.',
+                'A shareholder was diluted from 25% to 14.29% and the majority now proposes a members\' voluntary winding-up.',
+                'The majority argues that a reserved matter is a board matter and so outside the shareholders\' consent requirement.',
+              ],
+              routes: [
+                { when: 'The decision would otherwise be taken by the board', session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+                { when: 'The consent right has been lost because the holding fell below 25%', session: 'LG6', issue: 'sha-future-financing', label: 'Future financing and dilution' },
+                { when: 'The question is what resolution the Ordinance itself requires', session: 'LG3', issue: 'shareholder-decision-making', label: 'Getting a valid shareholders\' approval' },
+                { when: 'The matter is an allotment and the real issue is s140 approval', session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Applying clause 5',
+                steps: [
+                  {
+                    id: 'in-list',
+                    label: 'Ask whether the proposal is on the clause 5.1 list',
+                    detail: 'Clause 5.1 lists eight matters: borrowing above a cap otherwise than from the Company\'s bankers in the ordinary and proper course of the Business; making a loan, advance or credit above a cap other than normal trade credit; disposing of a material part of the undertaking, property or assets otherwise than in the ordinary and proper course of the Business; capital expenditure or realisation above a cap in any one financial year or on any one project; altering the scope of the Business; altering the share capital; altering the Articles; and undergoing a members\' voluntary winding-up.',
+                    why: 'The list is the whole of the clause\'s reach. A matter that is not on it is governed by the ordinary machinery however commercially significant it is, and the carve-outs inside each limb are where the examiner hides the answer.',
+                    exam: {
+                      write: 'The proposed [transaction] falls within clause 5.1([letter]) because [ ], so the prior written consent of all Shareholders holding 25% or more is required.',
+                      trap: 'Reading a limb without its exception. Ordinary-course bank borrowing, normal trade credit and disposals in the ordinary and proper course of the Business are all outside the clause.',
+                    },
+                    points: [
+                      {
+                        text: 'The limbs with monetary caps and carve-outs',
+                        points: [
+                          '(a) borrowing above the cap, except from the Company\'s bankers in the ordinary and proper course of the Business.',
+                          '(b) a loan, advance or credit above the cap to any individual, firm or company, other than normal trade credit.',
+                          '(c) selling, transferring, leasing, assigning or otherwise disposing of a material part of the undertaking, property or assets, or contracting to do so, otherwise than in the ordinary and proper course of the Business.',
+                          '(d) a contract, arrangement or commitment involving capital expenditure or the realisation of capital assets above the cap in any one financial year or in relation to any one project.',
+                        ],
+                      },
+                      {
+                        text: 'The constitutional limbs',
+                        points: [
+                          '(e) altering the scope of the Business.',
+                          '(f) altering the share capital, save and except an allotment and issue pursuant to a Subscription Notice issued under clause 6.2(a).',
+                          '(g) altering the Articles.',
+                          '(h) undergoing a members\' voluntary winding-up.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    id: 'whose-consent',
+                    label: 'Identify whose consent is needed, and in what form',
+                    detail: 'Clause 5.1 requires the prior written consent of all Shareholders holding twenty-five percent (25%) or more of the issued share capital. It is a percentage test, not a headcount, and it must be prior and in writing.',
+                    why: 'A 25% floor is the same threshold as the board-appointment right in clause 3.1(a), so the drafting gives a 25% holder both a seat and a veto and takes both away together.',
+                    exam: {
+                      write: 'The consent required is the prior written consent of all Shareholders holding 25% or more, namely [ ]. [Shareholder], holding [X]%, is / is not within that class.',
+                      trap: 'Treating it as unanimity among all shareholders. A holder of less than 25% is not in the consent class at all.',
+                    },
+                    points: [
+                      'Prior — consent after the event does not satisfy the clause.',
+                      'Written.',
+                      'All shareholders at or above 25%, so the class can be one, two or more people depending on the cap table.',
+                      'The undertaking is given by the Shareholders, who "shall exercise all rights available to them in relation to the Company so as to procure (so far as they are able)" the stated result — not by the Company, which is the Russell point.',
+                    ],
+                  },
+                  {
+                    id: 'board-or-members',
+                    label: 'Notice that the list mixes board matters with members\' matters',
+                    detail: 'Several of the reserved matters would ordinarily be decided by the directors under their general authority to manage the business and affairs of the company, while others are matters the Ordinance gives to the members. Clause 5.1 subjects both to the same shareholder consent.',
+                    why: 'This is the clause\'s real bite and the lecture asks about it directly. Borrowing, lending, disposals and capital expenditure are management decisions; putting them behind a shareholder consent curtails the Board\'s powers, not just the members\'.',
+                    exam: {
+                      write: 'Although [borrowing] would ordinarily be a management decision for the Board under MA3(1), clause 5.1(a) subjects it to the prior written consent of Shareholders holding 25% or more, so the Board\'s power is curtailed.',
+                      trap: 'Assuming every reserved matter is a general meeting matter. Ask what the default position would be for each limb before saying what the clause changes.',
+                    },
+                    points: [
+                      'MA3(1): subject to the Ordinance and the articles, the business and affairs of the company are managed by the directors, who may exercise all the powers of the company.',
+                      'Limbs (a) to (d) are ordinarily management decisions for the Board.',
+                      'Altering the share capital engages the allotment regime: see s140 and s141, and note the clause 6.2(a) carve-out in limb (f).',
+                      'Altering the articles is a members\' matter requiring a special resolution.',
+                      'For what the Ordinance itself requires on each kind of resolution, use the catalogue on the shareholder decision-making page rather than re-deriving it here.',
+                    ],
+                  },
+                  {
+                    id: 'effect-minority',
+                    label: 'State the effect, and who it protects',
+                    detail: 'The effect is that Board and shareholder powers alike are curtailed by a requirement for consent from every 25% holder. It is a minority protection, and it matters most to a shareholder whose shareholding size means it is likely to have no other lever.',
+                    why: 'A 25% holder cannot block an ordinary resolution and may not be able to block a special one; the contractual veto is what gives it a say on the decisions that would change its investment.',
+                    exam: {
+                      write: 'Clause 5.1 gives [minority], as a 25% holder, a veto over [matter], which it could not obtain through its votes in general meeting.',
+                      trap: 'Describing the clause as a majority protection. The majority already has the votes; the clause exists for the shareholder who does not.',
+                    },
+                    points: [
+                      'Protection of minority shareholders, given their shareholding size and likely lack of representation on the Board.',
+                      'The threshold is where the protection lives: a holder at 25% has it, a holder at 24% does not.',
+                      'Approval thresholds under the Ordinance are mostly ordinary resolution, some special resolution and rarely unanimity; the SHA substitutes prior written consent of all 25% holders for the matters it lists.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Limb (f) carves out an allotment and issue made pursuant to a Subscription Notice under clause 6.2(a) — so the financing machinery in clause 6 is not blocked by the very veto a shareholder might want to use against dilution.',
+                'The caps in limbs (a), (b) and (d) are left blank in the sample. In a problem they will be filled in, and the figure is there to be applied.',
+                '"A material part" in limb (c) and "the ordinary and proper course of the Business" in limbs (a) and (c) are the judgement calls; say which way you read them and why.',
+                'The Business is a defined term taken from clause 2, so limb (e) is anchored to that definition.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Applying the clause to a transaction that falls inside one of its carve-outs.',
+                'Requiring consent from a shareholder below the 25% threshold, or forgetting that a shareholder above it must consent however small the rest of the register is.',
+                'Accepting consent given after the decision. Clause 5.1 requires prior written consent.',
+                'Overlooking that the clause curtails the Board, not only the general meeting.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the proposed transaction and match it to a limb of clause 5.1, applying any carve-out.',
+                'Identify the consent class: all shareholders at 25% or more, by reference to the current cap table.',
+                'Say whether prior written consent was obtained.',
+                'Explain what the default position would have been (Board under MA3(1), or a members\' resolution) and so what the clause has changed.',
+                'Conclude on the consequence of proceeding without consent, including whether it is a breach of a material obligation under clause 9.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'The Shareholders shall exercise all rights available to them in relation to the Company so as to procure (so far as they are able) that the Company shall not without the prior written consent of all Shareholders holding twenty-five percent (25%) or more of the issued share capital of the Company:',
+                  cite: 'Sample clause 5.1, LG6 SHA sample clauses',
+                },
+                {
+                  text: 'Subject to the Ordinance and these articles, the business and affairs of the company are managed by the directors, who may exercise all the powers of the company.',
+                  cite: 'MA3(1), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['The consent threshold', 'Sample clause 5.1', 'Prior written consent of all Shareholders holding 25% or more of the issued share capital'],
+                  ['Borrowing', 'Sample clause 5.1(a)', 'Caught above the cap, except borrowing from the Company\'s bankers in the ordinary and proper course of the Business'],
+                  ['Lending and credit', 'Sample clause 5.1(b)', 'Caught above the cap, other than normal trade credit'],
+                  ['Disposals', 'Sample clause 5.1(c)', 'Caught for a material part of the undertaking, property or assets, otherwise than in the ordinary and proper course of the Business'],
+                  ['Capital expenditure', 'Sample clause 5.1(d)', 'Caught above the cap in any one financial year or in relation to any one project'],
+                  ['Changing the business', 'Sample clause 5.1(e)', 'Altering the scope of the Business as defined in clause 2'],
+                  ['Changing the capital', 'Sample clause 5.1(f)', 'Altering the share capital, except an allotment and issue pursuant to a Subscription Notice under clause 6.2(a)'],
+                  ['Changing the constitution', 'Sample clause 5.1(g)', 'Altering the Articles'],
+                  ['Winding up', 'Sample clause 5.1(h)', 'Undergoing a members\' voluntary winding-up'],
+                  ['Why it curtails the Board and not only the members', 'MA3(1)', 'The directors otherwise manage the business and affairs of the company and may exercise all its powers, so subjecting management decisions to shareholder consent is a real transfer of power'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              { session: 'LG6', issue: 'sha-future-financing', label: 'Future financing and dilution' },
+              { session: 'LG3', issue: 'shareholder-decision-making', label: 'Getting a valid shareholders\' approval' },
+              { session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+            ],
+          },
+          {
+            id: 'sha-scope-and-conduct',
+            title: 'Scope of business and conduct of the company\'s affairs',
+            summary: 'Clauses 2 and 4: what the company is for, and the running undertakings about how it will be operated while the agreement lasts.',
+            triggers: {
+              bullets: [
+                'The company has started a second line of business that the majority says is a natural extension of the first.',
+                'No board meeting has been held for four months and the minority\'s nominated director has been asking for one.',
+                'The minority shareholder has received no management accounts since the company was formed.',
+                'A payment was made out of the company\'s bank account on the signature of one director without any board resolution about how the account is operated.',
+                'The majority proposes that the company should also act as guarantor for an affiliate\'s borrowings.',
+                'The company\'s accounts have been prepared on a basis the minority says is not generally accepted in Hong Kong.',
+                'The parties disagree about whether an activity falls within the defined Business.',
+              ],
+              routes: [
+                { when: 'The proposal would alter the scope of the Business rather than fall outside it by accident', session: 'LG6', issue: 'sha-reserved-matters', label: 'Reserved Matters: the consent threshold' },
+                { when: 'The failure complained of may be a material breach with exit consequences', session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+                { when: 'The question is really about whether a board meeting was validly held', session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Reading clauses 2 and 4',
+                steps: [
+                  {
+                    id: 'the-business',
+                    label: 'Fix the defined Business',
+                    detail: 'Clause 2 states that the primary object of the Company is to carry on the business described, which the agreement then defines as "the Business", and requires that the Business be conducted in the best interests of the Company and in accordance with the Articles and the provisions of the agreement.',
+                    why: 'Every later clause that refers to "the Business" — the ordinary-course carve-outs in clause 5.1, the exclusivity undertaking in clause 4.1(a), the alteration limb in clause 5.1(e) — takes its content from this definition, so an imprecise reading here spreads.',
+                    exam: {
+                      write: 'The Business is defined in clause 2 as [ ]. The proposed activity falls inside / outside that definition because [ ].',
+                      trap: 'Treating "the Business" as a general description of what the company happens to do. It is a defined term with a fixed content.',
+                    },
+                    points: [
+                      'The Business must be conducted in the best interests of the Company.',
+                      'And in accordance with both the Articles and the provisions of the agreement.',
+                    ],
+                  },
+                  {
+                    id: 'exclusivity',
+                    label: 'Apply the exclusivity undertaking',
+                    detail: 'Under clause 4.1(a) the Shareholders undertake to exercise all rights available to them, and the Company to do everything necessary to the extent permissible by applicable law, to procure that the business of the Company consists exclusively of the Business.',
+                    why: 'Investors subscribe for a business they have chosen. Exclusivity stops the company being taken somewhere else with their money without their agreeing to it.',
+                    exam: {
+                      write: 'Carrying on [activity] would breach clause 4.1(a), under which the business of the Company is to consist exclusively of the Business, unless the scope of the Business is first altered with consent under clause 5.1(e).',
+                      trap: 'Stopping at clause 4.1(a). The route to doing it lawfully is clause 5.1(e), and a good answer gives the client that route.',
+                    },
+                    points: [
+                      'The obligation is on the Shareholders to exercise their rights, and on the Company to the extent permissible by applicable law — the Russell-aware drafting again.',
+                      'Altering the scope of the Business is itself a reserved matter under clause 5.1(e).',
+                    ],
+                  },
+                  {
+                    id: 'running-undertakings',
+                    label: 'Work through the running undertakings in clause 4.1',
+                    detail: 'Clause 4.1 also requires that directors be appointed, removed and replaced in accordance with clause 3.1; that Board meetings be held at least once each month and whenever any member of the Board so requests; that books and accounts be kept in accordance with generally accepted Hong Kong accounting principles consistently applied, with monthly management accounts, operating statistics and other trading and financial information furnished to the Shareholders in a timely fashion; and that bank accounts be operated as the Board may resolve from time to time.',
+                    why: 'These are the information and access rights of a shareholder who is not running the company day to day. They are how a minority finds out that something has gone wrong in time to use its other rights.',
+                    exam: {
+                      write: 'Clause 4.1(c) requires Board meetings at least monthly and whenever any member of the Board so requests; no meeting has been held since [date] despite [director]\'s request, so the undertaking has been broken.',
+                      trap: 'Reading clause 4.1(c) as monthly only. It is monthly AND on request, and the request limb is usually the one the facts engage.',
+                    },
+                    points: [
+                      '(b) appointment, removal and replacement of directors in accordance with clause 3.1.',
+                      '(c) Board meetings at least once each month, and whenever any of its members so request.',
+                      '(d) books and accounts on generally accepted Hong Kong accounting principles consistently applied; monthly management accounts and operating statistics; such other trading and financial information as may reasonably be required; furnished to the Shareholders in a timely fashion.',
+                      '(e) all bank accounts operated as the Board may resolve from time to time.',
+                    ],
+                  },
+                  {
+                    id: 'consequence',
+                    label: 'Say what follows from a breach',
+                    detail: 'A failure to observe these undertakings is a breach of contract by the party who gave it. Whether it is more than that depends on clause 9.1(a), which turns a material breach, unremedied within twenty (20) Business Days of notice where the breach is capable of remedy, into an Event of Default.',
+                    why: 'The exam rarely asks only "is this a breach?". It asks what the client can do about it, and the answer runs through the default machinery to a compulsory transfer.',
+                    exam: {
+                      write: 'The failure is a breach of clause 4.1([letter]). If it is a breach of a material obligation and is not remedied within 20 Business Days of notice under clause 9.1(a), it becomes an Event of Default and clause 9.2 applies.',
+                      trap: 'Jumping to clause 9 without asking whether the obligation breached is a material one and whether notice demanding remedy has been given.',
+                    },
+                    points: [
+                      'Identify the party who gave the undertaking — most of clause 4.1 is given by the Shareholders, with the Company\'s obligation qualified by "to the extent permissible by applicable law".',
+                      'Then take the clause 9 route: material breach, capable of remedy, notice, 20 Business Days.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Clause 4.1 opens with "during the term of this Agreement", so these are continuing obligations rather than completion undertakings.',
+                'The information rights in clause 4.1(d) have three parts: the accounting basis, the monthly pack, and anything else reasonably required.',
+                'Clause 4.1(e) leaves bank mandates to the Board, so a shareholder who wants a signature requirement has to get it into a board resolution, not merely assume it.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating clause 2 as a recital. It carries the defined term the rest of the agreement runs on.',
+                'Reading the clause 4.1 undertakings as obligations of the Company alone. They are primarily the Shareholders\' undertakings to procure.',
+                'Assuming any breach of clause 4 is automatically an Event of Default, without applying the materiality and remedy requirements in clause 9.1(a).',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Define the Business from clause 2.',
+                'Identify which undertaking in clause 4.1 the facts engage.',
+                'Say who gave that undertaking and to whom.',
+                'State the breach.',
+                'Take it through clause 9.1(a) and say whether it reaches an Event of Default.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'The primary object of the Company is to carry on the business of [description of the business] (the "Business"). The Business shall be conducted in the best interests of the Company and in accordance with the Articles and the provisions of this Agreement.',
+                  cite: 'Sample clause 2, LG6 SHA sample clauses',
+                },
+                {
+                  text: 'Board meetings shall be held at least once each month and whenever any of its members so request;',
+                  cite: 'Sample clause 4.1(c), LG6 SHA sample clauses',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['What the company is for', 'Sample clause 2', 'The primary object is to carry on the Business, conducted in the best interests of the Company and in accordance with the Articles and the agreement'],
+                  ['The company sticks to that business', 'Sample clause 4.1(a)', 'The business of the Company is to consist exclusively of the Business'],
+                  ['Board appointments follow clause 3', 'Sample clause 4.1(b)', 'Appointment, removal and replacement of directors is to be effected in accordance with clause 3.1'],
+                  ['Meetings actually happen', 'Sample clause 4.1(c)', 'Board meetings at least once each month, and whenever any member of the Board so requests'],
+                  ['The shareholders are kept informed', 'Sample clause 4.1(d)', 'Books and accounts on generally accepted Hong Kong accounting principles consistently applied, with monthly management accounts and operating statistics furnished in a timely fashion'],
+                  ['Bank accounts', 'Sample clause 4.1(e)', 'Operated as the Board may resolve from time to time'],
+                  ['Changing the business lawfully', 'Sample clause 5.1(e)', 'Altering the scope of the Business requires the prior written consent of all 25% Shareholders'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-reserved-matters', label: 'Reserved Matters: the consent threshold' },
+              { session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+            ],
+          },
+          {
+            id: 'sha-future-financing',
+            title: 'Future financing, and the dilution that follows',
+            summary: 'Clause 6 sets the order — banks first, then a call on the shareholders — and clause 6.2(b) decides what happens to a shareholder who will not or cannot pay.',
+            weighting: 'The worked dilution arithmetic is a recurring exam question',
+            triggers: {
+              bullets: [
+                'The company needs further working capital and the board has issued a Subscription Notice without first approaching any bank.',
+                'A Subscription Notice required the 75% holder to subscribe for 75 shares and the 25% holder for 25 shares at $1 each within 30 days, and the minority will not subscribe.',
+                'A bank has offered the funding the company needs on condition that it receives a small equity stake.',
+                'A shareholder subscribed on the thirty-second day after the date of the Subscription Notice.',
+                'The majority wants to take up the shares the minority has declined.',
+                'A shareholder who failed to subscribe is now told it has committed a material breach and must transfer all its shares.',
+                'The Subscription Notice calls for an amount larger than the maximum aggregate figure stated in the agreement.',
+                'After a share issue a shareholder\'s holding has fallen from 25% to 14.29% and it wants to know what it has lost.',
+              ],
+              routes: [
+                { when: 'The consequence being asserted is a forced sale rather than dilution', session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+                { when: 'The issue is the effect of the new percentages on board seats and vetoes', session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+                { when: 'The question is the allotment mechanics and approvals under the Ordinance', session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+                { when: 'The funding is to be debt from a shareholder rather than equity', session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Funding the company, and counting the consequences',
+                steps: [
+                  {
+                    id: 'external-first',
+                    label: 'Start with external financing',
+                    detail: 'Clause 6.1 requires that, if the Company needs further working capital, each Shareholder shall first use reasonable endeavours to procure financing from banks or other financial institutions on the most favourable terms reasonably obtainable as to interest, repayment and security, provided that no lender is to be granted a right to participate in the share capital of the Company as a condition of the financing.',
+                    why: 'Debt does not change who owns the company. Requiring the parties to try the bank first protects every shareholder from being diluted before it is necessary, and the proviso stops the lender becoming a shareholder by the back door.',
+                    exam: {
+                      write: 'Under clause 6.1 the Shareholders must first use reasonable endeavours to procure bank or institutional financing on the most favourable terms reasonably obtainable, and no lender may be granted a right to participate in the share capital as a condition.',
+                      trap: 'Ignoring the proviso. An offer of funding conditional on an equity stake is one the parties are not permitted to accept under clause 6.1, however good the interest rate.',
+                    },
+                    points: [
+                      'The obligation is "reasonable endeavours", and it is on each Shareholder.',
+                      'Terms are measured as to interest, repayment and security.',
+                      'The proviso against lender equity participation is absolute on its face.',
+                    ],
+                  },
+                  {
+                    id: 'subscription-notice',
+                    label: 'Then the trigger: a Board determination and a Subscription Notice',
+                    detail: 'Under clause 6.2(a), if the Board determines that borrowings cannot be obtained on reasonable commercial terms to sufficiently fund the Company\'s working capital, it shall issue each Shareholder a written Subscription Notice specifying the amount of additional share capital required and requiring each Shareholder to subscribe within 30 days after the date of the Subscription Notice for additional shares in proportion to their existing holdings. The maximum aggregate amount all Shareholders are liable to subscribe for at any one time is capped.',
+                    why: 'Making the Board the trigger and the proportions automatic means no shareholder can be diluted by a call designed to catch it out — everyone is offered their pro rata share of the same issue.',
+                    exam: {
+                      write: 'The Board having determined under clause 6.2(a) that borrowings cannot be obtained on reasonable commercial terms, the Subscription Notice requires each Shareholder to subscribe within 30 days after its date, in proportion to existing holdings, up to the aggregate cap.',
+                      trap: 'Counting the 30 days from receipt. The clause runs them from the date of the Subscription Notice.',
+                    },
+                    points: [
+                      'Trigger: the Board\'s determination, not a shareholder\'s demand.',
+                      'Contents: the amount of additional share capital required for the financing of the Company.',
+                      'Timing: within 30 days after the date of the Subscription Notice.',
+                      'Proportion: in proportion to their existing holdings of Shares.',
+                      'Cap: the maximum aggregate amount all Shareholders are liable to subscribe for at any one time.',
+                    ],
+                  },
+                  {
+                    id: 's140',
+                    label: 'Check the allotment approval position under the Ordinance',
+                    detail: 'Because the Subscription Notice requires subscription in proportion to existing holdings, the resulting allotment is made under an offer to the members in proportion to their shareholdings and so falls within s140(2)(a), which takes it outside the general prohibition in s140(1). No approval by resolution under s141 is needed for that allotment.',
+                    why: 'Section 140 exists to stop directors diluting members without their sanction. An offer that preserves every member\'s proportion cannot do that, which is why the exception is drawn where it is.',
+                    exam: {
+                      write: 'The allotment is made under an offer to the members in proportion to their shareholdings and so falls within s140(2)(a); the s141 approval requirement therefore does not apply.',
+                      trap: 'Advising that a members\' resolution is needed for a pro rata call. It is not — and note that the clause 5.1(f) reserved matter expressly carves out an allotment pursuant to a clause 6.2(a) Subscription Notice for the same reason.',
+                    },
+                    points: [
+                      's140(1): except in accordance with s141, the directors must not exercise any power to allot shares or grant rights to subscribe for or convert into shares.',
+                      's140(2)(a): that does not apply to an allotment of shares, or grant of rights, under an offer made to the members of the company in proportion to their shareholdings.',
+                      's141(1): otherwise the directors may exercise the power if the company gives approval in advance by resolution.',
+                      'If the issue is not pro rata, s141 approval is required and the analysis moves to the allotment page.',
+                    ],
+                  },
+                  {
+                    id: 'failure',
+                    label: 'Read clause 6.2(b) carefully: what failure to subscribe is, and is not',
+                    detail: 'Clause 6.2(b) provides that a failure to subscribe as required by the Subscription Notice constitutes a waiver of the shareholder\'s rights to participate in the subscription for those shares, and, for the avoidance of doubt, that a failure to subscribe as required within 30 days shall NOT constitute a breach of a material obligation under the agreement.',
+                    why: 'This single negative is the most consequential drafting choice in the sample agreement. If failure were a material breach it would feed clause 9.1(a), and a shareholder short of cash would lose not some of its percentage but all of its shares. As drafted, the consequence is dilution and nothing more.',
+                    exam: {
+                      write: 'Under clause 6.2(b) [shareholder]\'s failure to subscribe is a waiver of its right to participate in that subscription and, expressly, is not a breach of a material obligation; the consequence is dilution, not an Event of Default under clause 9.1(a).',
+                      trap: 'Reading "shall not constitute a breach of a material obligation" as "shall constitute". The lecture flags this sentence precisely because the two readings lead to opposite advice.',
+                    },
+                    points: [
+                      'Consequence one: waiver of the right to participate in the subscription for those shares.',
+                      'Consequence two, expressly excluded: a breach of a material obligation.',
+                      'So no notice, no 20 Business Days, and no deemed Transfer Notice under clause 9.2.',
+                      'If the drafting were reversed, the same facts would put the shareholder\'s entire holding into the clause 8 machinery at the Transfer Price.',
+                    ],
+                  },
+                  {
+                    id: 'dilution',
+                    label: 'Do the dilution arithmetic, then translate it into rights lost',
+                    detail: 'Work out the new percentages, then run them through clause 3.1(a), clause 3.2(a), clause 5.1 and the resolution thresholds. On the lecture\'s worked example the majority holds 75 shares and the minority 25; the Subscription Notice calls for 75 and 25 further shares at $1 each; the majority subscribes and the minority does not.',
+                    why: 'Percentages are not the answer — they are the input. What the examiner wants is what the client can no longer do, and that only appears once the new figures are put back through the governance clauses.',
+                    exam: {
+                      write: 'After the allotment [majority] holds [150] of [175] Shares, or 85.71%, and [minority] holds [25], or 14.29%. [Minority] therefore loses [its appointment right under clause 3.1(a), the quorum protection in clause 3.2(a) and its Reserved Matters consent under clause 5.1].',
+                      trap: 'Computing the new percentage against the old total. The denominator is the enlarged issued share capital: 150 + 25 = 175, not 100.',
+                    },
+                    points: [
+                      {
+                        text: 'The worked figures',
+                        points: [
+                          'Majority: 75 + 75 = 150 shares; 150 / 175 = 85.71%, previously 75%.',
+                          'Minority: still 25 shares; 25 / 175 = 14.29%, previously 25%.',
+                        ],
+                      },
+                      {
+                        text: 'What the minority loses at 14.29%',
+                        points: [
+                          'The right to appoint a Director, which clause 3.1(a) gives only for every complete 25%.',
+                          'The quorum protection in clause 3.2(a), which runs only in favour of a Shareholder entitled to appoint a Director.',
+                          'Its Reserved Matters consent under clause 5.1, which is given only to Shareholders holding 25% or more.',
+                        ],
+                      },
+                      'Whether the majority can take up the shares the minority declined is case-specific and turns on the drafting; the sample clause provides for waiver of participation, not for a right of over-subscription.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Debt financing from shareholders is the other half of the topic: shareholders\' loans and their terms, the loan notice and its contents, timelines and maximum contribution levels, and what follows if a loan request is not met.',
+                'Ask each time: what is the triggering event, who must act, what action is required, and what follows from inaction.',
+                'The clause 5.1(f) carve-out means a shareholder cannot use its Reserved Matters veto to block a clause 6.2(a) issue.',
+                'A holding can also move the other way — by acquiring shares from another shareholder — and the same governance recalculation applies.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Skipping clause 6.1 and going straight to the Subscription Notice. The external route comes first.',
+                'Misreading clause 6.2(b) and advising that failure to subscribe is an Event of Default.',
+                'Requiring a s141 resolution for a pro rata call, when s140(2)(a) takes it outside s140(1) altogether.',
+                'Stopping at the new percentage without saying which rights it costs the client.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Establish the funding need and check that the clause 6.1 external route has been attempted.',
+                'Identify the Board determination and the Subscription Notice, and test its contents, timing, proportions and cap.',
+                'Deal with s140(2)(a) and say why no s141 approval is required.',
+                'Apply clause 6.2(b) to any shareholder who does not subscribe, and state expressly that it is not a material breach.',
+                'Calculate the new percentages on the enlarged capital.',
+                'Run those percentages through clauses 3.1(a), 3.2(a) and 5.1 and the resolution thresholds, and advise on what has been lost.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'If a Shareholder fails to subscribe as required by the Subscription Notice, such failure shall constitute a waiver of its rights to participate in the subscription for such shares. For the avoidance of doubt, a Shareholder\'s failure to subscribe as required within 30 days shall not constitute a breach of a material obligation under this Agreement.',
+                  cite: 'Sample clause 6.2(b), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'Subsection (1) does not apply to— (a) an allotment of shares, or grant of rights, under an offer made to the members of the company in proportion to their shareholdings;',
+                  cite: 's140(2)(a), Companies Ordinance (Cap. 622)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Banks before shareholders', 'Sample clause 6.1', 'Each Shareholder shall first use reasonable endeavours to procure bank or institutional financing on the most favourable terms reasonably obtainable as to interest, repayment and security'],
+                  ['No equity for the lender', 'Sample clause 6.1 proviso', 'No lender shall be granted a right to participate in the share capital of the Company as a condition of the financing'],
+                  ['What triggers a call on shareholders', 'Sample clause 6.2(a)', 'A Board determination that borrowings cannot be obtained on reasonable commercial terms to sufficiently fund working capital'],
+                  ['The call itself', 'Sample clause 6.2(a)', 'A written Subscription Notice specifying the amount required, to be subscribed within 30 days after its date, in proportion to existing holdings, subject to an aggregate cap'],
+                  ['Failing to subscribe', 'Sample clause 6.2(b)', 'A waiver of the right to participate in that subscription, and expressly NOT a breach of a material obligation'],
+                  ['Directors generally may not allot', 's140(1)', 'Except in accordance with s141, the directors must not exercise any power to allot shares or to grant rights to subscribe for or convert into shares'],
+                  ['Why a pro rata call needs no resolution', 's140(2)(a)', 'The prohibition does not apply to an allotment under an offer made to the members in proportion to their shareholdings'],
+                  ['Where approval is needed', 's141(1)', 'The directors may exercise the power if the company gives approval in advance by resolution of the company'],
+                  ['The veto cannot block the call', 'Sample clause 5.1(f)', 'Altering the share capital is a reserved matter save and except an allotment and issue pursuant to a Subscription Notice issued under clause 6.2(a)'],
+                ],
+              },
+              warnings: [
+                'A director who knowingly contravenes, or authorises or permits a contravention of, s140 commits an offence and is liable to a fine at level 5 and to imprisonment for 6 months (s140(4) and (5)). The validity of the allotment is not itself affected (s140(6)), so the transaction can stand while the director is prosecuted.',
+              ],
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+              { session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              { session: 'LG6', issue: 'sha-reserved-matters', label: 'Reserved Matters: the consent threshold' },
+              { session: 'LG3', issue: 'share-allotment', label: 'Allotment of new shares' },
+              { session: 'LG3', issue: 'funding-debt-or-equity', label: 'Funding: debt or equity, and shareholders\' loans' },
+            ],
+          },
+          {
+            id: 'sha-dividend-policy',
+            title: 'Dividend policy',
+            summary: 'Clause 7 turns the Board\'s discretion over distributions into a contractual floor, without displacing the statutory limits on what may be paid.',
+            triggers: {
+              bullets: [
+                'The SHA requires at least 40% of distributable profits to be distributed and the board has recommended no dividend for the year.',
+                'The minority shareholder has received no return on its investment for three years while the company has been profitable.',
+                'The board has paid an interim dividend that the minority says should have been put to the general meeting.',
+                'The general meeting has purported to declare a dividend larger than the board recommended.',
+                'The company has cash but no profits available for distribution, and the SHA sets a distribution percentage.',
+                'The majority wants to retain everything as working capital and the SHA fixes a distribution floor.',
+              ],
+              routes: [
+                { when: 'The question is what may lawfully be distributed at all', session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
+                { when: 'The refusal to distribute is said to be a breach with exit consequences', session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+                { when: 'The decision is being taken by the wrong organ', session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Distributions under clause 7 and MA73',
+                steps: [
+                  {
+                    id: 'default',
+                    label: 'State the default position under the articles',
+                    detail: 'MA73(1) provides that the company may at a general meeting declare dividends, but a dividend must not exceed the amount recommended by the directors; MA73(2) allows the directors to pay interim dividends from time to time that appear to them to be justified by the profits of the company.',
+                    why: 'The default gives the Board effective control of distributions in both directions: it sets the ceiling on a final dividend by its recommendation, and it decides interim dividends alone. A shareholder who is not on the Board has no lever at all.',
+                    exam: {
+                      write: 'Under MA73(1) a final dividend is declared by the general meeting but may not exceed the amount recommended by the directors; under MA73(2) interim dividends are for the directors alone.',
+                      trap: 'Saying the members declare the dividend and stopping. The recommendation is the cap, so the Board decides the maximum.',
+                    },
+                    points: [
+                      'Final dividends: recommended by the Board, declared by the members, capped at the recommendation.',
+                      'Interim dividends: paid by the directors where they appear to be justified by the profits.',
+                    ],
+                  },
+                  {
+                    id: 'contractual-floor',
+                    label: 'Apply the contractual floor in clause 7',
+                    detail: 'Clause 7 provides that the Shareholders shall procure that at least a stated percentage of the profits of the Company available for distribution in any financial year are distributed to the Shareholders by way of dividend. It converts a discretion into an obligation, and like the other operative clauses it is an undertaking by the Shareholders to procure a result rather than a promise by the Company.',
+                    why: 'For a minority investor a dividend policy is often the only route to a return short of exit, because it cannot force a sale and cannot out-vote a decision to retain profits indefinitely.',
+                    exam: {
+                      write: 'Clause 7 obliges the Shareholders to procure that at least [X]% of the profits available for distribution in the financial year are distributed by way of dividend, so a recommendation of nil is inconsistent with the agreement.',
+                      trap: 'Treating clause 7 as binding the Board directly. It binds the Shareholders to procure, and they discharge it through their votes and their appointed directors.',
+                    },
+                    points: [
+                      'The measure is "the profits of the Company available for distribution in any financial year", not cash and not turnover.',
+                      'It is a floor — at least the stated percentage — so a larger distribution is not a breach.',
+                      'How much is distributed necessarily decides how much is retained as working capital, which is the commercial trade-off behind the number.',
+                    ],
+                  },
+                  {
+                    id: 'statutory-limit',
+                    label: 'Check the statutory limit before advising that it must be paid',
+                    detail: 'MA73(3) provides that a dividend may only be paid out of the profits in accordance with Part 6 of the Ordinance. A contractual promise to distribute cannot authorise a distribution the Ordinance does not permit, so the clause 7 percentage bites only on profits that are in fact available for distribution.',
+                    why: 'This is the Russell point in a different setting: the agreement operates within the statutory scheme, not above it, and the scheme here protects creditors rather than members.',
+                    exam: {
+                      write: 'Clause 7 applies only to profits available for distribution; by MA73(3) a dividend may only be paid out of profits in accordance with Part 6, so if there are no distributable profits the obligation does not arise.',
+                      trap: 'Advising a client to declare a dividend because the SHA says so, without checking that there are distributable profits.',
+                    },
+                    points: [
+                      'MA73(3): a dividend may only be paid out of the profits in accordance with Part 6 of the Ordinance.',
+                      'Clause 7 is expressed by reference to profits "available for distribution", so the two are consistent rather than in conflict.',
+                      'For what is distributable and how it is measured, use the distributions page in LG3.',
+                    ],
+                  },
+                  {
+                    id: 'remedy',
+                    label: 'Identify the remedy for a breach',
+                    detail: 'If distributable profits exist and the stated percentage has not been distributed, the shareholders who were to procure that result are in breach. Whether that reaches the default machinery depends on clause 9.1(a): a material breach, unremedied within 20 Business Days of notice where it is capable of remedy.',
+                    why: 'A dividend breach is usually remediable — the company can still declare — so the notice and cure period in clause 9.1(a) is likely to be engaged rather than bypassed.',
+                    exam: {
+                      write: 'The failure to distribute is a breach of clause 7. It is capable of remedy, so an Event of Default arises under clause 9.1(a) only if it is not remedied within 20 Business Days of notice demanding remedy.',
+                      trap: 'Treating every SHA breach as immediately actionable under clause 9. Remediable breaches require notice and a cure period.',
+                    },
+                    points: [
+                      'Contractual remedies against the shareholders who gave the undertaking.',
+                      'Then the clause 9 route, if the obligation is a material one.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Clause 7 is silent about interim dividends, so MA73(2) continues to govern them and the Board retains that discretion.',
+                'MA73(4) provides that unless the resolution, decision or terms of issue specify otherwise, a dividend is paid by reference to each member\'s holding on the date of the resolution or decision — so timing relative to a transfer matters.',
+                'MA73(5) allows the directors to set aside reserves out of profits before recommending any dividend, which is the mechanism a board would use to reduce what is available.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Confusing the two routes: the general meeting declares final dividends, the directors pay interim ones.',
+                'Forgetting that the members cannot exceed the Board\'s recommendation under MA73(1).',
+                'Reading clause 7 as a promise that a dividend will be paid regardless of whether there are distributable profits.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Set out the MA73 default for final and interim dividends.',
+                'State the clause 7 floor and who gave the undertaking.',
+                'Check that there are profits available for distribution, and cite MA73(3) and Part 6.',
+                'Identify the breach, if any.',
+                'Apply clause 9.1(a) and advise on the remedy.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'The Shareholders shall procure that at least [ ]% of the profits of the Company available for distribution in any financial year of the Company are distributed to the Shareholders by way of dividend.',
+                  cite: 'Sample clause 7, LG6 SHA sample clauses',
+                },
+                {
+                  text: 'The company may at a general meeting declare dividends, but a dividend must not exceed the amount recommended by the directors.',
+                  cite: 'MA73(1), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+                {
+                  text: 'The directors may from time to time pay the members interim dividends that appear to the directors to be justified by the profits of the company.',
+                  cite: 'MA73(2), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Final dividends', 'MA73(1)', 'Declared by the company at a general meeting, but not exceeding the amount recommended by the directors'],
+                  ['Interim dividends', 'MA73(2)', 'Paid by the directors from time to time where they appear to the directors to be justified by the profits'],
+                  ['The statutory limit on any dividend', 'MA73(3)', 'A dividend may only be paid out of the profits in accordance with Part 6 of the Ordinance'],
+                  ['Who a dividend is paid to', 'MA73(4)', 'Unless otherwise specified, by reference to each member\'s holding on the date of the resolution or decision to declare or pay it'],
+                  ['Reserves before recommendation', 'MA73(5)', 'Before recommending any dividend the directors may set aside out of profits any sums they think fit as reserves'],
+                  ['The contractual floor', 'Sample clause 7', 'The Shareholders shall procure that at least the stated percentage of profits available for distribution in any financial year is distributed by way of dividend'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG3', issue: 'share-capital-and-value', label: 'Share capital, share value and distributions' },
+              { session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+            ],
+          },
+          {
+            id: 'sha-voluntary-transfer',
+            title: 'Voluntary transfer and the right of first refusal',
+            summary: 'Clause 8: a general prohibition, then a pre-emption process whose most examined feature is that a notice to sell part offers the whole.',
+            weighting: 'The clause 8.2 machinery is the densest set of traps in LG6',
+            triggers: {
+              bullets: [
+                'A shareholder holding 75 of the 100 issued shares wishes to sell 35 of them to a named third party.',
+                'The Outgoing Shareholder wishes to sell half its holding and has served a Transfer Notice specifying only those shares.',
+                'The Remaining Shareholder has asked the company\'s auditors to determine a price and has then let the period run out without accepting.',
+                'A Transfer Notice was served and the Outgoing Shareholder now wants to withdraw it.',
+                'The Remaining Shareholder served an Acceptance Notice 45 days ago and completion has not happened.',
+                'A shareholder has granted a charge over its shares to its bank without asking anyone.',
+                'The Transfer Price determined by the auditors is lower than the price the Outgoing Shareholder originally asked for.',
+                'A third-party sale completed 70 days after the Acceptance Period expired.',
+                'The transferee has signed everything and the board is refusing to register the transfer.',
+              ],
+              routes: [
+                { when: 'The transfer is of shares in a parent company rather than of Shares themselves', session: 'LG6', issue: 'sha-indirect-transfers', label: 'Direct and indirect transfers' },
+                { when: 'The transfer is being forced by a default rather than chosen', session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+                { when: 'The question is the registration mechanics and the board\'s refusal', session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+                { when: 'The question is the stamp duty on the transfer', session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Running the clause 8 process',
+                steps: [
+                  {
+                    id: 'prohibition',
+                    label: 'Start with the prohibition in clause 8.1',
+                    detail: 'Each Shareholder undertakes with the other that, except in accordance with clause 8.2 or with the prior written consent of the other Shareholder, it will not grant any option over, or charge or otherwise dispose of, or permit or suffer to be charged or otherwise disposed of, the legal and/or beneficial interest in its holding of Shares, or sell or transfer its legal or beneficial interest in the Shares.',
+                    why: 'A closely held company is a relationship as much as an investment. The prohibition is what stops a shareholder waking up next to a co-owner it did not choose.',
+                    exam: {
+                      write: 'Clause 8.1 prohibits [the disposal] except in accordance with clause 8.2 or with the prior written consent of the other Shareholder, so [shareholder] has two routes and has taken neither.',
+                      trap: 'Reading clause 8.1 as covering sales only. It expressly catches options, charges, and permitting or suffering a charge or disposal — so a bank security over the shares is caught.',
+                    },
+                    points: [
+                      'Two exits from the prohibition: the clause 8.2 process, or the prior written consent of the other Shareholder.',
+                      'It bites on legal and/or beneficial interest, so a declaration of trust is caught as well as a transfer.',
+                      '"Permit or suffer to be charged" catches inaction as well as action.',
+                    ],
+                  },
+                  {
+                    id: 'transfer-notice',
+                    label: 'The Transfer Notice — and notice that it offers the entire holding',
+                    detail: 'The Outgoing Shareholder proposing to transfer all or part of its holding (the Sale Shares) gives a written Transfer Notice to the Company stating its desire to transfer and specifying the number of Sale Shares and the price per Share (the Offered Price). The Transfer Notice constitutes the Company its agent, and constitutes the notice as an offer for the sale of the Outgoing Shareholder\'s ENTIRE holding of Shares to the Remaining Shareholder, at the Offered Price or, at the Remaining Shareholder\'s option, at the Transfer Price.',
+                    why: 'The asymmetry is deliberate. A shareholder who wants out in part must be prepared to be taken out in whole, so the Remaining Shareholder is never left with a partner who has one foot out of the door.',
+                    exam: {
+                      write: 'Although the Sale Shares are [35] Shares, the Transfer Notice constitutes an offer of the Outgoing Shareholder\'s ENTIRE holding of [75] Shares to the Remaining Shareholder under clause 8.2(a), at the Offered Price or, at the Remaining Shareholder\'s option, the Transfer Price.',
+                      trap: 'Answering that only the Sale Shares are offered to the Remaining Shareholder. Read the second sentence of clause 8.2(a): the offer is of the entire holding.',
+                    },
+                    points: [
+                      'Served on the Company, which is constituted the Outgoing Shareholder\'s agent.',
+                      'Contents: the number of Sale Shares, and the price per Share (the Offered Price).',
+                      'The Company must serve the Remaining Shareholder with the Transfer Notice within three days of receipt.',
+                      'Except with the written consent of the Remaining Shareholder, a Transfer Notice is irrevocable — so a seller with second thoughts is committed.',
+                    ],
+                  },
+                  {
+                    id: 'acceptance-period',
+                    label: 'Compute the Acceptance Period, which depends on whether a price is to be determined',
+                    detail: 'The Acceptance Period is 60 days after the date on which a Transfer Notice is served; or, if the Remaining Shareholder elects that the Transfer Price be determined, 14 days after the Transfer Price is determined.',
+                    why: 'A shareholder cannot sensibly decide whether to buy until it knows the price, so electing for a determination restarts a short clock rather than running the long one against an unknown figure.',
+                    exam: {
+                      write: 'The Transfer Notice was served on [date], so the Acceptance Period expired on [date + 60 days]; alternatively, the Remaining Shareholder having elected for a determination, it expired 14 days after the Transfer Price was determined on [date].',
+                      trap: 'Running 60 days from the Transfer Notice when a determination has been elected. Limb (y) displaces limb (x), and the period is 14 days, not 60.',
+                    },
+                    points: [
+                      'Limb (x): 60 days after the date on which a Transfer Notice is served.',
+                      'Limb (y): 14 days after the Transfer Price is determined, where the Remaining Shareholder elects for a determination.',
+                    ],
+                  },
+                  {
+                    id: 'transfer-price',
+                    label: 'If a determination is elected, apply the clause 8.2(d)(ii) valuation',
+                    detail: 'The Transfer Price is the price per Share determined, at the request of the Remaining Shareholder and at the cost of the Company, by the auditors of the Company acting as experts and not as arbitrators or, if they are unable or unwilling, by some other independent person acting as an expert and not as an arbitrator nominated in default of agreement by the Board, to be the market value of such a Share as a going concern as at the date of the Transfer Notice as between a willing seller and a willing buyer acting at arm\'s length.',
+                    why: 'Expert, not arbitrator, matters: an expert determination is far harder to challenge than an award, which is what gives the mechanism its finality. Valuing as at the date of the Transfer Notice stops either side gaming the timing.',
+                    exam: {
+                      write: 'The Transfer Price is the market value of a Share as a going concern at the date of the Transfer Notice, as between a willing seller and a willing buyer at arm\'s length, determined by the auditors as experts and not as arbitrators, at the cost of the Company.',
+                      trap: 'Saying the auditors act as arbitrators. The clause says the opposite, and the difference decides whether the determination can be attacked.',
+                    },
+                    points: [
+                      'Requested by the Remaining Shareholder; paid for by the Company.',
+                      'Auditors first; failing them, an independent person nominated by the Board in default of agreement.',
+                      'Valuation date: the date of the Transfer Notice.',
+                      'Basis: market value as a going concern, willing seller and willing buyer, arm\'s length.',
+                    ],
+                  },
+                  {
+                    id: 'accept-or-not',
+                    label: 'Acceptance: the whole holding, within 30 days',
+                    detail: 'If the Outgoing Shareholder receives a written Acceptance Notice within the Acceptance Period, specifying whether the Remaining Shareholder accepts the Offered Price or the Transfer Price, both are bound to complete the sale and purchase of the Outgoing Shareholder\'s entire holding at that price within 30 days of the date of the Acceptance Notice.',
+                    why: 'Once the Remaining Shareholder has committed, the parties need certainty of completion; a fixed 30 days from the Acceptance Notice supplies it.',
+                    exam: {
+                      write: 'The Acceptance Notice having been served within the Acceptance Period, the parties are bound to complete the sale and purchase of the entire holding at [the Offered Price / the Transfer Price] within 30 days of the date of the Acceptance Notice.',
+                      trap: 'Completing "the Sale Shares". Acceptance is of the entire holding, matching the offer in clause 8.2(a).',
+                    },
+                    points: [
+                      'The Acceptance Notice must specify which of the two prices is accepted.',
+                      'Thirty days runs from the date of the Acceptance Notice, not from the Transfer Notice.',
+                    ],
+                  },
+                  {
+                    id: 'third-party',
+                    label: 'If no Acceptance Notice: a 60-day window, the Sale Shares only, and a price floor',
+                    detail: 'If no Acceptance Notice is received within the Acceptance Period, the Outgoing Shareholder is at liberty, for 60 days from the expiration of the Acceptance Period, to sell and transfer the Sale Shares to any individual, firm or company, subject to clause 8.3, at a price not less than the Transfer Price or, if no Transfer Price was requested, not less than the Offered Price.',
+                    why: 'The floor stops the seller offering the Remaining Shareholder a high price it will refuse and then dumping the shares cheaply on an outsider — the pre-emption right would otherwise be worthless.',
+                    exam: {
+                      write: 'No Acceptance Notice having been served, the Outgoing Shareholder may sell the [35] Sale Shares only, to any third party, within 60 days of the expiration of the Acceptance Period, at not less than [the Transfer Price / the Offered Price], subject to the transferee executing a deed of adherence under clause 8.3.',
+                      trap: 'Letting the Outgoing Shareholder sell its entire holding to the third party. The offer was of the whole; the third-party sale is of the Sale Shares only.',
+                    },
+                    points: [
+                      {
+                        text: 'Three limits on the third-party sale',
+                        points: [
+                          'Subject matter: the Sale Shares, not the entire holding.',
+                          'Time: 60 days from the expiration of the Acceptance Period.',
+                          'Price: not less than the Transfer Price, or the Offered Price where no determination was requested.',
+                        ],
+                      },
+                      'Where a Transfer Price was determined, the floor is the Transfer Price whether it is higher or lower than the Offered Price — so a determination can let the Outgoing Shareholder sell below its own asking price, or lock it above it.',
+                      'And the transferee must execute a deed of adherence under clause 8.3.',
+                    ],
+                  },
+                  {
+                    id: 'registration',
+                    label: 'Remember that the Board can still refuse to register',
+                    detail: 'Completing the clause 8 process does not put the transferee on the register. The directors retain a discretion to refuse to register a transfer under MA2(2), together with the specific grounds in MA64(1), and the Ordinance imposes the timetable and the reasons obligation in s151.',
+                    why: 'The SHA binds shareholders; registration is a company-law act by the Board. A transferee who has done everything the agreement requires can still be kept off the register, which is why board control matters to a seller.',
+                    exam: {
+                      write: 'Even after the clause 8 process, the directors may refuse to register the transfer under MA2(2) and MA64(1); the Company must within 2 months either register or give notice of refusal (s151(2)), and on request give reasons within 28 days (s151(4), MA64(4)).',
+                      trap: 'Treating registration as automatic once the SHA process is complete. It is a separate decision, taken by a board that the buyer may not control.',
+                    },
+                    points: [
+                      'MA2(2): the directors may in their discretion refuse to register the transfer of a share.',
+                      'MA64(1): further specific grounds — instrument not lodged, not accompanied by the certificate or other evidence reasonably required, or a transfer of more than one class.',
+                      'MA64(2) and (3): on a refusal the transferor or transferee may request reasons, and the instrument must be returned with a notice of refusal within 2 months unless fraud is suspected.',
+                      'MA64(4) and s151(4): if reasons are requested, the directors must within 28 days send a statement of reasons or register the transfer.',
+                      's151(2): within 2 months after the transfer is lodged the company must register it or send notice of refusal.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The full completion checklist for a transfer runs beyond the SHA: sale and purchase agreement, instrument of transfer and bought and sold notes, deed of adherence, stamping, board approval, cancellation of the old certificate and issue of the new, and updating the register of members and the significant controllers register.',
+                'Who controls the board at the moment of the registration decision is a practical question with a fiduciary dimension — a director appointed by the seller still owes duties to the company.',
+                'Work the consequences of the new cap table: after a 75/25 company becomes 40/25/35, each of the three holds 25% or more, so the newcomer acquires a Reserved Matters veto under clause 5.1 and a board seat under clause 3.1(a), while the former 75% holder can no longer pass an ordinary resolution alone.',
+                'A partial exit is still an exit for these purposes — the question is always what the resulting percentages do.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Offering only the Sale Shares to the Remaining Shareholder. Clause 8.2(a) offers the entire holding.',
+                'Selling the entire holding to the third party. Clause 8.2(c) releases only the Sale Shares.',
+                'Using the 60-day Acceptance Period where a Transfer Price determination has been elected, when the period is 14 days after determination.',
+                'Applying the Offered Price as the third-party floor where a Transfer Price was in fact determined.',
+                'Forgetting the deed of adherence, or treating board registration as a formality.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Confirm the disposal is caught by clause 8.1 and that neither consent nor the clause 8.2 route has yet been used.',
+                'Set out the Transfer Notice and state expressly that it offers the entire holding.',
+                'Compute the Acceptance Period on the correct limb.',
+                'If a determination was elected, state the Transfer Price basis.',
+                'Deal with acceptance (entire holding, 30 days) or non-acceptance (Sale Shares, 60 days, price floor).',
+                'Add the deed of adherence and the registration step, and then recompute the governance consequences of the new percentages.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'The Transfer Notice shall constitute the Company as its agent and shall constitute the Transfer Notice as the offer for the sale of the Outgoing Shareholder\'s entire holding of Shares to the other Shareholder (the "Remaining Shareholder") at the Offered Price or, at the option of the Remaining Shareholder, at the Transfer Price (as defined in and determined in accordance with Clause 8.2(d)(ii)).',
+                  cite: 'Sample clause 8.2(a), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'If the Outgoing Shareholder does not receive an Acceptance Notice within the Acceptance Period, the Outgoing Shareholder shall be at liberty, for a period of 60 days from the expiration of the Acceptance Period, to sell and transfer the Sale Shares to any individual, firm or company (subject to Clause 8.3) at a price not less than the Transfer Price or if the Remaining Shareholder has not requested that a Transfer Price be determined, not less than the Offered Price.',
+                  cite: 'Sample clause 8.2(c), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'The directors may in their discretion refuse to register the transfer of a share.',
+                  cite: 'MA2(2), Model Articles for Private Companies (Cap. 622H Sch. 2)',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['The general prohibition', 'Sample clause 8.1', 'No option, charge or disposal of the legal and/or beneficial interest, and no sale or transfer, except under clause 8.2 or with the other Shareholder\'s prior written consent'],
+                  ['What the Transfer Notice must specify', 'Sample clause 8.2(a)', 'The number of Sale Shares and the price per Share (the Offered Price)'],
+                  ['What the Transfer Notice actually offers', 'Sample clause 8.2(a)', 'The Outgoing Shareholder\'s ENTIRE holding, at the Offered Price or at the Remaining Shareholder\'s option the Transfer Price'],
+                  ['Service and irrevocability', 'Sample clause 8.2(a)', 'The Company serves the Remaining Shareholder within three days of receipt; the Transfer Notice is irrevocable except with the Remaining Shareholder\'s written consent'],
+                  ['Completion on acceptance', 'Sample clause 8.2(b)', 'Both are bound to complete the sale of the entire holding within 30 days of the date of the Acceptance Notice'],
+                  ['The third-party window', 'Sample clause 8.2(c)', 'The Sale Shares only, within 60 days of expiry of the Acceptance Period, at not less than the Transfer Price or the Offered Price as the case may be'],
+                  ['How long the Remaining Shareholder has', 'Sample clause 8.2(d)(i)', '60 days after the Transfer Notice is served, or 14 days after the Transfer Price is determined if a determination was elected'],
+                  ['How the price is fixed', 'Sample clause 8.2(d)(ii)', 'Market value as a going concern at the date of the Transfer Notice, willing seller and willing buyer at arm\'s length, by the auditors as experts and not as arbitrators, at the Company\'s cost'],
+                  ['Bringing the buyer inside the agreement', 'Sample clause 8.3', 'The transfer is conditional on the transferee executing a deed of adherence'],
+                  ['The board can still say no', 'MA2(2), MA64(1)', 'A general discretion to refuse registration, plus specific grounds where the instrument is not lodged or not accompanied by the certificate or required evidence'],
+                  ['The registration timetable', 's151(2), s151(4)', 'Register or send notice of refusal within 2 months of lodgement; if reasons are requested, send them (or register) within 28 days'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-indirect-transfers', label: 'Direct and indirect transfers' },
+              { session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+              { session: 'LG6', issue: 'sha-nature-and-parties', label: 'What an SHA is, and who is bound by it' },
+              { session: 'LG3', issue: 'share-transfer', label: 'Transfer of existing shares' },
+              { session: 'LG4', issue: 'sale-or-purchase', label: 'Sale or purchase: contract notes and s19' },
+            ],
+          },
+          {
+            id: 'sha-compulsory-transfer',
+            title: 'Compulsory transfer on an Event of Default',
+            summary: 'Clause 9 lists what counts as a default and then hands the non-defaulting shareholder the power to force the defaulter out at a valuation it cannot set.',
+            triggers: {
+              bullets: [
+                'A shareholder has breached a material obligation and has done nothing about it for a month after being asked in writing to put it right.',
+                'A receiver has been appointed over a substantial part of a corporate shareholder\'s undertaking and remains in place five weeks later.',
+                'An individual shareholder has died and the other shareholder wants to buy out the estate.',
+                'A corporate shareholder has been wound up by order of the court.',
+                'The non-defaulting shareholder learned of a default three months after it happened and now wants to act.',
+                'A shareholder has ceased to carry on a material part of its own business.',
+                'The defaulting shareholder says it will serve a Transfer Notice at its own asking price.',
+                'The non-defaulting shareholder gave notice 25 Business Days after becoming aware of the default.',
+              ],
+              routes: [
+                { when: 'The consequence of the default runs through the ordinary pre-emption machinery', session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+                { when: 'The alleged default is a change of control higher up the chain', session: 'LG6', issue: 'sha-indirect-transfers', label: 'Direct and indirect transfers' },
+                { when: 'The alleged breach is a failure to subscribe under a Subscription Notice', session: 'LG6', issue: 'sha-future-financing', label: 'Future financing and dilution' },
+                { when: 'The alleged breach is of a running undertaking about how the company is operated', session: 'LG6', issue: 'sha-scope-and-conduct', label: 'Scope of business and conduct of the company\'s affairs' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'From default to forced exit',
+                steps: [
+                  {
+                    id: 'identify-eod',
+                    label: 'Match the facts to an Event of Default in clause 9.1',
+                    detail: 'Clause 9.1 lists seven events. Limb (a) is a material breach or failure to observe a material obligation, not remedied (if capable of remedy) within twenty (20) Business Days from receipt of notice demanding remedy. Limbs (b) to (g) are insolvency and status events: legal process against a material part of the property not discharged within thirty (30) Business Days; an encumbrancer taking possession or a liquidator, receiver or manager being appointed over the whole or a substantial part, not discharged within thirty (30) Business Days; a winding-up order or effective resolution for voluntary winding-up or dissolution of a corporate shareholder; the death or bankruptcy of an individual shareholder; a material change in a corporate shareholder\'s directorship, shareholding or control; and a corporate shareholder ceasing to carry on the whole or any material part of its business.',
+                    why: 'The list mixes fault with misfortune on purpose. What the other shareholder is protecting against is not wrongdoing but ending up in business with a stranger or an insolvency officeholder.',
+                    exam: {
+                      write: 'The [event] falls within clause 9.1([letter]) because [ ].',
+                      trap: 'Applying the 20 Business Day cure period to the insolvency limbs. Only limb (a) has a remedy period; limbs (b) and (c) have their own 30 Business Day discharge windows, and limbs (d) to (g) have none at all.',
+                    },
+                    points: [
+                      {
+                        text: 'Limb (a): material breach',
+                        points: [
+                          'The breach must be of a material obligation, or a material breach.',
+                          'If capable of remedy, it becomes an Event of Default only if not remedied within 20 Business Days from receipt of notice demanding that it be remedied.',
+                          'If not capable of remedy, no notice period applies on the face of the limb.',
+                        ],
+                      },
+                      {
+                        text: 'Limbs (b) and (c): process and officeholders, each with a 30 Business Day discharge window',
+                        points: [
+                          '(b) distress, execution or other legal process levied or enforced upon or against any material part of its property, assets or revenues.',
+                          '(c) an encumbrancer taking possession, or a liquidator, receiver, manager or other similar officer appointed over the whole or a substantial part.',
+                        ],
+                      },
+                      {
+                        text: 'Limbs (d) to (g): status events with no cure period',
+                        points: [
+                          '(d) a corporate shareholder wound up by court order, by effective resolution for voluntary winding-up, or otherwise dissolved.',
+                          '(e) an individual shareholder dies or is adjudged bankrupt.',
+                          '(f) a material change in a corporate shareholder\'s directorship, shareholding or control.',
+                          '(g) a corporate shareholder ceasing to carry on the whole or any material part of its business.',
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    id: 'window',
+                    label: 'Check the notice window, and that somebody has actually used it',
+                    detail: 'Under clause 9.2 the non-defaulting Shareholder may, within twenty (20) Business Days of the occurrence of an Event of Default or of its becoming aware of the Event of Default, whichever is later, call upon the defaulting Shareholder by notice to serve a Transfer Notice. The consequence is not automatic: it takes a choice and a notice inside the window.',
+                    why: 'Making it optional lets the non-defaulting shareholder decide whether it actually wants to buy, and the "whichever is later" limb stops a default that was concealed from expiring before it was discovered.',
+                    exam: {
+                      write: 'Time ran from [the later of the occurrence on [date] and [shareholder]\'s becoming aware on [date]], so the 20 Business Day window expired on [date]. Notice was / was not given within it.',
+                      trap: 'Treating the compulsory transfer as automatic on the default. Nothing happens unless the non-defaulting Shareholder calls for it, in time.',
+                    },
+                    points: [
+                      'The period is 20 Business Days, not calendar days.',
+                      'It runs from the later of occurrence and awareness.',
+                      '"May call upon" — it is a right, not a duty.',
+                    ],
+                  },
+                  {
+                    id: 'deemed-notice',
+                    label: 'Apply the deeming: a Transfer Notice for all the shares, at the Transfer Price',
+                    detail: 'If called upon, the defaulting Shareholder is deemed to have served a Transfer Notice on the non-defaulting Shareholder and the clause 8 share transfer provisions apply, except that the deemed Transfer Notice is in respect of ALL its Shares and specifies the Transfer Price, determined under clause 8.2(d)(ii), as the desired sale price.',
+                    why: 'Both modifications take control away from the defaulter. It cannot sell a token parcel and stay, and it cannot name a price designed to be refused; an independent valuation is substituted for its asking price.',
+                    exam: {
+                      write: 'On being called upon, [defaulter] is deemed under clause 9.2 to have served a Transfer Notice in respect of all its Shares at the Transfer Price, and the clause 8 machinery then applies.',
+                      trap: 'Carrying the Offered Price across from clause 8. There is no Offered Price on a deemed notice — the price is the Transfer Price by definition.',
+                    },
+                    points: [
+                      'All of the defaulting Shareholder\'s Shares, not a chosen parcel.',
+                      'The Transfer Price under clause 8.2(d)(ii): market value as a going concern at the date of the Transfer Notice, by the auditors as experts.',
+                      'Then clause 8 runs as usual, so the Acceptance Period, acceptance and completion provisions apply.',
+                    ],
+                  },
+                  {
+                    id: 'consequence',
+                    label: 'State the outcome, and the alternative if nobody calls',
+                    detail: 'If the non-defaulting Shareholder calls and accepts, it acquires the whole of the defaulter\'s holding at the independently determined price. If it does not call within the window, the Event of Default produces no transfer, and the non-defaulting Shareholder is left to its ordinary contractual remedies for the underlying breach.',
+                    why: 'The clause is a buy-out mechanism, not a penalty. It gives the innocent party an exit route from the relationship; it does not by itself compensate for the breach.',
+                    exam: {
+                      write: 'The Event of Default having been called, [non-defaulter] may acquire the whole of [defaulter]\'s holding at the Transfer Price; had it not called within 20 Business Days, its remedy would have been in damages for the underlying breach.',
+                      trap: 'Forgetting that a default which is not called still leaves an ordinary breach of contract to be sued on.',
+                    },
+                    points: [
+                      'Recompute the resulting percentages and run them through clauses 3.1(a), 3.2(a) and 5.1.',
+                      'Where the defaulter held all the remaining shares, the buyer ends up with the whole company.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Compare the two triggers that look alike: a change in the shareholding OF THE COMPANY is dealt with by the transfer restrictions in clause 8, while a change of control IN A CORPORATE SHAREHOLDER is an Event of Default under clause 9.1(f).',
+                'Clause 6.2(b) expressly removes failure to subscribe from the material-breach route, so it never reaches clause 9.1(a).',
+                'Limb (e) means the death of an individual shareholder is a default event, so the estate can be bought out — worth spotting in a family company fact pattern.',
+                '"Business Days" is the unit throughout clause 9; do not convert it to calendar days without saying so.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating the compulsory transfer as automatic. It requires a notice, from the non-defaulting shareholder, within 20 Business Days.',
+                'Applying limb (a)\'s cure period to an insolvency limb that has its own, or to one that has none.',
+                'Letting the defaulter set the price, or transfer only part of its holding.',
+                'Missing that clause 9.2 imports the whole of clause 8, so the Acceptance Period and completion machinery still have to be worked through.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the event and match it to a limb of clause 9.1.',
+                'Apply that limb\'s own cure or discharge period, if it has one.',
+                'Date the 20 Business Day window from the later of occurrence and awareness, and check a notice was given.',
+                'Apply the clause 9.2 deeming: all Shares, at the Transfer Price.',
+                'Run the clause 8 machinery from the deemed Transfer Notice onwards.',
+                'State the resulting shareholding and its governance consequences.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'it commits a material breach or fails to observe any of its material obligations under this Agreement and does not remedy (if such breach is capable of remedy) such breach within twenty (20) Business Days from the receipt of notice from the other Shareholder demanding that such breach or omission be remedied;',
+                  cite: 'Sample clause 9.1(a), LG6 SHA sample clauses',
+                },
+                {
+                  text: 'Within twenty (20) Business Days of the occurrence of an Event of Default or of the non-defaulting Shareholder becoming aware of the Event of Default (whichever is later), the non-defaulting Shareholder may call upon the defaulting Shareholder by notice to serve and if so called upon, the defaulting Shareholder shall be deemed to have served on the non-defaulting Shareholder a Transfer Notice and the share transfer provisions of Clause 8 shall apply accordingly, except that the Transfer Notice will be deemed to be in respect of all its Shares and specify the Transfer Price (as determined in accordance with Clause 8.2(d)(ii)) as the desired sale price for all such Shares.',
+                  cite: 'Sample clause 9.2, LG6 SHA sample clauses',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Material breach', 'Sample clause 9.1(a)', 'A material breach or failure to observe a material obligation, not remedied within 20 Business Days of receipt of notice demanding remedy where it is capable of remedy'],
+                  ['Legal process against assets', 'Sample clause 9.1(b)', 'Distress, execution or other legal process against a material part of the property, assets or revenues, not discharged, released or stayed within 30 Business Days'],
+                  ['Officeholder appointed', 'Sample clause 9.1(c)', 'An encumbrancer taking possession, or a liquidator, receiver, manager or similar officer appointed over the whole or a substantial part, not discharged within 30 Business Days'],
+                  ['Corporate shareholder wound up', 'Sample clause 9.1(d)', 'A court order for winding-up, an effective resolution for voluntary winding-up, or dissolution'],
+                  ['Individual shareholder', 'Sample clause 9.1(e)', 'Death or adjudication of bankruptcy'],
+                  ['Change of control upstream', 'Sample clause 9.1(f)', 'A material change in a corporate shareholder\'s directorship, shareholding or control'],
+                  ['Ceasing to trade', 'Sample clause 9.1(g)', 'A corporate shareholder ceasing to carry on the whole or any material part of its business'],
+                  ['The consequence is optional and time-limited', 'Sample clause 9.2', 'The non-defaulting Shareholder may call within 20 Business Days of the later of occurrence and awareness'],
+                  ['What the call produces', 'Sample clause 9.2', 'A deemed Transfer Notice for ALL the defaulter\'s Shares at the Transfer Price, with clause 8 then applying'],
+                  ['What is expressly not a material breach', 'Sample clause 6.2(b)', 'Failure to subscribe within 30 days of a Subscription Notice'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+              { session: 'LG6', issue: 'sha-indirect-transfers', label: 'Direct and indirect transfers' },
+              { session: 'LG6', issue: 'sha-future-financing', label: 'Future financing and dilution' },
+            ],
+          },
+          {
+            id: 'sha-indirect-transfers',
+            title: 'Direct and indirect transfers',
+            summary: 'Clause 8 catches a disposal of the Shares themselves. A sale further up the ownership chain escapes it — and lands instead in clause 9.1(f).',
+            weighting: 'The set-piece analysis of the lecture',
+            triggers: {
+              bullets: [
+                'The shareholder of record is a holding company, and its own parent has agreed to sell that holding company to a third party.',
+                'The ultimate individual owner proposes to sell his shares in the topmost company in the chain.',
+                'A shareholder says the pre-emption clause is not engaged because it is not selling any Shares in the company.',
+                'The other shareholder complains that control of its co-owner has changed hands without any transfer notice.',
+                'A corporate shareholder has replaced its entire board following a sale further up the group.',
+                'The buyer of the parent company says it has not become a shareholder and so cannot be required to sign a deed of adherence.',
+              ],
+              routes: [
+                { when: 'The disposal is of the Shares themselves', session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+                { when: 'You have established a change of control and need the consequence', session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+                { when: 'The question is who the registered holder is as against the beneficial owner', session: 'LG3', issue: 'share-ownership-nominee', label: 'Registered, beneficial and nominee ownership' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Direct, or indirect?',
+                steps: [
+                  {
+                    id: 'map-chain',
+                    label: 'Map the ownership chain and identify the Shareholder',
+                    detail: 'Draw the chain and mark which company is the Shareholder for the purposes of the agreement — that is, the holder of the Shares in the Company. In the lecture\'s structure an individual owns TopCo, TopCo owns HoldCo, HoldCo holds 75% of OpCo and the minority holds 25%; the Shareholder is HoldCo, and the Shares are shares in OpCo.',
+                    why: 'Every test in clauses 8 and 9 is expressed by reference to "the Shareholder" and "the Shares". Until you have fixed which entity and which shares those are, neither clause can be applied.',
+                    exam: {
+                      write: 'The Shareholder is [HoldCo]; the Shares are the shares it holds in [OpCo]. The proposed sale is of shares in [TopCo / HoldCo], which are not Shares.',
+                      trap: 'Treating the ultimate owner as the Shareholder because he controls everything. The agreement looks at the registered holder that signed it.',
+                    },
+                    points: [
+                      'Direct transfer of OpCo shares: HoldCo transfers the Shares.',
+                      'TopCo transferring HoldCo shares is a direct transfer of HoldCo shares and an indirect transfer of OpCo shares.',
+                      'The individual transferring TopCo shares is a direct transfer of TopCo shares and an indirect transfer of both HoldCo and OpCo shares.',
+                    ],
+                  },
+                  {
+                    id: 'clause8',
+                    label: 'Test clause 8.1 — and notice the words that confine it',
+                    detail: 'Clause 8.1 prohibits a Shareholder from disposing of "the legal and/or beneficial interest in its holding of Shares" or selling or transferring "its legal or beneficial interest in the Shares". Shares is a defined term meaning a share in the capital of the Company. A sale of shares in a parent is therefore not a disposal of Shares, and clause 8.1 is not engaged.',
+                    why: 'The clause was drafted against the register. It is a genuine gap rather than an oversight in this sample, which is precisely why the default clause has to carry the weight.',
+                    exam: {
+                      write: 'Clause 8.1 applies only to a disposal by a Shareholder of its interest in the Shares, being shares in the capital of the Company. The sale of [TopCo / HoldCo] shares is not such a disposal, so the pre-emption machinery in clause 8.2 is not triggered.',
+                      trap: 'Stopping here and advising that nothing can be done. The answer moves to clause 9.1(f), not to nothing.',
+                    },
+                    points: [
+                      'The defined terms do the work: "Share" means a share in the capital of the Company from time to time in issue; "Shareholder" means the holder of the Shares from time to time.',
+                      'So no Transfer Notice, no right of first refusal, and no deed of adherence obligation on the upstream buyer.',
+                    ],
+                  },
+                  {
+                    id: 'clause9f',
+                    label: 'Then test clause 9.1(f): a material change in the Shareholder\'s directorship, shareholding or control',
+                    detail: 'Clause 9.1(f) makes it an Event of Default where, the Shareholder being a company, a material change occurs in its directorship, shareholding or control. The three limbs are alternatives, so only one needs to be satisfied, and each is tested against the Shareholder itself — here HoldCo — not against the company further up the chain.',
+                    why: 'This is the drafter\'s answer to the gap in clause 8. It does not stop the upstream sale, but it lets the other shareholder exit the relationship once the person behind its co-owner has changed.',
+                    exam: {
+                      write: 'Clause 9.1(f) is tested against [HoldCo] as the Shareholder. The sale of [TopCo\'s HoldCo shares] produces a material change in its [shareholding and control], and only one limb need be satisfied, so an Event of Default arises.',
+                      trap: 'Testing the limbs against the entity being sold rather than against the Shareholder. If the individual sells TopCo, it is still HoldCo\'s directorship, shareholding and control that you examine.',
+                    },
+                    points: [
+                      {
+                        text: 'If the parent sells the Shareholder itself (TopCo sells its HoldCo shares)',
+                        points: [
+                          'HoldCo\'s shareholding changes: its shares pass to a new owner.',
+                          'HoldCo\'s control changes with them.',
+                          'HoldCo\'s directorship will in practice usually change too, as the new owner appoints its own board.',
+                        ],
+                      },
+                      {
+                        text: 'If the ultimate owner sells the top of the chain (the individual sells his TopCo shares)',
+                        points: [
+                          'HoldCo\'s shareholding does NOT change — TopCo still holds those shares.',
+                          'HoldCo\'s control does change, because control of TopCo has changed.',
+                          'HoldCo\'s directorship will in practice usually change as well.',
+                        ],
+                      },
+                      'Because the limbs are alternatives, the second case still produces an Event of Default even though the shareholding limb is not satisfied.',
+                    ],
+                  },
+                  {
+                    id: 'consequence-indirect',
+                    label: 'Take the consequence through clause 9.2',
+                    detail: 'An Event of Default under clause 9.1(f) has the same consequence as any other: within 20 Business Days of the later of occurrence and awareness, the non-defaulting Shareholder may call upon the Shareholder to serve a Transfer Notice, which is deemed served in respect of all its Shares at the Transfer Price.',
+                    why: 'The result is that an upstream sale the agreement cannot prevent gives the other shareholder the right to buy the whole of the downstream holding at an independent valuation — an exit rather than a veto.',
+                    exam: {
+                      write: 'The change of control being an Event of Default under clause 9.1(f), [minority] may within 20 Business Days call upon [HoldCo] to serve a Transfer Notice deemed to be for all its Shares at the Transfer Price under clause 9.2.',
+                      trap: 'Advising that the minority can block the upstream sale. It cannot; what it gets is the right to buy out the holding below.',
+                    },
+                    points: [
+                      'The timing, the optionality and the deeming are all as for any other Event of Default.',
+                      'Recompute the resulting percentages and their effect on board seats and the Reserved Matters veto.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The question "which words indicate that this provision applies only to direct share transfers?" is answered by the defined terms Share and Shareholder, read into clause 8.1.',
+                'Materiality qualifies each limb of clause 9.1(f) — a small change in a corporate shareholder\'s register is not enough.',
+                'Because the upstream buyer never becomes a Shareholder, no deed of adherence is required of it, and the SHA continues to bind the same entity as before.',
+                'A well-drafted agreement would close the gap expressly; the point of the exercise is to see that this one does it through the default clause instead.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Saying clause 8 catches an indirect transfer because the economic result is the same. It does not; the defined terms confine it.',
+                'Testing clause 9.1(f) against the wrong company in the chain.',
+                'Requiring all three limbs of clause 9.1(f) to be satisfied. They are alternatives.',
+                'Concluding that an indirect transfer has no consequences at all under the agreement.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Draw the chain and identify the Shareholder and the Shares.',
+                'Characterise the proposed sale as a direct or an indirect transfer of the Shares.',
+                'Apply clause 8.1 by reference to the defined terms and explain why it is or is not engaged.',
+                'Apply clause 9.1(f) to the Shareholder, limb by limb, noting that one suffices.',
+                'Take the consequence through clause 9.2 and recompute the governance position.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: '(where the Shareholder is a company) a material change occurs in its directorship, shareholding or control; or',
+                  cite: 'Sample clause 9.1(f), LG6 SHA sample clauses',
+                },
+                {
+                  text: '"Share" means a share in the capital of the Company from time to time in issue; and "Shareholder" means the holder of the Shares from time to time.',
+                  cite: 'Sample clause 1.1, LG6 SHA sample clauses',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['What the transfer restrictions reach', 'Sample clause 8.1', 'A disposal by a Shareholder of its legal and/or beneficial interest in its holding of Shares, Shares being shares in the capital of the Company'],
+                  ['Why an upstream sale escapes it', 'Sample clause 1.1 definitions', 'Share and Shareholder are defined by reference to the Company\'s own capital and its holder, so shares in a parent are not Shares'],
+                  ['What catches the upstream sale instead', 'Sample clause 9.1(f)', 'A material change in the corporate Shareholder\'s directorship, shareholding or control is an Event of Default'],
+                  ['The limbs are alternatives', 'Sample clause 9.1(f)', 'Directorship, shareholding OR control — only one need be satisfied'],
+                  ['The consequence', 'Sample clause 9.2', 'A call within 20 Business Days produces a deemed Transfer Notice for all the Shareholder\'s Shares at the Transfer Price'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-voluntary-transfer', label: 'Voluntary transfer and the right of first refusal' },
+              { session: 'LG6', issue: 'sha-compulsory-transfer', label: 'Compulsory transfer on an Event of Default' },
+              { session: 'LG3', issue: 'share-ownership-nominee', label: 'Registered, beneficial and nominee ownership' },
+            ],
+          },
+          {
+            id: 'sha-conflicting-provisions',
+            title: 'Conflicting provisions: the agreement prevails',
+            summary: 'Clause 10 makes the SHA prevail over the articles as between the shareholders, and obliges them to amend the articles so the conflict goes away.',
+            triggers: {
+              bullets: [
+                'The articles give the chairperson a casting vote and the SHA says there is none, and a board resolution has been carried on the chairperson\'s second vote.',
+                'The articles fix a board quorum of two and the SHA requires a director appointed by each shareholder.',
+                'A resolution has been passed strictly in accordance with the articles and in breach of the SHA.',
+                'The parties have never amended the articles and the SHA has been in force for three years.',
+                'A new shareholder who signed a deed of adherence argues that the articles govern because they are the company\'s constitution.',
+                'One shareholder refuses to vote in favour of the article amendments the other says the agreement requires.',
+              ],
+              routes: [
+                { when: 'The question is whether the SHA can change the statutory position at all', session: 'LG6', issue: 'sha-articles-and-co', label: 'SHA, articles and the Ordinance' },
+                { when: 'The conflict is about the board\'s composition or voting', session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+                { when: 'The question is how the articles are actually amended', session: 'LG2', issue: 'articles-and-constitution', label: 'Articles of association' },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Resolving a conflict',
+                steps: [
+                  {
+                    id: 'is-conflict',
+                    label: 'Establish that there is a genuine conflict',
+                    detail: 'Clause 10 operates only where there is a conflict between the provisions of the agreement and the provisions of the Articles. A provision that is merely more detailed, or that addresses something the articles are silent on, supplements rather than conflicts.',
+                    why: 'Most apparent clashes are not clashes. The SHA is usually doing something the articles permit but do not require, and the tie-break never has to be reached.',
+                    exam: {
+                      write: 'Clause [X] and article [Y] conflict because [the article permits what the clause prohibits / they give different answers to the same question].',
+                      trap: 'Invoking clause 10 wherever the two documents both mention a topic. Identify the inconsistency precisely first.',
+                    },
+                    points: [
+                      'The casting vote is a real conflict: MA14(1) gives one, clause 3.2(b) removes it.',
+                      'The quorum is a real conflict: MA11(2) sets a number, clause 3.2(a) sets an identity requirement.',
+                      'The Reserved Matters list is mostly a supplement: the articles do not forbid what clause 5.1 conditions.',
+                    ],
+                  },
+                  {
+                    id: 'prevails',
+                    label: 'Apply the tie-break, and read its limiting words',
+                    detail: 'Clause 10 provides that, as between the Shareholders themselves and for so long as the agreement remains in force, the provisions of the agreement prevail, and the Shareholders shall exercise all voting and other rights and powers available to them to give effect to the agreement.',
+                    why: 'Two limits are built into the sentence. The priority is contractual and operates between the parties, and it lasts only while the agreement does; it does not rewrite the company\'s constitution for the world.',
+                    exam: {
+                      write: 'As between the Shareholders, and for so long as the SHA remains in force, clause 10 gives the agreement priority, and each Shareholder must exercise its voting and other rights and powers to give effect to it.',
+                      trap: 'Reading clause 10 as making the articles invalid, or as binding anyone who is not a party. It says "as between themselves".',
+                    },
+                    points: [
+                      'As between the Shareholders themselves — not as against the company\'s constitution generally, and not against non-parties.',
+                      'For so long as this Agreement remains in force.',
+                      'Backed by an obligation to exercise all voting and other rights and powers available to them to give effect to the agreement.',
+                    ],
+                  },
+                  {
+                    id: 'company-law-effect',
+                    label: 'Separate contractual priority from corporate validity',
+                    detail: 'An act done in accordance with the articles is not made invalid as a matter of company law by clause 10; what clause 10 does is make the shareholder who procured it liable in contract. The corporate act and the contractual breach are different questions with different remedies.',
+                    why: 'This is the same division the whole topic turns on. The SHA binds people, the articles and the Ordinance govern the company, and a clause saying the contract prevails cannot cross that line.',
+                    exam: {
+                      write: 'The resolution was validly passed under article [Y] as a matter of company law, but procuring it was a breach of clause [X], for which [shareholder] is liable under the agreement and which clause 10 confirms takes priority as between the Shareholders.',
+                      trap: 'Advising that the resolution is void because it breached the SHA. Its validity is a company law question; the breach is a contractual one.',
+                    },
+                    points: [
+                      'Remedies lie against the shareholder in contract, including under the clause 9 default machinery if the breach is material.',
+                      'Compare the Russell analysis: the company cannot be bound not to exercise a statutory power, but the shareholders can be bound as to how they vote.',
+                    ],
+                  },
+                  {
+                    id: 'amend',
+                    label: 'Give effect to the obligation to amend the articles',
+                    detail: 'Clause 10 also provides that in the event of any such conflict the Shareholders shall take such steps as are required to amend the Articles so that the Articles are not in conflict with the provisions of the agreement.',
+                    why: 'It converts a standing inconsistency into a task. Leaving the two documents at odds is what produces the litigation the clause is trying to avoid, so the agreement requires the conflict to be removed rather than merely ranked.',
+                    exam: {
+                      write: 'Clause 10 requires the Shareholders to take the steps needed to amend the Articles so that they do not conflict with the agreement, which here means [a special resolution altering article [Y]].',
+                      trap: 'Forgetting that amending the articles is itself a reserved matter under clause 5.1(g), so it needs the prior written consent of all 25% Shareholders as well as the resolution.',
+                    },
+                    points: [
+                      'Altering the Articles requires a special resolution of the members.',
+                      'And it is a reserved matter under clause 5.1(g), so the consent threshold applies too.',
+                      'The shareholders\' obligation to exercise their voting rights is what supplies the votes for that resolution.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The clause is the procedural half of the hierarchy question; the substantive half — whether the SHA can modify the Ordinance at all — is not answered by clause 10 and has to be taken separately.',
+                'Amending the articles makes the position public, which may be exactly what the parties put the provision in the SHA to avoid; the obligation in clause 10 sits in tension with that choice.',
+                'Once the agreement ceases to be in force the priority goes with it, and the articles govern again.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using clause 10 as an answer to a conflict between the SHA and the Ordinance. It addresses the Articles.',
+                'Treating a corporate act as void because it breached the agreement.',
+                'Applying the clause to somebody who is not a party.',
+                'Amending the articles without the clause 5.1(g) consent.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the provision in each document and show that they genuinely conflict.',
+                'Apply clause 10, quoting its limiting words: as between the Shareholders, and while the agreement is in force.',
+                'Say what the corporate law position is, separately from the contractual one.',
+                'Identify the remedy against the shareholder in breach.',
+                'Set out the steps required to amend the articles, including the clause 5.1(g) consent and the special resolution.',
+              ],
+            },
+            authorities: {
+              statutes: [
+                {
+                  text: 'If there is any conflict between the provisions of this Agreement and the provisions of the Articles, the Shareholders agree that, as between themselves and for so long as this Agreement remains in force, the provisions of this Agreement shall prevail and the Shareholders shall exercise all voting and other rights and powers available to them to give effect to the provisions of this Agreement.',
+                  cite: 'Sample clause 10, LG6 SHA sample clauses',
+                },
+              ],
+              table: {
+                headers: ['Point', 'Provision', 'What it actually provides'],
+                rows: [
+                  ['Which document wins', 'Sample clause 10', 'The agreement prevails over the Articles as between the Shareholders themselves, for so long as the agreement remains in force'],
+                  ['How that priority is made effective', 'Sample clause 10', 'The Shareholders must exercise all voting and other rights and powers available to them to give effect to the agreement'],
+                  ['The standing obligation to fix the conflict', 'Sample clause 10', 'The Shareholders shall take such steps as are required to amend the Articles so that they are not in conflict with the agreement'],
+                  ['Why it cannot invalidate a corporate act', 'Russell v Northern Bank Development Corp Ltd [1992] 3 All ER 161', 'The agreement operates on the shareholders\' votes, not on the company\'s statutory powers, so breach sounds in contract rather than invalidity'],
+                  ['Amending the articles is itself reserved', 'Sample clause 5.1(g)', 'Altering the Articles requires the prior written consent of all Shareholders holding 25% or more'],
+                ],
+              },
+            },
+            crossRefs: [
+              { session: 'LG6', issue: 'sha-articles-and-co', label: 'SHA, articles and the Ordinance' },
+              { session: 'LG6', issue: 'sha-board-composition', label: 'Board composition and board control' },
+              { session: 'LG2', issue: 'articles-and-constitution', label: 'Articles of association' },
+            ],
+          },
+        ],
+      },
+    },
     SG1: {
       kind: 'SG',
       date: '2026-09-07/08',
