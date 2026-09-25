@@ -14,13 +14,35 @@ the PDF. Raw uploads and extraction files are not committed.
 
 | Issues | Principal course sources |
 | --- | --- |
-| CIV-7.01–02: summons drafting, service and hearing | Outline pp.3–5; PD14.2 pp.36–38; A1 slides 3–9 |
-| CIV-7.03–04: consent and drawing up orders | Outline pp.6–9; PD16.1 pp.39–40; A1 slides 10–18 |
-| CIV-7.05–06: employee-restraint drafting exercise | Outline p.10 and Annex (2), pp.11–35; A2 slides 2–8 |
-| CIV-7.07–08: security gateways and residence | Outline pp.44–47; B1 slides 3–8, 14–18, 22 |
-| CIV-7.09–10: discretion, co-plaintiffs and counterclaims | Outline pp.44–47; B1 slides 7–13, 19–21; B2 slides 3–5 |
-| CIV-7.11–12: companies, timing and stifling | Outline pp.44, 48–49; B1 slides 5, 7; B2 slides 2–8, 16–17 |
-| CIV-7.13–14: terms, quantum and appeals | Outline pp.48–50; B2 slides 9–15, 18–24 |
+| CIV-7.01: summons drafting, service, evidence and hearing | Outline pp.3–5; PD14.2 pp.36–38; A1 slides 3–9 |
+| CIV-7.02: consent orders and summonses | Outline pp.6–7; A1 slides 10–14 |
+| CIV-7.03: drawing up orders | Outline pp.8–9; PD16.1 pp.39–40; A1 slides 15–18 |
+| CIV-7.04: employee restraints and proposed consent terms | Outline p.10 and Annex (2), pp.11–35; A2 slides 2–8 |
+| CIV-7.05: security gateways and ordinary residence | Outline pp.44–47; B1 slides 3–8, 14–18, 22; B2 slide 7 |
+| CIV-7.06: discretion, recovery, merits, delay and stifling | Outline pp.44, 46, 49; B1 slides 5, 7–13; B2 slides 16–17 |
+| CIV-7.07: co-plaintiffs and counterclaims | Outline p.47; B1 slides 19–21; B2 slides 3–5 |
+| CIV-7.08: company plaintiffs | Outline p.48; B2 slides 2–8 |
+| CIV-7.09: quantum and terms | Outline pp.48–49; B2 slides 9–15 |
+| CIV-7.10: appellate security | Outline pp.49–50; B2 slides 18–24 |
+
+## Consolidation and source use
+
+At the user's request, the original 14 issues are consolidated into 10. The
+four merged pairs are summons/service, initial/consent drafting exercise,
+security gateways/residence, and security discretion/timing and stifling.
+All substantive topics remain, with one duplicated concluding step combined.
+Surviving issue IDs remain stable; aliases resolve the four retired issue URLs
+to their combined pages. Display codes change with the shorter issue list.
+
+The exam-facing text now states the rules and reasoning directly, with legal
+citations rather than references to annexes, slides or page numbers. This audit
+retains source locations and version conflicts separately. The recheck expands
+the evidence sequence, solicitor audience and District Court adaptation,
+PD16.1 hearing-bundle index requirements, contractual severance and alternative
+periods, precise customer/employee classes, confidentiality categories and
+unlimited-duration confidentiality pleading, and the factual reasoning in
+Carmon, Vianini, Dongguan Harris and Waddington. Case facts are illustrations,
+not fixed thresholds or substitutes for applying the legal test.
 
 ## Decisions affecting exam answers
 
@@ -63,5 +85,5 @@ the PDF. Raw uploads and extraction files are not committed.
   Judiciary versions were unavailable during this review. Cases available only
   as citations or extracts are not presented as independently reviewed full judgments.
 
-No new verbatim statute boxes were added. Existing issue IDs and content are
-preserved; the course and search indexes are regenerated from the new LG7 data.
+No new verbatim statute boxes were added. Content outside LG7 is preserved;
+the course and search indexes are checked against the consolidated LG7 data.

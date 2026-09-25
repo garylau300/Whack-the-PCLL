@@ -125,7 +125,8 @@
       return;
     }
 
-    const index = issueTypes.findIndex((t) => t.id === issueId);
+    // Consolidated issues retain their old links through authored aliases.
+    const index = issueTypes.findIndex((t) => t.id === issueId || (t.aliases || []).includes(issueId));
     if (index === -1) {
       showStatus("That issue type is no longer in this session's notes.", false);
       return;

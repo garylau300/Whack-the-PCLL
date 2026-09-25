@@ -349,6 +349,7 @@
   //     intro: 'Optional line above the index on the session page.',
   //     issueTypes: [{
   //       id: 'summary-judgment',        // URL slug: stable, authored, never derived
+  //       aliases: ['retired-issue'],    // Optional old URLs resolved by issue.js after consolidation
   //       title: 'Summary judgment (O.14)',
   //       summary: 'One line for the index card.',
   //       weighting: 'Commonly 15-20 marks',   // ONLY if a course document says so

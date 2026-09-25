@@ -19,7 +19,7 @@ const run = createRun('courseDetails structure');
 // Keep in step with EXAM_SECTIONS in common-content.js and with
 // examIssueSectionsHtml's documented issue shape.
 const SECTION_KEYS = ['triggers', 'answering', 'lookOut', 'skills', 'skeleton', 'mistakes', 'authorities'];
-const ISSUE_KEYS = new Set([...SECTION_KEYS, 'id', 'title', 'summary', 'weighting', 'notes', 'crossRefs']);
+const ISSUE_KEYS = new Set([...SECTION_KEYS, 'id', 'aliases', 'title', 'summary', 'weighting', 'notes', 'crossRefs']);
 // Keep in step with fullNoteBodyHtml in common-content.js.
 const BODY_KEYS = new Set(['body', 'bullets', 'bulletGroups', 'statutes', 'table', 'diagram', 'flowchart', 'qa', 'warnings', 'heading']);
 
@@ -56,6 +56,12 @@ for (const [code, details] of Object.entries(COURSE_DETAILS)) {
       if (!issue.id) run.fail('issue id', where, 'issue type has no id — issueHref cannot address it');
       else if (seenIds.has(issue.id)) run.fail('issue id', where, 'duplicate id within the session — the second page is unreachable');
       seenIds.add(issue.id);
+      for (const alias of issue.aliases || []) {
+        if (typeof alias !== 'string' || !alias || seenIds.has(alias) || issueTypes.some((t) => t.id === alias)) {
+          run.fail('issue alias', where, 'aliases must be non-empty, unique and distinct from canonical issue ids');
+        }
+        seenIds.add(alias);
+      }
       if (!issue.title) run.fail('issue title', where, 'issue type has no title');
 
       // Fact Pattern Triggers is the first thing on the page and the whole
