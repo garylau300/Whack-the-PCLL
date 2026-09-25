@@ -9005,6 +9005,2516 @@ window.COURSE_DETAILS.PCLL8010 = {
       },
     },
 
+    // LG7 sources: 2026-2027 outline (53 pages) and four A/B slide decks.
+    // Source decisions and known gaps: docs/lg7-source-review.md.
+    LG7: {
+      kind: 'LG',
+      mode: 'Face-to-face',
+      authors: [
+        'Norman Hui',
+      ],
+      objectives: [
+        'Draft a summons which identifies the proper court, legal basis and precise interlocutory relief.',
+        'Distinguish a paper consent order from a consent summons, and draw up an accurate court order.',
+        'Apply and resist security for costs by analysing the gateway, discretion, evidence and terms separately.',
+        'Distinguish first-instance security under O.23 or s905 from appellate security under O.59 r.10(5).',
+      ],
+      topicsCovered: [
+        'Summonses: O.32, the margin note, service, evidence, hearings and PD14.2',
+        'Consent orders and consent summonses: O.42 r.5A and the limits of agreement',
+        'Drawing up orders: O.42 rr.3-5 and PD16.1',
+        'Worked drafting from the former-employee statement of claim and the defendant\'s limited concessions',
+        'Security for costs: O.23, ordinary residence, co-plaintiffs, counterclaims, merits, assets and enforcement',
+        'Company plaintiffs: s905, credible financial testimony, delay and stifling',
+        'Quantum, form, time, stay and default; security for appeal costs under O.59 r.10(5)',
+      ],
+      prep: {
+        readings: [
+          'LG7 outline, Annexes (1)-(3), and the four LG7 A/B slide decks.',
+          'RHC O.32, O.42, O.23 and O.59 r.10(5); Companies Ordinance (Cap.622), s905; PD14.2 and PD16.1.',
+          'Negligence Case File Batch B pp.110-114 and 127-128 (costs on the set-aside application), and Batch C pp.41-65 (security for costs), as assigned by the outline. Those pages are not in this LG7 archive.',
+        ],
+      },
+      prepChecklist: [
+        {
+          id: 'lg7-outline',
+          label: 'Read the outline and slide decks, checking the reproduced rules against the prose summaries',
+        },
+        {
+          id: 'lg7-summons',
+          label: 'Draft the immediate application from Annex (2), identifying each plaintiff\'s rights and relief',
+        },
+        {
+          id: 'lg7-consent',
+          label: 'Convert the defendant\'s limited concessions into proposed terms and identify what remains unagreed',
+        },
+        {
+          id: 'lg7-security',
+          label: 'Prepare a gateway, discretion and quantum analysis for security for costs',
+        },
+      ],
+      keyTakeaways: [
+        'A summons needs a precise legal basis and operative relief; issue occurs on sealing, and amendment thereafter requires leave.',
+        'O.32 r.3 is a service rule; O.42 r.3 ordinarily gives an order effect from its date, not merely from later sealing.',
+        'Consent does not bypass the categories, exclusions or forum requirements of O.42 r.5A.',
+        'Security is analysed as power, discretion and terms; foreign residence is not an automatic order and poverty is not a universal first-instance gateway.',
+        'Support financial propositions and quantum with evidence; distinguish inability from unwillingness and a stay from judgment.',
+      ],
+      examNotes: {
+        intro: 'LG7 has two kinds of exam task: draft the document which gives effect to the client\'s instructions, and advise whether costs protection should be ordered. For drafting, identify the power, forum, precise relief and procedure before writing the operative terms. For security, establish the gateway first, weigh the circumstances second, and draft a supported amount and workable terms third. The worked exercises follow the outline\'s chronology and identify the terms the uploaded materials leave unresolved.',
+        issueTypes: [
+          {
+            id: 'drafting-summons',
+            title: 'Drafting a summons: forum, margin note and relief',
+            summary: 'Turn the client\'s immediate objective into a properly constituted application, with a legal basis for each order sought.',
+            triggers: {
+              bullets: [
+                'A defendant wants security for costs and sends the Registry a letter asking for an order instead of issuing a summons.',
+                'A draft summons lists the orders sought but leaves the left-hand margin blank.',
+                'A solicitor uses the High Court heading on an application in an existing District Court action.',
+                'An application for an injunction has been addressed to a Master simply because it is interlocutory.',
+                'The sealed summons asks for one order, but the applicant now wants to add a second form of relief.',
+                'A summons has been prepared, but has not yet been sealed, and the applicant describes it as already issued.',
+              ],
+              routes: [
+                {
+                  when: 'The summons is drafted but the hearing is close and service is still outstanding',
+                  session: 'LG7',
+                  issue: 'summons-service-hearing',
+                  label: 'Service, evidence and the hearing',
+                },
+                {
+                  when: 'All parties now agree to the proposed orders',
+                  session: 'LG7',
+                  issue: 'consent-order-or-summons',
+                  label: 'Consent order or consent summons?',
+                },
+                {
+                  when: 'The procedural form is clear but the legal basis for security is disputed',
+                  session: 'LG7',
+                  issue: 'security-gateways',
+                  label: 'Security for costs: identifying the gateway',
+                },
+                {
+                  when: 'The draft pleading seeks final restraints but the client needs protection now',
+                  session: 'LG7',
+                  issue: 'worked-injunction-summons',
+                  label: 'Worked drafting: immediate protection',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Drafting a summons: forum, margin note and relief',
+                steps: [
+                  {
+                    label: 'Identify the application and the court already seised',
+                    detail: 'O.32 r.1 makes a summons the normal vehicle for a chambers application not made ex parte, subject to O.25 r.7. The application belongs in the existing action and must identify the relief now required.',
+                    why: 'A summons asks the Court to make specified orders in the litigation. A letter or a recital of the whole claim does not perform that job.',
+                    exam: {
+                      write: 'The [party] should apply by summons under O.32 r.1 for [specified interlocutory relief] in [the existing action].',
+                      trap: 'Treating a summons as a new originating process, or using O.32 alone as the substantive power to grant the requested relief.',
+                    },
+                    points: [
+                      'Copy the correct court, action number and parties from the proceedings; retain each party\'s procedural designation.',
+                      'Separate the immediate application from the ultimate relief in the statement of claim.',
+                    ],
+                  },
+                  {
+                    label: 'Choose the proper judicial officer',
+                    detail: 'PD14.2 para.1 directs interlocutory applications to a Master unless the Rules or another enactment require otherwise. The outline identifies injunctions as an example for which the ordinary Practice Master route is inappropriate.',
+                    why: 'Interlocutory describes the stage, not the officer\'s jurisdiction. Consent cannot supply a power that the officer does not have.',
+                    exam: {
+                      write: 'Under PD14.2 para.1 the application goes to a Master unless [the applicable exception] requires a Judge; here [identify the relief and forum].',
+                      trap: 'Sending every interlocutory application to a Master without checking the particular relief.',
+                    },
+                    points: [
+                      'PD14.2 para.2: where no special list exists, obtain directions as to disposal, hearing estimate and other necessary matters.',
+                      'The outline concerns interlocutory applications; the separate originating-summons lists in PD14.2 are not a substitute for classifying this application.',
+                    ],
+                  },
+                  {
+                    label: 'Put the correct enabling provision in the margin',
+                    detail: 'Annex (1) paras 2-4 require the margin note to identify the legislation, rule or other basis for the application; an incorrect margin note risks rejection of filing or sealing.',
+                    why: 'The margin makes the asserted power visible. It forces the drafter to connect each requested order to a jurisdictional basis.',
+                    exam: {
+                      write: 'Margin note: [the applicable Order and rule / statutory provision]. The applicant seeks [relief falling within that power].',
+                      trap: 'Citing a familiar provision which does not authorise this order, or leaving the margin note out entirely.',
+                    },
+                    points: [
+                      'For security, distinguish O.23 r.1 from s905 of the Companies Ordinance rather than citing whichever happens to be familiar.',
+                      'The reading list names Premier Fashion Wears, Yan Yu Ying and Success Lane on margin notes; the upload does not reproduce their reasoning, so do not attribute a detailed holding to them from their titles.',
+                    ],
+                  },
+                  {
+                    label: 'Draft numbered orders which the Court can actually make',
+                    detail: 'Annex (1) para.2 and A1 slide 8 require the heading, document title, hearing particulars and relief, including the requested costs order. Keep the evidence in the supporting affidavit or affirmation.',
+                    why: 'An operative paragraph must tell the parties what to do. Argument about why the order is justified belongs in evidence and submissions.',
+                    exam: {
+                      write: 'Let all parties concerned attend before [Judge/Master] at [place] on [date and time] on the application of [party] for the following orders: [numbered relief]; [costs sought].',
+                      trap: 'Putting the factual narrative into the operative orders while omitting the amount, act, deadline or costs request.',
+                    },
+                    points: [
+                      'State who must act, the act or restraint, the subject matter and any period sought.',
+                      'Do not turn a requested costs provision into an assertion that the Court has already awarded costs.',
+                    ],
+                  },
+                  {
+                    label: 'Distinguish drafting, issue and later amendment',
+                    detail: 'O.32 r.2(1) makes sealing the act of issue; O.32 r.2(2) requires leave to amend after issue. Annex (1) para.6 also states that withdrawal requires leave.',
+                    why: 'Once issued, the summons fixes the application served on the other parties. A unilateral edit would change the application without the Court\'s control.',
+                    exam: {
+                      write: 'The summons was issued when sealed on [date]; amendment now requires leave under O.32 r.2(2).',
+                      trap: 'Borrowing the rules for amendment of pleadings and assuming an issued summons can be changed as of right.',
+                    },
+                    points: [
+                      'Check the sealed version against the intended relief before service.',
+                      'A decision to withdraw is not implemented by merely deleting the hearing from the solicitor\'s diary.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The affidavit requirement in O.32 r.1 is conditional: where the Rules require supporting affidavit evidence, it is filed with the summons. Do not paraphrase it as an unconditional rule that every summons needs an affidavit.',
+                'A three-minute call-over is normally for disposal of a short matter or directions, not a promise that a contested application will be argued in full.',
+                'A margin note identifies the power sought; it does not establish that the factual conditions for that power are satisfied.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Use a drafting checklist: heading, title, margin, hearing, numbered relief, costs and identification of the issuing solicitors.',
+                'For each operative paragraph, ask which fact and which provision justify it.',
+                'Keep the proposed order separate from the evidence which supports it.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the existing action and the immediate objective.',
+                'Choose summons and the correct judicial officer.',
+                'State the substantive power in the margin.',
+                'Number the requested orders and costs provision.',
+                'File required supporting evidence; obtain sealing; seek leave for any later amendment.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using the wrong court heading.',
+                'Leaving the legal basis in a covering letter rather than the margin note.',
+                'Assuming all chambers applications go to a Master.',
+                'Amending a sealed summons without leave.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Mode and evidence',
+                    'O.32 r.1',
+                    'A chambers application not made ex parte is normally by summons; required supporting affidavit is filed at the same time',
+                  ],
+                  [
+                    'Issue',
+                    'O.32 r.2(1)',
+                    'The summons is issued by sealing',
+                  ],
+                  [
+                    'Amendment',
+                    'O.32 r.2(2)',
+                    'Amendment after issue needs leave',
+                  ],
+                  [
+                    'Forum',
+                    'PD14.2 paras 1-2',
+                    'Normal Master route, subject to exceptions, with listing directions where appropriate',
+                  ],
+                  [
+                    'Drafting content',
+                    'LG7 Annex (1) paras 2-4; A1 slide 8',
+                    'Heading, title, margin note, hearing particulars, relief and costs',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'summons-service-hearing',
+            title: 'Service, evidence and the hearing of a summons',
+            summary: 'Count the right notice period, prepare the evidence and distinguish an absent party from an unserved one.',
+            triggers: {
+              bullets: [
+                'An ordinary summons is served the day before its listed hearing, and no abridgement has been obtained.',
+                'A summons seeks only more time to file a document and is served the day before the hearing.',
+                'A summons combines an extension of time with substantive relief, but the applicant relies on the time-summons exception.',
+                'The summons was adjourned generally and the applicant now wants to put it back in the list.',
+                'The respondent fails to attend, and the applicant cannot show that the summons was served.',
+                'The applicant missed the hearing and the summons was dismissed without argument; in another case it was dismissed after full argument.',
+              ],
+              routes: [
+                {
+                  when: 'The service date depends on counting clear days, weekends or a court closure',
+                  session: 'LG3',
+                  issue: 'computing-time',
+                  label: 'Computing time under O.3',
+                },
+                {
+                  when: 'The relief or the margin note still needs to be settled',
+                  session: 'LG7',
+                  issue: 'drafting-summons',
+                  label: 'Drafting a summons',
+                },
+                {
+                  when: 'The hearing has finished and an order must be recorded',
+                  session: 'LG7',
+                  issue: 'drawing-up-orders',
+                  label: 'Drawing up and perfecting an order',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Service, evidence and the hearing of a summons',
+                steps: [
+                  {
+                    label: 'Classify the service period before counting',
+                    detail: 'O.32 r.3 normally requires service on every other party not less than 2 clear days before the hearing. A summons asking ONLY for extension or abridgement of time may be served the day before; a different rule or court order may govern.',
+                    why: 'Notice is measured against the application actually made. Adding substantive relief removes the reason for using the narrow time-only exception.',
+                    exam: {
+                      write: 'This summons seeks [relief], so O.32 r.3 requires [2 clear days / service on the preceding day for a time-only summons], subject to [any applicable rule or order].',
+                      trap: 'Calling the 2-clear-day rule a filing deadline, or applying the time-only exception to a mixed summons.',
+                    },
+                    points: [
+                      'The outline\'s para.7 says filed, but the rule reproduced on p.3 says served. Apply the service rule.',
+                      'O.14 r.2(3) supplies the longer summary-judgment period of not less than 10 clear days for the summons, supporting affidavit and exhibits; the ordinary 2-day rule does not override it.',
+                      'Use O.3 to do the actual computation rather than treating clear days as ordinary calendar subtraction.',
+                    ],
+                  },
+                  {
+                    label: 'Prepare the evidence and use the first hearing sensibly',
+                    detail: 'O.32 r.1 requires simultaneous filing where a supporting affidavit is required. Annex (1) para.5 describes the usual three-minute Master\'s call-over and subsequent directions for a contested application.',
+                    why: 'A short listing can organise the evidence and fix a realistic hearing. It cannot substitute for a properly prepared contested application.',
+                    exam: {
+                      write: 'File the required supporting affidavit with the summons under O.32 r.1 and seek directions for opposition evidence, reply evidence and the substantive hearing.',
+                      trap: 'Assuming that the three-minute listing dispenses with evidence or fixes universal affidavit deadlines.',
+                    },
+                    points: [
+                      'A1 slide 8 shows applicant\'s evidence, respondent\'s opposition and applicant\'s reply, each with relevant documents.',
+                      'Annex (1) para.5 refers to Circular 03-141: solicitors should try to agree evidence directions in correspondence. No fixed number of days for that exchange is supplied here.',
+                    ],
+                  },
+                  {
+                    label: 'If adjourned generally, restore with notice',
+                    detail: 'O.32 r.4(1) permits adjournment generally or to a particular date. Under r.4(2), the applicant may restore a generally adjourned summons on 2 clear days\' notice to the other parties on whom it was served.',
+                    why: 'A general adjournment leaves no fixed resumed hearing for the parties to attend. Restoration needs a fresh, identifiable opportunity to appear.',
+                    exam: {
+                      write: 'The summons was adjourned generally; give 2 clear days\' notice of restoration under O.32 r.4(2) to the parties previously served.',
+                      trap: 'Confusing restoration after general adjournment with restoration after dismissal for non-attendance.',
+                    },
+                  },
+                  {
+                    label: 'Prove service before asking to proceed in absence',
+                    detail: 'O.32 r.5(1)-(2) allows the Court to proceed in a party\'s absence where appropriate, with proof of due service if required. Westminster City Council v Government of Iran [1986] 1 WLR 979 does not permit service to be dispensed with by using this rule.',
+                    why: 'Failure to use an opportunity to attend is different from never having been given the opportunity.',
+                    exam: {
+                      write: 'The respondent was duly served on [date]; the Court may proceed in its absence under O.32 r.5(1), subject to being satisfied about service under r.5(2).',
+                      trap: 'Treating non-attendance as proof of service or as automatic entitlement to the order.',
+                    },
+                  },
+                  {
+                    label: 'Choose the correct response to the outcome',
+                    detail: 'O.32 r.5(3) permits a just rehearing after an absent-party hearing only while the order remains unperfected; r.5(4) permits just restoration of an application dismissed without a hearing for the applicant\'s non-attendance. O.32 r.6 separately concerns setting aside ex parte orders.',
+                    why: 'These powers answer different procedural failures. None is a general licence to reissue an application which has already been argued and lost.',
+                    exam: {
+                      write: 'Because [the application was dismissed without a hearing for non-attendance], seek restoration under O.32 r.5(4), explaining why it is just.',
+                      trap: 'Reissuing the same summons after a merits dismissal instead of addressing the appeal route.',
+                    },
+                    points: [
+                      'For r.5(3), establish both absence at the hearing and that the order has not been perfected.',
+                      'For r.5(4), establish dismissal without a hearing because the applicant did not attend.',
+                      'Annex (1) para.10 directs a party who has lost after a hearing to appeal rather than issue a new identical summons.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Service and filing are separate acts; evidence of filing alone does not show the respondent had notice.',
+                'O.32 r.5(3) has an express perfection limit; do not omit it.',
+                'The detailed law of ex parte injunctions is assigned to an optional lecture by A1 slide 6; this page covers the O.32 procedural distinction only.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Classify the summons first, then put service and hearing on a calendar.',
+                'Name the particular sub-rule for the proposed rehearing or restoration.',
+                'State what evidence of service and explanation for absence is needed.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Select the ordinary, time-only or special service period.',
+                'Count under O.3 and serve all required recipients.',
+                'Prepare evidence and directions for the hearing.',
+                'If a party is absent, address service and discretion.',
+                'Distinguish adjournment, non-attendance dismissal, merits dismissal and an ex parte order.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using 2 days instead of 2 clear days.',
+                'Applying the time-only exception to substantive relief.',
+                'Seeking a rehearing under r.5(3) without checking perfection.',
+                'Treating restoration and appeal as interchangeable.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Ordinary service',
+                    'O.32 r.3',
+                    'At least 2 clear days, with a narrow time-only exception and room for other rules or orders',
+                  ],
+                  [
+                    'Summary judgment service',
+                    'O.14 r.2(3)',
+                    'At least 10 clear days for summons, affidavit and exhibits',
+                  ],
+                  [
+                    'General adjournment',
+                    'O.32 r.4(2)',
+                    'Restoration on 2 clear days\' notice to parties served',
+                  ],
+                  [
+                    'Absent respondent',
+                    'O.32 r.5(1)-(2); Westminster City Council v Government of Iran [1986] 1 WLR 979',
+                    'Proceeding in absence does not dispense with service',
+                  ],
+                  [
+                    'Rehearing and restoration',
+                    'O.32 r.5(3)-(4)',
+                    'Different powers for an unperfected absent-party order and dismissal without hearing for non-attendance',
+                  ],
+                  [
+                    'Ex parte order',
+                    'O.32 r.6',
+                    'The Court may set aside an order made ex parte',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'consent-order-or-summons',
+            title: 'Consent order or consent summons?',
+            summary: 'Agreement on the result is only the beginning: check whether O.42 r.5A permits the paper procedure and whether every party has actually agreed.',
+            triggers: {
+              bullets: [
+                'All represented parties agree that a default judgment should be set aside and costs paid.',
+                'The parties agree an injunction and send an O.42 r.5A consent order directly to the Registry.',
+                'A litigant in person agrees to the sum proposed, and the other side assumes that agreement is sufficient for the paper procedure.',
+                'A consent draft grants possession of a dwelling-house under the same route used for commercial premises.',
+                'The draft contains only an extension for filing a pleading, with no order within r.5A(2)(a) or (b).',
+                'A defendant offers narrower restraints, but the plaintiffs have not yet accepted the proposal.',
+              ],
+              routes: [
+                {
+                  when: 'The exercise requires translating limited concessions into proposed terms',
+                  session: 'LG7',
+                  issue: 'worked-consent-draft',
+                  label: 'Worked drafting: partial agreement',
+                },
+                {
+                  when: 'The route is settled and the terms need to be drawn up',
+                  session: 'LG7',
+                  issue: 'drawing-up-orders',
+                  label: 'Drawing up and perfecting an order',
+                },
+                {
+                  when: 'The application remains contested',
+                  session: 'LG7',
+                  issue: 'drafting-summons',
+                  label: 'Drafting a summons',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Consent order or consent summons?',
+                steps: [
+                  {
+                    label: 'Establish agreement by every party on the actual terms',
+                    detail: 'O.42 r.5A(1) concerns terms agreed by all parties to the cause or matter. An offer by one party, or agreement on only part of a summons, does not establish consent to the whole draft.',
+                    why: 'A consent order gives legal effect to agreement. Its premise fails if the document adds a concession which a party never made.',
+                    exam: {
+                      write: 'The parties have agreed [identify the precise terms]; [unagreed relief] remains outside that agreement for the purposes of O.42 r.5A(1).',
+                      trap: 'Describing a defendant\'s willingness to concede as an order already agreed by both sides.',
+                    },
+                  },
+                  {
+                    label: 'Fit every operative provision within the listed categories',
+                    detail: 'O.42 r.5A(2) lists the permitted judgments and orders. The ancillary provisions in r.5A(2)(c) must be included in an order falling within the preceding categories; they are not a free-standing paper route.',
+                    why: 'The list controls use of the simplified procedure. It does not turn every compromise into something the Registry may seal under this rule.',
+                    exam: {
+                      write: 'The agreed [order] falls within O.42 r.5A(2)[limb]; [ancillary term] accompanies it under r.5A(2)(c).',
+                      trap: 'Treating r.5A(2)(c)(i) as authority for a stand-alone paper consent extension.',
+                    },
+                    points: [
+                      {
+                        text: 'O.42 r.5A(2)(a) includes:',
+                        points: [
+                          'Payment of a liquidated sum, damages to be assessed or value of goods to be assessed.',
+                          'Delivery up of goods, with or without the specified payment alternative.',
+                          'Possession of land only where the claim does not relate to a dwelling-house.',
+                        ],
+                      },
+                      {
+                        text: 'O.42 r.5A(2)(b) includes:',
+                        points: [
+                          'Dismissal, discontinuance or withdrawal, wholly or partly; stays of proceedings, including a Tomlin order.',
+                          'A stay of enforcement; setting aside a default judgment; transfer to the District Court or Lands Tribunal.',
+                          'Payment out of money in court; discharge from liability; agreed provision for costs.',
+                        ],
+                      },
+                      'O.42 r.5A(2)(c): accompanying extensions for service or filing, withdrawal of the record, and liberty to apply or restore.',
+                    ],
+                  },
+                  {
+                    label: 'Check the exclusions and formal requirements',
+                    detail: 'O.42 r.5A(3) requires the agreed terms to be expressed as By Consent and indorsed by solicitors for each party. Paragraphs (4)-(5) exclude Admiralty, Commercial List proceedings, and proceedings involving a litigant in person or a person under a disability.',
+                    why: 'Agreement does not remove the safeguards and list restrictions specified by the rule.',
+                    exam: {
+                      write: 'The r.5A paper procedure is [available/unavailable] because [category, representation and list status]; if available, draw the agreed terms By Consent with every solicitor\'s indorsement under r.5A(3).',
+                      trap: 'Checking the type of relief but ignoring a litigant in person or the Commercial List.',
+                    },
+                  },
+                  {
+                    label: 'Use a consent summons where the paper procedure does not fit',
+                    detail: 'Annex (1) paras 17-20 prescribe a consent summons where the terms fall outside O.42 r.5A, citing the substantive basis for relief and using the appropriate judicial officer. The hearing may be vacated following approval; it is not vacated by the parties themselves.',
+                    why: 'The Court still controls the application. The word consent does not move an injunction into the Master\'s jurisdiction or remove the need for approval.',
+                    exam: {
+                      write: 'As [relief] falls outside O.42 r.5A, seek approval by consent summons on [the substantive basis] before [the appropriate officer].',
+                      trap: 'Using O.42 r.5A as the margin note for any consensual application, including an injunction.',
+                    },
+                    points: [
+                      'The outline gives amendments, further particulars and discovery as examples of applications which may become consent summonses.',
+                      'For an injunction, retain the Judge route identified in Annex (1) para.20.',
+                    ],
+                  },
+                  {
+                    label: 'Check what the chosen disposal actually does',
+                    detail: 'Annex (1) paras 13 and 16 distinguish the effect of a consent order from its drafting and distinguish dismissal from discontinuance or withdrawal. Leung Kam Tai v Wong Chuen [1998] 4 HKC 214 is cited for clear and precise drafting of the parties\' intention.',
+                    why: 'A label which looks like routine boilerplate may determine whether the original claim can be brought again.',
+                    exam: {
+                      write: 'Use [the agreed form of disposal] because it reflects [the parties\' intention]; do not replace it with dismissal as a drafting shortcut.',
+                      trap: 'Using dismissal, discontinuance and withdrawal as synonyms.',
+                    },
+                    points: [
+                      'The outline states that dismissal prevents suing again on the same cause even if the defendant defaults on the agreed terms; it contrasts discontinuance or withdrawal, whose effect depends on the terms.',
+                      'For a Tomlin order under r.5A(2)(b)(iii), distinguish the stay from the scheduled terms, which are not otherwise part of the order.',
+                      'This lecture addresses interlocutory consent procedure, not a full treatment of global settlement.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An order setting aside a default judgment is expressly listed; an injunction is not.',
+                'The land category excludes a dwelling-house, not merely a disputed dwelling-house.',
+                'Do not infer a right to omit court scrutiny from a party\'s consent.',
+                'A proposed order must not blur an admission of past wrongdoing with agreement to future conduct.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Use a four-part answer: agreement, category, exclusions, formalities.',
+                'Identify the exact limb which supports each paper-consent term.',
+                'Make clear which relief remains contested.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Record the agreement precisely.',
+                'Map the relief to r.5A(2).',
+                'Apply r.5A(4)-(5) and the representation requirements.',
+                'Use the paper route or consent summons as appropriate.',
+                'Check disposal, costs, dates and signatures.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Assuming consent gives the Registry unlimited power.',
+                'Omitting a solicitor\'s indorsement.',
+                'Using the paper route for a litigant in person.',
+                'Extending an agreed term to relief still in dispute.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Agreement',
+                    'O.42 r.5A(1)',
+                    'All parties must agree the terms',
+                  ],
+                  [
+                    'Permitted terms',
+                    'O.42 r.5A(2)(a)-(c)',
+                    'Enumerated main orders and limited accompanying provisions',
+                  ],
+                  [
+                    'Formalities',
+                    'O.42 r.5A(3)',
+                    'By Consent and indorsement by solicitors for each party',
+                  ],
+                  [
+                    'Exclusions',
+                    'O.42 r.5A(4)-(5)',
+                    'Admiralty, Commercial List, litigants in person and persons under disability',
+                  ],
+                  [
+                    'Clarity',
+                    'Leung Kam Tai v Wong Chuen [1998] 4 HKC 214',
+                    'The outline cites this for precise drafting that carries the parties\' intention',
+                  ],
+                  [
+                    'Outside the paper route',
+                    'LG7 Annex (1) paras 17-20; Circular 03-142(PA) as described there',
+                    'Use consent summons and the appropriate forum',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'drawing-up-orders',
+            title: 'Drawing up, settling and perfecting an order',
+            summary: 'Record what the Court made, identify when it takes effect, and complete the approval and sealing process without inventing terms.',
+            triggers: {
+              bullets: [
+                'A Judge pronounces an order today but gives reasons later; a party says it has no effect until reasons are delivered.',
+                'The applicant has done nothing to draw up the order for more than 7 days.',
+                'The draft omits the affidavit tendered at the hearing and the ruling refusing leave to rely on another affirmation.',
+                'A routine extension order contains special conditions, but the solicitor assumes it need not be drawn up.',
+                'A clerk amends the draft and the solicitor disagrees with the change.',
+                'A party treats sealing as the date from which every order first takes effect.',
+              ],
+              routes: [
+                {
+                  when: 'No order has been pronounced and the parties instead seek to give effect to agreed terms',
+                  session: 'LG7',
+                  issue: 'consent-order-or-summons',
+                  label: 'Consent order or consent summons?',
+                },
+                {
+                  when: 'A party who missed the hearing seeks a rehearing before perfection',
+                  session: 'LG7',
+                  issue: 'summons-service-hearing',
+                  label: 'Service, evidence and the hearing',
+                },
+                {
+                  when: 'The operative provisions concern security, a stay and default',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Security: amount and terms',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Drawing up, settling and perfecting an order',
+                steps: [
+                  {
+                    label: 'Start from the order actually pronounced and its date',
+                    detail: 'O.42 r.3(1)-(3) provides that an order takes effect from its date, ordinarily the day it was pronounced, given or made unless the Court directs another date. Later reasons do not postpone its effect.',
+                    why: 'The date of the decision, the later reasons and the formal document are different events. Compliance cannot simply be postponed until paperwork is complete.',
+                    exam: {
+                      write: 'The order takes effect from [date] under O.42 r.3(1)-(2); later delivery of reasons does not change that under r.3(3).',
+                      trap: 'Writing that all orders become effective only on sealing.',
+                    },
+                    points: [
+                      'Annex (1) para.23 uses that shorthand, but it conflicts with the express rule reproduced on p.8. Distinguish effect under r.3 from drawing up, approval and sealing under r.5.',
+                      'Do not backdate or postdate an order merely for convenience; r.3(2) reserves a different date to the Court.',
+                    ],
+                  },
+                  {
+                    label: 'Check whether drawing up is required',
+                    detail: 'O.42 r.4(1) starts with drawing up every order unless the Court directs otherwise. The r.4(2) exception applies only to the described extension or leave orders which have no special terms or directions other than costs.',
+                    why: 'A routine administrative order may need no formal drawing up, but special conditions make the exact document important.',
+                    exam: {
+                      write: 'Although this is [an extension/leave order], [the special condition] prevents reliance on O.42 r.4(2), so draw it up unless the Court otherwise directs.',
+                      trap: 'Assuming every extension or amendment order is exempt whatever conditions it imposes.',
+                    },
+                    points: [
+                      'The r.4(3) list includes leave for amendment, filing, certain court-officer acts, and listed case-management steps.',
+                      'Use both limbs of r.4(2); the type of order alone is insufficient.',
+                    ],
+                  },
+                  {
+                    label: 'Put responsibility and the 7-day period in the right place',
+                    detail: 'O.42 r.5(5) puts drawing up on the party who initiated the application; if it fails within 7 days, another affected party may draw up. PD16.1 para.1 requires submission for approval as soon as practicable and in any event within 7 days of pronouncement.',
+                    why: 'The order needs to become an accurate court record promptly, and one party cannot indefinitely prevent that by inaction.',
+                    exam: {
+                      write: '[The applicant] should submit the draft for approval within 7 days under PD16.1 para.1; after its failure to draw up in that time, [the affected party] may do so under O.42 r.5(5).',
+                      trap: 'Putting the duty on the successful party regardless of who initiated the application.',
+                    },
+                  },
+                  {
+                    label: 'Draft the recital as carefully as the operative paragraphs',
+                    detail: 'PD16.1 paras 2 and 7-11 require personal solicitor signature, accurate attendance and representation, the relevant summonses and affidavits or affirmations, and orders allowing or refusing evidence. The hearing-bundle index is retained and updated for checking.',
+                    why: 'The appeal court needs to know what evidence the first-instance court actually considered. A vague recital can conceal a new-evidence issue.',
+                    exam: {
+                      write: 'Upon hearing [appearances] and reading [identified summons and evidence], it is ordered that [the orders actually made, including any ruling on leave to adduce evidence].',
+                      trap: 'Reciting every document in the file as if it was before the Court, or omitting a ruling that excluded evidence.',
+                    },
+                    points: [
+                      'Record the parties who attended and their representation, including any absence accurately.',
+                      'Include evidence filed or tendered at the hearing in the retained index; do not invent dates or deponents.',
+                      'Preserve the Court\'s actual costs order rather than substituting a preferred standard form.',
+                    ],
+                  },
+                  {
+                    label: 'Obtain approval, resolve disagreements and seal',
+                    detail: 'O.42 r.5(6) provides for production at the Registry with a copy, passing by the Registrar, sealing and retention of the copy. PD16.1 paras 3-6 identifies the route for disagreements and requires the receiving solicitor to check the sealed order.',
+                    why: 'Approval and sealing turn the draft into the formal record; they do not invite the drafter to renegotiate the decision.',
+                    exam: {
+                      write: 'Submit the personally signed draft for approval and sealing under O.42 r.5(6); on receipt, check the sealed terms and recital against the decision.',
+                      trap: 'Expecting the Registry to repair a badly drafted order or changing a disputed amendment unilaterally.',
+                    },
+                    points: [
+                      'A disagreement with a Judge\'s or Master\'s or their clerk\'s amendment goes back by appointment before that Judge or Master: PD16.1 para.3.',
+                      'For a Registry amendment, notify the Registry and seek an appointment before the Practice Master: PD16.1 para.4.',
+                      'PD16.1 para.5 says a draft needing more than minor amendments will be returned for redrafting.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The 7-day drawing-up rule does not change the effective-date rule.',
+                'Consent and pronounced orders follow different starting points; first establish which is being drafted.',
+                'Drafting errors can change the apparent evidential record on appeal.',
+                'Neither a missing affidavit date nor an unspecified costs decision should be filled in from imagination.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Keep three dates separate: pronouncement, approval and sealing.',
+                'Read the draft aloud as instructions to the parties: who, what, when.',
+                'Check the recital against the hearing note and bundle index.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'State effective date under O.42 r.3.',
+                'Apply the drawing-up requirement and any narrow exception.',
+                'Identify the responsible party and 7-day period.',
+                'Draft accurate recitals, operative terms and costs.',
+                'Obtain approval and sealing, resolving disagreements through PD16.1.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Making sealing the universal effective date.',
+                'Omitting special terms when deciding whether drawing up is needed.',
+                'Recording evidence not before the Court.',
+                'Failing to check the opponent\'s sealed order.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Effective date',
+                    'O.42 r.3(1)-(3)',
+                    'Date of order, ordinarily pronouncement; later reasons do not delay effect',
+                  ],
+                  [
+                    'Whether to draw up',
+                    'O.42 r.4(1)-(3)',
+                    'General requirement with a restricted exception for specified uncomplicated orders',
+                  ],
+                  [
+                    'Responsibility',
+                    'O.42 r.5(5); PD16.1 para.1',
+                    'Applicant draws up; 7-day period and substitute action by another affected party',
+                  ],
+                  [
+                    'Sealing',
+                    'O.42 r.5(6)',
+                    'Registry production, passing, sealing and retention of copy',
+                  ],
+                  [
+                    'Evidence and recital',
+                    'PD16.1 paras 7-11',
+                    'Accurate attendance, evidence and evidential rulings preserve the record',
+                  ],
+                  [
+                    'Signature and checking',
+                    'PD16.1 paras 2-6',
+                    'Personal solicitor signature, routes for disputed amendments, and checking of sealed order',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'worked-injunction-summons',
+            title: 'Worked drafting: immediate protection from a former employee',
+            summary: 'Use the two plaintiffs\' pleaded rights to draft the immediate application, keeping final relief, disputed facts and missing instructions separate.',
+            triggers: {
+              bullets: [
+                'An employer and the purchaser of its group want immediate protection from a former executive who is allegedly competing and recruiting their staff.',
+                'The statement of claim seeks final restraints, while the current instruction is to prevent further harm before trial.',
+                'Two plaintiffs seek similar restraints under different contracts, but the draft treats both as parties to the same agreement.',
+                'The draft restrains use of confidential information without identifying the information in the supplied schedule.',
+                'The proposed application repeats the final claim for damages and an account of profits as if those were the immediate protective order.',
+                'The slides use 2023 dates while the supplied statement of claim uses 2024 and later restraint end dates.',
+              ],
+              routes: [
+                {
+                  when: 'The issue is the document heading, margin or judicial officer',
+                  session: 'LG7',
+                  issue: 'drafting-summons',
+                  label: 'Drafting a summons',
+                },
+                {
+                  when: 'The defendant has responded with limited concessions',
+                  session: 'LG7',
+                  issue: 'worked-consent-draft',
+                  label: 'Worked drafting: partial agreement',
+                },
+                {
+                  when: 'The rights and facts first need to be organised into a pleaded case',
+                  session: 'LG5',
+                  issue: 'five-level-case-analysis',
+                  label: 'The 5-Level Case Analysis',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Worked drafting: immediate protection from a former employee',
+                steps: [
+                  {
+                    label: 'Fix the version, parties and immediate objective',
+                    detail: 'The outline\'s p.10 exercise and Annex (2) use an employment end date of 30 September 2024 and a December 2024 application. A2 slides 2-7 use an older year. The outline supplies the working version for this example.',
+                    why: 'A restraint expires by reference to a specific factual chronology. Mixing source versions can produce an order which has already expired or runs a year too long.',
+                    exam: {
+                      write: 'The present application seeks interim protection for [the employer and purchaser] against [the former executive], using the chronology in the supplied statement of claim.',
+                      trap: 'Combining the 2023 slide chronology with the 2024 pleading, or copying its inconsistent weekday labels.',
+                    },
+                    points: [
+                      'The employer is the first plaintiff; the purchaser under the share-sale agreement is the second.',
+                      'Treat the alleged competition, recruitment and copying as allegations to be evidenced, not judicial findings.',
+                      'The outline\'s weekday labels do not match its December 2024 calendar dates; do not derive a deadline from those labels.',
+                    ],
+                  },
+                  {
+                    label: 'Map each plaintiff to its contract and protected interest',
+                    detail: 'Annex (2) paras 10-16, 32-33 distinguish the purchaser\'s share-sale covenants from the employer\'s service-agreement rights. The purchaser pleads a three-year restraint with a one-year alternative; the employer pleads a one-year restraint.',
+                    why: 'The requested order must protect the right of the applicant asking for it. Similar wording in two prayers does not erase the different contractual bases.',
+                    exam: {
+                      write: 'The purchaser relies on the share-sale covenants in clause 15.2; the employer relies on the service-agreement covenants identified in paragraphs 16 and 33 of the statement of claim.',
+                      trap: 'Giving both plaintiffs the longest pleaded restraint without identifying their respective rights.',
+                    },
+                    points: [
+                      {
+                        text: 'Separate the protective subjects:',
+                        points: [
+                          'Competition in the specified human-resource software business and territory.',
+                          'Solicitation of the relevant customers and employees, using the pleaded look-back definitions.',
+                          'Use or disclosure of the confidential information and trade secrets identified in the First Schedule.',
+                        ],
+                      },
+                      'The purchaser\'s pleaded dates are 30 September 2027 or alternatively 30 September 2025; the employer\'s pleaded restraint date is 30 September 2025. These are claims in this exercise, not a ruling on enforceability.',
+                    ],
+                  },
+                  {
+                    label: 'Convert the final prayer into the application needed now',
+                    detail: 'O.29 r.1(1)-(3) governs the procedural application for an injunction. Normally it is by summons; urgent plaintiff applications may be ex parte on affidavit, and the pre-issue exception also depends on urgency. A demand for immediate action is not itself proof of urgency.',
+                    why: 'The final prayer says what is sought at the end of the action. The interlocutory application must say what protection is sought while the action is pending.',
+                    exam: {
+                      write: 'By summons under O.29 r.1, the plaintiffs seek the specified interlocutory restraints pending trial or further order, subject to the applicable pleaded end dates.',
+                      trap: 'Copying final injunction into an interlocutory summons, or treating immediate action as automatic authority to proceed without notice.',
+                    },
+                    points: [
+                      'Use the injunction route before a Judge identified by Annex (1), rather than the normal Master route.',
+                      'Confirm that the originating process has issued; a draft statement of claim alone does not establish that fact.',
+                      'This procedural cross-check does not supply the substantive injunction test. The optional injunction lecture and supporting evidence are not included in this archive.',
+                    ],
+                  },
+                  {
+                    label: 'Draft each restraint with an identifiable subject and limit',
+                    detail: 'Annex (2) paras 32-33 and the First Schedule supply the businesses, territory, customer and employee classes and confidential-material categories from which the requested terms must be built.',
+                    why: 'A party should be able to read the order and know which conduct it restrains. Vague references to all business or all information obscure the actual request.',
+                    exam: {
+                      write: 'Until [the applicable limit], the Defendant be restrained from [specified conduct] in relation to [defined business, persons or scheduled information], pending trial or further order.',
+                      trap: 'Expanding the restraint to all employment, all customers or all information without the pleaded limits.',
+                    },
+                    points: [
+                      'Give competition, customer solicitation, staff solicitation and confidential-information use their own numbered paragraphs where sought.',
+                      'Use a schedule to identify the confidential material, rather than copying the entire factual narrative into the order.',
+                      'Do not mechanically apply the finite non-compete date to a confidentiality provision with different wording or duration.',
+                    ],
+                  },
+                  {
+                    label: 'Separate a workable draft from facts and terms still missing',
+                    detail: 'The p.10 follow-on exercise mentions delivery up, but the supplied prayer does not provide a complete operative delivery-up clause, recipient, mechanism or starting event for the requested 21 days. Neither exercise supplies the evidence or a completed model injunction order.',
+                    why: 'Inventing a missing mechanism can impose a wider obligation than the client instructed. The drafting answer should identify the gap while still expressing the supported relief.',
+                    exam: {
+                      write: 'The proposed delivery-up provision requires confirmation of [items], [recipient] and [the event from which time runs]; the remaining pleaded damages and account claims are not determined by this interlocutory draft.',
+                      trap: 'Adding search, destruction, certification or admissions of wrongdoing merely because they might be useful.',
+                    },
+                    points: [
+                      'Use bracketed fields for hearing particulars and missing instructions, not invented facts.',
+                      'Do not treat the pleading as the supporting affidavit; identify the evidence needed for the application.',
+                      'Include the costs relief sought as a request. The exercise does not supply a concluded costs decision.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The statement of claim contains inconsistent cross-references and dates; trace the relevant paragraph and contractual wording rather than trusting a stray reference.',
+                'The parties\' pleaded restraints are not a judicial determination that those restraints are enforceable.',
+                'The upload does not provide a full injunction merits analysis, undertaking terms or an approved model summons.',
+                'O.29 r.1 is an independently checked procedural supplement to the drafting exercise, not an expansion into the optional Mareva or Anton Piller topic.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Prepare a two-column working sheet: plaintiff/right and operative relief.',
+                'Draft in numbered orders; reserve evidential explanation for the affidavit.',
+                'Show missing instructions with precise bracketed fields rather than a vague caveat.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Correct existing-action heading and SUMMONS title.',
+                'Margin: O.29 r.1 and the verified substantive basis appropriate to the injunction sought.',
+                'Attendance before a Judge at the specified hearing.',
+                'Separate, defined interlocutory restraints for the rights each plaintiff asserts.',
+                'Identify any further delivery-up instructions needed; state costs sought.',
+                'Check evidence, originating-process status and whether urgency is actually established.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Copying final relief wholesale.',
+                'Conflating the employer and purchaser.',
+                'Mixing the outline and slide years.',
+                'Presenting allegations as admissions or findings.',
+                'Inventing a complete delivery-up mechanism from the 21-day concession.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Working facts',
+                    'LG7 outline p.10 and Annex (2) paras 6, 19-20',
+                    'The outline version uses termination on 30 September 2024 and December 2024 instructions',
+                  ],
+                  [
+                    'Purchaser\'s case',
+                    'Annex (2) paras 10-13 and 32; share-sale clause 15.2',
+                    'Separate contractual basis and pleaded three-year / one-year alternatives',
+                  ],
+                  [
+                    'Employer\'s case',
+                    'Annex (2) paras 16 and 33; Second Schedule clauses 9.1 and 11.1',
+                    'Service-agreement basis, pleaded restraints and confidentiality provisions',
+                  ],
+                  [
+                    'Identification',
+                    'Annex (2), First Schedule',
+                    'The confidential information and trade-secret categories used in the draft',
+                  ],
+                  [
+                    'Procedural application',
+                    'O.29 r.1(1)-(3)',
+                    'Summons normally; limited urgency exceptions for ex parte and pre-issue applications',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Drafting frame — adapt each limb to the supplied instructions',
+                bullets: [
+                  'SUMMONS: Let all parties concerned attend before [Judge] at [place] on [date/time] on the application of the [Plaintiffs] for the following orders.',
+                  '1. Pending trial or further order, and subject to [the applicable end date], the Defendant be restrained from [the precisely defined competitive conduct] in [the pleaded territory].',
+                  '2. For the applicable period, the Defendant be restrained from [the precisely defined customer/staff solicitation], using the relevant contractual class and look-back period.',
+                  '3. Pending trial or further order, the Defendant be restrained from [the specified use or disclosure] of the information identified in [the schedule].',
+                  '4. [Any properly instructed and supported delivery-up relief, specifying the items, recipient and timing.]',
+                  '5. [Costs relief sought.] This is a drafting frame, not an approved order or a conclusion that the injunction must be granted.',
+                ],
+              },
+            ],
+          },
+          {
+            id: 'worked-consent-draft',
+            title: 'Worked drafting: partial agreement on restraints and delivery up',
+            summary: 'Translate the defendant\'s limited concessions into proposed terms without inventing the plaintiffs\' consent or an admission of misuse.',
+            triggers: {
+              bullets: [
+                'The former executive accepts a restraint only until 30 September 2025, although the purchaser sought a longer period.',
+                'The defendant denies taking trade secrets but agrees to comply with future confidentiality restraints.',
+                'The defendant asks for 21 days to deliver up material, but the proposed draft retains an immediate delivery obligation.',
+                'The instruction asks for standard costs terms without stating which costs order the parties have agreed.',
+                'The draft recites admissions of theft although the defendant has expressly denied taking information.',
+                'The defendant approves proposed terms, but no acceptance has been obtained from the plaintiffs.',
+              ],
+              routes: [
+                {
+                  when: 'The procedural question is whether O.42 r.5A covers the agreed relief',
+                  session: 'LG7',
+                  issue: 'consent-order-or-summons',
+                  label: 'Consent order or consent summons?',
+                },
+                {
+                  when: 'The plaintiffs\' original application still needs to be drafted',
+                  session: 'LG7',
+                  issue: 'worked-injunction-summons',
+                  label: 'Worked drafting: immediate protection',
+                },
+                {
+                  when: 'A Judge has approved terms and the actual order must now be recorded',
+                  session: 'LG7',
+                  issue: 'drawing-up-orders',
+                  label: 'Drawing up and perfecting an order',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Worked drafting: partial agreement on restraints and delivery up',
+                steps: [
+                  {
+                    label: 'Record a proposal, not consent which has not been given',
+                    detail: 'The p.10 exercise states the defendant\'s instructions only. O.42 r.5A(1) requires agreement of all parties for its consent procedure; limited willingness by one party is not that agreement.',
+                    why: 'The drafter acts within the client\'s authority and cannot accept the proposal on the opponent\'s behalf.',
+                    exam: {
+                      write: 'These are the Defendant\'s proposed terms, subject to the Plaintiffs\' agreement and the Court\'s approval; [identify any relief still contested].',
+                      trap: 'Opening with By Consent when only one party has approved the terms.',
+                    },
+                  },
+                  {
+                    label: 'Choose the consent-summons route for the injunction terms',
+                    detail: 'An injunction is not one of the orders listed in O.42 r.5A(2). Annex (1) paras 17-20 therefore points to a consent summons on the substantive basis before the appropriate Judge for agreed injunction relief.',
+                    why: 'A delivery-up limb may resemble a listed category, but it does not bring a combined injunction package within the paper procedure.',
+                    exam: {
+                      write: 'If agreed, submit the injunction terms by consent summons before a Judge; O.42 r.5A does not itself authorise the proposed restraints.',
+                      trap: 'Using a paper consent order before the Practice Master simply because one limb is delivery up.',
+                    },
+                  },
+                  {
+                    label: 'Translate each concession without adding an admission',
+                    detail: 'Outline p.10 para.9 limits the restraint to 30 September 2025, preserves the defendant\'s denial of taking confidential information, and requests 21 days for delivery up and related relief.',
+                    why: 'An obligation about future conduct can be agreed without conceding the pleaded past breach. The draft must preserve that distinction.',
+                    exam: {
+                      write: 'Without recording an admission of taking or misusing the information, the Defendant agrees to [defined restraint]; the relevant competitive restraint shall expire on 30 September 2025.',
+                      trap: 'Turning agreement to a restraint into an admission of liability or applying the non-compete expiry to every confidentiality obligation.',
+                    },
+                    points: [
+                      'Amend each affected competitive-restraint paragraph consistently; do not leave a longer alternative elsewhere in the draft.',
+                      'For delivery up, specify [items], [recipient] and 21 days from [the agreed starting event]. The source supplies the length but not that starting event.',
+                      'Do not add destruction, disclosure of passwords, a search entitlement or verification obligations not supplied by the instructions.',
+                    ],
+                  },
+                  {
+                    label: 'Resolve the costs instruction and preserve the rest of the action',
+                    detail: 'A2 slide 8 asks what standard costs terms should be but supplies no answer. Outline p.10 para.9(4) likewise does not identify a particular agreed costs order. An interlocutory compromise also does not itself dispose of the remaining final claims.',
+                    why: 'Different costs formulations allocate different risks. Guessing one would make the model draft appear more settled than its source.',
+                    exam: {
+                      write: 'Costs of the summons: [insert the terms actually agreed or ordered]. The proposed interim terms do not determine the outstanding final claims.',
+                      trap: 'Treating costs in the cause, costs reserved and costs in any event as interchangeable answers to standard terms.',
+                    },
+                    points: [
+                      'Obtain or state the missing costs instruction; do not present a chosen formulation as the lecturer\'s model answer.',
+                      'Once terms are approved, draw the order actually made with accurate recitals under PD16.1.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Use the outline\'s 30 September 2025 concession; the older slides say 2024.',
+                'The 21-day period needs a defined starting event before it is an operative deadline.',
+                'Partial agreement leaves the balance for agreement or determination.',
+                'No lecturer\'s completed model order is included in the archive.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Compare the original request and the concession paragraph by paragraph.',
+                'Preserve the denial of past misuse while drafting future obligations.',
+                'Identify unresolved costs and timing terms precisely.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Label the document as proposed terms until all-party agreement is established.',
+                'Use the Judge / consent-summons route for injunction relief.',
+                'Insert the agreed restraint limit and defined confidentiality obligations.',
+                'Draft delivery up with 21 days and a confirmed trigger, recipient and subject.',
+                'Insert only agreed or ordered costs; preserve unresolved claims.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Inventing the plaintiffs\' consent.',
+                'Reciting a denied breach as admitted.',
+                'Using a 2024 expiry from the older slides.',
+                'Leaving the start of 21 days undefined.',
+                'Inventing the standard costs answer.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Extent of authority',
+                    'LG7 outline p.10 paras 7-10',
+                    'Only the defendant\'s specified concessions are supplied',
+                  ],
+                  [
+                    'All-party agreement',
+                    'O.42 r.5A(1)',
+                    'One party\'s proposal is insufficient',
+                  ],
+                  [
+                    'Procedural limit',
+                    'O.42 r.5A(2); Annex (1) paras 17-20',
+                    'Agreed injunction relief requires the appropriate consent-summons route',
+                  ],
+                  [
+                    'Costs gap',
+                    'A2 slide 8; outline p.10 para.9(4)',
+                    'The exercise asks for standard terms but supplies no model answer',
+                  ],
+                  [
+                    'Approved record',
+                    'PD16.1 paras 7-9',
+                    'The drawn order must accurately record attendance, evidence and what was ordered',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Proposed terms — instructions still required are bracketed',
+                bullets: [
+                  'Subject to all-party agreement and approval: the Defendant be restrained from [defined competitive conduct] until 30 September 2025, subject to any earlier trial disposition or further order.',
+                  'Without recording an admission of the alleged taking or misuse, the Defendant be restrained from [defined prohibited use/disclosure] of [identified confidential material] on [the agreed duration and terms].',
+                  'Within 21 days after [agreed starting event], the Defendant shall deliver to [recipient] [precisely identified items within the agreed obligation].',
+                  'Costs of the summons: [agreed or ordered provision]. Record separately what remains disputed; do not silently dismiss the underlying action.',
+                ],
+              },
+            ],
+          },
+          {
+            id: 'security-gateways',
+            title: 'Security for costs: identifying the jurisdictional gateway',
+            summary: 'Identify who is attacking, select an available power, and only then address whether ordering security is just.',
+            triggers: {
+              bullets: [
+                'A defendant fears an adverse costs award will be unrecoverable because the plaintiff lives abroad.',
+                'An impecunious individual plaintiff lives in Hong Kong, gives a correct address and sues on his own claim.',
+                'A person with no beneficial interest sues for somebody else and has no apparent means to meet costs.',
+                'The plaintiff\'s address is omitted from the writ, but evidence shows an innocent clerical mistake.',
+                'The plaintiff moves during the case and the defendant alleges that the move was intended to evade the litigation.',
+                'A plaintiff seeks security from a foreign defendant merely because the defendant has issued an interlocutory summons.',
+              ],
+              routes: [
+                {
+                  when: 'The alleged gateway is residence outside Hong Kong',
+                  session: 'LG7',
+                  issue: 'security-residence',
+                  label: 'Ordinary residence',
+                },
+                {
+                  when: 'The plaintiff is a company whose ability to pay is in doubt',
+                  session: 'LG7',
+                  issue: 'security-company',
+                  label: 'Company security under s905',
+                },
+                {
+                  when: 'The parties each pursue affirmative claims',
+                  session: 'LG7',
+                  issue: 'security-counterclaims',
+                  label: 'Co-plaintiffs and counterclaims',
+                },
+                {
+                  when: 'The costs to be secured are appellate costs',
+                  session: 'LG7',
+                  issue: 'security-appeal',
+                  label: 'Security for the costs of an appeal',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Security for costs: identifying the jurisdictional gateway',
+                steps: [
+                  {
+                    label: 'Identify the proceeding and the parties\' real positions',
+                    detail: 'O.23 r.1(1) concerns an application by a defendant in an action or other proceeding in the Court of First Instance. Paragraph (3) applies the labels to the persons in the positions of plaintiff and defendant, including on a counterclaim.',
+                    why: 'Security protects the defending party against the cost of meeting an attack. Issuing a procedural application does not necessarily make a defendant an attacker.',
+                    exam: {
+                      write: 'In [the claim/counterclaim], [party] occupies the position of defendant and seeks security from [the party in the position of plaintiff] under O.23 r.1(3).',
+                      trap: 'Assuming the labels on the original writ decide every security application.',
+                    },
+                    points: [
+                      'Annex (3) para.13 includes other originating proceedings, such as petitions and interpleader proceedings.',
+                      'A defendant merely defending, or making an interlocutory application in that defence, is not required to provide security merely for being abroad.',
+                    ],
+                  },
+                  {
+                    label: 'Identify an actual O.23 gateway',
+                    detail: 'O.23 r.1(1)(a)-(d) identifies residence abroad, the specified nominal-plaintiff case, an absent or incorrect originating-process address, and an evasive change of address. Impecuniosity of an ordinary local individual is not a separate listed gateway.',
+                    why: 'A persuasive fear of non-payment is not itself a statutory power. Jurisdiction must be established before discretion can be exercised.',
+                    exam: {
+                      write: 'The relevant gateway is O.23 r.1(1)[limb], because [the facts satisfying its elements]; poverty alone would not establish that gateway for an ordinary local individual.',
+                      trap: 'Importing s905\'s corporate inability-to-pay test into every individual claim.',
+                    },
+                    points: [
+                      'Keep s905 as a separate corporate route; O.23 r.3 preserves written-law powers.',
+                      'Annex (3) para.8 cites Akai against using inherent jurisdiction simply to fill a missing security gateway.',
+                    ],
+                  },
+                  {
+                    label: 'Apply every element of the nominal-plaintiff limb',
+                    detail: 'O.23 r.1(1)(b) requires a nominal plaintiff suing for another\'s benefit, not suing in a representative capacity, and reason to believe the nominal plaintiff cannot pay the defendant\'s costs if ordered.',
+                    why: 'The concern is an impecunious nominal litigant shielding the person whose interests are being pursued. The express representative-capacity exclusion matters.',
+                    exam: {
+                      write: '[P] is a nominal plaintiff suing for [beneficiary], outside the representative-capacity exclusion, and [evidence] gives reason to believe P cannot pay: O.23 r.1(1)(b).',
+                      trap: 'Stopping after nominal plaintiff without proving inability to pay or checking the representative-capacity exclusion.',
+                    },
+                  },
+                  {
+                    label: 'Distinguish address error from deliberate evasion',
+                    detail: 'O.23 r.1(1)(c) is subject to r.1(2): no security by reason only of that limb if P satisfies the Court that the address omission or error was innocent and without intent to deceive. Limb (d) requires a change during the proceedings with a view to evading their consequences.',
+                    why: 'An inaccurate address and an evasive move are different factual cases. Neither supports treating every change of residence as abuse.',
+                    exam: {
+                      write: '[The address error] was innocent and without intention to deceive, so O.23 r.1(2) prevents security by reason only of r.1(1)(c).',
+                      trap: 'Ignoring the innocent-error proviso, or presuming an evasive purpose from the fact of moving.',
+                    },
+                    points: [
+                      'Annex (3) para.21 puts the innocent explanation on P on the balance of probabilities.',
+                      'A move caused by removal from premises and poverty preventing a new permanent address does not itself establish the evasive purpose described in para.22.',
+                      'An innocent address error does not defeat a separate, independently established residence-abroad gateway.',
+                    ],
+                  },
+                  {
+                    label: 'Keep jurisdiction and discretion as separate conclusions',
+                    detail: 'Even where a gateway is established, O.23 r.1(1) requires the Court to consider all the circumstances and whether security is just. Henrik Andersen [1997] HKLRD 1360 rejects an inflexible requirement for foreign plaintiffs.',
+                    why: 'The gateway permits the Court to consider security; it does not decide whether security or the amount requested is fair.',
+                    exam: {
+                      write: 'Although [gateway] is established, the Court must separately decide under O.23 r.1(1) whether security is just in light of [the material circumstances].',
+                      trap: 'Writing foreign plaintiff, therefore security without considering discretion.',
+                    },
+                    points: [
+                      'Consider assets, enforcement, merits, delay, stifling and counterclaim overlap where the facts raise them.',
+                      'Annex (3) para.23 describes the normal protection for legally aided plaintiffs; distinguish actual legal-aid status from merely applying.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Do not describe the four O.23 limbs as the only security powers in all litigation: s905 and the appeal power are separate.',
+                'A foreign defendant\'s mere defence is not a claim for this purpose.',
+                'The innocent-address proviso says by reason only of limb (c), so check independent grounds.',
+                'A failed gateway ends that route even if discretion would otherwise favour protection.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Use headings in the answer: power, elements, evidence, discretion, terms.',
+                'Name the applicant by both its original role and its role in the relevant claim.',
+                'For (b)-(d), apply the qualifying words instead of paraphrasing away the test.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the claim and defending party.',
+                'Select O.23, s905 or the appellate power.',
+                'Prove each gateway element and apply any proviso.',
+                'Assess whether security is just.',
+                'If ordered, address amount, form, timing and stay separately.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Poverty as a universal first-instance gateway.',
+                'Ignoring the representative-capacity exclusion.',
+                'Every move treated as evasion.',
+                'Confusing power with an automatic order.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Foreign residence',
+                    'O.23 r.1(1)(a)',
+                    'Ordinary residence outside the jurisdiction is a gateway',
+                  ],
+                  [
+                    'Nominal plaintiff',
+                    'O.23 r.1(1)(b)',
+                    'Another\'s benefit, inability to pay and representative-capacity exclusion',
+                  ],
+                  [
+                    'Address',
+                    'O.23 r.1(1)(c), r.1(2)',
+                    'Absent or incorrect address, subject to innocent error without intent to deceive',
+                  ],
+                  [
+                    'Evasive move',
+                    'O.23 r.1(1)(d)',
+                    'Change during proceedings with a view to evading their consequences',
+                  ],
+                  [
+                    'Procedural position',
+                    'O.23 r.1(3)',
+                    'Functional plaintiff/defendant roles include counterclaims',
+                  ],
+                  [
+                    'Discretion',
+                    'Henrik Andersen & Anor v Huang Kuang Yuan & Ors [1997] HKLRD 1360, para.48',
+                    'A real discretion, considering all circumstances',
+                  ],
+                  [
+                    'Other powers',
+                    'O.23 r.3',
+                    'Written-law security powers are preserved',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-residence',
+            title: 'Ordinary residence: individuals and companies',
+            summary: 'Prove where the plaintiff ordinarily lives or is centrally managed, rather than inferring residence from a passport, HKID or incorporation certificate.',
+            triggers: {
+              bullets: [
+                'The plaintiff keeps a Hong Kong identity card but has moved the family home and employment abroad.',
+                'The plaintiff has spent several months overseas for a temporary purpose and maintains ordinary life in Hong Kong.',
+                'A BVI company sues in Hong Kong, and the defendant relies only on its place of incorporation.',
+                'A company asserts that it is managed in Hong Kong but gives no evidence of who makes its decisions or where.',
+                'The plaintiff is a non-trading holding company whose board and corporate activities are outside Hong Kong.',
+                'An overseas-incorporated company is now managed by liquidators in Hong Kong, and the defendant assumes its residence cannot have changed.',
+              ],
+              routes: [
+                {
+                  when: 'The complaint is an incorrect address or a nominal plaintiff, not residence',
+                  session: 'LG7',
+                  issue: 'security-gateways',
+                  label: 'Security gateways',
+                },
+                {
+                  when: 'The company is locally resident but may be unable to pay costs',
+                  session: 'LG7',
+                  issue: 'security-company',
+                  label: 'Company security under s905',
+                },
+                {
+                  when: 'Foreign residence is established and P relies on recoverable assets',
+                  session: 'LG7',
+                  issue: 'security-discretion',
+                  label: 'Security: merits, assets and enforcement',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Ordinary residence: individuals and companies',
+                steps: [
+                  {
+                    label: 'Put the burden on the defendant and identify the factual question',
+                    detail: 'Under O.23 r.1(1)(a), D must establish that P is ordinarily resident outside the jurisdiction. Re Greater Beijing Region Expressways Ltd (No 3) [2000] 2 HKLRD 776, paras 29-31, emphasises continuity and where affairs are usually or habitually ordered.',
+                    why: 'The gateway is ordinary residence, not citizenship or a single journey. The evidence must address the pattern of life or corporate control.',
+                    exam: {
+                      write: 'D bears the burden under O.23 r.1(1)(a); [facts] establish/do not establish ordinary residence outside Hong Kong.',
+                      trap: 'Making P disprove foreign residence before D supplies evidence.',
+                    },
+                  },
+                  {
+                    label: 'For an individual, assemble the pattern of ordinary life',
+                    detail: 'Annex (3) para.16 directs attention to time spent, reason for absence, family residence, work, connections and continuity or permanence. A Hong Kong identity card is not conclusive.',
+                    why: 'A temporary absence and uprooting abroad can look alike if the only fact considered is physical presence on one day.',
+                    exam: {
+                      write: 'Although P holds a Hong Kong identity card, [home, family, work and continuity] indicate that ordinary residence is [place].',
+                      trap: 'Treating the HKID card or nationality as the complete test.',
+                    },
+                    points: [
+                      'Explain whether the person has uprooted ordinary life or is absent for a temporary reason.',
+                      'Use the evidence together; the upload supplies no mechanical minimum number of days.',
+                    ],
+                  },
+                  {
+                    label: 'For a company, prove central management and control through primary facts',
+                    detail: 'Re Greater Beijing para.31 applies central management and control. Charter View Holdings (BVI) Ltd v Corona Investments Ltd [1998] 1 HKLRD 469, para.3, requires primary facts and consideration of all the business circumstances.',
+                    why: 'A corporate label or registered address may say little about where real decisions are made.',
+                    exam: {
+                      write: 'The primary facts are [decision makers, decisions, administration and business activity]; these place the company\'s central management and control in [place].',
+                      trap: 'Replacing evidence with the director\'s bare assertion that management is in Hong Kong.',
+                    },
+                    points: [
+                      {
+                        text: 'Charter View para.3 identifies relevant evidence:',
+                        points: [
+                          'The place of incorporation and real trade or business, and the corporate objects.',
+                          'Where books are kept and administration is carried out.',
+                          'Where directors who can override local decisions meet or reside.',
+                          'The chief office, company secretary and significant assets.',
+                        ],
+                      },
+                      'The weight of each factor depends on the case; incorporation is a factor, not the test.',
+                    ],
+                  },
+                  {
+                    label: 'Handle non-trading companies and changed control, then move to discretion',
+                    detail: 'Charter View para.3(iii) stresses the nature of a non-trading company\'s corporate activities. The Akai first-instance extract in B2 slide 7 examines where the company is now resident. Local residence may defeat limb (a) without defeating the separate s905 route.',
+                    why: 'Security analysis can fail if a historic incorporation fact is substituted for current control, or if defeat of one power is mistaken for defeat of all powers.',
+                    exam: {
+                      write: 'The company\'s present corporate activities and control point to [place]; if O.23 r.1(1)(a) fails, consider s905 separately on the financial evidence.',
+                      trap: 'Concluding that a company managed in Hong Kong can never be ordered to provide security.',
+                    },
+                    points: [
+                      'If foreign residence is proved, evaluate assets, enforcement and the other discretionary factors.',
+                      'Distinguish Akai\'s residence analysis from the later appellate interpretation of the predecessor to s905.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'No fixed residence-day threshold is provided by these materials.',
+                'A registered office is evidence, not a conclusive answer.',
+                'For a non-trading company, lack of trading operations does not end the inquiry.',
+                'The burden of proving the foreign-residence gateway is distinct from P\'s evidence resisting an order.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Arrange facts under home/work/family for an individual, and decision-making/administration/business for a company.',
+                'Give a reasoned conclusion about continuity.',
+                'State what primary evidence would resolve an unsupported assertion.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify O.23 r.1(1)(a) and D\'s burden.',
+                'Apply the individual or corporate test.',
+                'Evaluate the primary facts and competing explanation.',
+                'Conclude on the gateway.',
+                'Address discretion or an alternative corporate power separately.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Nationality equals residence.',
+                'Incorporation equals residence.',
+                'A bare assertion equals evidence.',
+                'Treating local residence as immunity from s905.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Continuity',
+                    'Re Greater Beijing Region Expressways Ltd (No 3) [2000] 2 HKLRD 776, paras 29-31',
+                    'Ordinary residence concerns habitual arrangements; companies are tested by central management and control',
+                  ],
+                  [
+                    'Corporate evidence',
+                    'Charter View Holdings (BVI) Ltd v Corona Investments Ltd [1998] 1 HKLRD 469, para.3',
+                    'Primary facts are needed; all relevant business circumstances are considered',
+                  ],
+                  [
+                    'Non-trading company',
+                    'Charter View, para.3(iii)',
+                    'Nature of corporate activities may carry particular importance',
+                  ],
+                  [
+                    'Present residence',
+                    'Akai Holdings Ltd v Ernst & Young, HCCL 29/2004, 15 July 2008, paras 44-45 (B2 slide 7)',
+                    'Current control and liquidation circumstances require factual analysis',
+                  ],
+                  [
+                    'Individual factors',
+                    'LG7 Annex (3) para.16',
+                    'Home, family, work, reasons for absence and continuity; HKID not conclusive',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-discretion',
+            title: 'Security discretion: merits, assets and overseas enforcement',
+            summary: 'Once a gateway exists, assess the real risk of unrecoverable costs and the factors which may make security unjust.',
+            triggers: {
+              bullets: [
+                'A foreign plaintiff has substantial realisable assets in Hong Kong sufficient to meet the costs sought.',
+                'The plaintiff relies on shares in a private company but gives no evidence of their value or ability to be realised.',
+                'The defendant assumes enforcement abroad must be difficult without addressing the applicable reciprocal regime.',
+                'A plaintiff resists security by calling its claim arguable, without showing a high probability of success.',
+                'The documentary terms strongly support the plaintiff, which asks the Court to refuse security on merits.',
+                'The parties invite a lengthy trial of disputed evidence at the security hearing.',
+              ],
+              routes: [
+                {
+                  when: 'D has not yet established foreign ordinary residence',
+                  session: 'LG7',
+                  issue: 'security-residence',
+                  label: 'Ordinary residence',
+                },
+                {
+                  when: 'The objection is oppressive timing or inability to continue a genuine claim',
+                  session: 'LG7',
+                  issue: 'security-timing-stifling',
+                  label: 'Delay and stifling',
+                },
+                {
+                  when: 'Security is justified but the requested amount is excessive',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Amount and terms',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Security discretion: merits, assets and overseas enforcement',
+                steps: [
+                  {
+                    label: 'Begin with a real discretion, not an automatic foreign-plaintiff rule',
+                    detail: 'O.23 r.1(1) requires consideration of all the circumstances and whether security is just. Henrik Andersen, para.48, recognises the usual practice concerning foreign plaintiffs but rejects an inflexible rule.',
+                    why: 'The risk the power addresses can vary greatly between two plaintiffs who both live abroad.',
+                    exam: {
+                      write: 'Although O.23 r.1(1)(a) is established, [the circumstances] must be weighed before deciding whether security is just.',
+                      trap: 'Treating residence abroad as the end of the analysis.',
+                    },
+                  },
+                  {
+                    label: 'Ask whether the assets actually answer the costs risk',
+                    detail: 'AG v Vianini Lavori SpA [1991] 1 HKC 423, para.12, illustrates the importance of sufficient local working capital. Annex (3) para.10 contrasts fixed assets with potentially difficult-to-realise private-company shares.',
+                    why: 'An asset on paper is useful only if it gives practical protection against an unpaid costs order.',
+                    exam: {
+                      write: 'P identifies [local assets] worth [supported value], available to meet [the likely costs]; that reduces the need for security.',
+                      trap: 'Equating an unsupported asset valuation or private shareholding with readily recoverable money.',
+                    },
+                    points: [
+                      'Identify ownership, location, value and realisability on the supplied evidence.',
+                      'Vianini is a factual illustration, not a universal monetary threshold or automatic exemption.',
+                    ],
+                  },
+                  {
+                    label: 'Examine actual overseas enforcement difficulty',
+                    detail: 'Wong Kwok Mei, Sanrita v Eversonic Inc [1992] 2 HKC 62 and Tronic International v Topco Scientific, CACV 235/2013, 20 June 2014, are cited in Annex (3) paras 11-12 for enforcement difficulty and reciprocal arrangements.',
+                    why: 'The relevant question is whether costs can practically be recovered, not whether the plaintiff has a foreign address.',
+                    exam: {
+                      write: 'The claimed enforcement difficulty must be assessed against [the applicable regime, assets and practical evidence], rather than assumed from residence alone.',
+                      trap: 'Saying that a reciprocal arrangement either never matters or automatically defeats security.',
+                    },
+                    points: [
+                      'The outline cites Cap.319, Cap.319A and the older Mainland regime in Cap.597.',
+                      'Currency note: the Department of Justice confirms that Cap.645 took effect on 29 January 2024. Check the applicable regime and transitional position; do not present Cap.597 as the sole current Mainland framework.',
+                      'This is a security analysis, not a complete recognition-and-enforcement problem.',
+                    ],
+                  },
+                  {
+                    label: 'Apply the high merits threshold without conducting a mini-trial',
+                    detail: 'Carmon Reestrutura-Engenharia v Carmon Restrutura [2025] HKCFI 2163, paras 38-48, applies a broad-brush approach: a plaintiff relying on strong merits must clearly demonstrate a high degree of probability of success. It quotes Hannelore de Lasala-Debring, para.8.',
+                    why: 'Security is interlocutory. A disputed claim should not be finally tried merely to decide whether costs protection is appropriate.',
+                    exam: {
+                      write: 'On a broad-brush view, [the decisive material] does/does not clearly demonstrate a high degree of probability of success, as required by Carmon, para.40.',
+                      trap: 'Substituting mere arguability for the high probability threshold or litigating every factual dispute.',
+                    },
+                    points: [
+                      'Carmon refused security because the contractual material and the implausibility of the competing case demonstrated the required strength.',
+                      'Distinguish the plaintiff\'s submissions in para.42 from the Court\'s conclusions in paras 44-48.',
+                    ],
+                  },
+                  {
+                    label: 'Reach a balanced conclusion and offer an alternative on terms',
+                    detail: 'The discretion under O.23 r.1(1) extends to whether security should be ordered; O.23 r.2 allows appropriate manner, time and terms. A rejection of P\'s merits objection does not prove that D\'s entire demand is reasonable.',
+                    why: 'The fair answer may be a smaller or staged security order rather than complete acceptance of either side\'s position.',
+                    exam: {
+                      write: 'The balance favours [refusal/security]; alternatively, the amount and terms should be confined to [the supported costs exposure] under O.23 r.2.',
+                      trap: 'Giving no alternative on quantum after unsuccessfully resisting security in principle.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A gateway and a usual practice do not displace judicial discretion.',
+                'Assets and enforcement should be supported by facts, not labels.',
+                'The merits inquiry is deliberately broad-brush.',
+                'Use the current enforcement framework for the relevant date; the lecture\'s historical references do not settle every modern case.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Organise the answer by practical recoverability, merits and fairness.',
+                'Identify the document which makes the merits unusually strong.',
+                'Give a fallback submission on amount and terms.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Assume or establish the gateway.',
+                'Assess local assets and realisability.',
+                'Assess overseas enforcement.',
+                'Apply the high merits threshold without a trial.',
+                'Balance the remaining circumstances and conclude, with alternative terms.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Foreign residence means automatic security.',
+                'Any asset is sufficient.',
+                'Arguable merits defeat security.',
+                'Reciprocity is an automatic exemption.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Discretion',
+                    'O.23 r.1(1); Henrik Andersen [1997] HKLRD 1360, para.48',
+                    'All circumstances matter; no inflexible rule',
+                  ],
+                  [
+                    'Local assets',
+                    'AG v Vianini Lavori SpA [1991] 1 HKC 423, para.12',
+                    'Sufficient local working capital can answer the costs risk',
+                  ],
+                  [
+                    'Enforcement',
+                    'Wong Kwok Mei, Sanrita v Eversonic Inc [1992] 2 HKC 62; Tronic International v Topco Scientific, CACV 235/2013',
+                    'Consider real enforcement difficulty and the applicable reciprocal arrangements',
+                  ],
+                  [
+                    'Merits',
+                    'Carmon Reestrutura-Engenharia v Carmon Restrutura [2025] HKCFI 2163, paras 40, 44-48',
+                    'Broad-brush assessment; clearly demonstrated high probability of success may justify refusal',
+                  ],
+                  [
+                    'Merits approach',
+                    'Hannelore de Lasala-Debring v Ernest Ferdinand Perez de La Sala, HCMP 1029/2013, 8 July 2015, para.8',
+                    'Do not make a preliminary trial of ultimate success',
+                  ],
+                  [
+                    'Mainland currency check',
+                    'Department of Justice, Cap.645: The Ordinance and the Arrangement',
+                    'Cap.645 commenced on 29 January 2024; identify the applicable regime',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-counterclaims',
+            title: 'Co-plaintiffs, counterclaims and the real attacker',
+            summary: 'Look beyond the party labels and ask which issues and costs will remain even if the claim is stopped.',
+            triggers: {
+              bullets: [
+                'A foreign plaintiff sues with a Hong Kong co-plaintiff on the same cause of action.',
+                'The local co-plaintiff is a thinly capitalised company with no apparent independent business.',
+                'A defendant counterclaims on essentially the same facts and would litigate them even if the plaintiff\'s claim were stayed.',
+                'A foreign defendant brings an independent cross-action concerning a separate transaction.',
+                'D seeks security for expenditure which is also needed to prosecute its own counterclaim.',
+                'A proposed default term would prevent P defending the counterclaim as well as pursuing its claim.',
+              ],
+              routes: [
+                {
+                  when: 'A party is only defending and has made no affirmative counterclaim',
+                  session: 'LG7',
+                  issue: 'security-gateways',
+                  label: 'Security gateways',
+                },
+                {
+                  when: 'The local co-plaintiff\'s financial position is the issue',
+                  session: 'LG7',
+                  issue: 'security-company',
+                  label: 'Company security under s905',
+                },
+                {
+                  when: 'The costs overlap must be reflected in the order',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Amount and terms',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Co-plaintiffs, counterclaims and the real attacker',
+                steps: [
+                  {
+                    label: 'Identify every claim and the position of each party',
+                    detail: 'O.23 r.1(3) treats plaintiff and defendant functionally, including on a counterclaim. Ai Zhong v Metrofond Ltd [2010] 1 HKLRD 213, para.22, asks whether the counterclaim is a cross-action or merely defensive.',
+                    why: 'An original defendant may become an attacker through an independent claim, but should not provide security simply for defending.',
+                    exam: {
+                      write: 'For [the counterclaim], [D] is in the position of plaintiff under O.23 r.1(3); determine whether it is an independent cross-action or defensive in substance.',
+                      trap: 'Deciding by the words Plaintiff and Defendant in the heading alone.',
+                    },
+                  },
+                  {
+                    label: 'Assess the local co-plaintiff rather than treating it as a shield',
+                    detail: 'Annex (3) para.18 describes the ordinary practice of not ordering security where a local co-plaintiff pursues the same cause. Dongguan Harris, para.12, stresses that neither this practice nor the practice for foreign plaintiffs is unvarying.',
+                    why: 'A local party matters to practical costs recovery, but its presence does not answer every risk regardless of its role or resources.',
+                    exam: {
+                      write: 'The local co-plaintiff pursues [the same cause], which weighs against security, but [its role and financial evidence] must be considered in the overall discretion.',
+                      trap: 'Assuming that adding any local company automatically defeats security.',
+                    },
+                    points: [
+                      'Dongguan Harris examines evidence that the local company had no independent business, office or employees; that is a factual analysis, not a minimum-capital rule.',
+                      'If relying on inability of the local company to pay, identify the separate s905 gateway.',
+                    ],
+                  },
+                  {
+                    label: 'Identify issues and costs which will be litigated anyway',
+                    detail: 'Ai Zhong para.22 distinguishes the mere existence of a counterclaim from a case where stifling P\'s claim would leave the same matters to be canvassed in defending the counterclaim, or D\'s defence costs are equally counterclaim costs.',
+                    why: 'Security should not give an attacker a procedural advantage by blocking the other side while the same dispute necessarily continues.',
+                    exam: {
+                      write: 'Because [the same issues] will be fully litigated on the counterclaim and [the costs] also serve that claim, Ai Zhong, para.22, supports [refusal or appropriate limitation] on these facts.',
+                      trap: 'Saying either all counterclaims defeat security or no counterclaim can matter.',
+                    },
+                    points: [
+                      'Ai Zhong para.22(4): a counterclaim arising from the same matters does not by itself remove the power.',
+                      'Paras 22(2)-(3) and (6): explain actual overlap and the consequence of preventing P proceeding.',
+                    ],
+                  },
+                  {
+                    label: 'Apply equivalent treatment where both sides attack',
+                    detail: 'Ai Zhong paras 22(8)-(9) and 31 distinguish protection of a mere defender from fair treatment of two attackers. An independent foreign counterclaimant may itself fall within O.23, subject to a gateway and discretion.',
+                    why: 'Fair treatment depends on what each party is pursuing and which powers actually apply; it is not automatic reciprocal security.',
+                    exam: {
+                      write: 'Both parties pursue affirmative claims, so compare their positions fairly, while establishing the O.23 gateway separately for each proposed security order.',
+                      trap: 'Requiring matching security without proving a gateway, or making security a condition of merely defending the counterclaim.',
+                    },
+                    points: [
+                      'The outcome in Ai Zhong was that neither side needed to provide security on its facts; do not convert that outcome into a universal same-transaction exemption.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A counterclaim may matter greatly without extinguishing jurisdiction.',
+                'A local co-plaintiff and a solvent local co-plaintiff are not equivalent factual propositions.',
+                'Separate the costs of an independent counterclaim from overlapping defence costs.',
+                'Stopping the claim does not justify automatically stopping the defence to a counterclaim.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Draw a claim/counterclaim map before applying the rules.',
+                'Explain which issues survive if P cannot pursue the claim.',
+                'Link any reduction or refusal to actual overlapping work.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Classify each party\'s role under r.1(3).',
+                'Assess the same-cause local co-plaintiff.',
+                'Decide whether the counterclaim is defensive or an independent attack.',
+                'Identify unavoidable issue and costs overlap.',
+                'Apply the gateway and fairness separately to each party.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Any counterclaim creates immunity.',
+                'A local nominal company is always enough.',
+                'Original labels control.',
+                'Security stops a party merely defending.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Roles',
+                    'O.23 r.1(3)',
+                    'Includes persons in plaintiff/defendant positions on counterclaims',
+                  ],
+                  [
+                    'Overlap',
+                    'Ai Zhong v Metrofond Ltd [2010] 1 HKLRD 213, para.22',
+                    'Fairness, defensive character and costs which would be incurred anyway matter',
+                  ],
+                  [
+                    'Two attackers',
+                    'Ai Zhong, paras 22(8)-(9), 30-31',
+                    'Protect mere defence and compare attacking parties fairly; outcome is fact-sensitive',
+                  ],
+                  [
+                    'Local co-plaintiff',
+                    'Dongguan Harris Plastic Products Co Ltd v Chan Dai Chung [2001] HKLRD (Yrbk) 132, paras 12-21',
+                    'Local co-plaintiff practice is not inflexible; investigate its actual position',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-company',
+            title: 'Security against a company under s905',
+            summary: 'Use credible financial evidence to establish the corporate gateway, independently of where the company is ordinarily resident.',
+            triggers: {
+              bullets: [
+                'A Hong Kong limited company has little apparent business and no evidence of assets sufficient to meet defence costs.',
+                'An overseas-incorporated company is centrally managed in Hong Kong, so the residence-abroad gateway is disputed.',
+                'D asserts that a company cannot pay but supplies no affidavit or financial material.',
+                'A small issued share capital is treated as conclusive proof that the company has no resources.',
+                'A slide heading refers to s907 although the reproduced statutory text and outline refer to s905.',
+                'A company argues that local residence alone prevents any security order.',
+              ],
+              routes: [
+                {
+                  when: 'The application instead relies on O.23 r.1(1)(a)',
+                  session: 'LG7',
+                  issue: 'security-residence',
+                  label: 'Ordinary residence',
+                },
+                {
+                  when: 'The company says security would prevent a genuine claim',
+                  session: 'LG7',
+                  issue: 'security-timing-stifling',
+                  label: 'Delay and stifling',
+                },
+                {
+                  when: 'The gateway is established and a supported amount is needed',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Amount and terms',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Security against a company under s905',
+                steps: [
+                  {
+                    label: 'Identify the company within the current definition',
+                    detail: 's905(1)(a) requires a company plaintiff; s905(3) defines company as a limited company or a company incorporated outside Hong Kong which is not a re-domiciled company. The latter wording reflects the 2025 amendment reproduced in the outline.',
+                    why: 'The statutory definition answers eligibility for this power; foreign incorporation and ordinary residence answer different questions.',
+                    exam: {
+                      write: 'P falls within s905(3) as [the applicable company category], and is a plaintiff within s905(1)(a).',
+                      trap: 'Copying the s907 typo in B2 slides 6-8 or treating re-domiciliation as a blanket exemption.',
+                    },
+                    points: [
+                      'A re-domiciled company is not automatically outside the limited-company limb; apply the definition rather than reading paragraph (b) alone.',
+                      's357 was the predecessor considered in Akai, not the current provision to put in the margin.',
+                    ],
+                  },
+                  {
+                    label: 'Establish reason to believe inability through credible testimony',
+                    detail: 's905(1)(b) requires credible testimony giving reason to believe the company will be unable to pay D\'s costs if D succeeds. Dongguan Harris illustrates an affidavit-based assessment of the company\'s actual business and resources.',
+                    why: 'A risk supported by evidence is required; the rule does not demand a completed liquidation or permit bare assertion.',
+                    exam: {
+                      write: 'The affidavit and [exhibits] provide credible testimony giving reason to believe P will be unable to pay D\'s costs if D succeeds: s905(1)(b).',
+                      trap: 'Replacing the statutory reason-to-believe test with either speculation or a demand for conclusive proof of insolvency.',
+                    },
+                    points: [
+                      'Identify the likely costs exposure as well as the resources said to be inadequate.',
+                      'Dongguan Harris considered no independent business, no separate premises or employees, and the evidence concerning the local company\'s agency role.',
+                      'Low capital is one fact; it does not itself prove absence of assets or ability to pay.',
+                    ],
+                  },
+                  {
+                    label: 'Keep the corporate power separate from foreign residence',
+                    detail: 'Akai Holdings Ltd v Ernst & Young, CACV 255/2008, 23 April 2009, paras 22-34, construed predecessor s357 purposively to include the relevant overseas limited company ordinarily resident in Hong Kong. The present application is governed by s905.',
+                    why: 'The protection against an impecunious corporate claimant is not made unnecessary by that claimant\'s local management.',
+                    exam: {
+                      write: 'Failure to establish foreign residence under O.23 does not dispose of s905; its company and financial conditions must be assessed independently.',
+                      trap: 'Using the first-instance residence result in Akai as if it ended the appellate corporate-power analysis.',
+                    },
+                    points: [
+                      'Akai\'s historical discussion of registration under Part XI should not be substituted for the current s905(3) text.',
+                      'The rationale identified in Akai is protection of defendants in return for the privilege of limited liability.',
+                    ],
+                  },
+                  {
+                    label: 'Exercise discretion and formulate the protection',
+                    detail: 's905(2)(a) permits sufficient security and s905(2)(b) permits a stay until it is given; an established gateway does not make either an automatic order. Consider the genuine-claim, funding and delay points described in Annex (3) para.32.',
+                    why: 'The Court must protect costs without using the corporate gateway as an automatic means of ending litigation.',
+                    exam: {
+                      write: 'Having considered [the competing circumstances], the Court should [order/refuse] sufficient security under s905(2)(a) and [the proposed stay] under s905(2)(b).',
+                      trap: 'Moving directly from weak finances to dismissal, or awarding the whole untested bill.',
+                    },
+                    points: [
+                      'Address alternative sources of litigation funding on the evidence and avoid treating mere unwillingness to fund as inability.',
+                      'Specify the amount, method, time and stay sought; substantiate the estimate.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The correct current section is s905, despite several s907 slide headings.',
+                'The 2025 definition is reproduced in the upload and confirmed by the gazetted amendment.',
+                'Do not collapse a gateway into the ultimate discretionary decision.',
+                'Neither local residence nor low capital alone decides the application.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Quote the test accurately in substance: credible testimony, reason to believe, inability if D succeeds.',
+                'Connect each financial inference to an affidavit paragraph or exhibit.',
+                'Use Akai for the historical reasoning and s905 for the present power.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the s905(3) company category.',
+                'Prove s905(1)(a)-(b) by credible financial evidence.',
+                'Distinguish the O.23 residence route.',
+                'Address discretion, genuine claim, funding and delay.',
+                'Seek sufficient security and appropriate stay under s905(2).',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Citing s907.',
+                'Asserting inability without evidence.',
+                'Making foreign residence a s905 requirement.',
+                'Using low share capital as the whole proof.',
+                'Automatic dismissal on satisfying the gateway.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Company and evidence',
+                    's905(1)(a)-(b), Companies Ordinance (Cap.622)',
+                    'Company plaintiff and credible testimony giving reason to believe it cannot meet successful defence costs',
+                  ],
+                  [
+                    'Powers',
+                    's905(2)(a); s905(2)(b)',
+                    'Sufficient security and stay until provided',
+                  ],
+                  [
+                    'Definition',
+                    's905(3); Companies (Amendment) (No.2) Ordinance 2025, s71',
+                    'Limited-company limb and amended overseas-company limb',
+                  ],
+                  [
+                    'Financial evidence',
+                    'Dongguan Harris Plastic Products Co Ltd v Chan Dai Chung [2001] HKLRD (Yrbk) 132, paras 13-26',
+                    'Evidence of the company\'s actual business and resources supports the fact-sensitive inquiry',
+                  ],
+                  [
+                    'Historical interpretation',
+                    'Akai Holdings Ltd v Ernst & Young, CACV 255/2008, 23 April 2009, paras 22-34',
+                    'Predecessor s357 applied purposively to the relevant overseas limited company ordinarily resident locally',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-timing-stifling',
+            title: 'Delay, renewed applications and stifling a genuine claim',
+            summary: 'Test the timing of the application and the evidence that security would prevent, rather than merely discourage, a genuine claim.',
+            triggers: {
+              bullets: [
+                'D waits until the pre-trial review to seek substantial security despite knowing the relevant facts much earlier.',
+                'P has already spent heavily preparing for trial and would have to abandon that work if security is demanded immediately.',
+                'A security application was refused and D repeats it without identifying a substantial change.',
+                'P says security will end the claim but gives no candid account of finances.',
+                'A company has no cash itself but may be able to raise litigation funds elsewhere.',
+                'P could provide funds but refuses to do so, describing the demand as stifling.',
+              ],
+              routes: [
+                {
+                  when: 'The objection is strong merits or adequate recoverable assets',
+                  session: 'LG7',
+                  issue: 'security-discretion',
+                  label: 'Merits, assets and enforcement',
+                },
+                {
+                  when: 'The proposed amount or compliance period creates the hardship',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Amount and terms',
+                },
+                {
+                  when: 'The application is under O.59 r.10(5)',
+                  session: 'LG7',
+                  issue: 'security-appeal',
+                  label: 'Security on appeal',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Delay, renewed applications and stifling a genuine claim',
+                steps: [
+                  {
+                    label: 'Explain why the application is being made now',
+                    detail: 'Annex (3) para.5 requires application as soon as reasonably practicable. Waddington Ltd v Chan Chun Hoo Thomas, HCA 3291/2003, 5 July 2013, paras 31-34, refused security for delay without deciding the disputed residence issue.',
+                    why: 'A late demand can force P to fund security simply to avoid wasting completed trial preparation.',
+                    exam: {
+                      write: 'The application was delayed until [stage] despite [earlier knowledge]; Waddington supports refusal where the delay causes [identified trial prejudice].',
+                      trap: 'Treating the pre-trial review as another case-management conference at which any late application is harmless.',
+                    },
+                    points: [
+                      'Identify when the grounds became known and what explanation D offers.',
+                      'Identify actual preparation, costs and disruption, rather than merely counting elapsed months.',
+                    ],
+                  },
+                  {
+                    label: 'Distinguish exceptional later security from routine repetition',
+                    detail: 'Henrik Andersen, para.48, says security during trial is rare and a substantial change in circumstances is needed after a previous refusal before discretion is exercised afresh.',
+                    why: 'A later application needs a reason why the earlier position no longer answers the present costs risk.',
+                    exam: {
+                      write: 'D relies on [substantial change] since the previous refusal; without that change, Henrik Andersen, para.48, weighs against reconsideration.',
+                      trap: 'Reissuing the same application with the same facts, or saying that security can never be ordered during trial.',
+                    },
+                  },
+                  {
+                    label: 'Require candid evidence of genuine stifling',
+                    detail: 'Annex (3) para.31 requires P to be candid about financial resources when alleging that security would stifle a genuine claim. Ability but unwillingness to fund litigation is insufficient.',
+                    why: 'A bare assertion of hardship does not show that a security order would actually prevent the claim from continuing.',
+                    exam: {
+                      write: 'P must explain [resources and available funding] and show how the proposed security would prevent pursuit of the genuine claim, rather than reflect unwillingness to pay.',
+                      trap: 'Treating an empty bank account as the complete stifling inquiry.',
+                    },
+                    points: [
+                      'If P says D caused the impecuniosity, identify the asserted causal link and its evidence.',
+                      'Do not treat the allegation of D\'s wrongdoing as proof that it caused P\'s lack of funds.',
+                    ],
+                  },
+                  {
+                    label: 'For a company, address funding and pressure together',
+                    detail: 'Annex (3) para.32 identifies whether lack of funds is used to pressure D, the merits in general terms, access to outside funding and D\'s delay when exercising discretion under s905.',
+                    why: 'Limited company resources can create a real access problem, but they can also expose D to litigation whose backers take the benefit without the costs risk.',
+                    exam: {
+                      write: 'Under s905 the Court should weigh [genuine inability, outside funding, merits and delay], and decide whether the proposed protection would be unjust on these facts.',
+                      trap: 'Ignoring external funding or conducting a detailed merits trial in the name of stifling.',
+                    },
+                  },
+                  {
+                    label: 'Offer terms which address the proved problem',
+                    detail: 'O.23 r.2 leaves manner, time and terms to the Court. Henrik Andersen\'s treatment of the very short compliance period illustrates why a feasible period matters as well as the amount.',
+                    why: 'A funding difficulty may be addressed by a reasonable period or supported amount; the answer need not be all security or none.',
+                    exam: {
+                      write: 'Alternatively, set [a supported amount] and [a realistic period] under O.23 r.2, having regard to the evidence of how security can be arranged.',
+                      trap: 'Proposing an arbitrary deadline without relating it to the evidence.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Delay may justify refusal even without resolving every gateway dispute.',
+                'A prior refusal and a late first application raise different questions.',
+                'Causation of impecuniosity needs evidence.',
+                'The upload states factors, not an automatic poor-plaintiff exemption.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Build a chronology of knowledge, application and trial preparation.',
+                'Separate inability, unwillingness and availability of outside funding.',
+                'Identify a practical alternative if total refusal is not justified.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Explain timing and prejudice.',
+                'For a renewed application, identify substantial change.',
+                'Require candid financial and funding evidence.',
+                'Assess causation, merits and pressure at the appropriate level.',
+                'Conclude on refusal or workable terms.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'No explanation for a late application.',
+                'Repeating a refused application unchanged.',
+                'Bare assertions of stifling.',
+                'Unwillingness presented as inability.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Delay',
+                    'Waddington Ltd v Chan Chun Hoo Thomas, HCA 3291/2003, 5 July 2013, paras 31-34',
+                    'Delay and trial prejudice can independently justify refusal',
+                  ],
+                  [
+                    'Renewal and trial',
+                    'Henrik Andersen [1997] HKLRD 1360, para.48',
+                    'Trial-stage security is rare; substantial change required after previous refusal',
+                  ],
+                  [
+                    'Stifling evidence',
+                    'LG7 Annex (3) para.31',
+                    'Candour, resources and causation matter; able but unwilling is insufficient',
+                  ],
+                  [
+                    'Corporate discretion',
+                    's905; LG7 Annex (3) para.32',
+                    'Consider external funding, merits, pressure and delay',
+                  ],
+                  [
+                    'Flexible terms',
+                    'O.23 r.2',
+                    'Manner, time and terms are for the Court',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'security-quantum-terms',
+            title: 'Security: the amount, payment terms, stay and default',
+            summary: 'Turn a supported costs estimate into a proportionate order; do not mistake security for judgment on the claim or counterclaim.',
+            triggers: {
+              bullets: [
+                'D asks for its full solicitor-and-client bill without allowing for taxation or early disposal.',
+                'The estimate includes a trial which the proposed procedural route is unlikely to require.',
+                'D seeks both past and future costs but gives no explanation of the stages to be secured.',
+                'The draft requires payment within 18 hours although funding must be obtained elsewhere.',
+                'The proposed order gives D judgment on the counterclaim automatically if security is not paid.',
+                'The draft says security must be given but omits the amount, method, date and effect on proceedings.',
+              ],
+              routes: [
+                {
+                  when: 'The statutory basis or financial gateway remains disputed',
+                  session: 'LG7',
+                  issue: 'security-company',
+                  label: 'Company security under s905',
+                },
+                {
+                  when: 'The compliance demand would prevent a genuine claim',
+                  session: 'LG7',
+                  issue: 'security-timing-stifling',
+                  label: 'Delay and stifling',
+                },
+                {
+                  when: 'The bill includes work equally attributable to D\'s counterclaim',
+                  session: 'LG7',
+                  issue: 'security-counterclaims',
+                  label: 'Counterclaims and the real attacker',
+                },
+                {
+                  when: 'The estimate concerns appeal costs',
+                  session: 'LG7',
+                  issue: 'security-appeal',
+                  label: 'Security on appeal',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Security: the amount, payment terms, stay and default',
+                steps: [
+                  {
+                    label: 'Define the costs and procedural stage to be protected',
+                    detail: 'Annex (3) paras 28-30 require a reasoned calculation supported by a skeleton bill exhibited to D\'s affidavit. Security can include past as well as future costs, but the scope must fit the reasons for the order.',
+                    why: 'The estimate is not simply the largest figure in the file. It must describe the costs exposure for which protection is justified.',
+                    exam: {
+                      write: 'The affidavit exhibits an itemised skeleton bill for [the specified stage], distinguishing [incurred costs] from [anticipated costs].',
+                      trap: 'Asserting a round sum with no breakdown or assuming only future costs can ever be secured.',
+                    },
+                    points: [
+                      'Dongguan Harris para.26 rejects requiring security for a two-day trial unlikely to be needed on the contemplated procedure.',
+                      'Where particular conduct justifies later security, connect the protected costs to that conduct rather than automatically including every earlier cost.',
+                    ],
+                  },
+                  {
+                    label: 'Adjust the estimate to recoverable and realistically incurred costs',
+                    detail: 'Charter View, para.11, discounts for taxation and the possibility of compromise or discontinuance. Henrik Andersen, paras 15-16, ties quantum to the relevant additional costs and applies a taxation discount.',
+                    why: 'Security protects a potential costs recovery; it is not advance reimbursement of every solicitor-and-client charge.',
+                    exam: {
+                      write: 'Reduce the estimate to reflect [taxation, procedural scope and possible earlier disposal], explaining the basis rather than applying an assumed standard percentage.',
+                      trap: 'Treating counsel\'s suggested 30% or 50% deduction in Dongguan Harris as a rule of law.',
+                    },
+                    points: [
+                      'Charter View ordered a further $1.1 million against the requested further $1,675,053 on its facts.',
+                      'Henrik Andersen reduced the relevant $1 million estimate to $700,000; that result is an illustration, not a universal 30% discount.',
+                    ],
+                  },
+                  {
+                    label: 'Specify amount, manner and a realistic time',
+                    detail: 'O.23 r.2 places manner, time and terms in the Court\'s hands. Annex (3) para.26 mentions payment into Court and possible alternatives such as a bond or guarantee; 28 days is an example, not a statutory deadline.',
+                    why: 'An order must be capable of performance and sufficiently precise for compliance to be assessed.',
+                    exam: {
+                      write: 'P shall provide security in [amount] by [approved method] on or before [date], pursuant to O.23 r.2.',
+                      trap: 'Calling 28 days mandatory, or imposing an unexplained deadline which cannot realistically be met.',
+                    },
+                    points: [
+                      'Henrik Andersen para.21 rejected expecting provision within about 18 hours and allowed up to 14 days on those facts.',
+                      'If suggesting a guarantee or other form, explain why it gives adequate protection and seek approval rather than assuming acceptance.',
+                    ],
+                  },
+                  {
+                    label: 'State the stay and distinguish it from dismissal',
+                    detail: 's905(2)(b) expressly permits a stay until security is given; Annex (3) para.26 also describes a stay as the usual term of a security order. Non-payment does not automatically determine the merits.',
+                    why: 'A stay pauses pursuit of the claim while the costs protection is outstanding. A merits judgment is a different consequence.',
+                    exam: {
+                      write: 'The proceedings be stayed until security is provided [under s905(2)(b) where that is the applicable power], with [appropriate liberty to apply].',
+                      trap: 'Turning the security order into immediate judgment for the defendant on an untried counterclaim.',
+                    },
+                  },
+                  {
+                    label: 'Draft any default consequence with particular care',
+                    detail: 'Charter View, para.13, disapproved a term entitling D to enter judgment on failure to provide security and explained the route of applying for dismissal. Henrik Andersen, para.26, gave liberty to apply for dismissal after the revised period.',
+                    why: 'Failure to provide security is not proof that the defendant\'s substantive claim succeeds. The precise sanction and procedure matter.',
+                    exam: {
+                      write: 'In default, the Defendant shall have liberty to apply for dismissal of the claim, rather than an automatic entitlement to judgment on its counterclaim.',
+                      trap: 'Writing automatic dismissal or judgment as the inevitable consequence of every missed security deadline.',
+                    },
+                    points: [
+                      'Annex (3) para.27 describes more stringent default terms in an extreme case; identify an actual court-imposed term before treating it as self-executing.',
+                      'Keep costs of the security application distinct from the security for costs of the underlying action.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The full bill and the amount of security are different figures.',
+                'Staged security, past costs and future costs require explanation on the facts.',
+                'A case-specific discount is not a tariff.',
+                'A stay, an application to dismiss and a judgment on the counterclaim are distinct.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Write the order as amount + method + deadline + stay + default procedure + costs.',
+                'Tie every deduction to a reason.',
+                'Check whether the estimate duplicates counterclaim work.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the stage and exhibit the bill.',
+                'Adjust for recoverability and work likely to be needed.',
+                'Set amount, approved form and realistic time.',
+                'State any stay accurately.',
+                'Specify the proper default procedure and the application\'s costs.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Unitemised demand.',
+                'Automatic percentage discount.',
+                '28 days treated as mandatory.',
+                'Default treated as judgment on the counterclaim.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Terms',
+                    'O.23 r.2',
+                    'Court specifies manner, time and terms',
+                  ],
+                  [
+                    'Statutory stay',
+                    's905(2)(b)',
+                    'Proceedings may be stayed until security is given',
+                  ],
+                  [
+                    'Realistic scope',
+                    'Dongguan Harris [2001] HKLRD (Yrbk) 132, paras 26-27',
+                    'Do not secure costs unlikely to be incurred; counsel\'s suggested percentages are submissions',
+                  ],
+                  [
+                    'Discounts',
+                    'Charter View [1998] 1 HKLRD 469, para.11',
+                    'Allow for taxation and possible compromise or discontinuance',
+                  ],
+                  [
+                    'Costs and time',
+                    'Henrik Andersen [1997] HKLRD 1360, paras 15-16, 21, 26',
+                    'Amount must fit its rationale and compliance time must be realistic',
+                  ],
+                  [
+                    'Default',
+                    'Charter View, para.13',
+                    'Non-payment may support an application for dismissal, not automatic substantive judgment',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Security order drafting frame',
+                bullets: [
+                  'The Plaintiff shall provide security for the Defendant\'s costs of [the identified proceedings/stage] in the sum of [amount] by [method] on or before [date].',
+                  'The proceedings shall be stayed until that security is provided [adapt to the order actually sought or made].',
+                  'In default, the Defendant shall have liberty to apply for dismissal of the claim.',
+                  '[Costs of this application as agreed or ordered.] The amount, period and default mechanism must be justified; this is not a fixed form imposed by the rule.',
+                ],
+              },
+            ],
+          },
+          {
+            id: 'security-appeal',
+            title: 'Security for the costs of an appeal',
+            summary: 'Apply O.59 r.10(5), identify special circumstances and support a proportionate estimate of appellate costs.',
+            triggers: {
+              bullets: [
+                'The successful party below seeks protection for the costs of responding to an appeal by an impecunious appellant.',
+                'An appellant lives abroad and the respondent identifies difficulty or delay in recovering appeal costs.',
+                'The appellant has not paid a small previous costs award, but the evidence of actual means is incomplete.',
+                'The respondent demands $300,000 for the appeal without an itemised estimate.',
+                'An appellant relies only on having obtained leave as proof that security should be refused.',
+                'The respondent applies directly without first writing to request security.',
+              ],
+              routes: [
+                {
+                  when: 'The proceedings are still at first instance',
+                  session: 'LG7',
+                  issue: 'security-gateways',
+                  label: 'First-instance security gateways',
+                },
+                {
+                  when: 'The main dispute concerns the estimate or compliance provisions',
+                  session: 'LG7',
+                  issue: 'security-quantum-terms',
+                  label: 'Amount and terms',
+                },
+                {
+                  when: 'The complaint requires detailed financial or timing evidence',
+                  session: 'LG7',
+                  issue: 'security-timing-stifling',
+                  label: 'Delay and stifling',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Security for the costs of an appeal',
+                steps: [
+                  {
+                    label: 'Identify the appellate power and the correct party roles',
+                    detail: 'O.59 r.10(5) permits the Court of Appeal, in special circumstances, to order just security for appeal costs. Annex (3) paras 33 and 37 distinguishes this power from the more restricted first-instance O.23 gateways.',
+                    why: 'The case has already been decided below and the appeal creates a new costs exposure. The respondent applies, even if it was the plaintiff at trial.',
+                    exam: {
+                      write: 'As respondent to the appeal, [party] seeks security for appeal costs under O.59 r.10(5), relying on [special circumstances].',
+                      trap: 'Applying the four O.23 gateways as an exhaustive appellate test.',
+                    },
+                  },
+                  {
+                    label: 'Make the request first and prove the asserted special circumstances',
+                    detail: 'Annex (3) para.33 says the respondent should first write to the appellant, or risk refusal of the application\'s costs. Chan Man Shun v Sze Ching Lok [2020] HKCA 458, para.6, recognises inability to pay and difficulty or delay in recovery as relevant special circumstances.',
+                    why: 'A prior request may avoid an application, while evidence distinguishes a genuine recovery risk from tactical pressure.',
+                    exam: {
+                      write: 'The respondent requested security on [date] and relies on [financial or enforcement evidence] as special circumstances under O.59 r.10(5).',
+                      trap: 'Treating an unpaid costs award alone as conclusive proof of inability to pay.',
+                    },
+                    points: [
+                      'The outline says the application is normally heard by a single Court of Appeal judge and usually after setting down; do not turn usual practice into an absolute jurisdictional condition.',
+                      'The applicant bears the burden of establishing the financial case.',
+                    ],
+                  },
+                  {
+                    label: 'Assess the evidence and the appellant\'s response',
+                    detail: 'Chan Man Shun, paras 7-10, considered the appellant\'s own financial statements, previous non-payment and failure to answer the financial case in affidavit. Para.6 says that once impecuniosity is shown, countervailing factors are generally for the appellant.',
+                    why: 'A combination of evidence may establish inability even though one unpaid bill alone would not.',
+                    exam: {
+                      write: 'The evidence of [facts] establishes [inability/recovery difficulty]; the appellant must then substantiate [countervailing factors], following Chan Man Shun, para.6.',
+                      trap: 'Shifting the burden before the applicant makes out a case, or treating an application for legal aid as a grant.',
+                    },
+                    points: [
+                      'Annex (3) para.40 describes the usual practice against security from legally aided appellants.',
+                      'Chan Man Shun records an application for legal aid; that did not itself establish legally aided status.',
+                    ],
+                  },
+                  {
+                    label: 'Consider the appeal\'s strength at the proper level',
+                    detail: 'Annex (3) para.35 describes real and substantial merits, a higher threshold than obtaining leave, assessed against the judgment and grounds. Chan Man Shun, para.6, retains discretion to consider strength of appeal.',
+                    why: 'Leave establishes permission to appeal, not immunity from an otherwise justified costs-security order.',
+                    exam: {
+                      write: 'The appellant relies on [the identified error and grounds] as real and substantial merits; the fact of leave alone does not determine the security application.',
+                      trap: 'Equating leave with the stronger merits showing relevant here.',
+                    },
+                  },
+                  {
+                    label: 'Provide an itemised and proportionate estimate',
+                    detail: 'Annex (3) para.41 uses estimated recoverable party-and-party costs. Chan Man Shun, paras 14-16, required a skeleton bill and reduced the amount in light of complexity and work already considered below.',
+                    why: 'An appeal may reuse documents and arguments. The security estimate must not charge as though all work starts again.',
+                    exam: {
+                      write: 'The itemised estimate of [amount] allows for [complexity and reused work]; seek [supported security] rather than the unexplained headline demand.',
+                      trap: 'Using Chan Man Shun\'s reduction to $150,000 as a universal 50% discount.',
+                    },
+                    points: [
+                      'The bill there was $299,700 and included costs of the security application; the Court assessed the actual work and ordered $150,000.',
+                      'Separate costs of the application from the costs exposure of the appeal and explain the scope sought.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An appellant may be the defendant below; use roles at the appeal stage.',
+                'Special circumstances are not limited to foreign residence.',
+                'Failure to pay and inability to pay are different propositions.',
+                'Applying for legal aid does not establish the protection associated with an aided appellant.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Start with the appeal rule, not the first-instance list.',
+                'Put the judgment, grounds and financial evidence side by side.',
+                'Support the amount with a breakdown that accounts for work already done.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify O.59 r.10(5) and the respondent applicant.',
+                'Request security before applying.',
+                'Prove special circumstances.',
+                'Assess countervailing merits and actual legal-aid status.',
+                'Set justified security on an itemised estimate and appropriate terms.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using O.23 as the only appeal power.',
+                'Non-payment equals insolvency.',
+                'Leave equals immunity.',
+                'Unexplained round-sum costs request.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Power',
+                    'O.59 r.10(5)',
+                    'Just security for appeal costs in special circumstances',
+                  ],
+                  [
+                    'Evidence and discretion',
+                    'Chan Man Shun v Sze Ching Lok [2020] HKCA 458, paras 6-10',
+                    'Impecuniosity or recovery difficulty, countervailing factors and a continuing discretion',
+                  ],
+                  [
+                    'Estimate',
+                    'Chan Man Shun, paras 14-16',
+                    'Itemised evidence and proportionate allowance for actual appellate work',
+                  ],
+                  [
+                    'Procedure and merits',
+                    'LG7 Annex (3) paras 33-41',
+                    'Prior request, stronger merits inquiry than leave, actual legal-aid status and party-and-party estimate',
+                  ],
+                ],
+              },
+            },
+          },
+        ],
+      },
+    },
+
     SG1: {
       kind: 'SG',
       date: '2026-09-09/10',
