@@ -11364,6 +11364,1394 @@ window.COURSE_DETAILS.PCLL8010 = {
       },
     },
 
+    // LG8 sources: 2026-2027 Discovery outline (14 pages) and 38-slide deck.
+    // Source map and review: docs/LG8 v1.0 (Discovery source review).md.
+    LG8: {
+      kind: 'LG',
+      authors: [
+        'Alfred Cheng',
+        'Sam Liu',
+      ],
+      objectives: [
+        'Explain the rules and practical sequence of discovery and inspection.',
+        'Draft and evaluate focused requests for further, specific, pre-action and non-party discovery.',
+        'Classify privilege and protect documents against collateral use.',
+        'Draft, oppose and answer interrogatories under O.26.',
+      ],
+      topicsCovered: [
+        'Discovery scope, relevance and electronic records',
+        'Automatic exchange, Form 26, continuous duty and verification',
+        'Without prejudice communications, legal professional privilege and self-incrimination',
+        'Inspection, authenticity and specific discovery',
+        'Implied undertaking, release and variation',
+        'Pre-action, non-party, Norwich Pharmacal and subpoena routes',
+        'Interrogatories under O.26',
+      ],
+      prep: {
+        readings: [
+          'RHC/RDC O.24 and O.26; Appendix A Forms 26 and 27; O.27 r.4.',
+          'HCO ss.41–42; DCO ss.47A–47B; PDSL1.2 where applicable.',
+          'Compagnie Financiere du Pacifique v Peruvian Guano Co (1882) 11 QBD 55; Norwich Pharmacal v C&E Commissioners [1974] AC 133.',
+        ],
+      },
+      prepChecklist: [
+        {
+          id: 'lg8-relevance',
+          label: 'Classify a paper, electronic and formerly held document under O.24',
+        },
+        {
+          id: 'lg8-list',
+          label: 'Draft Form 26 schedules and a response to a missing-document request',
+        },
+        {
+          id: 'lg8-privilege',
+          label: 'Explain an objection without omitting a privileged item from the list',
+        },
+        {
+          id: 'lg8-tools',
+          label: 'Choose a discovery tool or interrogatory for each information gap',
+        },
+      ],
+      keyTakeaways: [
+        'Discover all relevant documents, including adverse and electronic records, subject to any proportionate court limit.',
+        'List and inspect are distinct; privilege normally resists production, not listing.',
+        'Specific discovery requires a pleaded issue, evidence of existence and control, and necessity.',
+        'Documents disclosed under compulsion are restricted to the proceedings unless an exception or release applies.',
+        'Choose statutory pre-action or non-party discovery, Norwich Pharmacal, subpoena or interrogatories by timing, target and purpose.',
+      ],
+      examNotes: {
+        intro: 'Start with the missing item or information: identify the pleaded issue, who holds it, whether proceedings have started, and what order would solve the problem. Then apply the particular relevance, privilege, necessity and procedure rules. Draft relief with an identifiable document class, affidavit obligation and realistic dates; keep discovery, inspection and interrogatories distinct.',
+        issueTypes: [
+          {
+            id: 'scope-relevance',
+            title: 'Discovery: documents, control and relevance',
+            summary: 'Define the document and pleaded issue, test possession or power, then apply relevance and proportionate limits.',
+            triggers: {
+              bullets: [
+                'A quality report contradicts the seller’s pleaded assertion that a computer was sound.',
+                'The client holds the only copy of a contract after shredding the signed original.',
+                'Relevant messages, metadata and cloud files are omitted because nothing was printed.',
+                'A defendant can obtain a document from a group company under an existing right, but says it does not own the file.',
+                'The opponent seeks a very broad search of peripheral issues that would lead only to possible further inquiries.',
+                'A Commercial List claim exceeds HK$8 million and the proposed search spans at least 10,000 documents.',
+              ],
+              routes: [
+                {
+                  when: 'The dispute is about where a document belongs on Form 26 or when the list is due',
+                  session: 'LG8',
+                  issue: 'list-continuing',
+                  label: 'List of Documents and continuing duty',
+                },
+                {
+                  when: 'A listed response appears incomplete and an order for identified documents is sought',
+                  session: 'LG8',
+                  issue: 'specific-discovery',
+                  label: 'Further and specific discovery',
+                },
+                {
+                  when: 'The document is relevant but production is resisted on privilege',
+                  session: 'LG8',
+                  issue: 'privilege-objections',
+                  label: 'Privilege and objections',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Discovery: documents, control and relevance',
+                steps: [
+                  {
+                    label: 'Start with a document and a pleaded issue',
+                    detail: 'Discovery under O.24 concerns documents relevant to the issues defined by the pleadings. Cap.1 s.3 gives a broad definition; recorded information intelligible with equipment also counts.',
+                    why: 'The medium does not decide discoverability. The pleaded dispute gives the relevance inquiry a boundary.',
+                    exam: {
+                      write: 'The [report/message/database record] is a document within O.24 because it records information relevant to the pleaded issue of [issue].',
+                      trap: 'Treating paper as the only document, or searching for an issue the pleadings do not raise.',
+                    },
+                    points: [
+                      'Electronic information can include email, messaging-app records, metadata and cloud-stored information under PDSL1.2.',
+                      'Recordings, microfilm, USB-stored files and databases can be documents if relevant.',
+                    ],
+                  },
+                  {
+                    label: 'Check present or former possession, custody or power',
+                    detail: 'O.24 covers documents now held or controlled and relevant documents formerly possessed. Lonhro and Sun Yuet Tai explain that ownership is not decisive: an existing right to obtain a document from another holder can amount to power.',
+                    why: 'A party cannot exclude a responsive item merely by placing it with someone else or by destroying an original while retaining a copy.',
+                    exam: {
+                      write: 'Although [party] does not own [document], it is discoverable if the evidence establishes custody or a right to obtain it; a former original must be accounted for separately.',
+                      trap: 'Assuming every document held by an affiliate is automatically within power, or that a copy and an original are one item.',
+                    },
+                  },
+                  {
+                    label: 'Apply Peruvian Guano to the real dispute',
+                    detail: 'Compagnie Financiere du Pacifique v Peruvian Guano Co (1882) 11 QBD 55 includes material which may advance one side, harm the other, or fairly lead to a useful train of inquiry.',
+                    why: 'Relevance is wider than documents a party intends to rely on, and adverse material must also be considered.',
+                    exam: {
+                      write: 'The [identified document] is relevant because it may [support/undermine] the pleaded [claim/defence], or fairly lead to [identified inquiry].',
+                      trap: 'Calling a document irrelevant simply because it is adverse or will not be deployed at trial.',
+                    },
+                  },
+                  {
+                    label: 'Ask whether the Court should narrow the search',
+                    detail: 'O.24 r.15A(a), read with O.1A, permits limitation to directly relevant documents. Sunny Tadjudin illustrates case management where the disputed issue is narrow or peripheral and a train-of-inquiry search would be disproportionate.',
+                    why: 'The starting relevance test does not make every potentially useful line of inquiry proportionate.',
+                    exam: {
+                      write: 'Given [narrow/peripheral issue and search burden], limit discovery to documents directly relevant to [defined issue] under O.24 r.15A(a).',
+                      trap: 'Presenting the broad Peruvian Guano test as immune from case management, or treating direct relevance as the default for every O.24 case.',
+                    },
+                  },
+                  {
+                    label: 'Check the electronic discovery direction separately',
+                    detail: 'PDSL1.2 applies to Commercial List actions where a claim or counterclaim exceeds HK$8 million and at least 10,000 documents are to be searched, or where the parties agree or the Court directs. It can also be applied outside that list by application or court direction.',
+                    why: 'The electronic form of a record matters in any case; the direction adds a management framework only where its conditions or a direction apply.',
+                    exam: {
+                      write: 'The proposed electronic search [meets/does not meet] the PDSL1.2 threshold; in any event the relevant electronic records remain within O.24.',
+                      trap: 'Applying the monetary and document thresholds to all discovery, or ignoring electronically stored information below them.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Peruvian Guano is the relevance starting point; O.24 r.15A can narrow it.',
+                'Former possession and a present copy need separate entries in Form 26.',
+                'Practical access without a legal right to obtain a document may raise a factual control question; do not assert automatic power from a corporate relationship alone.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Connect each requested class to a pleaded issue.',
+                'Check where the record is held and the evidence of control.',
+                'Define an electronic search with proportionate scope.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the pleaded issue and the recorded information.',
+                'Apply possession, custody or power to present and former documents.',
+                'Explain relevance under Peruvian Guano.',
+                'Consider an O.24 r.15A limit and PDSL1.2 where applicable.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Equating discoverability with paper ownership.',
+                'Omitting adverse material.',
+                'Using broad relevance without a proportionality analysis.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Document',
+                    'Cap.1 s.3; PDSL1.2',
+                    'Recorded information extends beyond paper, including electronic data and metadata',
+                  ],
+                  [
+                    'Control',
+                    'O.24; Lonhro Ltd v Shell Petroleum Ltd [1980] QB 358; Sun Yuet Tai Ltd v British American Tobacco Ltd CACV 95/1999',
+                    'Possession, custody and power are not limited to ownership',
+                  ],
+                  [
+                    'Relevance',
+                    'Compagnie Financiere du Pacifique v Peruvian Guano Co (1882) 11 QBD 55',
+                    'Support, adverse effect or a fair train of inquiry',
+                  ],
+                  [
+                    'Limitation',
+                    'O.24 r.15A(a); O.1A; Sunny Tadjudin v Bank of America NA HCA 322/2008',
+                    'Court may restrict discovery to directly relevant material for case management',
+                  ],
+                  [
+                    'Electronic framework',
+                    'PDSL1.2',
+                    'Commercial List thresholds, agreement or court direction trigger the direction',
+                  ],
+                ],
+              },
+            },
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'drafting-summons',
+                label: 'Drafting the application summons',
+              },
+            ],
+          },
+          {
+            id: 'list-continuing',
+            title: 'Automatic discovery: Form 26 and continuing duty',
+            summary: 'Exchange a complete, accurately classified List of Documents and update it as further material appears.',
+            triggers: {
+              bullets: [
+                'Pleadings have closed, but neither party has served a list within 14 days.',
+                'A client puts an adverse quality report aside because it weakens its pleaded case.',
+                'The signed original was shredded; a scanned copy remains in the client’s possession.',
+                'A privileged solicitor communication is missing altogether from the list.',
+                'A later search finds relevant emails after both parties have already exchanged lists.',
+                'Before the case management summons, one party asks the other to verify its list by affidavit.',
+              ],
+              routes: [
+                {
+                  when: 'The parties dispute whether an electronic or third-party-held item is a document within O.24',
+                  session: 'LG8',
+                  issue: 'scope-relevance',
+                  label: 'Scope and relevance',
+                },
+                {
+                  when: 'The dispute is whether an identified item can be withheld from production',
+                  session: 'LG8',
+                  issue: 'privilege-objections',
+                  label: 'Privilege and objections',
+                },
+                {
+                  when: 'The list has been exchanged and access or authenticity is now disputed',
+                  session: 'LG8',
+                  issue: 'inspection-authenticity',
+                  label: 'Inspection and authenticity',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Automatic discovery: Form 26 and continuing duty',
+                steps: [
+                  {
+                    label: 'Calculate the automatic exchange',
+                    detail: 'O.24 r.2 provides for exchange of Lists of Documents within 14 days after pleadings close. RHC Appendix A Form 26 and O.24 r.5(1) govern the list.',
+                    why: 'The exchanged list is the starting map of discoverable material. A case management order or special procedure may affect the timetable and should be checked.',
+                    exam: {
+                      write: 'Pleadings closed on [date], so the parties should exchange Form 26 Lists of Documents within the O.24 r.2 period, subject to any applicable order.',
+                      trap: 'Waiting for a specific-discovery application before doing automatic discovery.',
+                    },
+                  },
+                  {
+                    label: 'Populate each schedule correctly',
+                    detail: 'Schedule I Part 1 lists current documents for which production is not objected to; Part 2 lists current documents withheld from production on a stated ground. Schedule II records documents formerly held, including when possession ended.',
+                    why: 'Listing a document is distinct from allowing inspection of it. A missing document must still be accounted for if it was previously held.',
+                    exam: {
+                      write: 'Place [current unobjected item] in Schedule I Part 1, [objected item] in Part 2, and [former original] in Schedule II with the relevant former-possession details.',
+                      trap: 'Putting a privileged document nowhere, or describing a destroyed original as if the surviving copy were the same physical item.',
+                    },
+                    points: [
+                      'A surviving copy and a destroyed original are separate documents: list the copy under current possession and account for the original under former possession.',
+                      'Describe each document or bundle sufficiently to identify it, while keeping the list concise.',
+                    ],
+                  },
+                  {
+                    label: 'Advise on the full and continuing search',
+                    detail: 'Discovery includes material helpful or harmful to the client. The obligation continues after the first list; Vernon v Bosley (No.2) supports a supplemental list when new relevant documents enter possession.',
+                    why: 'A selective initial search or a later undisclosed acquisition defeats the purpose of the process.',
+                    exam: {
+                      write: 'The client must search for both favourable and adverse [specified categories] and serve a supplemental list for later-received relevant material.',
+                      trap: 'Allowing the client to decide which adverse documents the opponent should see.',
+                    },
+                    points: [
+                      'Ask about emails, messaging apps, drives, databases, archives and documents held by others that the client can obtain.',
+                      'Probe for missing categories rather than merely listing the bundle initially handed to the solicitor.',
+                    ],
+                  },
+                  {
+                    label: 'Deal with a requested verifying affidavit',
+                    detail: 'Under O.24 rr.2(7) and 5(3), a request made before the case management summons may require an affidavit in Appendix A Form 27 verifying the truth and accuracy of the list within 14 days.',
+                    why: 'Verification puts the party on oath as to the completeness and accuracy of the list.',
+                    exam: {
+                      write: 'The request was made before the case management summons; [party] must provide a Form 27 verifying affidavit within the O.24 period.',
+                      trap: 'Confusing the 14-day period for the initial list with the separate 14-day period after a qualifying verification request.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A privilege objection affects production, not the duty to list.',
+                'List present and former possession separately; identify what happened to an original.',
+                'A supplemental list is needed for later relevant material.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Take search instructions across paper and electronic sources.',
+                'Classify each item under the correct Form 26 schedule.',
+                'Check the date and status of any verification request.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Fix the close-of-pleadings date and any directions.',
+                'Identify relevant documents now or formerly in possession, custody or power.',
+                'Complete Schedule I Parts 1 and 2 and Schedule II.',
+                'Exchange the list; verify by Form 27 when required.',
+                'Continue searching and serve supplements.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Not listing privileged items.',
+                'Treating original and copy as one document.',
+                'Concealing harmful records.',
+                'Stopping discovery after the first exchange.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Automatic discovery',
+                    'O.24 r.2',
+                    'Exchange lists within 14 days after pleadings close',
+                  ],
+                  [
+                    'List form',
+                    'O.24 r.5(1); Appendix A Form 26',
+                    'Enumerate and sufficiently describe relevant documents',
+                  ],
+                  [
+                    'Objection',
+                    'O.24 r.5(2)',
+                    'List objected documents in Schedule I Part 2; a general class description can suffice for privilege',
+                  ],
+                  [
+                    'Verification',
+                    'O.24 rr.2(7), 5(3); Appendix A Form 27',
+                    'Affidavit verifying the list on a qualifying request',
+                  ],
+                  [
+                    'Continuing obligation',
+                    'Vernon v Bosley (No.2) [1997] 3 WLR 683',
+                    'Supplement the list when later relevant documents arise',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'privilege-objections',
+            title: 'Discovery objections: privilege and waiver',
+            summary: 'Classify the objection document by document, list withheld material, and separate true privilege from confidentiality alone.',
+            triggers: {
+              bullets: [
+                'A negotiation letter is labelled “without prejudice” although it contains no genuine settlement proposal.',
+                'An internal note was prepared confidentially to obtain legal advice from an in-house lawyer.',
+                'A client sends an old, unprivileged contract to solicitors with a privileged covering letter.',
+                'A party claims that every copy made for lawyers is privileged even though it still holds the unprivileged original.',
+                'Privileged advice is deliberately used in court to support a pleaded position.',
+                'A disclosure order seeks information said to incriminate the responding individual, but no affidavit objection is made when supplying it.',
+              ],
+              routes: [
+                {
+                  when: 'The real problem is where the withheld document must be listed',
+                  session: 'LG8',
+                  issue: 'list-continuing',
+                  label: 'Form 26 and continuing duty',
+                },
+                {
+                  when: 'The opponent already received the document and wants to use it in another case',
+                  session: 'LG8',
+                  issue: 'implied-undertaking',
+                  label: 'Collateral use of documents',
+                },
+                {
+                  when: 'The protected information is demanded by questions rather than by production of documents',
+                  session: 'LG8',
+                  issue: 'interrogatories',
+                  label: 'Interrogatories',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Discovery objections: privilege and waiver',
+                steps: [
+                  {
+                    label: 'Test the without-prejudice claim by substance',
+                    detail: 'Genuine negotiations aimed at settlement can be protected without the label; a label alone is ineffective. Unilever and Libertarian Investments recognise a narrow unambiguous-impropriety exception.',
+                    why: 'The purpose and entire content of the communication matter more than its heading.',
+                    exam: {
+                      write: 'The [communication] is [protected/not protected] because its substance [is/is not] a genuine attempt to settle; [identified conduct] does not become protected merely by a label.',
+                      trap: 'Treating “without prejudice” as a magic stamp or using the impropriety exception for ordinary hard bargaining.',
+                    },
+                  },
+                  {
+                    label: 'Identify which legal professional privilege is claimed',
+                    detail: 'Legal advice privilege concerns confidential lawyer–client communications for legal advice, including the advice process recognised in CITIC Pacific (No.2). Litigation privilege concerns communications with third parties for the dominant purpose of existing or contemplated litigation.',
+                    why: 'Different communications satisfy different tests; confidentiality and a lawyer’s presence alone are insufficient.',
+                    exam: {
+                      write: '[Document] falls within [legal advice/litigation] privilege because [participants, confidential purpose and, if relevant, dominant litigation purpose].',
+                      trap: 'Automatically treating business advice from in-house counsel, or every litigation-era document, as legally privileged.',
+                    },
+                    points: [
+                      'An in-house lawyer’s legal work can attract advice privilege; business or administrative communications do not become privileged for that reason alone.',
+                      'Third-party confidence alone does not resist discovery: Alfred Crompton (No.2).',
+                    ],
+                  },
+                  {
+                    label: 'Separate an old source document from a privileged communication',
+                    detail: 'Ventouris and Wong Wai Keung explain that enclosing or collecting a pre-existing unprivileged document for lawyers does not automatically privilege the document itself. Sumitomo addresses a narrow situation in which a newly created copy may attract privilege.',
+                    why: 'Privilege protects the qualifying communication, not the underlying facts or every pre-existing attachment.',
+                    exam: {
+                      write: 'The covering advice communication may be privileged, but [pre-existing contract] remains discoverable unless it has an independent ground of objection.',
+                      trap: 'Withholding the only source record simply because it was later sent to solicitors.',
+                    },
+                    points: [
+                      'For a claimed privileged copy, establish why it was created and whether the party ever possessed the unprivileged original; do not assume copying changes status.',
+                    ],
+                  },
+                  {
+                    label: 'Test waiver or loss before maintaining the objection',
+                    detail: 'Express consent can be confined to a purpose; deliberate use in court can waive privilege for related subject matter. MK v Director of Legal Aid shows waiver by authorised disclosure of privileged financial information.',
+                    why: 'A privilege analysis can change through a party’s own conduct after the document was created.',
+                    exam: {
+                      write: 'Privilege in [material] was [retained/waived] because [limited consent, authorised disclosure or deliberate reliance], with the scope of waiver analysed by subject matter.',
+                      trap: 'Assuming every disclosure waives all privilege, or that a limited consent can never have consequences.',
+                    },
+                  },
+                  {
+                    label: 'Claim self-incrimination at the correct time and list what is withheld',
+                    detail: 'Evidence Ordinance s.65(1)(a) and HCO s.44A frame the self-incrimination issue and its intellectual-property exception. Techtronic v Fauteux requires the objection when potentially incriminating material is supplied. O.24 r.5(2) still requires privileged documents to be listed in Schedule I Part 2.',
+                    why: 'The Court and opponent need notice of the claim, while production can be withheld if the objection is valid.',
+                    exam: {
+                      write: 'Claim [specific privilege] by affidavit at the relevant stage, list [withheld class] in Schedule I Part 2, and state the production objection without revealing privileged content.',
+                      trap: 'Omitting the document from the list, revealing its privileged substance in the description, or attempting a retrospective self-incrimination objection.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Privilege normally prevents production, not listing.',
+                'A document confidential to a third party is not privileged merely for that reason.',
+                'A prior document can remain discoverable despite a privileged covering communication.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify participants, purpose and chronology for each objection.',
+                'Assess any later consent, use or waiver.',
+                'Record a sufficiently general Form 26 Part 2 description.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the document and claimed objection.',
+                'Test settlement purpose or the relevant LPP limb.',
+                'Separate pre-existing documents, copies and communications.',
+                'Check waiver and any self-incrimination timing.',
+                'List withheld items and state the production objection.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Relying on the “without prejudice” label alone.',
+                'Privilege asserted over all lawyer-adjacent material.',
+                'Treating confidentiality as LPP.',
+                'Omitting withheld documents from the list.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Settlement',
+                    'Unilever Plc v Procter & Gamble Co [2000] 1 WLR 2436; Libertarian Investments Ltd v Hall (2013) 16 HKCFAR 681',
+                    'Genuine settlement context and narrow unambiguous-impropriety exception',
+                  ],
+                  [
+                    'Advice privilege',
+                    'CITIC Pacific Ltd v Secretary for Justice (No.2) [2015] 4 HKLRD 20',
+                    'Confidential lawyer–client legal-advice process, including qualifying internal preparation',
+                  ],
+                  [
+                    'Litigation privilege',
+                    'Tam Yuk Kwan v Chu Cheuk To [1989] 1 HKC 23; Rockefeller & Co Inc v SJ [2000] 3 HKLRD 351',
+                    'Dominant litigation purpose for relevant third-party communications',
+                  ],
+                  [
+                    'Pre-existing documents',
+                    'Ventouris v Mountain [1991] 1 WLR 607; Wong Wai Keung v Commissioner of Police [2022] HKCFI 374',
+                    'Delivery or collection for lawyers does not itself privilege earlier unprivileged documents',
+                  ],
+                  [
+                    'Copies',
+                    'Sumitomo Corporation v Credit Lyonnais Rouse Ltd [2001] CP Rep 72',
+                    'Narrow circumstances in which a separately created copy may be protected',
+                  ],
+                  [
+                    'Waiver',
+                    'CITIC Pacific Ltd v SJ [2012] 2 HKLRD 701; Great Atlantic Insurance v Home Insurance [1981] 1 WLR 529; MK v Director of Legal Aid (2024) 27 HKCFAR 204',
+                    'Limited consent, deliberate use and authorised disclosure require distinct scope analysis',
+                  ],
+                  [
+                    'Self-incrimination',
+                    'Evidence Ordinance s.65(1)(a); HCO s.44A; Techtronic Product Development v Fauteux [2024] HKCFI 518',
+                    'Specific timely assertion and statutory exception',
+                  ],
+                  [
+                    'Listing withheld items',
+                    'O.24 r.5(2)',
+                    'Privilege is a production objection; use Schedule I Part 2 with a sufficient general class description',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'inspection-authenticity',
+            title: 'Inspection, copies and authenticity',
+            summary: 'After list exchange, seek access through the correct O.24 route and deal with the separate O.27 authenticity timetable.',
+            triggers: {
+              bullets: [
+                'A listed contract is not privileged, but the listing party refuses to let the opponent inspect it.',
+                'An email is mentioned in a witness statement although it does not appear on the exchanged list.',
+                'The recipient requests a copy of an inspectable document and agrees to reasonable photocopying charges.',
+                'A listed signature may be forged; the recipient inspects the document but sends no authenticity notice.',
+                'Twenty-one days have passed since inspection, but the period limited for inspection expired later.',
+              ],
+              routes: [
+                {
+                  when: 'The problem is incomplete initial classification of documents',
+                  session: 'LG8',
+                  issue: 'list-continuing',
+                  label: 'List of Documents',
+                },
+                {
+                  when: 'The opponent has not disclosed the item at all',
+                  session: 'LG8',
+                  issue: 'specific-discovery',
+                  label: 'Further and specific discovery',
+                },
+                {
+                  when: 'The listing party asserts a genuine privilege objection to production',
+                  session: 'LG8',
+                  issue: 'privilege-objections',
+                  label: 'Privilege and objections',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Inspection, copies and authenticity',
+                steps: [
+                  {
+                    label: 'Distinguish listing from inspection',
+                    detail: 'O.24 r.9 gives inspection rights after lists are served. Under r.11A, copies may be requested on an undertaking to pay reasonable copying charges; r.11 supplies the court route for refused inspection.',
+                    why: 'A disclosed item is not necessarily already physically available to examine, and production objections must be assessed separately.',
+                    exam: {
+                      write: 'Following service of the list, [party] should request inspection under O.24 r.9 and, on the required costs undertaking, copies under r.11A; refusal may be challenged under r.11.',
+                      trap: 'Describing list service as completed inspection, or seeking a fresh discovery order when only access to a listed item is needed.',
+                    },
+                  },
+                  {
+                    label: 'Use the referred-document route when needed',
+                    detail: 'O.24 r.10 permits inspection requests for documents referred to in pleadings, affidavits, witness statements or expert reports. The recipient must respond within 4 days stating whether production is objected to.',
+                    why: 'Reference to a document provides a distinct route even when the list itself is incomplete or disputed.',
+                    exam: {
+                      write: '[Document] is referred to in [pleading/affidavit/statement/report]; request inspection under O.24 r.10 and require the 4-day response.',
+                      trap: 'Ignoring the r.10 route because the document does not appear in the list.',
+                    },
+                  },
+                  {
+                    label: 'Preserve an authenticity objection on time',
+                    detail: 'Under O.27 r.4, listed originals and copies are deemed authentic unless authenticity is denied in the pleadings or a notice is served before the end of 21 days after inspection or the time limited for inspection, whichever is later.',
+                    why: 'Failure to preserve authenticity can remove a proof issue; it is separate from whether the document is admissible for another reason.',
+                    exam: {
+                      write: 'Because authenticity of [document] is disputed, [party] must rely on the pleaded denial or serve the O.27 r.4(2) notice within the later applicable 21-day period.',
+                      trap: 'Assuming inspection itself disputes authenticity, or counting only from actual inspection when the later inspection-limit date governs.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An inspection request differs from a request for further discovery.',
+                'The deemed admission concerns authenticity, subject to the rule, and does not waive every other evidence objection.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify the list or filed document that triggers the route.',
+                'Record inspection dates and any later inspection-limit date.',
+                'Serve the correct request or notice promptly.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Check whether the document is listed or merely referred to.',
+                'Use O.24 r.9/r.10 and request copies where appropriate.',
+                'If inspection is refused, seek an O.24 r.11 order.',
+                'Decide whether authenticity is denied and diarise O.27 r.4.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Conflating discovery with inspection.',
+                'Missing the 4-day response to a r.10 request.',
+                'Missing the authenticity-notice deadline.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'List inspection',
+                    'O.24 rr.9, 11, 11A',
+                    'Access, copying on costs undertaking, and order if refused',
+                  ],
+                  [
+                    'Referred documents',
+                    'O.24 r.10',
+                    'Inspection route for documents mentioned in specified litigation materials; 4-day response',
+                  ],
+                  [
+                    'Authenticity',
+                    'O.27 r.4(1)-(2)',
+                    'Deemed authenticity unless pleaded denial or timely notice; later 21-day trigger governs',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'specific-discovery',
+            title: 'Further lists and specific discovery',
+            summary: 'Choose a further and better list or a targeted O.24 r.7 application, then prove relevance, likely existence, control and necessity.',
+            triggers: {
+              bullets: [
+                'A pleading refers to invoices, but no invoices appear in the opponent’s List of Documents.',
+                'A supplier ordinarily generates signed delivery notes; the opponent denies having any without explaining its search.',
+                'A proposed summons demands every document mentioning the defendant’s business over ten years.',
+                'The applicant wants files to see whether it can invent a new allegation not pleaded in the action.',
+                'After an order, an affidavit says the requested contract never existed, but an admission in a pleading points to it.',
+                'A confidentiality objection is raised to a very large class of otherwise relevant documents.',
+              ],
+              routes: [
+                {
+                  when: 'The ordinary post-pleadings list has not yet been exchanged',
+                  session: 'LG8',
+                  issue: 'list-continuing',
+                  label: 'Automatic discovery',
+                },
+                {
+                  when: 'The item is already listed and the dispute is only about access',
+                  session: 'LG8',
+                  issue: 'inspection-authenticity',
+                  label: 'Inspection of listed documents',
+                },
+                {
+                  when: 'The central issue is whether the proposed documents match a pleaded issue',
+                  session: 'LG8',
+                  issue: 'scope-relevance',
+                  label: 'Relevance and proportionality',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Further lists and specific discovery',
+                steps: [
+                  {
+                    label: 'Select the remedy and request it first',
+                    detail: 'O.24 r.3(2) supports a further and better list where the pleadings, existing list or listed documents reveal an omission. O.24 r.7 addresses specified documents or identifiable classes. Ask by correspondence before issuing a summons if voluntary correction is possible.',
+                    why: 'A gap in an existing list and a targeted demand for a particular class need different framing, but both should avoid unnecessary court cost.',
+                    exam: {
+                      write: 'The [pleading/list/document] indicates [missing class]; request a further list under O.24 r.3(2), or seek specified discovery under r.7 if [identified document/class] remains withheld.',
+                      trap: 'Using an unparticularised request for “all documents” or going straight to court without a focused request.',
+                    },
+                  },
+                  {
+                    label: 'Connect the class to an issue already pleaded',
+                    detail: 'The applicant bears the Peruvian Guano relevance burden for the pleaded dispute. Allington Investments rejects using an irrelevant pleaded averment to manufacture discovery; a search for a basis to plead a new allegation is fishing.',
+                    why: 'The order is for documents needed to resolve the existing case, not to look for a new case or merely damage credibility.',
+                    exam: {
+                      write: '[Document class] bears on the pleaded [issue] because [specific link]; the application does not seek material solely to generate another allegation.',
+                      trap: 'Asserting relevance because a wide request might reveal some wrongdoing.',
+                    },
+                    points: [
+                      'A request only to impeach the opponent’s credit is not enough if it has no proper link to the matters in question.',
+                    ],
+                  },
+                  {
+                    label: 'Establish likely existence and possession, custody or power',
+                    detail: 'Union Bank of India accepts probability from surrounding circumstances or ordinary business practice as evidence that the specified record exists. O.24 r.7 also requires a basis for believing it is or was in the opponent’s possession, custody or power.',
+                    why: 'The Court needs a reasoned inference about this class and this holder, not a bare suspicion.',
+                    exam: {
+                      write: '[Invoices/delivery notes] probably exist because [transaction and ordinary record practice], and [party] likely controls them because [identified business relationship or admission].',
+                      trap: 'Demanding proof of an exact file name when a sufficiently identified class will do, or asserting existence without evidence.',
+                    },
+                  },
+                  {
+                    label: 'Prove necessity and proportionate scope',
+                    detail: 'O.24 r.8(2) requires an order necessary for fair disposal or saving costs. Sunny Tadjudin applies O.1A objectives; an oppressive volume or peripheral issue can justify refusal or narrowing, while confidentiality may matter to the manner of production under Tullett Prebon.',
+                    why: 'Even relevant and likely documents should not create needless or disproportionate burden.',
+                    exam: {
+                      write: 'A limited order for [class/date range/custodian] is necessary to resolve [issue] or save [identified costs]; broader production would be disproportionate.',
+                      trap: 'Treating confidentiality alone as privilege, or ignoring a narrower search that would answer the issue.',
+                    },
+                  },
+                  {
+                    label: 'Draft executable relief and deal with the answer',
+                    detail: 'Identify the document or class in the summons and seek an affidavit as to present or former possession, with a deadline and costs term. If the response denies existence, Lee Sai Nam treats the affidavit as conclusive for discovery unless admissions, the list, discovered records or another listed inconsistency show error or insufficiency.',
+                    why: 'Precise relief allows compliance and a meaningful challenge; an unsupported suspicion is not enough to reopen the search.',
+                    exam: {
+                      write: 'Within [period], [party] shall file and serve an affidavit stating whether [identified document/class] is or has been in its possession, custody or power, and if no longer held, when and how possession ended; costs [as sought].',
+                      trap: 'Calling every denial conclusive despite contrary admissions, or expecting repeated interlocutory applications on mere disagreement.',
+                    },
+                    points: [
+                      'If no recognised contradiction appears, address any disputed truth of the affidavit through cross-examination at trial rather than an endless discovery loop.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Specify documents by class, category, period and subject matter.',
+                'Existence may be inferred from business practice, but the inference must be explained.',
+                'The necessity and proportionality test is separate from bare relevance.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Read the pleadings against the list for concrete gaps.',
+                'Draft a focused correspondence request before applying.',
+                'Support each limb with affidavit evidence.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Decide r.3(2) further list or r.7 specific documents.',
+                'Identify the pleaded issue and relevant class.',
+                'Evidence likely existence and control.',
+                'Explain necessity, cost and scope.',
+                'Draft a precise summons and test any denying affidavit against recognised contradictions.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Fishing to create a new pleaded claim.',
+                'Unidentified classes or excessive time span.',
+                'No evidence of existence or control.',
+                'Treating a denial as always unchallengeable.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Further list',
+                    'O.24 r.3(2)',
+                    'Existing list, pleadings or discovered documents indicate omission',
+                  ],
+                  [
+                    'Specific order',
+                    'O.24 r.7',
+                    'Documents or identifiable class with connection to the respondent',
+                  ],
+                  [
+                    'Relevance',
+                    'Peruvian Guano (1882) 11 QBD 55; Allington Investments v First Pacific Bancshares [1995] 2 HKC 139',
+                    'Apply pleaded issues; reject manufactured relevance and fishing',
+                  ],
+                  [
+                    'Existence',
+                    'Union Bank of India v General Nice Resources (HK) Ltd HCA 299/2007',
+                    'Probability can be inferred from circumstances and ordinary business practice',
+                  ],
+                  [
+                    'Necessity',
+                    'O.24 r.8(2); O.1A; Sunny Tadjudin HCA 322/2008',
+                    'Fair disposal or cost saving with proportionality',
+                  ],
+                  [
+                    'Confidentiality',
+                    'Tullett Prebon (HK) Ltd v Chan Yeung Fong Nick HCA 2197/2009',
+                    'Consider confidentiality in tailoring discovery',
+                  ],
+                  [
+                    'Denying affidavit',
+                    'Lee Sai Nam v Li Shu Chung HCA 1711/2009',
+                    'Discovery denial generally stands unless recognised contrary material exposes error',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'implied-undertaking',
+            title: 'Use of disclosed documents and variation of orders',
+            summary: 'Protect documents received under compulsion, identify any open-court exception, and seek a justified release or variation by summons.',
+            triggers: {
+              bullets: [
+                'A party sends documents obtained on discovery to a business rival for use outside the action.',
+                'Solicitors want to use an opponent’s discovered bank records in related overseas proceedings.',
+                'A document has been read by the judge in preparation for deciding the case, but nobody read it aloud.',
+                'The applicant seeks release from the undertaking to trace assets in another action.',
+                'Compliance with a discovery order proves unexpectedly difficult because its document class is too wide.',
+                'A party asks the same judge simply to reverse an earlier specific-discovery decision without identifying sufficient cause.',
+              ],
+              routes: [
+                {
+                  when: 'The issue is whether the opponent must produce documents in the first place',
+                  session: 'LG8',
+                  issue: 'specific-discovery',
+                  label: 'Specific discovery',
+                },
+                {
+                  when: 'The issue is whether a document can be withheld as privileged',
+                  session: 'LG8',
+                  issue: 'privilege-objections',
+                  label: 'Privilege and objections',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Use of disclosed documents and variation of orders',
+                steps: [
+                  {
+                    label: 'Identify the collateral-use restriction and who is bound',
+                    detail: 'The recipient of documents disclosed on general or specific discovery gives an implied undertaking to use them only for the proceedings. Crest Homes and Leung Hong Wah extend the constraint to solicitors, subsequent holders and information derived from the material.',
+                    why: 'Compelled access is given for litigation fairness, not private exploitation or outside publicity.',
+                    exam: {
+                      write: '[Party and advisers] may use [disclosed records and their information] for this action; proposed [external use] requires an applicable exception or release.',
+                      trap: 'Assuming only the named party is bound, or that a paraphrase of a disclosed document can be freely shared.',
+                    },
+                  },
+                  {
+                    label: 'Check whether the open-court rule has ended the undertaking',
+                    detail: 'O.24 r.14A addresses a document read to or by the Court or referred to in open court. The Cambridgeshire, Derby, SmithKline and Barings illustrate oral reading, reference in submissions and judicial reading for preparation or decision.',
+                    why: 'The relevant event is how the document reached the Court, not simply that a hearing took place.',
+                    exam: {
+                      write: '[Document] was [read/referred to] in [identified open-court manner]; assess O.24 r.14A before asserting continuing collateral-use restriction.',
+                      trap: 'Treating every disclosed document as released after any public hearing, or assuming it must have been read aloud.',
+                    },
+                  },
+                  {
+                    label: 'Seek an exceptional release for other use',
+                    detail: 'Apply by summons before collateral use if the undertaking still applies. SJ v FTCW, Miller v Scorrey and Techtronic v Fauteux require cogent, persuasive reasons and special circumstances; Unicredit Bank Austria illustrates serious fraud and public-interest considerations.',
+                    why: 'The Court controls exceptions because routine release would undermine compelled discovery.',
+                    exam: {
+                      write: 'For [defined parallel proceeding/tracing purpose], seek release by summons, explaining [special circumstances] and tightly limiting the documents and use.',
+                      trap: 'Assuming a related foreign case automatically permits use or that convenience alone justifies release.',
+                    },
+                  },
+                  {
+                    label: 'If the production order itself is untenable, seek variation',
+                    detail: 'O.24 r.17 permits revocation or variation on sufficient cause. Chan May May illustrates narrowing an overwide order where compliance proved difficult; Bruce James Stinson cautions against using the application merely to reargue the original decision.',
+                    why: 'A tailored change to an unworkable order differs from a repeat attempt to reverse an unfavourable ruling.',
+                    exam: {
+                      write: 'The Court should vary [defined part] under O.24 r.17 because [new or demonstrated compliance difficulty] is sufficient cause, while preserving [necessary discovery].',
+                      trap: 'Treating variation as an appeal or ignoring a workable narrower form.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Check the undertaking before sharing or reusing discovered information.',
+                'Open-court use is document specific.',
+                'A challenge to scope belongs under r.17; collateral use belongs under r.14A or a release application.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Record where each disclosed record has been used in court.',
+                'Identify all people receiving documents.',
+                'Draft a narrow proposed release or variation.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the document and proposed use.',
+                'Apply the implied undertaking and O.24 r.14A.',
+                'If still bound, prove exceptional grounds for a summons seeking release.',
+                'If the order is too broad, show sufficient cause for O.24 r.17 variation.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Using an opponent’s documents for commercial leverage.',
+                'Treating related litigation as automatic release.',
+                'Rearguing an order without changed or sufficient cause.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Undertaking',
+                    'Crest Homes Plc v Marks [1987] 1 AC 829; Leung Hong Wah Andy v Shum Wang Chiu [2021] HKCU 1599',
+                    'Restricts collateral use by recipient and others holding the disclosed material',
+                  ],
+                  [
+                    'Open court',
+                    'O.24 r.14A; The Cambridgeshire [1989] QB 155; Derby & Co Ltd v Weldon (1988) The Times',
+                    'Reading or reference to the Court affects the undertaking',
+                  ],
+                  [
+                    'Exceptional release',
+                    'SJ v FTCW [2014] 6 HKC 285; Techtronic v Fauteux [2024] HKCFI 518',
+                    'Cogent special circumstances needed for collateral use',
+                  ],
+                  [
+                    'Variation',
+                    'O.24 r.17; Chan May May v Raymond Yu DCPI 94/2013; Bruce James Stinson v Gu Ming Gao HCA 2352/2012',
+                    'Sufficient cause permits narrowing; it is not a routine rehearing',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'preaction-nonparty',
+            title: 'Pre-action and non-party statutory discovery',
+            summary: 'Choose HCO s.41 before proceedings or s.42 against a non-party after commencement; prove the document link and procedural route.',
+            triggers: {
+              bullets: [
+                'A potential claimant needs documents from its expected defendant before issuing proceedings.',
+                'After a writ is issued, a third-party organisation holds records relevant to the pleaded dispute.',
+                'A claimant uses the ordinary broad train-of-inquiry test for a pre-action request against a prospective party.',
+                'An applicant wants to commence the s.41 request by interlocutory summons in a case that does not yet exist.',
+                'The affidavit identifies the records but gives no basis for believing the prospective defendant or third party has them.',
+              ],
+              routes: [
+                {
+                  when: 'The action already exists and the documents are sought from an existing party',
+                  session: 'LG8',
+                  issue: 'specific-discovery',
+                  label: 'Specific discovery against a party',
+                },
+                {
+                  when: 'The immediate need is identifying an unknown wrongdoer or compelling a witness at trial',
+                  session: 'LG8',
+                  issue: 'alternative-tools',
+                  label: 'Norwich Pharmacal and trial subpoena',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Pre-action and non-party statutory discovery',
+                steps: [
+                  {
+                    label: 'Classify timing, respondent and statutory power',
+                    detail: 'HCO s.41 (DCO s.47A) concerns discovery before action from a likely party to the future proceedings. HCO s.42 (DCO s.47B) concerns a person outside an existing action.',
+                    why: 'Using the wrong statute obscures what the Court must find about the proposed case and respondent.',
+                    exam: {
+                      write: '[Applicant] seeks [pre-action/non-party] discovery under [HCO s.41/s.42 or the District Court counterpart] because [timing and respondent’s position].',
+                      trap: 'Using post-action party discovery under O.24 r.7 against a stranger to the case.',
+                    },
+                  },
+                  {
+                    label: 'Apply the correct document threshold',
+                    detail: 'For s.41, documents must be directly relevant to an issue arising or likely to arise from the potential claim, such as records likely to be relied on or that support or adversely affect a party. For s.42, relevance to an issue in the existing claim is broader, subject to O.24 r.15A limits.',
+                    why: 'Pre-action discovery should not become an exploratory fishing exercise before the pleaded dispute exists.',
+                    exam: {
+                      write: '[Specified records] are directly relevant to [anticipated issue] under s.41 because [link]; alternatively, the existing [pleaded issue] supports s.42 relevance, subject to proportionate limits.',
+                      trap: 'Applying the ordinary train-of-inquiry limb without distinction to s.41.',
+                    },
+                  },
+                  {
+                    label: 'Use O.24 r.7A and support the application',
+                    detail: 'The s.41 application is by originating summons; s.42 is by summons after proceedings commence. A supporting affidavit must identify the documents and relevance, likely possession/custody/power, and for s.41 the basis on which the respondent is likely to be a party to subsequent proceedings.',
+                    why: 'A document demand made against someone outside the pleadings needs a grounded factual basis and proper service.',
+                    exam: {
+                      write: 'The supporting affidavit identifies [document class], [anticipated/existing issue], [why respondent likely has it] and, for s.41, [why respondent likely joins the later claim].',
+                      trap: 'Omitting the expected-party link in a pre-action case or serving a s.42 application as if the non-party were already a litigant.',
+                    },
+                  },
+                  {
+                    label: 'Tailor the order and deal with protection',
+                    detail: 'O.24 r.7A permits terms, including security for the respondent’s costs; the order requires an affidavit about present or former control and relevant production. A non-party’s privacy interests do not automatically defeat otherwise justified discovery.',
+                    why: 'The Court can secure fair compliance without treating third parties as ordinary litigants.',
+                    exam: {
+                      write: 'Order [respondent] to state by affidavit whether [defined class] is or was within its control and produce the responsive documents on [just terms].',
+                      trap: 'Assuming a personal-data concern categorically bars a justified s.42 request.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The respondent to s.41 is a likely future party; the s.42 target is a non-party to an existing case.',
+                'A narrower direct-relevance test applies before action.',
+                'Use the corresponding DCO provisions in District Court proceedings.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify timing and the proposed parties before citing a section.',
+                'Describe records by class and explain the issue they bear on.',
+                'Address respondent costs and reasonable conditions.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Classify s.41/s.42 and court.',
+                'Apply direct or ordinary relevance as appropriate.',
+                'Prove likely possession/custody/power and prospective party status if required.',
+                'Select originating summons or summons, supported by affidavit.',
+                'Propose necessary and fair terms.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Treating a likely future party as an existing defendant.',
+                'Broad exploratory pre-action demands.',
+                'No evidence of the respondent’s link to the records.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Pre-action',
+                    'HCO s.41; DCO s.47A',
+                    'Discovery from likely future party of directly relevant documents',
+                  ],
+                  [
+                    'Non-party',
+                    'HCO s.42; DCO s.47B',
+                    'Discovery after commencement from a person outside the action',
+                  ],
+                  [
+                    'Procedure',
+                    'O.24 r.7A',
+                    'Originating summons or summons with a supporting affidavit and defined production',
+                  ],
+                  [
+                    'Privacy',
+                    'Tse Lai Yin Lily v IO of Albert House [1999] 1 HKC 386',
+                    'Personal-data concerns do not create an automatic bar to proper third-party discovery',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'alternative-tools',
+            title: 'Norwich Pharmacal orders and trial subpoenas',
+            summary: 'Match an unidentified wrongdoer or a witness-held trial document to the right disclosure power.',
+            triggers: {
+              bullets: [
+                'An internet service provider can identify a user alleged to have distributed copyright material.',
+                'A bank holds tracing information about assets moved through an alleged fraud.',
+                'The claimant knows a wrongdoer exists but cannot identify whom to sue.',
+                'A witness outside the action holds a specified record needed at trial.',
+                'The applicant seeks a broad non-party document search by subpoena without explaining the particular trial document.',
+              ],
+              routes: [
+                {
+                  when: 'The target is a likely future defendant or an existing action calls for s.42 production',
+                  session: 'LG8',
+                  issue: 'preaction-nonparty',
+                  label: 'Statutory pre-action and non-party discovery',
+                },
+                {
+                  when: 'The goal is sworn answers to defined questions from a party to the action',
+                  session: 'LG8',
+                  issue: 'interrogatories',
+                  label: 'Questions to an opposing party',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Norwich Pharmacal orders and trial subpoenas',
+                steps: [
+                  {
+                    label: 'Ask whether the respondent is mixed up in the wrongdoing',
+                    detail: 'Norwich Pharmacal v C&E Commissioners [1974] AC 133 concerns an otherwise innocent person who became involved in wrongdoing and can identify the wrongdoer. The route may help where the claimant cannot name a defendant.',
+                    why: 'The target is an information holder connected to the wrongdoing, not simply any convenient third-party witness.',
+                    exam: {
+                      write: '[Respondent] became involved through [transaction/service] and can identify [unknown wrongdoer]; a Norwich Pharmacal order is sought for that information.',
+                      trap: 'Using the route for a general merits search with no demonstrated link to wrongdoing.',
+                    },
+                  },
+                  {
+                    label: 'Limit the information and address respondent costs',
+                    detail: 'A v B recognises that the order can extend beyond identity to connected information or documents. Bankers Trust v Shapira illustrates tracing material. Applicants usually bear the respondent’s compliance costs.',
+                    why: 'The requested disclosure should answer the concrete identification or tracing need while protecting the innocent respondent.',
+                    exam: {
+                      write: 'Seek [identity/defined transaction records] needed to [identify the defendant/trace property], on terms addressing [reasonable compliance costs].',
+                      trap: 'Treating Bankers Trust as a general right to every bank record or shifting routine compliance costs to an innocent intermediary.',
+                    },
+                  },
+                  {
+                    label: 'Use a trial subpoena for a witness-held document',
+                    detail: 'A subpoena duces tecum compels a witness to attend court and produce specified documents; an ad testificandum subpoena concerns oral evidence. Khanna v Lovell White Durrant illustrates production on a notional first trial date followed by adjournment.',
+                    why: 'A trial witness document route has a different purpose and more stringent specificity than ordinary specific discovery between parties.',
+                    exam: {
+                      write: 'Issue a subpoena duces tecum for [identified document] held by [witness] and explain why its production at trial is required.',
+                      trap: 'Using a subpoena to avoid the proper pre-trial discovery test or demanding vague classes from a non-party witness.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An information intermediary and a future defendant require different routes.',
+                'Norwich Pharmacal can identify a defendant; a subpoena compels a witness at trial.',
+                'Draft the requested data or records narrowly.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Identify the respondent’s relationship to the alleged wrong.',
+                'Explain why each requested item is needed.',
+                'Provide for fair compliance costs and confidentiality where relevant.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Classify identity/tracing information or a trial witness document.',
+                'For Norwich Pharmacal, show the respondent’s involvement and the necessary defined disclosure.',
+                'For a subpoena, identify the document and witness and justify trial production.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Calling every third party a Norwich respondent.',
+                'Using subpoenas for broad pre-trial fishing.',
+                'Omitting compliance costs.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Wrongdoer identification',
+                    'Norwich Pharmacal v C&E Commissioners [1974] AC 133',
+                    'Innocent intermediary mixed up in wrongdoing may have to identify the wrongdoer',
+                  ],
+                  [
+                    'Other assistance',
+                    'A v B [2002] 3 HKLRD 111; Bankers Trust v Shapira [1980] 1 WLR 1274',
+                    'Defined related information, documents or tracing material may be ordered',
+                  ],
+                  [
+                    'Trial production',
+                    'Khanna v Lovell White Durrant [1995] 1 WLR 121',
+                    'Specified documents can be obtained from a witness by subpoena duces tecum',
+                  ],
+                ],
+              },
+            },
+          },
+          {
+            id: 'interrogatories',
+            title: 'Interrogatories: drafting, objections and answers',
+            summary: 'Use O.26 for necessary sworn information on pleaded issues, then calculate response and objection routes accurately.',
+            triggers: {
+              bullets: [
+                'A pleaded oral agreement names no employee who allegedly made it, and the opponent alone knows.',
+                'A party serves twenty sweeping questions asking its opponent how it plans to prove every allegation.',
+                'A first set of interrogatories has already been served twice without leave.',
+                'The recipient wants to challenge relevance but waits more than 14 days after receiving the questions.',
+                'A notice demands affidavit answers in 10 days although O.26 requires at least 28 days.',
+                'One answer withholds legal advice, another is evasive, and several questions have no answer at all.',
+              ],
+              routes: [
+                {
+                  when: 'The need is a document or class of documents rather than information to be answered on oath',
+                  session: 'LG8',
+                  issue: 'scope-relevance',
+                  label: 'Documents and relevance',
+                },
+                {
+                  when: 'A known contract or invoice is missing from the opponent’s document production',
+                  session: 'LG8',
+                  issue: 'specific-discovery',
+                  label: 'Specific discovery',
+                },
+                {
+                  when: 'The sought information is held by a non-party rather than an opposing party',
+                  session: 'LG8',
+                  issue: 'alternative-tools',
+                  label: 'Information from an intermediary',
+                },
+              ],
+            },
+            answering: {
+              flowchart: {
+                title: 'Interrogatories: drafting, objections and answers',
+                steps: [
+                  {
+                    label: 'Frame questions to an opposing party on pleaded matters',
+                    detail: 'O.26 interrogatories are written questions answered on oath by a party to the action. Re Estate of Au Kong Tim (No.2) distinguishes answers by that party from examination of other potential witnesses.',
+                    why: 'The tool obtains necessary information, such as who made a pleaded oral agreement or whether a payment occurred.',
+                    exam: {
+                      write: 'Ask [opposing party] to state by affidavit [specified fact] bearing on pleaded [issue], rather than to produce [document] or answer for an outside witness.',
+                      trap: 'Serving a document request as an interrogatory or directing questions to a non-party witness.',
+                    },
+                  },
+                  {
+                    label: 'Apply relevance, necessity and proportionality',
+                    detail: 'Under O.26 rr.1(1), 1(3), the questions must relate to matters in question and be necessary for fair disposal or saving costs. Questions cannot demand the opponent’s proof strategy, conduct cross-examination in writing or be oppressive in number or reach.',
+                    why: 'Compulsory answers are justified by a specific information gap, not curiosity or pressure.',
+                    exam: {
+                      write: 'Interrogatory [number] asks [precise fact] on pleaded [issue] and is necessary to [resolve that issue/save costs]; omit questions about [proof strategy or collateral credit].',
+                      trap: 'Assuming any relevant question is automatically necessary, or using interrogatories as a rehearsal for cross-examination.',
+                    },
+                    points: [
+                      'Re Parfums Yves Saint Laurent distinguishes compelled O.26 information from a party’s selective witness statement.',
+                    ],
+                  },
+                  {
+                    label: 'Select leave and challenge deadlines',
+                    detail: 'O.26 r.3(1) permits two rounds without leave; further interrogatories require leave under r.4. A recipient challenging the right to serve may apply within 14 days of receipt under r.3(2).',
+                    why: 'The leave and challenge rules prevent unlimited rounds while preserving a prompt route to narrow improper questions.',
+                    exam: {
+                      write: '[Party] has used [number] rounds; [another set requires/does not require] leave. Any r.3(2) challenge must be made within 14 days of receipt.',
+                      trap: 'Assuming unlimited interrogatories without leave or postponing a relevance objection until the answer deadline.',
+                    },
+                  },
+                  {
+                    label: 'Answer each proper question or make a formal objection',
+                    detail: 'O.26 r.2(2) requires answers by affidavit within the stated period, which must allow at least 28 days after service, unless varied or withdrawn. A legal professional privilege objection is made formally by affidavit under r.5(1).',
+                    why: 'A recipient cannot replace sworn answers with informal denials, but need not disclose validly privileged material.',
+                    exam: {
+                      write: 'Answer [proper interrogatories] by affidavit by [date at least 28 days after service]; claim [specified privilege] in an affidavit under O.26 r.5(1).',
+                      trap: 'Answering in an unsworn letter or treating the minimum response period as the separate 14-day challenge period.',
+                    },
+                  },
+                  {
+                    label: 'Respond to deficiency or default with the right power',
+                    detail: 'O.26 r.5(3) permits an application for further and better answers. O.26 r.6(1) gives the Court a just sanction for default on interrogatories served without order; r.6(2) addresses contempt for breach of ordered interrogatories.',
+                    why: 'An evasive answer and no answer are different defects, and an ordered question carries a distinct enforcement route.',
+                    exam: {
+                      write: 'Seek further and better answers to [insufficient response] under r.5(3); for [unanswered set], seek the appropriate r.6 order with a proportionate sanction.',
+                      trap: 'Treating every inadequate answer as contempt or assuming strike-out follows automatically from any default.',
+                    },
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Interrogatories seek compulsory information from a party; witness statements may be selective.',
+                'Four separate numbers matter: two rounds, 14-day challenge, at least 28-day answer period and the specified sworn-response date.',
+                'Privilege objection, inadequate answer and total default have different remedies.',
+              ],
+            },
+            skills: {
+              bullets: [
+                'Draft a narrow question tied to the exact pleaded issue.',
+                'Calculate service, challenge and answer dates separately.',
+                'Distinguish unsolicited from court-ordered interrogatories.',
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify the opposing party and pleaded information gap.',
+                'Show relevance and necessity, avoiding oppressive or cross-examination questions.',
+                'Check round count, leave and any 14-day challenge.',
+                'Require affidavit answers after at least 28 days; make formal privilege objections.',
+                'Use r.5(3) or r.6 according to insufficiency or default.',
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Asking how the opponent will prove its case.',
+                'Addressing a question to another witness.',
+                'Confusing the 14-day and 28-day periods.',
+                'Treating sanctions or contempt as automatic.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: [
+                  'Point',
+                  'Authority',
+                  'What it establishes',
+                ],
+                rows: [
+                  [
+                    'Purpose',
+                    'O.26 r.1; Re Estate of Au Kong Tim (No.2) [2015] 4 HKLRD 471',
+                    'Written, sworn questions to an opposing party about matters in question',
+                  ],
+                  [
+                    'Necessity',
+                    'O.26 r.1(1), r.1(3); Law Mei Sing v ING Bank NV HCA 544/2010',
+                    'Necessary for fair disposal or cost saving; relevant to pleaded matters',
+                  ],
+                  [
+                    'Rounds and challenge',
+                    'O.26 r.3(1)-(2); r.4',
+                    'Two rounds without leave; challenge within 14 days; further rounds require leave',
+                  ],
+                  [
+                    'Sworn answer',
+                    'O.26 r.2(2); r.5(1)',
+                    'At least 28 days for affidavit answers; privilege objection by affidavit',
+                  ],
+                  [
+                    'Further answer/default',
+                    'O.26 r.5(3); r.6(1)-(2); Hui Sui Hop v Ng Chiu Construction [1995] 1 HKC 478',
+                    'Further and better answers, just sanction for default, and contempt for ordered interrogatories',
+                  ],
+                  [
+                    'Witness statement',
+                    'Re Parfums Yves Saint Laurent Ltd CACV 28/1989',
+                    'Voluntary narrative differs from compelled information under O.26',
+                  ],
+                ],
+              },
+            },
+          },
+        ],
+      },
+    },
+
     SG1: {
       kind: 'SG',
       date: '2026-09-09/10',

@@ -62,7 +62,8 @@ window.COURSE_INDEX = {
       "LG4",
       "LG5",
       "LG6",
-      "LG7"
+      "LG7",
+      "LG8"
     ]
   },
   "PCLL8020": {
