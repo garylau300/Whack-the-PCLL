@@ -4,7 +4,7 @@
   const {
     ELECTIVE_NAMES, initTheme, initFontScale, loadTimetable, sessionKeyFor, sessionHref, issueHref, quizHref,
     findSessionInTimetable, examIssueSectionsHtml, examCrossRefsHtml, examTriggerRoutesHtml,
-    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml,
+    issueCode, issueNotesKey, loadCheckedIds, saveCheckedIds, wireFlowChecks, escapeHtml, citeHtml,
     noteClozeControlsHtml, wireNoteCloze, loadClozeGroups, wireNoteSpeech,
     loadCourseDetails, wireSiteSearch,
   } = window.PCLL;
@@ -140,7 +140,7 @@
 
     const summaryEl = $('issueSummary');
     if (issue.summary) {
-      summaryEl.textContent = issue.summary;
+      summaryEl.innerHTML = citeHtml(issue.summary);
       summaryEl.hidden = false;
     } else {
       summaryEl.hidden = true;

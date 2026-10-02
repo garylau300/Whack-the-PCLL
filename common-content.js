@@ -289,7 +289,13 @@
     }
     if (n.statutes) html += statuteBoxHtml(n.statutes);
     if (n.table) {
-      html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c) => `<td>${citeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+      // Identify authority tables by the same headers used by the quiz and
+      // cloze readers. Highlight the complete source, including unreported
+      // case names and legislation titles, without colouring ordinary tables.
+      const authorityTable = n.table.headers.length === 3
+        && AUTH_SOURCE_COL.test(String(n.table.headers[1]).trim())
+        && AUTH_EFFECT_COL.test(String(n.table.headers[2]));
+      html += `<div class="table-scroll"><table class="session-table note-table"><thead><tr>${n.table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead><tbody>${n.table.rows.map((r) => `<tr>${r.map((c, i) => `<td${authorityTable && i === 1 ? ' class="cite"' : ''}>${citeHtml(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
     }
     if (n.diagram) html += processDiagramHtml(n.diagram);
     if (n.flowchart) html += flowchartHtml(n.flowchart, opts);

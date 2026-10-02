@@ -666,16 +666,16 @@
   const COURT = 'HCA|CACV|HCPI|HCMP|HCZZ|DCCJ|FACV|HCCW|CAMP|CACC|HCCT|HCSD';
   // A party-name token. The FIRST token must start upper-case or with a digit,
   // so "on the Bruce v Odhams test" does not bold the leading "the".
-  const HEAD = "(?:[A-Z]|\\d+[A-Z])[\\w&'’-]*\\.?";
-  const TOK = "(?:[A-Z0-9][\\w&'’-]*\\.?|\\((?:No ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|y|&)";
+  const HEAD = "(?:[A-Z]|\\d+[A-Z])[\\w&'’.-]*,?";
+  const TOK = "(?:[A-Z0-9][\\w&'’.-]*|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|y|&)";
   // Left-hand party tokens may not be purely numeric — see the comment on
   // CASE_RE below for the citation-merge this prevents.
-  const LTOK = "(?:(?:[A-Z]|\\d+[A-Z])[\\w&'’-]*\\.?|\\((?:No ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|&)";
+  const LTOK = "(?:(?:[A-Z]|\\d+[A-Z])[\\w&'’.-]*,?|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|&)";
   // Bounded to the SHAPE of a citation so it cannot run on into the sentence
   // after it — the first cut matched 28 arbitrary characters and bolded prose
   // like "[1987] AC 189 at 212F gives the pr".
-  const REPORTER = "\\[(?:19|20)\\d\\d\\]\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
-  const YEARPAREN = "\\((?:19|20)\\d\\d\\)\\s*\\d*\\s*[A-Z][A-Za-z]{1,10}\\s*\\d+";
+  const REPORTER = "\\[(?:18|19|20)\\d\\d\\]\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
+  const YEARPAREN = "\\((?:18|19|20)\\d\\d\\)\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
   const COURTFILE = '(?:' + COURT + ') ?\\d+\\/\\d{4}';
   // Optional trailing court and pinpoint, both fully bracket-balanced.
   const TAIL = "(?:\\s*\\((?:CA|HC|CFI|CFA|PC)\\))?(?:\\s+at\\s+(?:paras?\\s+)?\\d[\\w.–-]*)?";
@@ -683,6 +683,12 @@
     + '|\\s*\\(' + COURTFILE + '\\)|\\s+' + COURTFILE + '|\\s*\\((?:CA|HC|CFI|CFA|PC)\\))';
 
   const CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){0,6}\\sv\\.? ' + TOK + '(?:\\s' + TOK + '){0,8}(?:' + CITATION + ')?', 'g');
+  // Re cases have no opposing party. Require a report citation so ordinary
+  // prose beginning with "Re" cannot become an authority by accident.
+  const RE_CASE_RE = new RegExp('\\b(?:Re|In re)\\s' + HEAD + '(?:\\s' + LTOK + '){0,6}\\s*(?:' + REPORTER + '|' + YEARPAREN + ')' + TAIL, 'g');
+  // A named matter may instead be identified by a court file (for example,
+  // Yue Tung Ching Kee HCA 749/2006), with no "v" in the supplied reference.
+  const FILE_CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){1,6}\\s' + COURTFILE + '\\b', 'g');
 
   // One paragraph group — (a), (1A), (ga) — never containing a space, so a
   // parenthetical like "(the Court)" can never be swallowed.
@@ -734,10 +740,12 @@
     new RegExp(YEARPAREN, 'g'),
     new RegExp('\\b' + COURTFILE + '\\b', 'g'),
     CASE_RE,
+    RE_CASE_RE,
+    FILE_CASE_RE,
   ];
 
   // Sentence glue that is not part of a party name.
-  const LEAD_STOP = /^(?:Contrast|See|Cf|Per|And|But|Or|In|On|At|If|Then|Note|Compare|Under|Following|Applied|Approved|Citing|Unlike|Both|Here|This|That|These|Those|Where|When|While|Also|However|Whereas|Because|Since|Thus|So|Hence|Now|Again|Read|Use|Using|Apply|Applying|Consider|Identify|State|Give|Take|Run|Check|Ask|Say|Name|Draft|Plead|Serve|Tick|Set|The)\s+/;
+  const LEAD_STOP = /^(?:Contrast|See|Cf|Per|And|But|Or|In|On|At|If|Then|Note|Compare|Under|Following|Applied|Approved|Citing|Unlike|Both|Here|This|That|These|Those|Where|When|While|Also|However|Whereas|Because|Since|Thus|So|Hence|Now|Again|Read|Use|Using|Apply|Applying|Consider|Identify|State|Give|Take|Run|Check|Ask|Say|Name|Draft|Plead|Serve|Tick|Set|The),?\s+/;
 
   function findRanges(text) {
     const ranges = [];
@@ -747,7 +755,7 @@
       while ((m = re.exec(text)) !== null) {
         let start = m.index;
         let str = m[0];
-        if (re === CASE_RE) {
+        if (re === CASE_RE || re === FILE_CASE_RE) {
           const trimmed = str.replace(LEAD_STOP, '');
           start += str.length - trimmed.length;
           str = trimmed;

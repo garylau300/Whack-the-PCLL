@@ -13,7 +13,7 @@
   'use strict';
 
   const {
-    escapeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
+    escapeHtml, citeHtml, field, fmtTime, fmtShort, initDialog, sgPrepChecklistKey,
     sessionKeyFor, sessionPartLetter, checklistHtml, wireChecklist, checklistCompleteHtml,
     loadCheckedIds, deadlineChipsHtml, issueHref, sessionEventsByKey, issueCode, issueProgress,
   } = window.PCLL;
@@ -193,7 +193,7 @@
   function examNotesIndexHtml(examNotes, ev, dateIso, code, details) {
     const issues = (examNotes && examNotes.issueTypes) || [];
     if (!issues.length) return '';
-    const intro = examNotes.intro ? `<p class="muted">${escapeHtml(examNotes.intro)}</p>` : '';
+    const intro = examNotes.intro ? `<p>${citeHtml(examNotes.intro)}</p>` : '';
     const sessionKey = sessionKeyFor(ev.no);
     const items = issues.map((issue, i) => {
       const { done, total } = issueProgress(code, sessionKey, issue);

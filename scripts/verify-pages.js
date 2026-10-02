@@ -170,4 +170,35 @@ for (const code of Object.keys(COURSE_DETAILS)) {
   }
 }
 
+// Citation highlighting must cover the authority itself, including the case
+// name, rather than only its year or court file. Keep ordinary prose escaped.
+for (const authority of [
+  'M. Pocock v A.D.A.C. [1952] 1 TLR 29',
+  'C.K. Hair v Kam Yin Shan HCA 5309/2000',
+  'Oldham, Li & Nie v Wong Lin Chooi [2006] 2 HKC 397',
+  'Morrison, Son & Jones v Yiu Wing [1989] 1 HKLR 432',
+  'Wallingford v Mutual Society (1880) 5 App Cas 685',
+  'Sheba Gold Mining v Trubshawe [1892] 1 QB 674',
+  'Skillsoft v Ambow (No.2) [2016] 1 HKLRD 1052',
+  'Re Safe Rich Industries [1994] HKLY 183',
+  'Yue Tung Ching Kee HCA 749/2006',
+]) {
+  const remainder = PCLL.citeHtml(authority).replace(/<span class="cite">.*?<\/span>/g, '').trim();
+  run.check('authority highlighting', !remainder, authority, `unhighlighted text: ${remainder}`);
+  run.count('citation fixtures');
+}
+run.check('citation escaping', !PCLL.citeHtml('<script>alert(1)</script>').includes('<script>'), '', 'citation rendering must escape source text');
+run.check('citation false positive', !PCLL.citeHtml('Re documents are needed').includes('class="cite"'), '', 'uncited prose must not be treated as a Re case');
+
+const authorityTable = PCLL.fullNoteBodyHtml({ table: {
+  headers: ['Point', 'Authority', 'What it establishes'],
+  rows: [['Repeal', 'Rules of the High Court (Amendment) Rules 2021', 'Fraud exclusion removed']],
+} });
+run.check('authority table colour', authorityTable.includes('<td class="cite">Rules of the High Court'), '', 'the complete authority cell must use the citation colour');
+const ordinaryTable = PCLL.fullNoteBodyHtml({ table: {
+  headers: ['Step', 'What is pleaded', 'Rule'],
+  rows: [['Claim', 'A payment obligation', 'O.14']],
+} });
+run.check('ordinary table colour', !ordinaryTable.includes('<td class="cite">'), '', 'ordinary table prose must not become an authority column');
+
 run.done();

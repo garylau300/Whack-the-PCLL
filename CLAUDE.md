@@ -253,6 +253,13 @@ not what the code does.
 
 ## Course-content authoring rules
 
+- **Exam-note issue titles use plain topic names without colons.** Descriptions
+  and summaries state the exam issue and applicable rule directly; avoid
+  editorial wording such as "integrate" or "integrated analysis".
+- **Use recognisable case references in the notes.** Give the case name and
+  report citation or court file instead of an unexplained short name, so the
+  automatic citation renderer can highlight the complete authority in red.
+
 - **Cloze/flashcards are legal principles and hard law ONLY.** Never
   admin, deadlines, dates, attendance, or course logistics. Group them by
   topic (matching the session's own `legalIssues` groupings) using the
@@ -857,9 +864,9 @@ not what the code does.
     "the clause is", "clause [x]" and the Control of Exemption *Clauses*
     Ordinance stay untouched. A comma-separated continuation additionally
     requires its next member to be dotted: "clauses 4.1, 5.1" is a list, but
-    "clause 8, 14 days later" is a clause followed by a sentence. The issue
-    page's `summary` is set with `textContent` and so carries no highlighting
-    at all — that is pre-existing and applies to statutes equally.
+    "clause 8, 14 days later" is a clause followed by a sentence. Issue summaries
+    and exam-note introductions also use `citeHtml`, so their authorities receive
+    the same highlighting.
   - **A reference continues past its first paragraph.** `PARAS` absorbs
     `(a)-(c)`, `, (h), (j)-(p)` and ` and (b)`, so `r.1(1)(b), (h), (j)-(p)`
     marks as one span rather than stopping at `(b)`. The separator must be

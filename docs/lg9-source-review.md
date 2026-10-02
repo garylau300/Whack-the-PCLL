@@ -60,3 +60,11 @@ The supplied 2026–27 materials reproduce O.29 rr.9–12. The additional paymen
 - Browser checks used a synthetic timetable fixture solely in the test harness because the environment's live Google Sheets route remains blocked. They validate content integration and presentation, not live timetable synchronisation.
 
 Extracted uploads, research downloads, temporary authoring/browser scripts, screenshots and print-check output are retained outside the checkout in `/workspace/lg9-sources`; they are not application dependencies or committed course assets.
+
+## Title, description and citation revision
+
+The eight issue titles now use plain topic names without colons. The session introduction and summaries state the rules and exam issues directly, without editorial descriptions of how the notes were combined.
+
+Short case references in the notes were expanded to the names and citations already established in the reviewed authorities. The citation renderer now recognises initials, commas in party names, `(No.2)`, nineteenth-century reports, `Re` cases and named court-file references. The complete authority column uses the existing citation-red style; issue summaries and session introductions also receive automatic highlighting. No markup was inserted in the course data.
+
+An audit of 26,225 strings across the course corpus confirmed that no existing citation span was lost or shortened. Targeted regression fixtures cover the missed citation forms, source escaping, uncited prose and the distinction between authorities and ordinary tables. Browser checks verify the authority column in light and dark themes. Existing issue identifiers and step labels remain stable; expanded checklist text follows the existing text-derived progress convention, so reworded points receive new tick identifiers.

@@ -12611,7 +12611,7 @@ window.COURSE_DETAILS.PCLL8010 = {
         'Summons, affidavit evidence, PD 10.1, service, callover and resumed hearing',
         'Burdens, particulars, contextual credibility and reasons for trial',
         'Construction, collateral agreements, vitiating defences and commercial claims',
-        'Cheques and bills: cash principle, oral conditions, consideration and misrepresentation',
+        'Cheques and bills of exchange, the cash principle, oral conditions, consideration and misrepresentation',
         'Conditional leave, security, financial resources and access to trial',
         'Counterclaims, execution stays, residue, directions, costs and fresh evidence',
         'O.29 interim-payment application, damages/other sums, net quantum and payment terms',
@@ -12624,26 +12624,11 @@ window.COURSE_DETAILS.PCLL8010 = {
         ],
       },
       prepChecklist: [
-        {
-          id: 'lg9-gateway',
-          label: 'Separate O.14 eligibility, pleaded entitlement and the merits threshold',
-        },
-        {
-          id: 'lg9-evidence',
-          label: 'Draft a verifying affirmation, exhibit plan and complete service chronology',
-        },
-        {
-          id: 'lg9-defences',
-          label: 'Apply legal relevance and contextual credibility to commercial defences',
-        },
-        {
-          id: 'lg9-orders',
-          label: 'Draft judgment, leave, security, stay, directions and costs alternatives',
-        },
-        {
-          id: 'lg9-payment',
-          label: 'Calculate a supported interim payment under the correct O.29 gateway',
-        },
+        { id: 'lg9-gateway', label: 'Separate O.14 eligibility, pleaded entitlement and the merits threshold' },
+        { id: 'lg9-evidence', label: 'Draft a verifying affirmation, exhibit plan and complete service chronology' },
+        { id: 'lg9-defences', label: 'Apply legal relevance and contextual credibility to commercial defences' },
+        { id: 'lg9-orders', label: 'Draft judgment, leave, security, stay, directions and costs alternatives' },
+        { id: 'lg9-payment', label: 'Calculate a supported interim payment under the correct O.29 gateway' },
       ],
       keyTakeaways: [
         'O.14 is for a clear case requiring no trial, not merely a strong case; establish the claimant’s case before testing the defence.',
@@ -12655,13 +12640,13 @@ window.COURSE_DETAILS.PCLL8010 = {
       ],
       examNotes: {
         intro:
-          'Start with the relief and stage of proceedings: final judgment without trial, leave to defend, security, an execution stay, or a provisional payment on account. Establish the pleaded claim, gateway and reliable evidence, then test each defence for legal relevance and contextual believability. Analyse commercial promises, cheque conditions and cross-demands in their proper categories. Finish with a coherent order identifying the claim, respondent, amount, surviving issues, directions and costs; if interim payment is sought, separately apply O.29 and explain the conservative net calculation.',
+          'O.14 permits judgment without trial where the plaintiff establishes its claim and the defendant shows no real defence or other reason for trial. Consider the procedural gateway, pleaded relief, evidence, legal effect of each defence and appropriate order. O.29 interim payment requires a separate liability gateway and a justified amount on account of likely recovery. Distinguish judgment, leave to defend, security, an execution stay and interim payment, then address the surviving proceedings and costs.',
         issueTypes: [
           {
             id: 'summary-judgment-scope',
-            title: 'Summary judgment: eligibility, pleaded relief and strategic scope',
+            title: 'Eligibility and scope of summary judgment',
             summary:
-              'Establish the O.14 gateway before assessing the defence: process, parties, exclusions, complete pleadings, the remedy and whether a whole or selected claim can safely be decided without trial.',
+              'O.14 permits judgment without trial where the pleaded claim has no defence. Check the procedural gateway, exclusions, relief and any selected part before addressing the merits.',
             triggers: {
               bullets: [
                 'A supplier has served its statement of claim and the buyer has acknowledged service with an intention to defend, but no defence has yet been filed.',
@@ -12714,9 +12699,9 @@ window.COURSE_DETAILS.PCLL8010 = {
                           'Distinguish an Admiralty action in rem from a monetary writ claim merely connected with shipping.',
                         ],
                       },
-                      'A fraud-based claim is now eligible in principle. Pacific Electric, Zimmer Sweden and Universal Capital Bank address the historical exception and must not be used to reinstate it.',
-                      'Barco Investments illustrates a post-repeal fraud/constructive-trust claim; the normal merits and evidence requirements still apply.',
-                      'A pleaded fraud defence remains a merits issue: Wallingford requires definite supporting facts rather than the bare word fraud.',
+                      'A fraud-based claim is now eligible in principle. Pacific Electric v Texan Management [2009] 3 HKLRD 94, Zimmer Sweden v KPN [2016] 1 HKLRD 1016 and Universal Capital Bank v Hongkong Heya [2016] 2 HKLRD 757 address the historical exception and must not be used to reinstate it.',
+                      'Barco Investments v Wong Yan Ho HCA 1184/2022 illustrates a post-repeal fraud/constructive-trust claim; the normal merits and evidence requirements still apply.',
+                      'A pleaded fraud defence remains a merits issue: Wallingford v Mutual Society (1880) 5 App Cas 685 requires definite supporting facts rather than the bare word fraud.',
                     ],
                     why: 'Removing a categorical exclusion widens procedural access without deciding whether the claimant has proved its case or the defendant has a credible factual answer. Historical exclusion cases and current merits cases perform different jobs.',
                     exam: {
@@ -12730,10 +12715,10 @@ window.COURSE_DETAILS.PCLL8010 = {
                     detail:
                       'O.77 r.7(1) bars an application for summary judgment against the Crown. An ordinary monetary O.14 summons is usually heard by a Master, but injunctive relief requires a Judge in Chambers under the allocation described in O.32 r.11(1); O.32 r.12 permits an appropriate reference to a Judge.',
                     points: [
-                      'Check whether the proposed respondent falls within the Crown restriction; Jades’ Realm illustrates the bar.',
+                      'Check whether the proposed respondent falls within the Crown restriction; Jades’ Realm v Director of Lands [2015] 1 HKLRD 867 illustrates the bar.',
                       'Identify each remedy before selecting the tribunal. A Master’s inability to grant an injunction is not a finding that O.14 can never produce injunctive relief.',
                       'Consider referral to a Judge where the callover identifies an appropriate reason, including the practical prospect of a Master’s decision being appealed in any event.',
-                      'For declarations or specific performance, explain why the pleaded entitlement is sufficiently clear; Leco Instruments, Verrall and Leaders Cosmetics illustrate availability, while Baillieu shows the effect of unresolved factual issues.',
+                      'For declarations or specific performance, explain why the pleaded entitlement is sufficiently clear; Leco Instruments v Land Pyrometers [1982] RPC 133, Verrall v Great Yarmouth BC [1981] QB 202 and Leaders Cosmetics v Legend HK Pharmacy [2021] HKCFI 1511 illustrate availability, while Baillieu v Foreign Correspondents’ Club [2007] 2 HKLRD 229 shows the effect of unresolved factual issues.',
                     ],
                     why: 'Procedure and adjudicative power must both be satisfied. Even a claim with no credible defence cannot obtain a remedy from a decision-maker who lacks the relevant power.',
                     exam: {
@@ -12745,7 +12730,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Audit the pleaded cause of action and relief',
                     detail:
-                      'The statement of claim must establish the claim on which judgment is sought. Sheba Gold Mining, Lai Yuen Wah and Simba-Toys show that evidence cannot supply a substantially missing pleaded case; Wong Chow Hoi Sze Elsie and Chang Man require the claimed relief to be grounded in the pleaded facts, not merely a general prayer.',
+                      'The statement of claim must establish the claim on which judgment is sought. Sheba Gold Mining v Trubshawe [1892] 1 QB 674, Lai Yuen Wah v Hoi Kwong Printing [2003] 1 HKC 447 and Simba-Toys v Fullmore HCA 1599/2008 show that evidence cannot supply a substantially missing pleaded case; Wong Chow Hoi Sze Elsie v Crown Wine Cellars [2016] HKEC 867 and Chang Man v Ma Shou Yung [2002] 2 HKC 213 require the claimed relief to be grounded in the pleaded facts, not merely a general prayer.',
                     points: [
                       'Map each essential fact and each requested remedy to the writ and statement of claim.',
                       'Distinguish an evidential omission in an affirmation from an absent cause of action or material pleaded fact; the latter cannot simply be repaired by an exhibit.',
@@ -12755,43 +12740,43 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'Final judgment without trial must rest on the case the defendant was called upon to answer. Otherwise the application would convert new evidence into an unnotified new claim.',
                     exam: {
                       write:
-                        '[Essential fact/remedy] is [pleaded/not pleaded]. Under Wong Chow Hoi Sze Elsie and Chang Man, the general prayer cannot substitute for the missing pleaded basis; [amendment/properly confined relief] is required.',
+                        '[Essential fact/remedy] is [pleaded/not pleaded]. Under Wong Chow Hoi Sze Elsie v Crown Wine Cellars [2016] HKEC 867 and Chang Man v Ma Shou Yung [2002] 2 HKC 213, the general prayer cannot substitute for the missing pleaded basis; [amendment/properly confined relief] is required.',
                       trap: 'Using the phrase further or other relief to obtain an entirely unpleaded substantive claim.',
                     },
                   },
                   {
                     label: 'Select a coherent whole or part of the claim',
                     detail:
-                      'O.14 rr.1(1) and 3(1) permit judgment on an identified part. Macmillan requires clarity about the selected part, Dacheng illustrates different outcomes on different causes of action, and Skillsoft and Day Mark require attention to fragmentation, procedural economy and inconsistent findings.',
+                      'O.14 rr.1(1) and 3(1) permit judgment on an identified part. Macmillan Publishers v Thomas Reed Publishers [1993] FSR 455 requires clarity about the selected part, Dacheng International Legal Services v Sze Yeuk Lung [2018] 2 HKLRD 818 illustrates different outcomes on different causes of action, and Skillsoft v Ambow (No.2) [2016] 1 HKLRD 1052 and Day Mark v GD Management HCA 362/2022 require attention to fragmentation, procedural economy and inconsistent findings.',
                     points: [
                       'Define the selected invoices, amounts, causes of action, defendants or liability issues in the summons.',
                       'Explain why each selected issue can be decided independently of the disputed residue; do not assume that arithmetic severability means factual severability.',
                       'If shared facts could be decided inconsistently at the later trial, explain why the court should withhold or narrow the proposed summary determination.',
                       'Where judgment concerns liability only, specify that damages remain to be assessed; O.14 r.8 preserves the residue.',
-                      'For joint and several liability, default judgment against one defendant does not itself bar O.14 against another: Asia Television. Still prove each respondent’s liability and examine contemporaneous evidence even if an agreement is unsigned.',
+                      'For joint and several liability, default judgment against one defendant does not itself bar O.14 against another: Asia Television v Mak Chi Kin [2006] 4 HKC 347. Still prove each respondent’s liability and examine contemporaneous evidence even if an agreement is unsigned.',
                     ],
                     why: 'Partial judgment can save time when an independent part is clear, but can multiply litigation when it forces successive courts to resolve the same disputed foundation.',
                     exam: {
                       write:
-                        'The application is confined to [part] under O.14 rr.1 and 3. [Shared issue] [does/does not] create the inconsistent-findings concern in Skillsoft and Day Mark; [residue] remains under O.14 r.8.',
+                        'The application is confined to [part] under O.14 rr.1 and 3. [Shared issue] [does/does not] create the inconsistent-findings concern in Skillsoft v Ambow (No.2) [2016] 1 HKLRD 1052 and Day Mark v GD Management HCA 362/2022; [residue] remains under O.14 r.8.',
                       trap: 'Seeking the whole account when only selected invoices are verified, or assuming partial judgment is always desirable because the rule permits it.',
                     },
                   },
                   {
                     label: 'Test strategic suitability and honest belief',
                     detail:
-                      'Man Earn reserves O.14 for clear cases and warns that an unsuccessful application may delay recovery. M. Pocock and O.14 r.7(1) address applications made knowing that the defendant has a contention entitling it to unconditional leave; the procedure cannot legitimately be used merely to force disclosure of a defence on oath.',
+                      'Man Earn v Wing Ting Fong [1996] 1 HKC 225 reserves O.14 for clear cases and warns that an unsuccessful application may delay recovery. M. Pocock v A.D.A.C. [1952] 1 TLR 29 and O.14 r.7(1) address applications made knowing that the defendant has a contention entitling it to unconditional leave; the procedure cannot legitimately be used merely to force disclosure of a defence on oath.',
                     points: [
                       'Assess known material factual disputes and difficult legal issues before issuing the summons.',
-                      'For negligence damages, Dummer is a limited illustration where liability is not in issue; Wong Tai and Yam Kwok Kit caution against assuming negligence cases routinely qualify.',
+                      'For negligence damages, Dummer v Brown [1953] 1 QB 710 is a limited illustration where liability is not in issue; Wong Tai v Tang Wing Keung DCCJ 4068/2002 and Yam Kwok Kit v Lai Sze Fai [2002] 1156 HKCU 1 caution against assuming negligence cases routinely qualify.',
                       'Separate a strong case likely to win at trial from a clear case requiring no trial.',
-                      'Explain any delay and inconsistent prior procedural stance. Morrison and Kaufman show delay is not automatically fatal; Resona recognises that delay may justify refusal in a suitable case but avoids ordering a pointless trial where no bona fide defence exists.',
-                      'Consent to a late defence does not itself waive O.14. Compare an earlier order for speedy trial and discovery in Pierre Fabre and C.K. Hair, and Wing On Bank on an application after a defence.',
+                      'Explain any delay and inconsistent prior procedural stance. Morrison, Son & Jones v Yiu Wing [1989] 1 HKLR 432 and Kaufman v Maker Industrial [1982] HKLR 20 show delay is not automatically fatal; Resona Bank v Lam Sie [2004] 4 HKC 601 recognises that delay may justify refusal in a suitable case but avoids ordering a pointless trial where no bona fide defence exists.',
+                      'Consent to a late defence does not itself waive O.14. Compare an earlier order for speedy trial and discovery in Pierre Fabre v Ronco [1983] FSR 148 and C.K. Hair v Kam Yin Shan HCA 5309/2000, and Wing On Bank v Tech-Craft [1975] HKLR 533 on an application after a defence.',
                     ],
                     why: 'The saving of time and costs is realised only if summary disposal is justified. A speculative application can add an interlocutory contest and an appeal to the trial that was needed all along.',
                     exam: {
                       write:
-                        'Although [claim] may be strong, [serious issue/known defence] makes O.14 inappropriate under Man Earn; issuing merely to obtain sworn disclosure risks O.14 r.7(1) costs.',
+                        'Although [claim] may be strong, [serious issue/known defence] makes O.14 inappropriate under Man Earn v Wing Ting Fong [1996] 1 HKC 225; issuing merely to obtain sworn disclosure risks O.14 r.7(1) costs.',
                       trap: 'Equating eventual prospects of success with the absence of any issue requiring trial, or treating delay as either an automatic bar or wholly irrelevant.',
                     },
                   },
@@ -12900,23 +12885,15 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'summary-judgment-procedure',
-                label: 'Preparing and serving the summons',
-              },
-              {
-                session: 'LG9',
-                issue: 'triable-issues',
-                label: 'Testing the merits and need for investigation',
-              },
+              { session: 'LG9', issue: 'summary-judgment-procedure', label: 'Preparing and serving the summons' },
+              { session: 'LG9', issue: 'triable-issues', label: 'Testing the merits and need for investigation' },
             ],
           },
           {
             id: 'summary-judgment-procedure',
-            title: 'Preparing, serving and conducting the summary judgment application',
+            title: 'Applying for summary judgment',
             summary:
-              'Combine the summons, verifying affirmation, exhibit preparation, service, callover and later hearing in one procedural sequence; distinguish a pleading defect from a curable evidence defect.',
+              'An O.14 application requires a precise summons, verified facts, an express no-defence belief and complete timely service. Distinguish defective pleadings from evidential omissions and follow the court’s directions for contested evidence.',
             triggers: {
               bullets: [
                 'A director signs the supporting affirmation but never states that the company has authorised it.',
@@ -12935,7 +12912,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Draft relief that corresponds to the verified pleaded case',
                     detail:
-                      'Under O.14 r.2(1), the application is by summons supported by a verifying affidavit or affirmation. The summons must identify the claim or part, respondent and judgment sought; Macmillan supports expressly identifying a selected part.',
+                      'Under O.14 r.2(1), the application is by summons supported by a verifying affidavit or affirmation. The summons must identify the claim or part, respondent and judgment sought; Macmillan Publishers v Thomas Reed Publishers [1993] FSR 455 supports expressly identifying a selected part.',
                     points: [
                       'Specify the principal sum or identified part, or liability with damages to be assessed; distinguish interest and costs from the main relief.',
                       'Choose the appropriate Master or Judge under O.32; include an injunction only before the appropriate decision-maker.',
@@ -12952,7 +12929,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Choose a responsible deponent and disclose the evidence basis',
                     detail:
-                      'O.14 r.2(2) permits information and belief with their sources and grounds unless otherwise directed. The plaintiff or an authorised person should normally depose, state the authority and distinguish first-hand knowledge from sourced information; Mutual Luck and Enertec caution against routine solicitor-made evidence.',
+                      'O.14 r.2(2) permits information and belief with their sources and grounds unless otherwise directed. The plaintiff or an authorised person should normally depose, state the authority and distinguish first-hand knowledge from sourced information; Mutual Luck Investment v Chiu Yim Man [1999] 3 HKC 399 and Enertec v Gold Hill HCA 2338/2012 caution against routine solicitor-made evidence.',
                     points: [
                       'For a corporate plaintiff, identify the officer’s role, authorisation, access to records and personal involvement.',
                       'For each non-personal assertion, give the source and grounds: identify the person, record or business material and explain how it supports the assertion.',
@@ -12969,12 +12946,12 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Verify facts and expressly state the no-defence belief',
                     detail:
-                      'O.14 r.2(1) requires both verification of the facts on which the selected claim is based and the deponent’s belief that there is no defence, or no defence except as to damages quantum. Hongkong Chinese Bank and Ng Hung Ngan require a properly constituted application; a subsequent affirmation may cure some evidential omissions but cannot invent a missing pleaded case.',
+                      'O.14 r.2(1) requires both verification of the facts on which the selected claim is based and the deponent’s belief that there is no defence, or no defence except as to damages quantum. Hongkong Chinese Bank v Delon Photo [2000] 3 HKC 71 and Ng Hung Ngan v Yeung Fook Mui [2014] 4 HKLRD 822 require a properly constituted application; a subsequent affirmation may cure some evidential omissions but cannot invent a missing pleaded case.',
                     points: [
                       'Prove the agreement, performance, due date, non-payment and calculation where those are the material facts of the pleaded debt.',
                       'Tie the verified amount to the statement of claim and distinguish principal, payments already received and any selected residue.',
                       'State the belief expressly and at the correct breadth; for liability-only relief, acknowledge that the amount of damages remains in dispute.',
-                      'Review known correspondence and contentions before swearing that there is no defence; M. Pocock and O.14 r.7(1) remain relevant.',
+                      'Review known correspondence and contentions before swearing that there is no defence; M. Pocock v A.D.A.C. [1952] 1 TLR 29 and O.14 r.7(1) remain relevant.',
                       'If an omission is identified, explain whether additional evidence can cure it and obtain any necessary direction; do not promise that every defect is harmless.',
                     ],
                     why: 'Facts show the claimant’s affirmative case; the no-defence belief explains why it invokes a procedure dispensing with trial. One does not replace the other.',
@@ -13049,7 +13026,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Prepare the resumed hearing and manage late evidence',
                     detail:
-                      'The plaintiff may reply but need not do so; a reply commonly tests the defendant’s assertions against contemporary records. Dutfield emphasises the contentious nature of late evidence and avoidance of substantive-hearing adjournments after civil justice reform.',
+                      'The plaintiff may reply but need not do so; a reply commonly tests the defendant’s assertions against contemporary records. Dutfield International Group v Nine Dragon Investment [2013] 4 HKLRD 283 emphasises the contentious nature of late evidence and avoidance of substantive-hearing adjournments after civil justice reform.',
                     points: [
                       'Use the reply to answer the actual defence, not to replace absent pleadings or quietly enlarge the claim.',
                       'For proposed late evidence, identify the missed direction, explanation, relevance and requested leave; assess the prejudice of ambush or adjournment.',
@@ -13059,7 +13036,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'Late rounds can destroy the speed advantage that justifies O.14. The court needs a controlled record capable of resolving the real issue without unfairness.',
                     exam: {
                       write:
-                        'The proposed further affirmation requires [leave/directions] and an explanation under the existing timetable; Dutfield cautions against assuming that a late filing justifies adjournment of the substantive hearing.',
+                        'The proposed further affirmation requires [leave/directions] and an explanation under the existing timetable; Dutfield International Group v Nine Dragon Investment [2013] 4 HKLRD 283 cautions against assuming that a late filing justifies adjournment of the substantive hearing.',
                       trap: 'Using an eleventh-hour affirmation to ambush the respondent or assuming a plaintiff’s optional reply dispenses with the need to prove its own case.',
                     },
                   },
@@ -13152,33 +13129,17 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'summary-judgment-scope',
-                label: 'Eligibility and pleaded scope',
-              },
-              {
-                session: 'LG7',
-                issue: 'drafting-summons',
-                label: 'Drafting the application summons',
-              },
-              {
-                session: 'LG9',
-                issue: 'triable-issues',
-                label: 'Testing the opposing evidence',
-              },
-              {
-                session: 'LG9',
-                issue: 'interim-payment',
-                label: 'Interim payment as alternative relief',
-              },
+              { session: 'LG9', issue: 'summary-judgment-scope', label: 'Eligibility and pleaded scope' },
+              { session: 'LG7', issue: 'drafting-summons', label: 'Drafting the application summons' },
+              { session: 'LG9', issue: 'triable-issues', label: 'Testing the opposing evidence' },
+              { session: 'LG9', issue: 'interim-payment', label: 'Interim payment as alternative relief' },
             ],
           },
           {
             id: 'triable-issues',
-            title: 'Triable issues: burdens, credibility and reasons for investigation',
+            title: 'Triable issues and reasons for trial',
             summary:
-              'Apply O.14 rr.3–4 as an integrated test: first examine the plaintiff’s case, then the legal relevance and contextual credibility of the defence, and finally any material reason why trial or investigation is necessary.',
+              'A credible, legally material defence or another material reason for trial prevents summary judgment under O.14 r.3(1). Assess the whole evidential background without deciding credible witness conflicts on affidavits.',
             triggers: {
               bullets: [
                 'A borrower denies receiving money despite signed receipts, account records and earlier admissions.',
@@ -13197,12 +13158,12 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Examine the affirmative case before shifting the burden',
                     detail:
-                      'O.14 r.3(1) does not relieve the plaintiff of a properly constituted and prima facie sustainable case. Li Mingren requires examination of the plaintiff’s case first; Ju Yan Di emphasises the plaintiff’s burden. Only then must the defendant show a real or bona fide defence, an issue requiring trial, or some other reason for trial.',
+                      'O.14 r.3(1) does not relieve the plaintiff of a properly constituted and prima facie sustainable case. Li Mingren v Questex CACV 141/2014 requires examination of the plaintiff’s case first; Ju Yan Di Emperory Genesisy v Yau Wai Han [2015] 1 HKLRD 822 emphasises the plaintiff’s burden. Only then must the defendant show a real or bona fide defence, an issue requiring trial, or some other reason for trial.',
                     points: [
                       'Identify the pleaded legal elements, verified facts, relief and procedural compliance.',
                       'Check whether the plaintiff’s own evidence leaves a material gap or contradiction.',
                       'Do not assume that a deficient defendant affirmation supplies a missing ingredient of the plaintiff’s claim.',
-                      'Apply the modern formulation in Yung Wai Man, Lau Chun Kam and Barco: an assertion alone does not ground leave; the evidence must be capable of belief and show a fair or reasonable probability of a real defence.',
+                      'Apply the modern formulation in Yung Wai Man v Leung Kwok Pong [2021] HKCFI 896, Lau Chun Kam v Lai Tak Shing HCA 2126/2007 and Barco Investments v Wong Yan Ho HCA 1184/2022: an assertion alone does not ground leave; the evidence must be capable of belief and show a fair or reasonable probability of a real defence.',
                     ],
                     why: 'Final judgment is justified by the claimant’s established prima facie entitlement and the absence of a meaningful answer. A respondent’s weakness cannot create an entitlement that the claimant has never shown.',
                     exam: {
@@ -13227,7 +13188,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                       },
                       'A good defence, a material factual dispute, a real dispute over the amount due, or another reason for trial can satisfy O.14 r.3(1).',
                       'Distinguish a dispute over the pleaded debt itself from an admission of damages liability with quantum still to be assessed.',
-                      'Schindler Lifts and Citic Ka Wah caution against deciding serious or difficult legal disputes summarily; Man Earn permits a crisp question suitable for summary decision.',
+                      'Schindler Lifts v Ocean Joy [2003] 1 HKC 438 and Citic Ka Wah Bank v Lau Kam Luen [2008] 2 HKLRD 167 caution against deciding serious or difficult legal disputes summarily; Man Earn v Wing Ting Fong [1996] 1 HKC 225 permits a crisp question suitable for summary decision.',
                     ],
                     why: 'A factual disagreement without legal relevance cannot justify trial of the claim, while a legally viable and credible account need not already be proved to win at trial.',
                     exam: {
@@ -13239,13 +13200,13 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Require particulars and a reliable evidence basis',
                     detail:
-                      'O.14 r.4(1) permits showing cause by affidavit or otherwise, but Cheung Tai Hong describes the normal need for sworn evidence unless an unusual case can be made from the plaintiff’s own pleading and affirmation alone. O.14 r.4(2) applies the sources-and-grounds rule in r.2(2) to the defendant.',
+                      'O.14 r.4(1) permits showing cause by affidavit or otherwise, but Cheung Tai Hong v Cheng Yuk Kuen HCA 3166/2001 describes the normal need for sworn evidence unless an unusual case can be made from the plaintiff’s own pleading and affirmation alone. O.14 r.4(2) applies the sources-and-grounds rule in r.2(2) to the defendant.',
                     points: [
                       'Particularise the transaction and engage with the claimant’s specific allegations; a generic denial normally fails.',
                       'Explain who supplied any hearsay information and why it is believed.',
                       'Identify records supporting the account and explain missing records that the defendant would ordinarily possess.',
-                      'Oldham, Li & Nie illustrates a defendant-identity issue and the possibility of a defence apparent in existing contemporary materials even though not expressly pleaded or affirmed.',
-                      'Do not use that exception as permission to omit a factual case which requires the defendant’s own evidence; Pacific Harbor emphasises clear and logical particulars.',
+                      'Oldham, Li & Nie v Wong Lin Chooi [2006] 2 HKC 397 illustrates a defendant-identity issue and the possibility of a defence apparent in existing contemporary materials even though not expressly pleaded or affirmed.',
+                      'Do not use that exception as permission to omit a factual case which requires the defendant’s own evidence; Pacific Harbor Advisors v Winson Federal HCA 1257/2013 emphasises clear and logical particulars.',
                     ],
                     why: 'The summary court cannot test an undefined defence. Particulars expose whether the asserted account actually corresponds to the pleaded obligation and make contextual checking possible.',
                     exam: {
@@ -13257,45 +13218,45 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Test believability against the whole undisputed background',
                     detail:
-                      'Murjani and Re Safe Rich allow critical examination of inherent plausibility and documentary consistency. Ng Shou Chun distinguishes assertions that are believable from assertions the judge ultimately believes; the court must not conduct a mini-trial on conflicting affidavits.',
+                      'Murjani v Bank of India [1990] 1 HKLR 586 and Re Safe Rich Industries [1994] HKLY 183 allow critical examination of inherent plausibility and documentary consistency. Ng Shou Chun v Hung Chun San [1994] 1 HKC 155 distinguishes assertions that are believable from assertions the judge ultimately believes; the court must not conduct a mini-trial on conflicting affidavits.',
                     points: [
                       'Compare the account with signed documents, payment records, chronology and undisputed conduct.',
                       'Explain a concrete contradiction or physical impossibility rather than merely preferring the claimant’s witness.',
-                      'Paul Y Management permits attention to earlier inconsistent versions and a defence newly raised despite earlier opportunities.',
+                      'Paul Y Management v Eternal Unity CACV 16/2008 permits attention to earlier inconsistent versions and a defence newly raised despite earlier opportunities.',
                       'Use the whole situation: do not isolate each proposition to make a cumulatively implausible story seem possible.',
-                      'If evidence is incredible in a material respect, explain why it fails to establish a fair or reasonable probability of a bona fide defence; Barco and Yung Wai Man.',
+                      'If evidence is incredible in a material respect, explain why it fails to establish a fair or reasonable probability of a bona fide defence; Barco Investments v Wong Yan Ho HCA 1184/2022 and Yung Wai Man v Leung Kwok Pong [2021] HKCFI 896.',
                       'If two materially credible accounts require oral testing, explain why resolving them by choosing one affidavit would improperly substitute a mini-trial.',
                     ],
                     why: 'Accepting every sworn assertion would reward invented defences; deciding whose truthful testimony will prevail would deny trial of credible disputes. Contextual believability is the boundary between those extremes.',
                     exam: {
                       write:
-                        'Against [undisputed background/documents], [assertion] is [believable/materially incredible] because [reason]. Ng Shou Chun requires believability rather than a final decision to believe one witness.',
+                        'Against [undisputed background/documents], [assertion] is [believable/materially incredible] because [reason]. Ng Shou Chun v Hung Chun San [1994] 1 HKC 155 requires believability rather than a final decision to believe one witness.',
                       trap: 'Quoting Murjani’s balance-of-probabilities wording as a demand that the defendant prove the ultimate defence at the interlocutory stage.',
                     },
                   },
                   {
                     label: 'Resolve material doubts about the plaintiff and the need for investigation',
                     detail:
-                      'Billion Silver requires material doubts about the claimant’s case to be ventilated rather than ignored because the defence is weak. Talent Wise applies the other-reason-for-trial limb where essential facts are controlled by the claimant; Nice Plan limits reliance on investigation unrelated to an issue in the action.',
+                      'Billion Silver Development v All Wide Investments [2000] 2 HKC 262 requires material doubts about the claimant’s case to be ventilated rather than ignored because the defence is weak. Talent Wise v Cheung Shui Ching [1998] 2 HKLRD 744 applies the other-reason-for-trial limb where essential facts are controlled by the claimant; Nice Plan Development v Ke Jun Xiang [2015] HKEC 1222 limits reliance on investigation unrelated to an issue in the action.',
                     points: [
-                      'Specify the unexplained fact and how, if confirmed, it would undermine the claimant’s entitlement; Nolan v Wright supplies the materiality explanation.',
+                      'Specify the unexplained fact and how, if confirmed, it would undermine the claimant’s entitlement; Nolan v Wright [2009] 3 All ER 823 supplies the materiality explanation.',
                       'Identify the particular discovery, interrogatories or cross-examination needed and why the defendant cannot presently supply the answer.',
                       'Distinguish genuine asymmetry of access from the defendant’s choice not to disclose available particulars.',
                       'Explain why a fishing inquiry or unrelated concern does not justify withholding judgment.',
-                      'China Life confirms that claim size, numbers of witnesses and volume of exhibits do not themselves determine triability.',
+                      'China Life Insurance v Li Xiaoming HCA 570/2017 confirms that claim size, numbers of witnesses and volume of exhibits do not themselves determine triability.',
                       'Connect the proposed investigation to focused O.24 discovery or O.26 interrogatories rather than using O.14 to force premature disclosure.',
                     ],
                     why: 'A defendant cannot always particularise a complete defence before access to facts held by its opponent. The other-reason limb prevents procedural information control from producing a final judgment on an uninvestigated material doubt.',
                     exam: {
                       write:
-                        '[Unexplained circumstance] may undermine [element of entitlement] and the relevant records lie with [plaintiff]. Under Talent Wise and O.14 r.3(1), [focused investigation] supplies a material reason for trial.',
+                        '[Unexplained circumstance] may undermine [element of entitlement] and the relevant records lie with [plaintiff]. Under Talent Wise v Cheung Shui Ching [1998] 2 HKLRD 744 and O.14 r.3(1), [focused investigation] supplies a material reason for trial.',
                       trap: 'Demanding a fully proved defence where the necessary information is under the claimant’s control, or asserting that any wish for discovery is enough.',
                     },
                   },
                   {
                     label: 'Match the quality and reach of the defence to the outcome',
                     detail:
-                      'Golden Garden synthesises the outcomes: substantial factual or legal issues, or material doubts about the plaintiff, require trial; a shadowy defence may justify conditional leave; absence of a credible defence permits judgment. O.14 r.4(4) additionally permits document production and, in special circumstances, examination on oath.',
+                      'Golden Garden Management v Grand T G Gold [2012] 1 HKLRD 934 synthesises the outcomes: substantial factual or legal issues, or material doubts about the plaintiff, require trial; a shadowy defence may justify conditional leave; absence of a credible defence permits judgment. O.14 r.4(4) additionally permits document production and, in special circumstances, examination on oath.',
                     points: [
                       'Apply the conclusion claim by claim and respondent by respondent; a defence to one independent part need not protect an undisputed remainder.',
                       'If a defence is credible, identify the issue for unconditional leave without predicting the trial result.',
@@ -13402,28 +13363,16 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'conditional-leave',
-                label: 'Selecting leave and financial conditions',
-              },
-              {
-                session: 'LG8',
-                issue: 'specific-discovery',
-                label: 'Further and specific discovery',
-              },
-              {
-                session: 'LG8',
-                issue: 'interrogatories',
-                label: 'Interrogatories for missing facts',
-              },
+              { session: 'LG9', issue: 'conditional-leave', label: 'Selecting leave and financial conditions' },
+              { session: 'LG8', issue: 'specific-discovery', label: 'Further and specific discovery' },
+              { session: 'LG8', issue: 'interrogatories', label: 'Interrogatories for missing facts' },
             ],
           },
           {
             id: 'contractual-defences',
-            title: 'Commercial claims: construction, collateral promises and vitiating defences',
+            title: 'Contractual and vitiating defences',
             summary:
-              'Analyse the contract, factual matrix and alleged oral or vitiating defence together; explain whether the alleged facts both support a legal answer and are credible enough to require trial.',
+              'Determine the contractual obligation and whether the alleged oral promise, consent defect or cross-demand provides a legal answer. Test the account against the written terms, factual matrix and contemporaneous evidence.',
             triggers: {
               bullets: [
                 'A borrower admits signing the facility but alleges a separate oral promise that repayment would never be demanded.',
@@ -13442,24 +13391,24 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Identify the contractual obligation and proper construction',
                     detail:
-                      'Investors Compensation Scheme requires the document to be read as a whole in its relevant factual matrix, as understood by a reasonable person with the background knowledge reasonably available to the parties. O.14 r.3(1) asks whether the resulting entitlement has a credible legal or factual answer.',
+                      'Investors Compensation Scheme v West Bromwich Building Society [1998] 1 WLR 896 requires the document to be read as a whole in its relevant factual matrix, as understood by a reasonable person with the background knowledge reasonably available to the parties. O.14 r.3(1) asks whether the resulting entitlement has a credible legal or factual answer.',
                     points: [
                       'Identify the parties, obligation, triggering event and remedy from the actual instrument rather than selected phrases.',
                       'Check signatures, contemporary communications, performance and payment history; an unsigned instrument does not itself negate an evidenced agreement.',
-                      'For a renewal or possession dispute, identify the option terms and the act said to exercise them; Bess Fashion illustrates failure validly to exercise an option.',
+                      'For a renewal or possession dispute, identify the option terms and the act said to exercise them; Bess Fashion v Star Play HCA 4725/2001 illustrates failure validly to exercise an option.',
                       'Decide whether the construction point is crisp enough for summary determination or depends on serious disputed background facts.',
                     ],
                     why: 'An alleged breach does not establish liability until the underlying promise and conditions are identified. A reliable construction analysis also shows which asserted factual dispute is material.',
                     exam: {
                       write:
-                        'Reading [instrument] as a whole in its factual matrix under Investors Compensation Scheme, [obligation] depends on [trigger]; [dispute] [does/does not] require trial under O.14 r.3(1).',
+                        'Reading [instrument] as a whole in its factual matrix under Investors Compensation Scheme v West Bromwich Building Society [1998] 1 WLR 896, [obligation] depends on [trigger]; [dispute] [does/does not] require trial under O.14 r.3(1).',
                       trap: 'Treating the written words in isolation or assuming every dispute over interpretation is unsuitable for summary determination.',
                     },
                   },
                   {
                     label: 'Particularise and test the alleged collateral agreement',
                     detail:
-                      'Bank of India v Surtani and Huang Mucai require credible evidence and strict proof of a collateral oral agreement invoked to vary or add to written terms. Wing Siu permits rejection of a supposed agreement by reference to documents and conduct, or because its terms are too vague to be enforceable.',
+                      'Bank of India v Surtani Murlidhar Parmanand [1994] 1 HKC 7 and Huang Mucai v Cheng Zhen Shu HCA 1237/2011 require credible evidence and strict proof of a collateral oral agreement invoked to vary or add to written terms. Wing Siu v Goldquest (No.2) [2002] 4 HKC 420 permits rejection of a supposed agreement by reference to documents and conduct, or because its terms are too vague to be enforceable.',
                     points: [
                       'Specify who made the promise, to whom, when, in what terms and in what circumstances.',
                       'Explain its legal effect: does it add an enforceable obligation, alter the written terms, postpone operation, or merely describe an expectation?',
@@ -13470,14 +13419,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'A lax approach to oral variation would allow written obligations to be escaped by an unparticularised assertion. Requiring a defined promise and credible evidence protects certainty without banning genuine collateral agreements.',
                     exam: {
                       write:
-                        'The alleged collateral agreement is [precise terms], supported by [evidence]; under Huang Mucai and Bank of India v Surtani, [particularity/credibility/certainty] determines whether it supplies a real defence.',
+                        'The alleged collateral agreement is [precise terms], supported by [evidence]; under Huang Mucai v Cheng Zhen Shu HCA 1237/2011 and Bank of India v Surtani Murlidhar Parmanand [1994] 1 HKC 7, [particularity/credibility/certainty] determines whether it supplies a real defence.',
                       trap: 'Quoting strict proof as authority to decide every credible witness conflict in the plaintiff’s favour without trial.',
                     },
                   },
                   {
                     label: 'Address the entire-agreement clause and composite arrangement',
                     detail:
-                      'Noble Field illustrates rejection of a collateral-agreement defence in the presence of an entire-agreement clause. Bank of China v Fung Chin Kan also recognises that the written component and promise or representation may form a single composite agreement; the classification depends on the evidence and the actual terms.',
+                      'Noble Field Overseas v United Best HCA 1549/2013 illustrates rejection of a collateral-agreement defence in the presence of an entire-agreement clause. Bank of China v Fung Chin Kan (2002) 5 HKCFAR 515 also recognises that the written component and promise or representation may form a single composite agreement; the classification depends on the evidence and the actual terms.',
                     points: [
                       'Quote or accurately describe the relevant entire-agreement wording before explaining its claimed effect.',
                       'Distinguish a separate agreement varying a complete instrument from an asserted component of the actual composite bargain.',
@@ -13488,37 +13437,37 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'The legal effect depends on what agreement was actually made and what the written clause addresses. The two lines of authority prevent both uncritical acceptance and automatic rejection of oral accounts.',
                     exam: {
                       write:
-                        '[Clause] supports [claimant’s construction] under Noble Field, but [evidence] must also be assessed against the composite-agreement analysis in Bank of China v Fung Chin Kan.',
+                        '[Clause] supports [claimant’s construction] under Noble Field Overseas v United Best HCA 1549/2013, but [evidence] must also be assessed against the composite-agreement analysis in Bank of China v Fung Chin Kan (2002) 5 HKCFAR 515.',
                       trap: 'Saying entire-agreement clauses always dispose of every oral assurance, or assuming the phrase composite agreement itself proves enforceability.',
                     },
                   },
                   {
                     label: 'Analyse fraud, misrepresentation, undue influence and duress specifically',
                     detail:
-                      'A vitiating defence can be legally distinct from an attempt merely to rewrite payment terms. Wallingford requires definite facts pointing to fraud; Tong Nai Kan treats credible inducing misrepresentation as a reason for leave; Yu Tai Hing cautions about summary disposal of undue-influence circumstances. China Overseas explains that exercising an existing right to drive a hard bargain does not normally amount to economic duress.',
+                      'A vitiating defence can be legally distinct from an attempt merely to rewrite payment terms. Wallingford v Mutual Society (1880) 5 App Cas 685 requires definite facts pointing to fraud; Tong Nai Kan v Cheung King Fung [2005] 2 HKC 249 treats credible inducing misrepresentation as a reason for leave; Yu Tai Hing v Teresa Cheung HCA 5453/2001 cautions about summary disposal of undue-influence circumstances. China Overseas Building Construction v Profit Nation Development HCA 2008/2003 explains that exercising an existing right to drive a hard bargain does not normally amount to economic duress.',
                     points: [
                       'State the actual representation, influence or threat and its connection to entry into the obligation.',
                       'For fraud, identify definite supporting facts rather than invoke the former procedural fraud exception.',
                       'For misrepresentation, distinguish an inducing false account from a promise that the signed obligation will not be enforced.',
-                      'For duress, identify why the conduct is said to exceed lawful insistence on an existing right; hard bargaining alone is insufficient under China Overseas.',
+                      'For duress, identify why the conduct is said to exceed lawful insistence on an existing right; hard bargaining alone is insufficient under China Overseas Building Construction v Profit Nation Development HCA 2008/2003.',
                       'For undue influence, identify the relationship and evidential circumstances requiring investigation; avoid resolving contested oral accounts summarily.',
                     ],
                     why: 'The same transaction can give rise to a dispute over contractual terms or a challenge to the validity of consent. Those theories have different factual foundations and must not be conflated.',
                     exam: {
                       write:
-                        '[Particular facts] are said to establish [vitiating defence]. They must be assessed for legal effect and believability; lawful insistence on [existing right] does not normally establish duress under China Overseas.',
+                        '[Particular facts] are said to establish [vitiating defence]. They must be assessed for legal effect and believability; lawful insistence on [existing right] does not normally establish duress under China Overseas Building Construction v Profit Nation Development HCA 2008/2003.',
                       trap: 'Treating labels such as fraud, duress or undue influence as self-proving or as categorical procedural exclusions.',
                     },
                   },
                   {
                     label: 'Distinguish a defence to payment from a separate complaint',
                     detail:
-                      'Yue Tung Ching Kee shows that an alleged landlord breach may be neither credible nor a legal answer to rent where payment is not dependent on performance of that obligation. Quadrutec identifies guarantees with undisputed primary facts as suitable for O.14; Lo Wo requires examination of the specific unconscionability factors rather than the label alone.',
+                      'Yue Tung Ching Kee HCA 749/2006 shows that an alleged landlord breach may be neither credible nor a legal answer to rent where payment is not dependent on performance of that obligation. Bank of Credit and Commerce v Quadrutec [1996] 4 HKC 316 identifies guarantees with undisputed primary facts as suitable for O.14; Lo Wo v Cheung Chan Ka [2000] 2 HKLRD 370 requires examination of the specific unconscionability factors rather than the label alone.',
                     points: [
                       'Ask whether the alleged failure negates the due obligation or instead supports a separate cross-claim.',
                       'Read the contract for the asserted dependency; do not infer a right to withhold simply because both obligations are in one transaction.',
                       'For a guarantee, establish the primary facts, scope and operative event before describing it as suitable for summary disposal.',
-                      'For unconscionability, examine serious disadvantage, oppressive terms and morally culpable conduct described in Lo Wo; a burdensome guarantee alone is insufficient.',
+                      'For unconscionability, examine serious disadvantage, oppressive terms and morally culpable conduct described in Lo Wo v Cheung Chan Ka [2000] 2 HKLRD 370; a burdensome guarantee alone is insufficient.',
                       'If a genuine cross-claim survives, analyse its legal effect and any stay under O.14 r.3(2) separately.',
                     ],
                     why: 'A person may have a legitimate complaint without a defence to the immediate payment obligation. Matching the complaint to the correct legal effect avoids refusing or granting judgment for the wrong reason.',
@@ -13531,7 +13480,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Apply the same evidential discipline to non-debt commercial claims',
                     detail:
-                      'Toy Major illustrates summary analysis of copyright claims using documentary and real exhibits while requiring the defendant to particularise a plausible defence. Dacheng illustrates judgment on passing off while another cause of action remains; Barco shows that post-repeal fraud-based proprietary claims remain subject to the ordinary O.14 test.',
+                      'Toy Major Trading v Hang Shun Plastic Toys [2007] 3 HKLRD 345 illustrates summary analysis of copyright claims using documentary and real exhibits while requiring the defendant to particularise a plausible defence. Dacheng International Legal Services v Sze Yeuk Lung [2018] 2 HKLRD 818 illustrates judgment on passing off while another cause of action remains; Barco Investments v Wong Yan Ho HCA 1184/2022 shows that post-repeal fraud-based proprietary claims remain subject to the ordinary O.14 test.',
                     points: [
                       'Identify the legal element the exhibits address and compare the actual products or records.',
                       'Do not assume that a mental element automatically prevents summary determination; ask whether any credible particularised answer has been shown.',
@@ -13541,7 +13490,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'Debt claims are common examples, not the limit of O.14. The decisive question remains a properly evidenced entitlement and the absence of a real issue requiring trial.',
                     exam: {
                       write:
-                        'The exhibits support [element] on [cause of action], and [defendant’s account] must be particularised and credible under Toy Major before leave is justified.',
+                        'The exhibits support [element] on [cause of action], and [defendant’s account] must be particularised and credible under Toy Major Trading v Hang Shun Plastic Toys [2007] 3 HKLRD 345 before leave is justified.',
                       trap: 'Treating commercial suitability as a presumption that every IP, guarantee or fraud claim wins summarily.',
                     },
                   },
@@ -13637,28 +13586,16 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'triable-issues',
-                label: 'Credibility and other reasons for trial',
-              },
-              {
-                session: 'LG9',
-                issue: 'cheques-bills',
-                label: 'Cheques and bills of exchange',
-              },
-              {
-                session: 'LG9',
-                issue: 'counterclaims-orders',
-                label: 'Counterclaims, stays and final orders',
-              },
+              { session: 'LG9', issue: 'triable-issues', label: 'Credibility and other reasons for trial' },
+              { session: 'LG9', issue: 'cheques-bills', label: 'Cheques and bills of exchange' },
+              { session: 'LG9', issue: 'counterclaims-orders', label: 'Counterclaims, stays and final orders' },
             ],
           },
           {
             id: 'cheques-bills',
-            title: 'Cheques and bills: cash principle, oral conditions and genuine defences',
+            title: 'Cheques and bills of exchange',
             summary:
-              'Integrate the cash-like character of a cheque with the parol-evidence rule, consideration, inducing misrepresentation and the distinction between an independent counterclaim and a defence to the instrument.',
+              'Cheques are generally enforced as cash, but genuine defences concerning consideration or inducing misrepresentation can require trial. Distinguish these from oral payment restrictions and independent counterclaims.',
             triggers: {
               bullets: [
                 'A drawer admits issuing a dishonoured cheque but wishes to delay judgment until an unrelated damages counterclaim is tried.',
@@ -13677,7 +13614,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Establish the instrument claim and immediate-party relationship',
                     detail:
-                      'Sun Wah and Yuen Chak emphasise that bills of exchange and cheques are treated as cash; an ordinary independent set-off or counterclaim between immediate parties does not generally prevent judgment. Lam Tai Kwan describes the cheque as an unconditional written order for payment on demand of a certain sum.',
+                      'Sun Wah Aluminium v Panyu Fantasy Film City HCA 3119/2002 and Yuen Chak Construction v Tak Son Contractors [1997] 3 HKC 294 emphasise that bills of exchange and cheques are treated as cash; an ordinary independent set-off or counterclaim between immediate parties does not generally prevent judgment. Lam Tai Kwan v Lo Wai Kit [2007] 1 HKLRD 367 describes the cheque as an unconditional written order for payment on demand of a certain sum.',
                     points: [
                       'Identify the drawer, payee, instrument, amount, issue and dishonour from the pleaded case and records.',
                       'Check whether the parties are the immediate parties relevant to the consideration and counterclaim authorities.',
@@ -13687,14 +13624,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'Commercial circulation depends on the instrument providing a reliable cash-like payment obligation rather than becoming hostage to every surrounding contractual dispute.',
                     exam: {
                       write:
-                        '[Cheque] is the dishonoured instrument relied upon between [immediate parties]; under Sun Wah and Yuen Chak it is generally treated as cash, subject to an established defence to the instrument.',
+                        '[Cheque] is the dishonoured instrument relied upon between [immediate parties]; under Sun Wah Aluminium v Panyu Fantasy Film City HCA 3119/2002 and Yuen Chak Construction v Tak Son Contractors [1997] 3 HKC 294 it is generally treated as cash, subject to an established defence to the instrument.',
                       trap: 'Turning the cash principle into an assertion that no cheque defence is legally possible.',
                     },
                   },
                   {
                     label: 'Distinguish a counterclaim from an answer to the bill itself',
                     detail:
-                      'Yuen Chak and Bank of China v Wu Ming Fat explain that an ordinary counterclaim does not hold up judgment or generally stay execution of a cash-like bill; exceptional circumstances must be shown. An allegation affecting consideration or the validity of the instrument is analytically different.',
+                      'Yuen Chak Construction v Tak Son Contractors [1997] 3 HKC 294 and Bank of China v Wu Ming Fat Simon HCA 590/2001 explain that an ordinary counterclaim does not hold up judgment or generally stay execution of a cash-like bill; exceptional circumstances must be shown. An allegation affecting consideration or the validity of the instrument is analytically different.',
                     points: [
                       'State whether the cross-demand is independent or attacks liability on the instrument itself.',
                       'If only an ordinary counterclaim is shown, explain why judgment normally follows despite it.',
@@ -13704,50 +13641,50 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'A separate claim preserves the drawer’s opportunity to recover in its own right without necessarily defeating the independent instrument obligation. Genuine instrument defences address the entitlement being enforced.',
                     exam: {
                       write:
-                        '[Cross-demand] is [independent/part of a defence to the instrument]; Yuen Chak and Bank of China v Wu Ming Fat require [judgment absent exceptional circumstances/further analysis of the particular defence].',
+                        '[Cross-demand] is [independent/part of a defence to the instrument]; Yuen Chak Construction v Tak Son Contractors [1997] 3 HKC 294 and Bank of China v Wu Ming Fat Simon HCA 590/2001 require [judgment absent exceptional circumstances/further analysis of the particular defence].',
                       trap: 'Treating a pleaded counterclaim as an automatic stay or using the general cash rule to ignore an established instrument defence.',
                     },
                   },
                   {
                     label: 'Classify the oral-condition allegation accurately',
                     detail:
-                      'SY Chan, Fielding & Platt and Lam Tai Kwan generally reject extrinsic evidence contradicting the unconditional written payment terms. The materials distinguish a condition concerning whether a contract becomes operative from an oral term in defeasance of liability on an operative bill; that distinction requires analysis of the actual account.',
+                      'SY Chan v Choy Wai Bor [2001] 4 HKC 285, Fielding & Platt v Najjar [1969] 1 WLR 357 and Lam Tai Kwan v Lo Wai Kit [2007] 1 HKLRD 367 generally reject extrinsic evidence contradicting the unconditional written payment terms. The materials distinguish a condition concerning whether a contract becomes operative from an oral term in defeasance of liability on an operative bill; that distinction requires analysis of the actual account.',
                     points: [
                       'Specify the alleged assurance in words and locate its timing relative to issue and delivery.',
                       'Ask whether it merely postpones payment until funding arrives, prohibits presentation, or genuinely concerns whether the transaction becomes operative.',
-                      'Great Sincere rejected a third-party-funding condition; Prosperity Lamps rejected an asserted restriction linked to third-party payment and consent.',
-                      'SY Chan rejected the account that the cheque was merely evidence to show a spouse; Atom Xquare applied the parol-evidence rule to a goodwill account.',
-                      'Chung Fai illustrates scepticism about a bare sincerity story. Xie Shili and Tan Khay Cheun show that the description is not physically inconceivable; legal effect and evidence remain decisive.',
+                      'Great Sincere Trading v Swee Hong [1968] HKLR 660 rejected a third-party-funding condition; Prosperity Lamps v Rotegear [2000] 2 HKC 638 rejected an asserted restriction linked to third-party payment and consent.',
+                      'SY Chan v Choy Wai Bor [2001] 4 HKC 285 rejected the account that the cheque was merely evidence to show a spouse; Atom Xquare v Arist Home [2019] HKCFI 2488 applied the parol-evidence rule to a goodwill account.',
+                      'Chung Fai Holding v Tattune HCA 13669/1997 illustrates scepticism about a bare sincerity story. Xie Shili v Cheung Wai Keung HCA 2889/2017 and Tan Khay Cheun v Ko Ping Shun CACV 238/2015 show that the description is not physically inconceivable; legal effect and evidence remain decisive.',
                     ],
                     why: 'The issue is not simply whether an oral conversation occurred. It is whether the proposed evidence can legally alter the written payment obligation in the manner asserted.',
                     exam: {
                       write:
-                        '[Alleged term] would [contradict the operative cheque’s payment terms/concern its becoming operative]; SY Chan and Lam Tai Kwan require that distinction before treating the account as a defence.',
+                        '[Alleged term] would [contradict the operative cheque’s payment terms/concern its becoming operative]; SY Chan v Choy Wai Bor [2001] 4 HKC 285 and Lam Tai Kwan v Lo Wai Kit [2007] 1 HKLRD 367 require that distinction before treating the account as a defence.',
                       trap: 'Assuming sincerity or goodwill automatically negates liability, or stating that all oral evidence is inadmissible for every purpose.',
                     },
                   },
                   {
                     label: 'Evaluate absence, total failure and quantified partial failure of consideration',
                     detail:
-                      'Tianma Micro-Electronics recognises an arguable immediate-party defence where cheques were issued for convenience and no consideration flowed. Xu Ziming explains total failure where no part of the bargained benefit was received and discusses quantified partial failure and same-transaction legal set-off as distinct possibilities.',
+                      'Tianma Micro-Electronics v Gionee HCA 297/2018 recognises an arguable immediate-party defence where cheques were issued for convenience and no consideration flowed. Xu Ziming v Ruifeng Petroleum HCA 450/2013 explains total failure where no part of the bargained benefit was received and discusses quantified partial failure and same-transaction legal set-off as distinct possibilities.',
                     points: [
                       'Identify the specific benefit bargained for and whether any part was received.',
                       'Distinguish absence of consideration, total failure and dissatisfaction with performance after some benefit was supplied.',
                       'Where failure is partial, identify a liquidated amount and its connection to the transaction; do not inflate a quantifiable partial answer into a defence to the whole sum.',
-                      'Tong Nai Kan and Townearn show why an exceptional genuine defence can require leave despite the usual cash principle.',
-                      'The foreign Part 24 discussion quoted through Xu Ziming is explanatory material; the Hong Kong application and order remain under O.14.',
+                      'Tong Nai Kan v Cheung King Fung [2005] 2 HKC 249 and Townearn Industrial v Golden Globe [2003] 1 HKC 186 show why an exceptional genuine defence can require leave despite the usual cash principle.',
+                      'The foreign Part 24 discussion quoted through Xu Ziming v Ruifeng Petroleum HCA 450/2013 is explanatory material; the Hong Kong application and order remain under O.14.',
                     ],
                     why: 'Cash-like enforcement does not authorise recovery where a recognised immediate-party defence undermines the very obligation. Precision about the benefit and amount determines whether the answer is complete or partial.',
                     exam: {
                       write:
-                        '[Promised benefit] was [never supplied/partly supplied]; under Tianma and Xu Ziming the supported [absence/total or quantified partial failure] must be assessed as a defence to [whole/identified part].',
+                        '[Promised benefit] was [never supplied/partly supplied]; under Tianma Micro-Electronics v Gionee HCA 297/2018 and Xu Ziming v Ruifeng Petroleum HCA 450/2013 the supported [absence/total or quantified partial failure] must be assessed as a defence to [whole/identified part].',
                       trap: 'Calling every defective performance a total failure, or importing English Part 24 as the Hong Kong procedural rule.',
                     },
                   },
                   {
                     label: 'Test inducing misrepresentation and conclude without a mini-trial',
                     detail:
-                      'Tong Nai Kan distinguishes a credible allegation that cheques were obtained by material misrepresentation from an oral variation of payment terms. If the inducing account is not practically moonshine and is legally capable of vitiating the obligation, leave is required; Ng Shou Chun prevents final resolution of credible witness conflicts on paper.',
+                      'Tong Nai Kan v Cheung King Fung [2005] 2 HKC 249 distinguishes a credible allegation that cheques were obtained by material misrepresentation from an oral variation of payment terms. If the inducing account is not practically moonshine and is legally capable of vitiating the obligation, leave is required; Ng Shou Chun v Hung Chun San [1994] 1 HKC 155 prevents final resolution of credible witness conflicts on paper.',
                     points: [
                       'Particularise the representation, who made it, its role in obtaining the cheque and the supporting records.',
                       'Explain why it is an inducement/validity allegation rather than a disguised restriction on presentation.',
@@ -13758,7 +13695,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'A parol-evidence rule protecting written payment terms and a defence challenging how the obligation was obtained address different problems. Correct classification prevents both fabricated conditions and genuine consent defects from being mishandled.',
                     exam: {
                       write:
-                        '[Representation] allegedly induced issue of [cheques] and is supported by [records]. Under Tong Nai Kan and Ng Shou Chun, [credible material account] requires leave without finally choosing between competing witnesses.',
+                        '[Representation] allegedly induced issue of [cheques] and is supported by [records]. Under Tong Nai Kan v Cheung King Fung [2005] 2 HKC 249 and Ng Shou Chun v Hung Chun San [1994] 1 HKC 155, [credible material account] requires leave without finally choosing between competing witnesses.',
                       trap: 'Rejecting inducing misrepresentation merely because the cheque is unconditional on its face.',
                     },
                   },
@@ -13843,23 +13780,15 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'contractual-defences',
-                label: 'Construction and vitiating defences',
-              },
-              {
-                session: 'LG9',
-                issue: 'counterclaims-orders',
-                label: 'Counterclaims and execution stays',
-              },
+              { session: 'LG9', issue: 'contractual-defences', label: 'Construction and vitiating defences' },
+              { session: 'LG9', issue: 'counterclaims-orders', label: 'Counterclaims and execution stays' },
             ],
           },
           {
             id: 'conditional-leave',
-            title: 'Judgment or leave: shadowy defences, security and inability to comply',
+            title: 'Judgment and leave to defend',
             summary:
-              'Choose the O.14 rr.3–4 outcome by the quality of the defence and claimant’s case, then test whether a proposed financial condition would unfairly extinguish the opportunity to defend.',
+              'The quality of the defence and any material doubt about the plaintiff’s case determine the outcome under O.14 rr.3–4. A financial condition must preserve a real opportunity to defend.',
             triggers: {
               bullets: [
                 'A defendant’s oral-term account is weak and uncorroborated but could legally provide a defence if proved.',
@@ -13896,7 +13825,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Identify a genuinely shadowy defence',
                     detail:
-                      'Kwong Key illustrates conditional leave where assertions lacked corroboration but might legally support an exception concerning extrinsic evidence. Golden Garden and Unic describe the jurisdiction where the court is very nearly ready to give judgment, yet gives the defendant the benefit of a remaining doubt.',
+                      'Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300 illustrates conditional leave where assertions lacked corroboration but might legally support an exception concerning extrinsic evidence. Golden Garden Management v Grand T G Gold [2012] 1 HKLRD 934 and Unic v Centus Developments [1988] HKC 643 describe the jurisdiction where the court is very nearly ready to give judgment, yet gives the defendant the benefit of a remaining doubt.',
                     points: [
                       'Explain the legal route by which the account could be a defence if proved.',
                       'Identify what makes it shadowy: bare assertion, lack of readily available support, inconsistent conduct or another specified evidential weakness.',
@@ -13906,7 +13835,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'Conditional leave mediates a narrow remaining uncertainty about an almost-clear claim. It is not a device for securing every claimant against ordinary trial risk.',
                     exam: {
                       write:
-                        '[Account] could amount to [legal defence], but [specific evidential weakness] makes it shadowy within Kwong Key; conditional leave is therefore a possible O.14 r.4(3) outcome.',
+                        '[Account] could amount to [legal defence], but [specific evidential weakness] makes it shadowy within Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300; conditional leave is therefore a possible O.14 r.4(3) outcome.',
                       trap: 'Using shadowy as an unexplained synonym for a defence the claimant dislikes.',
                     },
                   },
@@ -13931,7 +13860,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Require full and frank evidence of means',
                     detail:
-                      'Kwong Key, applying Yorke Motors, Hwang and Unic, places the evidential burden on a defendant resisting a financial condition through impecuniosity. The defendant must disclose its means fully and frankly because it ordinarily controls that information.',
+                      'Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300, applying Yorke Motors v Edwards [1982] 1 WLR 444, Hwang v Morgan Guaranty and Unic v Centus Developments [1988] HKC 643, places the evidential burden on a defendant resisting a financial condition through impecuniosity. The defendant must disclose its means fully and frankly because it ordinarily controls that information.',
                     points: [
                       'Obtain evidence of assets, cash, liabilities and available resources relevant to the proposed condition.',
                       'Explain what assets can realistically be realised and why apparent resources are unavailable.',
@@ -13942,14 +13871,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'A court cannot distinguish an artificial claim of poverty from a genuine inability to defend unless the person with the financial information discloses it.',
                     exam: {
                       write:
-                        '[Defendant] provides [financial evidence] and addresses [assets and funding routes]; this [does/does not] amount to the full and frank means disclosure required by Kwong Key.',
+                        '[Defendant] provides [financial evidence] and addresses [assets and funding routes]; this [does/does not] amount to the full and frank means disclosure required by Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300.',
                       trap: 'Putting the burden on the claimant to disprove a bare assertion that the defendant is poor.',
                     },
                   },
                   {
                     label: 'Distinguish difficulty from an impossible financial condition',
                     detail:
-                      'Kwong Key requires more than difficulty in satisfying the condition: the defendant must establish inability after addressing realistic assistance. Unic warns against conditions where it is plain or even probable that payment of the whole sum would be tantamount to refusing leave; a genuinely impossible condition must not extinguish even a shadowy defence.',
+                      'Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300 requires more than difficulty in satisfying the condition: the defendant must establish inability after addressing realistic assistance. Unic v Centus Developments [1988] HKC 643 warns against conditions where it is plain or even probable that payment of the whole sum would be tantamount to refusing leave; a genuinely impossible condition must not extinguish even a shadowy defence.',
                     points: [
                       'Evaluate the actual proposed sum and period, not an abstract statement that the defendant has limited means.',
                       'Explain why the disclosed resources and potential assistance do or do not make compliance possible.',
@@ -13960,14 +13889,14 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'The right preserved by leave is illusory if compliance is beyond reach. Financial conditions should test or secure a weak case, not decide it by wealth.',
                     exam: {
                       write:
-                        'Although the defence is shadowy, [means evidence and unavailable assistance] show that [condition] would effectively refuse leave; Kwong Key and Unic support unconditional leave rather than that financial barrier.',
+                        'Although the defence is shadowy, [means evidence and unavailable assistance] show that [condition] would effectively refuse leave; Kwong Key Construction & Engineering v Sunlink [2003] 4 HKC 300 and Unic v Centus Developments [1988] HKC 643 support unconditional leave rather than that financial barrier.',
                       trap: 'Treating difficulty and impossibility as interchangeable, or requiring an impossible payment as punishment for a weak defence.',
                     },
                   },
                   {
                     label: 'Preserve material doubts, directions and distinct interim relief',
                     detail:
-                      'Billion Silver requires material doubt about the plaintiff’s entitlement to be resolved at trial rather than hidden behind a security condition. O.14 r.6 requires further-conduct directions after leave; Quadrex illustrates that conditional leave can coexist with an independently established interim-payment order, but neither is automatically supplied by the other.',
+                      'Billion Silver Development v All Wide Investments [2000] 2 HKC 262 requires material doubt about the plaintiff’s entitlement to be resolved at trial rather than hidden behind a security condition. O.14 r.6 requires further-conduct directions after leave; British and Commonwealth Holdings v Quadrex [1989] QB 842 illustrates that conditional leave can coexist with an independently established interim-payment order, but neither is automatically supplied by the other.',
                     points: [
                       'If the plaintiff’s own case raises material suspicion, explain the reason for unconditional leave rather than using security to bypass the doubt.',
                       'Set appropriate pleading and subsequent case-management directions under O.14 r.6.',
@@ -14059,23 +13988,15 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'triable-issues',
-                label: 'Merits, credibility and material doubt',
-              },
-              {
-                session: 'LG9',
-                issue: 'interim-payment',
-                label: 'Interim-payment thresholds and amount',
-              },
+              { session: 'LG9', issue: 'triable-issues', label: 'Merits, credibility and material doubt' },
+              { session: 'LG9', issue: 'interim-payment', label: 'Interim-payment thresholds and amount' },
             ],
           },
           {
             id: 'counterclaims-orders',
-            title: 'Counterclaims, partial judgment, execution, costs and appeal',
+            title: 'Counterclaims, orders, costs and appeals',
             summary:
-              'Carry the merits conclusion into a precise order: distinguish a defence from an independent counterclaim, apply the counterclaimant’s own O.14 route, preserve the residue and address execution, directions, costs and any properly supported fresh evidence on appeal.',
+              'Distinguish a defence from an independent counterclaim, identify the precise judgment and any execution stay, and preserve the residue. Address directions, costs and any application to admit material fresh evidence on appeal.',
             triggers: {
               bullets: [
                 'A buyer admits the invoice debt but counterclaims for losses under another transaction and seeks to stop enforcement.',
@@ -14138,7 +14059,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                       'If a stay is justified, define its scope, duration by reference to the counterclaim trial and any just conditions.',
                       'State the remaining claims and defendants that proceed under r.8; do not write a disposal of the whole action when only a part was decided.',
                       'For delivery up, identify the specific chattel and the r.9 relief rather than automatically offer retention on payment of value.',
-                      'Check overlapping issues for Skillsoft/Day Mark fragmentation and inconsistent-findings concerns.',
+                      'Check overlapping issues for Skillsoft v Ambow (No.2) [2016] 1 HKLRD 1052/Day Mark v GD Management HCA 362/2022 fragmentation and inconsistent-findings concerns.',
                     ],
                     why: 'An imprecise order can accidentally dispose of an undecided claim or allow execution that the court meant to suspend. Naming the residue protects the scope of both the final adjudication and later trial.',
                     exam: {
@@ -14168,7 +14089,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Address the costs consequence and draft taxation expressly',
                     detail:
-                      'Costs remain discretionary. The usual teaching outcomes are judgment with costs, conditional or unconditional leave with costs in the cause, and an improper application dismissed with defendant’s costs potentially payable forthwith under O.14 r.7. Cobalt construes O.62 r.32(4) as giving the successful plaintiff fixed costs under Part II of the Second Schedule unless taxation is expressly ordered.',
+                      'Costs remain discretionary. The usual teaching outcomes are judgment with costs, conditional or unconditional leave with costs in the cause, and an improper application dismissed with defendant’s costs potentially payable forthwith under O.14 r.7. Cobalt Industrial v Kin Sun Electronics [1997] 2 HKC 402 construes O.62 r.32(4) as giving the successful plaintiff fixed costs under Part II of the Second Schedule unless taxation is expressly ordered.',
                     points: [
                       'State the proposed costs order and why it corresponds to the outcome and conduct.',
                       'If taxation is sought, ask expressly for costs to be taxed if not agreed; do not assume a bare costs order guarantees taxation.',
@@ -14180,25 +14101,25 @@ window.COURSE_DETAILS.PCLL8010 = {
                     why: 'A successful application can still produce the wrong costs recovery if the order omits the necessary taxation language. An abusive application requires a different costs response from a genuinely arguable one.',
                     exam: {
                       write:
-                        'Seek [costs in the cause/costs to be taxed if not agreed/forthwith costs] because [outcome and conduct]; Cobalt requires an express taxation order and [certificate for counsel] must be addressed where applicable.',
+                        'Seek [costs in the cause/costs to be taxed if not agreed/forthwith costs] because [outcome and conduct]; Cobalt Industrial v Kin Sun Electronics [1997] 2 HKC 402 requires an express taxation order and [certificate for counsel] must be addressed where applicable.',
                       trap: 'Presenting usual costs orders as mandatory, or applying Wellegant’s settlement-payment reasoning as the ordinary O.14 fixed-costs rule.',
                     },
                   },
                   {
                     label: 'Assess fresh evidence on appeal without promising automatic admission',
                     detail:
-                      'Asia Television recognises the possibility of seeking leave to adduce fresh evidence on appeal from refusal of summary judgment. Grade One illustrates admission and reversal where newly found records raised a credible substantial issue that debts underlying counterclaims had been discharged and judgment might have been procured by fraud.',
+                      'Asia Television v Mak Chi Kin [2006] 4 HKC 347 recognises the possibility of seeking leave to adduce fresh evidence on appeal from refusal of summary judgment. Grade One v Chow Chin Yui Angela [2025] HKCA 1051 illustrates admission and reversal where newly found records raised a credible substantial issue that debts underlying counterclaims had been discharged and judgment might have been procured by fraud.',
                     points: [
                       'Identify the order appealed, the new records, their source and why they were not previously before the court.',
                       'Explain the concrete effect on liability rather than assert that any new document reopens judgment.',
-                      'In Grade One, loan communications and financial material supported an inference of earlier discharge and possible conscious withholding; the counterclaims were returned for trial with unconditional leave.',
+                      'In Grade One v Chow Chin Yui Angela [2025] HKCA 1051, loan communications and financial material supported an inference of earlier discharge and possible conscious withholding; the counterclaims were returned for trial with unconditional leave.',
                       'Distinguish removal of the fraud exception for eligible applications from a challenge that a particular judgment was obtained through fraud.',
                       'Frame an application for leave and the appropriate consequential relief; do not invent an appeal deadline or treat admission as automatic.',
                     ],
                     why: 'Summary disposal has not supplied the full evidential testing of a trial. Material new evidence can reveal that its factual premise was unsafe, but its admission and the resulting order still require judicial assessment.',
                     exam: {
                       write:
-                        '[New material] raises a credible issue concerning [discharge/entitlement]. Seek leave to adduce it and [appropriate appellate relief], distinguishing the fact-specific reasoning in Grade One from an automatic reopening rule.',
+                        '[New material] raises a credible issue concerning [discharge/entitlement]. Seek leave to adduce it and [appropriate appellate relief], distinguishing the fact-specific reasoning in Grade One v Chow Chin Yui Angela [2025] HKCA 1051 from an automatic reopening rule.',
                       trap: 'Citing the availability of fresh evidence as permission to withhold known evidence at first instance.',
                     },
                   },
@@ -14290,28 +14211,16 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'cheques-bills',
-                label: 'Cheque counterclaims and exceptional stays',
-              },
-              {
-                session: 'LG9',
-                issue: 'conditional-leave',
-                label: 'Conditional and unconditional leave',
-              },
-              {
-                session: 'LG9',
-                issue: 'interim-payment',
-                label: 'Payments on account before final determination',
-              },
+              { session: 'LG9', issue: 'cheques-bills', label: 'Cheque counterclaims and exceptional stays' },
+              { session: 'LG9', issue: 'conditional-leave', label: 'Conditional and unconditional leave' },
+              { session: 'LG9', issue: 'interim-payment', label: 'Payments on account before final determination' },
             ],
           },
           {
             id: 'interim-payment',
-            title: 'Interim payment: alternative relief, liability gateways, net amount and payment terms',
+            title: 'Interim payments',
             summary:
-              'Run O.29 as one complete analysis: timing and evidence, damages or other sums, the liability gateway, personal-injury respondent eligibility, conservative net quantum, interaction with O.14 and the manner and later treatment of payment.',
+              'O.29 permits a payment on account where the applicable liability gateway and evidence justify it. Select the damages or non-damages route, calculate a prudent net amount and specify the payment terms.',
             triggers: {
               bullets: [
                 'An injured claimant has a judgment for damages to be assessed and needs funds before assessment.',
@@ -14333,7 +14242,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Identify a payment on account rather than final judgment or security',
                     detail:
-                      'O.29 r.9 defines interim payment as a payment on account of damages, debt or another sum, excluding costs, which the defendant may be held liable to pay to or for the plaintiff’s benefit. Yeung Sek Sung explains its role in relieving hardship during the period before trial; hardship is not a substitute for the rule’s liability and amount requirements.',
+                      'O.29 r.9 defines interim payment as a payment on account of damages, debt or another sum, excluding costs, which the defendant may be held liable to pay to or for the plaintiff’s benefit. Yeung Sek Sung v Cheung For Ming [1991] 1 HKLR 1 explains its role in relieving hardship during the period before trial; hardship is not a substitute for the rule’s liability and amount requirements.',
                     points: [
                       'Identify the underlying pleaded monetary entitlement and the proposed payment on account.',
                       'Separate damages, a debt or another monetary sum from costs; an interim costs advance is outside r.9.',
@@ -14466,7 +14375,7 @@ window.COURSE_DETAILS.PCLL8010 = {
                   {
                     label: 'Reconcile interim payment with the O.14 decision',
                     detail:
-                      'Associated Bulk Carriers (The Fuchsan Marie) explains that a factual issue may prevent summary judgment yet leave sufficient evidence of eventual success for an interim payment. Quadrex illustrates coexistence with conditional leave. Where unconditional leave reflects genuine uncertainty about the same liability, the materials treat an interim payment on that inconsistent premise as inappropriate.',
+                      'Associated Bulk Carriers v Koch Shipping (The Fuchsan Marie) [1978] 2 All ER 254 explains that a factual issue may prevent summary judgment yet leave sufficient evidence of eventual success for an interim payment. British and Commonwealth Holdings v Quadrex [1989] QB 842 illustrates coexistence with conditional leave. Where unconditional leave reflects genuine uncertainty about the same liability, the materials treat an interim payment on that inconsistent premise as inappropriate.',
                     points: [
                       'Apply the distinct O.29 test rather than infer entitlement from failure or success of O.14.',
                       'If liability judgment with assessment is entered, identify r.11(1)(b) and still prove the prudent amount.',
@@ -14625,21 +14534,9 @@ window.COURSE_DETAILS.PCLL8010 = {
               },
             },
             crossRefs: [
-              {
-                session: 'LG9',
-                issue: 'summary-judgment-procedure',
-                label: 'Summons and supporting affirmation',
-              },
-              {
-                session: 'LG9',
-                issue: 'conditional-leave',
-                label: 'Conditional leave and security',
-              },
-              {
-                session: 'LG9',
-                issue: 'counterclaims-orders',
-                label: 'Judgment, stays and continuing proceedings',
-              },
+              { session: 'LG9', issue: 'summary-judgment-procedure', label: 'Summons and supporting affirmation' },
+              { session: 'LG9', issue: 'conditional-leave', label: 'Conditional leave and security' },
+              { session: 'LG9', issue: 'counterclaims-orders', label: 'Judgment, stays and continuing proceedings' },
             ],
           },
         ],
