@@ -9850,6 +9850,4680 @@ window.COURSE_DETAILS.PCLL8030 = {
         ],
       },
     },
+    LG5: {
+      kind: 'LG',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Analyse showing good title and answering requisitions and its effect on showing or giving title.',
+        'Analyse estate transmission and co-ownership and its effect on showing or giving title.',
+        'Analyse mortgages and effective discharge and its effect on showing or giving title.',
+        'Analyse registered litigation and prior sale agreements and its effect on showing or giving title.',
+        'Analyse beneficial interests and occupiers and its effect on showing or giving title.',
+        'Analyse gifts, nominations and creditor challenges and its effect on showing or giving title.',
+        'Analyse tenancies and vacant possession and its effect on showing or giving title.',
+      ],
+      topicsCovered: [
+        'Showing good title and answering requisitions',
+        'Estate transmission and co-ownership',
+        'Mortgages and effective discharge',
+        'Registered litigation and prior sale agreements',
+        'Beneficial interests and occupiers',
+        'Gifts, nominations and creditor challenges',
+        'Tenancies and vacant possession',
+      ],
+      examNotes: {
+        intro:
+          'Proof of title applications across Lectures 5–7. These pages address timely proof, estate transmission, security interests, pending claims, beneficial ownership and possession. A satisfactory answer identifies who can assert which right and what documents or effective release resolve it.',
+        issueTypes: [
+          {
+            id: 'showing-title-in-practice',
+            title: 'Showing good title and answering requisitions',
+            summary: 'Timely documents and candid replies are separate obligations from the ability to convey good title at completion.',
+            triggers: {
+              bullets: [
+                'The vendor answers a plan discrepancy only with an architect’s affirmation produced at trial.',
+                'The occupation permit permits seven tenements but the assignment plan shows nine.',
+                'The vendor supplies the title documents shortly before completion, leaving little time to investigate.',
+                'A cooling-system agreement has been replaced, but the purchaser requests the superseded instrument.',
+                'The vendor says there has never been enforcement but does not disclose the Building Authority’s correspondence.',
+                'The purchaser receives a complete document bundle that reveals an outstanding mortgage.',
+              ],
+              routes: [
+                {
+                  when: 'The unanswered discrepancy concerns rooftop or subdivided works',
+                  session: 'LG6',
+                  issue: 'unauthorised-building-works',
+                  label: 'Unauthorised building works',
+                },
+                {
+                  when: 'The purchaser now wants to terminate before completion',
+                  session: 'LG7',
+                  issue: 'termination-and-vp-summons',
+                  label: 'Termination and vendor and purchaser summonses',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Two separate contractual obligations: V must both give good title at completion and show it sufficiently early for proper requisitions; the reply dated [date] must be assessed against that separate obligation.',
+                'The two central teaching examples: Following Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, V must explain the discrepancy and disclose the relevant enforcement history with candour.',
+                'What must be produced?: Under s.13(1) CPO, V must produce the documents affecting this chain; the superseded instrument requires separate consideration of whether it still affects title.',
+                'Classify the problem before selecting a remedy: The defect is [missing estate / encumbrance / defeasibility / inadequate proof], because [person] retains or can assert [right] against the property.',
+                'The real-risk standard and its limit: V must establish no real risk of a successful adverse assertion under MEPC v Christian-Edwards [1981] AC 205; if the legal estate never passed, an effective conveyance or vesting remedy is required.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering showing good title and answering requisitions',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Two separate contractual obligations',
+                    detail:
+                      'Giving good title concerns what V can actually convey at completion: the estate or interest promised, with the agreed rights, free of unacceptable encumbrances or vulnerability to adverse claims. Showing good title concerns timely conveyancing evidence: documents, explanations and candid answers enabling P to investigate and decide whether to complete. V can have an ultimately defensible title yet fail to show it properly. Conversely, producing a neat document bundle cannot excuse inability to give the estate promised.',
+                    why: 'Evidence is required in time to make the completion decision, not merely to win later litigation.',
+                    exam: {
+                      write:
+                        'V must both give good title at completion and show it sufficiently early for proper requisitions; the reply dated [date] must be assessed against that separate obligation.',
+                      trap: 'Using evidence produced at trial to excuse an inadequate pre-completion reply.',
+                    },
+                    points: [
+                      "The distinction prevents a common exam error: citing evidence first supplied at trial as though it satisfied a duty to answer requisitions before completion. A later expert report may support V's underlying title, but it does not automatically erase an earlier breach of the duty to show it.",
+                      'Absent an express contractual timetable, title must be shown within a reasonable time before completion: Ng Chek Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423 v Kiu Wai Ming [1992] 1 HKLR 5 (CA). It must be early enough to permit proper requisitions: Yeung Sau Chuen Sammy v Chung Chun Ting [1997] 4 HKC 34. Reasonableness depends on the contractual period, complexity, availability of evidence and time needed to investigate; dumping documents just before completion may defeat the purpose of the duty.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'The two central teaching examples',
+                    detail:
+                      "Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423 (CA): the assignment/DMC plan and occupation permit showed different numbers of flats. BA confirmed no subsequent permission. An architect's affirmation offered at trial argued that only other extra flats were at risk and Government re-entry was not a real risk. The teaching point is timing: good title had not been shown when required. Do not turn the first-instance “no real risk” finding into the appellate outcome.",
+                    why: 'A technically defensible title is of little use when the reply conceals the facts needed to assess it.',
+                    exam: {
+                      write:
+                        'Following Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396, V must explain the discrepancy and disclose the relevant enforcement history with candour.',
+                      trap: 'Treating an architect’s non-structural opinion as an answer to every additional-unit and enforcement concern.',
+                    },
+                    points: [
+                      "Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396 (CA): the occupation permit allowed seven tenements but nine appeared in the assignment plan. P requisitioned on 25 September; V's architect letter arrived on 21 October, followed by unhelpful replies shortly before 25 October completion. The letter said the subject flat was self-contained and the division non-structural, but did not squarely explain the extra units and all relevant enforcement facts. The court stressed candour and commonsense: P is not an adversary. V should reveal facts that permit a sound assessment, including BA's knowledge and enforcement history, rather than simply label P's points misconceived.",
+                      'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396 also supports the narrower substantive proposition that UBW confined to other flats need not infect the subject flat. These propositions coexist: V may ultimately have a good substantive answer yet fail to communicate it adequately before completion.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'What must be produced?',
+                    detail:
+                      'Under s.13(1) CPO, work through the statutory chain from the relevant intermediate root, or ultimate root if there is no intermediate root, to V. Produce originals or properly certified copies of relevant documents affecting title, whether registered or unregistered, subject to statutory exceptions. A land search is an investigative starting point; registration alone does not establish valid execution, discharge, beneficial ownership or physical compliance.',
+                    why: 'Production follows the relevant chain and current legal effect of its instruments.',
+                    exam: {
+                      write:
+                        'Under s.13(1) CPO, V must produce the documents affecting this chain; the superseded instrument requires separate consideration of whether it still affects title.',
+                      trap: 'Demanding every old document without identifying its continuing relevance.',
+                    },
+                    points: [
+                      'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478: a 1979 seawater-pump leasing agreement was replaced by a 1988 agreement. The superseded instrument did not need production on the facts. Ask whether an old document still affects current title rather than demanding every historical paper indiscriminately. The statutory test for identifying a root is addressed separately; do not substitute the separate 15-year execution presumptions for that test.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Classify the problem before selecting a remedy',
+                    detail:
+                      "The categories overlap: a mortgage both burdens title and may permit sale; an IO liability may later become a charge; a missing release may be an evidence problem or an actual subsisting encumbrance. Label the legal mechanism, not merely the defect's name.",
+                    why: 'Different defects require different cures because some concern evidence and others concern ownership itself.',
+                    exam: {
+                      write:
+                        'The defect is [missing estate / encumbrance / defeasibility / inadequate proof], because [person] retains or can assert [right] against the property.',
+                      trap: 'Describing every problem merely as a defect without tracing its effect on the purchaser.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'The real-risk standard and its limit',
+                    detail:
+                      "MEPC v Christian-Edwards [1981] AC 205 and Chi Kit / Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503 (2000) 3 HKCFAR 268 place a very high burden on V to demonstrate that P is not at risk of successful assertion of an adverse interest. The supplied case account states the standard as beyond reasonable doubt, using Re Stirrup's Contract [1961] 1 WLR 449 (“without any blot or possibility of litigation”). This is conveyancing title doctrine; it does not make every associated civil claim subject to the criminal burden.",
+                    why: 'Risk evidence can resolve a doubtful title, but cannot itself convey an estate that never passed.',
+                    exam: {
+                      write:
+                        'V must establish no real risk of a successful adverse assertion under MEPC v Christian-Edwards [1981] AC 205; if the legal estate never passed, an effective conveyance or vesting remedy is required.',
+                      trap: 'Assuming elapsed time supplies a missing legal estate.',
+                    },
+                    points: [
+                      'Apply that standard with the Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935 (CFA) approach: a willing V and willing P, both with reasonably robust commonsense, seeking to complete their bargain. A fanciful possibility is not automatically a title objection. A bare assurance that enforcement is “unlikely” is not automatically enough either.',
+                      "The supplied account's important analytical qualification is that no-real-risk reasoning cannot itself transfer a legal estate that never passed. Where an assignment is void and V lacks the estate, silence and elapsed time are not substitutes for a confirmatory conveyance or vesting order. First apply any statutory conclusive presumption; then identify whether the residual problem is a missing estate or merely exposure to avoidance. The supplied account acknowledges doctrinal tension over defective corporate attestation; present its categorical “bad title” argument as the supplied account's analysis, alongside the cases permitting ratification or no-real-risk proof.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Assess giving and showing separately, then state which breach has occurred.',
+                'Check actual reply dates, disclosure and completion timing before deciding whether a breach has matured.',
+                'The distinction between void and voidable corporate execution must be resolved before applying no-real-risk reasoning.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Two separate contractual obligations — Evidence is required in time to make the completion decision, not merely to win later litigation.',
+                    'The two central teaching examples — A technically defensible title is of little use when the reply conceals the facts needed to assess it.',
+                    'What must be produced? — Production follows the relevant chain and current legal effect of its instruments.',
+                    'Classify the problem before selecting a remedy — Different defects require different cures because some concern evidence and others concern ownership itself.',
+                    'The real-risk standard and its limit — Risk evidence can resolve a doubtful title, but cannot itself convey an estate that never passed.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'V must establish no real risk of a successful adverse assertion under MEPC v Christian-Edwards [1981] AC 205; if the legal estate never passed, an effective conveyance or vesting remedy is required.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A clean search is not proof of every document’s validity.',
+                'Candour cannot be replaced by calling a requisition misconceived.',
+                'A minor initial omission is not automatically immediate repudiation.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Timing',
+                    'Ng Chek Kok v Kiu Wai Ming [1992] 1 HKLR 5',
+                    'Absent an express timetable, title must be shown a reasonable time before completion.',
+                  ],
+                  [
+                    'Opportunity to requisition',
+                    'Yeung Sau Chuen Sammy v Chung Chun Ting [1997] 4 HKC 34',
+                    'Documents must arrive sufficiently early to permit proper requisitions.',
+                  ],
+                  [
+                    'Late proof',
+                    'Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423',
+                    'Trial-stage explanation did not satisfy the prior duty to show title.',
+                  ],
+                  [
+                    'Candour',
+                    'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396',
+                    'Reveal the relevant facts and answer the real objection, even where substantive title may be defensible.',
+                  ],
+                  [
+                    'Superseded instrument',
+                    'De Monsa Investments Ltd v Whole Win Management Fund Ltd [2011] 4 HKLRD 478',
+                    'A replaced leasing agreement did not require production on the facts.',
+                  ],
+                  [
+                    'Risk standard',
+                    'MEPC v Christian-Edwards [1981] AC 205; Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935',
+                    'Very high proof of good title is applied with reasonably robust commonsense.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Classify the problem before selecting a remedy comparison',
+                table: {
+                  headers: ['Classification', 'Meaning', 'Typical example', 'Correct next question'],
+                  rows: [
+                    [
+                      'Failure to show',
+                      'Adequate, timely evidence not supplied',
+                      'Unexplained plan/OP discrepancy',
+                      'What was disclosed, when, and did it answer the requisition?',
+                    ],
+                    [
+                      'Missing estate / bad title',
+                      'V lacks all or part of the promised legal or equitable estate',
+                      'Void assignment; wrong shares conveyed',
+                      'Who still owns the missing interest and how will it be transferred?',
+                    ],
+                    [
+                      'Encumbered title',
+                      'A burden binds the estate',
+                      'Mortgage; easement; tenant; repair liability',
+                      'Was the burden accepted by contract, discharged or validly excluded?',
+                    ],
+                    [
+                      'Defeasible / doubtful title',
+                      'Estate exists but can be challenged or lost',
+                      'Self-dealing transfer; lease breach',
+                      'Is there a real risk of a successful adverse assertion?',
+                    ],
+                    [
+                      'Mere conveyancing matter',
+                      'Completion machinery can satisfy the obligation without a substantive title failure',
+                      'Stamp undertaking; occupier with no continuing right',
+                      'Will the agreed completion obligation actually be fulfilled?',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'unauthorised-building-works',
+                label: 'Unauthorised building works',
+              },
+              {
+                session: 'LG7',
+                issue: 'termination-and-vp-summons',
+                label: 'Termination and vendor and purchaser summonses',
+              },
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG4',
+                issue: 'statutory-period-s13',
+                label: 'The statutory period for showing title',
+              },
+              {
+                session: 'LG4',
+                issue: 'answering-requisitions',
+                label: 'Answering requisitions with candour',
+              },
+              {
+                session: 'LG3',
+                issue: 'encumbered-or-defeasible',
+                label: 'Encumbered and defeasible titles',
+              },
+            ],
+          },
+          {
+            id: 'estate-transmission-and-coownership',
+            title: 'Estate transmission and co-ownership',
+            summary:
+              'Prove authority, beneficiary entitlement and the transfer instrument; rely on survivorship only after excluding severance.',
+            triggers: {
+              bullets: [
+                'A will restricts sales of landed property for ten years, but a parking space is offered for sale during that period.',
+                'An administrator assigns the whole property to the surviving spouse despite other children being entitled.',
+                'A personal representative sells estate property to himself or a family member.',
+                'A joint owner has died and the seller produces only a death certificate.',
+                'A deceased joint owner had earlier mortgaged his interest without telling the survivor.',
+                'A solicitor who administered the estate provides a declaration identifying all beneficiaries after many years.',
+              ],
+              routes: [
+                {
+                  when: 'The occupier asserts an interest funded independently of the estate',
+                  session: 'LG5',
+                  issue: 'beneficial-interests-and-notice',
+                  label: 'Beneficial interests and occupiers',
+                },
+                {
+                  when: 'The administrator’s relative received an undervalue gift affecting creditors',
+                  session: 'LG5',
+                  issue: 'gifts-nominations-and-fraud',
+                  label: 'Gifts, nominations and creditor challenges',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Follow the route by which title left the deceased: V must prove death, the grant, the relevant will or intestacy entitlement and the appropriate written assent or assignment.',
+                'Sale for estate administration versus distribution to beneficiaries: The presumption in Chun Hon Wai v Junichi Takashima [2000] 2 HKC 777 supports an administration sale, but [facts] require separate proof that the recipient was entitled.',
+                'PR self-dealing and undervalue: The sale to [relative/PR] raises s.55 Probate and Administration Ordinance and the avoidance risk illustrated by Feerni Development Ltd v Daniel Wong & Partners [2001] 2 HKLRD 13.',
+                'Joint tenancy or tenancy in common?: Before relying on survivorship, V must establish that [mortgage/agreement/order] did not sever the joint tenancy; otherwise the deceased share must be traced through the estate.',
+                'Requisition and conclusion template: The requested documents must establish [recipient’s entitlement / unrestricted sale power / unsevered joint tenancy], rather than merely repeat the current registration.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering estate transmission and co-ownership',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Follow the route by which title left the deceased',
+                    detail:
+                      'A death certificate establishes death, not the destination of a tenancy-in-common share or authority to dispose of estate property. Obtain the grant of probate or letters of administration, the will where relevant, the appropriate transfer instrument and proof that the recipient was entitled.',
+                    why: 'Death, authority and vesting are different links; proving only one does not prove the next owner’s estate.',
+                    exam: {
+                      write:
+                        'V must prove death, the grant, the relevant will or intestacy entitlement and the appropriate written assent or assignment.',
+                      trap: 'Treating probate as proof that every sale or distribution is unrestricted.',
+                    },
+                    points: [
+                      'Testacy: an executor assenting real estate to a devisee uses an assent in writing; no deed is required for that assent on the stated facts. Intestacy: an administrator assigning to a beneficiary uses an assignment by deed. A sale to a third-party purchaser requires the proper conveyancing instrument; do not assume that the “written assent” route applies to a commercial sale merely because the deceased left a will.',
+                      'Pacific Harbor Advisors Pte Ltd v Winson Federal Ltd (HCMP 1285/2015, 21 August 2015): the supplied account emphasises that a beneficiary under a will does not acquire an interest in a particular estate asset before assent. Entitlement under a will and actual vesting of the particular property are distinct stages.',
+                      'Chan Chiung Yo v Sam Yu Lik Eric [2024] HKCFI 1377: the will contained a ten-year restriction on selling certain landed properties, raising a problem for a parking-space sale. Read the restriction and exceptions; a grant of probate is not itself proof that every proposed sale is unrestricted. Ask V to identify the legal basis for selling despite the apparent restriction. The supplied materials describe the issue but do not provide a full judgment analysis establishing all exceptions or the ultimate reasoning.',
+                      'Historical estate-duty evidence may be relevant for earlier deaths or gifts. For estate duty, use the actual transitional date applicable to the death rather than an unqualified statement that all old title chains are duty-free.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Sale for estate administration versus distribution to beneficiaries',
+                    detail:
+                      "Chun Hon Wai v Junichi Takashima [2000] 2 HKC 777 (CA), applied in Sze King Lun v Nicerich Investments Ltd [2001] 1 HKLRD 243: once the PR's power to sell is established, a purchaser ordinarily presumes a sale is for administration and need not investigate whether it is necessary. That protection supports ordinary estate sales and avoids making buyers supervise administration.",
+                    why: 'The presumption supporting an ordinary administration sale does not prove a beneficiary’s entitlement on distribution.',
+                    exam: {
+                      write:
+                        'The presumption in Chun Hon Wai v Junichi Takashima [2000] 2 HKC 777 supports an administration sale, but [facts] require separate proof that the recipient was entitled.',
+                      trap: 'Applying the administration-sale presumption despite disclosed evidence of an improper purpose.',
+                    },
+                    points: [
+                      'It does not excuse known evidence of impropriety. Chan Yat Wah v Moonland Enterprises Ltd [2001] 1 HKLRD 45 involved existing proceedings alleging that the executrix was selling for her own benefit. The presumption could not simply dispose of that warning. By contrast, Lau Siu Ying v Wong Cheung Tai (HCMP 669/1993) concerned litigation considered bound to fail because the claimed interest arose under an unregistered deed of trust. The quality and priority of the alleged claim matter; not every allegation invalidates an estate sale.',
+                      'Distribution is different: where the PR distributes property to particular beneficiaries, investigate their entitlement and any omitted beneficiary. Sun Sek Haw v Au So Kum [1999] 3 HKC 92 (CA): the deceased left a husband and five children, but the administrators assigned the property to the husband alone. His status as administrator did not establish sole beneficial entitlement; title was defective.',
+                      "So Mariko v Tse Chun Chung John (CACV 212/2010, 15 April 2011): a solicitor who acted in the estate and assignment declared that the confirmors were all the beneficiaries. The probate affirmation would have been the best available evidence but was not necessarily conclusive: it recorded the administrator's account and could itself omit someone. After twelve years without a missing beneficiary claim, the solicitor's declaration was proper conveyancing evidence and sufficed on the facts. The lesson is neither “always demand the probate affirmation” nor “any declaration suffices”; assess the declarant's knowledge, records, elapsed time and contrary evidence. Ample Happiness [2022] HKDC 1007 and Liu Wai Yin v Falic Trading [2023] HKCFI 1295 are additional applications flagged by the supplied account without full summaries.",
+                      "The widow-half/children-quarters example is illustrative, not a complete statement of intestacy law. Actual distribution depends on the applicable statute, date, surviving relatives, statutory entitlements and estate composition. Do not reproduce those fractions automatically in an exam.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'PR self-dealing and undervalue',
+                    detail:
+                      "s.55 Probate and Administration Ordinance; Feerni Development Ltd v Daniel Wong & Partners [2001] 2 HKLRD 13: a PR's sale to himself or a family member can be voidable at the instance of another interested person. Separate authority to sell from fiduciary propriety of the particular purchaser and price.",
+                    why: 'Authority to administer does not authorise conflicted dealing for personal benefit.',
+                    exam: {
+                      write:
+                        'The sale to [relative/PR] raises s.55 Probate and Administration Ordinance and the avoidance risk illustrated by Feerni Development Ltd v Daniel Wong & Partners [2001] 2 HKLRD 13.',
+                      trap: 'Ignoring the recipient, price and other beneficiaries once a grant is produced.',
+                    },
+                    points: [
+                      "Lam Sik Shi v Lam Sik Ying (HCA 1605/2004, 3 October 2016): an assignment at serious undervalue in breach of administration duties was set aside. That creates a genuine chain-of-title concern: a later registered owner may derive title through an impeachable transfer. Examine disclosure, consideration, beneficiaries' informed consent and any effective ratification or court authorisation rather than assuming registration sanitises the transaction.",
+                      "Integrated trigger: an administrator transfers without consideration to his child, who now sells. Analyse PR powers, beneficiary entitlement, s.55/self-dealing, undervalue, possible trust interests and P's notice together. Each addresses a different route to challenge.",
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Joint tenancy or tenancy in common?',
+                    detail:
+                      "Unsevered joint tenancy: survivorship operates; the deceased's interest does not pass through his estate. Produce the death certificate for this link. The absence of the property from the probate asset schedule is consistent with survivorship, not proof of a missing estate asset.",
+                    why: 'Survivorship bypasses estate administration only if a joint tenancy still existed at death.',
+                    exam: {
+                      write:
+                        'Before relying on survivorship, V must establish that [mortgage/agreement/order] did not sever the joint tenancy; otherwise the deceased share must be traced through the estate.',
+                      trap: 'Treating a mortgage and a charging order as equivalent severance events.',
+                    },
+                    points: [
+                      "Tenancy in common: no survivorship. Follow the deceased's share through probate/intestacy and assent/assignment. The surviving co-owner does not take the deceased's share just because he remains in possession.",
+                      'Check severance before relying on survivorship. Mak Pui Ki v Ho Wing Ha (HCMP 898/2020, 22 October 2020): a “secret” mortgage severed the joint tenancy; the remaining owner did not acquire that interest by survivorship. The supplied account contrasts Ho Wai Kwan v Chan Hon Kuen, where a charging order did not destroy the joint tenancy. Do not treat mortgages and charging orders as interchangeable.',
+                      'Wong Anita Shu Ting v Yuen Yiu Chung (HCMP 710/2021, 26 January 2022): a consent order and transfers between former spouses amounted to equitable severance; title derived from the transferee spouse was good. Read the history of agreements, court orders and conduct rather than relying only on the original joint-tenancy wording.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Requisition and conclusion template',
+                    detail:
+                      "“Please produce the death certificate, grant, relevant will and assent/assignment; establish the transferee's entitlement and PR's power to dispose; explain any sale restriction or self-dealing; and confirm with supporting documents whether the joint tenancy was severed before death.”",
+                    why: 'A requisition should identify the missing link and ask for evidence capable of proving it.',
+                    exam: {
+                      write:
+                        'The requested documents must establish [recipient’s entitlement / unrestricted sale power / unsevered joint tenancy], rather than merely repeat the current registration.',
+                      trap: 'Requesting paperwork without saying what legal issue it resolves.',
+                    },
+                    points: [
+                      "A sound conclusion identifies which route is proved. “The death certificate alone suffices” is defensible only after establishing the unsevered joint tenancy; a grant alone is insufficient to establish a disputed beneficiary's ownership or cure fiduciary wrongdoing.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The illustrative intestacy fractions are not a complete statutory distribution rule.',
+                'Historical estate-duty questions depend on the death date and transitional law.',
+                'A relevant probate affirmation can be better evidence without being conclusive as to every beneficiary.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Follow the route by which title left the deceased — Death, authority and vesting are different links; proving only one does not prove the next owner’s estate.',
+                    'Sale for estate administration versus distribution to beneficiaries — The presumption supporting an ordinary administration sale does not prove a beneficiary’s entitlement on distribution.',
+                    'PR self-dealing and undervalue — Authority to administer does not authorise conflicted dealing for personal benefit.',
+                    'Joint tenancy or tenancy in common? — Survivorship bypasses estate administration only if a joint tenancy still existed at death.',
+                    'Requisition and conclusion template — A requisition should identify the missing link and ask for evidence capable of proving it.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The requested documents must establish [recipient’s entitlement / unrestricted sale power / unsevered joint tenancy], rather than merely repeat the current registration.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Death certificate alone is insufficient for a tenancy-in-common share.',
+                'A PR’s sale to himself is not an ordinary arm’s-length administration sale.',
+                'Longstanding absence of a claim is evidence to assess, not automatic exclusion of a beneficiary.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Restricted will',
+                    'Chan Chiung Yo v Sam Yu Lik Eric [2024] HKCFI 1377',
+                    'An express ten-year sale restriction raised a title requisition requiring an explanation of sale power.',
+                  ],
+                  [
+                    'Administration sale',
+                    'Chun Hon Wai v Junichi Takashima [2000] 2 HKC 777',
+                    'Purchaser ordinarily need not investigate necessity of an administration sale once power is established.',
+                  ],
+                  [
+                    'Improper purpose',
+                    'Chan Yat Wah v Moonland Enterprises Ltd [2001] 1 HKLRD 45',
+                    'Evidence of personal benefit displaced reliance on the ordinary presumption.',
+                  ],
+                  [
+                    'Beneficiary entitlement',
+                    'Sun Sek Haw v Au So Kum [1999] 3 HKC 92; So Mariko v Tse Chun Chung John CACV 212/2010',
+                    'Prove distribution entitlement; informed declaration evidence can suffice in its factual setting.',
+                  ],
+                  [
+                    'PR self-dealing',
+                    'Feerni Development Ltd v Daniel Wong & Partners [2001] 2 HKLRD 13; Lam Sik Shi v Lam Sik Ying HCA 1605/2004',
+                    'Self-dealing and serious undervalue can expose an estate transfer to avoidance.',
+                  ],
+                  [
+                    'Severance',
+                    'Mak Pui Ki v Ho Wing Ha HCMP 898/2020; Wong Anita Shu Ting v Yuen Yiu Chung HCMP 710/2021',
+                    'A mortgage or relevant agreement/conduct may defeat an assumed survivorship route.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG5',
+                issue: 'gifts-nominations-and-fraud',
+                label: 'Gifts, nominations and creditor challenges',
+              },
+              {
+                session: 'LG5',
+                issue: 'beneficial-interests-and-notice',
+                label: 'Beneficial interests and occupiers',
+              },
+              {
+                session: 'LG5',
+                issue: 'mortgages-and-discharges',
+                label: 'Mortgages and effective discharge',
+              },
+            ],
+          },
+          {
+            id: 'mortgages-and-discharges',
+            title: 'Mortgages and effective discharge',
+            summary: 'Repayment and registry vacation must be distinguished from a valid release of the actual surviving security.',
+            triggers: {
+              bullets: [
+                'A mortgage entry has been vacated, but no effective release is produced.',
+                'A deed releases the equitable mortgage over an uncompleted flat and does not identify the later legal mortgage.',
+                'The release gives a different memorial number from the mortgage in the chain.',
+                'An old mortgagee cannot be found and the owner wishes to remove the security.',
+                'A decades-old mortgage remains registered, but its repayment terms and later payments are unknown.',
+                'A foreign bank’s attorney signed the release under an unsealed power.',
+              ],
+              routes: [
+                {
+                  when: 'The release was signed under a disputed power of attorney',
+                  session: 'LG7',
+                  issue: 'powers-of-attorney',
+                  label: 'Powers of attorney',
+                },
+                {
+                  when: 'The company’s release has the wrong seal or inadequate officer execution',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Identify every security interest and its effect: The mortgage remains an encumbrance unless V establishes effective discharge of the security over the contracted property.',
+                'The ordinary release routes: Vacation alone does not discharge the charge under Siu Wing Yee Angeline v Earning Yield Ltd [2013] 6 HKC 281; V must show a valid deed, statutory receipt or applicable equitable release.',
+                'Wrong release: debt repayment and legal release differ: The release must identify and discharge the surviving security; an explanation of merger must also have been supplied in time to answer the requisition.',
+                'Untraceable encumbrancer: s.12A CPO: Under s.12A CPO, V must establish the statutory circumstances, comply with payment and any directed notice, and obtain the relevant declaration.',
+                'Limitation route for old mortgages: V must establish accrual, later payments or acknowledgments and the relevant limitation basis before relying on a declaration that the old mortgage is no longer subsisting.',
+                'Release authority and execution: V must prove both the effective release and the attorney’s valid authority to execute it for the mortgagee.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering mortgages and effective discharge',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Identify every security interest and its effect',
+                    detail:
+                      'An undischarged mortgage or charge burdens the property; a power of sale also puts ownership at risk. Examine legal/equitable character, mortgagor, mortgagee, secured property/shares, dates, memorial numbers, repayment terms, substitutions and every release. Search the Deeds Pending Registration section too: Goldenwick Ltd v Standard Chartered Bank (Hong Kong) Ltd [2008] 3 HKLRD 266 shows that a pending instrument cannot simply be ignored.',
+                    why: 'A security burden must be identified before its form of extinction can be proved.',
+                    exam: {
+                      write:
+                        'The mortgage remains an encumbrance unless V establishes effective discharge of the security over the contracted property.',
+                      trap: 'Ignoring an instrument in the deeds-pending-registration section.',
+                    },
+                    points: [
+                      'A DMC charge is an equitable charge created under the DMC mechanism, not automatically a court charging order. Consequently, do not assume the LRO five-year rule for judgments/charging orders extinguishes a DMC charge.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'The ordinary release routes',
+                    detail:
+                      'Siu Wing Yee Angeline v Earning Yield Ltd [2013] 6 HKC 281: removing registration did not extinguish the charge itself. Never infer “clean register = discharged interest”. Registration, validity and extinction are different questions.',
+                    why: 'Registration records and the underlying proprietary interest perform different functions.',
+                    exam: {
+                      write:
+                        'Vacation alone does not discharge the charge under Siu Wing Yee Angeline v Earning Yield Ltd [2013] 6 HKC 281; V must show a valid deed, statutory receipt or applicable equitable release.',
+                      trap: 'Equating repayment, a removed entry and a legally effective release.',
+                    },
+                    points: [
+                      'Cheung Fuk Yu Danny v Vu Poi Van (DCCJ 2817/2013, 19 March 2015): a bank receipt lacking a company chop and express agent-authorisation wording was accepted under s.23 CPO on the facts. There was no contrary evidence of authority and no longstanding bank challenge. Ask whether the receipt appears duly executed in its context; do not impose deed/seal requirements mechanically on every statutory receipt.',
+                      "Chun Tat Paper Co Ltd v Wong Ip Cheng [2013] 1 HKLRD 571 (CA): an equitable charge's discharge could be inferred from subsequent dealings and lack of complaint despite no formal written release. Treat this as a fact-dependent exception requiring evidence; it does not make every unpaid or unrecorded charge harmless.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Wrong release: debt repayment and legal release differ',
+                    detail:
+                      'Chan Shun v Ng Yiu Leung Danny (CACV 365/2008, 13 November 2009): a wrong memorial number and bank confirmation of repayment did not provide an effective release on the facts; a fresh release was required. Determine whether the instrument objectively identifies the correct security or releases something else. “Just a typo” requires proof, not assertion.',
+                    why: 'Successive securities and merger make the surviving mortgage, not merely the original loan, the object of release.',
+                    exam: {
+                      write:
+                        'The release must identify and discharge the surviving security; an explanation of merger must also have been supplied in time to answer the requisition.',
+                      trap: 'Assuming release of the superseded equitable mortgage necessarily releases the legal mortgage.',
+                    },
+                    points: [
+                      'Trump Well International Ltd v Siu Fung Knitting Factory Co Ltd (HCMP 2408/1998, 7 January 1999): an equitable mortgage over an uncompleted flat was followed by an identical legal mortgage after completion, but the release named the earlier equitable mortgage. The supplied case account states that the earlier security had merged into the legal mortgage and that the legal mortgage remained undischarged. The slide account instead stresses merger reasoning appearing only at the VP hearing, not in replies. Preserve both lessons: identify the actual surviving security and give the explanation/evidence before completion. Do not say that releasing the superseded equitable mortgage necessarily releases the later legal one.',
+                      'Cali Enterprises Ltd v Chongmark [1986] HKLR 816, following Cumberland Court (Brighton) v Taylor [1964] Ch 29: “feeding the estoppel” may operate retrospectively once an actual mortgage discharge occurs. It is not a substitute for procuring the discharge, nor a universal right to force P to complete while security remains outstanding.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Untraceable encumbrancer: s.12A CPO',
+                    detail:
+                      'Where the person entitled to redeem faces an encumbrancer who is outside the jurisdiction, cannot be found, is unknown, or whose identity is uncertain, the court may authorise payment into court sufficient to redeem principal and interest.',
+                    why: 'The payment-in route substitutes a court-controlled redemption process for an unavailable creditor.',
+                    exam: {
+                      write:
+                        'Under s.12A CPO, V must establish the statutory circumstances, comply with payment and any directed notice, and obtain the relevant declaration.',
+                      trap: 'Treating inability to locate the mortgagee as discharge in itself.',
+                    },
+                    points: [
+                      'The stages are:',
+                      "Prove the statutory circumstances and the applicant's entitlement to redeem; seek direction/approval for payment in.",
+                      'Comply with directed notice and payment. The court may then declare the land free of the encumbrance.',
+                      'A person entitled to the fund may later apply for payment out.',
+                      'Authorities: Re Cheung Chi Wang [2002] 1 HKC 326; Ip Johnny Chong Ching v Ip Park Sing [2022] HKCFI 3743; Re Hau Hung [2022] HKCFI 3137; Feign Larry v Wan Yung Hing [2023] HKCFI 1791. The discharge comes through the statutory process; inability to find the creditor is not itself a release.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Limitation route for old mortgages',
+                    detail:
+                      'The applicable provisions are s.19(1) Limitation Ordinance: twenty years for an action to recover mortgage principal; s.19(5): six years for interest. Start with when the right to repayment accrued under the mortgage, then investigate acknowledgments, payments and other facts affecting time. Age since execution alone is insufficient.',
+                    why: 'Limitation runs from the relevant accrued right, not simply the date on the old deed.',
+                    exam: {
+                      write:
+                        'V must establish accrual, later payments or acknowledgments and the relevant limitation basis before relying on a declaration that the old mortgage is no longer subsisting.',
+                      trap: 'Counting years from execution without examining repayment terms.',
+                    },
+                    points: [
+                      'Lee Hung Cheong v William Tsokson [2023] HKCFI 872, following Fung Kam Cheung v Kwok Yiu Wing [1991] 1 HKC 321 and Yau Pak Hin v Ho Lung Thomas Ignatius (HCMP 628/2012, 31 July 2013), illustrates obtaining a declaration that an old mortgage was no longer subsisting/enforceable by operation of limitation. Distinguish that adjudicated result from merely asserting that the debt must be time-barred.',
+                    ],
+                  },
+                  {
+                    id: 'step-6',
+                    label: 'Release authority and execution',
+                    detail:
+                      "For a release signed by an attorney of a foreign bank, analyse both the mortgage release and the POA: form of release, donor's execution of the POA, scope of power, non-revocation, foreign-law evidence and the relevant old/new corporate regime. A defect in the authority to sign a release may leave the mortgage outstanding even though repayment is proved.",
+                    why: 'A release has its own execution and authority chain in addition to the underlying repayment.',
+                    exam: {
+                      write: 'V must prove both the effective release and the attorney’s valid authority to execute it for the mortgagee.',
+                      trap: 'A correct mortgage analysis does not excuse a defective power of attorney.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A DMC charge is not automatically a court charging order.',
+                'The Trump Well accounts differ on merger and release; identify the actual surviving security and preserve the separate timing question.',
+                'De facto equitable discharge needs the particular evidential foundation in Chun Tat Paper Co Ltd v Wong Ip Cheng [2013] 1 HKLRD 571.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Identify every security interest and its effect — A security burden must be identified before its form of extinction can be proved.',
+                    'The ordinary release routes — Registration records and the underlying proprietary interest perform different functions.',
+                    'Wrong release: debt repayment and legal release differ — Successive securities and merger make the surviving mortgage, not merely the original loan, the object of release.',
+                    'Untraceable encumbrancer: s.12A CPO — The payment-in route substitutes a court-controlled redemption process for an unavailable creditor.',
+                    'Limitation route for old mortgages — Limitation runs from the relevant accrued right, not simply the date on the old deed.',
+                    'Release authority and execution — A release has its own execution and authority chain in addition to the underlying repayment.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: ['V must prove both the effective release and the attorney’s valid authority to execute it for the mortgagee.'],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A bank confirmation of repayment is not always an effective release.',
+                'Feeding the estoppel requires an actual later acquisition/discharge event.',
+                'Age alone does not establish mortgage limitation.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Vacation',
+                    'Siu Wing Yee Angeline v Earning Yield Ltd [2013] 6 HKC 281',
+                    'Removing registration does not extinguish the underlying charge.',
+                  ],
+                  [
+                    'Legal/equitable form',
+                    'ss.4, 5 and 56 CPO',
+                    'Distinguish deed/statutory-receipt discharge of legal security from equitable release.',
+                  ],
+                  [
+                    'Wrong security',
+                    'Trump Well International Ltd v Siu Fung Knitting Factory Co Ltd HCMP 2408/1998',
+                    'Track the earlier equitable and subsequent legal mortgage rather than presume the release covers both.',
+                  ],
+                  [
+                    'Wrong memorial',
+                    'Chan Shun v Ng Yiu Leung Danny CACV 365/2008',
+                    'Repayment confirmation did not cure the ineffective release on the facts.',
+                  ],
+                  [
+                    'Later discharge',
+                    'Cali Enterprises Ltd v Chongmark [1986] HKLR 816',
+                    'An actual subsequent discharge can engage feeding the estoppel.',
+                  ],
+                  [
+                    'Unavailable encumbrancer',
+                    's.12A CPO; Ip Johnny Chong Ching v Ip Park Sing [2022] HKCFI 3743',
+                    'Court-authorised payment and declaration can remove an encumbrance in the specified circumstances.',
+                  ],
+                  [
+                    'Limitation',
+                    's.19(1), (5) Limitation Ordinance; Lee Hung Cheong v William Tsokson [2023] HKCFI 872',
+                    'Principal and interest periods differ; an appropriate declaration requires the accrual facts.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'The ordinary release routes comparison',
+                table: {
+                  headers: ['Interest', 'Course route', 'Investigation required'],
+                  rows: [
+                    [
+                      'Legal mortgage/charge',
+                      'Deed under s.4 CPO; receipt written on or annexed to charge under s.56 CPO',
+                      'Correct security and property; effective execution by the mortgagee or authorised agent',
+                    ],
+                    [
+                      'Equitable mortgage/charge',
+                      'Written release under s.5 CPO',
+                      'Proper releasor, scope and authority; assess any claimed exceptional de facto discharge',
+                    ],
+                    [
+                      'Registry entry',
+                      "Vacation removes the entry's registration",
+                      'Does not by itself prove the underlying interest was released',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG7',
+                issue: 'powers-of-attorney',
+                label: 'Powers of attorney',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+            ],
+          },
+          {
+            id: 'registered-litigation-and-prior-sales',
+            title: 'Registered litigation and prior sale agreements',
+            summary:
+              'Analyse priority, the actual proprietary claim and termination of a prior sale separately from stale register entries.',
+            triggers: {
+              bullets: [
+                'A charging order registered in 2019 has not been renewed and a later purchaser registers before re-registration.',
+                'A damages claim against the vendor has been registered as a lis pendens although it asserts no interest in land.',
+                'A previous purchaser seeks return of the deposit and asserts a purchaser’s lien.',
+                'A foreign court order concerns Hong Kong property but is absent from the land register.',
+                'A registered sale agreement has no following assignment and the earlier purchaser accepted repudiation.',
+                'A matrimonial application includes an asserted proprietary claim to the vendor’s property.',
+              ],
+              routes: [
+                {
+                  when: 'The action is against the owners’ corporation rather than the vendor personally',
+                  session: 'LG6',
+                  issue: 'collective-liabilities-and-io-litigation',
+                  label: 'Collective liabilities and owners’ corporation litigation',
+                },
+                {
+                  when: 'The current dispute is whether the purchaser validly terminated',
+                  session: 'LG7',
+                  issue: 'termination-and-vp-summons',
+                  label: 'Termination and vendor and purchaser summonses',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Charging order: extinction versus priority: The five-year expiry under s.17 LRO must be distinguished from the s.3(2) LRO protection of a qualifying intervening purchaser registered before renewal.',
+                'What qualifies as a lis pendens?: The proceedings must assert a claim affecting land; a personal debt claim that may later lead to a charge is different under Shing Shu Lung v Shing Kam Chuen HCA 2067/2013.',
+                "Purchaser's lien and responsible pleading: Where supported by the transaction, the pleaded purchaser’s lien is a proprietary claim under Liu Chi Keung v Law Sim Yuk [2006] 4 HKLRD 385.",
+                'Foreign land-related orders: Under Cova Enterprises Ltd v Tjanaka [2004] 1 HKLRD 199, the prospect of a Hong Kong action asserting the foreign-claimed interest must be assessed.',
+                'Hanging S&P agreements: V must establish the prior purchaser’s election and remaining rights; Hansun Investment Ltd v Sincere Union Development Ltd [2008] 4 HKLRD 442 supports removal of the former purchase interest after accepted repudiation.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering registered litigation and prior sale agreements',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Charging order: extinction versus priority',
+                    detail:
+                      'A charging order securing a civil judgment encumbers title: Chief Access Ltd v Lau Kwong Wing (HCA 892/2011, 24 July 2012). Ordinarily obtain evidence of discharge under s.20B(4) High Court Ordinance.',
+                    why: 'Expiry changes registration priority without necessarily extinguishing the debt or charge.',
+                    exam: {
+                      write:
+                        'The five-year expiry under s.17 LRO must be distinguished from the s.3(2) LRO protection of a qualifying intervening purchaser registered before renewal.',
+                      trap: 'Calling an expired charging order an extinguished debt.',
+                    },
+                    points: [
+                      'Under s.17 LRO, registration ceases to have the relevant priority effect after five years unless renewed. That does not itself extinguish the debt or order: Si Tou Choi Kam v Wealth Credit Ltd [2017] 1 HKLRD 1074, and the CA decision [2018] 4 HKC 247. The holder of a charging order is not automatically a purchaser for value under s.3(2) LRO.',
+                      'Ocean Rich Investment Co Ltd v Leung Yiu Biu (HCMP 1903/1998); Hung Heung Keng v Challenge Way Investment (HCMP 789/2006); Wong Chung Keung v Cheung Yik Tung [2018] HKCFI 2722 support protection for an intervening bona fide purchaser for valuable consideration whose interest is registered between expiry and re-registration under s.3(2) LRO.',
+                      "Worked timeline: CO registered in 2019; no renewal by 2024; P's qualifying interest registered in 2026 before any renewal. Investigate the actual dates and P's status; the intervening registered interest may be protected. If renewal occurred before P's registration, the answer changes. If P is a volunteer, the statutory purchaser protection cannot simply be assumed. An “expired” entry is therefore a priority problem requiring the full sequence, not permission to ignore the register.",
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'What qualifies as a lis pendens?',
+                    detail:
+                      'A pending action must assert a claim affecting land, not merely a personal liability that could later produce land execution. Inspect the pleadings and relief rather than the case caption.',
+                    why: 'The relief sought determines whether the litigation affects land now.',
+                    exam: {
+                      write:
+                        'The proceedings must assert a claim affecting land; a personal debt claim that may later lead to a charge is different under Shing Shu Lung v Shing Kam Chuen HCA 2067/2013.',
+                      trap: 'Treating a breach-of-trust label or sale injunction as conclusive registrability.',
+                    },
+                    points: [
+                      'Shing Shu Lung v Shing Kam Chuen (HCA 2067/2013, 7 July 2017): damages/account/fiduciary allegations and a restraint on sales were treated as personal claims on the facts. A debt claim “may affect” land if a later judgment is enforced by charging order, but does not itself “affect” land. A breach-of-trust label is not conclusive: distinguish a personal remedy from a claim to a proprietary interest.',
+                      'Nanyang Finance Co Ltd v Chan Kwok Wing [2004] 1 HKLRD 869 (CA) and Sun Ngai International Investment Ltd v Zhang Suhau [2009] 1 HKLRD 48: matrimonial proceedings asserting appropriate property relief can constitute a proprietary claim and a title blot. Not every claim for maintenance automatically qualifies; examine the combined relief sought.',
+                      'Wide Power Corp Ltd v IO of Manhattan Court [2015] 5 HKC 269: an injunction to remove DMC-breaching structures was not an interest in land for this purpose. Yet the underlying DMC breach may still matter to good title through enforcement risk. Registrability and title impact remain separate.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: "Purchaser's lien and responsible pleading",
+                    detail:
+                      "Liu Chi Keung v Law Sim Yuk [2006] 4 HKLRD 385: a purchaser's claim to a lien securing money paid under an aborted S&P can affect land. When the facts support it, claim the lien expressly alongside repayment relief. Do not manufacture a proprietary prayer solely to justify registration; the claim must be legally supportable. Malicious registration can lead to damages: Fung Kan Wai v Leung Shui Fat [1999] 4 HKC 70 (CA); Tai Yip Dyeing Factory Ltd v Kong Hoi Sang [2007] 1 HKLRD 608.",
+                    why: 'The lien supplies a proprietary interest that an ordinary repayment prayer does not necessarily identify.',
+                    exam: {
+                      write:
+                        'Where supported by the transaction, the pleaded purchaser’s lien is a proprietary claim under Liu Chi Keung v Law Sim Yuk [2006] 4 HKLRD 385.',
+                      trap: 'Adding a proprietary label without a legally supportable claim.',
+                    },
+                    points: [
+                      "A lis pendens also requires renewal after five years under s.17 LRO. Check both the litigation's substantive status and its registration history; a stale entry may still require explanation.",
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Foreign land-related orders',
+                    detail:
+                      "Cova Enterprises Ltd v Tjanaka [2004] 1 HKLRD 199: a Singapore order could create a real risk of a Hong Kong action affecting the interest claimed. The supplied account states that a foreign land order cannot be registered as a Hong Kong lis pendens and is not registrable under the specified reciprocal-enforcement money-judgment route. That does not make the substantive threat irrelevant. Analyse the order's nature and prospect of local proceedings. This example should not be generalised into a statement about every modern cross-border judgment recognition regime.",
+                    why: 'A foreign order may create a local litigation risk even if that order is not itself registrable through the described route.',
+                    exam: {
+                      write:
+                        'Under Cova Enterprises Ltd v Tjanaka [2004] 1 HKLRD 199, the prospect of a Hong Kong action asserting the foreign-claimed interest must be assessed.',
+                      trap: 'Inferring no title risk solely from the absence of a register entry.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Hanging S&P agreements',
+                    detail:
+                      'A specifically enforceable S&P can confer an equitable interest on the first purchaser. A registered agreement without a following assignment is therefore prima facie a burden. Search pending registration as well: Kong King Ong Alexander v Kan Heung Wing [2013] 1 HKLRD 1136.',
+                    why: 'Termination can remove a prior purchase entitlement, but the evidence must establish what rights remain.',
+                    exam: {
+                      write:
+                        'V must establish the prior purchaser’s election and remaining rights; Hansun Investment Ltd v Sincere Union Development Ltd [2008] 4 HKLRD 442 supports removal of the former purchase interest after accepted repudiation.',
+                      trap: 'Equating a terminated S&P with automatic extinction of every lien securing unpaid money.',
+                    },
+                    points: [
+                      'Require evidence that the earlier purchaser no longer has an enforceable claim to the property:',
+                      'Guang Xin Enterprises Ltd v Leung Kwai Mui (HCMP 2024/1996): prior purchaser had already recovered damages; no real risk of asserting the earlier purchase interest on those facts.',
+                      "Hansun Investment Ltd v Sincere Union Development Ltd [2008] 4 HKLRD 442: the earlier purchaser accepted V's repudiation and demanded the deposit back, discharging further performance; vacation could be ordered. A remaining personal obligation to repay money need not preserve a right to obtain conveyance.",
+                      "Caution: investigate whether a purchaser's lien or proprietary claim to secure repayment remains. “Contract terminated” and “all proprietary claims extinguished” are not necessarily identical propositions. Obtain the termination correspondence, settlement, judgment, satisfaction evidence and any release/lien discharge; do not infer waiver from inactivity alone.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Search deeds pending registration as well as completed entries.',
+                'The reciprocal-enforcement example is not a statement about every modern foreign-judgment regime.',
+                'Distinguish a court charging order from a DMC-created equitable charge.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Charging order: extinction versus priority — Expiry changes registration priority without necessarily extinguishing the debt or charge.',
+                    'What qualifies as a lis pendens? — The relief sought determines whether the litigation affects land now.',
+                    "Purchaser's lien and responsible pleading — The lien supplies a proprietary interest that an ordinary repayment prayer does not necessarily identify.",
+                    'Foreign land-related orders — A foreign order may create a local litigation risk even if that order is not itself registrable through the described route.',
+                    'Hanging S&P agreements — Termination can remove a prior purchase entitlement, but the evidence must establish what rights remain.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'V must establish the prior purchaser’s election and remaining rights; Hansun Investment Ltd v Sincere Union Development Ltd [2008] 4 HKLRD 442 supports removal of the former purchase interest after accepted repudiation.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A stale entry is not automatic proof of abandonment.',
+                'The later buyer must satisfy the purchaser/registration conditions before claiming priority protection.',
+                'Malicious registration of a lis pendens can itself produce liability.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Expiry and priority',
+                    's.17 and s.3(2) LRO; Wong Chung Keung v Cheung Yik Tung [2018] HKCFI 2722',
+                    'Intervening qualifying registered purchaser protection differs from substantive discharge.',
+                  ],
+                  [
+                    'Debt survives',
+                    'Si Tou Choi Kam v Wealth Credit Ltd [2018] 4 HKC 247',
+                    'Expiry does not necessarily extinguish the charge/debt and the creditor is not simply a purchaser for value.',
+                  ],
+                  [
+                    'Personal claim',
+                    'Shing Shu Lung v Shing Kam Chuen HCA 2067/2013',
+                    'Personal claims must be distinguished from proprietary relief affecting land.',
+                  ],
+                  [
+                    'Matrimonial property claim',
+                    'Nanyang Finance Co Ltd v Chan Kwok Wing [2004] 1 HKLRD 869',
+                    'The appropriate asserted property relief can constitute a title blot.',
+                  ],
+                  [
+                    'Purchaser lien',
+                    'Liu Chi Keung v Law Sim Yuk [2006] 4 HKLRD 385',
+                    'A supported purchaser’s lien can ground a claim affecting land.',
+                  ],
+                  [
+                    'Foreign order',
+                    'Cova Enterprises Ltd v Tjanaka [2004] 1 HKLRD 199',
+                    'Real risk of local enforcement proceedings can matter despite the specified registration limits.',
+                  ],
+                  [
+                    'Prior purchaser',
+                    'Hansun Investment Ltd v Sincere Union Development Ltd [2008] 4 HKLRD 442; Guang Xin Enterprises Ltd v Leung Kwai Mui [1996] 4 HKC 572',
+                    'Accepted repudiation or recovered damages can establish the earlier purchase right no longer affects title on the facts.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'termination-and-vp-summons',
+                label: 'Termination and vendor and purchaser summonses',
+              },
+              {
+                session: 'LG6',
+                issue: 'collective-liabilities-and-io-litigation',
+                label: 'Collective liabilities and owners’ corporation litigation',
+              },
+              {
+                session: 'LG5',
+                issue: 'beneficial-interests-and-notice',
+                label: 'Beneficial interests and occupiers',
+              },
+            ],
+          },
+          {
+            id: 'beneficial-interests-and-notice',
+            title: 'Beneficial interests and occupiers',
+            summary:
+              'Identify the beneficial interest, then decide whether the purchaser has notice and whether any release or estoppel is proved.',
+            triggers: {
+              bullets: [
+                'The registered owner’s mother occupies the flat and paid its purchase price.',
+                'A family home was put in a sibling’s name to obtain a preferential mortgage, while the other sibling paid the deposit and repayments.',
+                'A purchaser views a flat offered by the wife and sees the husband’s clothes.',
+                'A wife was absent at the inspection, but belongings and a car suggested another occupier.',
+                'A trustee sold property after declaring it held for children, and the buyer knows of that declaration.',
+                'A spouse stayed silent at the sale and later claimed a beneficial interest after the family rented the property back.',
+                'A nominee arrangement was used for a subsidised-home scheme and the funder now asserts a trust.',
+              ],
+              routes: [
+                {
+                  when: 'The occupier relies on a short tenancy rather than beneficial ownership',
+                  session: 'LG5',
+                  issue: 'tenancies-and-vacant-possession',
+                  label: 'Tenancies and vacant possession',
+                },
+                {
+                  when: 'The retained interest arose because the funder nominated another assignee',
+                  session: 'LG5',
+                  issue: 'gifts-nominations-and-fraud',
+                  label: 'Gifts, nominations and creditor challenges',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Registered ownership is only the start: P must identify the asserted beneficial interest and establish the elements of purchase for value without actual or constructive notice before claiming priority over it.',
+                'How the beneficial interest arises: The deposit, mortgage arrangements and detrimental reliance support [resulting trust / common intention constructive trust] on the evidence, as illustrated by Liu Wai Keung v Liu Wai Man [2013] 5 HKLRD 9.',
+                'Presumptions and actual intention: Actual intention governs; any presumption of advancement is rebuttable and the particular relationship must fall within the recognised category.',
+                'Occupation and constructive notice: The [clothes/belongings/occupation] puts P on inquiry under Wong Chim Ying v Cheng Kam Wing [1991] 2 HKLR 253; failing to investigate may fix P with constructive notice.',
+                'Waiver, estoppel and effective release: The alleged waiver must be supported by [knowledge/conduct/reliance]; Mo Ying v Brillex Development Ltd [2015] 2 HKLRD 985 is not a general rule that delay extinguishes beneficial ownership.',
+                'Trust breach and limitation: Faithway Enterprise Ltd v Lee Wan [2007] 4 HKC 55 requires assessment of the trust breach and notice; an assumed ordinary limitation period does not resolve this title.',
+                'Illegality in beneficial ownership claims: The claimed interest must be analysed against the Hong Kong development discussed in Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479, including purpose, competing policy and proportionality.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering beneficial interests and occupiers',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Registered ownership is only the start',
+                    detail:
+                      'A person other than the registered owner may hold a beneficial interest, tenancy or occupation right. Interests arising by operation of law, such as a resulting or constructive trust without a written instrument, may be unregistrable; absence from the register is then unsurprising. A written trust instrument capable of registration presents a different LRO priority question.',
+                    why: 'The register cannot list every interest arising by operation of law.',
+                    exam: {
+                      write:
+                        'P must identify the asserted beneficial interest and establish the elements of purchase for value without actual or constructive notice before claiming priority over it.',
+                      trap: 'Assuming unregistered necessarily means void against the purchaser.',
+                    },
+                    points: [
+                      "Equity's darling is the bona fide purchaser of the legal estate for value without actual or constructive notice. Ask each element separately. Value need not equal full market price: Ng Luk Mui v Shiu Tsun Wai Vincent [2011] 5 HKLRD 707 (CA). But value alone does not establish good faith or absence of notice. Notice may arise from documents, occupation, inquiries or facts that a reasonable inspection would reveal: Kong Lin Yeung v Lai In Peng [2012] 4 HKC 128.",
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'How the beneficial interest arises',
+                    detail:
+                      "Purchase-money resulting trust: A provides purchase money but title is taken in B's name; absent evidence of a gift or applicable counter-presumption, B may hold for A in proportion to the contributions. Identify who funded the deposit/acquisition and the intention at the relevant time. Do not assume that every later household payment changes ownership.",
+                    why: 'Funding and family arrangements can prove different trust routes; they should not be collapsed into one label.',
+                    exam: {
+                      write:
+                        'The deposit, mortgage arrangements and detrimental reliance support [resulting trust / common intention constructive trust] on the evidence, as illustrated by Liu Wai Keung v Liu Wai Man [2013] 5 HKLRD 9.',
+                      trap: 'Treating every household expense as an automatic ownership share.',
+                    },
+                    points: [
+                      "Common intention constructive trust: an express or inferred common intention to share beneficial ownership, together with detrimental reliance, can establish an interest. Liu Wai Keung v Liu Wai Man [2013] 5 HKLRD 9: a family home was put in the sister's name to obtain her preferential bank mortgage; the brother funded the deposit, occupied and paid outgoings/mortgage. The shared understanding and reliance made it unconscionable for the sister to assert sole beneficial ownership.",
+                      'Prime Credit Ltd v Yeung Chun Pang Barry [2017] 4 HKLRD 327 (CA): in a domestic, especially Chinese family, context, consider the whole circumstances; explicit property discussions may be uncommon and direct purchase-money contributions are not the only evidence. This does not dispense with identifying common intention and reliance.',
+                      'Re Mok Wut Man [2020] HKCFI 1357 addresses beneficial ownership of a home in joint names; do not transfer a sole-name starting point mechanically to a jointly titled couple. The supplied account additionally directs readers to Chin Nai Man v Chin Yat Keung Alex [2020] HKCFI 403; Mak Mui v Pang Kit Man [2021] HKCFI 125; Au Yeung Pui Chun v Cheng Wing Sang [2021] HKCFI 463; Tsang Hin Yi Hubert v Cheung Lai Ping [2022] HKEC 554 for summaries/applications, without supplying their full holdings.',
+                      'Mortgage instalments: they can support the inferred intention/reliance analysis. Tong Kwai Ying v Poon Kwok Sin (HCA 2790/1996) requires strong grounds to infer an intention to acquire an interest; do not label all post-acquisition instalments automatic purchase-money resulting-trust contributions. The supplied account also cites Pettitt v Pettitt [1970] AC 777 and Tinsley v Milligan for the broader contribution discussion.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Presumptions and actual intention',
+                    detail:
+                      'Actual evidence of intention takes precedence over fallback presumptions. Lavelle v Lavelle [2004] EWCA Civ 223 explains the distinction: an intended beneficial gift transfers beneficial ownership; an intended retention produces a trust; presumptions assist where evidence is absent.',
+                    why: 'Presumptions assist only where actual intention remains unresolved.',
+                    exam: {
+                      write:
+                        'Actual intention governs; any presumption of advancement is rebuttable and the particular relationship must fall within the recognised category.',
+                      trap: 'Assuming that every close family relationship raises advancement.',
+                    },
+                    points: [
+                      'Lily Cheung v Commissioner of Estate Duty [1988] 1 HKLR 517: evidential weight of advancement may be weak. Kinship is not a substitute for examining declarations, funding, purpose and conduct.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Occupation and constructive notice',
+                    detail:
+                      'Inspection must be real rather than a ritual. Ask who lives there, their relationship to the owner, financial contributions and claimed rights. Clothes, belongings, a car or family presence may require inquiry even when the person is absent at the viewing.',
+                    why: 'A viewing must lead to inquiry when facts suggest rights beyond those of the registered owner.',
+                    exam: {
+                      write:
+                        'The [clothes/belongings/occupation] puts P on inquiry under Wong Chim Ying v Cheng Kam Wing [1991] 2 HKLR 253; failing to investigate may fix P with constructive notice.',
+                      trap: 'Assuming absence on the day of inspection excludes an interest.',
+                    },
+                    points: [
+                      "Wong Chim Ying v Cheng Kam Wing [1991] 2 HKLR 253 (CA): the husband's clothes put P on notice of his possible interest when the wife sold.",
+                      "Kingsnorth Finance v Tizard [1986] 1 WLR 783: absence at inspection did not defeat the wife's interest where circumstances required further inquiry.",
+                      'China & South Seas Bank Ltd v Ma Koon Ah (HCMP 3000/94): an occupying contributor of 90% of the price was not the registered owner; mortgagee had constructive notice.',
+                      "Flying Mortgage Ltd v Chan Kuen Kwong [2010] 1 HKLRD 318: mother purchased but title was in sons' names; the mortgagee was bound by her resulting-trust interest through notice.",
+                      "William & Glyn's Bank v Boland [1981] AC 487: the supplied account uses the wife's beneficial interest and occupation as the warning example. Its English registered-land context should not be silently equated with Hong Kong's deeds-registration system; use it to illuminate inquiry, alongside the local authorities.",
+                      'Non-occupiers can also have interests. A disclosed nomination, trust deed, contribution arrangement or litigation can supply notice without physical occupation. Conversely, occupancy alone does not prove beneficial ownership: a tenant, licensee and contributing beneficiary have different rights.',
+                      "Abbey National Building Society v Cann [1990] 2 WLR 832: purchase and acquisition mortgage may be one indivisible transaction where the loan enables acquisition. An occupier's contribution/occupation does not necessarily precede the acquisition mortgage in priority. Distinguish that situation from a later remortgage after the interest already exists; do not assume all lenders outrank occupiers.",
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Waiver, estoppel and effective release',
+                    detail:
+                      'Sum Fan Hung v Chum Mei Diu (HCA 946/2013): an equitable owner may expressly waive the interest. Obtain a properly framed confirmation/release or join that person as confirmor in the assignment if the interest exists. A statement about having “no objection to moving out” may not clearly release beneficial ownership.',
+                    why: 'Informed waiver or estoppel can resolve a proved interest, but silence needs the relevant reliance and prejudice.',
+                    exam: {
+                      write:
+                        'The alleged waiver must be supported by [knowledge/conduct/reliance]; Mo Ying v Brillex Development Ltd [2015] 2 HKLRD 985 is not a general rule that delay extinguishes beneficial ownership.',
+                      trap: 'Substituting a registered owner’s denial for the beneficiary’s own release.',
+                    },
+                    points: [
+                      "Mo Ying v Brillex Development Ltd [2015] 2 HKLRD 985 (CA): the wife remained after the husband sold and the family rented back. Her failure to speak when the sale occurred, and P's reliance/prejudice, supported waiver/estoppel; leave to appeal was refused in FAMV 48/2015. The court also recognised constructive notice from occupation despite P not inspecting. The result depends on informed silence, duty to speak and reliance; mere elapsed time is not a universal forfeiture of a trust interest.",
+                      "Practical response: obtain written occupancy and interest confirmations; if funding or a claim appears, investigate and obtain informed renunciation or a confirmatory assignment. Do not rely on V's assurance that a spouse “has no rights” while avoiding inquiry of that spouse.",
+                    ],
+                  },
+                  {
+                    id: 'step-6',
+                    label: 'Trust breach and limitation',
+                    detail:
+                      "Faithway Enterprise Ltd v Lee Wan [2007] 4 HKC 55 (CA): the trust declaration promised transfer to children at majority; the trustee sold instead. The first-instance assumption that the children's claim was probably time-barred was overturned. Notice of the breach exposed the later purchaser to constructive-trust consequences; the relevant no-limitation rule could apply.",
+                    why: 'Limitation depends on the beneficiary’s claim and the recipient’s trustee status.',
+                    exam: {
+                      write:
+                        'Faithway Enterprise Ltd v Lee Wan [2007] 4 HKC 55 requires assessment of the trust breach and notice; an assumed ordinary limitation period does not resolve this title.',
+                      trap: 'Applying mortgage or debt limitation automatically to a trust-property claim.',
+                    },
+                    points: [
+                      "The applicable provisions are s.20(1)(b) Limitation Ordinance for recovery of trust property received by a trustee and converted to his own use. Work through the exact claim and defendant's status; do not say all trust disputes have no limitation period. But equally, do not apply the mortgage/debt time limits to a beneficiary's claim simply because decades have elapsed.",
+                    ],
+                  },
+                  {
+                    id: 'step-7',
+                    label: 'Illegality in beneficial ownership claims',
+                    detail:
+                      'An improper purpose does not automatically mean the registered owner is beneficially entitled or that P faces no claim.',
+                    why: 'Illegality requires evaluation of the particular equitable route and relevant public policies.',
+                    exam: {
+                      write:
+                        'The claimed interest must be analysed against the Hong Kong development discussed in Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479, including purpose, competing policy and proportionality.',
+                      trap: 'Treating the UK decision alone as automatic displacement of all local binding authority.',
+                    },
+                    points: [
+                      'The older Tinsley v Milligan reliance rule asked whether the claimant needed to rely on illegality to prove the interest. Local authorities include Yim Bo-Ying v Chung Iu-Warm [1985] HKLR 354 (CA); Wong Sing v Wong Chun Wai (HCA 1872/2005); Wu Wai Sum Stella v Man Ting Chu [2010] 5 HKLRD 125 (CA); Cheuk Shu Yin v Yip So Wan (2012) 15 HKCFAR 344.',
+                      "Patel v Mirza [2016] UKSC 42 replaced that approach in the UK with consideration of (1) the purpose of the prohibition and whether denying relief advances it; (2) other relevant public policies; and (3) proportionality. Kan Wai Chung v Hau Wun Fai [2016] 5 HKC 585 (CA) followed the older rule without considering Patel and referred to the binding CFA decision HKSAR v Lau Kam Ying (2013) 16 HKCFAR 595. The cited account describes Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479 as accepting Patel's range-of-factors approach. In an exam explain the local development and hierarchy, not merely “UK law changed so Hong Kong changed”.",
+                      'Leung Ching Wai v Li Yun Lim [2023] HKDC 459: Green Form abuse raised public-policy objections to enforcing the asserted CICT; the course distinguishes the resulting-trust analysis. Identify the particular claim and policy; do not treat “illegal scheme” as an automatic answer to every alternative equitable route.',
+                      'Locus poenitentiae: withdrawal before implementing an illegal purpose could historically permit evidence to rebut advancement: Cheerbond Development Ltd v Tung Kwok Yu [2010] 2 HKLRD 546. The supplied account states its continuing independent role after Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479 is unclear. Present it as a historical/additional argument, not a settled exception superseding the newer policy assessment.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An acquisition mortgage may have different priority from a later remortgage: Abbey National Building Society v Cann [1990] 2 WLR 832.',
+                'Mother-to-adult-child advancement was left unresolved in Suen Shu Tai v Tam Fung Tai (2015) 18 HKCFAR 491.',
+                'The continuing independent role of locus poenitentiae after the policy approach is uncertain.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Registered ownership is only the start — The register cannot list every interest arising by operation of law.',
+                    'How the beneficial interest arises — Funding and family arrangements can prove different trust routes; they should not be collapsed into one label.',
+                    'Presumptions and actual intention — Presumptions assist only where actual intention remains unresolved.',
+                    'Occupation and constructive notice — A viewing must lead to inquiry when facts suggest rights beyond those of the registered owner.',
+                    'Waiver, estoppel and effective release — Informed waiver or estoppel can resolve a proved interest, but silence needs the relevant reliance and prejudice.',
+                    'Trust breach and limitation — Limitation depends on the beneficiary’s claim and the recipient’s trustee status.',
+                    'Illegality in beneficial ownership claims — Illegality requires evaluation of the particular equitable route and relevant public policies.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The claimed interest must be analysed against the Hong Kong development discussed in Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479, including purpose, competing policy and proportionality.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Occupation is a reason to investigate, not proof of a particular trust.',
+                'Presumption is not conclusive intention.',
+                'A claim’s illegality cannot be decided without identifying the actual interest and policy.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Family intention',
+                    'Liu Wai Keung v Liu Wai Man [2013] 5 HKLRD 9; Prime Credit Ltd v Yeung Chun Pang Barry [2017] 4 HKLRD 327',
+                    'Common intention and reliance are assessed contextually, beyond direct funding alone.',
+                  ],
+                  [
+                    'Inquiry',
+                    'Wong Chim Ying v Cheng Kam Wing [1991] 2 HKLR 253; Kingsnorth Finance v Tizard [1986] 1 WLR 783',
+                    'Signs of another person’s rights require reasonable inquiry even if that person is absent.',
+                  ],
+                  [
+                    'Mother’s interest',
+                    'Flying Mortgage Ltd v Chan Kuen Kwong [2010] 1 HKLRD 318',
+                    'Mortgagee with notice was bound by the contributing mother’s resulting-trust interest.',
+                  ],
+                  [
+                    'Advancement',
+                    'Suen Shu Tai v Tam Fung Tai (2015) 18 HKCFAR 491',
+                    'Mother-to-infant-child advancement recognised; adult-child question left unresolved.',
+                  ],
+                  [
+                    'Trust breach',
+                    'Faithway Enterprise Ltd v Lee Wan [2007] 4 HKC 55; s.20(1)(b) Limitation Ordinance',
+                    'Notice and trustee status can defeat the assumed time-bar answer.',
+                  ],
+                  [
+                    'Estoppel',
+                    'Mo Ying v Brillex Development Ltd [2015] 2 HKLRD 985',
+                    'Informed silence and reliance in the sale/rent-back facts mattered.',
+                  ],
+                  [
+                    'Illegality',
+                    'Monat Investment Ltd v Lau Chi Kan Kenith [2023] HKCA 479; Leung Ching Wai v Li Yun Lim [2023] HKDC 459',
+                    'Assess policy and the particular trust claim, rather than apply an automatic no-interest rule.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Presumptions and actual intention comparison',
+                table: {
+                  headers: ['Relationship/transfer', 'Course treatment', 'Exam caution'],
+                  rows: [
+                    ['Husband → wife; father → child', 'Presumption of advancement', 'Rebuttable by evidence; not conclusive ownership'],
+                    [
+                      'Male fiancé → female fiancée; man → de facto wife',
+                      'Advancement discussed; Cheung Pui Yuen v Worldcup Investments Inc (2009) 12 HKCFAR 31',
+                      'Establish the relevant relationship and intention',
+                    ],
+                    [
+                      'In loco parentis → child',
+                      'Advancement may apply',
+                      'Grandfather/grandson: Wong San Mui; stepfather/stepson: Sze Ka Shuen',
+                    ],
+                    [
+                      'Mother → infant child',
+                      'Advancement recognised by Suen Shu Tai v Tam Fung Tai (2015) 18 HKCFAR 491',
+                      'Mother → adult child expressly left unresolved in the cited account',
+                    ],
+                    [
+                      'Mother → child in older cases',
+                      'Watson v Smith [1998] 3 HKC 461 contrasted with Lee Tso Fong v Kwok Wai Sun [2008] 4 HKLRD 270',
+                      'Explain development rather than recite both as current universal rules',
+                    ],
+                    [
+                      'Wife → husband; female fiancé → male fiancé; siblings',
+                      'No established counter-presumption in the materials',
+                      'Mercier v Mercier; Yue Shiu Ngam v Zen She Lin; actual gift evidence remains possible',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG5',
+                issue: 'gifts-nominations-and-fraud',
+                label: 'Gifts, nominations and creditor challenges',
+              },
+              {
+                session: 'LG5',
+                issue: 'tenancies-and-vacant-possession',
+                label: 'Tenancies and vacant possession',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+            ],
+          },
+          {
+            id: 'gifts-nominations-and-fraud',
+            title: 'Gifts, nominations and creditor challenges',
+            summary:
+              'Distinguish gift intention from a retained beneficial interest, and assess undervalue or creditor challenges on their own conditions.',
+            triggers: {
+              bullets: [
+                'The contracting purchaser paid the price but nominated a daughter as assignee.',
+                'A husband nominated his wife and a later buyer asks whether he retained beneficial ownership.',
+                'A nomination does not expressly renounce the nominator’s beneficial interest.',
+                'A deed recites market consideration, but no money was actually paid.',
+                'An insolvent owner transferred property for no consideration after claims against her arose.',
+                'An attorney transferred the donor’s property to himself at an undervalue.',
+              ],
+              routes: [
+                {
+                  when: 'The donor’s attorney made the self-benefiting transfer',
+                  session: 'LG7',
+                  issue: 'powers-of-attorney',
+                  label: 'Powers of attorney',
+                },
+                {
+                  when: 'The interest arises from occupation and funding rather than a nomination',
+                  session: 'LG5',
+                  issue: 'beneficial-interests-and-notice',
+                  label: 'Beneficial interests and occupiers',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Gifts and nominations: analyse the same hidden interest once: V must establish whether the nomination created a resulting trust or an outright gift; Formking Development Ltd v Lee Kwok Hung Robert [1993] 1 HKC 412 identifies the unresolved trust as a burden.',
+                'Fraud, undervalue and conflicted sales: The disposition must be tested separately under s.60 CPO and the relevant undervalue or preference provisions; Tradepower (Holdings) Ltd v Tradepower (Hong Kong) Ltd (2009) 12 HKCFAR 417 supports the stated inference from insolvent unsupported dealings.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering gifts, nominations and creditor challenges',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Gifts and nominations: analyse the same hidden interest once',
+                    detail:
+                      'A nomination occurs where the contracting/funding purchaser directs assignment into another name. The nominee may hold on resulting trust for the nominator. Formking Development Ltd v Lee Kwok Hung Robert [1993] 1 HKC 412: unresolved nomination trust can encumber a later sale.',
+                    why: 'Nomination changes the registered assignee without necessarily changing beneficial ownership.',
+                    exam: {
+                      write:
+                        'V must establish whether the nomination created a resulting trust or an outright gift; Formking Development Ltd v Lee Kwok Hung Robert [1993] 1 HKC 412 identifies the unresolved trust as a burden.',
+                      trap: 'Assuming the nominee owns beneficially simply because the assignment names her.',
+                    },
+                    points: [
+                      "The presumption can be rebutted: Fulltrend Co Ltd v Longer Year Development Ltd [1990] 1 HKC 452 (the purchaser's own affixing of the corporate assignee's seal supported no trust on the facts); Lion Will Investment Ltd v Triple Will Ltd [1992] 2 HKC 430 (husband's nomination of wife; advancement); Kan Wing Yee Wendy v Roh Julie Kim (HCMP 352/2017) (gift intention established by a fellow solicitor's statutory declaration after the original solicitor died).",
+                      "A registered nomination may put a later P on notice of the nominator's possible interest. Prefer an express renunciation of retained beneficial interests in the nomination itself. If that was omitted, investigate intention and secure a suitable release/confirmation from the actual interest holder.",
+                      'A gift raises overlapping but separate issues: retained beneficial ownership; fraudulent conveyance under s.60 CPO; transaction at undervalue under s.49(1) Bankruptcy Ordinance within the relevant five-year setting; unfair preference under s.50; historical estate duty; and loss of statutory protections restricted to purchasers. Osman Mohammed Arab v Lam Ying Lung Alan (HCA 653/2011) is the leading example. Do not assume every family gift is automatically invalid or that every gift creates a trust regardless of intention.',
+                      'An assignment can recite market consideration without actual payment. Such a recital does not prove payment or immunise the transfer from beneficial-ownership, insolvency or fraud analysis. Analyse economic substance. The company unfair-preference reference is historical; verify the statute/version applicable to the dated facts.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Fraud, undervalue and conflicted sales',
+                    detail:
+                      'ss.60–61 CPO: examine dispositions intended to defraud creditors and relevant protections under the legislation. Tradepower (Holdings) Ltd (in liquidation) v Tradepower (Hong Kong) Ltd (2009) 12 HKCFAR 417: an unsupported disposition made while insolvent, or causing insolvency, exposing creditors including future creditors to significant non-recovery risk will ordinarily support an inference of the requisite intent. Analyse objective circumstances, not solely an admission of bad motive.',
+                    why: 'Trust intention, creditor prejudice and insolvency avoidance protect different interests.',
+                    exam: {
+                      write:
+                        'The disposition must be tested separately under s.60 CPO and the relevant undervalue or preference provisions; Tradepower (Holdings) Ltd v Tradepower (Hong Kong) Ltd (2009) 12 HKCFAR 417 supports the stated inference from insolvent unsupported dealings.',
+                      trap: 'Treating a recital of consideration as proof of actual value or payment.',
+                    },
+                    points: [
+                      'Erwiana Sulistyaningsih v Tsui Yun Bun Barry and Law Wan Tung [2018] 1 HKLRD 505: nil-consideration transfers following criminal proceedings raised future-creditor fraud concerns. Chan Sze Wing v Congruence Chinese Medicine & Jing Luo Health Ltd [2020] HKCFI 2596 is an additional course authority.',
+                      'Distinguish fraudulent conveyance, bankruptcy undervalue and unfair preference: they have different conditions, time windows and remedies. A gift may engage all; one cannot substitute proof of family relationship for all statutory requirements.',
+                      "Other conflict triggers: Chiu Che Kuen v Or Yue Ling (HCA 5543/1990) (solicitor's clerk purchase) and Tang Ying Ki v Maxtime Transportation Ltd [1996] 3 HKC 257 (mortgagee sale to himself). Ask whose fiduciary duty was breached, whether the transaction is voidable, what P knows and what genuine cure is available. Assignment as security for an illegal Money Lenders Ordinance loan can also compromise title; connect to the validity of a security POA .",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An express renunciation in the nomination avoids leaving a retained-interest question unresolved.',
+                'A purchaser’s statutory protection does not automatically extend to a volunteer.',
+                'Check the applicable bankruptcy/company-insolvency version and timing rather than importing a universal five-year rule for all challenges.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Gifts and nominations: analyse the same hidden interest once — Nomination changes the registered assignee without necessarily changing beneficial ownership.',
+                    'Fraud, undervalue and conflicted sales — Trust intention, creditor prejudice and insolvency avoidance protect different interests.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The disposition must be tested separately under s.60 CPO and the relevant undervalue or preference provisions; Tradepower (Holdings) Ltd v Tradepower (Hong Kong) Ltd (2009) 12 HKCFAR 417 supports the stated inference from insolvent unsupported dealings.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A family gift is not automatically invalid.',
+                'Counter-presumption of advancement does not replace actual evidence of intention.',
+                'Authority to sell does not necessarily authorise gifts or conflicted self-dealing.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Nominee trust',
+                    'Formking Development Ltd v Lee Kwok Hung Robert [1993] 1 HKC 412',
+                    'A retained nominator interest can encumber a later sale.',
+                  ],
+                  [
+                    'Gift intention',
+                    'Lion Will Investment Ltd v Triple Will Ltd [1992] 2 HKC 430; Kan Wing Yee Wendy v Roh Julie Kim HCMP 352/2017',
+                    'Advancement or reliable evidence of gift intention can rebut the resulting-trust presumption.',
+                  ],
+                  [
+                    'Gift risks',
+                    'Osman Mohammed Arab v Lam Ying Lung Alan HCA 653/2011',
+                    'Gifts can raise resulting-trust, fraudulent-conveyance, undervalue and preference issues.',
+                  ],
+                  [
+                    'Creditors',
+                    'Tradepower (Holdings) Ltd v Tradepower (Hong Kong) Ltd (2009) 12 HKCFAR 417; ss.60–61 CPO',
+                    'Insolvency and unsupported disposal exposing creditors can support the intent-to-defraud inference.',
+                  ],
+                  [
+                    'Future creditors',
+                    'Erwiana Sulistyaningsih v Tsui Yun Bun Barry and Law Wan Tung [2018] 1 HKLRD 505',
+                    'Nil-consideration transfers can prejudice future creditors.',
+                  ],
+                  [
+                    'Conflicted sales',
+                    'Tang Ying Ki v Maxtime Transportation Ltd [1996] 3 HKC 257',
+                    'A mortgagee’s sale to himself raises a distinct fiduciary challenge.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG5',
+                issue: 'beneficial-interests-and-notice',
+                label: 'Beneficial interests and occupiers',
+              },
+              {
+                session: 'LG5',
+                issue: 'estate-transmission-and-coownership',
+                label: 'Estate transmission and co-ownership',
+              },
+              {
+                session: 'LG7',
+                issue: 'powers-of-attorney',
+                label: 'Powers of attorney',
+              },
+            ],
+          },
+          {
+            id: 'tenancies-and-vacant-possession',
+            title: 'Tenancies and vacant possession',
+            summary: 'Check binding short tenancies, effective surrender and the separate promise to deliver actual vacant possession.',
+            triggers: {
+              bullets: [
+                'A tenant occupies the flat under a short oral tenancy absent from the land register.',
+                'An agreement for a short tenancy exists and the occupier remains in possession.',
+                'The vendor says a registered lease ended early but supplies no surrender agreement.',
+                'An in-house occupier has no continuing right, but is still in the flat near completion.',
+                'A contractual licensee asserts that occupation is protected by a constructive trust.',
+              ],
+              routes: [
+                {
+                  when: 'The occupier funded the price and claims beneficial ownership',
+                  session: 'LG5',
+                  issue: 'beneficial-interests-and-notice',
+                  label: 'Beneficial interests and occupiers',
+                },
+                {
+                  when: 'The dispute is now the timing of termination',
+                  session: 'LG7',
+                  issue: 'termination-and-vp-summons',
+                  label: 'Termination and vendor and purchaser summonses',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Binding short tenancies and occupation inquiry: Under Hunt v Luck [1902] 1 Ch 428, P must investigate the occupied premises and the asserted lease or tenancy agreement.',
+                'Surrender and actual vacant possession: V must prove expiry or effective surrender under Ng Tim Yee v Kindbest Investment Ltd HCMP 463/98 and satisfy the distinct vacant-possession promise.',
+                'Contractual licences and equitable rights: The licence claim must be assessed on its terms and any constructive-trust basis under Chen Tek Yee v Chan Moon Shing CACV 136/2015.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering tenancies and vacant possession',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Binding short tenancies and occupation inquiry',
+                    detail:
+                      'Unless the sale is expressly subject to tenancy, establish expiry or surrender of leases affecting the property. Qualifying short legal tenancies at rack rent, taking effect in possession, for no more than three years may bind P without registration. An agreement for a short tenancy can also bind through notice: Hunt v Luck [1902] 1 Ch 428. Inspect occupation rather than assuming silence in the register establishes vacant possession.',
+                    why: 'Occupation can put a buyer on notice of a short tenancy absent from the register.',
+                    exam: {
+                      write:
+                        'Under Hunt v Luck [1902] 1 Ch 428, P must investigate the occupied premises and the asserted lease or tenancy agreement.',
+                      trap: 'Inferring vacant possession from a clean search.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Surrender and actual vacant possession',
+                    detail:
+                      'Ng Tim Yee v Kindbest Investment Ltd (HCMP 463/98) supports requiring a surrender agreement where a tenancy ended prematurely. Ip Fai Man v Lui Kit Man (HCA 13661/98) illustrates an occupier with no continuing right where eviction was a matter of conveyance. Distinguish title from actual delivery of vacant possession: even a right to evict does not itself prove the premises will be vacant by the contractual deadline.',
+                    why: 'A surrendered proprietary tenancy and physical removal are separate completion questions.',
+                    exam: {
+                      write:
+                        'V must prove expiry or effective surrender under Ng Tim Yee v Kindbest Investment Ltd HCMP 463/98 and satisfy the distinct vacant-possession promise.',
+                      trap: 'Treating the right to evict as proof that the flat is already vacant.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Contractual licences and equitable rights',
+                    detail:
+                      'A contractual licence may, on appropriate facts, be supported by a constructive trust: Chen Tek Yee v Chan Moon Shing (CACV 136/2015). Do not equate every permission to occupy with a proprietary tenancy or trust; establish its terms and equitable basis.',
+                    why: 'A licence needs its terms and any equitable basis before it is treated as a proprietary burden.',
+                    exam: {
+                      write:
+                        'The licence claim must be assessed on its terms and any constructive-trust basis under Chen Tek Yee v Chan Moon Shing CACV 136/2015.',
+                      trap: 'Assuming all occupiers are tenants or all licensees lack equitable rights.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Identify the rack-rent, duration and taking-effect-in-possession conditions.',
+                'The sale may expressly be subject to a tenancy rather than promise vacant possession.',
+                'A contractual licence needs its own terms and equitable basis before it is treated as a proprietary burden.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Binding short tenancies and occupation inquiry — Occupation can put a buyer on notice of a short tenancy absent from the register.',
+                    'Surrender and actual vacant possession — A surrendered proprietary tenancy and physical removal are separate completion questions.',
+                    'Contractual licences and equitable rights — A licence needs its terms and any equitable basis before it is treated as a proprietary burden.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The licence claim must be assessed on its terms and any constructive-trust basis under Chen Tek Yee v Chan Moon Shing CACV 136/2015.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Do not infer no tenancy from a clean register.',
+                'Do not treat every licence as a lease.',
+                'A promise to remove the occupier must be tested against the completion deadline.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Occupation inquiry',
+                    'Hunt v Luck [1902] 1 Ch 428',
+                    'Occupation may put P on notice of a tenancy or agreement for a lease.',
+                  ],
+                  [
+                    'Surrender',
+                    'Ng Tim Yee v Kindbest Investment Ltd HCMP 463/98',
+                    'Evidence of surrender may be required for an allegedly prematurely ended tenancy.',
+                  ],
+                  [
+                    'Mere conveyance',
+                    'Ip Fai Man v Lui Kit Man HCA 13661/98',
+                    'An occupier with no continuing right can be a conveyancing issue; actual vacant-possession performance remains separate.',
+                  ],
+                  [
+                    'Licence and equity',
+                    'Chen Tek Yee v Chan Moon Shing CACV 136/2015',
+                    'A licence may be supported by a constructive trust on the appropriate facts.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG5',
+                issue: 'beneficial-interests-and-notice',
+                label: 'Beneficial interests and occupiers',
+              },
+              {
+                session: 'LG7',
+                issue: 'termination-and-vp-summons',
+                label: 'Termination and vendor and purchaser summonses',
+              },
+            ],
+          },
+        ],
+      },
+    },
+    LG6: {
+      kind: 'LG',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Analyse unauthorised building works and its effect on showing or giving title.',
+        'Analyse building orders and fire safety directions and its effect on showing or giving title.',
+        'Analyse demolition and substantial performance and its effect on showing or giving title.',
+        'Analyse collective liabilities and owners’ corporation litigation and its effect on showing or giving title.',
+        'Analyse government lease and user restrictions and its effect on showing or giving title.',
+        'Analyse property description, encroachment and easements and its effect on showing or giving title.',
+      ],
+      topicsCovered: [
+        'Unauthorised building works',
+        'Building orders and fire safety directions',
+        'Demolition and substantial performance',
+        'Collective liabilities and owners’ corporation litigation',
+        'Government lease and user restrictions',
+        'Property description, encroachment and easements',
+      ],
+      examNotes: {
+        intro:
+          'Proof of title applications across Lectures 5–7. These pages address building works, orders, collective liabilities, permitted user and the extent of the property. Apply the BO, Government lease, DMC and proprietary rights separately, then assess risk, cure and substantial performance.',
+        issueTypes: [
+          {
+            id: 'unauthorised-building-works',
+            title: 'Unauthorised building works',
+            summary:
+              'Determine approval or exemption, the affected property and each independent enforcement route before applying the real-risk test.',
+            triggers: {
+              bullets: [
+                'A heavy concrete room has been added on the roof without approved plans.',
+                'A vendor describes rooftop gondola supports as internal non-structural works.',
+                'Internal partitions divide a flat into self-contained units with separate toilets and drainage.',
+                'Unauthorised works exist but no demolition order has yet been served.',
+                'Two other units on the floor were combined and the purchaser’s flat was not altered.',
+                'The Government lease requires compliance with building regulations and the DMC separately restricts alterations.',
+              ],
+              routes: [
+                {
+                  when: 'A mandatory order already exists and its operative effect is disputed',
+                  session: 'LG6',
+                  issue: 'building-orders-and-fire-safety',
+                  label: 'Building orders and fire safety directions',
+                },
+                {
+                  when: 'The proposed demolition removes a substantial part of the property',
+                  session: 'LG6',
+                  issue: 'demolition-and-substantial-performance',
+                  label: 'Demolition and substantial performance',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Three questions must remain distinct: The works must first be classified and checked for approval or exemption, then linked to this title and any effective cure.',
+                'Are these building works and are they authorised/exempt?: Under Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1, rooftop works fail the requirement of being in the building and may independently involve its structure.',
+                'Subdivision needs factual detail: The new [toilet/drainage/entrance] must be examined under Lucky Success (HK) Ltd v Ko Ni Kwong [2010] 1 HKC 351 rather than assuming the entire conversion is exempt.',
+                'No order yet: the ticking-bomb analysis: Under Spark Rich (China) Ltd v Valrose Ltd [2006] 2 HKC 589, V must show that a prudent experienced solicitor can safely advise P to disregard the enforcement risk.',
+                'Which flats are affected?: Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396 supports the unaffected unit only if the works and liability are confined to other flats.',
+                'Government-lease linkage and DMC: double or multiple vulnerability: The BO, Government lease linkage and DMC covenant must each be tested; Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297 illustrates the lease re-entry route.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering unauthorised building works',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Three questions must remain distinct',
+                    detail:
+                      'Ask is it unauthorised?, does it materially affect this title?, and can removal leave P with substantially the contracted property? A legal compliance problem is not automatically a repudiatory title defect; a removable defect is not automatically cured consistently with the bargain.',
+                    why: 'Regulatory status, title risk and preservation of the bargain are separate questions.',
+                    exam: {
+                      write:
+                        'The works must first be classified and checked for approval or exemption, then linked to this title and any effective cure.',
+                      trap: 'Treating all illegality as automatic immediate repudiation.',
+                    },
+                    points: [
+                      'Buildings law, the Government lease, the DMC and proprietary boundaries may each apply independently. Approval under one regime does not automatically satisfy another.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Are these building works and are they authorised/exempt?',
+                    detail:
+                      's.2(1) BO includes construction, site formation, specified ground investigation, foundations, repairs, demolition, alteration, additions, drainage and other building operations. HKSAR v Gemsland Hotels Ltd [2017] 2 HKLRD 393: affixing a signboard to an external wall was an addition and building work. HKSAR v Poon Lok To Otto [2019] HKMagC 3 is cited for further factors, but the source gives a malformed paragraph range; do not invent a precise pinpoint.',
+                    why: 'The internal and non-structural limbs both preserve the scope of BA safety scrutiny.',
+                    exam: {
+                      write:
+                        'Under Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1, rooftop works fail the requirement of being in the building and may independently involve its structure.',
+                      trap: 'Assessing only whether a partition carries weight.',
+                    },
+                    points: [
+                      's.14 BO: prior approval/consent requirements apply unless a relevant statutory exemption or alternative regime applies. Consider the minor-works regime under s.14AA; “minor” does not mean all regulatory requirements disappear. Ask what category, procedure and evidence apply to these works.',
+                      's.41(3) BO exemption in the course requires works both in the building and non-structural. Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1: rooftop plinths and gondola posts were not “in” the building; the purposive distinction between sheltered internal works and exposed rooftop works preserves BA safety scrutiny. They also involved the structure and were integral to it. Either failure defeated exemption.',
+                      'Ronald Wilson v Appeal Tribunal (Buildings) [2013] 5 HKLRD 158: bay windows were not in the building for the exemption. MTR Corp v Hwang Xiao Yun Sherry (LDBM 109/2002): a heavy concrete rooftop room involved structural/load-bearing concerns. “Does it bear weight?” is relevant, but do not reduce Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1 to that alone.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Subdivision needs factual detail',
+                    detail:
+                      'Changing internal partitions may seem non-structural, but self-contained units often require new kitchens, toilets, drainage and entrances. Lucky Success (HK) Ltd v Ko Ni Kwong [2010] 1 HKC 351 and Asia Way International Investments Ltd v Hung Kin Ping (DCCJ 3911/2011) illustrate why the work as a whole can fall outside exemption. Request approved plans, drainage details and expert findings; “non-load-bearing partitions” may answer only part of the issue.',
+                    why: 'A self-contained conversion includes drainage and access, not only the visible partition.',
+                    exam: {
+                      write:
+                        'The new [toilet/drainage/entrance] must be examined under Lucky Success (HK) Ltd v Ko Ni Kwong [2010] 1 HKC 351 rather than assuming the entire conversion is exempt.',
+                      trap: 'Accepting a non-load-bearing letter that ignores other building operations.',
+                    },
+                    points: [
+                      'DMC terminology can be broader than BO terminology: IO of Elite Garden v Profit More Co Ltd [2002] 2 HKLRD 518. Yet Tam Sze Man v IO Shan Tsui Court [2011] 5 HKLRD 434 (CA) shows a prohibition need not extend to non-load-bearing internal partitions. Construe the actual DMC covenant instead of importing the BO exemption as a complete DMC defence.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'No order yet: the ticking-bomb analysis',
+                    detail:
+                      'UBW can affect title before a formal order. Establish the legal enforcement route: demolition/remedial order, BA works if ignored, recovery of expenses, statutory charge/power of sale. Under the described ss.32A/33 BO analysis, non-compliance can lead from a physical breach to loss of the property.',
+                    why: 'The legal enforcement route can put title at risk before a final order or charge.',
+                    exam: {
+                      write:
+                        'Under Spark Rich (China) Ltd v Valrose Ltd [2006] 2 HKC 589, V must show that a prudent experienced solicitor can safely advise P to disregard the enforcement risk.',
+                      trap: 'Treating low enforcement priority or mere age as immunity.',
+                    },
+                    points: [
+                      'Spark Rich (China) Ltd v Valrose Ltd [2006] 2 HKC 589 (CA): can a prudent experienced solicitor safely advise P to disregard the risk? An opinion that enforcement is merely unlikely may not be enough. The cited reasoning warns such safe-disregard cases may be rare.',
+                      'Jumbo Gold Investment Ltd v Warren Yuen Cheong Leung (2000) 3 HKCFAR 52: an old Government-lease height breach, with the relevant history, did not produce a real enforcement risk on the facts. Use it for evidence-based risk assessment; it does not create a universal grandfathering rule for old UBW.',
+                      'Link Harvest Ltd v Wayhang Development Ltd [2001] 2 HKC 652: longstanding building without an OP remained problematic. Chinawell Management Ltd v Strong Huge Corp Ltd [2012] 1 HKLRD 79: squatter extension raised real enforcement risk. Luk Kwan Hung v Victory Mark Investment Ltd [2003] 3 HKLRD 919: original construction with a roof too low in breach of regulations could also render title defeasible. The issue is not confined to alterations made by the current V.',
+                      'BA priority guidance is not immunity: Tsui Koon Tin v Building Authority (CACV 354/2002, 24 May 2006) rejects treating low-risk guidance as a legitimate expectation that there will be no enforcement.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Which flats are affected?',
+                    detail:
+                      "Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396 and Hong Kong Central Hospital Ltd v Progressive Group Ltd [2008] 1 HKC 134: works confined to other units need not impair the subject unit's title. In the latter, two other units had been combined; the longstanding discrepancy did not infect the flat being purchased.",
+                    why: 'The burden must be traced to the subject unit or collective property obligation.',
+                    exam: {
+                      write:
+                        'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396 supports the unaffected unit only if the works and liability are confined to other flats.',
+                      trap: 'Applying the other-flat principle to shared slopes, roof structure or lot-wide obligations.',
+                    },
+                    points: [
+                      "Do not stop there if the works involve common areas, shared structural safety, a lease covenant binding the lot or collective costs. Common slopes/walls can affect every co-owner: Lam Mee Hing v Chiang Shu Yin [1995] 3 HKC 247; Wah Ying. Trace the actual order, expense apportionment and charge route. An architect's opinion must address location and collective effects, not just assert that the subject flat itself is untouched.",
+                    ],
+                  },
+                  {
+                    id: 'step-6',
+                    label: 'Government-lease linkage and DMC: double or multiple vulnerability',
+                    detail:
+                      'A lease covenant requiring compliance with building regulations can convert BO non-compliance into a Government right of re-entry: Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297 (extra underground floors). Separately, DMC prohibitions may permit IO/manager enforcement and cost recovery. An absence of BA action does not answer an independent Government or DMC claim. This is why comprehensive requisitions request the lease, DMC, OP, approved plans and enforcement history together.',
+                    why: 'Approval under one regime cannot dispose of another party’s independent contractual rights.',
+                    exam: {
+                      write:
+                        'The BO, Government lease linkage and DMC covenant must each be tested; Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297 illustrates the lease re-entry route.',
+                      trap: 'Assuming no BA action means no DMC or Government risk.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Minor works do not mean every regulatory requirement disappears.',
+                'District prevalence in Join Union Investments v China Tree [2016] 2 HKLRD 901 concerns seriousness on its facts, not legalisation.',
+                'The DMC’s structural wording must be construed separately from BO exemption wording.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Three questions must remain distinct — Regulatory status, title risk and preservation of the bargain are separate questions.',
+                    'Are these building works and are they authorised/exempt? — The internal and non-structural limbs both preserve the scope of BA safety scrutiny.',
+                    'Subdivision needs factual detail — A self-contained conversion includes drainage and access, not only the visible partition.',
+                    'No order yet: the ticking-bomb analysis — The legal enforcement route can put title at risk before a final order or charge.',
+                    'Which flats are affected? — The burden must be traced to the subject unit or collective property obligation.',
+                    'Government-lease linkage and DMC: double or multiple vulnerability — Approval under one regime cannot dispose of another party’s independent contractual rights.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The BO, Government lease linkage and DMC covenant must each be tested; Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297 illustrates the lease re-entry route.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A rooftop structure is not automatically in the building.',
+                'The absence of an order is not the absence of a real risk.',
+                'A statement that enforcement is unlikely does not necessarily meet the safe-disregard test.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Definition/approval',
+                    'ss.2(1), 14, 14AA and 41(3) BO; HKSAR v Gemsland Hotels Ltd [2017] 2 HKLRD 393',
+                    'Identify building operations and the applicable approval/exemption regime.',
+                  ],
+                  [
+                    'Rooftop exemption',
+                    'Mariner International Hotels Ltd v Atlas Ltd (2007) 10 HKCFAR 1',
+                    'Both in-building and non-structural conditions must be met.',
+                  ],
+                  [
+                    'Subdivision',
+                    'Lucky Success (HK) Ltd v Ko Ni Kwong [2010] 1 HKC 351',
+                    'Drainage, entrances and other conversion works matter.',
+                  ],
+                  [
+                    'Real risk',
+                    'Spark Rich (China) Ltd v Valrose Ltd [2006] 2 HKC 589',
+                    'A prudent experienced solicitor must be able safely to disregard the risk.',
+                  ],
+                  [
+                    'Other units',
+                    'Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396; Hong Kong Central Hospital Ltd v Progressive Group Ltd [2008] 1 HKC 134',
+                    'Works confined to other units need not affect the subject title.',
+                  ],
+                  [
+                    'Lease linkage',
+                    'Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297',
+                    'Unauthorised building works may also breach Government-lease covenants.',
+                  ],
+                  [
+                    'Old breach',
+                    'Jumbo Gold Investment Ltd v Warren Yuen Cheong Leung (2000) 3 HKCFAR 52',
+                    'Specific history can establish no real Government enforcement risk, without a general age immunity.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'building-orders-and-fire-safety',
+                label: 'Building orders and fire safety directions',
+              },
+              {
+                session: 'LG6',
+                issue: 'demolition-and-substantial-performance',
+                label: 'Demolition and substantial performance',
+              },
+              {
+                session: 'LG6',
+                issue: 'lease-user-and-transfer-restrictions',
+                label: 'Government lease and user restrictions',
+              },
+              {
+                session: 'LG6',
+                issue: 'collective-liabilities-and-io-litigation',
+                label: 'Collective liabilities and owners’ corporation litigation',
+              },
+            ],
+          },
+          {
+            id: 'building-orders-and-fire-safety',
+            title: 'Building orders and fire safety directions',
+            summary: 'Identify the mandatory obligation, liability and charge route; temporary withdrawal is not necessarily compliance.',
+            triggers: {
+              bullets: [
+                'BD withdraws a demolition order for the time being but reserves future enforcement.',
+                'A dangerous-building order requires exceptional remedial work by a fixed date.',
+                'A slope investigation order exists but the eventual expenses have not yet been quantified.',
+                'A notice suggests repairs without mandating them.',
+                'A fire safety direction affects common areas and the authority may itself carry out improvement works.',
+                'The seller produces a withdrawal letter instead of proof that all offending works were removed.',
+              ],
+              routes: [
+                {
+                  when: 'The question is whether unapproved works are exempt before any order',
+                  session: 'LG6',
+                  issue: 'unauthorised-building-works',
+                  label: 'Unauthorised building works',
+                },
+                {
+                  when: 'The vendor offers security rather than completed remedial work',
+                  session: 'LG7',
+                  issue: 'indemnities-and-stakeholding',
+                  label: 'Indemnities, undertakings and stakeholding',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Existing orders and temporary withdrawal: The letter must establish actual compliance or removal of the burden; Modern Sino Ltd v Art Fair Co Ltd [1999] 3 HKLRD 847 shows that temporary withdrawal may leave the works unlawful.',
+                'Fire safety: identify the instrument and statutory powers: The applicable direction/order and ss.19U–19V Fire Safety (Buildings) Ordinance must be examined for authority-performed works, expenses and a land-charge route.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering building orders and fire safety directions',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Existing orders and temporary withdrawal',
+                    detail:
+                      'Heung Sui Kei v Benefit Charter Ltd [1999] 3 HKC 543: a letter withholding enforcement “for the time being”, with future removal reserved, did not conclusively establish lawful works or completed compliance. Modern Sino Ltd v Art Fair Co Ltd [1999] 3 HKLRD 847: temporary withdrawal left remaining works illegal and potentially subject to future enforcement. Read the operative words, not simply the heading “withdrawal”. Prefer a genuine compliance letter, appropriately registered where necessary, backed by evidence of what was done.',
+                    why: 'The operative words and statutory consequences decide the burden, not the notice’s heading.',
+                    exam: {
+                      write:
+                        'The letter must establish actual compliance or removal of the burden; Modern Sino Ltd v Art Fair Co Ltd [1999] 3 HKLRD 847 shows that temporary withdrawal may leave the works unlawful.',
+                      trap: 'Calling every withdrawn order a certificate of lawful compliance.',
+                    },
+                    points: [
+                      'Different instruments have different effects:',
+                      'All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630 (CA) distinguishes wholly exceptional remedial measures from ordinary wear-and-tear burdens contemplated by Hong Kong owners. A large dangerous-building obligation may encumber title; not every routine repair notice justifies refusing completion.',
+                      'Hu Mei Yu v King Best (HCA 9317/1998): liability can arise from the underlying slope order before later expense assessment quantifies it. Do not wait for a charge or final bill to recognise the potential burden. The supplied descriptions conflict over the sufficiency of the undertaking;',
+                      "Wah Ying Properties v Sound Cash Ltd [1994] 1 HKC 786: earlier retaining-wall orders and BA costs remained relevant through subsequent sales; the later seller faced a purchaser demand and pursued its predecessor. Distinguish liability under the property's statutory burden from contractual recourse against an earlier seller. Resale does not itself discharge the order.",
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Fire safety: identify the instrument and statutory powers',
+                    detail:
+                      'Ip Fong Keng v Fong Yu Shing (HCMP 843/2017, 3 July 2019) distinguished a fire-safety direction from a s.24 BO order; the direction did not constitute the same blot on the facts. E-Global Ltd v Trenda Ltd [2013] 5 HKC 192 and Sky Globe Holding Ltd v Hung Lee Estates [2023] 4 HKLRD 413 are the comparison cases.',
+                    why: 'Different fire-safety instruments and legislative versions can create different default consequences.',
+                    exam: {
+                      write:
+                        'The applicable direction/order and ss.19U–19V Fire Safety (Buildings) Ordinance must be examined for authority-performed works, expenses and a land-charge route.',
+                      trap: 'Treating all fire safety directions as harmless because one earlier case reached that result.',
+                    },
+                    points: [
+                      'The key question is whether the relevant statute lets the authority perform works after default and recover expenses by charge against the land, or pursue civil liability that burdens co-owners. Consider ss.19U and 19V Fire Safety (Buildings) Ordinance (Cap 572) in relation to fire safety improvement works. This prevents a categorical conclusion that all fire-safety directions are harmless; older case reasoning must be placed against the legislative version and instrument applicable to the exam facts.',
+                      'If the work affects common areas, analyse collective liability and enforceable apportionment. If a finite contribution can be secured sensibly, a post-completion arrangement may be acceptable; if the route is merely criminal punishment without the asserted land liability, explain why that is different. Do not assume the answer from the words “fire safety” alone.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Under All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630, distinguish exceptional measures from ordinary maintenance.',
+                'The underlying order can establish liability before later provisions quantify costs.',
+                'A genuine compliance letter and a for-the-time-being withdrawal must not be conflated.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Existing orders and temporary withdrawal — The operative words and statutory consequences decide the burden, not the notice’s heading.',
+                    'Fire safety: identify the instrument and statutory powers — Different fire-safety instruments and legislative versions can create different default consequences.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The applicable direction/order and ss.19U–19V Fire Safety (Buildings) Ordinance must be examined for authority-performed works, expenses and a land-charge route.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'A notice is not necessarily mandatory.',
+                'No final bill is not necessarily no liability.',
+                'Identify the statute, type and date before applying a fire-safety case.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Temporary withdrawal',
+                    'Heung Sui Kei v Benefit Charter Ltd [1999] 3 HKC 543; Modern Sino Ltd v Art Fair Co Ltd [1999] 3 HKLRD 847',
+                    'Reserved future enforcement does not establish complete lawful compliance.',
+                  ],
+                  [
+                    'Exceptional work',
+                    'All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630',
+                    'Wholly exceptional repair measures can exceed ordinary purchaser contemplation.',
+                  ],
+                  [
+                    'Liability and quantum',
+                    'Hu Mei Yu Anastasia v King Best Enterprises Ltd HCA 9317/1998',
+                    'The source of liability must be distinguished from later assessment of expenses.',
+                  ],
+                  [
+                    'Non-mandatory notice',
+                    'Polyset Ltd v Panhandat Ltd (2002) 5 HKCFAR 234',
+                    'A suggestion without mandatory remedial requirement may not create the asserted blot.',
+                  ],
+                  [
+                    'Fire safety',
+                    'Ip Fong Keng v Fong Yu Shing HCMP 843/2017; Sky Globe Holding Ltd v Hung Lee Estates [2023] 4 HKLRD 413',
+                    'Identify actual statutory default/repair/charge powers and the relevant instrument.',
+                  ],
+                  [
+                    'Improvement works',
+                    'ss.19U–19V Fire Safety (Buildings) Ordinance',
+                    'The authority’s improvement-work and recovery powers require a version- and instrument-specific analysis.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Existing orders and temporary withdrawal comparison',
+                table: {
+                  headers: ['Instrument', 'Analysis'],
+                  rows: [
+                    [
+                      'Resumption notice',
+                      'Identify land affected, statutory consequence and ability to convey the contracted interest; not simply a repair-cost question',
+                    ],
+                    [
+                      'Demolition/closure/remedial order',
+                      'Mandatory obligation, extent, default consequences and burden on the relevant owner',
+                    ],
+                    [
+                      's.26 dangerous-building repair order',
+                      'Is the required measure wholly exceptional beyond ordinary owner maintenance? All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630',
+                    ],
+                    [
+                      's.24C warning notice',
+                      'Investigate prescribed consequences and existing UBW; registration is a warning, not the sole source of the underlying risk',
+                    ],
+                    [
+                      'Non-mandatory suggestion',
+                      'No mandatory repair obligation may mean no title blot on the facts: Polyset Ltd v Panhandat Ltd (2002) 5 HKCFAR 234',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'unauthorised-building-works',
+                label: 'Unauthorised building works',
+              },
+              {
+                session: 'LG6',
+                issue: 'collective-liabilities-and-io-litigation',
+                label: 'Collective liabilities and owners’ corporation litigation',
+              },
+              {
+                session: 'LG7',
+                issue: 'indemnities-and-stakeholding',
+                label: 'Indemnities, undertakings and stakeholding',
+              },
+            ],
+          },
+          {
+            id: 'demolition-and-substantial-performance',
+            title: 'Demolition and substantial performance',
+            summary:
+              'Lawful removal before completion cures the title objection only if the purchaser still receives substantially the contracted property.',
+            triggers: {
+              bullets: [
+                'The vendor offers to remove a substantial unauthorised cockloft from a shop sold as is.',
+                'An enclosed pump room supplied an extra bedroom and must now be reopened.',
+                'A level garden will become a sloping garden when unauthorised works are removed.',
+                'An enclosure will be demolished with only a small change in usable floor area.',
+                'The purchaser did not answer a notified demolition proposal and the vendor relied on that silence.',
+                'The purchaser reported the works to BA and then objected when the vendor removed them.',
+              ],
+              routes: [
+                {
+                  when: 'The removed area also encroaches on another owner’s land',
+                  session: 'LG6',
+                  issue: 'property-description-and-easements',
+                  label: 'Property description, encroachment and easements',
+                },
+                {
+                  when: 'The purchaser has already terminated before the completion date',
+                  session: 'LG7',
+                  issue: 'termination-and-vp-summons',
+                  label: 'Termination and vendor and purchaser summonses',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Can demolition cure the problem before completion?: Assess area, function, value and resale consequences under Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594; removal must leave substantial performance of the actual bargain.',
+                'Purchaser conduct and demolition approvals: V must establish lawful approval and feasible completion of the removal; any estoppel argument requires P’s knowledge, V’s reliance and resulting prejudice.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering demolition and substantial performance',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Can demolition cure the problem before completion?',
+                    detail:
+                      'V normally has until completion to give good title. Removing the offending work may suffice only if the remaining property is substantially what P contracted to receive. Evaluate area lost, functional use, value, access, resale prospects and contractual wording.',
+                    why: 'A cure cannot satisfy the bargain merely by eliminating the illegality while removing its substantial benefit.',
+                    exam: {
+                      write:
+                        'Assess area, function, value and resale consequences under Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594; removal must leave substantial performance of the actual bargain.',
+                      trap: 'Using a fixed percentage or as-is wording as a universal answer.',
+                    },
+                    points: [
+                      'Join Union Investments v China Tree [2016] 2 HKLRD 901: the court treated the cockloft defect as not going to the root of title in the particular old-shop context and existing order/access circumstances. The defect remained a title issue, although its seriousness was assessed separately. Use it as a fact-specific discussion of seriousness and repudiation, not a rule that widespread UBW are legal or every cockloft is minor.',
+                      '“As is” ordinarily concerns physical condition; it does not automatically waive good title or immunise UBW: All Ports Holdings Ltd v Grandfix Ltd [2001] 2 HKLRD 630; Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594. In Max Smart Ltd v First Super Investment Ltd [1999] 1 HKLRD 519, the substantial physical bargain still mattered. Analyse the actual wording and extent of loss rather than treating “as is” as either universal vendor immunity or an absolute ban on all remedial work.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Purchaser conduct and demolition approvals',
+                    detail:
+                      "Victory Star Ltd v Ng Fung Ying [2004] 2 HKLRD 518 (CA): removal affected nearly 38% of area, giving force to the substantial-performance objection, but P's silence after a communicated demolition proposal raised an arguable estoppel defence. Do not present it as a universal duty to object to every repair: identify knowledge, expectation, reliance and prejudice.",
+                    why: 'Conduct may affect objections, and a demolition order does not remove all approval requirements.',
+                    exam: {
+                      write:
+                        'V must establish lawful approval and feasible completion of the removal; any estoppel argument requires P’s knowledge, V’s reliance and resulting prejudice.',
+                      trap: 'Assuming a s.24 order dispenses with every s.14 plan approval requirement.',
+                    },
+                    points: [
+                      "Chan Choi Fung v Huge Base Investment Ltd [2010] 2 HKLRD 316 (CA): P reported the suspected UBW to BA and could not then complain of V's resulting demolition on the facts. P's own conduct can affect available objections, but does not generally make every lawful contractual right disappear.",
+                      'Re Profit Success Development Ltd (CACV 87/2014, 22 December 2014): a s.24 order is not blanket exemption from s.14 plan approval. The order may normally supply consent to commencement for works within its scope, but plans still require approval where the statutory requirements apply and no approved plans cover them. Ask whether V can lawfully complete the demolition in time, not merely whether a contractor can physically remove it.',
+                      'Criminal routes: s.40(1AA) concerns knowingly commencing/carrying out works without approval; s.40(1BA) concerns failure to comply with an order. Identify offences separately from title, enforcement risk and substantial performance.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Max Smart Ltd v First Super Investment Ltd [1999] 1 HKLRD 519 and Goldful Way Development Ltd v Wellstable Development Ltd [1998] 4 HKC 679 turn on different materiality facts.',
+                'An as-is clause does not generally waive the duty to give good title.',
+                'The Victory Star area example is a case fact, not a fixed threshold.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Can demolition cure the problem before completion? — A cure cannot satisfy the bargain merely by eliminating the illegality while removing its substantial benefit.',
+                    'Purchaser conduct and demolition approvals — Conduct may affect objections, and a demolition order does not remove all approval requirements.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'V must establish lawful approval and feasible completion of the removal; any estoppel argument requires P’s knowledge, V’s reliance and resulting prejudice.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Do not ignore functional importance when area loss is small.',
+                'A contractor’s ability to remove a structure is not proof of lawful removal in time.',
+                'Reporting UBW can affect the purchaser’s later complaint about the resulting removal.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Material removal',
+                    'Max Smart Ltd v First Super Investment Ltd [1999] 1 HKLRD 519; Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594',
+                    'Consider contracted condition, area, function, value and sale prospects.',
+                  ],
+                  [
+                    'Minor removal',
+                    'Goldful Way Development Ltd v Wellstable Development Ltd [1998] 4 HKC 679; Summit Link Ltd v Sunlink Group (Hong Kong) Co Ltd [2000] 2 HKLRD 724',
+                    'Immaterial removal can leave substantial performance.',
+                  ],
+                  [
+                    'Silence and reliance',
+                    'Victory Star Ltd v Ng Fung Ying [2004] 2 HKLRD 518',
+                    'The communicated proposal and silence raised a fact-dependent estoppel argument.',
+                  ],
+                  [
+                    'Purchaser report',
+                    'Chan Choi Fung v Huge Base Investment Ltd [2010] 2 HKLRD 316',
+                    'The purchaser could not complain of resulting demolition in the reported facts.',
+                  ],
+                  [
+                    'Demolition approval',
+                    'Re Profit Success Development Ltd CACV 87/2014',
+                    'A s.24 order does not universally dispense with s.14 plan approval.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Can demolition cure the problem before completion? comparison',
+                table: {
+                  headers: ['Removal would materially change the bargain', 'Removal could leave substantial performance'],
+                  rows: [
+                    [
+                      'Max Smart Ltd v First Super Investment Ltd [1999] 1 HKLRD 519 v First Super [1999] 1 HKLRD 519: substantial cockloft, sale as is',
+                      'Homyip [1995] 2 HKC 458: removal of staircase did not substantially deprive the bargain',
+                    ],
+                    [
+                      'Sun Great v Hui Lai Ying Polly (HCA 10742/1994): substantial additions',
+                      'Summit Link v Sunlink Group [2000] 2 HKLRD 724 (CA): accepted substantial performance on facts',
+                    ],
+                    [
+                      'Grandco v Harbour Wealth (HCA 3388/1998): flattened garden restored to slope',
+                      'Goldful Way v Wellstable [1998] 4 HKC 679: small reduction from yard enclosure removal, otherwise immaterial',
+                    ],
+                    [
+                      'Cashew Holdings Ltd v Pacific Success Enterprise Ltd [2004] 2 HKC 594 v Pacific Success [2004] 2 HKC 594: pump-room enclosure used as bedroom; assess size/value/saleability',
+                      'No fixed percentage rule: practical significance can outweigh area alone',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'unauthorised-building-works',
+                label: 'Unauthorised building works',
+              },
+              {
+                session: 'LG7',
+                issue: 'termination-and-vp-summons',
+                label: 'Termination and vendor and purchaser summonses',
+              },
+              {
+                session: 'LG6',
+                issue: 'property-description-and-easements',
+                label: 'Property description, encroachment and easements',
+              },
+            ],
+          },
+          {
+            id: 'collective-liabilities-and-io-litigation',
+            title: 'Collective liabilities and owners’ corporation litigation',
+            summary:
+              'Identify when liability arose and how it reaches a unit owner; quantify the actual and potential exposure before evaluating security.',
+            triggers: {
+              bullets: [
+                'An owners’ corporation resolved before the S&P to replace lifts, but the contractors were appointed later.',
+                'A personal-injury judgment against the owners’ corporation may be enforced against co-owners.',
+                'Three pending proceedings against the owners’ corporation seek relief and costs rather than damages.',
+                'The vendor proposes a small retention without disclosing the magnitude of the claim.',
+                'Outstanding management fees are secured by a registered DMC memorandum.',
+                'The DMC prohibits selling the parking space separately from a residential unit.',
+              ],
+              routes: [
+                {
+                  when: 'A proposed retention must be compared with the quantified burden',
+                  session: 'LG7',
+                  issue: 'indemnities-and-stakeholding',
+                  label: 'Indemnities, undertakings and stakeholding',
+                },
+                {
+                  when: 'The register carries an ordinary charging order or prior S&P instead',
+                  session: 'LG5',
+                  issue: 'registered-litigation-and-prior-sales',
+                  label: 'Registered litigation and prior sale agreements',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'A building liability can bind a unit purchaser: Under Luk Ho Chang v Fook Man Finance Co Ltd [2006] 2 HKLRD 489, identify the pre-agreement resolution, the contractual cut-off and the recoverable outstanding contribution.',
+                'DMC breaches beyond fees: The [separate parking sale/alteration/arrears] must be tested against the specific DMC covenant and significant enforcement route.',
+                'Personal litigation against V versus litigation against the IO: Under s.17(1)(b) BMO and Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503, assess whether exceptional liability can reach the purchaser as co-owner.',
+                'Pending claims and costs can suffice: The combined costs exposure must be quantified under Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd [2015] 2 HKLRD 100 before an indemnity can be assessed.',
+                'Requisitions that permit risk assessment: V should supply pleadings, stage, orders, estimated liability and security; a bare subject-to-litigation answer does not show title under Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering collective liabilities and owners’ corporation litigation',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'A building liability can bind a unit purchaser',
+                    detail:
+                      'Read the BMO, DMC and S&P together. A financial burden can affect title before a charge is registered, because the current owner may become liable and face enforcement. Ask when liability arose, who can recover it, against whom, how it is apportioned, and whether the amount is beyond reasonable purchaser contemplation.',
+                    why: 'Liability can attach before a bill or charge if the resolution already binds owners and the contract allocates that cost.',
+                    exam: {
+                      write:
+                        'Under Luk Ho Chang v Fook Man Finance Co Ltd [2006] 2 HKLRD 489, identify the pre-agreement resolution, the contractual cut-off and the recoverable outstanding contribution.',
+                      trap: 'Moving liability to the tender date when the binding resolution came earlier.',
+                    },
+                    points: [
+                      'AIE Co Ltd v Kay Kam Yu [1996] 1 HKC 239 (CA): a memorandum of outstanding management fees was an encumbrance. Wise Wave Investments Ltd v TKF Services Ltd [2007] 4 HKLRD 762 is a further reference on the management-fee issue. Distinguish ordinary manageable charges dealt with on completion from substantial abnormal liabilities or charges.',
+                      "Luk Ho Chang v Fook Man Finance Co Ltd [2006] 2 HKLRD 489: the IO had resolved before the S&P to replace lifts and carry out major repairs. Under s.14(1) BMO, the resolution bound owners; the S&P also allocated pre-agreement resolved repair costs to V. Tendering and later expenditure did not shift the origin of the liability beyond the agreed cut-off. Outstanding obligations recoverable from the owner from time to time could encumber P's title.",
+                      'A reasonable retention can address a finite repair liability, but the facts in this case describe P proposing retention and V refusing it. Use the case first for the accrual/cut-off/burden principle, and do not invent agreement to a retention on those facts.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'DMC breaches beyond fees',
+                    detail:
+                      'Lo Chi Wai Arthur v Liu Wing Cheung Wilfred (HCA 11459/1982) and Dragon Top Investments Ltd v Able HK Holdings Ltd (DCCJ 824/2013) concern separate car-park sales contrary to a DMC restriction. A parking-space seller must establish the right to sell separately; transferability is part of title, not simply physical identification.',
+                    why: 'The DMC may give owners and managers rights distinct from public-law enforcement.',
+                    exam: {
+                      write:
+                        'The [separate parking sale/alteration/arrears] must be tested against the specific DMC covenant and significant enforcement route.',
+                      trap: 'Assuming building approval satisfies the DMC or treating a DMC charge as a court charging order.',
+                    },
+                    points: [
+                      'Modern Sino Ltd v Art Fair Co Ltd [1999] 3 HKLRD 847 also connects UBW with DMC breach. A claim can arise through injunction, cost recovery or a DMC charge independently of BA action. Interpret the provision and identify a real significant enforcement route; not every technical covenant breach automatically defeats title.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Personal litigation against V versus litigation against the IO',
+                    detail:
+                      'An ordinary personal claim against V does not currently affect land merely because a creditor might later obtain judgment and a charging order. That differs from IO litigation because s.17(1)(b) BMO permits a judgment creditor, with Lands Tribunal leave, to enforce against co-owners under the statutory route.',
+                    why: 'IO judgment liability has a statutory path to owners that an ordinary personal claim against V lacks.',
+                    exam: {
+                      write:
+                        'Under s.17(1)(b) BMO and Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503, assess whether exceptional liability can reach the purchaser as co-owner.',
+                      trap: 'Assuming the purchaser’s exposure is automatically only a simple fractional share.',
+                    },
+                    points: [
+                      'Lucky Health International Enterprise Ltd / Chi Kit Co Ltd [2000] 2 HKLRD 503; (2000) 3 HKCFAR 268 (CFA): the scaffolding/personal-injury case involved exceptional multimillion-dollar liability. The case involved a $25.7m judgment plus costs and a $33m retention/bank guarantee proposal; distinguish potential exposure while the action was pending from its quantified outcome. The decisive teaching point is an extraordinary liability capable of affecting a later owner, outside the reasonable bargain. P need not be compelled to “purchase a litigation” merely because substantial money is offered.',
+                      "Do not assume P's risk equals one flat's simple fractional share of the damages. Read the statutory enforcement route, proposed security and any right of contribution. Identifying a final apportionment is part of investigation, not a premise to invent.",
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Pending claims and costs can suffice',
+                    detail:
+                      'Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd (different report citations appear in the uploads): three IO proceedings exposed owners to actual/potential costs even without a damages prayer. The possible routes were a DMC charge, execution against owners, and contribution if the IO became insolvent. No reliable magnitude was supplied; $25,000 plus an unsecured indemnity could not be evaluated as adequate. Consider the litigations as a whole rather than dismissing each as “only costs”.',
+                    why: 'Costs and pending claims can be substantial even when no damages prayer or final judgment exists.',
+                    exam: {
+                      write:
+                        'The combined costs exposure must be quantified under Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd [2015] 2 HKLRD 100 before an indemnity can be assessed.',
+                      trap: 'Dismissing each proceeding separately as only costs.',
+                    },
+                    points: [
+                      "Kan Yui Man Allen v Ng Hiu Nam (DCMP 174/2011): a reply saying P bought subject to litigation failed to provide particulars, stage and amount needed to assess risk. Lo Yee Man v Si Chuan Property Development Consultants Ltd (DCMP 478/2014): a late $50,000 retention offer without disclosure of a personal-injury claim's magnitude did not eliminate the risk; V failed to show title and wrongly repudiated.",
+                      'A pending claim need not have reached judgment to matter. But an unsupported assertion that litigation exists is not enough for a full answer either: ascertain prospects, amount, costs, stage, insurance, enforcement and available resources. The vendor bears the title-proof burden; P need not guess the financial exposure from missing information.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Requisitions that permit risk assessment',
+                    detail:
+                      "Request claim pleadings, relief, current procedural stage, judgments/orders, estimated exposure including costs/interest, insurance and coverage exclusions, IO assets, enforcement routes, unit allocation and proposed discharge/security. Ask whether other related proceedings exist. A vendor's exclusion clause must actually allocate the identified risk; generic “subject to DMC” wording should not automatically be treated as accepting undisclosed extraordinary litigation.",
+                    why: 'A candid reply must disclose enough to evaluate the route and magnitude of liability.',
+                    exam: {
+                      write:
+                        'V should supply pleadings, stage, orders, estimated liability and security; a bare subject-to-litigation answer does not show title under Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011.',
+                      trap: 'Offering an arbitrary sum at completion instead of answering the requisition.',
+                    },
+                    points: [
+                      'For the seller, candour in replying and properly drafted pre-contract disclosure can avoid the separate failure-to-show-title problem. For the buyer, inquire with the IO/manager about resolutions and litigation as well as reading the land search.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Different Gigabillion report citations in the materials require care before attributing a particular procedural decision.',
+                'The contractor date and the accrual date are distinct.',
+                'Insurance must be assessed for coverage, exclusions and enforceability rather than assumed to remove the burden.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'A building liability can bind a unit purchaser — Liability can attach before a bill or charge if the resolution already binds owners and the contract allocates that cost.',
+                    'DMC breaches beyond fees — The DMC may give owners and managers rights distinct from public-law enforcement.',
+                    'Personal litigation against V versus litigation against the IO — IO judgment liability has a statutory path to owners that an ordinary personal claim against V lacks.',
+                    'Pending claims and costs can suffice — Costs and pending claims can be substantial even when no damages prayer or final judgment exists.',
+                    'Requisitions that permit risk assessment — A candid reply must disclose enough to evaluate the route and magnitude of liability.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'V should supply pleadings, stage, orders, estimated liability and security; a bare subject-to-litigation answer does not show title under Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'No registered charge does not mean no collective liability.',
+                'A personal claim against IO is not equivalent to an ordinary personal debt claim against V.',
+                'Financial security may leave exceptional litigation and resale risk.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Management charges',
+                    'AIE Co Ltd v Kay Kam Yu [1996] 1 HKC 239',
+                    'A registered memorandum of management arrears constituted an encumbrance.',
+                  ],
+                  [
+                    'Repair resolution',
+                    'Luk Ho Chang v Fook Man Finance Co Ltd [2006] 2 HKLRD 489; s.14(1) BMO',
+                    'A binding pre-S&P resolution and contractual allocation establish the repair contribution burden.',
+                  ],
+                  [
+                    'DMC restriction',
+                    'Dragon Top Investments Ltd v Able HK Holdings Ltd DCCJ 824/2013',
+                    'Separate parking-space sale contrary to DMC required a satisfactory title answer.',
+                  ],
+                  [
+                    'Exceptional IO liability',
+                    'Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503; s.17(1)(b) BMO',
+                    'Exceptional IO litigation can burden a later co-owner; large security need not remove every problem.',
+                  ],
+                  [
+                    'Costs exposure',
+                    'Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd [2015] 2 HKLRD 100',
+                    'Combined actual/potential costs and inadequate quantification/security prevented showing good title.',
+                  ],
+                  [
+                    'Candour and late retention',
+                    'Kan Yui Man Allen v Ng Hiu Nam DCMP 174/2011; Lo Yee Man v Si Chuan Property Development Consultants Ltd DCMP 478/2014',
+                    'Particulars and magnitude are needed before completion; a late arbitrary retention is insufficient.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'building-orders-and-fire-safety',
+                label: 'Building orders and fire safety directions',
+              },
+              {
+                session: 'LG7',
+                issue: 'indemnities-and-stakeholding',
+                label: 'Indemnities, undertakings and stakeholding',
+              },
+              {
+                session: 'LG5',
+                issue: 'registered-litigation-and-prior-sales',
+                label: 'Registered litigation and prior sale agreements',
+              },
+            ],
+          },
+          {
+            id: 'lease-user-and-transfer-restrictions',
+            title: 'Government lease and user restrictions',
+            summary:
+              'Check Government, occupation-permit and contractual restrictions separately; approval by one authority does not waive another regime.',
+            triggers: {
+              bullets: [
+                'The OP permits five storeys but the Government lease prohibits more than four.',
+                'The Government rent arrears are small and the seller proposes to clear them.',
+                'A shop occupies lobby space not shown in the occupation permit or first assignment plan.',
+                'Premises described in the OP as a garage are used as shops after alterations.',
+                'A cockloft is used as a restaurant and no change-of-user notice was given.',
+                'A subsidised flat is offered for sale without evidence of the necessary alienation consent.',
+              ],
+              routes: [
+                {
+                  when: 'The changed use involved unapproved physical alterations',
+                  session: 'LG6',
+                  issue: 'unauthorised-building-works',
+                  label: 'Unauthorised building works',
+                },
+                {
+                  when: 'The extra shop occupies space outside the assigned entitlement',
+                  session: 'LG6',
+                  issue: 'property-description-and-easements',
+                  label: 'Property description, encroachment and easements',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Independent Government-lease compliance: The Government-lease covenant remains a separate title question under Lee To Ming v Tam Kim Sum William [1999] 2 HKC 865 despite the occupation permit.',
+                'Occupation permit and material change of user: Under Chan Sing Hoi Enterprises Ltd v Vykon Media Technology Ltd CACV 324/2007, the s.25 BO mechanism must be distinguished from the subsequent order and any independent lease or DMC breach.',
+                'Home Ownership Scheme consent: V must show the relevant alienation consent under Chan Chi Hung v Tse Ying Piu HCMP 3630/1994.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering government lease and user restrictions',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Independent Government-lease compliance',
+                    detail:
+                      'Breach may confer a right of re-entry, making title defeasible. Examine Government rent, development/height/user restrictions, conditions and consent/waiver evidence.',
+                    why: 'BA permission addresses its statutory function rather than the Government’s separate lessor rights.',
+                    exam: {
+                      write:
+                        'The Government-lease covenant remains a separate title question under Lee To Ming v Tam Kim Sum William [1999] 2 HKC 865 despite the occupation permit.',
+                      trap: 'Treating the OP as a universal waiver of Government restrictions.',
+                    },
+                    points: [
+                      'New Jade Enterprises Ltd v Jing Ying She Ltd (HCA 13764/97, 22 September 2000): a small unpaid rent amount did not produce a real re-entry risk on the facts. This is not a rule that rent never matters; assess payment/cure, amount and actual enforcement.',
+                      'Lee To Ming v Tam Kim Sum William [1999] 2 HKC 865: an OP for five storeys did not waive a Government-lease maximum of four. BA approval concerns its own statutory function, not automatically Government consent as lessor. Combine with Giant River Ltd v Asie Marketing Ltd [1990] 1 HKLR 297 for a lease linkage to building-regulation compliance and Jumbo Gold Investment Ltd v Warren Yuen Cheong Leung (2000) 3 HKCFAR 52 for evidence-based no-real-risk analysis.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Occupation permit and material change of user',
+                    detail:
+                      'Compare the OP, approved plans, assignment/DMC and actual use. Wong Wai Yip v Ho Wai Fung (DCMP 2221/2015, 27 January 2017): an additional shop E1 occupied lobby space absent from the OP/first assignment plan. This raised UBW and title issues; an address or shop label does not prove lawful creation or ownership of the space.',
+                    why: 'The offence mechanism and the broader regulatory or contractual title risk must be distinguished.',
+                    exam: {
+                      write:
+                        'Under Chan Sing Hoi Enterprises Ltd v Vykon Media Technology Ltd CACV 324/2007, the s.25 BO mechanism must be distinguished from the subsequent order and any independent lease or DMC breach.',
+                      trap: 'Assuming every unnotified change is itself the same statutory offence or that a successful s.25 point resolves the lease.',
+                    },
+                    points: [
+                      's.25 BO: intended material change of user requires notice to BA; BA may object and make the relevant order. Under the course description, materiality relates to whether a building for that use would contravene BO requirements or approval could have been refused under s.16(1)(g).',
+                      'Worldfull Investments Ltd v Young King Asia Ltd [1996] 4 HKC 238 (garage converted into shops) and Even Growth Investment Ltd v Shing Yip Investment Co Ltd (HCMP 2369/1996) (cocklofts used as restaurant) support title concern. Summit Investment Ltd v Shia Ning Enterprise Ltd [1999] 2 HKLRD 798 found no material change on its non-structural facts. Treat this as fact-specific, not an absolute rule that structural alteration is always required for materiality.',
+                      'Chan Sing Hoi Enterprises Ltd v Vykon Media Technology Ltd (CACV 324/2007, 4 July 2008): s.25 does not itself make the changed use or absence of notice an offence; failure to comply with the subsequent order is distinct. Separate criminal unlawfulness, BA regulatory risk, Government-lease/DMC restrictions and title. A successful s.25 argument does not automatically answer a lease prohibition on shop use.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Home Ownership Scheme consent',
+                    detail:
+                      'Home Ownership Scheme: check restrictions/necessary consent: Chan Chi Hung v Tse Ying Piu (HCMP 3630/1994). Separate approval for alienation from beneficial-interest disputes arising out of an improper nominee arrangement.',
+                    why: 'A subsidised-property restriction can affect alienation independently of permitted user.',
+                    exam: {
+                      write: 'V must show the relevant alienation consent under Chan Chi Hung v Tse Ying Piu HCMP 3630/1994.',
+                      trap: 'Treating physical building compliance as permission to transfer restricted property.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Home Ownership Scheme consent is a separate alienation issue: Chan Chi Hung v Tse Ying Piu HCMP 3630/1994.',
+                'A no-material-change outcome on non-structural facts is not an absolute statutory rule requiring structural work in every case.',
+                'A small arrears case does not mean Government rent is irrelevant.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Independent Government-lease compliance — BA permission addresses its statutory function rather than the Government’s separate lessor rights.',
+                    'Occupation permit and material change of user — The offence mechanism and the broader regulatory or contractual title risk must be distinguished.',
+                    'Home Ownership Scheme consent — A subsidised-property restriction can affect alienation independently of permitted user.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: ['V must show the relevant alienation consent under Chan Chi Hung v Tse Ying Piu HCMP 3630/1994.'],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'One approval is not every required consent.',
+                'Use, physical work and permitted description need separate analysis.',
+                'The actual covenant and permitted exceptions must be read.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Re-entry risk',
+                    'Lee To Ming v Tam Kim Sum William [1999] 2 HKC 865',
+                    'An OP did not waive an independent Government-lease height restriction.',
+                  ],
+                  [
+                    'Small arrears',
+                    'New Jade Enterprises Ltd v Jing Ying She Ltd HCA 13764/97',
+                    'Small rent nonpayment did not create real re-entry risk on the facts.',
+                  ],
+                  [
+                    'Extra shop',
+                    'Wong Wai Yip v Ho Wai Fung DCMP 2221/2015',
+                    'A shop formed in lobby space absent from OP and assignment plan raised title concerns.',
+                  ],
+                  [
+                    'User and works',
+                    'Worldfull Investments Ltd v Young King Asia Ltd [1996] 4 HKC 238; Even Growth Investment Ltd v Shing Yip Investment Co Ltd HCMP 2369/1996',
+                    'The garage/shop and cockloft/restaurant changes required assessment of lawful use and title.',
+                  ],
+                  [
+                    'Notice/order distinction',
+                    's.25(1)–(2) BO; Chan Sing Hoi Enterprises Ltd v Vykon Media Technology Ltd CACV 324/2007',
+                    'The change/notice mechanism differs from the offence arising upon failure to comply with the order.',
+                  ],
+                  [
+                    'Alienation consent',
+                    'Chan Chi Hung v Tse Ying Piu HCMP 3630/1994',
+                    'Check the requisite Home Ownership Scheme consent.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'unauthorised-building-works',
+                label: 'Unauthorised building works',
+              },
+              {
+                session: 'LG6',
+                issue: 'property-description-and-easements',
+                label: 'Property description, encroachment and easements',
+              },
+            ],
+          },
+          {
+            id: 'property-description-and-easements',
+            title: 'Property description, encroachment and easements',
+            summary:
+              'Establish the shares and exclusive-use area actually conveyed; physical occupation is not proof of entitlement to an added space.',
+            triggers: {
+              bullets: [
+                'A parking bay was relocated and a guard post occupies the location shown on the DMC plan.',
+                'An assignment identifies acreage but the boundary plan is missing.',
+                'A control card and share-apportionment document identify the subject flat despite a missing sub-DMC.',
+                'The flat’s main entrance has been extended into a common corridor.',
+                'A balcony overhangs Government land and the seller produces a permission letter.',
+                'An internal staircase right of way has not been used and the seller alleges abandonment.',
+              ],
+              routes: [
+                {
+                  when: 'The corrected plan requires transfer of missing shares or title',
+                  session: 'LG7',
+                  issue: 'confirmatory-assignments-and-vesting',
+                  label: 'Confirmatory assignments and vesting orders',
+                },
+                {
+                  when: 'Restoring the boundary removes a material contracted amenity',
+                  session: 'LG6',
+                  issue: 'demolition-and-substantial-performance',
+                  label: 'Demolition and substantial performance',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Property identity, shares and encroachment: V must establish the contracted shares and exclusive-use area; Fan Tony v Incorporated Owners of Kung Lok Building [2006] 3 HKC 240 shows that a physically relocated bay does not alter its DMC entitlement.',
+                'Easements and abandonment: V must establish abandonment on the evidence under Ho Ching Group Ltd v Tsang Pui Lin [2014] 2 HKLRD 249 rather than rely on non-use alone.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering property description, encroachment and easements',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Property identity, shares and encroachment',
+                    detail:
+                      'A multi-storey interest usually involves identified undivided shares plus exclusive-use rights under the DMC. Verify both. A convincing physical viewing cannot cure an assignment of the wrong number of shares or a plan granting a different space.',
+                    why: 'The legal object of sale consists of shares and rights, not merely the visible occupied space.',
+                    exam: {
+                      write:
+                        'V must establish the contracted shares and exclusive-use area; Fan Tony v Incorporated Owners of Kung Lok Building [2006] 3 HKC 240 shows that a physically relocated bay does not alter its DMC entitlement.',
+                      trap: 'Accepting current use as a substitute for the conveyed plan and shares.',
+                    },
+                    points: [
+                      'Tam Mo Yin v Attorney-General [1996] 1 HKC 379: lost plan and acreage-only description raised boundary ascertainment issues. Ask whether admissible descriptions, survey and documents can establish the actual contracted parcel.',
+                      'Lee Tak Chun v East Weal International Ltd [1994] 1 HKC 722: need for the sub-DMC/allocation evidence. Marking Ltd v Cheerifat Investment Ltd (HCMP 2727/1995), Goldjet International Investment Ltd v Ling Ki Wai [1997] 3 HKC 503, and Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317 illustrate control cards/share-apportionment and registry evidence sufficing on particular facts. Sheenip Industries Ltd v Champion Billion Development Ltd (HCMP 1390/1995): V need not prove how every other share was allocated merely to prove the subject interest.',
+                      'Fan Tony v IO of Kung Lok Building [2006] 3 HKC 240: the parking space had been moved and a guard post built at its correct DMC-plan location; reinstatement was ordered. Distinguish “this is where everyone parks” from the rights actually conveyed.',
+                      "Encroachment invokes the true owner's rights independently of building approval:",
+                      'Chan Hong Chung v Mak Kiu (HCMP 1961/1995): balcony over public street raised Government-land concern.',
+                      'Gold Glory International (Hong Kong) Ltd v KW Wong Investment Co Ltd (HCMP 1618/2012): Government permission changed the analysis on the facts.',
+                      'Profit World Trading Ltd v Ho So Yung [2011] 2 HKLRD 773 (CA): car-port area converted to sitting room raised private-property encroachment.',
+                      'Widely Success (HK) Ltd v Hollywood Land Ltd (DCCJ 5851/2008): entrances extended into common corridors.',
+                      'Request a survey/plans, the proprietary right to occupy the added space, consent terms and any release/reinstatement proposal. Demolishing an encroachment can resolve ownership risk but still fail substantial performance if the advertised usable area disappears.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Easements and abandonment',
+                    detail:
+                      'A right of way over the land makes it the servient tenement and is a burden unless accepted in the bargain. Ho Ching Group Ltd v Tsang Pui Lin [2014] 2 HKLRD 249 (CA) accepted abandonment of an internal staircase right to a cockloft on the facts. Mere non-use is not automatically abandonment: identify conduct and evidence supporting relinquishment of the right. Obtain a release or persuasive abandonment evidence; distinguish the absence of enforcement from actual cessation of the easement.',
+                    why: 'An easement remains a burden unless accepted or effectively ceased; simple inactivity needs interpretation.',
+                    exam: {
+                      write:
+                        'V must establish abandonment on the evidence under Ho Ching Group Ltd v Tsang Pui Lin [2014] 2 HKLRD 249 rather than rely on non-use alone.',
+                      trap: 'Treating absence of an enforcement claim as actual extinction of the right of way.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Government permission can change the analysis of an overhang, but inspect its terms.',
+                'V need not prove allocation of every other share merely to prove the subject interest.',
+                'Removing encroachment may still materially diminish the contracted property.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Property identity, shares and encroachment — The legal object of sale consists of shares and rights, not merely the visible occupied space.',
+                    'Easements and abandonment — An easement remains a burden unless accepted or effectively ceased; simple inactivity needs interpretation.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'V must establish abandonment on the evidence under Ho Ching Group Ltd v Tsang Pui Lin [2014] 2 HKLRD 249 rather than rely on non-use alone.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Survey, approved plan and proprietary entitlement serve different purposes.',
+                'An added room can be both UBW and encroachment.',
+                'Check whether the property is the servient rather than dominant tenement.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Boundary description',
+                    'Tam Mo Yin v Attorney-General [1996] 1 HKC 379',
+                    'Ascertain the contracted land from admissible description and evidence when the plan is missing.',
+                  ],
+                  [
+                    'Share evidence',
+                    'Marking Ltd v Cheerifat Investment Ltd HCMP 2727/1995; Hinex Universal Design Consultants Co Ltd v Chan Lai Hing [1998] 1 HKC 317',
+                    'Registry/control-card evidence can prove allocation on its particular facts.',
+                  ],
+                  [
+                    'Other shares',
+                    'Sheenip Industries Ltd v Champion Billion Development Ltd HCMP 1390/1995',
+                    'No general duty to show allocation of every other share.',
+                  ],
+                  [
+                    'Moved bay',
+                    'Fan Tony v Incorporated Owners of Kung Lok Building [2006] 3 HKC 240',
+                    'Reinstatement was ordered where the bay did not match the DMC plan.',
+                  ],
+                  [
+                    'Private encroachment',
+                    'Profit World Trading Ltd v Ho So Yung [2011] 2 HKLRD 773; Widely Success (HK) Ltd v Hollywood Land Ltd DCCJ 5851/2008',
+                    'Investigate title to converted car-port space and common-corridor extensions.',
+                  ],
+                  [
+                    'Abandonment',
+                    'Ho Ching Group Ltd v Tsang Pui Lin [2014] 2 HKLRD 249',
+                    'An abandoned internal-staircase right ceased to burden the property on the evidence.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'demolition-and-substantial-performance',
+                label: 'Demolition and substantial performance',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+              {
+                session: 'LG1',
+                issue: 'boundaries-and-plans',
+                label: 'Boundaries and construction of the Government grant',
+              },
+            ],
+          },
+        ],
+      },
+    },
+    LG7: {
+      kind: 'LG',
+      authors: ['Alwin Chan'],
+      objectives: [
+        'Analyse individual deeds and stamping and its effect on showing or giving title.',
+        'Analyse corporate execution and statutory presumptions and its effect on showing or giving title.',
+        'Analyse foreign execution and special transaction evidence and its effect on showing or giving title.',
+        'Analyse powers of attorney and its effect on showing or giving title.',
+        'Analyse identity discrepancies and missing evidence and its effect on showing or giving title.',
+        'Analyse confirmatory assignments and vesting orders and its effect on showing or giving title.',
+        'Analyse indemnities, undertakings and stakeholding and its effect on showing or giving title.',
+        'Analyse termination and vendor and purchaser summonses and its effect on showing or giving title.',
+      ],
+      topicsCovered: [
+        'Individual deeds and stamping',
+        'Corporate execution and statutory presumptions',
+        'Foreign execution and special transaction evidence',
+        'Powers of attorney',
+        'Identity discrepancies and missing evidence',
+        'Confirmatory assignments and vesting orders',
+        'Indemnities, undertakings and stakeholding',
+        'Termination and vendor and purchaser summonses',
+      ],
+      examNotes: {
+        intro:
+          'Proof of title applications across Lectures 5–7. These pages address deed execution, corporate presumptions, powers of attorney, evidence and substantive cures. Determine whether the defect concerns proof, a voidable interest or an estate never transferred before evaluating security and termination.',
+        issueTypes: [
+          {
+            id: 'individual-deeds-and-stamping',
+            title: 'Individual deeds and stamping',
+            summary:
+              'Identify the deed’s function, signature, deemed sealing and delivery; distinguish completion machinery from substantive ownership.',
+            triggers: {
+              bullets: [
+                'An individual’s assignment has no visible wax or wafer seal.',
+                'A signed deed was handed to the other side subject to an unsatisfied condition.',
+                'A solicitor’s clerk witnessed the conveyance because a solicitor could not attend.',
+                'The solicitor offers to stamp the instrument before completion.',
+                'The vendor refuses to undertake stamping before completion and insists that the purchaser accept it.',
+              ],
+              routes: [
+                {
+                  when: 'The deed is executed by a company rather than an individual',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+                {
+                  when: 'The signer acts under a power of attorney',
+                  session: 'LG7',
+                  issue: 'powers-of-attorney',
+                  label: 'Powers of attorney',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Use this decision order: Identify whether [instrument] must operate as a deed and whether the person signing acts as principal or attorney before testing due execution.',
+                'Natural persons: signature, sealing and delivery: Under s.19(2) CPO, physical absence of an individual seal is not a valid objection; delivery still requires an intention to be bound as a deed.',
+                'Stamping as completion machinery: Town Bright Industries Ltd v Bermuda Trust (HK) Ltd [1998] 2 HKC 445 supports treating the stamping omission as conveyancing machinery where the necessary pre-completion undertaking is given.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering individual deeds and stamping',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Use this decision order',
+                    detail:
+                      "Identify (1) the document's legal function and whether a deed is required; (2) the executing person/entity and capacity; (3) the execution date; (4) the applicable formalities; (5) available statutory presumptions; (6) contrary evidence; and (7) the cure. Distinguish a current assignment, which must validly convey now, from an old title document protected by a historical proof-of-title presumption.",
+                    why: 'The validity question depends on the instrument and capacity before any presumption is invoked.',
+                    exam: {
+                      write:
+                        'Identify whether [instrument] must operate as a deed and whether the person signing acts as principal or attorney before testing due execution.',
+                      trap: 'Treating a signed sale contract as necessarily conveying the legal estate.',
+                    },
+                    points: [
+                      'A contract signed under hand is not automatically a deed. A valid S&P may transfer equitable interests without a valid assignment transferring the legal estate. That distinction explains why a defective assignment can leave an enforceable equitable entitlement suitable for a vesting order.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Natural persons: signature, sealing and delivery',
+                    detail:
+                      "The deed requirements are stated the deed requirements as signed, sealed and delivered. s.19(2) CPO deems the individual's deed sealed; do not requisition merely because no physical wax or wafer seal appears.",
+                    why: 'Delivery concerns intended legal effect, while deemed sealing removes an unnecessary physical-form objection.',
+                    exam: {
+                      write:
+                        'Under s.19(2) CPO, physical absence of an individual seal is not a valid objection; delivery still requires an intention to be bound as a deed.',
+                      trap: 'Equating signature or physical handover with unconditional delivery.',
+                    },
+                    points: [
+                      "Delivery requires an intention to be bound as a deed; not literal handing over. Bibby Financial Services Ltd v Magson [2011] EWHC 2495: mere signature or physical possession by the beneficiary does not necessarily establish the maker's intention. Consider conditional delivery or escrow: a document can be held pending satisfaction of an agreed condition rather than immediately taking effect.",
+                      "Champhon Industrial Ltd v Hight Projects Industrial Ltd (HCMP 3631/1992): solicitor attestation is good practice, not a universal legal requirement for an individual's conveyance. Where solicitor presence is impracticable, clerk witnessing with solicitor verification is the alternative discussed in the case account. Practice Direction A9 restricts attestation by a solicitor of other parties whom that solicitor does not represent. Distinguish this professional-practice question from a corporation's required attesting/signing officers.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Stamping as completion machinery',
+                    detail:
+                      "Town Bright Industries Ltd v Bermuda Trust (HK) Ltd [1998] 2 HKC 445: on the stated facts, an undertaking by V's solicitor/counsel to stamp before completion could make the omission a conveyancing matter rather than a fundamental title defect. Sun Champ Investment Ltd v Green Leaves Trade Investment Ltd (DCMP 706/2013) is given for failure to offer the necessary undertaking, and elsewhere for irremovable area misrepresentation. Town Bright is the name given in N ¶794; the stamping and area-misrepresentation discussions refer to Sun Champ under the same docket. Verify the distinct propositions against the judgment before formal citation.",
+                    why: 'A curable completion formality requires a credible commitment to perform within the contract.',
+                    exam: {
+                      write:
+                        'Town Bright Industries Ltd v Bermuda Trust (HK) Ltd [1998] 2 HKC 445 supports treating the stamping omission as conveyancing machinery where the necessary pre-completion undertaking is given.',
+                      trap: 'Assuming every stamping problem can be deferred beyond completion.',
+                    },
+                    points: [
+                      'The useful rule is limited: identify the instrument, stamping requirement, ability and commitment to fulfil it before completion. Do not assume every stamping problem can be postponed indefinitely or every unstamped instrument invalidates the estate.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'Attestation as professional practice must be distinguished from mandatory company-officer execution.',
+                'Check any escrow condition and whether it has been satisfied.',
+                'Practice Direction A9 restricts solicitor attestation of parties whom the solicitor does not represent.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Use this decision order — The validity question depends on the instrument and capacity before any presumption is invoked.',
+                    'Natural persons: signature, sealing and delivery — Delivery concerns intended legal effect, while deemed sealing removes an unnecessary physical-form objection.',
+                    'Stamping as completion machinery — A curable completion formality requires a credible commitment to perform within the contract.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'Town Bright Industries Ltd v Bermuda Trust (HK) Ltd [1998] 2 HKC 445 supports treating the stamping omission as conveyancing machinery where the necessary pre-completion undertaking is given.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'No physical seal does not defeat an individual deed.',
+                'Witnessing is not delivery.',
+                'A bare promise with no stamping deadline does not establish pre-completion performance.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  ['Individual seal', 's.19(2) CPO', 'The individual deed is deemed sealed.'],
+                  [
+                    'Delivery',
+                    'Bibby Financial Services Ltd v Magson [2011] EWHC 2495',
+                    'Intention to be bound is required beyond signature or physical handover.',
+                  ],
+                  [
+                    'Attestation',
+                    'Champhon Industrial Ltd v Hight Projects Industrial Ltd HCMP 3631/1992',
+                    'Solicitor attestation is practice rather than a universal individual-deed validity requirement.',
+                  ],
+                  [
+                    'Stamp undertaking',
+                    'Town Bright Industries Ltd v Bermuda Trust (HK) Ltd [1998] 2 HKC 445',
+                    'The necessary undertaking to stamp before completion can make the omission a conveyancing matter.',
+                  ],
+                  [
+                    'Failure to show',
+                    'Sun Champ Investment Ltd v Green Leaves Trade Investment Ltd DCMP 706/2013',
+                    'The source identifies the absence of the necessary undertaking as a failure-to-show-title setting.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG7',
+                issue: 'identity-and-missing-evidence',
+                label: 'Identity discrepancies and missing evidence',
+              },
+              {
+                session: 'LG7',
+                issue: 'powers-of-attorney',
+                label: 'Powers of attorney',
+              },
+            ],
+          },
+          {
+            id: 'corporate-execution',
+            title: 'Corporate execution and statutory presumptions',
+            summary: 'Fix the execution date and chosen method, then apply the precise signature, articles and fifteen-year requirements.',
+            triggers: {
+              bullets: [
+                'A pre-2014 company mortgage was executed with a rubber chop instead of the common seal.',
+                'A release intended to be executed in two capacities bears a seal beside only one execution clause.',
+                'A sealed deed bears one director’s signature and the articles permit a board-authorised alternative method.',
+                'A 2015 deed is relied on under a 2026 S&P as though it were fifteen years old.',
+                'A company with several directors uses only one director to sign its current assignment under hand.',
+                'A company uses the director’s personal seal instead of its own common seal.',
+                'The company asserts that board ratification removes a historical execution problem.',
+              ],
+              routes: [
+                {
+                  when: 'A foreign execution method requires proof of local validity',
+                  session: 'LG7',
+                  issue: 'foreign-execution-and-special-transactions',
+                  label: 'Foreign execution and special transaction evidence',
+                },
+                {
+                  when: 'The invalid assignment left an estate requiring a corrective conveyance',
+                  session: 'LG7',
+                  issue: 'confirmatory-assignments-and-vesting',
+                  label: 'Confirmatory assignments and vesting orders',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Corporate execution: the date determines the regime: Execution must be assessed under the regime applicable to the deed’s date, not the date of the present sale alone.',
+                'Old common-seal formalities: The [missing/wrong/illegible] seal must be resolved under the actual formal requirements and any applicable statutory cure before relying on no challenge.',
+                'Articles, Table A and “two directors” shorthand: V must establish the execution method permitted by the articles in force at the relevant time, including any authorised alternative.',
+                'CPO s.20(1): a specific deeming route: The deed must purport to bear the corporate seal attested by the capacities specified in s.20(1) CPO; two signatures alone are insufficient.',
+                'CPO s.23: appearance of due execution: Under s.23 CPO and Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212, consider all circumstances producing an appearance of due execution.',
+                'CPO s.23A: do the arithmetic before old execution law: A qualifying corporate deed executed not less than fifteen years before the contract receives the s.23A(2) CPO protection; a younger post-May-2003 deed does not obtain s.23A(1) protection.',
+                'Ratification, challenge risk and missing estate: The alleged historical cure must establish the effect of the company’s act and any retained legal estate; mere silence cannot replace an effective conveyance where the deed was void.',
+                'Current CO: statutory signature route and optional seals: For a company with [one/several] directors, apply s.127(3) CO and the deed requirements in s.128(1); the chosen common-seal route remains distinct.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering corporate execution and statutory presumptions',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Corporate execution: the date determines the regime',
+                    detail:
+                      'The former Companies Ordinance was Cap 32; the CPO is Cap 219. Keep the CPO (Cap. 219) separate from the former CO (Cap. 32). Keep the two statutes separate.',
+                    why: 'The statutory signature route was not available for the earlier corporate execution regime.',
+                    exam: {
+                      write:
+                        'Execution must be assessed under the regime applicable to the deed’s date, not the date of the present sale alone.',
+                      trap: 'Applying the current optional-seal rules retrospectively to an old deed.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Old common-seal formalities',
+                    detail:
+                      'Former s.93(1) CO required a metallic common seal with the company name engraved legibly. On Hong Trading Co Ltd v Bank of Communications (HCMP 3099/1999): rubber chop did not suffice for the intended mortgage; the bank acquired no valid legal mortgage/power to sell. Wang Zhidun v Tsoi Ming Pui [2011] 3 HKC 314: illegible corporate seal raised invalidity/proof concerns.',
+                    why: 'A seal defect can prevent passage of the estate; signature counts cannot supply another entity’s seal.',
+                    exam: {
+                      write:
+                        'The [missing/wrong/illegible] seal must be resolved under the actual formal requirements and any applicable statutory cure before relying on no challenge.',
+                      trap: 'Confusing harmless spelling or seal placement with use of the wrong seal.',
+                    },
+                    points: [
+                      "Li Kwan Chuen v Vector Development Ltd [2009] 3 HKLRD 511: director's own seal in place of company's common seal did not transfer the legal estate; confirmatory assignment required. Au Wai Ming v Kam Tze Ming Alfred [2010] 1 HKLRD 198 (CA): a release intended to be executed in two capacities had only one seal beside one execution clause. The intended separate execution in the other capacity had not been effected. Inspect every releasor/capacity; one valid signature block does not necessarily release all interests.",
+                      'Not every imperfection is fatal. Good Lion Ltd v Chung Sai Wing [2009] 2 HKLRD 25: mis-spelling of the company name could be immaterial where identity and intention to execute were established. Man Kwok Lam v Keung Yeuk Chun (HCMP 4067/1997): seal on the immediately following receipt clause was part of the assignment and showed the intention to execute the deed. Distinguish wrong entity/no company seal from a harmless location or identification imperfection.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Articles, Table A and “two directors” shorthand',
+                    detail:
+                      'Under former s.11 CO, Table A generally applied absent exclusion/modification. Article 114 required a director plus the secretary, another director or another person appointed by the board. This is often called the “two director rule”, but not literally restricted to two directors. Current transitional provisions preserve applicable Table A articles for existing companies; model articles are governed separately.',
+                    why: 'Corporate authority is determined by the relevant constitution and statutory capacities.',
+                    exam: {
+                      write:
+                        'V must establish the execution method permitted by the articles in force at the relevant time, including any authorised alternative.',
+                      trap: 'Calling the Table A shorthand literally a two-directors-only rule.',
+                    },
+                    points: [
+                      "The common law did not itself universally demand attesting signatures once the seal was duly affixed: Agar v Athenaeum Life Assurance Society, cited in Peking Fur Store Ltd v Bank of Communications [1993] 1 HKC 625 and Grand Trade Development Ltd v Bonance International Ltd [2000] 4 HKC 57. Nonetheless, applicable statutory/articles-based authority must be proved. Do not confuse a common-law baseline with permission to ignore a company's constitution.",
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'CPO s.20(1): a specific deeming route',
+                    detail:
+                      'In favour of a person dealing with the corporation in good faith, a deed purporting to bear its seal affixed in the presence of and attested by a director plus secretary/other permanent officer, or two directors, is deemed duly executed. Establish the stated capacities and statutory conditions. An unspecified “authorised person” is not automatically a permanent officer.',
+                    why: 'The deeming route protects specified officer combinations in the stated good-faith setting.',
+                    exam: {
+                      write:
+                        'The deed must purport to bear the corporate seal attested by the capacities specified in s.20(1) CPO; two signatures alone are insufficient.',
+                      trap: 'Treating an unspecified authorised person as necessarily a qualifying permanent officer.',
+                    },
+                    points: [
+                      'Kan Yui Man Allen v Ng Hiu Nam (DCMP 174/2011): two signatures on a sealed bank POA did not necessarily satisfy the specified capacities; relevant articles and evidence were required. Merely counting signatures is insufficient.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'CPO s.23: appearance of due execution',
+                    detail:
+                      'An instrument appearing to be duly executed is presumed duly executed until the contrary is proved. Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212 (CFA): this is remedial and should be approached broadly with all circumstances in view.',
+                    why: 'Appearance can arise through a different constitutional route even when the specific deeming test fails.',
+                    exam: {
+                      write:
+                        'Under s.23 CPO and Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212, consider all circumstances producing an appearance of due execution.',
+                      trap: 'Assuming failure of s.20(1) always prevents s.23 from applying.',
+                    },
+                    points: [
+                      'Failing s.20(1) does not invariably make s.23 unavailable. Ask whether the articles and execution clause otherwise produce the appearance of validity:',
+                      'Tread East Ltd v Hillier Development Ltd (HCA 907/1991): articles permitted the board to choose another method; a single director signed with express board-authorisation wording. The appearance supported s.23 without production of the actual resolution on those facts.',
+                      'Lee Chat v China Roll Industries Ltd [1998] 1 HKC 269 is a related example of the execution wording/constitutional inquiry.',
+                      'Li Ying Ching v Air-Sprung (Hong Kong) Ltd [1996] 4 HKC 418: an ordinary director signature did not show compliance with articles requiring the chairman or two directors.',
+                      'Wong Yuet Wah Mandy v Lam Tsam Yee [1999] 3 HKC 268: one signature, articles requiring two or a board-determined alternative, and no adequate authorisation proof left the problem unresolved.',
+                      'Au Hon Kwong v Sure Woollen Yarns Co Ltd (HCMP 3979/1992): articles required half of a four-director board; only one signed the mortgage. A sale based on that mortgage exposed the derivative-title problem.',
+                      'Whole Year Development Ltd v Lung Chiu Yee Julia (HCMP 966/1993): signatories were not the required officers, and the legal estate had not been conveyed.',
+                      "If appearance is missing, request the relevant-date articles, officers' status, actual board resolution and execution evidence; apply the missing-document rule if the resolution is lost. A declaration saying “it must have been authorised” is not automatically equivalent to evidence of an actual authorisation.",
+                    ],
+                  },
+                  {
+                    id: 'step-6',
+                    label: 'CPO s.23A: do the arithmetic before old execution law',
+                    detail:
+                      'Commencement: 9 May 2003. s.23A(3) limits operation to land-sale contracts entered into on or after commencement. The commencement wording includes contracts made on the commencement date. Silver Pioneer International Ltd v Good Onwards Co Ltd [2004] 4 HKC 253: an April 2003 sale contract could not claim the later provision, nor compel the buyer to rely on its protection in a hypothetical future sale.',
+                    why: 'The moving age threshold and commencement conditions must be calculated before litigating old formalities.',
+                    exam: {
+                      write:
+                        'A qualifying corporate deed executed not less than fifteen years before the contract receives the s.23A(2) CPO protection; a younger post-May-2003 deed does not obtain s.23A(1) protection.',
+                      trap: 'Using a fixed historical year or excluding the exact fifteenth anniversary.',
+                    },
+                    points: [
+                      's.23A(2): where a produced deed purports to have been executed by a corporation not less than fifteen years before the current contract, valid execution is conclusively presumed for the specified title purposes between the contracting parties and in favour of P against others. “Not less than” includes the exact fifteenth anniversary. This is a moving threshold tied to the contract date, not a permanently fixed year.',
+                      'Example: S&P on 2 October 2026; a qualifying corporate deed of 2 October 2011 or earlier meets the age limb, whereas 3 October 2011 does not. Actual applicability still requires the other statutory conditions. A 2015 deed is too young. Do not confuse the 2014 execution-regime change with the 15-year evidential protection.',
+                      's.23A(1): for a deed executed before 9 May 2003, signatories who could have been authorised under the relevant articles/instruments are rebuttably presumed authorised even if the source of authority is not apparent in the deed. Produce the relevant-date articles to show that possibility: Schneider Wong Fung Yin v Peter Ngai (DCCJ 2904/2005). It does not assist where articles require a fixed number of officers and fewer signed without any permissible alternative.',
+                      'For a contract made in 2026, any pre-May-2003 deed is already over fifteen years old, so s.23A(2) is normally the first age-based question. s.23A(1) remains useful for historical exam dates; it is not repealed simply because its practical contemporary role is reduced. A post-May-2003 corporate deed less than fifteen years old can still exist in 2026 and receives no s.23A(1) protection. A younger post-May-2003 corporate deed still requires a separately established execution route.',
+                      'The conclusive protection does not erase every separate underlying wrong or accrued claim against V/predecessors. First identify exactly what is being presumed: execution, not automatically absence of fraud, proper beneficial ownership, a discharged mortgage or valid disposal of every promised share.',
+                    ],
+                  },
+                  {
+                    id: 'step-7',
+                    label: 'Ratification, challenge risk and missing estate',
+                    detail:
+                      'Peking Fur Store Ltd v Bank of Communications [1993] 1 HKC 625: board ratification can show no real risk of a company setting aside an earlier transaction; distinguish that from an instrument conveying an estate never passed. Ring View Ltd v Modern Thorns Co Ltd (HCA 3626/1996): a current-sale resolution cannot necessarily force P to accept present execution violating the articles.',
+                    why: 'Ratification or absence of challenge must be distinguished from conveyance of an estate that never passed.',
+                    exam: {
+                      write:
+                        'The alleged historical cure must establish the effect of the company’s act and any retained legal estate; mere silence cannot replace an effective conveyance where the deed was void.',
+                      trap: 'Assuming dissolution automatically transfers the missing estate to the current vendor.',
+                    },
+                    points: [
+                      'Goldenfix Properties Ltd v Cheer Hope Investments Ltd [1993] 1 HKC 360: lost resolutions require proper secondary evidence. Hui Yuk Chun v Tang Wai Hang Henry (HCMP 1/1998) and Chung Ka Leung v Secretary for Justice (HCMP 4129/1999) are no-real-risk/dissolution examples. Polyson Jewellery Co Ltd v Liu Song Carlos [2002] 2 HKC 183 (CA): twenty years without challenge and a bare assertion were insufficient; full surrounding circumstances mattered.',
+                      'Compare the substantive-estate requirement: where execution is void and no statutory presumption helps, a missing legal estate calls for a confirmatory assignment/vesting order. Hua Rong Finance Ltd v Mega Capital Enterprises Ltd [2001] 3 HKLRD 623 illustrates fraud rendering the mortgage void. Do not claim that any dissolved company, silence or ratification automatically fixes every void conveyance.',
+                    ],
+                  },
+                  {
+                    id: 'step-8',
+                    label: 'Current CO: statutory signature route and optional seals',
+                    detail:
+                      'Under s.124 CO, a company may have a common seal; it no longer must. If it has one, statutory metallic/legibility requirements apply, and breaches of those requirements may be offences. The offence relating to a noncompliant adopted seal must be distinguished from the lawful choice to have no common seal.',
+                    why: 'A valid modern deed needs compliant execution, deed expression and delivery, not only one visible signature.',
+                    exam: {
+                      write:
+                        'For a company with [one/several] directors, apply s.127(3) CO and the deed requirements in s.128(1); the chosen common-seal route remains distinct.',
+                      trap: 'Using the sole-director shortcut for a company that has several directors.',
+                    },
+                    points: [
+                      's.125(2) deals with an official seal for use abroad: the prescribed replica and location inscription requirements must be considered.',
+                      'Under s.127(3), a document may be signed:',
+                      'by the sole director, if the company has only one director;',
+                      'by two directors, or a director plus company secretary, if it has two or more directors.',
+                      "A company with several directors does not acquire the sole-director shortcut because only one happens to sign. s.127(4): a person signing for two or more companies signs separately in each capacity. Under s.127(5), compliant execution has the seal-equivalent effect. s.127(6)–(7) protects a good-faith purchaser for valuable consideration where the document purports to comply. s.127(8) addresses company execution in another person's name.",
+                      'For a deed, s.128(1) additionally requires that it be expressed as executed as a deed and delivered as such. s.128(2) presumes delivery on compliant execution unless contrary evidence appears; s.128(3) addresses inconsistency with other legislation. Signature counts alone are therefore not a complete deed analysis.',
+                      'Williams v Redcard Ltd [2011] EWCA Civ 466 (English analogue): express “on behalf of” words under every signature are not indispensable if the document as a whole makes representative execution clear. It does not excuse unclear identity/capacity or noncompliance with the required signatories.',
+                      'If the company chooses the common-seal route, analyse articles and the CPO presumptions; do not automatically apply the under-hand presumption to cure a failed seal execution.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'A company may have no common seal; that is not itself the offence suggested by the slide shorthand.',
+                's.23A(2) concerns execution and does not automatically establish every separate proprietary or fraud issue.',
+                'The source accounts of void attestation and no-real-risk ratification require the retained-estate distinction.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Corporate execution: the date determines the regime — The statutory signature route was not available for the earlier corporate execution regime.',
+                    'Old common-seal formalities — A seal defect can prevent passage of the estate; signature counts cannot supply another entity’s seal.',
+                    'Articles, Table A and “two directors” shorthand — Corporate authority is determined by the relevant constitution and statutory capacities.',
+                    'CPO s.20(1): a specific deeming route — The deeming route protects specified officer combinations in the stated good-faith setting.',
+                    'CPO s.23: appearance of due execution — Appearance can arise through a different constitutional route even when the specific deeming test fails.',
+                    'CPO s.23A: do the arithmetic before old execution law — The moving age threshold and commencement conditions must be calculated before litigating old formalities.',
+                    'Ratification, challenge risk and missing estate — Ratification or absence of challenge must be distinguished from conveyance of an estate that never passed.',
+                    'Current CO: statutory signature route and optional seals — A valid modern deed needs compliant execution, deed expression and delivery, not only one visible signature.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'For a company with [one/several] directors, apply s.127(3) CO and the deed requirements in s.128(1); the chosen common-seal route remains distinct.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Do not count signatures without their capacities.',
+                'Do not substitute old s.93(1) CO for current s.124 without the execution date.',
+                'Do not claim a conclusive age presumption for a 2015 deed in a 2026 sale.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Old seal',
+                    'On Hong Trading Co Ltd v Bank of Communications HCMP 3099/1999; former s.93(1) CO',
+                    'The old metallic/legible common-seal requirement was not met by a rubber chop.',
+                  ],
+                  [
+                    'Wrong seal',
+                    'Li Kwan Chuen v Vector Development Ltd [2009] 3 HKLRD 511',
+                    'Director’s personal seal did not convey the legal estate; confirmatory assignment required.',
+                  ],
+                  [
+                    'Separate capacities',
+                    'Au Wai Ming v Kam Tze Ming Alfred [2010] 1 HKLRD 198',
+                    'One seal beside one of the intended separate execution clauses did not effect both executions.',
+                  ],
+                  [
+                    'Appearance',
+                    'Leung Kwai Lin Cindy v Wu Wing Kuen [2001] 1 HKLRD 212; Tread East Ltd v Hillier Development Ltd HCA 907/1991',
+                    's.23 is contextual and may apply to an appropriately authorised alternative mode.',
+                  ],
+                  [
+                    'Age protection',
+                    's.23A(1)–(3) CPO; Silver Pioneer International Ltd v Good Onwards Co Ltd [2004] 4 HKC 253',
+                    'Distinguish historical authorisation, moving fifteen-year conclusive protection and contract commencement.',
+                  ],
+                  [
+                    'Missing estate',
+                    'Whole Year Development Ltd v Lung Chiu Yee Julia HCMP 966/1993',
+                    'No-real-risk reasoning does not itself convey an estate not transferred by the defective deed.',
+                  ],
+                  [
+                    'Modern execution',
+                    'ss.124, 127(3)–(8), 128(1)–(3) CO',
+                    'Optional seal, defined signature routes, representative capacity, expression as deed and delivery.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Corporate execution: the date determines the regime comparison',
+                table: {
+                  headers: ['Execution date/method', 'Core requirement', 'Helpful proof provision'],
+                  rows: [
+                    ['Before 3 March 2014', 'Common seal and authorised execution under articles', 'CPO ss.20(1), 23, 23A, as applicable'],
+                    [
+                      'On/after 3 March 2014, common-seal route',
+                      'Optional seal, properly used under articles',
+                      'CPO presumptions still relevant',
+                    ],
+                    [
+                      'On/after 3 March 2014, statutory signature route',
+                      's.127 signature requirements; s.128 deed expression and delivery',
+                      'CO s.127(6)–(7); s.128(2) delivery presumption',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'foreign-execution-and-special-transactions',
+                label: 'Foreign execution and special transaction evidence',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+              {
+                session: 'LG7',
+                issue: 'identity-and-missing-evidence',
+                label: 'Identity discrepancies and missing evidence',
+              },
+            ],
+          },
+          {
+            id: 'foreign-execution-and-special-transactions',
+            title: 'Foreign execution and special transaction evidence',
+            summary:
+              'Prove foreign execution, identity and authority with evidence addressing the actual act; special sales require their own powers and conditions.',
+            triggers: {
+              bullets: [
+                'A PRC company used a rubber chop and V asserts that no metallic seal is recognised there.',
+                'A foreign-law opinion authorises a named officer to sign but does not explain the deed’s required execution form.',
+                'A foreign company changed its name between S&P and assignment and produces an untranslated opinion.',
+                'A liquidator executed an assignment using his own seal.',
+                'A holding-company sale requires accounts before completion, but the seller claims dissatisfaction automatically postpones completion.',
+              ],
+              routes: [
+                {
+                  when: 'The foreign instrument is the bank’s power of attorney',
+                  session: 'LG7',
+                  issue: 'powers-of-attorney',
+                  label: 'Powers of attorney',
+                },
+                {
+                  when: 'The issue is ordinary Hong Kong company seal or officer execution',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Foreign corporations and foreign-law evidence: Wang Zhidun v Tsoi Ming Pui [2011] 3 HKC 314 requires adequate evidence of the asserted foreign-law execution method, not merely a statement that the officer can apply a stamp.',
+                'Liquidator execution: Stanford House Publication (HK) Ltd v Win Capital Industries Ltd [2006] 3 HKC 534 must be applied to the particular liquidator execution rather than an ordinary director-signature assumption.',
+                'Foreign company name continuity: V must prove corporate continuity by intelligible official evidence under Tsang Bing Kwan Andes v Korea Marvel Co Ltd [1997] 3 HKC 565.',
+                'Holding-company sale and contractual due diligence: Apply the express accounts and completion clause under Castle Global v Ip HCMP 645/2019 rather than assume dissatisfaction automatically postpones completion.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering foreign execution and special transaction evidence',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Foreign corporations and foreign-law evidence',
+                    detail:
+                      'The formal-validity starting point is Adams v Clutterbuck (1883) 10 QBD 403. Its presumptions can apply to a “corporation aggregate” including a foreign corporation: Excelling Profits Investments Ltd v Sera Ltd [1992] 2 HKC 262 (CA), concerning Bermuda/Jersey POAs.',
+                    why: 'An opinion about an officer’s authority is not necessarily proof of valid execution by the company.',
+                    exam: {
+                      write:
+                        'Wang Zhidun v Tsoi Ming Pui [2011] 3 HKC 314 requires adequate evidence of the asserted foreign-law execution method, not merely a statement that the officer can apply a stamp.',
+                      trap: 'Assuming unfamiliar foreign law can be judicially noticed or that every CO provision automatically applies to every foreign entity.',
+                    },
+                    points: [
+                      'If the asserted foreign-law execution method differs, produce a suitably qualified expert opinion answering both authority and manner of execution, with intelligible supporting law and constitutional material. Wang Zhidun v Tsoi Ming Pui [2011] 3 HKC 314: assertions that a PRC rubber chop sufficed were unsupported; an opinion merely saying an officer could sign/apply a stamp did not explain why that form validly executed the deed. PRC company law was not simply judicially noticed. The cited cases use a presumption of foreign-law similarity in the absence of adequate proof, also citing Caspian Resources Development Pte Ltd v Fortune Oil Plc [2015] 5 HKLRD 836.',
+                      'The supplied accounts of the Chase Eagle decision [2013] 1 HKLRD 933 differ on the claimant’s name and adequacy of the Mainland evidence. The execution analysis must therefore establish the constitution, signatory authority and foreign-law formal validity without assuming the disputed outcome.',
+                      'The statutory scope and conflict-of-laws basis must be established for a foreign-company deed; foreign companies should not simply be assumed to be Hong Kong-incorporated companies for every CO section. Identify the corporate type, place, date and applicable law before asserting statutory coverage. For a foreign corporate POA, examine the specific s.26(1) LARCO route.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Liquidator execution',
+                    detail:
+                      "Stanford House Publication (HK) Ltd v Win Capital Industries Ltd [2006] 3 HKC 534: liquidator execution ordinarily calls for examination of the company's seal/articles, but this case accepted the liquidator's own seal. Do not apply ordinary director-signature rules to a liquidator without checking the office holder's powers and mode.",
+                    why: 'A liquidator’s office and powers determine how the deed can be executed.',
+                    exam: {
+                      write:
+                        'Stanford House Publication (HK) Ltd v Win Capital Industries Ltd [2006] 3 HKC 534 must be applied to the particular liquidator execution rather than an ordinary director-signature assumption.',
+                      trap: 'Treating a liquidator as merely another director or assuming liquidation cures an old defect.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Foreign company name continuity',
+                    detail:
+                      "Corporate name change: Tsang Bing Kwan Andes v Korea Marvel Co Ltd [1997] 3 HKC 565: a Korean-language legal opinion did not adequately prove the foreign company's change of name; obtain intelligible official evidence establishing continuity of identity. Name change does not itself mean a different corporate owner, but V must prove that continuity.",
+                    why: 'A change of name does not identify a new owner if official continuity is established.',
+                    exam: {
+                      write:
+                        'V must prove corporate continuity by intelligible official evidence under Tsang Bing Kwan Andes v Korea Marvel Co Ltd [1997] 3 HKC 565.',
+                      trap: 'A foreign-language assurance does not by itself answer the name-change requisition.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Holding-company sale and contractual due diligence',
+                    detail:
+                      'Sale of a holding company: distinguish a share sale from a direct conveyance of land. Contractual due-diligence obligations govern the accounts/information required. Castle Global v Ip (HCMP 645/2019, 15 June 2020): failure to provide agreed accounts before completion did not give V a free right to defer whenever P was “unsatisfied”. Dragon Access Holdings v Lo Chu Hung (HCMP 1355/2019) and Wang Sheng v Sin Yuk Ling (DCMP 760/2020) are additional references without detailed source holdings. Analyse the express due-diligence clause, deadlines and consequences; do not invent a land-title duty to deliver every corporate record where the share-sale contract determines scope.',
+                    why: 'The share-sale contract determines due-diligence production and completion consequences.',
+                    exam: {
+                      write:
+                        'Apply the express accounts and completion clause under Castle Global v Ip HCMP 645/2019 rather than assume dissatisfaction automatically postpones completion.',
+                      trap: 'Transposing direct-conveyance production rules indiscriminately to a holding-company share sale.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Chase Eagle reports in the sources disagree about the evidence and party name; no disputed outcome is promoted into a settled rule.',
+                'Identify incorporation, execution place, date and statutory scope before invoking the current CO.',
+                's.26(1) LARCO is the specific foreign-corporate unsealed-POA route, addressed separately.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Foreign corporations and foreign-law evidence — An opinion about an officer’s authority is not necessarily proof of valid execution by the company.',
+                    'Liquidator execution — A liquidator’s office and powers determine how the deed can be executed.',
+                    'Foreign company name continuity — A change of name does not identify a new owner if official continuity is established.',
+                    'Holding-company sale and contractual due diligence — The share-sale contract determines due-diligence production and completion consequences.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'Apply the express accounts and completion clause under Castle Global v Ip HCMP 645/2019 rather than assume dissatisfaction automatically postpones completion.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'An authority opinion is not necessarily a formal-validity opinion.',
+                'The original entity must be linked to the renamed entity with intelligible official evidence.',
+                'Liquidation does not by itself cure every historical execution defect.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Formal validity',
+                    'Adams v Clutterbuck (1883) 10 QBD 403',
+                    'The course starts from Hong Kong formal requirements for the conveyancing document.',
+                  ],
+                  [
+                    'Foreign corporation presumptions',
+                    'Excelling Profits Investments Ltd v Sera Ltd [1992] 2 HKC 262',
+                    'CPO corporation-aggregate presumptions can include foreign corporations.',
+                  ],
+                  [
+                    'Foreign-law evidence',
+                    'Wang Zhidun v Tsoi Ming Pui [2011] 3 HKC 314',
+                    'An unsupported chop/common-seal assertion failed adequately to show title.',
+                  ],
+                  [
+                    'Name continuity',
+                    'Tsang Bing Kwan Andes v Korea Marvel Co Ltd [1997] 3 HKC 565',
+                    'Untranslated or inadequate proof did not establish the foreign-company change of name.',
+                  ],
+                  [
+                    'Liquidator',
+                    'Stanford House Publication (HK) Ltd v Win Capital Industries Ltd [2006] 3 HKC 534',
+                    'Liquidator’s own seal was accepted on the particular execution facts.',
+                  ],
+                  [
+                    'Share-sale due diligence',
+                    'Castle Global v Ip HCMP 645/2019',
+                    'The accounts clause did not give V an automatic right to defer completion whenever P was unsatisfied.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG7',
+                issue: 'powers-of-attorney',
+                label: 'Powers of attorney',
+              },
+              {
+                session: 'LG7',
+                issue: 'identity-and-missing-evidence',
+                label: 'Identity discrepancies and missing evidence',
+              },
+            ],
+          },
+          {
+            id: 'powers-of-attorney',
+            title: 'Powers of attorney',
+            summary:
+              'Prove valid creation, authority for the act and operation at the material time; keep direct and subsequent purchaser protections separate.',
+            triggers: {
+              bullets: [
+                'A foreign bank’s mortgage release was signed under an unsealed corporate POA.',
+                'An old POA was used for an assignment within fifteen years of the present S&P.',
+                'An attorney empowered to sell gives the property to himself or another person.',
+                'A donor died or revoked the power before the transaction, but the direct counterparty did not know.',
+                'A later buyer relies on a declaration made by the attorney instead of the earlier direct dealer.',
+                'The power is called irrevocable but its secured proprietary interest is unexplained.',
+                'The preparing solicitor and vendor explain the loss of a required recent POA and the searches made.',
+              ],
+              routes: [
+                {
+                  when: 'The authority is accepted but the donee’s company deed execution is defective',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+                {
+                  when: 'The needed POA or supporting resolution is lost',
+                  session: 'LG7',
+                  issue: 'identity-and-missing-evidence',
+                  label: 'Identity discrepancies and missing evidence',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'A POA requires three distinct inquiries: V must establish the POA’s valid execution, scope and operation when the document was executed, separately from the deed’s own formalities.',
+                'Form and foreign corporate powers: Under s.26(1) LARCO, the lack of a corporate seal on a foreign POA requires proof of validity under incorporation law; Li Yuen Ling v Tang Kwok Wai Thomas [2010] 1 HKC 550 illustrates the missing-evidence problem.',
+                'Fifteen-year rules: age of the deed, not simply the power: Apply s.13(1)(c) and s.13(4A) CPO to the attorney-executed deed’s date; an old POA used recently does not automatically escape production.',
+                'General powers versus special powers: Construe the actual power and any added restriction; a sale power may imply assignment authority but does not automatically resolve a gift or security release.',
+                'Self-dealing and ambiguous powers: Assess the impugned gift, undervalue or self-dealing and any effective donor affirmation under Ip Fung Yee v Norwegian Missionary Society [1998] 1 HKLRD 94.',
+                'Revocation and irrevocability: The asserted s.4 POAO protection requires the qualifying secured proprietary interest; merely calling the power irrevocable does not prove it.',
+                'Direct dealings: s.5(2) POAO: Apply s.5(2) POAO to what the direct counterparty knew at the transaction, not merely to the present purchaser’s ignorance.',
+                'Later purchaser: s.5(4) POAO: Under s.5(4) POAO, establish the twelve-month limb or a timely declaration by the direct dealer; the attorney’s declaration does not meet that route.',
+                'Other evidence and certification: A donor’s confirmation may support non-revocation, but the different s.5(4)(b) conditions must be established before claiming its conclusive effect.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering powers of attorney',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'A POA requires three distinct inquiries',
+                    detail:
+                      'Was the power itself validly executed? Did it authorise the particular act? Was it still operative, or is the third party protected despite revocation? Separately ask whether the deed made by the attorney was executed correctly. Good authority does not cure bad deed execution, and a well-signed assignment does not create authority absent from the POA.',
+                    why: 'Valid creation, authorised act and continuing operation answer different potential defects.',
+                    exam: {
+                      write:
+                        'V must establish the POA’s valid execution, scope and operation when the document was executed, separately from the deed’s own formalities.',
+                      trap: 'A properly signed deed does not prove the attorney’s power.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Form and foreign corporate powers',
+                    detail:
+                      "s.2(1) POAO: an instrument creating a power must be signed and sealed by the donor, or by direction and in the donor's presence. Corporate donors require the appropriate corporate execution analysis.",
+                    why: 'The foreign-corporate exception requires actual foreign-law validity evidence.',
+                    exam: {
+                      write:
+                        'Under s.26(1) LARCO, the lack of a corporate seal on a foreign POA requires proof of validity under incorporation law; Li Yuen Ling v Tang Kwok Wai Thomas [2010] 1 HKC 550 illustrates the missing-evidence problem.',
+                      trap: 'Treating the unsealed-foreign-power exception as self-proving.',
+                    },
+                    points: [
+                      "s.26(1) Law Amendment and Reform (Consolidation) Ordinance (LARCO) provides a specific route where a foreign corporation's unsealed power is valid under the law of its incorporation: the lack of seal does not invalidate an instrument under seal executed on its behalf pursuant to the valid power. Prove the foreign-law validity; do not treat the exception as self-proving.",
+                      "Li Yuen Ling v Tang Kwok Wai Thomas [2010] 1 HKC 550: a Dutch bank's unsealed power was used to release a mortgage; missing foreign-law evidence left the execution problem unresolved. s.23 CPO did not help because the power did not appear duly executed under the assumed requirements. The release was ineffective on the stated facts.",
+                      "An attorney may execute in his own name or the donor's name. Identify the donor, representative capacity and authority clearly; the relevant deed formalities remain necessary.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Fifteen-year rules: age of the deed, not simply the power',
+                    detail:
+                      "s.13(1)(c) CPO: the production requirement concerns POAs under which relevant instruments have been executed within the statutory period. s.13(4A) provides conclusive presumptions for documents executed by attorney not less than fifteen years before the current S&P, concerning the power's valid execution, force at the time and authorisation of execution.",
+                    why: 'The statutory clock concerns the instrument executed under the power, not simply the age of the power.',
+                    exam: {
+                      write:
+                        'Apply s.13(1)(c) and s.13(4A) CPO to the attorney-executed deed’s date; an old POA used recently does not automatically escape production.',
+                      trap: 'Brushing aside a disclosed gift or self-dealing vires objection with the age rule.',
+                    },
+                    points: [
+                      "These are separate from corporate s.23A. Calculate the attorney-executed document's date against the current contract. A POA signed twenty years ago but used for an assignment last year is not automatically exempt from production merely because the power itself is old.",
+                      "Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723 (CA): the materials warn that a purchaser's own search revealing a gift/self-dealing or vires problem cannot necessarily be brushed aside with the age rule. The s.13(4A) presumptions did not extend to the particular vires issue in the cited case account. Thus distinguish presumed formal authority to execute from power to undertake an impugned gift/self-benefiting disposition;",
+                      "For more recent documents, produce the POA and prove validity, scope and operation. Big Boss Investment Ltd v So Lai Kei [2010] 1 HKLRD 793: V must produce the power for the present assignment too. Lau Kwok Cheong Dinnes v Tse Ming Chiu [2001] 3 HKC 196 distinguishes execution on the purchaser's side for this production obligation. Do not requisition every buyer-side authority as though it necessarily involved disposal of the previous owner's title.",
+                      'Yeung Dallah Rudia v Copiluck Ltd [1992] 2 HKC 575: secondary evidence of a missing power may suffice under the Re Halifax rule; the declarations from V and the preparing solicitor explained loss and diligent searches. Missing POA is not automatically fatal, but bare recollection is not enough .',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'General powers versus special powers',
+                    detail:
+                      "A statutory general power in the scheduled form authorises what can lawfully be done by an attorney. Standard Chartered Bank v Tang Chun (HCMP 3289/98, 16 September 1999): broad mortgage authority could bind the donor in favour of a good-faith bank, even securing others' loans on the facts.",
+                    why: 'The statutory general form and a specially limited power confer different ranges of authority.',
+                    exam: {
+                      write:
+                        'Construe the actual power and any added restriction; a sale power may imply assignment authority but does not automatically resolve a gift or security release.',
+                      trap: 'Assuming the label general or irrevocable fixes the whole scope.',
+                    },
+                    points: [
+                      'Do not inadvertently narrow a statutory general power by added restrictions: Multi-More Industries Ltd v Tung Hoo Fai [1991] 2 HKC 261 (“deal with my properties”); Chan Fei v Li Yee Wah [1995] 2 HKC 806 (irrevocable wording in the particular instrument). Standard Chartered Bank v Shem Yin Fun (HCMP 3289/1998) accepted “We” rather than “I”. Labels and trivial textual changes are not the whole analysis; construe the instrument and applicable statutory form.',
+                      'A special power must cover the actual transaction. Wong Shui Yun Bernadette v Lau Wai Pui [1987] 3 HKC 513: power to sell implied authority to execute the assignment. Chan Pak Ho v Standard Chartered Asia Ltd [1988] 1 HKLR 216: no authority in the French power to reassign the mortgage. Power to sell is not necessarily power to give, prefer oneself, release security or gift to a third party.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Self-dealing and ambiguous powers',
+                    detail:
+                      "Overseas Trust Bank v Tang Che Ching [1994] 2 HKLR 73 (security for attorney's own loan); Li Ming On v Lucky Apple [1994] 2 HKLR 111; Very Cheer v Bring All [1994] 1 HKC 796 (undervalue); Lo Hung Biu (gift); Yook Lu Fong v Lam Po Ching [2002] 2 HKLRD 395 (sale to attorney as trustee for someone aware of his duties) illustrate fiduciary/vires risk. The cited cases describe this self-dealing class as voidable rather than automatically void: Lo Tai Yam v Hu Mu Simon [1997] HKLRD 588. Distinguish it from an inherently invalid power, such as an illegal security arrangement: Wong Kwai Fun v Li Fung (HCA 5810/1986).",
+                    why: 'Fiduciary self-benefit and ambiguous authority create an avoidance question distinct from pure execution form.',
+                    exam: {
+                      write:
+                        'Assess the impugned gift, undervalue or self-dealing and any effective donor affirmation under Ip Fung Yee v Norwegian Missionary Society [1998] 1 HKLRD 94.',
+                      trap: 'Ambiguity does not authorise an act falling within neither possible interpretation.',
+                    },
+                    points: [
+                      "Ip Fung Yee v Norwegian Missionary Society [1998] 1 HKLRD 94: wide language and listed specific powers created ambiguity; bona fide reasonable interpretation may bind the donor. Weigall & Co v Runciman & Co is the cited interpretation authority. If the attorney's act falls within neither possible interpretation, ambiguity cannot save it. The donor's willingness to execute a confirmatory assignment and express affirmation strongly supported no real avoidance risk. Do not expand this into a general gift power in every ambiguous POA.",
+                    ],
+                  },
+                  {
+                    id: 'step-6',
+                    label: 'Revocation and irrevocability',
+                    detail:
+                      'Ordinary powers can end through express revocation, death, bankruptcy or incapacity under the applicable rules. V must establish operation at the material transaction or the statutory protection on which the title depends.',
+                    why: 'Irrevocability requires the statutory interest and conditions, while enduring status addresses incapacity.',
+                    exam: {
+                      write:
+                        'The asserted s.4 POAO protection requires the qualifying secured proprietary interest; merely calling the power irrevocable does not prove it.',
+                      trap: 'Treating an ordinary general power as enduring.',
+                    },
+                    points: [
+                      's.4 POAO: an irrevocable power securing a proprietary interest can remain effective despite specified events while the statutory conditions are satisfied. The word “irrevocable” alone is not enough without the secured proprietary interest and other requirements. Mortgagee powers may secure the mortgagee’s proprietary interest. Distinguish an enduring POA, whose purpose includes surviving incapacity, from an ordinary/general power; enduring status must itself be validly established.',
+                    ],
+                  },
+                  {
+                    id: 'step-7',
+                    label: 'Direct dealings: s.5(2) POAO',
+                    detail:
+                      "If A deals with the attorney without knowledge that the power was revoked, the transaction can remain valid in A's favour as if the power subsisted. Determine A's actual knowledge at the transaction. Revocation and lack of authority from the outset are different problems: the protection should not be used without analysing its statutory subject matter.",
+                    why: 'The direct dealer’s lack of knowledge supplies the relevant protection after revocation.',
+                    exam: {
+                      write:
+                        'Apply s.5(2) POAO to what the direct counterparty knew at the transaction, not merely to the present purchaser’s ignorance.',
+                      trap: 'Using revocation protection without separating absence of authority from the outset.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-8',
+                    label: 'Later purchaser: s.5(4) POAO',
+                    detail:
+                      "Where later P's title depends on the earlier direct dealer's protection under s.5(2), the earlier dealer's ignorance of revocation is conclusively presumed in P's favour if:",
+                    why: 'A later purchaser depends on the direct dealer’s protected transaction, and the conclusive proof has exact conditions.',
+                    exam: {
+                      write:
+                        'Under s.5(4) POAO, establish the twelve-month limb or a timely declaration by the direct dealer; the attorney’s declaration does not meet that route.',
+                      trap: 'Missing the relevant subsequent-purchase window or using the wrong declarant.',
+                    },
+                    points: [
+                      'the earlier attorney transaction completed within twelve months of the power coming into operation; or',
+                      "the person who dealt with the attorney makes the required declaration of lack of knowledge before or within three months after the relevant later purchase's completion, as interpreted in Kung Wing Chuen v Antony Louis Marden [1990] 1 HKLR 540.",
+                      "Kung Wing Chuen v Antony Louis Marden [1990] 1 HKLR 540 deals with the subsequent-purchase timing. Au Siu Wing Jacky v Choy Ka Lee [1999] 1 HKC 248; WOC Finance Co Ltd v Wing On Cheong Investment Co Ltd [2000] 2 HKLRD 713: respect the declaration window; the attorney himself cannot supply the statutory declaration of the counterparty's ignorance. The benefit is for subsequent purchasers, not subsequent volunteers/donees.",
+                      "Worked chain: donor D gives A a power; A conveys to B after possible revocation; B sells to P. First ask if B is protected under s.5(2). Then see whether P gets the conclusive s.5(4) proof of B's ignorance. P's own ignorance does not answer what B knew. A declaration by A that “my power was never revoked” is not B's statutory declaration.",
+                    ],
+                  },
+                  {
+                    id: 'step-9',
+                    label: 'Other evidence and certification',
+                    detail:
+                      "The statutory presumption is not the only evidential way to establish that a power remained operative. A donor's confirmation letter, especially from a bank, or informed evidence from involved solicitors may demonstrate non-revocation/no real risk: WOC Finance Co Ltd v Wing On Cheong Investment Co Ltd [2000] 2 HKLRD 713; Xiamen International Finance Co Ltd v Tsui Tai Yan [1987] HKLR 977. But such evidence does not automatically satisfy the different conclusive s.5(4)(b) route. Identify exactly what the declarant knows and what is being proved.",
+                    why: 'Ordinary evidence of non-revocation and statutory conclusive proof are not interchangeable.',
+                    exam: {
+                      write:
+                        'A donor’s confirmation may support non-revocation, but the different s.5(4)(b) conditions must be established before claiming its conclusive effect.',
+                      trap: 'A certified copy proves correspondence, not capacity, scope or non-revocation.',
+                    },
+                    points: [
+                      "Check ss.3(1)–(2) POAO certification requirements for copies, including the page-by-page requirements. A certified copy proves correspondence with the instrument; it does not establish the donor's capacity, the scope of the power or non-revocation.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The fifteen-year vires issue in Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723 must be preserved despite the statutory shorthand about authorisation.',
+                'Subsequent volunteers do not automatically receive the subsequent purchaser’s protection.',
+                'The POA must authorise the exact mortgage release or assignment, not merely vaguely deal with property.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'A POA requires three distinct inquiries — Valid creation, authorised act and continuing operation answer different potential defects.',
+                    'Form and foreign corporate powers — The foreign-corporate exception requires actual foreign-law validity evidence.',
+                    'Fifteen-year rules: age of the deed, not simply the power — The statutory clock concerns the instrument executed under the power, not simply the age of the power.',
+                    'General powers versus special powers — The statutory general form and a specially limited power confer different ranges of authority.',
+                    'Self-dealing and ambiguous powers — Fiduciary self-benefit and ambiguous authority create an avoidance question distinct from pure execution form.',
+                    'Revocation and irrevocability — Irrevocability requires the statutory interest and conditions, while enduring status addresses incapacity.',
+                    'Direct dealings: s.5(2) POAO — The direct dealer’s lack of knowledge supplies the relevant protection after revocation.',
+                    'Later purchaser: s.5(4) POAO — A later purchaser depends on the direct dealer’s protected transaction, and the conclusive proof has exact conditions.',
+                    'Other evidence and certification — Ordinary evidence of non-revocation and statutory conclusive proof are not interchangeable.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'A donor’s confirmation may support non-revocation, but the different s.5(4)(b) conditions must be established before claiming its conclusive effect.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Do not calculate from the power’s date instead of the relevant deed.',
+                'Do not ask the attorney to declare the direct dealer’s ignorance for the statutory route.',
+                'Do not confuse a donor’s ordinary confirmation with the conclusive declaration.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Creation',
+                    's.2(1) POAO; s.26(1) LARCO; Li Yuen Ling v Tang Kwok Wai Thomas [2010] 1 HKC 550',
+                    'Valid creation and foreign-corporate exception require the relevant evidence.',
+                  ],
+                  [
+                    'Production and age',
+                    's.13(1)(c), (4A) CPO; Big Boss Investment Ltd v So Lai Kei [2010] 1 HKLRD 793',
+                    'Produce the relevant recent/present power; calculate the age of the instrument executed under it.',
+                  ],
+                  [
+                    'Missing power',
+                    'Yeung Dallah Rudia v Copiluck Ltd [1992] 2 HKC 575',
+                    'Clear secondary evidence and diligent search can establish a lost required power.',
+                  ],
+                  [
+                    'Vires',
+                    'Lo Hung Biu v Lo Shea Chung [1997] 2 HKC 723',
+                    'A disclosed self-benefiting gift raises an authority issue not simply disposed of by production shorthand.',
+                  ],
+                  [
+                    'General/special',
+                    'Standard Chartered Bank v Tang Chun HCMP 3289/98; Multi-More Industries Ltd v Tung Hoo Fai [1991] 2 HKC 261',
+                    'General-form authority and restrictive additions require careful construction.',
+                  ],
+                  [
+                    'Donor affirmation',
+                    'Ip Fung Yee v Norwegian Missionary Society [1998] 1 HKLRD 94',
+                    'Reasonable interpretation and clear donor affirmation supported the absence of avoidance risk.',
+                  ],
+                  [
+                    'Revocation protection',
+                    'ss.4–5 POAO; Kung Wing Chuen v Antony Louis Marden [1990] 1 HKLR 540; WOC Finance Co Ltd v Wing On Cheong Investment Co Ltd [2000] 2 HKLRD 713',
+                    'Separate irrevocability, direct ignorance and later purchaser’s exact conclusive-proof route.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'foreign-execution-and-special-transactions',
+                label: 'Foreign execution and special transaction evidence',
+              },
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG5',
+                issue: 'gifts-nominations-and-fraud',
+                label: 'Gifts, nominations and creditor challenges',
+              },
+            ],
+          },
+          {
+            id: 'identity-and-missing-evidence',
+            title: 'Identity discrepancies and missing evidence',
+            summary:
+              'Use reliable evidence of the actual person or lost instrument; a declaration cannot by itself convey a missing estate.',
+            triggers: {
+              bullets: [
+                'A person signed the earlier deed with an English name and passport number but the later deed uses a Chinese name and HKID number.',
+                'The Chinese signature was written by brush many years ago and later abbreviated in pen.',
+                'Two deeds use different passport numbers for a person with the same name and signature.',
+                'Two recent deeds give different Mainland identity-card numbers.',
+                'The company chop’s Chinese name differs from its correct name in the body and registration details.',
+                'A missing resolution is supported only by an assertion that it must have existed.',
+              ],
+              routes: [
+                {
+                  when: 'The person is identified but the company seal is wrong',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+                {
+                  when: 'Evidence proves an estate never passed and cannot itself transfer it',
+                  session: 'LG7',
+                  issue: 'confirmatory-assignments-and-vesting',
+                  label: 'Confirmatory assignments and vesting orders',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Match the evidence to the legal issue: The missing instrument requires clear evidence of existence, contents, loss and diligent search under the Re Halifax framework, not mere assurance.',
+                'Signatures and names: V must link the two names and signatures with informed evidence; Many Wise Investments Ltd v Tech Profit Development Ltd [1993] 2 HKC 517 depends on its brush, pen and elapsed-time facts.',
+                'Passport numbers, ID numbers and corporate identity: Changed passports may be explicable under Free Focus Ltd v Fels China Ltd [1989] 2 HKC 568, while Qin Tian v 譚震 DCCJ 3712/2014 requires serious investigation of changed Mainland ID numbers.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering identity discrepancies and missing evidence',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Match the evidence to the legal issue',
+                    detail:
+                      "A statutory declaration proves matters within the declarant's knowledge; it does not transfer a missing estate or automatically establish a legal conclusion. A legal opinion addresses law; it does not substitute for the actual execution facts or constitutional record. A certified copy proves an original's contents, subject to certification and authenticity; it cannot establish that the underlying deed was valid.",
+                    why: 'Evidence must address the particular disputed fact and the declarant’s knowledge.',
+                    exam: {
+                      write:
+                        'The missing instrument requires clear evidence of existence, contents, loss and diligent search under the Re Halifax framework, not mere assurance.',
+                      trap: 'Treating certification, a legal opinion and a statutory declaration as substitutes for each other.',
+                    },
+                    points: [
+                      "Under the Re Halifax secondary-evidence framework, establish clear and cogent evidence of the instrument's existence and contents; loss/destruction with a credible explanation; diligent good-faith searches where it would probably be found; and sufficiently reliable secondary evidence. Specify searches of the owner, former solicitors, bank, registry or corporate records as appropriate. This framework matters for missing POAs, articles/resolutions and other essential title instruments; do not merely say “provide an affidavit”.",
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Signatures and names',
+                    detail:
+                      'The vendor must demonstrate that differently named/signing persons in consecutive links are the same person. Ma Chun-man v Yung, Yung, Yu, Yuen & Co [1978] HKLR 26: unaddressed discrepancy could render title defective and solicitors negligent.',
+                    why: 'Context can explain visual differences, but significant identity gaps require actual linkage.',
+                    exam: {
+                      write:
+                        'V must link the two names and signatures with informed evidence; Many Wise Investments Ltd v Tech Profit Development Ltd [1993] 2 HKC 517 depends on its brush, pen and elapsed-time facts.',
+                      trap: 'Treating every difference as fatal or every similar name as sufficient.',
+                    },
+                    points: [
+                      'Many Wise Investments Ltd v Tech Profit Development Ltd [1993] 2 HKC 517: thirty-four years, brush versus ballpoint and full versus abbreviated Chinese character forms explained the difference. Context may dissipate doubt; not every visual variation warrants a new conveyance.',
+                      "Chudai (HK) Development Co Ltd v Portia International Ltd [1992] 1 HKLR 350: alias discrepancy cured by the signatory's statutory declaration. Liu Moon Ping v Wong Kwok Tung [2006] 1 HKLRD 358: English/Australian-passport execution versus Chinese/HK-ID execution involved sufficiently significant identity differences to require explanation.",
+                      "Best evidence is often a declaration from the person linking both names/signatures, supported by identity records. Lam Kin I v Tsui Ming Yee (HCMP 361/1989) supports that remedy. GB Industries Ltd v Yu Chung Kwok (HCMP 1060/1994) permits an informed solicitor declaration; Chan Hei Leung Thomson v Kuo Yuo-chien (DCMP 1271/2012) accepted direct solicitor evidence while recognising the signatory's declaration as the best remedy. Do not assume a current solicitor with no involvement or records knows the historical identity.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Passport numbers, ID numbers and corporate identity',
+                    detail:
+                      'Free Focus Ltd v Fels China Ltd [1989] 2 HKC 568 and Yiu Ping Fong v Lam Lai Hing [1999] 1 HKLRD 793: passports commonly change on renewal. Same name/signature and appropriate notarial identification can explain changed numbers. That is evidence-based reassurance, not a guarantee that every different passport number is immaterial.',
+                    why: 'Different identifiers have different expected stability and historical explanations.',
+                    exam: {
+                      write:
+                        'Changed passports may be explicable under Free Focus Ltd v Fels China Ltd [1989] 2 HKC 568, while Qin Tian v 譚震 DCCJ 3712/2014 requires serious investigation of changed Mainland ID numbers.',
+                      trap: 'Applying modern identity-number assumptions to the pre-1960s system.',
+                    },
+                    points: [
+                      'Qin Tian v 譚震 (DCCJ 3712/2014): Mainland ID-number differences were more concerning because those identifiers normally remain stable. Lai Wai v Lee Yuet Yung Pat [2012] 5 HKC 163: older pre-1960s HK identity-card history may explain changes. Investigate the date/system before assuming stability.',
+                      "Sunluck International Development Ltd v Hing King Development Ltd (HCMP 3160/1997): errors in Chinese characters on the corporate chop could be resolved with correct body wording, English/Chinese identification, registered address and business-registration details. Distinguish ambiguity of identity from using another company's seal; Good Lion and Li Kwan Chuen illustrate the difference.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The signatory’s declaration is often best; an informed historical solicitor can also supply evidence.',
+                'Official name-continuity evidence is distinct from the validity of a company seal.',
+                'Explain who searched, where and why those records would probably contain the missing instrument.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Match the evidence to the legal issue — Evidence must address the particular disputed fact and the declarant’s knowledge.',
+                    'Signatures and names — Context can explain visual differences, but significant identity gaps require actual linkage.',
+                    'Passport numbers, ID numbers and corporate identity — Different identifiers have different expected stability and historical explanations.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'Changed passports may be explicable under Free Focus Ltd v Fels China Ltd [1989] 2 HKC 568, while Qin Tian v 譚震 DCCJ 3712/2014 requires serious investigation of changed Mainland ID numbers.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'An uninformed current solicitor cannot simply attest historical identity.',
+                'Passports and permanent IDs are not interchangeable.',
+                'A declaration that a void deed was intended to be valid does not transfer the retained estate.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Identity responsibility',
+                    'Ma Chun-man v Yung, Yung, Yu, Yuen & Co [1978] HKLR 26',
+                    'Unresolved signature discrepancy could defect title and expose the solicitors to negligence.',
+                  ],
+                  [
+                    'Contextual signatures',
+                    'Many Wise Investments Ltd v Tech Profit Development Ltd [1993] 2 HKC 517',
+                    'Brush/pen and longstanding Chinese-form differences were explained on the evidence.',
+                  ],
+                  [
+                    'Declaration cure',
+                    'Chudai (HK) Development Co Ltd v Portia International Ltd [1992] 1 HKLR 350',
+                    'An informed declaration can link the alias/signature identities.',
+                  ],
+                  [
+                    'Passports',
+                    'Free Focus Ltd v Fels China Ltd [1989] 2 HKC 568',
+                    'Renewed passport numbers did not create real doubt on the facts.',
+                  ],
+                  [
+                    'ID numbers',
+                    'Qin Tian v 譚震 DCCJ 3712/2014; Lai Wai v Lee Yuet Yung Pat [2012] 5 HKC 163',
+                    'Different modern IDs require scrutiny; historical HK identification can supply an explanation.',
+                  ],
+                  [
+                    'Corporate identity',
+                    'Sunluck International Development Ltd v Hing King Development Ltd HCMP 3160/1997',
+                    'Correct document and registration details resolved the chop-name ambiguity.',
+                  ],
+                  [
+                    'Lost document',
+                    'Yeung Dallah Rudia v Copiluck Ltd [1992] 2 HKC 575; Goldenfix Properties Ltd v Cheer Hope Investments Ltd [1993] 1 HKC 360',
+                    'The Re Halifax evidential requirements govern lost POAs and resolutions.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+            ],
+          },
+          {
+            id: 'confirmatory-assignments-and-vesting',
+            title: 'Confirmatory assignments and vesting orders',
+            summary: 'Transfer or release the retained interest through the legally appropriate holder or court-authorised mechanism.',
+            triggers: {
+              bullets: [
+                'A wrong company seal left the legal estate in a predecessor that has since dissolved.',
+                'A mortgage release or assignment conveyed the wrong number of shares.',
+                'A contributing occupier or nominator has never renounced the beneficial interest.',
+                'The party required to execute a confirmatory assignment cannot be found or refuses to comply.',
+                'A purchaser holds the equitable interest after S&P but the assignment failed to pass the legal estate.',
+                'A property owner asks the Registrar to execute documents simply to avoid arranging other owners’ signatures.',
+              ],
+              routes: [
+                {
+                  when: 'The purported cure is only money or an indemnity',
+                  session: 'LG7',
+                  issue: 'indemnities-and-stakeholding',
+                  label: 'Indemnities, undertakings and stakeholding',
+                },
+                {
+                  when: 'A recent company deed’s execution might instead meet a statutory presumption',
+                  session: 'LG7',
+                  issue: 'corporate-execution',
+                  label: 'Corporate execution and statutory presumptions',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Confirmatory assignments and releases: V must procure a valid conveyance or release from [interest holder] of [estate/security/shares]; a declaration of historical intention is not necessarily sufficient.',
+                'Court-authorised execution and dissolved companies: The s.25A High Court Ordinance or s.38A District Court Ordinance route requires the relevant order and inability or refusal conditions, not mere convenience.',
+                'Dissolution and the retained estate: Identify the dissolved company’s retained interest and any bona vacantia vesting before selecting the proper party and corrective conveyance.',
+                'Vesting orders: The s.45(b)(iii) Trustee Ordinance application must identify the trustee’s retained estate, the beneficiary’s entitlement and why the order is expedient.',
+                'Cure selection table: The proposed cure must [prove identity / establish a lost valid document / convey the missing estate / discharge the actual security] according to the defect established.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering confirmatory assignments and vesting orders',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Confirmatory assignments and releases',
+                    detail:
+                      'Where an estate never passed, obtain a new effective conveyance from the holder of the retained estate or the legally empowered substitute. The relevant examples include these common triggers:',
+                    why: 'An effective cure must come from the person retaining the interest and convey the correct object.',
+                    exam: {
+                      write:
+                        'V must procure a valid conveyance or release from [interest holder] of [estate/security/shares]; a declaration of historical intention is not necessarily sufficient.',
+                      trap: 'Calling every instrument a confirmatory assignment without identifying what it transfers.',
+                    },
+                    points: [
+                      'missing/wrong/invalid pre-2014 company seal, or invalid seal-route execution;',
+                      'unreleased mortgage/charge;',
+                      'incorrect shares conveyed/released;',
+                      "a contributing occupier's retained beneficial interest;",
+                      "a nominator's unrelinquished beneficial interest;",
+                      'applicable defective attestation with no effective statutory cure.',
+                      '“Confirmatory assignment” describes the remedial conveyance; the correct instrument for an outstanding mortgage may instead be a proper deed/receipt of release. State who signs, which interest is being conveyed/released, the intended grantee and correct shares/property. Have the remedial instrument itself validly executed. A declaration saying the earlier deed “was intended to be valid” cannot always transfer an estate that remains in someone else.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Court-authorised execution and dissolved companies',
+                    detail:
+                      's.25A High Court Ordinance and s.38A District Court Ordinance permit the relevant court-authorised execution where the required party neglects/refuses to comply or cannot be found, subject to the statutory/order conditions. Lam Kiu Shing v Yau Fuk [2016] 3 HKLRD 242 illustrates Registrar execution curing a Japanese-occupation-era defect.',
+                    why: 'Court-authorised substitutes require their statutory and order-based conditions.',
+                    exam: {
+                      write:
+                        'The s.25A High Court Ordinance or s.38A District Court Ordinance route requires the relevant order and inability or refusal conditions, not mere convenience.',
+                      trap: 'Assuming a Registrar can sign every inconvenient document on request.',
+                    },
+                    points: [
+                      "Chong Chi Ting Chris v Kin On Building (IO) [2023] HKDC 325: a roof ownership/common-area dispute required confirmatory assignments, but Registrar execution was not treated as a convenience service. Special/exceptional circumstances were required for the requested route; the court instead appointed a partner of P's solicitors and nominated the Secretary for Justice for the developer's execution. Obtain the appropriate order and mechanism; do not assume every inconvenient signature can be replaced by the Registrar.",
+                      "The relevant legislation includes the Registrar of Companies' s.757 CO power, formerly s.291B, for specified documents of dissolved companies. Its use depends on statutory scope; identify the relevant dissolution and interest rather than treating it as an automatic all-purpose conveyancing authority.",
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Dissolution and the retained estate',
+                    detail:
+                      'Dissolution can leave property vested as bona vacantia and may require the Secretary for Justice in corrective proceedings. Winding-up alone is not a cure; establish where the estate now vests .',
+                    why: 'Dissolution changes where the retained estate may vest and thus who must participate.',
+                    exam: {
+                      write:
+                        'Identify the dissolved company’s retained interest and any bona vacantia vesting before selecting the proper party and corrective conveyance.',
+                      trap: 'Treating company dissolution itself as transfer to the current owner.',
+                    },
+                    points: [],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'Vesting orders',
+                    detail:
+                      's.45(b)(iii) Trustee Ordinance is the described common route where land is vested in a trustee and a vesting order is expedient. An ineffective legal assignment after an enforceable S&P may leave the vendor holding the legal estate while the purchaser has the equitable entitlement. Establish that entitlement and where the legal estate now vests, then seek the order vesting it appropriately.',
+                    why: 'A vesting order supplies the missing legal estate where the claimant proves the appropriate equitable entitlement.',
+                    exam: {
+                      write:
+                        'The s.45(b)(iii) Trustee Ordinance application must identify the trustee’s retained estate, the beneficiary’s entitlement and why the order is expedient.',
+                      trap: 'Assuming that the ability to apply proves an order will be obtained before completion.',
+                    },
+                    points: [
+                      'Authorities and applications:',
+                      'A court order is a substantive cure, not merely risk reassurance. The ability to apply does not prove that it will be granted or obtained by the contractual completion date. Timing belongs in the termination analysis.',
+                    ],
+                  },
+                  {
+                    id: 'step-5',
+                    label: 'Cure selection table',
+                    detail:
+                      'The proposed cure must [prove identity / establish a lost valid document / convey the missing estate / discharge the actual security] according to the defect established.',
+                    why: 'Different defects need different evidence and acts, so choose a remedy by legal effect.',
+                    exam: {
+                      write:
+                        'The proposed cure must [prove identity / establish a lost valid document / convey the missing estate / discharge the actual security] according to the defect established.',
+                      trap: 'Offering financial reassurance where actual ownership transfer is missing.',
+                    },
+                    points: [],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Secretary for Justice may be the appropriate party where dissolved-company property vested as bona vacantia.',
+                'Registrar of Companies powers have their own statutory scope under s.757 CO.',
+                'The remedial document must itself be correctly executed.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Confirmatory assignments and releases — An effective cure must come from the person retaining the interest and convey the correct object.',
+                    'Court-authorised execution and dissolved companies — Court-authorised substitutes require their statutory and order-based conditions.',
+                    'Dissolution and the retained estate — Dissolution changes where the retained estate may vest and thus who must participate.',
+                    'Vesting orders — A vesting order supplies the missing legal estate where the claimant proves the appropriate equitable entitlement.',
+                    'Cure selection table — Different defects need different evidence and acts, so choose a remedy by legal effect.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'The proposed cure must [prove identity / establish a lost valid document / convey the missing estate / discharge the actual security] according to the defect established.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'No real risk does not itself supply a legal estate never conveyed.',
+                'An equity holder’s silence is not a release.',
+                'A corrective order obtained after the deadline does not automatically cure the earlier completion obligation.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Wrong seal',
+                    'Li Kwan Chuen v Vector Development Ltd [2009] 3 HKLRD 511',
+                    'An ineffective assignment required a conveyance transferring the retained legal estate.',
+                  ],
+                  [
+                    'Court execution',
+                    's.25A High Court Ordinance; s.38A District Court Ordinance; Lam Kiu Shing v Yau Fuk [2016] 3 HKLRD 242',
+                    'Statutory/order-based execution can remedy a required party’s failure in the appropriate circumstances.',
+                  ],
+                  [
+                    'Exceptional appointment',
+                    'Chong Chi Ting Chris v Kin On Building (IO) [2023] HKDC 325',
+                    'Registrar execution was not a convenience service; the particular substitute mechanism depended on the order.',
+                  ],
+                  [
+                    'Dissolved company',
+                    's.757 CO; Re Lee Yang, Shiu Chuen Joyce [2021] 4 HKLRD 252',
+                    'Identify the dissolved company’s interest and proper statutory/party route.',
+                  ],
+                  [
+                    'Vesting',
+                    's.45(b)(iii) Trustee Ordinance; Lead Properties Ltd v Secretary of Justice [2022] HKCFI 3297',
+                    'An appropriate order can vest retained legal title in the person proving the relevant entitlement.',
+                  ],
+                  [
+                    'Examples',
+                    'Tam Chi Kwong v Secretary for Justice [2007] 2 HKLRD 373; Fook Tai Investment Co Ltd v Secretary for Justice [2013] 4 HKLRD 102',
+                    'Wrong seal and misdescription provide corrective-vesting examples.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'Vesting orders comparison',
+                table: {
+                  headers: ['Case', 'Supplied teaching point'],
+                  rows: [
+                    [
+                      'Wong Shuk-ying v Attorney General [1987] HKLR 985',
+                      'Company retained legal estate after ineffective assignment and went into liquidation; vesting order',
+                    ],
+                    ['Chung Ka Leung v SJ (HCMP 4129/99)', 'Corporate attestation problem; corrective vesting route'],
+                    ['Tam Chi Kwong v SJ [2007] 2 HKLRD 373', 'Wrong seal by corporate confirmor; company wound up'],
+                    ['Capital Ltd v SJ [2005] 4 HKC 84', 'Wrong-seal remedial example'],
+                    ['Fook Tai Investment Co Ltd v SJ [2013] 4 HKLRD 102', 'Misdescription/corrective vesting example'],
+                    [
+                      'Chan Ping Sang Johnny v SJ [2017] 2 HKLRD 1082',
+                      'Slide example distinguishing remaining equitable title from the defective corporate execution',
+                    ],
+                    [
+                      'Re Lee Yang, Shiu Chuen Joyce [2021] 4 HKLRD 252',
+                      "Dissolved company's interest/bona vacantia; SJ as appropriate defendant",
+                    ],
+                    [
+                      'Lead Properties Ltd v SJ [2022] HKCFI 3297',
+                      'Summary of vesting-order principles; full principles not reproduced in the uploads',
+                    ],
+                  ],
+                },
+              },
+              {
+                heading: 'Cure selection table comparison',
+                table: {
+                  headers: ['Problem actually proved', 'Suitable response', 'Insufficient shortcut'],
+                  rows: [
+                    ['Identity ambiguity', 'Informed declaration, official identity/name continuity evidence', 'Ignoring different IDs'],
+                    ['Lost valid instrument', 'Re Halifax-compliant secondary evidence', 'Unexplained photocopy or speculation'],
+                    ['Void transfer/missing estate', 'Proper confirmatory conveyance/vesting order', '“No one complained for years”'],
+                    ['Live mortgage', 'Proper release; s.12A process; justified limitation declaration', 'Registry vacation alone'],
+                    [
+                      'Existing beneficial interest',
+                      'Informed release/confirmor conveyance; valid priority analysis',
+                      'Registered owner denies it',
+                    ],
+                    [
+                      'Removable UBW',
+                      'Lawful completed works plus compliance proof and substantial performance',
+                      'Promise to demolish without plans/time analysis',
+                    ],
+                    [
+                      'Finite collective repair cost',
+                      'Appropriate secure arrangement if legally acceptable',
+                      'Arbitrary round-sum indemnity',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG7',
+                issue: 'corporate-execution',
+                label: 'Corporate execution and statutory presumptions',
+              },
+              {
+                session: 'LG5',
+                issue: 'mortgages-and-discharges',
+                label: 'Mortgages and effective discharge',
+              },
+              {
+                session: 'LG5',
+                issue: 'beneficial-interests-and-notice',
+                label: 'Beneficial interests and occupiers',
+              },
+            ],
+          },
+          {
+            id: 'indemnities-and-stakeholding',
+            title: 'Indemnities, undertakings and stakeholding',
+            summary:
+              'Assess whether a defined and enforceable arrangement fulfils the bargain or merely compensates for an unacceptable continuing title burden.',
+            triggers: {
+              bullets: [
+                'The vendor offers an unsecured indemnity instead of releasing an outstanding proprietary burden.',
+                'A common-slope repair liability is estimated and a fortified apportioned retention is proposed.',
+                'The owners’ corporation faces exceptional personal-injury litigation despite a large bank-backed sum being offered.',
+                'Three proceedings involve unknown actual and potential costs and the vendor offers only a small retention.',
+                'A purchaser dismisses a repair undertaking without asking for a sensible amount of security.',
+              ],
+              routes: [
+                {
+                  when: 'The size and enforcement route of IO litigation are still unknown',
+                  session: 'LG6',
+                  issue: 'collective-liabilities-and-io-litigation',
+                  label: 'Collective liabilities and owners’ corporation litigation',
+                },
+                {
+                  when: 'The purchaser relies on the proposed cure to justify early termination',
+                  session: 'LG7',
+                  issue: 'termination-and-vp-summons',
+                  label: 'Termination and vendor and purchaser summonses',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                'Is security a real cure or a different bargain?: An indemnity does not itself release [mortgage/beneficial interest] or supply [missing estate]; the arrangement must be tested against the contracted title.',
+                'Authorities rejecting substitution: Chan Fung Lan v Lai Wai Chuen [1997] 1 HKC 1 and Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503 support refusal where security leaves the exceptional title or litigation burden unresolved.',
+                'Authorities accepting practical arrangements: Lam Mee Hing v Chiang Shu Yin [1995] 3 HKC 247 supports a fortified arrangement for the assessed contribution, subject to its coverage and enforceability.',
+                'A disciplined reconciliation checklist: Assess nature, quantum, timing, coverage, security and resale; the arrangement must fulfil the bargain under Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering indemnities, undertakings and stakeholding',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: 'Is security a real cure or a different bargain?',
+                    detail:
+                      "An indemnity gives P a claim against someone if loss occurs. It does not itself release a mortgage, convey missing shares, validate a void assignment or legalise UBW. Stakeholding retains money with an identified holder under defined release conditions. A solicitor's undertaking is an enforceable professional commitment within its terms; it is not automatically ownership or regulatory compliance. A bank guarantee reduces credit risk but may leave litigation, resale and enforcement problems.",
+                    why: 'Compensation and conveyance are different legal performances.',
+                    exam: {
+                      write:
+                        'An indemnity does not itself release [mortgage/beneficial interest] or supply [missing estate]; the arrangement must be tested against the contracted title.',
+                      trap: 'Calling every money offer a title cure.',
+                    },
+                    points: [
+                      'Start with the obligation promised by the S&P. Then ask whether the arrangement delivers that bargain or requires P to accept a different estate and later pursue compensation. There is no universal “V offers money so P must complete” rule, nor an unqualified rule rejecting every post-completion arrangement.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'Authorities rejecting substitution',
+                    detail:
+                      "Chan Fung Lan v Lai Wai Chuen [1997] 1 HKC 1: historical estate-duty exposure following a gift; an 18% retention/indemnity did not require P to accept the title. The liability, resale implications and release of security after the period could not be treated as solved merely by a fund. The case applied Re Heaysman's and Tweedy's Contract (1893) 69 LT 91.",
+                    why: 'An extraordinary indefinite burden may survive even financially substantial security.',
+                    exam: {
+                      write:
+                        'Chan Fung Lan v Lai Wai Chuen [1997] 1 HKC 1 and Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503 support refusal where security leaves the exceptional title or litigation burden unresolved.',
+                      trap: 'Assuming the amount alone determines whether P must complete.',
+                    },
+                    points: [
+                      'Tsang Kwok Hung Frederick v Ching Lai Tuen [2008] 6 HKC 420: drainage/window notice and retention proposal were not accepted as giving good title. Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503: even a large retention/bank guarantee did not mean P must assume exceptional IO litigation. Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd [2015] 2 HKLRD 100: the unidentified magnitude and narrow/unsecured indemnity made adequacy impossible to establish.',
+                      'These cases support insisting on the contracted estate where the burden is exceptional, indefinite, structural or litigation-laden, or the proposed protection is incomplete. Simply comparing the offered amount with the apparent bill may miss the continuing title and resale consequences.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: 'Authorities accepting practical arrangements',
+                    detail:
+                      'Lam Mee Hing v Chiang Shu Yin [1995] 3 HKC 247: common-slope remedial work involved a quantifiable apportioned liability. The arrangement involved 1/147 of estimated total costs and a fortified $100,000 retention. The exact arrangement and court order matter; this was not an unsecured promise about an unknown burden.',
+                    why: 'A bounded collective repair contribution may realistically be met through secure post-completion machinery.',
+                    exam: {
+                      write:
+                        'Lam Mee Hing v Chiang Shu Yin [1995] 3 HKC 247 supports a fortified arrangement for the assessed contribution, subject to its coverage and enforceability.',
+                      trap: 'Transplanting one case’s retained sum to a different unquantified liability.',
+                    },
+                    points: [
+                      "Hu Mei Yu Anastasia v King Best Enterprises Ltd (HCA 9317/1998): the quoted judgment reasoning supports acceptance of V's reasonable undertaking in a slope-investigation/report setting, observing that a willing P concerned about insecurity should have requested appropriate security rather than dismissing it without engagement. The supplied descriptions differ over the sufficiency of the undertaking. Apply the quoted reasoning to the exact facts; do not create a categorical rule either way.",
+                      'Luk Ho Chang v Fook Man Finance Co Ltd [2006] 2 HKLRD 489 provides the finite repair-contribution setting and contractual cut-off analysis; a reasonable retention addresses the finite burden in that setting. E-Global Ltd v Trenda Ltd [2013] 5 HKC 192: $50,000 stakeholding was acceptable for the described fire-safety compliance in a large building. Do not transplant that sum to an unrelated liability.',
+                      'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935 supplies the practical approach: willing parties using robust commonsense to complete their bargain. It does not authorise P to be compelled into an exceptional litigation risk or let V omit evidence of the burden.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'A disciplined reconciliation checklist',
+                    detail: 'Consider all of the following in one analysis:',
+                    why: 'The practical cases are reconciled through the actual burden, security and continuing resale effect.',
+                    exam: {
+                      write:
+                        'Assess nature, quantum, timing, coverage, security and resale; the arrangement must fulfil the bargain under Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935.',
+                      trap: 'Selecting only the categorical rejection or practical acceptance line without comparing facts.',
+                    },
+                    points: [
+                      'Nature: finite repair contribution, outstanding ownership interest, extraordinary litigation, re-entry risk or ongoing illegality?',
+                      'Magnitude and certainty: reliable estimate, apportionment, worst-case exposure, interest/costs and contingencies?',
+                      'Timing and control: realistically curable before completion, necessarily collective/post-completion work, or indefinite future event?',
+                      'Coverage: all heads of liability, legal costs, future demands, unit and successors covered?',
+                      'Enforceability and security: binding undertaking, solvency, bank/fund backing, stakeholder instructions and release conditions?',
+                      'Resale: will P be able to show/give good title to a later purchaser, or face renewing the same security indefinitely?',
+                      'Contract: express warranty, risk allocation, consent to retention or exclusion?',
+                      'Conduct and disclosure: candid timely estimate and engagement, or last-minute arbitrary offer?',
+                      'Argument for V: a bounded collective expense with robust security delivers the agreed financial allocation and should be accepted under the practical cases. Argument for P: missing estate, unknown/exceptional litigation or recurring title risk is not cured by compensation; P would receive materially less than promised. Conclude on the concrete factors rather than selecting only the convenient line of cases.',
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'The Hu Mei Yu undertaking descriptions conflict; assess the quoted reasoning and concrete terms.',
+                'An indemnity may omit legal costs, later demands or successor exposure.',
+                'A missing estate cannot be supplied by a solvency assurance.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    'Is security a real cure or a different bargain? — Compensation and conveyance are different legal performances.',
+                    'Authorities rejecting substitution — An extraordinary indefinite burden may survive even financially substantial security.',
+                    'Authorities accepting practical arrangements — A bounded collective repair contribution may realistically be met through secure post-completion machinery.',
+                    'A disciplined reconciliation checklist — The practical cases are reconciled through the actual burden, security and continuing resale effect.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'Assess nature, quantum, timing, coverage, security and resale; the arrangement must fulfil the bargain under Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'An undertaking is not automatically a release.',
+                'Unknown magnitude prevents meaningful adequacy assessment.',
+                'Robust commonsense does not compel purchasing exceptional litigation.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'General distinction',
+                    'Chan Fung Lan v Lai Wai Chuen [1997] 1 HKC 1',
+                    'P was not compelled to accept the historical estate-duty indemnity/retention.',
+                  ],
+                  [
+                    'Finite contribution',
+                    'Lam Mee Hing v Chiang Shu Yin [1995] 3 HKC 247',
+                    'Fortified stakeholding dealt with the apportioned slope-remedial burden on the facts.',
+                  ],
+                  [
+                    'Reasonable undertaking',
+                    'Hu Mei Yu Anastasia v King Best Enterprises Ltd HCA 9317/1998',
+                    'The quoted reasoning accepted the reasonable undertaking in its collective-slope context.',
+                  ],
+                  [
+                    'Exceptional litigation',
+                    'Lucky Health International Enterprise Ltd v Chi Kit Co Ltd [2000] 2 HKLRD 503',
+                    'A substantial offer did not resolve every exceptional litigation and title consequence.',
+                  ],
+                  [
+                    'Unknown costs',
+                    'Gigabillion Asia Pacific Ltd v Sino Dynamic International Ltd [2015] 2 HKLRD 100',
+                    'Unquantified liability and limited unsecured protection did not satisfactorily show title.',
+                  ],
+                  [
+                    'Practical approach',
+                    'Mexon Holdings Ltd v Silver Bay International Ltd [2000] 1 HKLRD 935',
+                    'Willing parties with reasonably robust commonsense aim to complete their own bargain.',
+                  ],
+                ],
+              },
+            },
+            notes: [],
+            crossRefs: [
+              {
+                session: 'LG6',
+                issue: 'collective-liabilities-and-io-litigation',
+                label: 'Collective liabilities and owners’ corporation litigation',
+              },
+              {
+                session: 'LG7',
+                issue: 'confirmatory-assignments-and-vesting',
+                label: 'Confirmatory assignments and vesting orders',
+              },
+              {
+                session: 'LG7',
+                issue: 'termination-and-vp-summons',
+                label: 'Termination and vendor and purchaser summonses',
+              },
+            ],
+          },
+          {
+            id: 'termination-and-vp-summons',
+            title: 'Termination and vendor and purchaser summonses',
+            summary:
+              'Distinguish a curable completion defect from a matured showing-title breach, and select the procedure for the actual contractual dispute.',
+            triggers: {
+              bullets: [
+                'The purchaser terminates immediately after discovering a defect that can still be cured before completion.',
+                'A fundamental defect cannot be removed before the agreed completion date.',
+                'The vendor has not supplied the required title evidence in time despite ultimately having a defensible title.',
+                'The vendor invokes an express rescission clause despite knowing and concealing a prior S&P.',
+                'A purchaser applies by VP summons for a decision on adequate requisition replies and return of the deposit.',
+                'A seller seeks an ex parte advisory ruling on title without an actual inter partes contract dispute.',
+              ],
+              routes: [
+                {
+                  when: 'The underlying dispute is whether title was shown candidly and in time',
+                  session: 'LG5',
+                  issue: 'showing-title-in-practice',
+                  label: 'Showing good title and answering requisitions',
+                },
+                {
+                  when: 'The reason cure is impossible is the loss caused by demolition',
+                  session: 'LG6',
+                  issue: 'demolition-and-substantial-performance',
+                  label: 'Demolition and substantial performance',
+                },
+              ],
+            },
+            skeleton: {
+              bullets: [
+                '“Rescission” in conveyancing: Identify whether P relies on repudiatory failure to show/give title or a distinct formation ground, and state the corresponding deposit claim on that basis.',
+                'When can P terminate?: A curable defect alone normally leaves V until completion under Chu Wing Ning v Ngan Hing Cheung HCA 9409/1991; an irremovable fundamental defect may justify earlier termination under A-Mayson Development Co Ltd v Betterfit Ltd [1992] 2 HKC 533.',
+                "Vendor's rescission clause: The clause must actually exist and satisfy its terms; bad title, recklessness or bad faith limit reliance under Bowman v Hyland (1878) 8 ChD 588 and Selkirk v Romar Investments Ltd [1963] 1 WLR 1415.",
+                'VP summons under s.12 CPO: Use s.12 CPO for the appropriate inter partes title/requisition question, while preserving its contract-validity and Government-compensation exclusions.',
+              ],
+            },
+            answering: {
+              body: 'V is the vendor and P the purchaser. CPO is the Conveyancing and Property Ordinance (Cap. 219); LRO the Land Registration Ordinance; BO the Buildings Ordinance; BMO the Building Management Ordinance; CO the Companies Ordinance (Cap. 622); DMC the deed of mutual covenant; IO the incorporated owners; POAO the Powers of Attorney Ordinance.',
+              flowchart: {
+                title: 'Answering termination and vendor and purchaser summonses',
+                steps: [
+                  {
+                    id: 'step-1',
+                    label: '“Rescission” in conveyancing',
+                    detail:
+                      "The sources use “rescission” for termination following repudiatory breach, with deposit consequences, rather than only equitable rescission for a formation defect such as misrepresentation or duress. In an answer specify the legal basis and consequences. Termination for V's breach commonly supports recovery of P's deposit; damages and a purchaser's lien must be analysed on their own basis. It does not automatically establish the amount of damages or every claimed consequential loss.",
+                    why: 'The conveyancing label rescission often describes termination for breach rather than undoing formation.',
+                    exam: {
+                      write:
+                        'Identify whether P relies on repudiatory failure to show/give title or a distinct formation ground, and state the corresponding deposit claim on that basis.',
+                      trap: 'Using the same rescission label without identifying the underlying right.',
+                    },
+                    points: [
+                      'Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599: failure to show title through required documents/adequate answers can be repudiatory. Identify the deadline, seriousness and communication; not every initially incomplete answer authorises immediate termination while the process remains open.',
+                    ],
+                  },
+                  {
+                    id: 'step-2',
+                    label: 'When can P terminate?',
+                    detail:
+                      "Sun Champ Investment Ltd v Green Leaves Trade Investment Ltd (DCMP 706/2013) is described for irremovable saleable-area misrepresentation shortly before completion. Where area is missing, distinguish title, contractual description and misrepresentation; do not assume an owner's promise to pay later creates the missing floor area.",
+                    why: 'V’s time to give title and the earlier time to show it are different obligations.',
+                    exam: {
+                      write:
+                        'A curable defect alone normally leaves V until completion under Chu Wing Ning v Ngan Hing Cheung HCA 9409/1991; an irremovable fundamental defect may justify earlier termination under A-Mayson Development Co Ltd v Betterfit Ltd [1992] 2 HKC 533.',
+                      trap: 'Treating curability of the underlying title as automatically excusing an already matured failure to show it.',
+                    },
+                    points: [
+                      'Answer the chronology: discovery, requisition, response, stated cure, termination, completion deadline and actual ability to perform. Premature termination can itself expose P to repudiation/deposit forfeiture claims. Conversely, waiting for completion is not necessarily required once a matured repudiatory failure to show title or a clearly irremovable fundamental defect is established.',
+                    ],
+                  },
+                  {
+                    id: 'step-3',
+                    label: "Vendor's rescission clause",
+                    detail:
+                      "A vendor's express clause commonly permits termination if title requisitions cannot be met, or cannot reasonably be met without difficulty, delay or expense. Read the clause, procedural requirements and grounds carefully.",
+                    why: 'An express contractual exit is subject to its terms and limits, not a universal vendor option.',
+                    exam: {
+                      write:
+                        'The clause must actually exist and satisfy its terms; bad title, recklessness or bad faith limit reliance under Bowman v Hyland (1878) 8 ChD 588 and Selkirk v Romar Investments Ltd [1963] 1 WLR 1415.',
+                      trap: 'Implying a vendor’s rescission clause or ignoring deliberate concealment.',
+                    },
+                    points: [
+                      'The cited cases give limits: Bowman v Hyland (1878) 8 ChD 588 for no/bad title; Selkirk v Romar Investments Ltd [1963] 1 WLR 1415 (PC) for recklessness/bad faith; Lee Siu Wai Florence v Priway Investments Ltd [1998] 1 HKC 228 for known prior S&P defect not disclosed. Such a clause is not implied into every S&P: Gain Sky Ltd v Chau Tak Hing (HCA 917/2004); Tele Step Ltd v Pong Man Tat [2011] 1 HKLRD 645. Detailed LG8 clause mechanics are beyond the uploaded materials.',
+                      'V cannot simply reply “we are unwilling to answer” unless the actual contract and applicable good-faith limits support that course.',
+                    ],
+                  },
+                  {
+                    id: 'step-4',
+                    label: 'VP summons under s.12 CPO',
+                    detail:
+                      'Either party may apply by originating summons to decide a question arising from/connected with a land sale/exchange contract, within the statutory exclusions. The application is to CFI, or DC with the required party agreement. Typical questions: has V shown good title, and were requisitions adequately answered?',
+                    why: 'The statutory summons resolves the proper connected contractual question within its jurisdictional limits.',
+                    exam: {
+                      write:
+                        'Use s.12 CPO for the appropriate inter partes title/requisition question, while preserving its contract-validity and Government-compensation exclusions.',
+                      trap: 'Treating VP summons as an ex parte title certificate or automatic postponement of completion.',
+                    },
+                    points: [
+                      'The statutory exclusion for questions affecting contract validity and Government compensation must be distinguished from determining performance/termination under an existing contract. Wide Link Ltd v Tam Sing Cheong [1999] 3 HKC 405 is given for jurisdiction in the particular misrepresentation/repayment dispute; do not generalise it as erasing the statutory exclusion. Lai Ke Bin v Capital Project Development Ltd [2009] 2 HKLRD 49 supports specific performance on a VP summons in the case described.',
+                      'Where material facts are substantially disputed or the claim falls outside the summary statutory scope, consider ordinary writ proceedings/the appropriate procedure. The summary summons route is not a universal substitute for ordinary proceedings involving disputed material facts.',
+                      "The procedure is inter partes, not an ex parte title-cleaning application: Re Kwong Sin Tong (HCMP 2797/1993). It must not be used merely to shield solicitors at their clients' expense: Castle City Ltd v Choi Yue Development Ltd [1995] 2 HKC 593. Courts discourage trivial requisitions: Guang Xin Enterprises Ltd v Leung Kwai Mui [1996] 4 HKC 572. It is not a general advisory opinion on ownership: Cheng Sin Yau v Wong Kam Pui Dicky (HCMP 98/2015).",
+                      "Frame the real disputed obligation and sought relief. If a genuine purchaser's lien is relied on, plead it and analyse registrability . Court proceedings can determine a dispute; initiating them is not itself evidence that completion was validly postponed.",
+                    ],
+                  },
+                ],
+              },
+            },
+            lookOut: {
+              bullets: [
+                'An acceptable fortified post-completion remedy may alter the completion conclusion.',
+                'A disputed substantial-performance issue requires analysis alongside irreparability.',
+                'Where facts or issues fall outside the statutory summary scope, consider the appropriate ordinary proceedings rather than assert universal VP jurisdiction.',
+              ],
+            },
+            skills: {
+              bulletGroups: [
+                {
+                  heading: 'Applying the facts',
+                  items: [
+                    '“Rescission” in conveyancing — The conveyancing label rescission often describes termination for breach rather than undoing formation.',
+                    'When can P terminate? — V’s time to give title and the earlier time to show it are different obligations.',
+                    "Vendor's rescission clause — An express contractual exit is subject to its terms and limits, not a universal vendor option.",
+                    'VP summons under s.12 CPO — The statutory summons resolves the proper connected contractual question within its jurisdictional limits.',
+                  ],
+                },
+                {
+                  heading: 'State the result',
+                  items: [
+                    'Use s.12 CPO for the appropriate inter partes title/requisition question, while preserving its contract-validity and Government-compensation exclusions.',
+                  ],
+                },
+              ],
+            },
+            mistakes: {
+              bullets: [
+                'Premature termination can expose P to the vendor’s repudiation case.',
+                'Do not invent detailed LG8 clause mechanics absent the actual contractual wording.',
+                'A proceeding must identify a real disputed duty, not serve only as solicitor reassurance.',
+              ],
+            },
+            authorities: {
+              table: {
+                headers: ['Point', 'Authority', 'What it establishes'],
+                rows: [
+                  [
+                    'Failure to show',
+                    'Big Most Ltd v Chau Wa Hung [2012] 4 HKLRD 599',
+                    'Serious failure to produce required documents or answer requisitions can be repudiatory.',
+                  ],
+                  [
+                    'Curable defect',
+                    'Chu Wing Ning v Ngan Hing Cheung HCA 9409/1991',
+                    'V ordinarily has until completion to give title if the defect can be cured.',
+                  ],
+                  [
+                    'Irremovable defect',
+                    'A-Mayson Development Co Ltd v Betterfit Ltd [1992] 2 HKC 533; Continental Zone Ltd v More Glory International Ltd HCMP 446/2012',
+                    'Fundamental inability to cure by completion can justify earlier termination.',
+                  ],
+                  [
+                    'Vendor clause',
+                    'Bowman v Hyland (1878) 8 ChD 588; Selkirk v Romar Investments Ltd [1963] 1 WLR 1415; Tele Step Ltd v Pong Man Tat [2011] 1 HKLRD 645',
+                    'No automatic implied clause; bad title or bad faith limits express reliance.',
+                  ],
+                  [
+                    'Procedure',
+                    's.12 CPO; Wide Link Ltd v Tam Sing Cheong [1999] 3 HKC 405; Lai Ke Bin v Capital Project Development Ltd [2009] 2 HKLRD 49',
+                    'Select the actual contractual question and permitted relief within the statutory scope.',
+                  ],
+                  [
+                    'Misuse',
+                    'Re Kwong Sin Tong HCMP 2797/1993; Castle City Ltd v Choi Yue Development Ltd [1995] 2 HKC 593; Cheng Sin Yau v Wong Kam Pui Dicky HCMP 98/2015',
+                    'No ex parte, solicitor-protection or purely advisory use of the procedure.',
+                  ],
+                ],
+              },
+            },
+            notes: [
+              {
+                heading: 'When can P terminate? comparison',
+                table: {
+                  headers: ['Situation', 'Course approach', 'Answer requirements'],
+                  rows: [
+                    [
+                      'Curable title defect discovered well before completion',
+                      'Ordinarily do not terminate immediately solely because the defect exists; V has until completion to give title',
+                      'Chu Wing Ning v Ngan Hing Cheung (HCA 9409/1991); realistic cure and time',
+                    ],
+                    [
+                      'Fundamental defect incapable of removal by completion',
+                      'Immediate termination may be available',
+                      'A-Mayson Development Co Ltd v Betterfit Ltd [1992] 2 HKC 533; identify why cure cannot succeed',
+                    ],
+                    [
+                      'Irremovable defect with substantial-performance issue',
+                      'Assess both irreparability and whether remaining bargain can be performed',
+                      'Continental Zone v More Glory (HCMP 446/2012); Peyman v Lanjani [1985] Ch 457',
+                    ],
+                    [
+                      'Separate matured failure to show title in time',
+                      'Underlying title might ultimately be good, but P may still rely on the serious evidential breach',
+                      'Kok Chong Ho v Double Value Developments Ltd [1993] 2 HKLR 423; Active Keen Industries Ltd v Fok Chi Keong [1994] 1 HKLR 396; Big Most',
+                    ],
+                    [
+                      'Validly acceptable post-completion cure',
+                      'May defeat asserted entitlement to refuse',
+                      'Apply practical-cure cases and contract, not mere existence of an offer',
+                    ],
+                  ],
+                },
+              },
+            ],
+            crossRefs: [
+              {
+                session: 'LG5',
+                issue: 'showing-title-in-practice',
+                label: 'Showing good title and answering requisitions',
+              },
+              {
+                session: 'LG6',
+                issue: 'demolition-and-substantial-performance',
+                label: 'Demolition and substantial performance',
+              },
+              {
+                session: 'LG7',
+                issue: 'indemnities-and-stakeholding',
+                label: 'Indemnities, undertakings and stakeholding',
+              },
+              {
+                session: 'LG5',
+                issue: 'registered-litigation-and-prior-sales',
+                label: 'Registered litigation and prior sale agreements',
+              },
+            ],
+          },
+        ],
+      },
+    },
     // SG1-SG6. The small group materials had not been distributed when the
     // coordinators' memorandum was written, so these entries deliberately
     // carry only what that memorandum actually states -- the standing

@@ -62,9 +62,12 @@ that one is *the conventions and rules for changing it*.
 
 ## The notes half
 
-The prepared [PT1 LG5–7 exam notes pack](docs/lg567-exam-notes/README.md) includes
-14 topic pages, printable PDF and editable Word versions, worked problems, and a
-source coverage and conflict audit. Start with its [topic index](docs/lg567-exam-notes/index.html).
+PT1 LG5–7 now has 21 native exam-note issue pages under
+[Property Transactions I](course.html?code=PCLL8030), using the usual fact
+triggers, answering flowcharts, model sentences, authority tables and linked
+issues. The [source review](docs/lg567-source-review.md) records coverage and
+unresolved source differences. An optional [standalone notes pack](docs/lg567-exam-notes/README.md)
+is also available.
 
 - **`courseDetails/PCLL8010.js`** and friends — one file per course, each
   extending the same `window.COURSE_DETAILS`. This is where all authored
