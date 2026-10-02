@@ -19,7 +19,7 @@ const run = createRun('courseDetails structure');
 // Keep in step with EXAM_SECTIONS in common-content.js and with
 // examIssueSectionsHtml's documented issue shape.
 const SECTION_KEYS = ['triggers', 'answering', 'lookOut', 'skills', 'skeleton', 'mistakes', 'authorities'];
-const ISSUE_KEYS = new Set([...SECTION_KEYS, 'id', 'aliases', 'title', 'summary', 'weighting', 'notes', 'crossRefs']);
+const ISSUE_KEYS = new Set([...SECTION_KEYS, 'id', 'aliases', 'citationAliases', 'title', 'summary', 'weighting', 'notes', 'crossRefs']);
 // Keep in step with fullNoteBodyHtml in common-content.js.
 const BODY_KEYS = new Set(['body', 'bullets', 'bulletGroups', 'statutes', 'table', 'diagram', 'flowchart', 'qa', 'warnings', 'heading']);
 
@@ -62,6 +62,7 @@ for (const [code, details] of Object.entries(COURSE_DETAILS)) {
         }
         seenIds.add(alias);
       }
+      if (issue.citationAliases && (!Array.isArray(issue.citationAliases) || issue.citationAliases.some((a) => typeof a !== 'string' || !a.trim()))) run.fail('citation aliases', where, 'must be non-empty strings');
       if (!issue.title) run.fail('issue title', where, 'issue type has no title');
 
       // Fact Pattern Triggers is the first thing on the page and the whole

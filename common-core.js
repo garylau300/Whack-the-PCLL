@@ -663,29 +663,29 @@
   // an entity in the middle of it), so ranges-then-escape is the safe order.
   // Only a fixed <span class="cite"> is ever inserted; nothing in the source
   // text can reach the output unescaped.
-  const COURT = 'HCA|CACV|HCPI|HCMP|HCZZ|DCCJ|FACV|HCCW|CAMP|CACC|HCCT|HCSD';
+  const COURT = 'HCA|CACV|HCPI|HCMP|HCZZ|DCCJ|FACV|HCCW|CAMP|CACC|HCCT|HCSD|HCCL|DCPI|DCMP|LDPE';
   // A party-name token. The FIRST token must start upper-case or with a digit,
   // so "on the Bruce v Odhams test" does not bold the leading "the".
   const HEAD = "(?:[A-Z]|\\d+[A-Z])[\\w&'’.-]*,?";
-  const TOK = "(?:[A-Z0-9][\\w&'’.-]*|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|y|&)";
+  const TOK = "(?:[A-Z0-9][\\w&'’.-]*|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|de|du|y|&)";
   // Left-hand party tokens may not be purely numeric — see the comment on
   // CASE_RE below for the citation-merge this prevents.
-  const LTOK = "(?:(?:[A-Z]|\\d+[A-Z])[\\w&'’.-]*,?|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|&)";
+  const LTOK = "(?:(?:[A-Z]|\\d+[A-Z])[\\w&'’.-]*,?|\\((?:No\\.? ?\\d+|[A-Z][\\w '’-]{1,18})\\)|of|and|the|for|de|du|&)";
   // Bounded to the SHAPE of a citation so it cannot run on into the sentence
   // after it — the first cut matched 28 arbitrary characters and bolded prose
   // like "[1987] AC 189 at 212F gives the pr".
-  const REPORTER = "\\[(?:18|19|20)\\d\\d\\]\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
-  const YEARPAREN = "\\((?:18|19|20)\\d\\d\\)\\s*\\d*\\s*[A-Z][A-Za-z]{0,9}(?:\\s[A-Z][A-Za-z]{0,9}){0,2}\\s*\\d+";
-  const COURTFILE = '(?:' + COURT + ') ?\\d+\\/\\d{4}';
+  const REPORTER = "\\[(?:18|19|20)\\d\\d\\]\\s*\\d*\\s*[A-Z][A-Za-z’']{0,9}(?:\\s[A-Z][A-Za-z’']{0,9}){0,2}(?:\\s*\\(Yrbk\\))?\\s*\\d+";
+  const YEARPAREN = "\\((?:18|19|20)\\d\\d\\)\\s*\\d*\\s*[A-Z][A-Za-z’']{0,9}(?:\\s[A-Z][A-Za-z’']{0,9}){0,2}(?:\\s*\\(Yrbk\\))?\\s*\\d+";
+  const COURTFILE = '(?:' + COURT + ') ?\\d+\\/(?:\\d{4}|\\d{2})';
   // Optional trailing court and pinpoint, both fully bracket-balanced.
-  const TAIL = "(?:\\s*\\((?:CA|HC|CFI|CFA|PC)\\))?(?:\\s+at\\s+(?:paras?\\s+)?\\d[\\w.–-]*)?";
+  const TAIL = "(?:\\s*\\((?:CA|HC|CFI|CFA|PC)\\)|,\\s*(?:CA|HC|CFI|CFA|PC)\\b)?(?:\\s+at\\s+(?:paras?\\s+)?\\d[\\w.–-]*)?";
   const CITATION = '(?:\\s*(?:' + REPORTER + '|' + YEARPAREN + ')' + TAIL
     + '|\\s*\\(' + COURTFILE + '\\)|\\s+' + COURTFILE + '|\\s*\\((?:CA|HC|CFI|CFA|PC)\\))';
 
-  const CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){0,6}\\sv\\.? ' + TOK + '(?:\\s' + TOK + '){0,8}(?:' + CITATION + ')?', 'g');
+  const CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){0,6}\\sv\\.? ' + TOK + '(?:\\s' + TOK + '){0,12}(?:' + CITATION + ')?', 'g');
   // Re cases have no opposing party. Require a report citation so ordinary
   // prose beginning with "Re" cannot become an authority by accident.
-  const RE_CASE_RE = new RegExp('\\b(?:Re|In re)\\s' + HEAD + '(?:\\s' + LTOK + '){0,6}\\s*(?:' + REPORTER + '|' + YEARPAREN + ')' + TAIL, 'g');
+  const RE_CASE_RE = new RegExp('\\b(?:Re|In re)\\s(?:the\\s)?' + HEAD + '(?:\\s' + LTOK + '){0,10}\\s*(?:' + REPORTER + '|' + YEARPAREN + ')' + TAIL, 'g');
   // A named matter may instead be identified by a court file (for example,
   // Yue Tung Ching Kee HCA 749/2006), with no "v" in the supplied reference.
   const FILE_CASE_RE = new RegExp('\\b' + HEAD + '(?:\\s' + LTOK + '){1,6}\\s' + COURTFILE + '\\b', 'g');
@@ -732,7 +732,7 @@
     // Ordinance are untouched.
     new RegExp('\\bclauses?\\s' + CLAUSE_NUM + PARAS + '(?:' + CLAUSE_MORE + PARAS + ')*', 'gi'),
     /\bCap\.?\s?\d+[A-Z]?\b/g,
-    /\b(?:Practice Direction|PD)\s?\d+(?:\.\d+)*(?:\s*§\s?\d+(?:\.\d+)*)?/g,
+    /\b(?:Practice Direction|PD(?:SL)?)\s?\d+(?:\.\d+)*(?:\s*§\s?\d+(?:\.\d+)*)?/g,
     /§\s?\d+(?:[/.]\d+)*/g,
     /\bArts?\.?\s?\d+[A-Z]?(?:\s+and\s+\d+)?\b/g,
     /\bL\.N\.\s?\d+ of \d{4}\b/g,
@@ -747,7 +747,7 @@
   // Sentence glue that is not part of a party name.
   const LEAD_STOP = /^(?:Contrast|See|Cf|Per|And|But|Or|In|On|At|If|Then|Note|Compare|Under|Following|Applied|Approved|Citing|Unlike|Both|Here|This|That|These|Those|Where|When|While|Also|However|Whereas|Because|Since|Thus|So|Hence|Now|Again|Read|Use|Using|Apply|Applying|Consider|Identify|State|Give|Take|Run|Check|Ask|Say|Name|Draft|Plead|Serve|Tick|Set|The),?\s+/;
 
-  function findRanges(text) {
+  function findRanges(text, aliases) {
     const ranges = [];
     for (const re of PATTERNS) {
       re.lastIndex = 0;
@@ -766,6 +766,15 @@
         if (m.index === re.lastIndex) re.lastIndex++;
       }
     }
+    for (const alias of aliases || []) {
+      if (!alias) continue;
+      let start = text.indexOf(alias);
+      while (start !== -1) {
+        const end = start + alias.length;
+        if (!/[\w]/.test(text[start - 1] || '') && !/[\w]/.test(text[end] || '')) ranges.push([start, end]);
+        start = text.indexOf(alias, end);
+      }
+    }
     ranges.sort((a, b) => (a[0] - b[0]) || (b[1] - a[1]));
     const kept = [];
     for (const r of ranges) {
@@ -777,9 +786,18 @@
   }
 
   // Escapes `text` and wraps every statutory or case reference in it.
-  function citeHtml(text) {
+  // Short names are explicitly supplied by the issue, rather than inferred
+  // globally: "Zhang" in this issue is a case, but may be a fact-party elsewhere.
+  let citationAliases = [];
+  function withCitationAliases(aliases, render) {
+    const previous = citationAliases;
+    citationAliases = aliases || [];
+    try { return render(); } finally { citationAliases = previous; }
+  }
+
+  function citeHtml(text, aliases) {
     const str = String(text);
-    const ranges = findRanges(str);
+    const ranges = findRanges(str, aliases || citationAliases);
     if (!ranges.length) return escapeHtml(str);
     let out = '';
     let last = 0;
@@ -1478,7 +1496,7 @@
 
   window.PCLL = Object.assign(window.PCLL || {}, {
     ICONS, RACCOON, emptyStateHtml, checklistCompleteHtml, COURSE_COLORS, DEFAULT_COLOR, ELECTIVE_CODES, ELECTIVE_NAMES,
-    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, citeSpeech, proseSpeech, speechText, field,
+    todayISO, pickCurrentWeekIndex, findDateIndex, fmtShort, fmtLong, fmtTime, escapeHtml, citeHtml, withCitationAliases, citeSpeech, proseSpeech, speechText, field,
     courseIndex, courseMeta, courseHasNotes, loadCourseDetails, loadSearchIndex,
     requestPersistentStorage, isHappeningNow, isMyGroupSession,
     eventCardHtml, effectiveTheme, setTheme, initTheme, effectiveFontScale, setFontScale, initFontScale, fetchTimetable, loadTimetable,

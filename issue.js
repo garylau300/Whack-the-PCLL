@@ -140,7 +140,7 @@
 
     const summaryEl = $('issueSummary');
     if (issue.summary) {
-      summaryEl.innerHTML = citeHtml(issue.summary);
+      summaryEl.innerHTML = citeHtml(issue.summary, issue.citationAliases);
       summaryEl.hidden = false;
     } else {
       summaryEl.hidden = true;

@@ -182,6 +182,18 @@ for (const authority of [
   'Skillsoft v Ambow (No.2) [2016] 1 HKLRD 1052',
   'Re Safe Rich Industries [1994] HKLY 183',
   'Yue Tung Ching Kee HCA 749/2006',
+  'Re the Halifax Commercial Banking Co Ltd and Wood (1898) 79 LT 536, CA',
+  'Compagnie Financiere du Pacifique v Peruvian Guano Co (1882) 11 QBD 55',
+  'Hannelore de Lasala-Debring v Ernest Ferdinand Perez de La Sala',
+  'Akai Holdings Ltd v Ernst & Young HCCL 29/2004',
+  'Chan Kin Leung v Lok Kar Cheong HCMP 3993/97',
+  'Chan May May v Raymond Yu DCPI 94/2013',
+  'Choy Son Fai v Yeung Miu Kwan Brendy DCMP 1972/2013',
+  'Tse Siu Hoi v Lee Dick Gold and Jewellery Ltd LDPE 1132/2014',
+  'Det Danske Hedeselkabet v KDM International [1994] 2 Lloyd’s Rep 534',
+  'Dongguan Harris Plastic Products Co Ltd v Chan Dai Chung [2001] HKLRD (Yrbk) 132',
+  'Creator (HK) Ltd v Kwong Wing Food Industries Stainless Steel Engineering Ltd [2008] 2 HKC 245',
+  'PDSL1.2',
 ]) {
   const remainder = PCLL.citeHtml(authority).replace(/<span class="cite">.*?<\/span>/g, '').trim();
   run.check('authority highlighting', !remainder, authority, `unhighlighted text: ${remainder}`);
@@ -189,6 +201,16 @@ for (const authority of [
 }
 run.check('citation escaping', !PCLL.citeHtml('<script>alert(1)</script>').includes('<script>'), '', 'citation rendering must escape source text');
 run.check('citation false positive', !PCLL.citeHtml('Re documents are needed').includes('class="cite"'), '', 'uncited prose must not be treated as a Re case');
+
+// Aliases retain the author's wording and are local to the issue being rendered.
+const scopedIssue = { citationAliases: ['Re Halifax', 'Zhang'], answering: { bullets: ['Re Halifax applies; Zhang confirms it.'] } };
+const scopedHtml = PCLL.examIssueSectionsHtml(scopedIssue);
+run.check('scoped short references', scopedHtml.includes('<span class="cite">Re Halifax</span>') && scopedHtml.includes('<span class="cite">Zhang</span>'), '', 'short names must be highlighted in the issue body');
+run.check('alias scope', !PCLL.citeHtml('Zhang gives evidence.').includes('class="cite"'), '', 'short names must not leak into unrelated content');
+run.check('alias boundaries', PCLL.citeHtml('Zhangshan and Zhang', ['Zhang']) === 'Zhangshan and <span class="cite">Zhang</span>', '', 'aliases must respect word boundaries');
+run.check('alias escaping', PCLL.citeHtml('<b> & Re Halifax', ['Re Halifax']) === '&lt;b&gt; &amp; <span class="cite">Re Halifax</span>', '', 'alias rendering must escape source text');
+try { PCLL.withCitationAliases(['Zhang'], () => { throw new Error('test render failure'); }); } catch { /* Verify restoration below. */ }
+run.check('alias cleanup', !PCLL.citeHtml('Zhang').includes('class="cite"'), '', 'failed renders must restore citation scope');
 
 const authorityTable = PCLL.fullNoteBodyHtml({ table: {
   headers: ['Point', 'Authority', 'What it establishes'],

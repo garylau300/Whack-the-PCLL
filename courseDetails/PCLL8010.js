@@ -10093,6 +10093,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-gateways',
+            citationAliases: ["Akai","Charter View","Henrik Andersen"],
             title: 'Security for costs: gateways and ordinary residence',
             summary: 'Identify the real plaintiff and the applicable O.23 ground, then prove ordinary residence from the individual’s life or the company’s actual management and control.',
             triggers: {
@@ -10392,6 +10393,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-discretion',
+            citationAliases: ["Carmon","Hannelore de Lasala-Debring","Henrik Andersen","Waddington"],
             title: 'Security discretion: merits, recovery, delay and stifling',
             summary: 'After establishing a gateway, weigh practical recovery, clearly strong merits, timing and substantiated inability to pursue a genuine claim.',
             triggers: {
@@ -10672,6 +10674,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-counterclaims',
+            citationAliases: ["Ai Zhong","Dongguan Harris"],
             title: 'Co-plaintiffs, counterclaims and the real attacker',
             summary: 'Look beyond the party labels and ask which issues and costs will remain even if the claim is stopped.',
             triggers: {
@@ -10828,6 +10831,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-company',
+            citationAliases: ["Akai","Dongguan Harris"],
             title: 'Security against a company under s905',
             summary: 'Use credible financial evidence to establish the corporate gateway, independently of where the company is ordinarily resident.',
             triggers: {
@@ -10997,6 +11001,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-quantum-terms',
+            citationAliases: ["Charter View","Dongguan Harris","Henrik Andersen"],
             title: 'Security: the amount, payment terms, stay and default',
             summary: 'Turn a supported costs estimate into a proportionate order; do not mistake security for judgment on the claim or counterclaim.',
             triggers: {
@@ -11195,6 +11200,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'security-appeal',
+            citationAliases: ["Chan Man Shun"],
             title: 'Security for the costs of an appeal',
             summary: 'Apply O.59 r.10(5), identify special circumstances and support a proportionate estimate of appellate costs.',
             triggers: {
@@ -11424,6 +11430,7 @@ window.COURSE_DETAILS.PCLL8010 = {
         issueTypes: [
           {
             id: 'ordinary-discovery',
+            citationAliases: ["Lonhro","Peruvian Guano","Sun Yuet Tai","Sunny Tadjudin"],
             title: 'Ordinary discovery: scope, lists, inspection and authenticity',
             summary: 'Run the complete O.24 workflow from pleaded relevance and control through Form 26, continuing disclosure, inspection, copies and authenticity.',
             triggers: {
@@ -11732,6 +11739,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'privilege-objections',
+            citationAliases: ["Alfred Crompton","CITIC Pacific","Libertarian Investments","Sumitomo","Unilever","Ventouris","Wong Wai Keung"],
             title: 'Discovery objections: privilege and waiver',
             summary: 'Classify the objection document by document, list withheld material, and separate true privilege from confidentiality alone.',
             triggers: {
@@ -11927,6 +11935,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'specific-discovery',
+            citationAliases: ["Allington Investments","Lee Sai Nam","Peruvian Guano","Sunny Tadjudin","Tullett Prebon","Union Bank of India"],
             title: 'Further lists and specific discovery',
             summary: 'Choose a further and better list or a targeted O.24 r.7 application, then prove relevance, likely existence, control and necessity.',
             triggers: {
@@ -12099,6 +12108,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'implied-undertaking',
+            citationAliases: ["Bruce James Stinson","Chan May May","Crest Homes","Derby"],
             title: 'Use of disclosed documents and variation of orders',
             summary: 'Protect documents received under compulsion, identify any open-court exception, and seek a justified release or variation by summons.',
             triggers: {
@@ -12236,6 +12246,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'external-disclosure',
+            citationAliases: ["Bankers Trust","Norwich Pharmacal","Peruvian Guano"],
             title: 'Disclosure outside ordinary party discovery',
             summary: 'Choose among pre-action discovery, post-action non-party discovery, Norwich Pharmacal relief, Bankers Trust tracing disclosure and a trial subpoena by timing, target and purpose.',
             triggers: {
@@ -12425,6 +12436,7 @@ window.COURSE_DETAILS.PCLL8010 = {
           },
           {
             id: 'interrogatories',
+            citationAliases: ["Re Estate of Au Kong Tim (No.2)","Re Parfums Yves Saint Laurent"],
             title: 'Interrogatories: drafting, objections and answers',
             summary: 'Use O.26 for necessary sworn information on pleaded issues, then calculate response and objection routes accurately.',
             triggers: {

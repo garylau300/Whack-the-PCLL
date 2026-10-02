@@ -5584,6 +5584,7 @@ window.COURSE_DETAILS.PCLL8030 = {
         issueTypes: [
           {
             id: 'conveyancing-stages',
+            citationAliases: ["De Monsa"],
             title: 'The stages of a simple conveyancing transaction',
             summary: 'Twenty-odd steps from the estate agent\'s office to the sending of the accounts. Most title questions are really "which stage is this?".',
             triggers: {
@@ -5781,6 +5782,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'twin-duties',
+            citationAliases: ["Active Keen","Profit World"],
             title: 'The twin duties of giving and showing title',
             summary: 'Two separate and independent duties. Breach of either lets the purchaser rescind, and a good title is no answer to a bad requisition answer.',
             triggers: {
@@ -5935,6 +5937,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'what-is-good-title',
+            citationAliases: ["Kan Wing Yau","Kingdom Miles","MEPC","Mexon","Polyson"],
             title: 'What constitutes a good title?',
             summary: 'Not a perfect title. The test is whether there is a real risk the title is encumbered or defeasible, or whether the risk is merely illusory.',
             triggers: {
@@ -6078,6 +6081,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'duty-to-give-title',
+            citationAliases: ["Chen Paul","De Monsa","Timmins"],
             title: 'The duty to give good title',
             summary: 'No rule of law compels it — the agreement does. And where it does, ask whether the legal estate or only the equitable interest must pass.',
             triggers: {
@@ -6222,6 +6226,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'exclusion-clauses',
+            citationAliases: ["Jumbo King"],
             title: 'Excluding or limiting the duty to give title',
             summary: 'Contra proferentem, and a clause that would let the vendor mislead the purchaser will not be construed to do it.',
             triggers: {
@@ -6400,6 +6405,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'purchaser-waiver',
+            citationAliases: ["Cheer Sky","Large Land","Mexon","Regent Summit"],
             title: 'Waiver by the purchaser of his right to object',
             summary: 'Three requirements: knowledge of the defect, knowledge of its legal significance, and an unequivocal act. Not raising a requisition is none of them.',
             triggers: {
@@ -6562,6 +6568,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'encumbered-or-defeasible',
+            citationAliases: ["Kan Wing Yau","MEPC"],
             title: 'Encumbered and defeasible titles',
             summary: 'An encumbrance is a third-party interest in the land; defeasibility is a real risk the title will be taken away. Different labels, different consequences.',
             triggers: {
@@ -6707,6 +6714,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'title-in-vendor',
+            citationAliases: ["Enway","Harold Elliott"],
             title: 'Title in the vendor, consents, and assigning the whole interest',
             summary: 'Three checks before anything else: does he own it, may he sell it without asking anyone, and can he pass it free of third-party interests?',
             triggers: {
@@ -6826,6 +6834,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'unregistered-encumbrances',
+            citationAliases: ["Creator (HK) Ltd","Fast Forward"],
             title: 'Registrable encumbrances that are unregistered',
             summary: 'Void against a purchaser for value under s3(2) of the Land Registration Ordinance — and his knowledge of them is irrelevant.',
             triggers: {
@@ -6961,6 +6970,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'patent-defects',
+            citationAliases: ["Goldenwick","Jumbo King","Yandle"],
             title: 'Encumbrances expressly subject to, and patent defects',
             summary: 'The other two exceptions: what the contract names, and what anyone could see by looking.',
             triggers: {
@@ -7088,6 +7098,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'original-title-deeds',
+            citationAliases: ["Chu Yin Fan","De Monsa","Goldmex","Re Halifax","Zhang"],
             title: 'Original title deeds: common law and section 13A',
             summary: 'Delivery of originals is part of GIVING title, and it exists to keep an encumbrance off the purchaser. De Monsa cuts the duty by that purpose; s13A cuts it by s13\'s 15-year period.',
             triggers: {
@@ -7378,6 +7389,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'documents-of-title',
+            citationAliases: ["Chen Paul","Fortune Link","Goldmex"],
             title: 'Which documents are documents of title?',
             summary: 'A working list, and the question that runs through it: does this document relate exclusively to the property, and could it affect the purchaser?',
             triggers: {
@@ -7639,6 +7651,7 @@ window.COURSE_DETAILS.PCLL8030 = {
         issueTypes: [
           {
             id: 'showing-vs-giving',
+            citationAliases: ["Active Keen","Hui Kwok Hau","Profit World"],
             title: 'Showing title: production and requisitions',
             summary: 'Two limbs: produce the documents, and answer the requisitions. A perfect title is no defence to failing either.',
             triggers: {
@@ -7942,6 +7955,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'ultimate-root',
+            citationAliases: ["Kan Yui Man","Kingdom Miles","Re Halifax","Wu Wing Kuen"],
             title: 'The ultimate root of title',
             summary: 'The Government lease or Conditions — plus anything the Interpretation Ordinance folds into that definition, including modifications, surrenders and marginal notes.',
             triggers: {
@@ -8092,6 +8106,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'intermediate-root',
+            citationAliases: ["Greatek"],
             title: 'The intermediate root of title',
             summary: 'An assignment, a mortgage by assignment or a legal charge, each dealing with the whole estate and interest. Nothing less will do.',
             triggers: {
@@ -8230,6 +8245,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'chain-of-title',
+            citationAliases: ["Chan Wing Nga","Goldenwick","Wong Kum Chi"],
             title: 'The chain of title and registration of title documents',
             summary: 'Produce every document in the period, prove every link — and make sure the ones that pass title have actually been registered.',
             triggers: {
@@ -8379,6 +8395,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'pre-intermediate-defects',
+            citationAliases: ["De Monsa","Kingdom Miles","Lo Hung Biu","MEPC"],
             title: 'Pre-intermediate root title defects',
             summary: 'The vendor need not produce documents before the root — but if the purchaser finds a defect there, the vendor must still answer for it.',
             triggers: {
@@ -8509,6 +8526,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'powers-of-attorney',
+            citationAliases: ["Big Boss","Lau Kwok Cheong"],
             title: 'Powers of attorney under section 13(1)(c)',
             summary: 'Produce any power under which a produced document was executed in the last 15 years — the vendor\'s side, and the present assignment too.',
             triggers: {
@@ -8632,6 +8650,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'missing-deeds-re-halifax',
+            citationAliases: ["Chan Kin Leung","De Monsa","Re Halifax","Wu Wing Kuen","Zhang","Zhang Xueshuai"],
             title: 'Missing title deeds and the rule in Re Halifax',
             summary: 'Three things: a statutory declaration explaining the loss, secondary evidence of the contents, and proof of due execution.',
             triggers: {
@@ -8776,6 +8795,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'recitals',
+            citationAliases: ["Kingdom Miles","Re Halifax"],
             title: 'Using recitals in proving title',
             summary: 'Two provisions, two different jobs: s13(3) presumes a recited pre-root document; s13(4) proves a fact recited in one.',
             triggers: {
@@ -8910,6 +8930,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'mere-conveyance',
+            citationAliases: ["Hu Mei Yu Anastasia","Sharneyford"],
             title: 'Matters of mere conveyance',
             summary: 'A defect the vendor can remove on his own, without anyone else\'s concurrence, does not make the title defective.',
             triggers: {
@@ -9036,6 +9057,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'investigating-title',
+            citationAliases: ["Billion Best"],
             title: 'Investigating title: what the purchaser\'s solicitor must do',
             summary: 'Two searches, documents back to the ultimate root, a site visit, the plans — then reasonable requisitions. Failing to search may be negligence.',
             triggers: {
@@ -9191,6 +9213,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'raising-requisitions',
+            citationAliases: ["First Shanghai","Goldmex"],
             title: 'Raising requisitions: the time limits',
             summary: 'No duty to raise one — but if you do, do it within the express time, or within a reasonable time if the agreement is silent.',
             triggers: {
@@ -9322,6 +9345,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'requisitions-out-of-time',
+            citationAliases: ["Big Foundation","Billion Best","Emmet and Farrand on Title","Goldmex","Join Union","Profit World","Recall International","Ultra Eternal"],
             title: 'Raising requisitions out of time',
             summary: 'The exception is a requisition going to the root of the vendor\'s title — and the exception to that is one the purchaser should have raised with due diligence.',
             triggers: {
@@ -9516,6 +9540,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'subject-matter-of-requisitions',
+            citationAliases: ["Chan Chik-sum","Goldmex"],
             title: 'The subject matter of requisitions',
             summary: 'Matters of title, specific and precisely formulated. Not speculative, not fishing, and not about the state of the building.',
             triggers: {
@@ -9642,6 +9667,7 @@ window.COURSE_DETAILS.PCLL8030 = {
           },
           {
             id: 'answering-requisitions',
+            citationAliases: ["Active Keen","Donpower","Goldmex","Guo Jianjun","Lai Ke Bin","Polyson","Smart Max"],
             title: 'Answering requisitions with candour',
             summary: 'Adequately, with candour, in time, and with the facts set out. A bald assertion is a failure to show title even if the title is good.',
             triggers: {

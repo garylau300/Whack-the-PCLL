@@ -13,7 +13,7 @@
   'use strict';
 
   const {
-    escapeHtml, citeHtml, noteCheckId, issueCode, initDialog, RACCOON,
+    escapeHtml, citeHtml, withCitationAliases, noteCheckId, issueCode, initDialog, RACCOON,
     speechText, speechSupported, speechVoices, speechSpeak, speechStop,
     loadSpeechPrefs, saveSpeechPrefs, SPEECH_RATES,
   } = window.PCLL;
@@ -356,6 +356,7 @@
   //     issueTypes: [{
   //       id: 'summary-judgment',        // URL slug: stable, authored, never derived
   //       aliases: ['retired-issue'],    // Optional old URLs resolved by issue.js after consolidation
+  //       citationAliases: ['Re Halifax'], // Optional verified short authority names, scoped to this issue
   //       title: 'Summary judgment (O.14)',
   //       summary: 'One line for the index card.',
   //       weighting: 'Commonly 15-20 marks',   // ONLY if a course document says so
@@ -477,6 +478,10 @@
 
   function examIssueSectionsHtml(issue, extras, opts) {
     if (!issue) return '';
+    return withCitationAliases(issue.citationAliases, () => examIssueSectionsBodyHtml(issue, extras, opts));
+  }
+
+  function examIssueSectionsBodyHtml(issue, extras, opts) {
     const extra = extras || {};
     let html = EXAM_SECTIONS.map(({ key, heading }) => {
       const body = (issue[key] && fullNoteBodyHtml(issue[key], opts)) || '';
@@ -1074,7 +1079,7 @@
     const href = hrefFor ? hrefFor(q.answer) : '';
     const why = q.kind === 'authority' && q.note ? `<span class="quiz-why-note">${citeHtml(q.note)}</span>` : '';
     const summary = (q.kind === 'spot' || q.kind === 'route') && q.answer.issue.summary
-      ? `<span class="quiz-why-note">${citeHtml(q.answer.issue.summary)}</span>` : '';
+      ? `<span class="quiz-why-note">${citeHtml(q.answer.issue.summary, q.answer.issue.citationAliases)}</span>` : '';
     const link = href
       ? `<a class="quiz-why-link" href="${escapeHtml(href)}">Open ${escapeHtml(q.answer.code9)} →</a>`
       : '';
