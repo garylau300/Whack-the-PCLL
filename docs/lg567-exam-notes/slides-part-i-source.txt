@@ -1,0 +1,495 @@
+
+SLIDE 1
+Property Transactions: LG5 Showing Good Title
+Alwin Chan
+SPEAKER NOTES: 39
+
+SLIDE 2
+Giving vs Showing good title	
+
+SLIDE 3
+Kok Chong-Ho 
+[1993] 2 HKLR 423
+Assignment plan (and DMC plans) states 6 flats on a certain floor, but OP says there are 4 flats.
+BA confirmed no permissions given after OP 
+V only offered affirmation at trial from AP that said – at worst, the two extra flats (not subject flat) will be demolished and there no risk of govt re-entering
+Too late – good title not shown
+
+SLIDE 4
+Active Keen 
+Provisional S&P 18/9/92
+no terms on when to raise requisitions and answer, and no Formal S&P. 
+Completion on 25/10/92
+25/9/92 – P raised requisition on Occupation Permit states there are 7 units but on 9
+th
+ floor there are 9 self-contained flats 
+
+SLIDE 5
+Vendor later on 21/10/92 reply with Architect (AP) letter: 
+“To whom it may concern
+Flat C on 9/F Yuen King Building 26-36 Sai Yeung Choi Street, Kowloon
+I hereby confirm, in my opinion that the subject premises is a self-contained domestic unit and its division from other units as shown on the assignment plan is non-structural and is in general compliance with the Building Regulations."
+Purchaser further reiterate requisitions: 22/10/92
+"The Occupation Permit only permits seven tenements on the 9th floor while the floor plan annexed to the Assignment ... shows that there are 9 tenements. There is clear doubt on whether the two additional tenements on the 9th floor are illegal structures since their existence is not covered by the Occupation Permit and there is no evidence that subsequent approval was granted for alteration or additional works. We trust you must be aware that, according to the decision of 
+Giant River v. Asie Marketing Ltd.
+ 
+[1990] 1 HKLR 297
+, the existence of 
+unauthorised
+ structures renders the title of a property defective. Furthermore, if the existence of the two additional tenements were not 
+authorised
+ or approved by the Building Authority, there is real risk that the Building Authority can take enforcement actions against the owners thereof ... ”
+Vendor 23/10/92: Final reply reiterating he has discharged duty & P misconceived – referred to a letter from BA on a Building Order (not the 9 instead 7 units problem)
+
+SLIDE 6
+"What is the purchaser to make of that? One can envisage two possible scenarios. 
+(1) The purchaser's solicitors confidently brushing aside the "bad points" and saying to their client: "We know all the facts there are to know about this property. Despite what the other side says, there were undoubtedly 
+unauthorised
+ structures erected back in 1964 resulting in two additional flats on each floor. We don't know what those building works were; the other side won't tell us, or can't tell us. But whatever they were there can be no enforcement action by  the Building Authority which could affect the title to Flat C. You can accept the conveyance with confidence, and will in turn be able to pass a good title if you are inclined to sell... 
+(2) those solicitors saying to their client: "your case is very similar to Kok's case. Here, as in Kok's case, the vendor is denying, contrary to the evidence presently available, that the "extra flats" are 
+unauthorised
+. The Court of Appeal there held that the vendor had not discharged his contractual duty of showing a good title; we cannot advise you in this case that the vendor has discharged his contractual duty as our inquiries have not been properly answered, we do not know whether there are facts relevant to this issue still within the knowledge of the vendor which he has not revealed, the late disclosure of the letter of 13th August 1992 from the Building Authority does not inspire confidence. In these circumstances you have the right to rescind, whether or not, ultimately, the vendor can demonstrate to the court that he has a good title"  (Per Litton J.A., at 412-13)
+
+SLIDE 7
+“..In an ideal world, the stance 
+summarised
+ in (1) above would have been right - and, hopefully, after this judgment aimed at clarifying this difficult branch of conveyancing law, that would be the position generally adopted by solicitors. But, given Kok's case and the vendor's solicitors' unhelpful responses, to expect the purchaser's solicitors to have given such robust advice, at such short notice, would have been expecting too much.”
+Unhelpful response of V did not refer to ‘no real risk of enforcement’ and also
+“If the vendor had responded in a straight-forward manner in the way articulated by the judge so that the purchaser could be reasonably confident that all relevant facts had been revealed by the vendors that would have been a different matter. But that is not what happened. The contractual duty to answer requisitions properly is not an onerous one. All that is required of the vendor is 
+candour
+ and commonsense. The purchaser is not an adversary.” 
+(i.e. should just reveal there been no enforcement action and BA in fact had enforcement action on other matters – so must have been aware there were 9 units instead of 7)
+
+SLIDE 8
+Chain of title
+S.13(1) CPO – produce all original or certified copies of all documents affecting title (registered or not) in the chain of title from intermediate root to present (or if no intermediate then from ultimate root)
+De 
+Monsa
+ Investments Ltd v Whole Win Management Fund Ltd 
+[2011] 4 HKLRD 478
+Sea water pump (cooling system) leasing agreement in 1979 was replaced by subsequent 1988 leasing agreement – replaced so no need produce 1979 one
+Links in the Chain of Title
+Transmission on death, sale for purpose of administration of estate, proof that person to whom property transferred in testacy or intestacy was entitled
+Co-owned property, tenancies, mortgages, trusts, deed of gift, rights of way, charging orders & 
+lis
+ 
+pendentes
+, ‘hanging’ S&P, govt orders, winding up
+
+SLIDE 9
+Transmission on death (1)
+Death certificate
+Probate / letters of administration
+Asset in writing (will) or assignment (intestate) to new owner
+Check if next link in chain person entitled to receive 
+Chan Chiung 
+Yo
+ v Sam Yu Lik Eric 
+[2024] HKCFI 1377 (See later)
+Evidence that estate duty (if before Feb 2006) has been paid 
+
+SLIDE 10
+Transmission on death (2)
+Sale for purpose of administration of estate – sold by personal representatives (testator/administrator). Must be established that they have power to sell and pass good title – presumed that property sold for purpose of administration of the estate
+Chun Hon Wai v Junichi Takashima 
+[2000] 2 HKC 777, CA – purchaser buy from estate, presumption he will receive good title and has no duty to make (and should not) enquiries as to whether sale necessary
+If there is evidence of improper purpose then presumption will not apply - 
+Chan Yat Wah v 
+Moonland
+ Enterprises Ltd 
+[2001] 1 HKLRD 45 
+In 
+Chan Yat Wah 
+there was a legal action already commenced (involving allegations of selling for own benefit). Contrast this with 
+Lau Siu Ying v Wong Cheung Tai (
+unreported) HCMP 669/1993, 2/8/1993 where the outstanding litigation was bound to fail because the interest of the beneficiaries in question was from a Deed of Trust which was not registered
+
+SLIDE 11
+Transmission on death (3)	
+basis of transfer proper? 
+Chan Chiung 
+Yo
+ v Sam Yu Lik Eric 
+[2024] HKCFI 1377 – some odd provision in will
+“
+We note that clause 4(
+i
+) of the will of the Deceased contains an express restriction which restricts the sale of all her landed properties other than the properties referred to in clauses 1 to 3 of her will for a period of 10 years from the date of her death (
+ie
+, 5 December 2021). Given such express restriction, we take the view that your client is not entitled to sell Parking Space No.100 on LG/F Skyscraper 132-142 Tin Hau Temple Road, Hong Kong (the “Parking Space”) to our client.  Please explain why your client has the power to sell the Parking Space to our client before the expiry of the 10 years’ period from the date of death of the Deceased
+.”
+Intestate (no will) – then under intestacy laws see 
+Sun Sek Haw v Au So Kum 
+[1999] 3 HKC 92, CA and 
+So Mariko v Tse Chun Chung John 
+(unreported) CACV 212/2010, 15/04/2011 
+Eg.
+ Old man dies and leaves widow and 2 kids – no will then widow gets half and kids get ¼, ¼. But if this was 10 years ago, how would you know? Statutory Declaration by lawyer at the time
+
+SLIDE 12
+Transmission on death (4)
+Sale by PR to himself or family member – s.55 Probate and Administration Ordinance, see 
+Feerni
+ Development Ltd v Daniel Wong & Partners 
+(a firm) [2001] 1 HKC 373, [2001] 2 HKLRD 13. 
+Breach of fiduciary duty in administering the estate, see 
+Lam Sik Shi v Lam Sik Ying, Administrator of the Estate of Lam Tim, alias Stan Lam Tim, deceased 
+(unreported) HCA 1605/2004, 03/10/2016  
+Joint tenancy – right of survivorship, so the property will not appear in the Schedule of the probate or letters of administration. Only death certificate needs to be produced
+
+SLIDE 13
+tenancies
+Oral (at a rack rent ad taking effect in possession) or written legal tenancies (at a rack rent) for a period of 3 years or less do not require to be registered and will bind a purchaser. Similarly, a purchaser of land subject to short term equitable tenancy - 
+ie
+ an agreement to grant a short term tenancy – will have constructive notice of it and will take subject to the tenancy: 
+Hunt v Luck 
+[1902] 1 Ch 428. 
+If want to get rid of tenant – need V to provide surrender agreement (or deed)
+Note 
+Ip Fai Man v Lui Kit Man
+ (unreported) HCA 13661/1998, 16/02/2000 – if tenant/occupier not entitled to stay, this a matter of mere conveyance as you have absolute right to evict him. Title still good, only mere conveyance. (NB: if purchase with vacant possession then another matter)
+
+SLIDE 14
+Mortgages and charges (1)
+Mortgage on land search = likely power of sale in 
+favour
+ of mortgagee 
+Discharge of legal mortgage = by deed (s.4 CPO), written receipt on or annexed to charge (s.56 CPO) – need to check execution 
+Equitable mortgage – released in writing (s.5 CPO)
+Just vacation of charge from land register will not be sufficient: 
+Siu Wing Yee Angeline v Earning Yield Ltd
+ [2013] 6 HKC 281
+ 
+Note that DMC charge is an equitable charge and NOT a charging order
+Mortgage on land search = likely there a power of sale in 
+favour
+ of mortgagee 
+Discharge of legal mortgage = by deed (s.4 CPO), written receipt on or annexed to charge (s.56 CPO) – need to check execution 
+Equitable mortgage – released in writing (s.5 CPO)
+Just vacation of charge from land register will not be sufficient: 
+Siu Wing Yee Angeline v Earning Yield Ltd
+ [2013] 6 HKC 281
+ 
+
+SLIDE 15
+Mortgages & Charges
+Discharge of wrong mortgage 
+Ok to retrospectively discharge it – doctrine of ‘feeding the estoppel’. 
+Cali Enterprises Ltd v 
+Chongmark
+ [1986] HKLR 816 
+Trump Well International Ltd v Siu Fung Knitting Factory Co Ltd 
+(unreported) HCMP 2408/1998, 07/01/1999
+Before building ready for occupation, flat purchased and loan was an equitable mortgage (due to flat not completed). When building completed, legal mortgage over flat was entered into – identical terms. 
+Deed of release later (when repaid) only referred to the equitable mortgage and not the later legal mortgage
+In law accepted that doctrine of merger – 1
+st
+ and 2
+nd
+ mortgages merged, but that was in the VP Summons hearing. The vendor’s solicitors did not raise this in answers to requisitions so purchaser’s solicitors would not know the position
+
+SLIDE 16
+Getting rid of old mortgages	
+S.12A CPO (e.g. 
+Ip Johnny Chong Ching v Ip Park Sing 
+[2022] HKCFI 3743)
+Out of jurisdiction/cannot be found OR uncertain who he is
+Seek direction to make payment-in
+Discretion to decide whether notice to given to encumbrancer
+Unenforceable by operation of Limitation Ordinance? See 
+Yau Pak Hin v Ho Lung Thomas Ignatius 
+(unreported) HCMP 628/2012, 31/7/2013
+Terms of mortgage – when to be repaid? 
+S.19(1) – any principal sum barred after 20 years
+S.19(5) – interest (contract) 6 years
+
+SLIDE 17
+Trusts 
+Purchaser got actual or constructive notice? Visit premises to see who are the occupiers
+Breach of trust would render title defeasible: 
+Faithway
+ Enterprise Ltd v Lee Wan
+ [2007] 4 HKC 55, CA 
+Section 20(1)(b) LO= no limitation period shall apply to action by beneficiary under trust to recover trust property received by trustee and converted to his own use
+
+SLIDE 18
+Deed of Gift 
+(
+送契樓
+)
+ 
+Could give rise to RT or CICT in 
+favour
+ of donor
+Could also be a fraudulent conveyance under s.60 CPO, a transaction at undervalue by a person subsequently adjudged bankrupt within 5 years under s.49(1) Bankruptcy Ordinance, or unfair preference by person subsequently adjudged bankrupt under s.50 Bankruptcy Ordinance
+See 
+Osman Mohammed Arab v Lam Ying Lung Alan
+ (unreported) HCA 653/2011, 29/07/2016 
+Instead, convey via Assignment with market consideration entered but w/o actual payment = practice
+
+SLIDE 19
+Charging Orders and Lites 
+Pendentes
+If there is CO – need evidence of discharge under s.20B(4) High Court Ordinance
+s 17 Land Registration Ordinance – need to renew registration every 5 years: see 
+Ocean Rich Investment Co Ltd v Leung Yiu Biu 
+(unreported) HCMP 1903/1998, 06/05/1999 
+“
+Every 
+lis
+ pendens registered or re-registered, and also every judgment or order re-registered under this Ordinance, shall have the same force and effect as a judgment registered and not further or otherwise
+.”
+
+SLIDE 20
+CO reg in 2019 ---  S&P reg in 2026. Is it safe to go to completion?
+If purchaser buys with ‘expired’ CO which in theory could be ‘re-registered’ then what? 
+s.3(2) LRO would protect such purchasers – see 
+Wong Chung Keung v Cheung Yik Tung
+ [2018] HKCFI 2722 or 
+Hung Heung Keng v Challenge Way Investment 
+(unreported) HCMP 789/2006, 
+14/06/2006 or Ocean Rich (supra)
+“
+..All such deeds, conveyances, and other instruments in writing, and judgments, as last aforesaid, which are not registered shall, as against any subsequent bona fide purchaser or mortgagee for valuable consideration of the same parcels of ground, tenements, or premises, be absolutely null and void to all intents and purposes..”
+
+SLIDE 21
+Lawsuits registrable as 
+lis
+ pendens – typically claims with assertion of proprietary right in property (
+eg.
+ 
+Nanyang Finance Co Ltd v Chan Kwok Wing 
+[2004] 1 HKLRD 869, CA)
+Therefore in VP 
+Summones
+ / Claims in conveyancing – in prayer/relief sought it is important for purchaser to claim he holds “a lien over property” on ground he paid part of purchase price: 
+Liu Chi Keung v Law Sim Yuk
+ [2006] 4 HKLRD 385.  
+Personal action unrelated to land should not be registered as 
+lis
+ pendens: 
+Shing Shu Lung v Shing Kam Chuen
+ (unreported) HCA 2067/2013, 07/07/2017 (breach of trust)
+“
+30.  The difference between something which “affects” the land and something which “may affect” the land can be explained by the following example.  A plaintiff sues a defendant on a debt and obtains judgment on the debt.  The judgment plainly does not affect land.  If the defendant does not pay up and if the defendant owns landed property, the judgment creditor may obtain a charging order against the judgment debtor’s landed properties.  Thus
+ 
+the claim in debt “may affect” the land, but it does not affect land.
+31.  
+Ms
+ Athena Wong contended that in “the instant case, if D is found to be in breach of his fiduciary duties and/or be removed by Court as trustee, this shall impact on the land in question”.  I reject this contention.   The Court’s finding that the defendant was in breach of fiduciary duties affects the defendant personally, but does not affect land. The removal of the defendant as a trustee affects the defendant personally, but does not affect land.”
+
+SLIDE 22
+Hanging S&P Agreements
+S&P which was registered but not completed by an assignment
+V must establish it no longer affects title – no real risk of assertion
+Prior purchaser already recovered damages: 
+Guang Xin Enterprises Ltd v Leung Kwai Mui 
+(unreported) HCMP 2024/1996, 15/07/1996
+Previous S&P, lawsuit and prior purchaser accepted V’s repudiatory breach so he has discharged himself from further performance. V’s title not affected (although may need to return deposit to prior purchaser): 
+Hansun
+ Investment Ltd v Sincere Union Development Ltd
+ [2008] 4 HKLRD 442, [2008] 4 HKC 351 
+
+SLIDE 23
+Illegal Structures/UBW’s 	
+
+SLIDE 24
+Orders or notices from govt (1)
+Heung Sui Kei v Benefit Charter Ltd
+ [1999] 3 HKC 543
+ – letter of withdrawal or compliance?
+BD letter: “I refer to my Order No A 0441/95/NT which was served on you on 10 October 1995 in connection with unauthorized building works which had been carried out at the above premises. I note that modifications have been carried out to the said building works, and having taken into consideration the circumstances, I am prepared to withhold further enforcement of my order for the time being. However, I may consider issuing a new order for the complete removal of all unauthorized building works in future should changes in circumstances so require. Order No C 0441/95/NT is hereby withdrawn.”	
+
+SLIDE 25
+Orders or notices from govt (2)
+Modern Sino v Ltd v Art Fair Co Ltd 
+[1999] HKLRD 847
+ 
+House with not approved extensions – so UBW not in approved building plans
+1985 Demolition Order for UBW but at that time the UBW was less extensive
+BA 1997 demolition order removed ‘for the time being’, "the works are still considered illegal and may be subject to enforcement action under the Buildings Ordinance (Cap.123) if circumstances so require it”
+BA 1998: "under the current policy of the Buildings Department, enforcement action on the remaining 
+unauthorised
+ building works mentioned in the letter of withdrawal dated 1 August 1997 will be taken if the 
+unauthorised
+ building works have posed an obvious hazard to life or property”. Leaflet enclosed showed current policy of BA is for immediate enforcement action for UBWs which pose hazard to life or property, but for those works existing for some time and not posing an obvious hazard, enforcement action would be taken in sequence
+
+SLIDE 26
+Nature of the order
+Resumption Orders, Remedial / Closure / Demolition order under Buildings Ordinance. 
+Contrast s. 26 BO orders, Warning Notices under s.24C BO and Non-mandatory notices
+Potentially defeasible if BA carry out works themselves, and send bill in which owner not pay. Then under s.32A/33 Buildings Ordinance -  a charge & amount crystallized 
+As per To J, in 
+Hu Mei Yu v. King Best 
+(unreported) HCA 9317/1998, 10/07/2000, [10]-[15], s.32/33 is about quantum and the earlier notice/order is on liability
+
+SLIDE 27
+Is the order outside the ordinary, that typical of HK property owners? 
+All Ports Holdings Ltd v 
+Grandfix
+ Ltd 
+[2001] 2 HKLRD 630, CA 
+This order dated Aug 1999 stated the building was liable to become dangerous unless certain works must be completed by Feb 2000 (s.26 BO order)
+Purchaser requested evidence that order been complied with by V only prepared to deposit HK$50k as security
+Held: encumbrance! if it were of such a wholly exceptional nature and called for wholly exceptional measures well outside 
+ordinary ‘wear and tear
+’ remedies that common owners of HK buildings had to meet from time to time
+Further, the 
+stakeholding
+ offer might not sufficient (see later) in such situations not be enough as per 
+Hu Mei Yu (supra)
+
+SLIDE 28
+Who bears the risk?
+Wah Ying Properties v Sound Cash Ltd 
+[1994] 1 HKC 786
+SC sells to WY on May 1992, WY sells to 
+Portwealth
+ Ltd Nov 1992
+Back in 1983&1987 – Buildings Authority ordered SC’s predecessor-in-title to carry out remedial works on retaining wall. SC did not do so. BA demand 400k from SC. BA tells WY that it will not vacate. 
+Portwealth
+ demands WY to settle the amount. WY sues SC for order to pay up and succeeds
+
+SLIDE 29
+Defeasible - Breach of govt Lease
+Government has the right to re-enter due to breach. But small sums of non-payment of govt rent would be insufficient (see 
+New Jade Enterprises Ltd v Jing Ying She Ltd 
+(unreported) HCA 13764/1997, 22/9/200)
+Govt Lease covenant – develop must comply with building regulations – so breach of Buildings Ordinance may give right to government to re-enter (see 
+Giant River Ltd. V Asie Marketing Ltd
+ [1990] 1 HKLR 297)
+
+SLIDE 30
+UBW
+– real risk of enforcement (1)
+Encumbrance earlier = an order exists (the result could amount to defeasible)
+No order, but just UBW = subject matter now
+Building Works – s.2(1) BO see 
+HKSAR v. Poon Lok To Otto 
+[2019] 
+HKMagC
+ 3 (at [15]-[16], [46]-[40]for a more general description of factors which are relevant to the consideration of ‘building works’
+See 
+HKSAR v 
+Gemsland
+ Hotels Ltd 
+[2017] 2 HKLRD 393 – signboards affixed to external walls are building works
+
+SLIDE 31
+UBW
+– real risk of enforcement (2)
+S.41(3) BO – Exempted Building Works
+Mariner Int Hotels Ltd v Atlas Ltd 
+(2007) 10 HKCFAR 1: the building works had both to be in the building and of a non-structural nature. “Structural” = “the building works had both to be in the building and of a non-structural nature”. 
+Real Risk of Enforcement – 
+Jumbo Gold 
+(supra)
+“
+It is simply not in the nature of good government to harm innocent people unnecessary like that. Accordingly it is safe to proceed on the basis that the Government would never do so
+”
+
+SLIDE 32
+MTR 
+Corpn
+ Ltd v Hwang Xiao Yun Sherry
+ (unreported) LDBM 109/2002, 
+06/11/2002 
+Load bearing propensity of building  – room constructed on roof involved heavy concrete
+
+SLIDE 33
+Homyip
+ Development Ltd v Chu Kang Ming Trade Development Co Ltd
+ [1995] 2 HKC 458 
+“
+In my view, although the existence of unauthorized work in a multi-
+storey
+ building would not necessarily constitute an encumbrance on the title of an individual flat in that building, the situation is different where the unauthorized work is inside a flat or within the boundaries of a house. It is clear from the reasoning of Litton JA in Active Keen that the existence of an unauthorized structure in a flat or, as in the present case, inside a house would constitute an encumbrance because the service of an order under s 24(2) would in law be effective against the individual owner and could bring in its train the consequences that eventually the cost of the removal is charged against the title of the individual owner
+.”
+
+SLIDE 34
+Spark Rich (China) Ltd v 
+Valrose
+ Ltd 
+[2006] 2 HKC 589, Godfrey JA held
+“
+So the test may be usefully framed as follows: If the purchaser asks his solicitor `Can I be sure that I can safely disregard the risk?', then, unless his solicitor (being a prudent and experienced solicitor) can properly advise him that he can, the purchaser cannot be obliged to accept the vendor's title even if supplied with opinion evidence to the effect that action by the Building Authority was unlikely
+.”
+
+SLIDE 35
+Join Union Investments v China Tree 
+Unaut
+horised
+ cockloft ‘gave rise to defect in title, but such defect did not go to the root of title’ 
+“
+It is contrary to market reality to treat the existence of an 
+unauthorised
+ cockloft, even of a substantial size like the present one, as constituting a title defect going to the root of title. The worst that could happen in the present case, it seems to me, would be an order by the Building Authority requiring the Cockloft to be demolished.”
+- 
+Cocklofts in g/f shops = minor generally?
+
+SLIDE 36
+UBW in one flat affects other flats?
+Active Keen Industries Ltd v Fok Chi Keong
+ [1994] 1 HKLR 396, CA
+: just to title of that one flat alone
+Hong Kong Central Hospital Ltd v Progressive Group Ltd
+ [2008] 1 HKC 134 applying 
+Active Keen 
+– Building Plans and DMC shows 4 flats, but OP says 3 flats. In fact there are only 3 flats because 2 flats have been combined. The combined flats did not involve in subject flat and Active Keen applied
+
+SLIDE 37
+Correcting the UBW b4 completion
+If restore flat to original state – still substantial performance?
+Max Smart Ltd v First Super Investment Ltd
+ [1999] 1 HKLRD 519 
+Sun Great International Ltd v Hui Lai Ying Polly
+ (unreported) HCA 10742/1994, 
+29/08/1996
+ 
+Cashew Holdings Ltd v Pacific Success Enterprise Ltd 
+[2004] 2 HKC 594 
+Goldful
+ Way Development Ltd v 
+Wellstable
+ Development Ltd 
+[1998] 4 HKC 679 
+Contrast with say 
+Homyip
+ (supra)– false ceiling added a floor; 
+Summit Link Ltd v Sunlike Group (HK) CO Ltd
+ [2000] 2 HKLRD 724, CA
+
+SLIDE 38
+Offer to demolish UBW
+Victory Star Ltd v Ng Fung Ying
+ [2003] 4 HKC 677, [2004] 2 HKLRD 518, CA
+“The starting point was to see whether the vendor was able to substantially perform its obligation. In terms of the presence of unauthorized structures and the vendor’s offer or action to remove them, the court had come to different conclusions depending, for example, on the size of the unauthorized structure as compared to the total size of the property and the importance attached by the purchaser towards the ‘unauthorized’ part of the property in its decision to buy the property in the first place. Given that the unauthorized structures amounted to nearly 38% of the total area of the property, there was force in the purchaser’s contention that the vendor would not be able to substantially perform the agreement when the unauthorized structures were removed. However, whatever might be the position on substantial performance, the issue of estoppel would
+ 
+assist the defendants in their 
+defence
+”
+
+SLIDE 39
+Liability/Potential Liability 
+IO being sued in action unrelated to land  
+Lucky Health International Enterprise Ltd v Chi Kit Co Ltd
+ [2000] 2 HKLRD 503, CFA: judgment in a substantial sum of $25.7 million (plus costs) entered against the IO in long before completion
+Offer to put aside (
+stakeholding
+)  $33m out of purchase price or make available through a bank guarantee (or any reasonable sum a purchaser would nominate) – held to be not enough to resolve all problems from existence of liability 
+
+SLIDE 40
+Gigabillion
+ Asia Pacific Limited v Sino Dynamic International Limited 
+[2014] 2 HKLRD 922, CA: three pending lawsuits against IO 
+Offer of indemnity did not cover full amount of liability (remedies sought not include damages, but still costs exposure) 
+Not backed up by any security other than $25k set aside to be 
+stakeheld
+ 
+Management fees and contributions to building repairs under the DMC. 
+AIE Co Ltd v Kay Kam Yu 
+[1996] 1 HKC 239 – DMC charge (memorandum which was registered) can constitute an encumbrance
+Luk Ho Chang v Fook Man Finance Co Ltd 
+[2006] 2 HKLRD 489
+This case before the charge – resolutions passed by IO = liability accrued under s.14(1) BMO
+Generally, the S&P could agree to cut-off date for when Vendor stops being liable to Vendor pay and when Purchaser become liable

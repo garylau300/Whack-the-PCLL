@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page 14 · Source audit, conflicts and verification queue</title>
+    <style>
+      body {
+        font:
+          17px/1.65 Georgia,
+          serif;
+        color: #182a3b;
+        background: #f5f3ed;
+        margin: 0;
+      }
+      main {
+        max-width: 1040px;
+        margin: auto;
+        padding: 45px 48px;
+        background: #fff;
+      }
+      h1,
+      h2,
+      h3,
+      nav,
+      input,
+      button {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 30px;
+        line-height: 1.25;
+        color: #123d55;
+        margin-top: 55px;
+      }
+      h2 {
+        font-size: 22px;
+        color: #20536b;
+        margin-top: 34px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      a {
+        color: #006b84;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 24px 0;
+        overflow-wrap: anywhere;
+      }
+      th,
+      td {
+        border: 1px solid #cbd5df;
+        text-align: left;
+        vertical-align: top;
+        padding: 9px;
+      }
+      th {
+        background: #e9f1f5;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #123d55;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: 14px;
+      }
+      nav a {
+        color: white;
+      }
+      input {
+        padding: 9px;
+        border: 0;
+        border-radius: 4px;
+        min-width: 250px;
+      }
+      #count {
+        font-size: 12px;
+      }
+      li {
+        margin-bottom: 9px;
+      }
+      #TOC {
+        border: 1px solid #cbd5df;
+        padding: 22px;
+        background: #f5f9fb;
+        position: static;
+        color: #182a3b;
+        display: block;
+      }
+      #TOC a {
+        color: #006b84;
+      }
+      hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #cad2d9;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font:
+          14px/1.6 Arial,
+          sans-serif;
+      }
+      .source {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+      }
+      .hidden {
+        display: none;
+      }
+      @media print {
+        body {
+          background: white;
+          font:
+            10.5pt/1.45 Georgia,
+            serif;
+        }
+        main {
+          max-width: none;
+          padding: 0;
+        }
+        nav,
+        .no-print {
+          display: none !important;
+        }
+        h1 {
+          break-before: page;
+          font-size: 21pt;
+        }
+        h2 {
+          font-size: 15pt;
+          break-after: avoid;
+        }
+        table {
+          font-size: 8pt;
+        }
+        tr {
+          break-inside: avoid;
+        }
+        #TOC {
+          break-after: page;
+        }
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        .hidden {
+          display: block;
+        }
+        pre {
+          font-size: 9pt;
+        }
+        @page {
+          size: A4;
+          margin: 17mm 16mm 18mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="no-print">
+      <a href="../index.html">Topic index</a><a href="../LG567-Exam-Notes.docx">Word</a><a href="../LG567-Exam-Notes.pdf">PDF</a
+      ><a href="../source-appendix.html">Source appendix</a>
+    </nav>
+    <main>
+      <h1 id="page-14-source-audit-conflicts-and-verification-queue">Page 14 · Source audit, conflicts and verification queue</h1>
+      <h2 id="coverage-map-for-all-supplied-material">1. Coverage map for all supplied material</h2>
+      <table>
+        <colgroup>
+          <col style="width: 25%" />
+          <col style="width: 25%" />
+          <col style="width: 25%" />
+          <col style="width: 25%" />
+        </colgroup>
+        <thead>
+          <tr class="header">
+            <th>Course area</th>
+            <th>Handout paragraphs</th>
+            <th>Slides</th>
+            <th>Notes page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd">
+            <td>Giving/showing, requisition timing and chain production</td>
+            <td>12–18; 894–900</td>
+            <td>I 2–8</td>
+            <td>01</td>
+          </tr>
+          <tr class="even">
+            <td>Death, administration and beneficiary entitlement</td>
+            <td>23–53</td>
+            <td>I 9–12</td>
+            <td>02</td>
+          </tr>
+          <tr class="odd">
+            <td>Joint ownership and severance</td>
+            <td>56–62; 488–492</td>
+            <td>I 12; II 4</td>
+            <td>02, 13</td>
+          </tr>
+          <tr class="even">
+            <td>Tenancy/surrender/occupation</td>
+            <td>65–71; 374–423</td>
+            <td>I 13; II 5–6</td>
+            <td>05</td>
+          </tr>
+          <tr class="odd">
+            <td>Mortgages, releases, s.12A and limitation</td>
+            <td>74–110</td>
+            <td>I 14–16</td>
+            <td>03</td>
+          </tr>
+          <tr class="even">
+            <td>Trusts, gifts and nominations</td>
+            <td>114–132; 334–357</td>
+            <td>I 17–18; II 2, 5</td>
+            <td>05</td>
+          </tr>
+          <tr class="odd">
+            <td>Rights of way</td>
+            <td>135–139</td>
+            <td>—</td>
+            <td>08</td>
+          </tr>
+          <tr class="even">
+            <td>Charging orders, lis pendens and foreign orders</td>
+            <td>142–174</td>
+            <td>I 19–21</td>
+            <td>04</td>
+          </tr>
+          <tr class="odd">
+            <td>Hanging S&amp;P/pending registration</td>
+            <td>177–183</td>
+            <td>I 22</td>
+            <td>04</td>
+          </tr>
+          <tr class="even">
+            <td>Government/BA orders and withdrawal</td>
+            <td>186–207</td>
+            <td>I 24–29</td>
+            <td>06, 08</td>
+          </tr>
+          <tr class="odd">
+            <td>UBW, exemption, risk, affected flats</td>
+            <td>211–283</td>
+            <td>I 23, 30–36</td>
+            <td>06</td>
+          </tr>
+          <tr class="even">
+            <td>Demolition, substantial performance and purchaser conduct</td>
+            <td>288–310</td>
+            <td>I 37–38</td>
+            <td>06, 12</td>
+          </tr>
+          <tr class="odd">
+            <td>IO/DMC fees, repairs and litigation</td>
+            <td>313–331</td>
+            <td>I 39–40; II 36–42</td>
+            <td>07, 12</td>
+          </tr>
+          <tr class="even">
+            <td>Winding-up, names, HOS and corporate due diligence</td>
+            <td>360–367; 495–497</td>
+            <td>II 4</td>
+            <td>08</td>
+          </tr>
+          <tr class="odd">
+            <td>Illegality in trust claims</td>
+            <td>426–444</td>
+            <td>II 7</td>
+            <td>05</td>
+          </tr>
+          <tr class="even">
+            <td>Lease, OP and material change of user</td>
+            <td>449–462</td>
+            <td>I 29; II 8</td>
+            <td>08</td>
+          </tr>
+          <tr class="odd">
+            <td>Boundaries, encroachment and share allocation</td>
+            <td>465–471; 833–845</td>
+            <td>—</td>
+            <td>08</td>
+          </tr>
+          <tr class="even">
+            <td>Fraudulent/conflicted conveyances</td>
+            <td>474–480</td>
+            <td>II 4</td>
+            <td>05, 08</td>
+          </tr>
+          <tr class="odd">
+            <td>Fire safety</td>
+            <td>483–485</td>
+            <td>II 9, 36–42</td>
+            <td>07</td>
+          </tr>
+          <tr class="even">
+            <td>Natural-person execution and attestation</td>
+            <td>500–517; 797–799</td>
+            <td>II 10–11</td>
+            <td>09</td>
+          </tr>
+          <tr class="odd">
+            <td>Corporate seals, articles, presumptions and ratification</td>
+            <td>519–689</td>
+            <td>II 12–26</td>
+            <td>09</td>
+          </tr>
+          <tr class="even">
+            <td>Foreign corporate execution</td>
+            <td>692–708</td>
+            <td>II 27–28</td>
+            <td>09</td>
+          </tr>
+          <tr class="odd">
+            <td>POA form, production, vires and revocation</td>
+            <td>711–792</td>
+            <td>II 29–35</td>
+            <td>10</td>
+          </tr>
+          <tr class="even">
+            <td>Stamping</td>
+            <td>794</td>
+            <td>—</td>
+            <td>11</td>
+          </tr>
+          <tr class="odd">
+            <td>Signatures, names, passports and IDs</td>
+            <td>802–830</td>
+            <td>II 43–46</td>
+            <td>11</td>
+          </tr>
+          <tr class="even">
+            <td>Stakeholding, indemnities and undertakings</td>
+            <td>851–863</td>
+            <td>II 36–42</td>
+            <td>12</td>
+          </tr>
+          <tr class="odd">
+            <td>Confirmatory assignment and court/company execution</td>
+            <td>865–881</td>
+            <td>II 47–50</td>
+            <td>11</td>
+          </tr>
+          <tr class="even">
+            <td>Vesting orders</td>
+            <td>883–891</td>
+            <td>II 51–52</td>
+            <td>11</td>
+          </tr>
+          <tr class="odd">
+            <td>Bad title and no-real-risk limits</td>
+            <td>894–928</td>
+            <td>II 54</td>
+            <td>01, 09, 11</td>
+          </tr>
+          <tr class="even">
+            <td>Vendor rescission clause</td>
+            <td>931–939</td>
+            <td>—</td>
+            <td>12</td>
+          </tr>
+          <tr class="odd">
+            <td>Repudiation, termination timing and VP summons</td>
+            <td>942–982</td>
+            <td>II 53, 55–56</td>
+            <td>12</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Blank/title-only slides introduce the surrounding topic and do not supply a separate doctrinal rule. Slide pictures largely
+        illustrate buildings, seals, instruments and case settings. One Part II slide 9 picture is linked rather than embedded and was not
+        available in the uploaded package; the slide’s explanatory text was available and is covered. Execution-clause images in Part II
+        slide 16 illustrate seal/signature/attestation distinctions addressed on Page 09. No additional legal proposition has been inferred
+        from illustrative photographs.
+      </p>
+      <h2 id="differences-that-should-not-be-silently-harmonised">2. Differences that should not be silently harmonised</h2>
+      <table>
+        <colgroup>
+          <col style="width: 33%" />
+          <col style="width: 33%" />
+          <col style="width: 33%" />
+        </colgroup>
+        <thead>
+          <tr class="header">
+            <th>Source problem</th>
+            <th>Treatment in this pack</th>
+            <th>What to verify before formal citation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd">
+            <td>
+              Trump Well: handout says legal mortgage remained undischarged; I s.15 stresses merger explanation offered only at hearing
+            </td>
+            <td>Preserve surviving-security inquiry and separate showing-title timing</td>
+            <td>Judgment’s exact disposition and effect of release wording</td>
+          </tr>
+          <tr class="even">
+            <td>Hu Mei Yu: N ¶194 doubts undertaking, N ¶861 and II ss.39–40 accept it</td>
+            <td>Explain finite collective liability and quoted practical reasoning; flag inconsistency</td>
+            <td>Exact undertaking, security and scope of holding</td>
+          </tr>
+          <tr class="odd">
+            <td>s.23: general statement says failure of s.20 prevents reliance, but Tread East examples allow s.23</td>
+            <td>Treat s.23 appearance as a separate contextual inquiry</td>
+            <td>Articles, execution wording and actual officer status</td>
+          </tr>
+          <tr class="even">
+            <td>Chase Eagle [2013] 1 HKLRD 933: Xiao Dong/Xiao Ming name variants and opposing descriptions of foreign-law evidence</td>
+            <td>No unqualified statement of disputed holding</td>
+            <td>Correct party name, constitution evidence and judgment reasoning</td>
+          </tr>
+          <tr class="odd">
+            <td>Gigabillion: slides [2014] 2 HKLRD 922; handout [2015] 2 HKLRD 100 / [2015] 2 HKC 384</td>
+            <td>Preserve common teaching points without claiming reports are identical</td>
+            <td>Whether citations are separate procedural decisions and correct judgment for each proposition</td>
+          </tr>
+          <tr class="even">
+            <td>Lucky Health / Chi Kit reversed case-name order and one paragraph’s 2003/date reference</td>
+            <td>Use 2000 CFA citation supplied elsewhere; distinguish pending exposure from judgment facts</td>
+            <td>Correct report/caption and chronology</td>
+          </tr>
+          <tr class="odd">
+            <td>s.23A “more than 15” versus statute “not less than 15”</td>
+            <td>Exact anniversary included</td>
+            <td>Wording and all statutory conditions</td>
+          </tr>
+          <tr class="even">
+            <td>s.23A(3) “after” versus quoted “on or after” commencement</td>
+            <td>Follow quoted statutory wording</td>
+            <td>Historical contract date</td>
+          </tr>
+          <tr class="odd">
+            <td>II s.24 “impossible now” about post-2003 deeds younger than 15</td>
+            <td>Correct: 2015 deed is still young in 2026; only pre-2003 class is necessarily old</td>
+            <td>Apply actual current S&amp;P date</td>
+          </tr>
+          <tr class="even">
+            <td>II s.25 suggests no common seal is criminal</td>
+            <td>Correct: seal is optional; noncompliant adopted seal is different</td>
+            <td>Current ss.124–128 wording</td>
+          </tr>
+          <tr class="odd">
+            <td>N ¶525 mislabels CPO Cap 32</td>
+            <td>CPO Cap 219; former CO Cap 32</td>
+            <td>Correct statute for each cited section</td>
+          </tr>
+          <tr class="even">
+            <td>Course broad application of new CO to foreign-company deeds</td>
+            <td>Flag entity/statutory/conflict-of-laws scope rather than universal extension</td>
+            <td>Applicable sections, foreign law and place/type of execution</td>
+          </tr>
+          <tr class="odd">
+            <td>s.13(4A) presumes authority but Lo Hung Biu excludes particular vires issue</td>
+            <td>Separate production/formal execution from gift/self-dealing limits</td>
+            <td>Exact statutory wording and appellate interpretation</td>
+          </tr>
+          <tr class="even">
+            <td>Fire-direction cases versus later ss.19U–19V</td>
+            <td>Time- and instrument-sensitive statutory-charge analysis</td>
+            <td>Legislative version and commencement dates relevant to facts</td>
+          </tr>
+          <tr class="odd">
+            <td>Estate duty “abolished 2005” versus slide “before Feb 2006”</td>
+            <td>Historical/transitional check, not a blanket present burden</td>
+            <td>Applicable death/gift date and transitional legislation</td>
+          </tr>
+          <tr class="even">
+            <td>Simplified widow/children fractions</td>
+            <td>Do not state as complete intestacy rule</td>
+            <td>Statutory entitlement, estate composition and relevant date</td>
+          </tr>
+          <tr class="odd">
+            <td>Gift dressed as market-consideration assignment</td>
+            <td>Recital does not establish actual value/payment</td>
+            <td>Real transaction, creditor prejudice and applicable protections</td>
+          </tr>
+          <tr class="even">
+            <td>BO “structural” slide repeats exemption wording instead of definition</td>
+            <td>Use Mariner’s integral-structure reasoning and concrete factual inquiries</td>
+            <td>Approved work details and judgment language</td>
+          </tr>
+          <tr class="odd">
+            <td>Poon Lok To paragraph range “[46]–[40]”</td>
+            <td>No invented pinpoint</td>
+            <td>Correct judgment paragraphs</td>
+          </tr>
+          <tr class="even">
+            <td>Grandco date “6 April 20000”; several spelling variants</td>
+            <td>Use neutral case identification/docket where possible</td>
+            <td>Report/docket spelling and date</td>
+          </tr>
+          <tr class="odd">
+            <td>Part F treats some attestation defects as void while Part C uses voidability/no-real-risk cases</td>
+            <td>Present handout’s proposed distinction and actual-estate inquiry</td>
+            <td>Applicable binding authority and whether legal estate actually passed</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id="what-is-complete-and-what-is-source-limited">3. What is complete and what is source-limited?</h2>
+      <p>
+        Preparation completed: extraction of text from all three uploaded files; reading of the handout and both slide decks; review of
+        embedded-image overview for additional substantive material; organisation into thematic pages; explanation of rules and case
+        applications; integrated analyses; statutory/date checklists; five worked examples; source cross-references; rapid revision table;
+        and an explicit discrepancy register.
+      </p>
+      <p>
+        The source appendix preserves the complete extracted text, including additional case references that the course itself mentions
+        without explanation. Those short references have been identified as such rather than supplied with invented holdings. The appendix
+        is a source record, not a substitute for the synthesised explanations.
+      </p>
+      <p>
+        Remaining source-limited verification: full judgments for the conflict rows; legislative wording/versions and amendment
+        commencement; earlier root-of-title lectures; LG8 vendor-rescission clause mechanics; the actual exam format, permitted materials
+        and past papers. These were not supplied, and the pack does not claim to have reviewed them. The completed notes are suitable for
+        course-based preparation, with those verification points visible where they affect analysis.
+      </p>
+      <h2 id="final-self-check-before-handing-in-an-answer">4. Final self-check before handing in an answer</h2>
+      <p>
+        Can you state the promised estate and affected interest precisely? Have you distinguished registration from validity and extinction?
+        Have you calculated the relevant dates? Have you tested all independent regulatory/proprietary routes? Have you addressed the actual
+        evidence and reply timing? Does your proposed remedy transfer/release the interest or merely promise compensation? Does demolition
+        preserve substantial performance? Have you justified the timing and legal basis of termination? Have you identified the right
+        procedure without treating court action as automatic postponement?
+      </p>
+    </main>
+    <script>
+      const q = document.querySelector('#q');
+      if (q)
+        q.addEventListener('input', () => {
+          const term = q.value.toLowerCase().trim();
+          let n = 0;
+          document.querySelectorAll('section.topic').forEach((s) => {
+            let yes = !term || s.textContent.toLowerCase().includes(term);
+            s.classList.toggle('hidden', !yes);
+            if (yes) n++;
+          });
+          document.querySelector('#count').textContent = n + ' topics match';
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,636 @@
+
+SLIDE 1
+Property Transactions: LG5 Showing Good Title(2)
+Alwin Chan
+
+SLIDE 2
+Nominations
+Father enters into S&P but for assignment, daughter’s name on assignment: Father nominates daughter. Nominee daughter has paid no consideration and hence RT or counter-presumption of advancement? Rebuttable presumptions
+Up in chain of title – 
+Lion Will Investment Ltd v Triple Will Ltd 
+[1992] 2 HKC 430 (going back 10 years – husband paid but wife nominated: counter-presumption of advancement applied)
+Statutory declaration may suffice – 
+Kan Wing Yee Wendy v Roh Julie Kim 
+(2017) HCMP 352/2017, 13/09/2017 
+Companies – 
+Fulltrend
+ Co Ltd v Longer Year Development 
+[1990] 1 HKC 452
+
+SLIDE 3
+Current ‘Chain’ – the vendor
+
+SLIDE 4
+Current “Chain” - The Vendor
+All earlier issues for up the chain of title applies
+Rights of occupiers
+Illegal user & breach of govt lease/occupation permit/DMC
+Fraudulent conveyance?
+Joint Tenancies – severance earlier? 
+Vendor is a limited company
+
+SLIDE 5
+Occupiers
+May have beneficial interest in the property by way of CICT, resulting trust 
+etc
+ – interests which arise by operation of law, and unregistrable
+CICT – not just about money (down payment/deposit) albeit an important factor 
+Single name: 
+Liu Wai Keung v Liu Wai Man
+ [2013] 5 HKLRD 9 
+Joint names: arguing one has more than 50% 
+Re Mok Wut Man 
+[2020] HKCFI 1357
+Chinese setting – 
+Prime Credit Ltd v Chun Pang Barry 
+[2017] 4 HKLRD 327
+Counter-presumption of advancement
+Not close = presumption of resulting trust (assuming no evidence)
+Close = presumption of advancement
+So assignments in chain of title between persons in close relationships?
+
+SLIDE 6
+Purchasers beware on inspection - Occupiers on premises (or signs of the same) = put on inquiry (
+Wong Chim Ying v Cheng Kam Wing
+ [1991] 2 HKLR 253, CA
+Only a bona fide purchaser for value w/o notice will be able to take property free from occupier’s interest
+Kingsnorth Finance v Tizzard 
+[1986] 1 WLR 783 – even if other beneficial owner not in occupation! 
+See signs of occupation of someone other than ”owner”? Signs of kids for ‘single’ owner? 
+Delay in asserting beneficial interest
+Mo Ying v 
+Brillex
+ Development Ltd
+ [2015] 3 HKC 104, [2015] 2 HKLRD 985, CA
+Single-name owner (husband), and flat was sold and rented back. Years later marriage broke down and wife asserts CICT.
+ Wife did nothing when flat sold so estopped
+ 
+
+SLIDE 7
+Illegality?
+Beneficial interest in property in furtherance of an illegal/immoral/improper purpose on part of the transferor 
+Old test in 
+Tinsley v Milligan 
+[1994] 1 AC 340 = do you need to rely on illegality?
+New test in 
+Patel v Mirza 
+[2016] UKSC 42, applied in 
+Monat Investment Ltd v Lau Chi Kan 
+[2023] HKCA 479 = range of factors approach
+Subsidized homes in 
+Leung Ching Wai v Li Yun Lim 
+[2023] HKDC 459
+
+SLIDE 8
+Breach of occupation permit
+Breach – 
+Wong Wai Yip v Ho Wai Fung 
+(unreported) DCMP 2221/2015, 27/1/2017
+User: Section 25 BO mechanism – give notice to BA if owner intends to make material change of user. BA may object. It is only an offence if one fails to comply with a BA order but s.25 per se does not make change of user unlawful – 
+Chan Sing Hoi Enterprises v 
+Vykon
+ 
+(unreported) CACV 324/2007, 04/07/2008 
+However there are authorities suggesting otherwise – see 
+Worldful
+ Investments Ltd v Young King Asia Ltd
+ [1996] 4 HKC 238 and 
+Even Growth Investment Ltd v Shing Yip Investment Ltd 
+(unreported) HCMP 2369/1996, 29/07/1996
+Maybe 
+Summit Investment Ltd v Shia Ning Enterprise Ltd
+ [1999] 2 HKLRD 798
+ sheds light on this – no material change in user if no structural alterations involved
+
+SLIDE 9
+Fire Safety Directions/orders
+Many types 
+Fire Safety (Buildings) Ordinance (Cap 572) – “Fire Safety Directions” not constitute a blot in title like a s.24 Buildings Ordinance BO would (see 
+Ip Fong Keng v Fong Yu Shing
+)
+Key is whether the FSD has the power to conduct repairs itself and later charge the flat? 
+Sky Globe Holding Ltd v Hung Lee Estates
+ [2023] 4 HKLRD 413
+ 
+If not, can the FSD still sue the owners in a civil lawsuit?
+
+SLIDE 10
+Proof of Due execution
+
+SLIDE 11
+Proof of Due Execution – Real Ppl
+Conveyancing docs = attested by solicitor (
+Champhon
+ Industrial Ltd
+)
+“Attest” = witness, and usually by solicitors. Solicitor may not attest signatures of other parties to the deed whom they do not represent (Law Society PD A9)
+Vs. “attesting signature’ of director 
+Natural person deed = deemed sealed as per s.19(2) CPO
+
+SLIDE 12
+Proof of Due execution - companies
+Prior 3
+rd
+ March 2014 old regime deeds had to be executed under company’s common seal and affixed in accordance with articles of association
+S.11 old CO provided that Table A applies (usually 2 director rule)
+If deed – ‘signed, sealed and delivered’ 
+S.20(1), 23, 23A(1) and 23A(2) CPO  - statutory presumptions 
+After 2
+nd
+ March 2014 – either under company seal or under hand of one or more directors
+S.127 Companies Ordinance (see s.128(1)(a)-(c) also) – check articles 
+S.127(6) CO presumption of due execution if document purported to have been signed in accordance to s.127(3) (under hand)
+If common seal used – CPO statutory presumptions  above will still apply
+
+SLIDE 13
+Company Common Seal(1)
+Old regime – common seal affixed in manner authorized by Articles of Association
+S.93(1) old Companies Ordinance: metallic Seal which its name must be engraved in legible characters – rubber seal would not suffice - 
+On Hong Trading Co Ltd v Bank of Communications 
+(unreported) HCMP 3099/1999, 29/02/2000
+
+SLIDE 14
+Company common seal (2)
+Illegible common seal 
+Wang 
+Zhidun
+ v Tsoi Ming Pui
+ [2011] 3 HKC 314 – applied 
+On Hong 
+and s.93(1) old CO
+Wrong or missing common seals
+Au Wai Ming v Kam Tze Ming Alfred
+ [2009] 4 HKC 469, [2010] 1 HKLRD 198, CA
+: refinancing released old mortgage and replaced with new mortgage. Old mortgage deed of release executed by AIG (as attorney of old mortgagee), and as ‘servicer’ (2
+nd
+ mortgagee). Only one common seal was on the service line with two 
+authorised
+ signatures of AIG employees. Invalid execution when the document clearly intended to effect two separate executions. Common seal affixed adjacent to servicer side only
+
+SLIDE 15
+Missing or wrong common seal
+
+SLIDE 16
+Company Common seal (3)	
+Common law: common seal enough, there is no requirement of attestation - 
+Peking Fur Store Ltd v Bank of Communications 
+[1993] 1 HKC 625; 
+Grand Trade Development Ltd v 
+Bonance
+ International Ltd
+ [2000] 4 HKC 57. 
+Director signatures 
+etc
+ = statute
+
+SLIDE 17
+“attestation” – authorized manner
+Attestation (directors/authorized person signing) – mode of execution complies with its articles of association (i.e. authorized manner). ” 
+S.11 of old CO – Table A would apply if there no express or implied exclusive or modification (unlikely any)
+Article 114 of Table A provides that every instrument to which the seal must be affixed must be signed by a director and must be countersigned by the secretary or by a second director or by some other person appointed by the directors for the purpose (`the 2 director rule’). 
+Following the enactment of the 
+Companies Ordinance
+ (Cap 622), section 9 of Schedule 11 Part 3 of the Transitional Arrangements provides that Table A continues to apply to existing companies. 
+The Financial Secretary is empowered to prescribe new model articles for companies by s 78 of Cap 622
+ 
+
+SLIDE 18
+Statutory presumptions (1)
+Not missing seal but not enough signatures and/or director signature
+S.20(1) CPO presumption: 2 directors signatures then 
+deem
+ duly executed
+S. 23 CPO presumption: if instrument appears to be duly executed then it will be presumed, 
+until contrary to is proved
+, to have been duly executed
+Leung Kwai Lin Cindy v Wu Wing Kuen 
+[2001] 1 HKLRD 212, CFA – “s. 23 CPO is remedial, to facilitate conveyancing..”
+If s.20 applies, s.23 applies also (but not other way around)
+Together this means:
+ After 1984 and 2 directors signatures then under s.20(1) CO - deemed due execution 
+If not, you cannot use s.23 to presume due execution – so you need to ask for relevant Board resolution 
+
+SLIDE 19
+Statutory presumptions (2)
+2 signatures
+Kan Yui Man Allen v Ng Hiu Nam 
+(unreported) DCMP 174/2011, 14/10/2011 – common seal & two signatures BUT 1 signature was an ‘authorized person’ only so s.20(1) CPO not apply
+1 signature: 
+Tread East Ltd v Hillier Development Ltd 
+(unreported) HCA 907/1991, 11/11/1992 S.23 CPO – presumed "duly executed” means cannot ask for board res
+See also 
+Lee Chat v China Roll Industries Ltd 
+[1998] 1 HKC 269 – this case P did not show Articles
+“signed by two of its directors or in such manner as the directors shall from time to time by resolution determine”
+[SEAL & Chan’s signature]
+Sealed with the common seal of the vendor and signed by Chan Bing Fai, one of its directors as directed and 
+authorised
+ by the Board of Directors to sign …
+
+SLIDE 20
+
+SLIDE 21
+Statutory presumptions (3)
+1 signature 
+- Liu Xiao Dong v Chase Eagle Development Ltd 
+[2013] 1 HKLRD 933:
+A mortgage (part of the debts) assigned and execution of this assignment the subject matter. 
+“Foreign” company (ICBC branch Foshan) just 1 signature but there words “duly authorized by government body’ 
+Question is s.23 CPO – appears to be duly executed at the time 
+Analogy drawn – in HK if just 1 single director/person ‘authorized’ then you need articles of association before you can use s.23 CPO
+No evidence on constitution of Mainland Co. and lawyer opinion cannot overcome
+
+SLIDE 22
+Curing defective execution
+If articles not complied with then risk it may be set aside by the company – see 
+Au Hon Kwong v Sure 
+Woollen
+ Yarns Co Ltd 
+(unreported) HCMP 3979/1992, 29/01/1993  (a mortgage) but one can remedy this with a confirmatory assignment executed by the company that had defective execution
+Subsequent ratification by board resolution – can ratify defective title insofar as there is ‘no real risk’ of successful action by the company to set aside. Not apply to current S&P, only up in chain of title - 
+Ring View Ltd v Modern Thorns Co Ltd 
+No board resolution? Ok if secondary evidence could save the day – 
+Goldenfix
+ Properties Ltd v Cheer Hope Investments Ltd 
+[1993] 1 HKC 360
+Statutory declaration by soli = admissible evidence but not enough 
+parties could produce original minutes of board of directors (or certified copies)
+
+SLIDE 23
+No Real risk of title being set aside
+All else fails above but broader points like that company with defective execution has been wound up: 
+Hui Yuk Chun v Tang Wai Hang Henry 
+(unreported) HCMP 1/1998, 03/04/1998 
+Does not always work to say no real risk – improperly executed DMC not good = 
+Polyson
+ 
+Jewellery
+ Co Ltd v Liu Song Carlos 
+[2002] 2 HKC 183, CA (execution by one director but title not challenged for more than 20 years; held not sufficient merely to assert no real risk but all surrounding circumstances had to be shown by vendor).
+
+SLIDE 24
+Section 23A – another presumption
+s.23A(2): More than 15 years old as from current S&P conclusively presumed these defects are remedied - s.23A(2)
+s.23A(1): some deed up in chain of title executed before 9 May 2003 then there is a rebuttable presumption. Redundant now because s. 23A(2) applies to 15 years from current S&P which means 2010. Anything before 9 May 2003 would be covered by s.23A(2).
+Rebuttable presumption – 1 or more signatories who are persons who could have been authorized to attest then deed will be (rebuttable) presumed to have been duly executed
+Must supply articles in force at the relevant day
+Defective deed executed after 9 May 2003 but not more than 15 years so s.23A has no application (impossible now – 
+3rd regime)
+
+SLIDE 25
+Mode of execution after 2/3/2014 (1)
+Companies under new CO (after 2
+nd
+ March 2014)
+No longer must have common seal – but if have then metallic seal and still criminal offence to actually not have one – see s.124(3) & 124(4) CO
+If execute under common seal = must still comply with articles but the company may rely on ss.20(1), s.23, and s.23A(2) CPO 
+Can execute a document ”under hand”, or by deed with common seal
+and deliver it as deed (see 128(1) CO)
+
+SLIDE 26
+Mode of execution after 2/3/2014 (2)
+s.127(3) + s.128 CO = execution a deed ‘under hand’ method available under law
+Execution under hand – s.127(3)(a) & (b) 
+1 director only then he sign
+2 or more directors – any 2 directors or any director + company secretary
+“signed on behalf of the company” = ideal but not absolutely necessary. As long clear from document for company – 
+Williams v 
+Redcard
+ Ltd 
+[2011] EWCA Civ 466
+If need to sign a document on behalf of 2 or more companies, the person must sign the document separately in each capacity – s.127(4)
+Presumption under s.127(6) & (7) – purchaser in good faith for valuable consideration as long document 
+purports
+ to have been signed in accordance with s.127(3)
+
+SLIDE 27
+Proof of due execution for foreign companies
+Foreign company abroad – starting point is formal validity will be governed by the law of Hong Kong – 
+Adams v Clutterbuck 
+(1883) 10 QBD 403 – beyond a reasonable doubt that deed has been validly executed under HK law. In absence of expert evidence, HK courts will assume foreign law the same as HK law (
+Wang 
+Zhidun
+ v Tsoi Ming Pui
+ [2011] 3 HKC 314, 
+DCt
+) 
+Sections 20(1), 23 and 23A CPO presumptions can be utilized as if HK company
+Excelling Profits Investments Ltd v Sera Ltd 
+[1992] 2 HKC 262
+“
+That does not, in our view, mean that in the context of the Conveyancing and Property Ordinance it should be so limited. We agree with 
+Mr
+ Li that the underlying purpose of that Ordinance is to provide certainty in conveyancing matters and we would require compelling authority for the proposition that a purchaser could rely on the presumption of due execution only in the case of a Hong Kong registered company. We are satisfied that, for the purposes of this Ordinance, ‘corporation aggregate’ includes a foreign company and that the vendors were entitled to rely on the statutory provisions. There is therefore a presumption, which was not rebutted, that both powers of attorney were properly executed
+.”
+
+SLIDE 28
+What if there is no common seal in that jurisdiction? Expert Evidence: 
+Wang 
+Zhidun
+ v Tsoi Ming Pui
+ 
+[19]  The plaintiff submitted, and I agree, that the answers provided by the defendant’s solicitors could not be regarded as satisfactorily answering requisition 6(b) for the reasons that:
+(1)throughout the entire requisition stage until the scheduled completion date, the defendant provided no concrete or supporting evidence to show that execution by a PRC company using a rubber chop is as valid and proper as a common seal;
+(2)there is no PRC legal opinion in support of the contention that common seal is non-existent under Chinese laws; and
+(3)there is no evidence of PRC law proving that execution by a company using a rubber chop is regarded as due execution in the PRC.
+[20]  At the hearing, the defendant relied on paragraph 4 of the legal opinion dated 30 December 2009, where it was stated that Madam Yeung could represent FPFJ to sell the property and sign and apply stamp to relevant documents. The defendant’s counsel went on to submit that it was never mentioned that Madam Yeung should apply ‘common seal’ or ‘metallic seal’.
+[21]  In my judgment, the said portion of the legal opinion does not help the defendant. It only dealt with the authority of Madam Yeung to apply the seal and it did not deal with the manner in which the assignment was to be executed.
+[22]  The defendant’s counsel went on to invite this court to take judicial notice that it is not necessary for a PRC company to apply metallic or common seal as there is no such concept.
+[23]  I am of the view that the court is not able to take judicial notice of such matters. Only Chinese national laws applicable to Hong Kong are susceptible to judicial notice in Hong Kong courts by section 75 of the Interpretation and General Causes Ordinance (Cap 1) . The PRC Company Law is not an example of such laws so that it remains an issue of fact and must be proved by a suitably qualified expert.
+
+SLIDE 29
+Execution by way of a 
+poa
+Signed and sealed by direction and in the presence of donor of the power – s.2(1) Powers of Attorney Ordinance. 
+Section 26(1) LARCO – same applies to foreign powers of attorney and for that to apply, expert evidence will be required to establish that common seals are not used in the relevant foreign jurisdiction
+Proof of due execution of documents executed by the attorney
+S.13(1)(c) CPO – POA under which documents executed outside last 15 years (from current S&) not required to be produced for showing good title BUT purchaser can do own search such as in 
+Lo Hung Biu v Lo Shea Chung 
+[1997] 2 HKC 723
+Docs (via POA) more than 15 years from current S&P – conclusive presumption under s.13(4A) CPO that it was validly executed and POA in force at the time of execution (not revoked) and to have validly authorized the execution of the document
+
+SLIDE 30
+Execution by way of a POA (2)
+Docs less than 15 years from current S&P – POA must be produced under s.13(1)(c) CPO – 
+Yeung Dalla 
+Rudia
+ v 
+Copiluck
+ Ltd 
+[1992] 2 HKC 575
+Re Halifax – clear and cogent evidence – secondary evidence on doc existed, loss or destruction to your knowledge took place, reasonable explanation, and diligent search made in good 
+fiath
+ where instrument most properly be found
+2 affirmations here – one from vendor and one from solicitor who prepared POA. Diligent search and explained how come lost
+Only for Vendor side
+
+SLIDE 31
+General vs special 
+poa
+General Powers of Attorney
+Confer 
+donee
+ power to do behalf of donor anything that can be lawfully done as an attorney – 
+Standard Chartered Bank v Tang Chun 
+(unreported) HCMP 3289/98, 16/09/1999
+Do not limit general POAs – like in 
+Multi-More Industries Ltd v Tung Hoo Fai 
+[1991] 2 HKC 261
+Special Powers of Attorney
+Construction of terms important
+Gift or sale to Attorney himself or another: 
+Overseas Trust Bank Ltd v Tang Che Ching
+ [1994] 2 HKLR 73
+
+SLIDE 32
+Ip FUNG YEE v Norwegian Missionary society [1998] 1 HKLRD 94
+If a power is ambiguous, the donor is bound when the attorney bona fide places a reasonable interpretation on it and acts accordingly. However, if he acts in a way that does not comply with either possible interpretation, the donor is not bound by the attorney's acts. (
+Weigall
+ & Co v Runciman & Co [1916] 115 LT 61). 
+In my view there is an ambiguity as to the full extent of the powers conferred by this instrument, more particularly in the apparent contradiction between the very wide words " ... to do all such acts and things ... as in the opinion of the attorney may be necessary", which appear to confer an unfettered discretion upon the attorney, and the limitations necessarily imposed by the description of the specific powers which follow - unless the latter are read subject to the implication of words such as "without derogating in any way from the general powers aforesaid conferred upon the attorney", as I have suggested above. 
+Furthermore there is every reason to believe that the attorney in the present instance honestly considered that in making the assignment of property in question on behalf of the Norwegian Missionary Society by way of gift to the defendant, he was implementing the purposes for which the Society had conferred his powers upon him, especially bearing in mind the religious and charitable nature of both the Society and the defendant.
+
+SLIDE 33
+Ip Fung Yee (continued)
+In the present case there has never been any suggestion indicating that the donor at any time intended to avoid the 1991 assignment in question; all the indications were to the contrary. In particular, the fact that the defendant's solicitors made it clear that the Society was prepared to execute a confirmatory assignment was the best assurance that the purchaser could have asked for, that, far from having any intention to set aside the 1991.Assignment, the Society expressly affirmed it.
+
+SLIDE 34
+POA continued
+Irrevocable – if stated so then generally protected (ss4 and 5 POAO) but otherwise vendor must prove POA has not been revoked (expressly, death, bankruptcy or incapacity)
+Also note an Enduring Power of Attorney cannot be revoked by the incapacity of the donor  – and the Enduring POAO (that is the whole point of Enduring POA)
+S.5(2) POAO – if counter-party did not know attorney’s POA had been revoked, the transaction between them will be valid as if power had been in existence
+
+SLIDE 35
+POA Continued 
+S.5(4) POAO – what if up the chain in title there a chain with this issue? Then conclusive presumption in 
+favour
+ of purchaser not knowing as long as
+transaction completed within 12 months of date which POA came into operation OR
+Statutory declaration made within 3 months after completion of purchase, that he did not at the material time know of the revocation of power – 
+Kung Wing Chuen v Antony Louis Marden
+ [1990] 1 HKLR 540
+Note this SD cannot be made by attorney himself – 
+WOC Finance Co Ltd v Wing On Cheong Investment Co Ltd
+ [2000] 2 HKLRD 713 
+S.5(4) POAO may not be the only way in proving non-revocation – letter from the donor confirming that the power of attorney has not been revoked maybe – WOC (supra)
+
+SLIDE 36
+Offers to indemnify – P must accept?	
+Stakeholding
+ $ / Indemnity / undertaking to cure defect after completion
+Not bound to accept any offer (even if reasonable) 
+- Chan Fung Lan v Lai Wai Chuen 
+[1997] 1 HKC 1: s.18 Estate Duty Ordinance (repealed now) charge if within 3 years donor dies
+property subject to estate duty. Indemnity -18% offered as 
+stakeholding
+ by vendor 
+Held: not bound to accept – this is “not only a possible only liability”.
+Quite apart from the fact that a purchaser is not required to accept an indemnity, the practical difficulties of accepting indemnity or security is impossible to surmount in Hong Kong with the high speed and high volume transactions. Further in view of the current uncertainty regarding sale of properties after the three-year period, there appears to be no protection to the purchaser if the security is returned after the three-year period. If the purchaser wishes to sell the property again within the three-year period, he would likewise have to put up similar security. Hence I come to the view that the furnishing of security is not applicable in Hong Kong and the defendant has not proved title to the property and has not answered the requisition.
+
+SLIDE 37
+Purchaser bound to accept? Yes
+Lam Mee Hing v Chiang Shu Yin 
+[1995] 3 HKC 247
+Remedial works for slope (common area)
+This is an encumbrance, either IO comply then charge owners later, or BA under s. 27A(3) BO carry such works then owners responsible. 
+
+SLIDE 38
+"
+The second building order could only lead to one of the two possible consequences: (1) the incorporated owners complied with the order and carried out the remedial works; failing which (2) the Building Authority in the exercise of its power under s 27A(3) of the Buildings Ordinance carried out such remedial works. In either event, expenses would have to be incurred and owners of the individual units would be liable for a share of the expenses either under the deed of mutual covenant or s 33 of the Buildings Ordinance. Such shares of the expenses could be attached or charged against the title of the individual unit again either under the deed of mutual covenant or the relevant provisions of the Buildings Ordinance
+.”
+Held – an encumbrance but V undertook to discharge. After apportionment exposure not exceed HK$100,000 (1/147
+th
+ of 2.8-7m). Court order can see 
+stakeholding
+ arrangement of HK$100,000 was agreed/imposed
+
+SLIDE 39
+Purchaser bound to accept? Yes
+Hu Mei Yu Anastasia v King Best Enterprises Ltd 
+(unreported) HCA 9317/1998, 10/07/2000 
+Slope close to building– investigate and report order under s.27A BO
+
+SLIDE 40
+Held: Although just inspection & report order this can still be an encumbrance. Under s.27A there would be an order against the property and subsequently any costs of work or investigation shall be recoverable from the owners. So liability is from s.27A order and not from s.33(8) which is about quantum and not liability. 
+nand
+ shared amongst all owners. Vendor offer of undertaking should be accepted 
+“
+Approaching the undertaking offered by the plaintiff from the standpoint of a purchaser with robust common sense and willing and intending to see the transaction through to completion, the purchaser must come to the conclusion that with the undertaking he gets what he bargained for. However, the defendant's solicitors simply dismissed the offer of undertaking. They never requested for any security or any amount to be set aside or to be held as stake money. 
+A willing purchaser intending to complete would, if he thought the undertaking insecure, request for some form of security
+. They did not. I reject the defendant's objection that a mere undertaking was insufficient. In my view, the plaintiff's offer of 
+undertaking is reasonable and sufficient to discharge the encumbrance
+.”
+
+SLIDE 41
+Purchaser bound to accept? Yes
+Luk Ho Chang v Fook Man Finance Co Ltd 
+[2006] 2 HKLRD 489 
+Repair liability (replace lift) accrued before the date of S&P = encumbrance
+Contractors tender process completed – P suggested to V that estimated costs of repairs – money can be 
+stakeheld
+Mexon
+ Holdings Ltd v Silver Bay International Ltd 
+[2000] 1 HKLRD 935, CFA: `
+conveyancing transactions should be approached from the standpoint of a willing purchaser and a willing vendor, both possessed of reasonably robust common sense, both intending to see the transaction through to completion’ should be 
+favoured
+’
+
+SLIDE 42
+Purchaser bound to accept? No
+Go back to Giving Good title lectures 
+ 
+Lucky Health -
+$25.7m PI claim and $33m offered via bank guarantee – held wholly outside contemplation, litigation & liability risk (judgment against owners) – purchaser is not bound to ‘purchase a litigation’
+Gigabillion
+ Asia Pacific Limited v Sino Dynamic International Limited 
+[2014] 2 HKLRD 922, CA: three pending lawsuits against IO 
+Offer of indemnity did not cover full amount of liability (remedies sought not include damages, but still costs exposure) 
+Not backed up by any security other than $25k set aside to be 
+stakeheld
+ 
+Lo Yee Man v Si Chuan Property Development Consultants Ltd 
+(unreported) DCMP 478/2014, 08/05/2014, DC: PI claim but no judgment yet
+
+SLIDE 43
+Discrepencies
+ – signatures, ID# 
+etc
+
+SLIDE 44
+Discrepancies in signatures
+Vendor must prove the signatures and names the same person – solicitor negligence (
+Ma Chun-man v Yung, Yung, Yu, Yuen & Co 
+[1978] HKLR 26)
+Many Wise Investments Ltd v Tech Profit Development 
+[1993] 2 HKC 517
+Up in chain of title -- 1948 Assignment then 1982 Deed of Gift discrepancy in way surname was written out in her signatures. 
+Earlier one by Chinese brush and later one by ballpoint pen – signature part where Chinese Character of Tam 
+譚
+ . Earlier in literal form – fully written and other in abbreviated or simplified form
+Considering 
+lenghth
+ of time (34 years) – any suspicion which anyone may have entertained as to identity of signatories must be dissipated beyond all reasonable doubt
+Can cure with statutory declaration if different name/signature – 
+Chudai
+ (HK) Development Co ltd v Portia International Ltd 
+[1992] 1 HKLR 350
+
+SLIDE 45
+Discrepancies in name and id (1)
+Sunluck
+ International Development Ltd v Hing King Development Ltd 
+(unreported) HCMP 3160/1997, 21/11/1997 
+Company identified by its English and Chinese names as well as its registered office.  Company unaware that its Chinese name appearing in its company chop and common seal contained two erroneous characters : instead of "
+投資
+", 
+the characters read "
+發展
+”. But 
+correct reference to Company was in the body of the Assignment 
+Held: evidence admissible to identify the person when there ambiguity – can consider company registered address and BR number.
+
+SLIDE 46
+Discrepancies in Name & ID (2)
+Passport numbers: 
+Free Focus Ltd v Fels China Ltd 
+[1989] 2 HKC 568 
+Same signature, same name, different Canadian passport number between 2 documents
+The 2 docs made 
+in different notary publics
+Held: Notary public would have required proof of identity of the person whose signature they attested (witnessed) that they the same person. No problem
+ID numbers – these not expected to change - 
+Qin Tian v 
+譚震 
+(
+unreported) DCCJ 3712/2014, 22/07/2016, except ID numbers prior to 1960s may be different 
+Lai Wai v Lee Yuet Yung Pat 
+[2012] 5 HKC 163
+
+SLIDE 47
+Remedying the defect
+
+SLIDE 48
+Dealing with defects 
+
+SLIDE 49
+Confirmatory assignments
+Some legal or equitable estate remained vested in previous party to an assignment
+where a 
+company seal is missing
+ 
+where a company’s common seal 
+does not comply with the sealing requirements
+ laid down in s 93(1) of the 
+Companies Ordinance 
+(pre 3 March 2014) or s 124 of the 
+Companies Ordinance
+ (Cap 622) (post 3 March 2014); 
+where a 
+mortgage or charge has not been properly reassigned
+, released or discharged; 
+where the 
+wrong number of shares have been assigned or released
+; 
+where 
+an occupier has contributed to the purchase price or made mortgage repayments thereby acquiring an equitable interest in the property or has acquired an interest by way of a common intention constructive trust
+; and 
+where 
+property has been assigned into the name of a nominee and the nominato
+r has not renounced his equitable interest in the property
+ 
+
+SLIDE 50
+Execution of Confirmatory Assignment
+Registrar of High Court has power (following order from a judge) to execute a deed to cure defective tile under s.25A HCO (DC also under s.38A DCO)
+See s.25A HCO – neglect/refuse to comply judgment/order or cannot be  found
+Chong Chi Ting Chris v Kin On Building (IO) 
+[2023] HKDC 325 – not for convenience of property owners but only if there were special and exceptional circumstances
+One owner claim ‘owns’ roof along with his flat, but some others say it is common area and on subsequent assignments there were references to roof as common area
+Court held owner is correct – confirmatory assignments imposed on all other owners to exclude the roof as common area BUT Registrar not appointed to make confirmatory assignment. Rather the owner’s solicitors make for all other owners (SJ for developer’s)
+
+SLIDE 51
+Vesting orders
+S.45(b)(iii) Trustee Ordinance – most common imposed on trustees and court may order land to vest to beneficiary if expedient. Examples
+Vendor after entering into S&P 
+Ineffective due execution of assignment despite under S&P already sold property
+
+SLIDE 52
+Vesting Order (continued)
+Wrong seal = can be set-aside by Company. But before that – equitable title with counter-party already (
+Chan Ping Sang Johnny v SJ 
+[2017] 2 HKLRD 1082)
+Misdescribed Property in assignment – vesting order (
+Fook Tai Investment Co Ltd v SJ 
+[2013] 4 HKLRD 102)
+Company up in chain of title wound up so all interests 
+vestd
+ in government as bona vacantia so SJ is proper defendant (
+Re Lee Yang, Shiu Chuen Joyce
+ [2021] 4 HKLRD 252)
+See 
+Lead Properties Ltd v Secretary of Justice 
+[2022] HKCFI 3297 for more principles
+
+SLIDE 53
+VP Summons & WRIT of SUMMONS
+
+SLIDE 54
+No real risk & Defective titles
+
+SLIDE 55
+No good title – now what?
+
+SLIDE 56
+“Rescission” by purchaser
+Rescission = defects in formation of contract (like mistake, duress, 
+misrep
+), but for conveyancing “Rescission” is about termination + getting deposit back (for P) or forfeiting deposit (for V)
+Breach of the duty to show title (or give good title) = repudiatory breach 
+When showing good title, V does v poorly – accept repudiation? If defect can be remedied then no because technically V duty to give good title expires on date of completion 
+So fundamental that cannot be removed before completion - 
+A-Mayson Development Co Ltd v 
+Betterfit
+ Ltd 
+[1992] 2 HKC 533 BUT note, if V offer to remedy post-completion with indemnity 
+etc
+ – in some cases P must accept

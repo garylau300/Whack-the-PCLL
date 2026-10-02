@@ -62,6 +62,10 @@ that one is *the conventions and rules for changing it*.
 
 ## The notes half
 
+The prepared [PT1 LG5–7 exam notes pack](docs/lg567-exam-notes/README.md) includes
+14 topic pages, printable PDF and editable Word versions, worked problems, and a
+source coverage and conflict audit. Start with its [topic index](docs/lg567-exam-notes/index.html).
+
 - **`courseDetails/PCLL8010.js`** and friends — one file per course, each
   extending the same `window.COURSE_DETAILS`. This is where all authored
   content lives: course info, assessment structure, materials, and per-session
