@@ -14555,6 +14555,2791 @@ window.COURSE_DETAILS.PCLL8010 = {
       },
     },
 
+    // LG10 sources and drafting decisions: docs/lg10-source-review.md.
+    LG10: {
+      "kind": "LG",
+      "authors": [
+        "Eric Cheung",
+        "Julienne Jen",
+        "Vivian Chan"
+      ],
+      "objectives": [
+        "Draft a Defence which responds precisely to each material allegation and states the defendant’s positive case.",
+        "Distinguish substantive set-off eligibility from an independent Counterclaim and select the appropriate party procedure.",
+        "Draft and assess third-party and co-defendant notices, leave applications, directions and judgment requests.",
+        "Explain procedural independence, direct joinder, further-party claims, contribution offers and costs."
+      ],
+      "topicsCovered": [
+        "Defence service, formalities, material facts, particulars and statements of truth",
+        "Admissions, denials, non-admissions, saving provision and general traverses",
+        "Worked office-entry and disclosed-agent diamond-sale Defences",
+        "Legal and equitable set-off, contractual exclusion and independent Counterclaim",
+        "Additional-party Counterclaims, service packages and the O.16 r.8 exclusion",
+        "Worked defective-packaging Defence, contractual protections, mitigation, price, interest and set-off",
+        "Third-party gateways, substantive indemnity and same-damage contribution",
+        "Leave, Forms 20–21, notice drafting, issue and service",
+        "Co-defendant notices, acknowledgements, directions and setting aside",
+        "Default, judgment over, execution and satisfaction",
+        "Settlement, procedural independence, direct plaintiff joinder and costs",
+        "Further parties, special leave period, contribution offers and Counterclaim adaptations"
+      ],
+      "examNotes": {
+        "intro": "Defence drafting under O.18, set-off and Counterclaims under O.18 r.17 and O.15 rr.2–3, and third-party proceedings under O.16. The worked drafts distinguish accepted facts, positive denials, conditional alternatives and the separate claims between each pair of parties.",
+        "issueTypes": [
+          {
+            "id": "defence-timing-form",
+            "title": "Serving and preparing the Defence",
+            "summary": "Calculate service under O.18 r.2, identify the client’s complete case and prepare a properly signed and verified pleading.",
+            "triggers": {
+              "bullets": [
+                "The defendant has given notice of intention to defend, but the statement of claim arrived after the acknowledgement period expired.",
+                "A summary-judgment summons was served before the defendant served a Defence.",
+                "The defendant challenged jurisdiction and the application has now been dismissed.",
+                "A corporate defendant sends a draft that includes witness conversations but no statement of truth.",
+                "The Defence is ready for the plaintiff, but another defendant may be affected by the affirmative allegations."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Identify whom the Defence represents and what it must achieve",
+                    "detail": "The Defence responds to the plaintiff’s claim and states the defendant’s positive case. O.18 r.7(1), r.8(1), r.12 and O.18 r.13 require the material facts, necessary particulars, specific matters and precise traverses needed to identify the real dispute.",
+                    "points": [
+                      "Read the claim, instructions and available contractual documents together; separate agreed facts from disputed facts and allegations outside the client’s knowledge.",
+                      "Write a one- or two-sentence case theory, then a basic response to every material allegation; compare the completed draft against both.",
+                      "Identify any monetary cross-claim, additional party and third-party claim before finalising the Defence; the timing of serving the Defence matters to O.16 r.1(2)."
+                    ],
+                    "why": "A list of denials can leave the court without the facts that make the defence sustainable. A case theory organises the draft, but cannot replace allegation-by-allegation responses.",
+                    "exam": {
+                      "write": "The Defence will specifically respond to [material allegations] under O.18 r.13 and plead [positive case] with its material facts and particulars under O.18 r.7, O.18 r.8 and O.18 r.12.",
+                      "trap": "Drafting the client’s narrative without responding to the pleaded claim, or replying to the claim without stating the client’s affirmative case."
+                    }
+                  },
+                  {
+                    "label": "Compute the ordinary deadline from the later event",
+                    "detail": "O.18 r.2(1) requires a defendant who gives notice of intention to defend, unless the Court gives leave otherwise, to serve the Defence before expiry of 28 days after the time limited for acknowledging service of the writ or after service of the statement of claim, whichever is later.",
+                    "points": [
+                      "Find the legally applicable acknowledgement deadline, not merely the date on which the defendant happened to acknowledge.",
+                      "Compare that deadline with the actual service date of the statement of claim and calculate 28 days from the later event.",
+                      "Serve every other party who may be affected by the Defence; the obligation is not confined to the plaintiff.",
+                      "Apply O.3 to the actual computation and check any court order varying the period; do not invent a universal calendar date from the lecture’s example."
+                    ],
+                    "why": "The defendant needs both the time allowed to elect to defend and the claim to which it must respond. Using the earlier event can shorten the protection the rule gives.",
+                    "exam": {
+                      "write": "The later event is [acknowledgement deadline / statement-of-claim service] on [date]; under O.18 r.2(1), the ordinary Defence period expires on [computed date], subject to [order].",
+                      "trap": "Counting from the actual early acknowledgement rather than the time limited for acknowledging service."
+                    }
+                  },
+                  {
+                    "label": "Apply the summary-judgment exception before using the ordinary clock",
+                    "detail": "Under O.18 r.2(2), service of an O.14 r.1 or O.86 r.1 summons before service of the Defence displaces r.2(1). If the resulting order gives leave to defend, the Defence is due within 28 days after the order or the other period specified in it.",
+                    "points": [
+                      "Check the sequence of service: the exception concerns a summons served before the Defence.",
+                      "Read the operative leave order, including any condition and specified Defence date.",
+                      "Distinguish the application timetable from the timetable for serving the substantive Defence."
+                    ],
+                    "why": "The court determines whether, and on what terms, the action proceeds to trial. The post-order Defence obligation must fit that decision.",
+                    "exam": {
+                      "write": "Because [O.14/O.86 summons] was served before the Defence, O.18 r.2(2) applies; [leave order] requires service by [date/period].",
+                      "trap": "Continuing to insist on the original r.2(1) date after a qualifying summary-judgment application."
+                    }
+                  },
+                  {
+                    "label": "Apply the jurisdiction-application exception separately",
+                    "detail": "O.18 r.2(3) displaces r.2(1) where the defendant applies under O.12 r.8(1) or (2). If that application is dismissed or no order is made, the Defence is due within 28 days after final determination or the other period specified by the Court.",
+                    "points": [
+                      "Identify an actual qualifying application, not a mere complaint about jurisdiction in correspondence.",
+                      "Find the final determination and read any consequential order fixing a different period.",
+                      "Keep a jurisdictional challenge separate from a substantive denial of liability."
+                    ],
+                    "why": "A defendant challenging the court’s jurisdiction should not have to use the ordinary Defence timetable as though the challenge had already failed.",
+                    "exam": {
+                      "write": "The O.12 r.8 application was [dismissed/no order made] on [date]; O.18 r.2(3) therefore fixes [28 days / ordered period] for the Defence.",
+                      "trap": "Assuming a qualifying jurisdiction application never affects the Defence timetable, or treating an informal objection as the application."
+                    }
+                  },
+                  {
+                    "label": "Meet the pleading formalities and select material facts",
+                    "detail": "O.18 r.6 requires the action year and number, title, description and service date; consecutive paragraphing where necessary, figures for dates and sums, the proper indorsement and signature. O.18 r.7(1)–(2) requires concise material facts and the material effect of documents or conversations, rather than the evidence proving them.",
+                    "points": [
+                      "Use the correct High Court or District Court heading and identify whose Defence is being served; do not copy a contradictory sample action number.",
+                      "Use subparagraphs to separate several allegations within one statement-of-claim paragraph.",
+                      "Plead the fact of being abroad, the contractual agreement or the warning given; leave the passport, name card and telephone note as evidence.",
+                      "O.18 r.11 permits a point of law, but not a page of legal argument in place of the factual foundation.",
+                      "O.18 r.7A is a specific exception where reliance on a relevant conviction or finding requires the stated particulars; it is not permission generally to plead evidence."
+                    ],
+                    "why": "Pleadings identify the issues for later proof. Clear form and succinct factual pleading keep the disputed issues separate from the means of proving them.",
+                    "exam": {
+                      "write": "The pleading will comply with O.18 r.6 and state [material facts] under O.18 r.7; [documents/witness proof] belong in the evidence.",
+                      "trap": "Copying all instructions into the pleading or omitting the action title, indorsement or signature."
+                    }
+                  },
+                  {
+                    "label": "Verify the correct party’s belief and check the whole document",
+                    "detail": "A Defence and Counterclaim is a pleading requiring verification under O.41A r.2(1)(a). O.41A rr.3–5 govern the authorised signatory, capacity, belief and form; for a corporation a director or other qualifying senior officer signs in the appropriate capacity.",
+                    "points": [
+                      "Identify the defendant’s authorised signatory and state the office held under O.41A r.3(5); do not name a director of the opposing party as the defendant’s signatory.",
+                      "If a legal representative signs, check O.41A r.3(10) and O.41A r.4(3), including signing personally and the client’s authority and explained belief.",
+                      "Check the names, dates, sums, paragraph cross-references and consistency between Defence, set-off, Counterclaim and prayer.",
+                      "The two supplied sample drafts use a placeholder for the statement of truth; a final pleading needs the completed verification."
+                    ],
+                    "why": "The verification connects the pleading to the party’s honest factual case. It cannot repair a wrong party description or an unsupported allegation.",
+                    "exam": {
+                      "write": "The [defendant] believes the facts stated in this Defence and Counterclaim are true; [authorised signatory] signs in the capacity of [office] under O.41A rr.3–5.",
+                      "trap": "Leaving “[Statement of Truth]” as the finished verification or copying the plaintiff’s mistaken corporate-signatory description."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The ordinary rule concerns service; filing requirements under O.18 r.5A are a separate check.",
+                "The lecture’s statement that O.18 r.3(3) requires the defendant’s combined document is imprecise: O.15 r.2(1) requires adding the Counterclaim to the Defence; O.18 r.3(3) concerns the plaintiff’s Reply and Defence to Counterclaim."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Prepare the case theory before drafting and use the basic-response schedule to audit omissions.",
+                "Read the actual court order before calculating a post-application deadline.",
+                "Check the court heading and corporate capacity against the client, not the sample’s typed label."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify the represented party and the pleaded causes of action.",
+                "Apply O.18 r.2(1), then check r.2(2)–(3) and any order.",
+                "Set out specific traverses and positive facts under O.18 r.7, O.18 r.8, O.18 r.12 and O.18 r.13.",
+                "Complete the heading, signature, indorsement and statement of truth."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Using “28 days after I filed my acknowledgement” as the universal rule.",
+                "Treating pleading, service and verification as interchangeable steps.",
+                "Asserting a positive defence without the facts and particulars that support it."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Ordinary service",
+                    "O.18 r.2(1)",
+                    "28 days from the later of the acknowledgement time limit and statement-of-claim service; serve affected parties"
+                  ],
+                  [
+                    "Summary-judgment summons",
+                    "O.18 r.2(2)",
+                    "Pre-Defence O.14/O.86 summons replaces the ordinary clock with the leave order’s period"
+                  ],
+                  [
+                    "Jurisdiction challenge",
+                    "O.18 r.2(3)",
+                    "Qualifying O.12 r.8 application and post-determination Defence period"
+                  ],
+                  [
+                    "Form and content",
+                    "O.18 r.6, O.18 r.7(1)–(2), 7A, 8(1), 11 and 12",
+                    "Correct formal pleading; material facts, special matters and necessary particulars"
+                  ],
+                  [
+                    "Verification",
+                    "O.41A r.2(1)(a), O.41A r.3–5",
+                    "Pleading verified by the proper signatory in the proper capacity"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "Where a plaintiff serves both a reply and a defence to counterclaim on any defendant, he must include them in the same document.",
+                  "cite": "O.18 r.3(3), Rules of the High Court (Cap.4A)"
+                }
+              ]
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "specific-traverses",
+                "label": "Admissions, denials and non-admissions"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-notice",
+                "label": "Issuing, serving and drafting the third-party notice"
+              },
+              {
+                "session": "LG3",
+                "issue": "computing-time",
+                "label": "Computing procedural time"
+              },
+              {
+                "session": "LG9",
+                "issue": "counterclaims-orders",
+                "label": "Judgment, stays and continuing proceedings"
+              }
+            ]
+          },
+          {
+            "id": "specific-traverses",
+            "title": "Admissions, denials and non-admissions",
+            "summary": "Dissect compound allegations, traverse the substance and plead reasons and any alternative factual version under O.18 r.13.",
+            "triggers": {
+              "bullets": [
+                "A claim combines the existence, date, parties, subject matter and price of a contract in one paragraph.",
+                "The defendant admits entering an office but says entry was permitted and the records taken belonged to a partnership.",
+                "The defendant denies entry because he was abroad, but the draft merely repeats the claimant’s allegation with “denied” in front.",
+                "The Defence ends with a sweeping general denial and leaves an essential allegation unanswered.",
+                "The claimant pleads a broad negligence allegation followed by a list of particulars.",
+                "The client knows nothing about the claimant’s replacement purchases or lost sales."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Make an allegation-by-allegation response schedule",
+                    "detail": "O.18 r.13(1) and (3) require specific traverses of facts in the statement of claim or counterclaim which the opposing party does not intend to admit. One numbered paragraph may contain several distinct allegations, each needing an accurate response.",
+                    "points": [
+                      "Split contract formation, contracting parties, authority, date, goods, price and delivery date into distinct factual units.",
+                      "For each unit, identify the instruction supporting admission, denial or non-admission.",
+                      "Do not deny the existence of a contract if the real dispute is only its date or the defendant’s capacity."
+                    ],
+                    "why": "A composite denial can be true on one minor detail while leaving the material allegation obscure. The court needs to know which facts really require proof.",
+                    "exam": {
+                      "write": "As to paragraph [n], [fact A] is admitted; [fact B] is denied because [reason]; [fact C], which is outside the defendant’s knowledge, is not admitted.",
+                      "trap": "Using the paragraph number as though it represented a single indivisible allegation."
+                    }
+                  },
+                  {
+                    "label": "Admit only what the client actually accepts",
+                    "detail": "An admission narrows the dispute under O.18 r.13. Partial admissions should identify the agreed matter precisely, then separately traverse the disputed facts, characterisation or consequences.",
+                    "points": [
+                      "Admit entry separately from whether it was wrongful or without authority.",
+                      "Admit receipt of $100,000 without admitting receipt of the claimed $168,000.",
+                      "Admit delivery without admitting defective delivery or consequent loss.",
+                      "Do not let adoption of the claim’s definitions import a disputed allegation into an admission."
+                    ],
+                    "why": "A well-defined admission saves proof on an agreed fact without surrendering a distinct issue such as authority, quality or causation.",
+                    "exam": {
+                      "write": "It is admitted that [specific event occurred]. It is denied that [disputed qualification]; the defendant avers [positive facts].",
+                      "trap": "Admitting a whole paragraph whose factual event is agreed but whose pleaded wrongfulness is disputed."
+                    }
+                  },
+                  {
+                    "label": "Use denial for a contrary factual case and give the reasons",
+                    "detail": "O.18 r.13(2) allows denial or non-admission, expressly or by necessary implication. Under r.13(5), a denial of a statement-of-claim or counterclaim allegation must state the reasons and, if a different version is intended, that version.",
+                    "points": [
+                      "State the operative reason: abroad at the alleged time, authorised entry, disclosed agency, good condition on delivery or a different agreed deposit.",
+                      "Avoid an evasive or negative-pregnant denial: saying “not without authority” should be followed by who authorised what and when.",
+                      "Both denial and non-admission require the claimant to prove the allegation; denial additionally communicates the contrary case relied on."
+                    ],
+                    "why": "The opponent must know whether to prove its allegation alone or also address an affirmative alternative. Reasons prevent a formal denial from concealing the real dispute.",
+                    "exam": {
+                      "write": "The allegation is denied. [Reason]. The defendant’s version is [material facts and necessary particulars] under O.18 r.13(5).",
+                      "trap": "Repeating the claimant’s sentence after “denies” without revealing which component is disputed or why."
+                    }
+                  },
+                  {
+                    "label": "Use non-admission for facts genuinely outside knowledge",
+                    "detail": "The lecture applies O.18 r.13(2) to matters the defendant cannot accept or positively contradict, such as the claimant’s replacement purchases, sales and losses. Non-admission puts those facts to proof without asserting an unsupported alternative.",
+                    "points": [
+                      "Distinguish ignorance of actual loss from a positive denial that the defendant’s breach caused that loss.",
+                      "In the packaging exercise, do not admit the Italian purchase and retail returns merely because they are alleged.",
+                      "Where the claim alleges the defendant itself breached the contract or was negligent, the lecture treats the issue as requiring an admission or denial, not an evasive non-admission.",
+                      "If the allegation is that the defendant was informed of a fact, a denial may be supported by the positive reason that no such information was given; this differs from ignorance of whether the underlying fact was true."
+                    ],
+                    "why": "Lack of knowledge and a contrary case are different. Distinguishing them prevents the pleading from making factual assertions the client cannot substantiate.",
+                    "exam": {
+                      "write": "[Claimant’s external event/loss] is not admitted. The defendant separately denies [breach/causation] for the reasons pleaded at [paragraph].",
+                      "trap": "Denying a loss without instructions, or using “not admitted” to avoid stating the client’s own case on breach."
+                    }
+                  },
+                  {
+                    "label": "Distinguish the material allegation from its particulars",
+                    "detail": "Under Chapple v Electrical Trades Union and Others [1961] 3 All ER 612, the specific-traverse requirement does not require a response to every item pleaded as particulars. The defendant must still answer the substantive allegation and plead any positive response to particular matters on which it relies.",
+                    "points": [
+                      "Deny negligence or breach clearly and state the defence; a particulars heading does not excuse ignoring the main allegation.",
+                      "Respond expressly to a particular where the client’s alternative case depends on it, such as permission, ownership or the cause of damp damage.",
+                      "Do not mechanically deny each evidential detail and obscure the actual issues."
+                    ],
+                    "why": "Particulars elaborate an allegation rather than replacing it. The pleading must identify the real issue while avoiding unnecessary repetition.",
+                    "exam": {
+                      "write": "The substantive allegation of [wrong] is denied with [reasons]. Under Chapple v Electrical Trades Union and Others [1961] 3 All ER 612, a separate traverse of each particular is unnecessary, subject to pleading [positive response].",
+                      "trap": "Treating the exemption for particulars as an exemption for the substantive allegation itself."
+                    }
+                  },
+                  {
+                    "label": "Assess an omission under the saving provision without relying on boilerplate",
+                    "detail": "O.18 r.13(6) treats an unanswered allegation as requiring proof where the Defence or Defence to Counterclaim states the nature of the case on the relevant issue. Jim Mai-gi v Chow Kwun-ping [1981] HKLR 674 (CA) requires essential allegations to be specifically traversed; a general concluding clause can safely deal only with inconsequential matters.",
+                    "points": [
+                      "Identify the unanswered allegation and the pleaded case on the exact issue to which it is relevant.",
+                      "Explain why that case necessarily requires proof of the allegation; do not invoke r.13(6) merely because some Defence has been filed.",
+                      "If drafting, cure the omission directly rather than relying on a possible saving construction.",
+                      "Introductory paragraph-reference and nomenclature clauses organise the draft; they have no substitute effect for a substantive traverse."
+                    ],
+                    "why": "The saving rule prevents a clear substantive case being defeated by a drafting omission. It does not reverse the specific-traverse requirement or license blanket denials.",
+                    "exam": {
+                      "write": "Although [allegation] is not expressly dealt with, [pleaded case on that issue] engages O.18 r.13(6) and requires proof; the safer draft expressly traverses it.",
+                      "trap": "Assuming “save as admitted, everything is denied” cures all essential omissions."
+                    }
+                  },
+                  {
+                    "label": "Convert the office-entry exercise into clean alternatives",
+                    "detail": "The LG10 office-entry exercise illustrates O.18 r.7(1), O.18 r.12 and O.18 r.13(5): plead the client’s material version, separate permitted entry from disputed removal, and exclude evidence and unsupported accusations.",
+                    "points": [
+                      "Scenario A: deny any entry and any taking; plead that the defendant was in Thailand from 12 to 16 June 2024 and did not know the office’s location. Do not plead passport contents or the suspected romantic motive for being framed.",
+                      "Scenario B: admit entry on 15 June; deny wrongful or unauthorised entry because the plaintiff opened the door; deny taking all the plaintiff’s books or stock and identify only the firm’s records for the relevant year.",
+                      "Permission to enter is not an admission that permission to remove records was given. The client says removal occurred despite protest, so do not merge these two issues.",
+                      "Plead the partnership and the client’s asserted entitlement as the factual basis of the positive case; the exercise is not a source for a general right to take partnership records by self-help."
+                    ],
+                    "why": "The two scenarios produce opposite responses to entry. Accurate pleading depends on instructions rather than a reusable stock denial.",
+                    "exam": {
+                      "write": "Entry is [denied/admitted]. [If admitted: it was with the plaintiff’s consent.] Taking the plaintiff’s property is denied; the defendant’s case is [absence abroad / identified partnership records].",
+                      "trap": "Saying the plaintiff consented to removal merely because he opened the door for entry."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The slide example switches the partnership records from 2024 to 2023; the client’s instructions and outline use 2024. The draft below follows the instructions.",
+                "A blanket denial and a blanket non-admission have the same insufficiency for essential allegations under O.18 r.13(3).",
+                "A conditional alternative preserves a denial; it should not be phrased as an unconditional admission of breach."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Create separate columns for allegation, response, reason and positive facts.",
+                "Audit ambiguous negatives by asking what exactly they deny and what positive case they imply.",
+                "State the material fact, then move its documentary proof into the evidence file."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Dissect each material allegation.",
+                "Admit the accepted component, deny with reasons and the alternative version, or specifically not admit unknown facts.",
+                "Address particulars only as needed for the substantive response or positive case.",
+                "Check O.18 r.13(6) if reviewing an omission; expressly repair it when drafting."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Leaving several disputed propositions inside one evasive denial.",
+                "Confusing lack of information with a factual case that information was never communicated.",
+                "Pleading a passport or an unsupported accusation of framing.",
+                "Transcribing the inconsistent year from the slide instead of the client’s instructions."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Specific traverse",
+                    "O.18 r.13(1)–(3)",
+                    "Untraversed facts may be admitted; general denials do not adequately traverse essential allegations"
+                  ],
+                  [
+                    "Reasons and version",
+                    "O.18 r.13(5)(a)–(b)",
+                    "A denial states its reasons and any different version relied on"
+                  ],
+                  [
+                    "Saving provision",
+                    "O.18 r.13(6)",
+                    "Pleaded nature of the case on the relevant issue can require proof despite an omission"
+                  ],
+                  [
+                    "Particulars",
+                    "Chapple v Electrical Trades Union and Others [1961] 3 All ER 612",
+                    "Separate traverse of every particular is unnecessary; the substantive allegation and positive case still matter"
+                  ],
+                  [
+                    "General clause",
+                    "Jim Mai-gi v Chow Kwun-ping [1981] HKLR 674 (CA)",
+                    "Essential allegations require specific traverse; inconsequential matters may be left to the general clause"
+                  ],
+                  [
+                    "Drafting content",
+                    "O.18 r.7(1), O.18 r.11 and O.18 r.12",
+                    "Material facts and necessary particulars; evidence and unsupported accusations excluded"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "A party who—\n(a) fails to deal with an allegation; but\n(b) has set out in his defence or defence to counterclaim the nature of his case in relation to the issue to which that allegation is relevant,\nis to be taken to require that allegation to be proved.",
+                  "cite": "O.18 r.13(6), LG10 Reference Material"
+                }
+              ]
+            },
+            "notes": [
+              {
+                "heading": "Adapted office-entry drafts",
+                "bullets": [
+                  "Scenario A — “It is denied that the Defendant entered the Plaintiff’s office as alleged or at all, or took any of the Plaintiff’s property. From 12 to 16 June 2024 the Defendant was in Thailand. At all material times the Defendant did not know the office’s location.”",
+                  "Scenario B — “Entry on 15 June 2024 is admitted. It is denied that entry was wrongful or without authority: the Plaintiff opened the door to admit the Defendant. The Defendant denies taking all the Plaintiff’s books or stock. Only the partnership’s books for 2024 were taken; the Defendant and Plaintiff were partners in that firm.”",
+                  "These are adapted drafting examples, not verbatim statutory quotations. Any claimed entitlement to remove the firm’s records must be supported by the facts and instructions rather than silently inferred from permission to enter."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "agency-defence",
+                "label": "Disclosed agency and the diamond-sale Defence"
+              },
+              {
+                "session": "LG10",
+                "issue": "packaging-defence-counterclaim",
+                "label": "Defective goods, contractual defences and the unpaid price"
+              }
+            ],
+            "citationAliases": [
+              "Jim Mai-gi v Chow Kwun-ping [1981] HKLR 674 (CA)",
+              "Chapple v Electrical Trades Union and Others [1961] 3 All ER 612"
+            ]
+          },
+          {
+            "id": "agency-defence",
+            "title": "Disclosed agency and the diamond-sale Defence",
+            "summary": "Plead the actual agreement, disclosed capacity and authority, then distinguish personal liability from the principal’s undelivered sale and the offered deposit refund.",
+            "triggers": {
+              "bullets": [
+                "The claimant sues a middleman personally or alternatively as an agent who acted without authority.",
+                "The middleman accepts the sale price but disputes the pleaded agreement date, delivery date and deposit.",
+                "The principal authorised the reduced price by telephone before the agent concluded the agreement.",
+                "The principal withdrew the next day, and the claimant refused the offered return of the actual deposit.",
+                "A trainee’s draft denies every part of the sale paragraph, although the client accepts that a sale was agreed."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Fix the case theory and the correct actors",
+                    "detail": "In LG10 Exercise 2 the defendant’s case is disclosed, authorised agency for the seller. O.18 r.7, O.18 r.12 and O.18 r.13 require the Defence to identify the actual contracting parties and why the first defendant says the claim does not impose personal liability.",
+                    "points": [
+                      "The buyer’s general manager acted for the buyer company; the first defendant acted for the second defendant, the diamond’s owner.",
+                      "Plead that the buyer knew the first defendant was acting for the named seller, not merely that agency existed privately between the defendants.",
+                      "Exclude the lunch introduction’s family relationship, the name card as evidence, and personal insults; retain the meeting and disclosure insofar as they particularise knowledge."
+                    ],
+                    "why": "The sample’s footnote distinguishes being an agent from being a disclosed agent. Without the buyer’s knowledge, the drafted case would omit the fact on which the stated defence relies.",
+                    "exam": {
+                      "write": "At all material times the first defendant acted for the second defendant, to the plaintiff’s knowledge; before the agreement [disclosure] was communicated to [buyer’s representative].",
+                      "trap": "Pleading agency alone without pleading disclosure to the plaintiff."
+                    }
+                  },
+                  {
+                    "label": "Correct the composite sale allegation without denying the agreed sale",
+                    "detail": "Under O.18 r.13(3) and (5), state that the oral agreement was made on 15 February 2025 between the buyer and the seller for HK$1,680,000; the first defendant participated as the seller’s agent, not personally.",
+                    "points": [
+                      "Admit the oral agreement, diamond and price consistently with the client’s instructions.",
+                      "Deny 16 February as the agreement date and state 15 February; do not reproduce the slides’ inconsistent 2024 dates.",
+                      "Deny delivery on 18 February and plead delivery within one week.",
+                      "State the condition of an immediate $100,000 deposit where it helps explain the later response to payment."
+                    ],
+                    "why": "A true defence disputes personal liability and particular terms, not the existence of all negotiations. Over-denial creates contradictions with the client’s own account.",
+                    "exam": {
+                      "write": "An oral agreement was made on 15 February 2025 between the Plaintiff and the Second Defendant for HK$1,680,000. The First Defendant acted as the Second Defendant’s disclosed agent; delivery was agreed within one week.",
+                      "trap": "Denying the entire agreement or using the stale year shown in some slides."
+                    }
+                  },
+                  {
+                    "label": "Identify the actual payment without an evasive money denial",
+                    "detail": "O.18 r.13(5) requires the different payment version: the plaintiff paid HK$100,000 to the first defendant as agent on 15 February 2025, by bank transfer, rather than the pleaded HK$168,000.",
+                    "points": [
+                      "Deny the claimed amount expressly and acknowledge receipt of the actual amount.",
+                      "Separate amount, date, mode and capacity; a denial of “cash $168,000 on 16 February” leaves all four uncertain.",
+                      "The sample treats bank-transfer detail as optional; it is useful where the composite allegation puts the payment mode in issue."
+                    ],
+                    "why": "The defendant can dispute the claimed sum while accepting that a deposit was received. A formula attacking the whole sentence fails to reveal that position.",
+                    "exam": {
+                      "write": "It is denied that the Plaintiff paid HK$168,000. On 15 February 2025 it paid HK$100,000 by bank transfer to the First Defendant acting for the Second Defendant.",
+                      "trap": "Implying no deposit was received because the claimed amount is wrong."
+                    }
+                  },
+                  {
+                    "label": "Plead the authority positively and with particulars",
+                    "detail": "Under O.18 r.12 and O.18 r.13(5), deny that the first defendant acted without consent or authority and state the telephone instructions given immediately before agreement: the seller agreed to the HK$1,680,000 price.",
+                    "points": [
+                      "State who gave authority, to whom, when, by what communication and for what transaction.",
+                      "Do not leave the negative phrase “not without authority” to do the work of the affirmative case.",
+                      "The private commission adjustment explains the instructions but does not need to become an evidential history in the Defence where it adds no material issue."
+                    ],
+                    "why": "The plaintiff’s alternative case attacks authority. Pleading the authorised transaction gives that alternative a concrete factual answer.",
+                    "exam": {
+                      "write": "The First Defendant had the Second Defendant’s express oral authority: immediately before the agreement he telephoned the Second Defendant, who agreed to sell the Diamond to the Plaintiff for HK$1,680,000.",
+                      "trap": "Denying “without authority” while omitting the authority actually relied on."
+                    }
+                  },
+                  {
+                    "label": "Distinguish non-delivery, an offered refund and personal liability",
+                    "detail": "O.18 r.13 requires a precise response to the pleaded unlawful failure. The sample admits non-delivery, pleads the seller’s withdrawal on 16 February 2025 and the offer to refund HK$100,000 on the seller’s behalf, and states the disclosed-agent defence to personal liability.",
+                    "points": [
+                      "Do not say the diamond was delivered or the deposit refunded; neither happened on the instructions.",
+                      "Do not deny the buyer’s entitlement to have the actual deposit returned merely because the buyer demanded $168,000.",
+                      "State that the buyer’s representative refused the offered $100,000 refund; offer and completed repayment are different facts.",
+                      "O.18 r.11 permits the sample’s point that the first defendant, as agent for a disclosed principal, has no personal liability on the stated sale; the underlying capacity, disclosure and authority must already have been pleaded."
+                    ],
+                    "why": "The claimant’s wider demand and the identity of the liable contracting party are separate. Keeping them separate prevents the Defence from contradicting the acknowledged offer of repayment.",
+                    "exam": {
+                      "write": "Non-delivery is admitted. On 16 February 2025 the First Defendant, on the Second Defendant’s instructions, offered to refund HK$100,000 on the Second Defendant’s behalf; the Plaintiff refused. The First Defendant relies on the disclosed-agency case pleaded above.",
+                      "trap": "Asserting that nobody owes any refund, or treating a rejected offer as completed repayment."
+                    }
+                  },
+                  {
+                    "label": "Audit the revised Defence against the instructions",
+                    "detail": "The sample Defence illustrates O.18 r.6, O.18 r.7, O.18 r.11, O.18 r.12 and O.18 r.13, but its repeated paragraph number and placeholders are not final pleading conventions. The final draft needs consistent numbering, the represented defendant’s signature and O.41A verification.",
+                    "points": [
+                      "Use a short introduction only if paragraph references or definitions need clarification.",
+                      "Keep the accepted sale and payment facts consistent with the positive agency case throughout.",
+                      "Correct the duplicate paragraph 3 in the sample, check every cross-reference and complete the statement of truth.",
+                      "The supplied materials are an extract: do not invent responses to the omitted paragraphs of the complete claim."
+                    ],
+                    "why": "A copied sample can reproduce mechanical errors even when its legal structure is sound. The instructions and full claim, rather than the sample’s typography, control the finished pleading.",
+                    "exam": {
+                      "write": "The revised Defence specifically answers [provided paragraphs], pleads disclosed authority and the actual payment, and is checked against O.18 r.6 and O.41A.",
+                      "trap": "Treating an incomplete sample extract as a complete Defence to allegations that were not supplied."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "Use 2025 from the statement of claim, client instructions and sample PDF; some slides use 2024.",
+                "The agent’s disclosed capacity addresses personal sale liability in the exercise; the pack does not establish an unrestricted immunity from every possible claim against an agent.",
+                "The offered refund was $100,000, not the claimant’s demand for $168,000."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Dissect each compound allegation into date, amount, capacity and obligation.",
+                "Use the buyer’s knowledge and the seller’s telephone authority as concise particulars.",
+                "Audit the draft for contradictions between admitted receipt and a purported denial of any refund obligation."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "State the two representatives’ capacities and the buyer’s knowledge.",
+                "Plead the 15 February 2025 agreement, price and one-week delivery.",
+                "Plead the $100,000 payment and the seller’s prior telephone authority.",
+                "Admit non-delivery, state withdrawal and the refused refund offer, then identify the personal-liability defence."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Denying the sale price or agreement the client accepts.",
+                "Pleading undisclosed agency when the defence actually depends on disclosed agency.",
+                "Confusing actual authority with the buyer’s knowledge of the agency.",
+                "Copying the sample’s duplicate numbering or unfinished truth statement."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Specific responses",
+                    "O.18 r.13(3), (5)",
+                    "Split sale terms, capacity, payment, authority and alleged unlawful failure"
+                  ],
+                  [
+                    "Agency foundation",
+                    "LG10 Exercise 2 sample Defence paras 2–4 and footnotes 2–5; O.18 r.7 and O.18 r.12",
+                    "Disclosed agency and express authority must be supported by pleaded facts"
+                  ],
+                  [
+                    "Point of law",
+                    "O.18 r.11; Exercise 2 sample para 7(3) and footnote 6",
+                    "A legal point may identify the issue after its material factual foundation is pleaded"
+                  ],
+                  [
+                    "Final form",
+                    "O.18 r.6; O.41A rr.2–5",
+                    "Correct numbering, title and completed verification"
+                  ]
+                ]
+              }
+            },
+            "notes": [
+              {
+                "heading": "Basic-response schedule for the supplied extract",
+                "table": {
+                  "headers": [
+                    "Claim paragraph",
+                    "Specific response",
+                    "Positive facts to plead"
+                  ],
+                  "rows": [
+                    [
+                      "1 — sale",
+                      "Admit the oral sale and price; deny personal contracting, 16 February date and 18 February delivery",
+                      "Seller and buyer contracted on 15 February 2025; disclosed agent; one-week delivery; immediate $100,000 deposit"
+                    ],
+                    [
+                      "2 — deposit",
+                      "Deny $168,000; acknowledge $100,000",
+                      "Payment on 15 February 2025 to the agent for the seller; bank transfer if useful"
+                    ],
+                    [
+                      "3 — absence of authority",
+                      "Deny and explain",
+                      "Prior telephone call and express consent to sell at HK$1,680,000"
+                    ],
+                    [
+                      "7 — failure to deliver or refund",
+                      "Admit non-delivery; deny the pleaded personal unlawful failure with reasons",
+                      "Seller withdrew next day; refund of actual deposit offered on seller’s behalf and refused"
+                    ]
+                  ]
+                }
+              },
+              {
+                "heading": "Adapted concluding response",
+                "bullets": [
+                  "“It is admitted that the First Defendant has not delivered the Diamond. On 16 February 2025, acting on the Second Defendant’s instructions, he informed the Plaintiff’s representative that the Second Defendant no longer wished to sell it and offered to refund HK$100,000 on the Second Defendant’s behalf. That offer was refused. The First Defendant relies on his pleaded position as the Second Defendant’s authorised agent for a disclosed principal.”",
+                  "This is an adapted example. It neither asserts that the principal may withdraw without liability nor invents claims outside the supplied extract."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "specific-traverses",
+                "label": "Admissions, denials and non-admissions"
+              },
+              {
+                "session": "LG10",
+                "issue": "counterclaim-parties",
+                "label": "Counterclaims against the plaintiff and additional parties"
+              },
+              {
+                "session": "LG10",
+                "issue": "co-defendant-directions",
+                "label": "Co-defendant notices and third-party directions"
+              }
+            ]
+          },
+          {
+            "id": "set-off-counterclaim",
+            "title": "Set-off eligibility and the independent Counterclaim",
+            "summary": "Test legal, equitable and contractual set-off separately; plead a Counterclaim where affirmative recovery or the excess of the cross-demand is sought.",
+            "triggers": {
+              "bullets": [
+                "The defendant says the claimant owes it money and wishes to reduce the amount payable on the original claim.",
+                "The cross-demand exceeds the plaintiff’s claim and the defendant wants judgment for the surplus.",
+                "A quantified debt is due between the same parties, but arises from a separate transaction.",
+                "The defendant seeks unliquidated damages for breach of another contract.",
+                "The plaintiff sues personally while the cross-demand is against the plaintiff as executor.",
+                "The contract expressly requires payment without set-off or counterclaim.",
+                "The plaintiff discontinues the action after the defendant has served a Counterclaim."
+              ],
+              "routes": [
+                {
+                  "when": "The defendant seeks reimbursement from an outsider rather than payment from the plaintiff.",
+                  "session": "LG10",
+                  "issue": "third-party-gateways",
+                  "label": "Third-party gateways, indemnity and contribution"
+                }
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Separate defensive reduction from affirmative recovery",
+                    "detail": "O.18 r.17 permits a monetary cross-demand, ascertained or not, to be pleaded as a defence of set-off whether or not also added as a Counterclaim. Under O.15 r.2 a Counterclaim is an affirmative claim against the plaintiff and must be added to the Defence.",
+                    "points": [
+                      "Set-off is the shield: it can extinguish or reduce the plaintiff’s recovery, but produces no affirmative recovery by itself.",
+                      "Counterclaim is the sword: plead the independent cause of action and relief sought from the plaintiff.",
+                      "The wording of O.18 r.17 does not make every monetary Counterclaim a valid set-off; the substantive legal or equitable basis still needs examination."
+                    ],
+                    "why": "The same facts can serve two different procedural purposes. Naming both documents does not establish the substantive entitlement to either.",
+                    "exam": {
+                      "write": "[Cross-demand] is pleaded as [set-off/Counterclaim/both]. O.18 r.17 governs the defensive use; O.15 r.2 governs the affirmative claim.",
+                      "trap": "Treating the existence of a Counterclaim as an automatic defence to payment."
+                    }
+                  },
+                  {
+                    "label": "Test mutuality and a liquidated debt for legal set-off",
+                    "detail": "The slides state that legal set-off requires liquidated debts and mutuality: claims between the same parties in the same capacities. Wong Wai Kuen t/a Mei Tak Decoration & Engineering Co v Polygon Contracting Ltd [2002] 2 HKLRD 569 and Nelson v Roberts (1893) 69 LT 352 address mutuality; Alco International Ltd v Akai Electronic Co Ltd [2000] 3 HKC 724 and Heng Hing Metal Factory Ltd v Unionwest Ltd HCA 9328/2000 address the unavailability of legal set-off for unliquidated claims.",
+                    "points": [
+                      "Identify the creditor and debtor of each debt, including the capacity in which each acts.",
+                      "A personal claim and a cross-demand against the same person as executor lack the stated mutuality.",
+                      "Determine whether the amount is a liquidated debt, rather than damages merely assigned a figure in a pleading.",
+                      "The slides permit unrelated transactions to qualify for legal set-off where the liquidated-debt and mutuality requirements are satisfied."
+                    ],
+                    "why": "Legal set-off compares mutual debts, not merely two people’s involvement in a commercial dispute. Capacity and the legal character of the sums decide whether that comparison is available.",
+                    "exam": {
+                      "write": "Legal set-off is [available/unavailable]: [debts] are [liquidated/unliquidated] and the parties act in [the same/different] capacities, applying Wong Wai Kuen t/a Mei Tak Decoration & Engineering Co v Polygon Contracting Ltd [2002] 2 HKLRD 569 and Alco International Ltd v Akai Electronic Co Ltd [2000] 3 HKC 724.",
+                      "trap": "Assuming numerical quantification makes disputed unliquidated damages a liquidated debt."
+                    }
+                  },
+                  {
+                    "label": "For unliquidated claims examine the equitable connection",
+                    "detail": "The slides distinguish equitable set-off by the cross-claim’s close connection to and impeachment of the main claim, and whether enforcement without taking it into account would be manifestly unjust. A separate independent transaction does not qualify merely because it supplies a Counterclaim.",
+                    "points": [
+                      "Explain what feature of the cross-demand impeaches the plaintiff’s demand, rather than just saying both claims concern the same business relationship.",
+                      "In Ridge Ltd v Golden Castle Ltd [2005] 3 HKC 592, the slides describe damages for breach of quiet possession as unavailable against rent because payment of rent was not dependent on that compliance.",
+                      "In Karpax (HK) Ltd v Yasmine Printing (China) Ltd [2008] 1 HKLRD 199, a claim arising under a separate contract was treated as a Counterclaim rather than equitable set-off.",
+                      "Do not state that every separate contract necessarily defeats equitable set-off; apply the stated connection and injustice analysis to the facts."
+                    ],
+                    "why": "Equitable set-off protects against unjust enforcement of the particular demand. It is not a general device to postpone payment whenever the defendant has another grievance.",
+                    "exam": {
+                      "write": "The cross-demand [does/does not] impeach [main demand] because [connection]; enforcement without accounting for it would [be/not be] manifestly unjust, applying Ridge Ltd v Golden Castle Ltd [2005] 3 HKC 592 and Karpax (HK) Ltd v Yasmine Printing (China) Ltd [2008] 1 HKLRD 199.",
+                      "trap": "Assuming all claims between the parties qualify for equitable set-off or that every unliquidated claim is incapable of any set-off."
+                    }
+                  },
+                  {
+                    "label": "Check an express exclusion before relying on set-off",
+                    "detail": "The slides require a clear, unambiguous express intention to exclude set-off. A payment term excluding deduction or withholding by set-off, counterclaim or otherwise can require the cross-demand to be pursued by Counterclaim rather than deducted from payment.",
+                    "points": [
+                      "Identify the actual wording of the payment provision and its scope.",
+                      "Do not infer exclusion merely from a clause requiring payment on a certain date.",
+                      "Distinguish an exclusion of deduction from extinction of the defendant’s underlying cause of action: the slides preserve pursuit by Counterclaim."
+                    ],
+                    "why": "The payment obligation and the right to pursue a cross-claim can be contractually separated. Ignoring that separation changes the agreed payment machinery.",
+                    "exam": {
+                      "write": "[Payment clause] clearly [does/does not] exclude set-off; [cross-demand] must therefore be [pursued separately by Counterclaim / assessed under the applicable set-off basis].",
+                      "trap": "Treating a no-set-off payment term as automatically extinguishing every Counterclaim."
+                    }
+                  },
+                  {
+                    "label": "Use the Counterclaim for the whole affirmative claim or excess",
+                    "detail": "Under Stooke v Taylor (1880) 5 QBD 569 at 575, set-off is good only to the amount of the plaintiff’s claim; recovery of the whole cross-demand, including an excess, requires a Counterclaim. O.15 r.2(4) allows judgment for the balance without determining costs automatically.",
+                    "points": [
+                      "Identify the original claim, the cross-demand and the balance if both are established.",
+                      "Plead the whole cause of action and prayer rather than only the amount needed to reduce the plaintiff’s demand.",
+                      "If the cross-claim is not eligible for set-off, it may still proceed as a Counterclaim; do not discard the cause of action because the defensive route fails.",
+                      "Keep costs discretionary rather than mechanically netting them with principal sums."
+                    ],
+                    "why": "Defensive extinction stops at zero. A defendant seeking a positive judgment must assert the claim on which that judgment rests.",
+                    "exam": {
+                      "write": "The set-off operates only up to [plaintiff’s claim]. The defendant Counterclaims for [whole cross-demand], including any excess, under O.15 r.2 and Stooke v Taylor (1880) 5 QBD 569 at 575.",
+                      "trap": "Seeking an affirmative payment under a set-off paragraph without pleading a Counterclaim."
+                    }
+                  },
+                  {
+                    "label": "Plead both roles explicitly when the cross-demand qualifies",
+                    "detail": "O.18 r.17 permits both uses; O.15 r.2(1) requires the Counterclaim to be added to the Defence. The set-off paragraph goes at the end of the Defence, before the separate Counterclaim heading, and the Counterclaim pleads its material facts and remedies like a statement of claim.",
+                    "points": [
+                      "In the Defence state that the qualifying sum is relied on in extinction or diminution of the plaintiff’s claim.",
+                      "Under COUNTERCLAIM, repeat relevant Defence facts by accurate paragraph references and plead missing cause-of-action elements.",
+                      "State the amount, contractual or other sourced interest basis and prayer; do not assume a general Defence prayer supplies affirmative relief.",
+                      "Use O.18 r.18 to apply the relevant pleading provisions to the Counterclaim and Defence to Counterclaim."
+                    ],
+                    "why": "The set-off paragraph tells the court how the cross-demand affects the plaintiff’s recovery. The separate Counterclaim tells it what affirmative judgment the defendant seeks.",
+                    "exam": {
+                      "write": "Further or alternatively, the Defendant relies on [qualifying cross-demand] by way of set-off in extinction or diminution of the Plaintiff’s claim, and Counterclaims for [relief] below.",
+                      "trap": "Adding a Counterclaim heading while omitting its cause of action or the explicit defensive set-off plea."
+                    }
+                  },
+                  {
+                    "label": "Preserve the Counterclaim’s life independently of the original claim",
+                    "detail": "O.15 r.2(3) permits the Counterclaim to proceed despite judgment for the plaintiff or stay, discontinuance or dismissal of the action. O.15 r.5(2) nevertheless allows the Court, on the relevant party’s application, to strike out, separately try or otherwise deal with a Counterclaim that belongs in a separate action.",
+                    "points": [
+                      "Do not assume success or failure of the original claim automatically determines the merits of the cross-claim.",
+                      "Distinguish independent procedural life from proof of the Counterclaim’s own elements.",
+                      "Where the plaintiff intends to defend the Counterclaim, O.18 r.3(2) and (4) require a Defence to Counterclaim within 28 days of service; a Reply alone is not its substitute.",
+                      "If both a Reply and Defence to Counterclaim are served, O.18 r.3(3) requires one combined document."
+                    ],
+                    "why": "An affirmative claim does not disappear merely because the plaintiff abandons its own. The court can still control an inconvenient combined trial.",
+                    "exam": {
+                      "write": "Under O.15 r.2(3), [discontinuance/dismissal/stay] does not itself end the Counterclaim; [counterclaimant] must still prove [elements], subject to O.15 r.5(2).",
+                      "trap": "Treating a Counterclaim as merely a Defence which expires when the main claim ends."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "O.18 r.17 includes an unascertained monetary sum; that procedural wording must be read with the substantive legal and equitable set-off tests.",
+                "A set-off defence, a Counterclaim and a stay of judgment are different matters. The LG9 summary-judgment rules govern any proposed stay; a bare Counterclaim does not establish it.",
+                "A broad Counterclaim under O.15 r.2 can concern any matter whenever and however arising, subject to the Court’s separate-action control."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Draw a two-claim schedule showing parties, capacities, amount, transaction and remedy.",
+                "Explain separately why legal set-off fails and whether equitable set-off may still work.",
+                "Finish with the exact procedural use of the cross-demand and the relief sought."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify defensive reduction and affirmative recovery.",
+                "Test legal mutuality and liquidated debts; if necessary test equitable connection and injustice.",
+                "Check contractual exclusion.",
+                "Plead a specific set-off paragraph and a complete Counterclaim where both are available.",
+                "Explain survival, balance judgment and response timetable."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Equating sword and shield.",
+                "Finding mutuality because the same human name appears, despite different legal capacities.",
+                "Assuming every quantified damages demand is liquidated.",
+                "Ignoring an express no-set-off term."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Defensive cross-demand",
+                    "O.18 r.17",
+                    "Monetary set-off may be pleaded whether or not also Counterclaimed; substantive eligibility still needed"
+                  ],
+                  [
+                    "Extent of set-off",
+                    "Stooke v Taylor (1880) 5 QBD 569 at 575",
+                    "Set-off reduces the plaintiff’s claim; affirmative recovery of the excess requires a Counterclaim"
+                  ],
+                  [
+                    "Mutuality",
+                    "Wong Wai Kuen t/a Mei Tak Decoration & Engineering Co v Polygon Contracting Ltd [2002] 2 HKLRD 569; Nelson v Roberts (1893) 69 LT 352",
+                    "Same parties in the same capacities for legal set-off"
+                  ],
+                  [
+                    "Liquidation",
+                    "Alco International Ltd v Akai Electronic Co Ltd [2000] 3 HKC 724; Heng Hing Metal Factory Ltd v Unionwest Ltd HCA 9328/2000",
+                    "Unliquidated claims do not qualify for legal set-off"
+                  ],
+                  [
+                    "Equitable connection",
+                    "Ridge Ltd v Golden Castle Ltd [2005] 3 HKC 592; Karpax (HK) Ltd v Yasmine Printing (China) Ltd [2008] 1 HKLRD 199",
+                    "Examine impeachment, connection and manifest injustice rather than treating every cross-demand as a set-off"
+                  ],
+                  [
+                    "Affirmative action",
+                    "O.15 r.2(1)–(4); O.15 r.5(2)",
+                    "Counterclaim added to Defence, separate procedural life, possible balance judgment and trial control"
+                  ],
+                  [
+                    "Pleading and response",
+                    "O.18 rr.3(2)–(4), 18",
+                    "Counterclaim pleading rules and the plaintiff’s Defence to Counterclaim"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "Where a claim by a defendant to a sum of money (whether of an ascertained amount or not) is relied on as a defence to the whole or part of a claim made by the plaintiff, it may be included in the defence and set-off against the plaintiff’s claim, whether or not it is also added as a counterclaim.",
+                  "cite": "O.18 r.17, LG10 Reference Material"
+                },
+                {
+                  "text": "A counterclaim may be proceeded with notwithstanding that judgment is given for the plaintiff in the action or that the action is stayed, discontinued or dismissed.",
+                  "cite": "O.15 r.2(3), LG10 Reference Material"
+                }
+              ]
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "counterclaim-parties",
+                "label": "Counterclaims against the plaintiff and additional parties"
+              },
+              {
+                "session": "LG10",
+                "issue": "packaging-defence-counterclaim",
+                "label": "Defective goods, contractual defences and the unpaid price"
+              },
+              {
+                "session": "LG9",
+                "issue": "counterclaims-orders",
+                "label": "Judgment, stays and continuing proceedings"
+              }
+            ],
+            "citationAliases": [
+              "Stooke v Taylor (1880) 5 QBD 569 at 575",
+              "Wong Wai Kuen t/a Mei Tak Decoration & Engineering Co v Polygon Contracting Ltd [2002] 2 HKLRD 569",
+              "Nelson v Roberts (1893) 69 LT 352",
+              "Alco International Ltd v Akai Electronic Co Ltd [2000] 3 HKC 724",
+              "Heng Hing Metal Factory Ltd v Unionwest Ltd HCA 9328/2000",
+              "Ridge Ltd v Golden Castle Ltd [2005] 3 HKC 592",
+              "Karpax (HK) Ltd v Yasmine Printing (China) Ltd [2008] 1 HKLRD 199"
+            ]
+          },
+          {
+            "id": "counterclaim-parties",
+            "title": "Counterclaims against the plaintiff and additional parties",
+            "summary": "Use O.15 rr.2–3 for affirmative claims against the plaintiff and eligible additional parties, and apply O.16 r.8(2) before selecting a co-defendant notice.",
+            "triggers": {
+              "bullets": [
+                "The defendant claims a debt from the plaintiff and related relief from another participant in the same transaction.",
+                "The defendant seeks relief from a co-defendant but has no Counterclaim against the plaintiff.",
+                "The defendant intends to serve a Counterclaim on someone who has never been a party to the action.",
+                "A Counterclaim is served on an existing co-defendant without an amended title identifying that person.",
+                "A defendant labels its claim a contribution notice although it could be made by Counterclaim."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Start with the affirmative claim against the plaintiff",
+                    "detail": "O.15 r.2(1) permits a defendant to Counterclaim against the plaintiff in respect of any matter whenever and however arising, instead of bringing a separate action, subject to O.15 r.5(2). The Counterclaim is added to the Defence.",
+                    "points": [
+                      "Identify the plaintiff as the counterclaim defendant and state the cause of action and relief.",
+                      "Do not assume the cross-claim must arise from the original subject matter for the plaintiff-only r.2 route.",
+                      "Use a Defence and Counterclaim with distinct sections; the original defendant becomes the claimant in the cross-action."
+                    ],
+                    "why": "The starting plaintiff-facing claim supplies the procedural foundation for joining another person under r.3. A claim solely against a co-defendant is not made a Counterclaim against the plaintiff by changing its label.",
+                    "exam": {
+                      "write": "The Defendant Counterclaims against the Plaintiff for [cause and remedy] under O.15 r.2(1), adding it to the Defence.",
+                      "trap": "Starting the additional-party analysis without identifying any Counterclaim against the plaintiff."
+                    }
+                  },
+                  {
+                    "label": "Apply the additional-party gateway in its full context",
+                    "detail": "Under O.15 r.3(1), a defendant who Counterclaims against the plaintiff may join another person, already a party or not, where that person is allegedly liable along with the plaintiff in respect of the Counterclaim’s subject matter, or relief against that person relates to or is connected with the original subject matter.",
+                    "points": [
+                      "Identify which limb is relied on: liability along with the plaintiff in the Counterclaim, or relief connected to the original subject matter.",
+                      "The other person need not already be a party; do not confuse r.3 with the existing-party-only O.16 r.8 route.",
+                      "The phrase “who makes a counter-claim against the plaintiff” remains a prerequisite even though the slides’ shortened decision formula focuses on connection.",
+                      "The mere fact that the additional party has not itself sued the defendant does not bar a qualifying r.3 Counterclaim."
+                    ],
+                    "why": "Joinder resolves linked affirmative claims together, while the plaintiff-facing prerequisite prevents r.3 being treated as an unrestricted cross-action against anyone in the litigation.",
+                    "exam": {
+                      "write": "Having Counterclaimed against the Plaintiff, the Defendant may join [person] under O.15 r.3(1) because [joint liability in the Counterclaim / connected relief].",
+                      "trap": "Using the connected-relief limb to omit the express prerequisite of a Counterclaim against the plaintiff."
+                    }
+                  },
+                  {
+                    "label": "Choose the correct route for an existing co-defendant",
+                    "detail": "O.16 r.8(1) permits specified claims or issues against an existing party without leave, but r.8(2) excludes a claim which could be made by Counterclaim. Test O.15 rr.2–3 before using a notice; a notice is not a discretionary substitute for an available Counterclaim.",
+                    "points": [
+                      "If D1 Counterclaims against P and D2 meets O.15 r.3(1), use the Counterclaim procedure rather than a contribution notice for that claim.",
+                      "If D1 only seeks indemnity from D2 for the liability P asserts against D1 and has no Counterclaim against P, analyse O.16 r.8(1).",
+                      "For the lecture’s principal-and-agent example, the principal’s claim against the co-defendant agent for unauthorised contracting is a notice route on the stated facts; the plaintiff’s sale claim remains separate.",
+                      "The expression “Contribution Notice” does not restrict the notice to contribution: r.8 also covers indemnity, qualifying connected relief and issues."
+                    ],
+                    "why": "The party map and the asserted claim decide the route. The colloquial document name can conceal the broader statutory scope or the Counterclaim exclusion.",
+                    "exam": {
+                      "write": "[Claim] [can/cannot] be made by Counterclaim under O.15 rr.2–3. Accordingly O.16 r.8(2) [excludes/does not exclude] the proposed notice route.",
+                      "trap": "Choosing a notice merely because D2 is already named in the action."
+                    }
+                  },
+                  {
+                    "label": "Retitle the action and serve an existing additional party in time",
+                    "detail": "O.15 r.3(2) requires adding the additional counterclaim defendant’s name to the title and serving a copy of the Counterclaim. Under r.3(3), service on someone already a party must occur within the period for serving the Defence and Counterclaim on the plaintiff under O.18 r.2.",
+                    "points": [
+                      "Distinguish the original-action parties from the by-Counterclaim parties: original D is counterclaim plaintiff, original P is a counterclaim defendant, and the additional person is another counterclaim defendant.",
+                      "The combined heading should make both capacities clear; do not erase original party designations.",
+                      "Existing-party status removes the outsider package requirements, not the obligation to serve the Counterclaim.",
+                      "O.15 r.3(5A) applies O.14 r.5 to the specified Counterclaim against an existing party other than P."
+                    ],
+                    "why": "The title and service make the affirmative claim against the additional party visible. Existing knowledge of the original action is not notice of a newly pleaded cross-claim.",
+                    "exam": {
+                      "write": "Under O.15 r.3(2)–(3), [additional existing party] will be named in the title and served with the Counterclaim within the applicable O.18 r.2 period.",
+                      "trap": "Serving the plaintiff only and assuming a co-defendant must therefore answer the Counterclaim."
+                    }
+                  },
+                  {
+                    "label": "Use the sealed Counterclaim package for a newcomer",
+                    "detail": "O.15 r.3(2), (4) and (6) requires issue out of the Registry, service of a sealed Counterclaim, modified Form 14 acknowledgement, the originating process and all other served pleadings, with a Form 17 notice addressed to the newcomer. Party status begins on service.",
+                    "points": [
+                      "Distinguish the Registry-issued sealed copy from an informal draft forwarded by email.",
+                      "Include the process and served pleadings so the newcomer can understand both the existing action and the new cross-claim.",
+                      "Under O.15 r.3(5), the listed writ issue, service, service-out, acknowledgement and default provisions apply with the stated adaptations.",
+                      "Do not confuse Form 17 on the additional-party Counterclaim with Forms 20–21 used for third-party notices."
+                    ],
+                    "why": "A newcomer has not chosen to litigate and has not received the earlier papers. The adapted originating-process safeguards give it the same defensive opportunity as an ordinarily sued defendant.",
+                    "exam": {
+                      "write": "[New person] must receive the O.15 r.3(2) sealed package, modified Form 14 and Form 17 indorsement, and becomes a party from service.",
+                      "trap": "Treating service of an unsealed Defence and Counterclaim alone as the complete outsider procedure."
+                    }
+                  },
+                  {
+                    "label": "Apply trial control and the response obligations",
+                    "detail": "O.15 r.5(2) allows the Court on application to strike out the Counterclaim, order a separate trial or make another expedient order if it ought to be disposed of separately. The Counterclaim retains its own pleading requirements under O.18 r.18; the plaintiff’s response duties are governed by O.18 r.3.",
+                    "points": [
+                      "Distinguish the gateway to pleading a Counterclaim from whether combined disposition is convenient.",
+                      "State material facts and necessary particulars for each counterclaim defendant; a broad allegation that “all are liable” does not supply distinct foundations.",
+                      "Check the 28-day Defence-to-Counterclaim period for the plaintiff under O.18 r.3(4) and the adapted rules for a newly joined outsider.",
+                      "Do not state that separate-trial control destroys the substantive claim automatically."
+                    ],
+                    "why": "Combining claims serves efficiency only where it produces manageable litigation. The court retains control without turning joinder into an adjudication of liability.",
+                    "exam": {
+                      "write": "The Counterclaim satisfies [gateway], but [separation issue] is subject to O.15 r.5(2); the pleading and response must follow O.18 r.3 and O.18 r.18.",
+                      "trap": "Assuming a permitted joinder guarantees a single trial or proves the additional party liable."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The second limb of O.15 r.3(1) still sits within a rule for a defendant who Counterclaims against the plaintiff.",
+                "A person added as a counterclaim defendant is not automatically a defendant to the original plaintiff’s claim. Keep the two capacities distinct.",
+                "O.16 r.8 uses the same broad categories as O.16 r.1 but is for existing parties and is subject to r.8(2)."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Draw P → D and D → P plus any D → additional-party arrows before choosing the document.",
+                "Write the gateway and then list the exact service package.",
+                "Use original-action and by-Counterclaim headings to distinguish capacities."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify the Counterclaim against P under O.15 r.2.",
+                "Apply each additional-party limb in O.15 r.3(1).",
+                "Apply O.16 r.8(2) if considering a co-defendant notice.",
+                "Retitle and serve the appropriate existing- or new-party package.",
+                "Explain response, trial control and each pleaded cause of action."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Creating a freestanding Counterclaim solely against a co-defendant under O.15 r.3 without the plaintiff-facing prerequisite.",
+                "Ignoring O.16 r.8(2).",
+                "Confusing Forms 17, 20 and 21.",
+                "Omitting the original process and served pleadings for a newcomer."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Plaintiff-only Counterclaim",
+                    "O.15 r.2(1)–(3)",
+                    "Affirmative claim against P in any matter, added to Defence, with independent procedural life"
+                  ],
+                  [
+                    "Additional-party eligibility",
+                    "O.15 r.3(1)",
+                    "Counterclaim against P plus either joint subject-matter liability or connected relief against the additional person"
+                  ],
+                  [
+                    "Existing-party service",
+                    "O.15 r.3(2)–(3), (5A)",
+                    "Retitle, serve within the Defence period, and apply the specified Counterclaim summary-judgment adaptation"
+                  ],
+                  [
+                    "New-party package",
+                    "O.15 r.3(2), (4)–(6)",
+                    "Registry issue, sealed papers, Forms 14 and 17, party status and adapted process rules"
+                  ],
+                  [
+                    "Notice exclusion",
+                    "O.16 r.8(2)",
+                    "A claim available by Counterclaim is excluded from the existing-party notice route"
+                  ],
+                  [
+                    "Court control",
+                    "O.15 r.5(2); O.18 r.3 and O.18 r.18",
+                    "Separate-action control and proper pleading and response"
+                  ]
+                ]
+              }
+            },
+            "notes": [
+              {
+                "heading": "Route comparison",
+                "table": {
+                  "headers": [
+                    "Target and claim",
+                    "Procedure",
+                    "Critical qualification"
+                  ],
+                  "rows": [
+                    [
+                      "P alone — affirmative claim",
+                      "O.15 r.2 Counterclaim added to Defence",
+                      "Any matter whenever and however arising, subject to trial control"
+                    ],
+                    [
+                      "P plus another person — eligible related affirmative claim",
+                      "O.15 r.3 additional-party Counterclaim",
+                      "First identify the Counterclaim against P and then the other-person limb"
+                    ],
+                    [
+                      "Existing co-defendant — qualifying claim not available by Counterclaim",
+                      "O.16 r.8 notice",
+                      "No leave; check r.8(2) and adapted directions procedure"
+                    ],
+                    [
+                      "Outsider — qualifying contribution, indemnity, connected relief or issue",
+                      "O.16 r.1 third-party notice",
+                      "Notice of intention to defend; leave unless writ and pre-Defence issue"
+                    ]
+                  ]
+                }
+              },
+              {
+                "heading": "Adapted two-capacity title",
+                "bullets": [
+                  "By Original Action — [P], Plaintiff; [D], Defendant.",
+                  "By Counterclaim — [D], Plaintiff; [P], First Defendant; [Additional Person], Second Defendant.",
+                  "Keep the actual action number and forum. The title shows procedural capacities and does not state that liability has already been established."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "set-off-counterclaim",
+                "label": "Set-off eligibility and the independent Counterclaim"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-gateways",
+                "label": "Third-party gateways, indemnity and contribution"
+              },
+              {
+                "session": "LG10",
+                "issue": "co-defendant-directions",
+                "label": "Co-defendant notices and third-party directions"
+              }
+            ],
+            "citationAliases": [
+              "Form 14",
+              "Form 17",
+              "Forms 20–21",
+              "Forms 17",
+              "Forms 14"
+            ]
+          },
+          {
+            "id": "packaging-defence-counterclaim",
+            "title": "Defective goods, contractual defences and the unpaid price",
+            "summary": "Answer the goods claim in layers, plead the contractual and mitigation alternatives, and claim the unpaid price and contractual interest as both Counterclaim and qualifying set-off.",
+            "triggers": {
+              "bullets": [
+                "The buyer alleges all 3,500 boxes were water damaged when delivered, while the supplier says they were sound on delivery.",
+                "The warehouse had holes in its roof and standing water, and the delivery driver warned against storing cardboard there.",
+                "The buyer first raised defects after the contractual 14-day period and had never returned the boxes.",
+                "The buyer claims HK$433,000 for Italian replacements, freight and lost profit, although local replacements were available.",
+                "The supplier remains unpaid for goods priced at HK$52,500 plus HK$2,000 delivery.",
+                "The buyer alleges knowledge of lucrative sale-or-return contracts, while the supplier knew only that two retailers had ordered."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "State the complete defence theory before the paragraph responses",
+                    "detail": "Under O.18 r.7, O.18 r.8, O.18 r.12 and O.18 r.13, the packaging Defence combines sound delivery, the buyer’s storage as the alternative cause, reliance on express terms, mitigation and the unpaid price. The accepted contract consists of the 23 November 2024 quotation and printed Standard Terms, accepted by the buyer’s letter dated 25 November.",
+                    "points": [
+                      "Admit the corporate descriptions, agreement, goods and delivery date where instructed.",
+                      "State the written contractual documents and incorporated Standard Terms, rather than admitting an unexplained contract while omitting the terms relied on.",
+                      "Keep denial of defect or breach primary, with contractual protections and set-off pleaded further or alternatively if liability is established.",
+                      "The counterclaim theory is full performance and a price due but unpaid; do not let an unqualified admission of defective delivery contradict it."
+                    ],
+                    "why": "The different answers belong to one coherent case: the supplier performed, the buyer caused any later damage, and in any event the claimed recovery is resisted on pleaded alternative grounds.",
+                    "exam": {
+                      "write": "The Defendant supplied the Boxes in good condition under the written Contract and relies alternatively on clauses 5–7 and failure to mitigate; it Counterclaims for the unpaid price and contractual interest.",
+                      "trap": "Listing defences without showing which are primary and which are conditional alternatives."
+                    }
+                  },
+                  {
+                    "label": "Separate communicated commercial knowledge from facts about the buyer’s contracts",
+                    "detail": "O.18 r.13(3) and (5) require distinct responses to the four allegations in claim paragraph 4. The sample admits the use of the boxes and the seasonal purpose, admits knowledge of orders from the named retailers, but denies information about lucrative terms and sale-or-return conditions.",
+                    "points": [
+                      "Admit paragraph 4.1’s display purpose and paragraph 4.4’s seasonal timing on the supplied instructions.",
+                      "For paragraph 4.2, admit the existence of retailer orders communicated by the acceptance letter, but deny knowledge that they were potentially lucrative.",
+                      "For paragraph 4.3, deny having been told of sale-or-return terms and give the reason: no such terms were communicated to the supplier.",
+                      "Do not transform lack of knowledge of profitability into a positive allegation that the retailer contracts were unprofitable."
+                    ],
+                    "why": "The pleading concerns the supplier’s knowledge at contracting, not merely the truth of the buyer’s later losses. Separate information, source and content before selecting denial or non-admission.",
+                    "exam": {
+                      "write": "The Defendant knew from the Plaintiff’s letter dated 25 November 2024 that [retailers] had ordered, but was not informed of and had no knowledge of [profitability/sale-or-return terms].",
+                      "trap": "Admitting all alleged commercial knowledge because the supplier knew two retailers were involved."
+                    }
+                  },
+                  {
+                    "label": "Admit delivery and plead the competing condition-and-storage case",
+                    "detail": "Under O.18 r.13(5), deny paragraph 7’s breach with the positive fact that the boxes were in good condition on delivery. Plead the damp warehouse, roof holes, water and warning; if damage occurred, the alternative case is the buyer’s failure to store the boxes properly.",
+                    "points": [
+                      "Admit delivery on 15 December 2024 in due performance of the Contract.",
+                      "Describe the wet storage conditions and warning as material events, without transcribing the later telephone note or recounting the director’s inspection as proof.",
+                      "Particularise improper storage: remaining in the damp warehouse and failure to follow the warning.",
+                      "The signed delivery note and partial inspection are evidence supporting the case; neither proves by itself that every box was inspected or that later damage was impossible."
+                    ],
+                    "why": "The defect’s timing controls whether it is attributed to the supplier’s delivery or the buyer’s subsequent storage. A bare denial of breach would hide that factual contest.",
+                    "exam": {
+                      "write": "The Boxes were delivered in good condition. If defects occurred, which is denied, they resulted from the Plaintiff’s failure to store them properly despite [warehouse conditions and warning].",
+                      "trap": "Pleading only “no breach”, or asserting complete inspection of every box from a signature the client says preceded such inspection."
+                    }
+                  },
+                  {
+                    "label": "Plead each contractual restriction and the facts engaging it",
+                    "detail": "The sample accepts the implied terms alleged in claim paragraph 5 and pleads Standard Terms clauses 5–7 in addition: a defective-goods claim within 14 days, exclusion of indirect loss or loss of profit, and a cap at the total price paid under the Contract.",
+                    "points": [
+                      "Clause 5: delivery was on 15 December 2024; the pleaded discovery was 31 December and the supplier learned of the complaint only on service of proceedings on 4 October 2025. Plead the absence of a timely claim, not just the clause number.",
+                      "Clause 6: identify the claimed lost profit and any loss said to fall within the wording; do not call every replacement expense an indirect loss without analysis.",
+                      "Clause 7: use “total price paid”, not “total price payable”. The price is outstanding, so the wording is especially important; do not silently substitute a HK$54,500 cap.",
+                      "Pleading reliance on terms does not itself establish their validity or enforceability. The supplied exercise does not decide every possible statutory control over them."
+                    ],
+                    "why": "An alternative contractual defence needs both the actual term and the factual trigger. Incorrect paraphrase of “paid” can change the asserted liability limit.",
+                    "exam": {
+                      "write": "Further or alternatively, the Defendant relies on clauses 5–7: [no claim within 14 days], [specified excluded loss] and [cap measured by the actual price paid], subject to their applicable operation.",
+                      "trap": "Treating the stated contract price as the clause 7 cap without reading “price paid”, or presenting every exclusion as automatically enforceable."
+                    }
+                  },
+                  {
+                    "label": "Answer breach, causation, external events and quantum separately",
+                    "detail": "The sample’s responses to claim paragraphs 8–9 deny breach and causation, do not admit the buyer’s purchases, dates, returns and loss, and plead the storage and contractual alternatives. O.18 r.13 distinguishes those positive denials from matters requiring the buyer’s proof.",
+                    "points": [
+                      "Deny that any breach by the supplier caused the pleaded replacement sequence or sales losses.",
+                      "Do not admit the Italian order, its cost, delivery dates, returned stock or claimed profit simply because the client cannot disprove them.",
+                      "Check the pleaded total: HK$108,000 replacements + HK$15,000 freight + HK$310,000 profit = HK$433,000. Arithmetic consistency does not establish entitlement.",
+                      "The buyer’s claim to interest is not an admission of principal liability. The sample basic response leaves that paragraph to the already pleaded substantive case; when drafting, state any necessary dispute clearly rather than relying blindly on a saving clause."
+                    ],
+                    "why": "The buyer must establish each causal and quantum step even if a term or quality issue is admitted. Separate responses prevent liability and amount being bundled into a single unexplained denial.",
+                    "exam": {
+                      "write": "Breach and causation are denied for [pleaded reasons]; the events and loss at paragraphs [8–9] are not admitted, and [contractual protections] are relied on alternatively.",
+                      "trap": "Admitting loss or causation by admitting delivery, or denying unknown retail events without an instructed positive case."
+                    }
+                  },
+                  {
+                    "label": "Particularise the failure-to-mitigate alternative",
+                    "detail": "The outline and sample identify the buyer’s unnecessary resort to Italy rather than available Hong Kong replacement supply. Under O.18 r.8(1) and O.18 r.12, plead the material facts of that positive defence, conditionally where the foreign purchase itself is not admitted.",
+                    "points": [
+                      "The client says local packaging companies could produce and deliver within one week for less than half the claimed replacement cost.",
+                      "The supplier already held the artwork and templates and says it could replace the boxes for HK$30,000.",
+                      "Relate availability, timing and cost to the alleged delay, freight and replacement losses.",
+                      "Correct the sample’s mistaken wording: the pleaded failure is ordering from Italy rather than obtaining suitable replacements locally, not failing by ordering locally."
+                    ],
+                    "why": "A mitigation objection is not established by calling the claim excessive. The pleaded local alternative explains what reasonable step the buyer allegedly failed to take and how the claimed loss would have been reduced.",
+                    "exam": {
+                      "write": "If the Plaintiff incurred [replacement loss], which is not admitted, it failed to mitigate by ordering from Italy when [suitable local supply within one week at lower cost] was available.",
+                      "trap": "Saying only “excessive losses” without the available alternative, or reversing the local-versus-Italian comparison."
+                    }
+                  },
+                  {
+                    "label": "Plead the price Counterclaim as a complete cause of action",
+                    "detail": "O.15 r.2 and O.18 r.18 require the supplier’s affirmative claim. Repeat relevant contract and delivery facts, add Standard Terms clause 3, the price and payment period, and the buyer’s failure to pay.",
+                    "points": [
+                      "Price: 3,500 × HK$15 = HK$52,500 plus HK$2,000 delivery, total HK$54,500.",
+                      "Delivery: 15 December 2024 to the buyer, not the sample’s typographical “to the Defendant”.",
+                      "Clause 3 makes full payment due within 14 days of delivery; the sample identifies 29 December 2024 as the due date.",
+                      "Plead the amount as due and owing, supported by the contractual obligation and performance; an invoice alone is not the whole factual cause of action."
+                    ],
+                    "why": "The supplier becomes claimant for the price. The Counterclaim must establish formation, payment term, performance, due date and default instead of merely referring to a bill.",
+                    "exam": {
+                      "write": "Under clause 3, HK$54,500 fell due on 29 December 2024 following delivery on 15 December 2024. The Plaintiff has failed to pay and that sum remains due and owing.",
+                      "trap": "Claiming only HK$52,500 by overlooking delivery, or alleging delivery to the supplier itself."
+                    }
+                  },
+                  {
+                    "label": "State the contractual interest basis and complete the prayer",
+                    "detail": "The sample relies on Standard Terms clause 4 for 15% per annum late-payment interest, with its stated claim running from 29 December 2024. O.18 r.8(4) requires an interest claim to be specifically pleaded; the prayer seeks HK$54,500, contractual interest and costs.",
+                    "points": [
+                      "Identify clause 4, principal, rate and claimed period; do not import the buyer’s District Court statutory-interest claim as the supplier’s contractual basis.",
+                      "Distinguish the due date from the point at which payment is late; the supplied sample uses 29 December. In a fresh drafting problem establish the agreed start date from the actual payment and interest terms.",
+                      "If a fixed interest total is requested, use the relevant end date and stated basis rather than inventing an unspecified accrued sum.",
+                      "Complete the Defence and Counterclaim’s signature and the defendant company’s O.41A statement of truth."
+                    ],
+                    "why": "Interest depends on a pleaded source and period. A general request for interest does not identify the contract’s late-payment obligation.",
+                    "exam": {
+                      "write": "The Defendant Counterclaims for HK$54,500, contractual interest under clause 4 at 15% per annum from [supported start date] to [payment/end date], and costs.",
+                      "trap": "Mixing contractual and statutory interest without stating the basis, or copying the sample’s incomplete clause punctuation into the finished draft."
+                    }
+                  },
+                  {
+                    "label": "Give the unpaid-price claim its defensive role as well",
+                    "detail": "O.18 r.17 allows a qualifying monetary cross-demand to be relied on as set-off, while O.15 r.2 supplies affirmative recovery. Plead the price claim in extinction or diminution of any original claim established, then preserve the full Counterclaim under its own heading.",
+                    "points": [
+                      "Keep the cross-demand’s eligibility distinct from its existence: it is the supplier’s price claim against the same buyer under the supplied contract, not an arbitrary grievance.",
+                      "Place the conditional set-off paragraph at the end of the Defence, before COUNTERCLAIM.",
+                      "The buyer’s main claim may fail while the supplier’s price claim continues under O.15 r.2(3).",
+                      "O.15 r.2(4) permits a balance judgment if both monetary demands are established, with costs still discretionary."
+                    ],
+                    "why": "The buyer’s liability for the unpaid price can both reduce its own recovery and support a positive judgment for the supplier. Those functions must be pleaded distinctly.",
+                    "exam": {
+                      "write": "Further or alternatively, if liable on any part of the Plaintiff’s claim, the Defendant relies on its qualifying Counterclaim by way of set-off in extinction or diminution of that claim under O.18 r.17.",
+                      "trap": "Adding a price Counterclaim but omitting the express set-off plea the exercise calls for."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The exercise’s District Court caption is inconsistent between 5409 and 54090; use the actual originating process in a real draft, not a guessed correction.",
+                "The buyer’s statement of truth incorrectly identifies the supplier’s director as its own director. A final supplier pleading must verify the correct company’s belief.",
+                "The sample itself contains slips about the recipient of delivery and the direction of the mitigation comparison; the notes follow the client instructions and underlying documents.",
+                "A seasonal marketing label in the source is not a reason to change the verified contract dates."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Prepare the basic-response table before turning it into prose.",
+                "Arrange primary denials, conditional alternatives, set-off and Counterclaim in that order.",
+                "Particularise available replacement supply instead of relying on a general assertion of excessiveness.",
+                "Check all monetary components and each contractual term against the quotation."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Admit the contract and delivery, pleading the written documents and accepted terms.",
+                "Dissect the alleged communicated knowledge.",
+                "Deny breach with sound delivery and conditional improper-storage facts.",
+                "Deny causation; put external events and quantum to proof.",
+                "Plead clauses 5–7 and particularised mitigation further or alternatively.",
+                "Plead the HK$54,500 price and 15% interest under clauses 3–4 in the Counterclaim and its qualifying set-off role."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Using the delivery note as conclusive proof of the condition of every box.",
+                "Admitting the buyer’s internal retail terms without instructions.",
+                "Replacing “price paid” with “price payable”.",
+                "Failing to plead contractual interest or its start date.",
+                "Copying source typographical errors as facts."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Drafting the response",
+                    "O.18 r.7, O.18 r.8, O.18 r.12 and O.18 r.13; Exercise 3 sample Defence paras 3–14",
+                    "Written contract, limited knowledge, sound delivery, storage alternative and distinct breach/causation/quantum responses"
+                  ],
+                  [
+                    "Implied quality terms",
+                    "Claim para 5; Sale of Goods Ordinance (Cap.26) s.16 as pleaded in the exercise",
+                    "The sample admits the alleged quality/fitness terms; this is not a determination of the full statute for every supply contract"
+                  ],
+                  [
+                    "Contractual restrictions",
+                    "Standard Terms clauses 5–7; sample Defence paras 9, 13 and 15",
+                    "14-day defect claim, specified excluded losses, and the cap at the total price paid"
+                  ],
+                  [
+                    "Mitigation",
+                    "Exercise 3 instructions, outline and sample para 13(4); O.18 r.8 and O.18 r.12",
+                    "Plead suitable available local replacements, timing and cost"
+                  ],
+                  [
+                    "Price and interest",
+                    "Standard Terms clauses 3–4; sample Counterclaim paras 17–20; O.18 r.8(4)",
+                    "HK$54,500 due under the 14-day term; specifically pleaded 15% contractual interest"
+                  ],
+                  [
+                    "Sword and shield",
+                    "O.15 r.2; O.18 r.17 and O.18 r.18",
+                    "Complete affirmative price claim and explicit qualifying set-off"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "Any claim that the goods supplied by Pan-Asia Packaging Limited are defective must be brought within 14 days of their delivery to the purchaser.",
+                  "cite": "Standard Terms clause 5, LG10 Reference Material Appendix 2"
+                },
+                {
+                  "text": "Pan-Asia Packaging Limited’s liability, in respect of any contract, is limited to the total price paid by the purchaser under that contract.",
+                  "cite": "Standard Terms clause 7, LG10 Reference Material Appendix 2"
+                }
+              ]
+            },
+            "notes": [
+              {
+                "heading": "Basic-response schedule",
+                "table": {
+                  "headers": [
+                    "Claim paragraph",
+                    "Response",
+                    "Additional pleaded case"
+                  ],
+                  "rows": [
+                    [
+                      "1–2 — companies",
+                      "Admit",
+                      "Use the correct party descriptions"
+                    ],
+                    [
+                      "3 — contract",
+                      "Admit; add written formation",
+                      "Quotation, printed Standard Terms and acceptance letter"
+                    ],
+                    [
+                      "4.1 and 4.4 — purpose and seasonal timing",
+                      "Admit",
+                      "Preserve accepted purpose without admitting loss"
+                    ],
+                    [
+                      "4.2 — retailer orders and profitability",
+                      "Partly admit; deny specified knowledge",
+                      "Knowledge from acceptance letter; no information about profitability"
+                    ],
+                    [
+                      "4.3 — sale-or-return terms communicated",
+                      "Deny with reason",
+                      "No such terms were given or known"
+                    ],
+                    [
+                      "5 — implied terms",
+                      "Admit as the sample does",
+                      "Add clauses 5–7 relied on conditionally"
+                    ],
+                    [
+                      "6 — delivery",
+                      "Admit in due performance",
+                      "Sound condition, wet warehouse and warning"
+                    ],
+                    [
+                      "7 — breach",
+                      "Deny",
+                      "Good delivery; alternative improper storage with particulars"
+                    ],
+                    [
+                      "8 — sequence and causation",
+                      "Deny breach/causation; not admit external events",
+                      "Late complaint; conditional failure to mitigate with local alternative"
+                    ],
+                    [
+                      "9 — loss",
+                      "Not admit loss; deny attributed causation and entitlement",
+                      "Contractual restrictions and mitigation"
+                    ],
+                    [
+                      "10 — plaintiff’s interest",
+                      "No admission of liability",
+                      "Read with the substantive Defence; supplier’s interest uses its own clause"
+                    ],
+                    [
+                      "End of Defence",
+                      "Plead conditional set-off",
+                      "Qualifying price Counterclaim in extinction or diminution"
+                    ]
+                  ]
+                }
+              },
+              {
+                "heading": "Adapted Defence and Counterclaim structure",
+                "bullets": [
+                  "DEFENCE — adopt paragraph references if useful; admit the companies and agreement; identify the quotation, Standard Terms and acceptance; distinguish the admitted and denied parts of the commercial-knowledge allegation.",
+                  "Plead clauses 5–7. Admit delivery in due performance; state the water conditions and warning. Deny breach because the Boxes were sound, and plead improper storage if defects occurred.",
+                  "Deny attributed causation; do not admit the replacement events or loss; plead late claim and the local mitigation alternative. Rely on contractual protections and qualifying set-off further or alternatively.",
+                  "COUNTERCLAIM — repeat the relevant Defence paragraphs. Plead clause 3’s HK$54,500 payment obligation within 14 days and clause 4’s 15% late-payment interest. Plead delivery to the buyer on 15 December 2024, due date and non-payment.",
+                  "PRAYER — HK$54,500; contractual interest at the pleaded rate for the supported period; costs. Finish with the correct signature, date and statement of truth."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "specific-traverses",
+                "label": "Admissions, denials and non-admissions"
+              },
+              {
+                "session": "LG10",
+                "issue": "set-off-counterclaim",
+                "label": "Set-off eligibility and the independent Counterclaim"
+              },
+              {
+                "session": "LG10",
+                "issue": "defence-timing-form",
+                "label": "Serving and preparing the Defence"
+              }
+            ],
+            "citationAliases": [
+              "clauses 5–7",
+              "clauses 3–4"
+            ]
+          },
+          {
+            "id": "third-party-gateways",
+            "title": "Third-party gateways, indemnity and contribution",
+            "summary": "Identify an outsider and a substantive claim, then apply the distinct limbs of O.16 r.1(1) without treating the procedure as a source of liability.",
+            "triggers": {
+              "bullets": [
+                "A supplier sued for defective goods says the manufacturer should reimburse it if the buyer succeeds.",
+                "A defendant seeks only part of the damages from another person liable for the same injury.",
+                "A purchaser sued for conversion says its own vendor failed to give good title.",
+                "The defendant wants an ownership question binding an outsider as well as the original parties.",
+                "A proposed target is already a co-defendant, rather than a person outside the action.",
+                "The defendant labels a reimbursement demand “indemnity” without identifying a contract, statute or legal obligation."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Map the parties and the purpose of the proposed proceedings",
+                    "detail": "O.16 r.1(1) concerns a defendant who has given notice of intention to defend and a person not already a party. Barclay Bank v Tom [1923] 1 KB 221 and Standard Securities Ltd v Hubbard [1967] Ch 1056 explain the purposes of reducing multiple actions and preventing inconsistent decisions on the same issue.",
+                    "points": [
+                      "Draw P’s original claim against D and D’s proposed claim against TP separately.",
+                      "Confirm notice of intention to defend, not merely receipt of the writ or an acknowledgement which says the defendant will not contest.",
+                      "Check the target’s present status: an existing co-defendant calls for O.16 r.8 analysis and its Counterclaim exclusion.",
+                      "Procedural convenience supports the route but does not prove the proposed TP’s substantive liability."
+                    ],
+                    "why": "Third-party procedure brings connected disputes before one court while preserving the different claim relationships. Its purpose cannot replace the statutory gateway.",
+                    "exam": {
+                      "write": "[D] has given notice of intention to defend and [X] is an outsider; O.16 r.1 applies to the proposed [claim/issue], serving the purposes identified in Barclay Bank v Tom [1923] 1 KB 221.",
+                      "trap": "Assuming anyone connected to the transaction can be joined by a third-party notice without a qualifying claim or issue."
+                    }
+                  },
+                  {
+                    "label": "Apply the contribution-or-indemnity limb and identify its foundation",
+                    "detail": "O.16 r.1(1)(a) allows a claim against an outsider for contribution or indemnity. The notes distinguish indemnity, seeking full reimbursement under an obligation at law or equity, from contribution, seeking allocation between persons liable in respect of the same damage.",
+                    "points": [
+                      "State what liability D wishes to pass on, to whom and on what substantive basis.",
+                      "Indemnity may arise under an express contract, statute or applicable implied legal principle; plead the relevant facts and terms.",
+                      "Contribution is not an automatic percentage of any loss involving several people; establish the applicable shared liability for the same damage.",
+                      "An alternative indemnity/contribution prayer may be appropriate, but explain the distinct foundation for each rather than simply adding both words."
+                    ],
+                    "why": "The extent of reimbursement follows the substantive obligation, not the notice’s title. A procedure allowing a claim does not create a right to 100% recovery.",
+                    "exam": {
+                      "write": "Under O.16 r.1(1)(a), D claims [indemnity/contribution] in respect of [liability], founded on [identified obligation/shared damage].",
+                      "trap": "Calling every reimbursement claim an indemnity or assuming contribution must always be one half."
+                    }
+                  },
+                  {
+                    "label": "For indemnity plead the obligation rather than a bare label",
+                    "detail": "Under Eastern Shipping Co v Quah Beng Kee [1924] AC 177, the right depends on an obligation at law or in equity to indemnify. The outline describes express, statutory and implied bases, including acting at another’s request and suffering loss in Birmingham & District Land Co v L&NW Ry (1886) 34 Ch D 261.",
+                    "points": [
+                      "For a contractual indemnity, identify the parties, operative obligation, event triggering it and loss falling within its scope.",
+                      "For the contractor example, the purchase order’s safety obligation and indemnity for safety-regulation breach are material terms; actual breach and the resulting liability still need support.",
+                      "For agency, identify the request or authority and the loss incurred; do not equate every relationship called “agency” with an established full indemnity.",
+                      "Do not invent a statutory indemnity provision where the pack supplies none for the particular facts."
+                    ],
+                    "why": "An indemnity shifts responsibility only within the obligation that supports it. Pleading that obligation allows the third party to contest its existence, scope or triggering facts.",
+                    "exam": {
+                      "write": "[Contract/request/legal obligation] required [TP] to indemnify [D] for [identified loss]; [triggering facts] bring the asserted liability within that obligation, applying Eastern Shipping Co v Quah Beng Kee [1924] AC 177.",
+                      "trap": "Pleading “TP must indemnify D” without the term, obligation or facts that make that conclusion sustainable."
+                    }
+                  },
+                  {
+                    "label": "For contribution test liability for the same damage",
+                    "detail": "The outline cites Civil Liability (Contribution) Ordinance (Cap.377) s.3(1): subject to that section, a person liable for another’s damage may recover contribution from another person liable for the same damage, jointly or otherwise. Kwan Man Ling v Chan Pui Shan Patsy [1998] 4 HKC 695 illustrates independent tortfeasors causing the same or indivisible damage.",
+                    "points": [
+                      "Identify the injured person, the damage and each proposed contributor’s liability in respect of it.",
+                      "Do not require the wrongdoers to have acted in concert; the outline’s example is substantially contemporaneous independent tortfeasance causing the same or indivisible damage.",
+                      "Distinguish the same damage from merely related commercial losses or two different losses involving the same claimant.",
+                      "The outline also describes contribution among joint debtors, contractors, trustees, sureties and wrongdoers; Dering v Earl of Winchelsea (1787) 1 Cox 318 explains its general justice-based foundation, which contract may qualify.",
+                      "State the extent claimed and facts supporting allocation; the pack gives no universal percentage or an automatic right to equal shares."
+                    ],
+                    "why": "The statutory link is liability for the same damage, not identical wrongdoing. Identifying that link avoids both an unduly narrow joint-wrongdoer test and an unduly broad same-transaction test.",
+                    "exam": {
+                      "write": "D and TP are alleged to be liable to [injured person] for [the same damage], engaging Cap.377 s.3(1); [facts] support the claimed contribution, as illustrated by Kwan Man Ling v Chan Pui Shan Patsy [1998] 4 HKC 695.",
+                      "trap": "Treating any connected loss as the same damage or assuming lack of concert defeats statutory contribution."
+                    }
+                  },
+                  {
+                    "label": "Analyse the connected-relief limb separately",
+                    "detail": "O.16 r.1(1)(b) requires relief or a remedy against the outsider relating to or connected with the original subject matter and substantially the same as some relief or remedy claimed by P. Both requirements must be addressed.",
+                    "points": [
+                      "State the original subject matter and the relief P seeks.",
+                      "Identify the particular relief D claims against TP and why it is substantially the same as some of P’s relief.",
+                      "In the manufacturing example, D’s connected damages claim is distinct from its conditional indemnity/contribution claim; plead the manufacturer’s agreement and breach.",
+                      "Do not treat mere factual connection as satisfying the additional relief-comparison requirement."
+                    ],
+                    "why": "This limb allows a connected direct claim without collapsing every commercial dispute into the original action. The relief comparison limits the procedural extension.",
+                    "exam": {
+                      "write": "D’s claim for [relief] concerns [original subject matter] and is substantially the same as P’s [relief], satisfying O.16 r.1(1)(b).",
+                      "trap": "Mentioning only connection and omitting “substantially the same” relief."
+                    }
+                  },
+                  {
+                    "label": "Analyse the common-question limb and preserve the separate relationships",
+                    "detail": "O.16 r.1(1)(c) permits a question or issue connected with the original subject matter to be determined between P and D and also between either or both of them and the outsider. Service makes TP a party under r.1(3), but does not itself create P’s direct claim against TP.",
+                    "points": [
+                      "State the exact question and between whom the determination should bind; do not substitute a vague request to decide who is liable.",
+                      "Use Form 21 for a question-or-issue notice rather than assuming a payment prayer is always required.",
+                      "For the car example, identify P’s ownership/conversion claim and D’s case that its vendor failed to pass good title; any onward claim by the vendor is a further-party question under O.16 r.9.",
+                      "If P wants judgment directly against TP, analyse joining TP as a defendant under O.15 r.6(2)."
+                    ],
+                    "why": "A common decision can prevent inconsistent outcomes without creating an unpleaded cause of action. The party map still determines who can obtain judgment against whom.",
+                    "exam": {
+                      "write": "The question [specified issue] is connected with [subject matter] and should bind [identified relationships] under O.16 r.1(1)(c); direct P-to-TP relief requires separate joinder analysis.",
+                      "trap": "Assuming third-party service alone entitles the plaintiff to judgment against TP."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "O.16 provides procedure; Cap.377, an indemnity term or another established obligation supplies the substantive entitlement.",
+                "A conditional claim against TP does not admit P’s case: identify the asserted right if D is held liable.",
+                "Specify the alleged contractual counterparty accurately. The outline shortens the manufacturer’s name, while the supplied B28 notice uses its full corporate name."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "State the original claim, proposed target, gateway, substantive basis and relief in that order.",
+                "Distinguish full indemnity, contribution allocation and an independent connected damages claim.",
+                "Use a party map to expose whether a Counterclaim, co-defendant notice or outsider notice is actually required."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Confirm defending status and whether the target is an outsider.",
+                "Apply O.16 r.1(1)(a), (b) or (c) precisely.",
+                "Plead the indemnity obligation, same-damage liability, connected relief or exact issue.",
+                "Identify the proper form, leave stage and service.",
+                "Keep P–D and D–TP claims distinct."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Treating O.16 as the source of substantive liability.",
+                "Conflating connected loss with the same damage.",
+                "Claiming a standard 50% contribution without a factual basis.",
+                "Treating TP’s party status as a direct plaintiff claim."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Eligibility and outside-party status",
+                    "O.16 r.1(1), (3)",
+                    "Defending defendant, outsider, qualifying claim/issue and party status on service"
+                  ],
+                  [
+                    "Purpose",
+                    "Barclay Bank v Tom [1923] 1 KB 221; Standard Securities Ltd v Hubbard [1967] Ch 1056",
+                    "Avoid multiple actions and inconsistent determinations"
+                  ],
+                  [
+                    "Indemnity foundation",
+                    "Eastern Shipping Co v Quah Beng Kee [1924] AC 177; Birmingham & District Land Co v L&NW Ry (1886) 34 Ch D 261",
+                    "Obligation at law or equity; relevant express, statutory or implied basis and facts"
+                  ],
+                  [
+                    "Contribution foundation",
+                    "Dering v Earl of Winchelsea (1787) 1 Cox 318; Cap.377 s.3(1)",
+                    "Justice-based contribution, qualified as applicable, and statutory same-damage liability"
+                  ],
+                  [
+                    "Independent tortfeasors",
+                    "Kwan Man Ling v Chan Pui Shan Patsy [1998] 4 HKC 695",
+                    "Same or indivisible damage can support contribution without concert"
+                  ],
+                  [
+                    "Connected relief or issue",
+                    "O.16 r.1(1)(b)–(c)",
+                    "Separate tests for substantially similar connected relief and a common question"
+                  ],
+                  [
+                    "Direct plaintiff relief",
+                    "O.15 r.6(2)",
+                    "TP must be joined as a defendant for P’s direct claim"
+                  ]
+                ]
+              }
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "third-party-notice",
+                "label": "Issuing, serving and drafting the third-party notice"
+              },
+              {
+                "session": "LG10",
+                "issue": "counterclaim-parties",
+                "label": "Counterclaims against the plaintiff and additional parties"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-survival-costs",
+                "label": "Settlement, direct joinder and third-party costs"
+              },
+              {
+                "session": "LG10",
+                "issue": "further-parties-offers",
+                "label": "Further parties, contribution offers and counterclaim adaptations"
+              }
+            ],
+            "citationAliases": [
+              "Barclay Bank v Tom [1923] 1 KB 221",
+              "Standard Securities Ltd v Hubbard [1967] Ch 1056",
+              "Eastern Shipping Co v Quah Beng Kee [1924] AC 177",
+              "Birmingham & District Land Co v L&NW Ry (1886) 34 Ch D 261",
+              "Dering v Earl of Winchelsea (1787) 1 Cox 318",
+              "Kwan Man Ling v Chan Pui Shan Patsy [1998] 4 HKC 695",
+              "Form 21"
+            ]
+          },
+          {
+            "id": "third-party-notice",
+            "title": "Issuing, serving and drafting the third-party notice",
+            "summary": "Apply the pre-Defence leave exception, prepare the affidavit and service package, and draft Form 20 or 21 around the original claim and the defendant’s own pleaded basis.",
+            "triggers": {
+              "bullets": [
+                "A writ defendant has given notice of intention to defend but has not served its Defence.",
+                "The defendant has already served a Defence before deciding to claim against an outside manufacturer.",
+                "The main action began by originating summons rather than writ.",
+                "A draft third-party notice names a stranger but does not explain the buyer’s original claim.",
+                "The defendant wants a detailed notice to stand as its statement of claim at the directions hearing.",
+                "The manufacturer supplied 10,000 t-shirts said not to correspond to the sample, and the supplier wants conditional reimbursement and damages."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Check the gateway and the exact leave exception",
+                    "detail": "Under O.16 r.1(2), leave is unnecessary only where the action was begun by writ and the defendant issues the third-party notice before serving its Defence on P. The r.1(1) notice-of-intention-to-defend requirement remains applicable.",
+                    "points": [
+                      "Check how the action began, the notice of intention to defend and whether the Defence has actually been served.",
+                      "The leave exception concerns issue of the notice before service of the Defence; do not substitute filing the Defence or issuing the notice before trial.",
+                      "If the action began otherwise than by writ, or the Defence was already served, seek leave.",
+                      "Plan the TP decision while preparing the Defence so the exception is not lost through an unnecessary sequencing error."
+                    ],
+                    "why": "Early third-party issue can occur before the action’s pleading structure is fixed. Later introduction or a different originating process requires the court’s control.",
+                    "exam": {
+                      "write": "The action began by [writ/other process] and the Defence [has/has not] been served; O.16 r.1(2) therefore [dispenses with/requires] leave to issue.",
+                      "trap": "Assuming an unserved Defence or early trial date alone satisfies the exception in a non-writ action."
+                    }
+                  },
+                  {
+                    "label": "Support any leave application with the specified affidavit",
+                    "detail": "O.16 r.2(1) allows an ex parte leave application but the Court may direct a summons for leave. Under r.2(2), the affidavit states P’s claim, the stage of the proceedings, D’s proposed claim or issue and its facts, and the proposed TP’s name and address.",
+                    "points": [
+                      "Summarise the original cause and remedies without arguing the entire main action.",
+                      "State the actual procedural stage, including the Defence and any judgment or settlement if relevant.",
+                      "Identify the substantive grounds, material facts and precise contribution, indemnity, relief or issue sought.",
+                      "Identify the intended TP accurately so the court can assess the proposed proceeding and service.",
+                      "Do not describe a summons as an invariable mandatory first step: the supplied rule permits ex parte application and allows the court to direct a summons."
+                    ],
+                    "why": "The affidavit lets the court assess the proposed claim and its impact on litigation already underway. A draft notice alone does not state every fact the leave rule requires.",
+                    "exam": {
+                      "write": "The O.16 r.2 affidavit states [P’s claim], [stage], [D’s claim/issue and supporting facts], and [TP’s name and address]; the application follows r.2(1) and any directed summons.",
+                      "trap": "Omitting the stage or proposed TP’s identity, or treating the outline’s shorthand about summons as the complete wording of r.2(1)."
+                    }
+                  },
+                  {
+                    "label": "Choose the form and title for the relief actually sought",
+                    "detail": "O.16 r.1(1) specifies Form 20 or Form 21 in Appendix A. Form 20 addresses contribution, indemnity or qualifying relief; Form 21 states the question or issue to be determined. Add the third-party designation to the original title.",
+                    "points": [
+                      "Keep P and D in their original capacities and add the accurately named Third Party.",
+                      "Where leave was obtained, include the applicable issuing-order reference in the form.",
+                      "Address the notice to the TP and identify the service address; anonymised exam templates can use placeholders until the actual particulars are supplied.",
+                      "Do not retitle an existing co-defendant as an outsider; O.16 r.8 notices retain the existing action heading."
+                    ],
+                    "why": "The form tells the recipient whether it faces a monetary or remedial claim or a binding issue determination. Its title identifies the new party relationship.",
+                    "exam": {
+                      "write": "Use [Form 20/Form 21] under O.16 r.1(1), with [P], [D] and [TP] correctly described and [leave order] identified where applicable.",
+                      "trap": "Using Form 20’s payment wording for a notice that seeks only determination of an issue."
+                    }
+                  },
+                  {
+                    "label": "State P’s original claim and D’s separate grounds",
+                    "detail": "O.16 r.1(1) requires the nature of the claim against D and either the nature and grounds of D’s claim or the issue required to be determined. The notice should state facts which, if proved, establish D’s requested relief, like a statement of claim.",
+                    "points": [
+                      "Summarise P’s cause and remedies and identify the attached originating process and statement of claim.",
+                      "State whether D seeks conditional indemnity, contribution to an identified extent, connected damages or issue determination, and the basis for each.",
+                      "Plead the relevant agreement, obligation, breach and resulting exposure; “the manufacturer may be responsible” is instructions for investigation, not a complete pleaded foundation.",
+                      "Preserve the main Defence with “if, contrary to its Defence, D is held liable” where the third-party claim depends on P’s success."
+                    ],
+                    "why": "TP must understand both the existing litigation and why D says it should answer for anything. The notice is the pleaded bridge between the two claims.",
+                    "exam": {
+                      "write": "P claims [remedies] against D for [cause]. If contrary to its Defence D is liable, D claims [indemnity/contribution] from TP on [facts and obligation], and [independent connected relief] where pleaded.",
+                      "trap": "Copying P’s allegation as though it proved TP’s liability, or seeking a remedy without its own grounds."
+                    }
+                  },
+                  {
+                    "label": "Decide whether the notice should stand as the statement of claim",
+                    "detail": "The slides permit a notice drafted like a general indorsement or a fuller statement of claim. If seeking at third-party directions for the notice to stand as D’s statement of claim, include the complete material facts and particulars and the required pleading verification.",
+                    "points": [
+                      "A short notice still needs the nature and grounds required by O.16 r.1(1); brevity is not a licence to omit the gateway or substantive foundation.",
+                      "A pleading-ready notice should identify the parties and capacity, agreement and material terms, breach, causation, loss and relief with necessary particulars under O.18 r.7 and O.18 r.12.",
+                      "Ask for the directions order under O.16 r.4; the notice does not automatically become a statement of claim because the draft is detailed.",
+                      "Where the notice is to stand as a pleading, complete O.41A verification instead of assuming an unverified sample is enough."
+                    ],
+                    "why": "A detailed notice can avoid a second round of drafting, but only if it already performs the pleading’s substantive and formal functions and the court directs that treatment.",
+                    "exam": {
+                      "write": "At O.16 r.4 directions D seeks an order that this detailed notice stand as its statement of claim; it contains [required facts and particulars] and the appropriate O.41A verification.",
+                      "trap": "Treating the sample’s brief claim paragraph as automatically sufficient for every statement-of-claim requirement."
+                    }
+                  },
+                  {
+                    "label": "Issue and serve the complete originating package",
+                    "detail": "Under O.16 r.3(1), comply with any issue period fixed by the leave order. O.16 r.3(2) requires the originating writ or summons, the pleadings already served and modified Form 14 with every third-party notice; r.3(3) makes the Registry the acknowledgement office.",
+                    "points": [
+                      "Serve all pleadings already served, not just a statement of claim selected for convenience.",
+                      "Include the acknowledgement form and adapted directions for contesting the notice.",
+                      "O.16 r.3(4) applies the specified writ, service, service-out and acknowledgement rules as if D were P and TP were D; take any required service-out leave separately.",
+                      "The supplied Form 20 states acknowledgement within 14 days after service, counting the day of service, with notice whether TP intends to contest. Check the applicable adapted rules and any different period for the service situation, especially service outside the jurisdiction.",
+                      "TP becomes a party from service under O.16 r.1(3), not from the day D privately drafts the notice."
+                    ],
+                    "why": "The new party needs both procedural notice and the case papers to decide whether and how to defend. Party status and time limits depend on valid process, not informal awareness.",
+                    "exam": {
+                      "write": "D will serve the notice with the O.16 r.3(2) process, served pleadings and modified Form 14, complying with [issue order/service requirements]; TP becomes a party on service.",
+                      "trap": "Serving a bare notice, omitting the Defence already served, or assuming leave to issue is also leave for service out."
+                    }
+                  },
+                  {
+                    "label": "Draft the manufacturing notice from the available contractual facts",
+                    "detail": "The supplied B28 sample concerns the buyer’s breach-of-contract claim against the supplier and the supplier’s 16 January 2021 manufacturing agreement with Mood Garment Manufactory Limited for 10,000 t-shirts to correspond to the 12 January sample.",
+                    "points": [
+                      "Summarise the buyer’s claim for damages, interest and costs and refer to the originating writ served with the notice.",
+                      "State the manufacturing agreement, quantity, sample obligation and allegation that a bulk of the delivered shirts did not correspond.",
+                      "Preserve the supplier’s Defence; seek conditional indemnity or contribution for the buyer’s claim with the appropriate substantive basis, and the separate connected damages claim as supported.",
+                      "Retain the recipient’s acknowledgement/default warning suited to the chosen form and scope of relief.",
+                      "The full underlying Contract Case File is referenced but not uploaded in this pack; do not invent unseen terms, an express indemnity clause, a fixed contribution share or manufacturing particulars."
+                    ],
+                    "why": "The supplied agreement and sample provide a concrete foundation; a general suspicion of a manufacturing problem does not. The notice must make the supported claim without enlarging the available record.",
+                    "exam": {
+                      "write": "Under the Agreement dated 16 January 2021, TP was to manufacture and deliver 10,000 t-shirts corresponding to the Sample provided on 12 January 2021. D alleges [supported non-correspondence] and seeks [properly founded relief].",
+                      "trap": "Inventing a contractual indemnity or exact apportionment because the sample prayer uses indemnity/contribution language."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "Issue before Defence service and service of the issued notice are different procedural events.",
+                "An issue-only Form 21 binds the relevant question; do not copy Form 20’s deemed admission of a payment liability indiscriminately.",
+                "The leave affidavit and the notice perform different functions even where they repeat some facts."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Write the party map and gateway before starting Form 20.",
+                "List the served pleadings and acknowledgement form as a service checklist.",
+                "For a pleading-ready notice, audit the draft against the same material-facts and particulars discipline as a statement of claim."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Confirm r.1 gateway, defending status and outsider.",
+                "Check writ and pre-Defence issue; obtain r.2 leave and affidavit if needed.",
+                "Choose Form 20 or 21 and plead the original and third-party claims separately.",
+                "Issue within any order and serve the complete r.3 package.",
+                "If defended, seek r.4 directions and any order making the notice the statement of claim."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Treating leave as unnecessary after serving the Defence in a writ action.",
+                "Omitting the factual basis of D’s own remedy.",
+                "Copying a corporate name shortened in the narrative over the fuller name in the supplied document.",
+                "Assuming a speculative manufacturing problem proves an indemnity."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Leave exception",
+                    "O.16 r.1(1)–(2)",
+                    "Defending status plus writ and issue before Defence service; otherwise leave"
+                  ],
+                  [
+                    "Leave evidence",
+                    "O.16 r.2(1)–(2)",
+                    "Ex parte permitted, possible directed summons, and four affidavit categories"
+                  ],
+                  [
+                    "Notice content and forms",
+                    "O.16 r.1(1); Appendix A Forms 20–21",
+                    "Original claim, own grounds or issue; appropriate relief/issue form"
+                  ],
+                  [
+                    "Issue and service",
+                    "O.16 r.3(1)–(4); r.1(3)",
+                    "Ordered issue period, complete package, Registry acknowledgement, adapted process and party status"
+                  ],
+                  [
+                    "Pleading-ready notice",
+                    "O.16 r.4; O.18 r.7 and O.18 r.12; O.41A",
+                    "Court-directed treatment as statement of claim with full facts, particulars and verification"
+                  ],
+                  [
+                    "Manufacturing application",
+                    "LG10 Reference Material Appendix 3, Contract B28; slides 75–78",
+                    "Buyer claim, agreement/sample obligation, conditional reimbursement and connected damages"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "A defendant to an action may not issue a third party notice without the leave of the Court unless the action was begun by writ and he issues the notice before serving his defence on the plaintiff.",
+                  "cite": "O.16 r.1(2), LG10 Reference Material"
+                }
+              ]
+            },
+            "notes": [
+              {
+                "heading": "Adapted Form 20 manufacturing notice",
+                "bullets": [
+                  "TITLE — [correct action number and court]; [Buyer], Plaintiff; [Supplier], Defendant; Mood Garment Manufactory Limited, Third Party. THIRD PARTY NOTICE. Include the issuing order where leave was required.",
+                  "TO — [Third Party and proper address]. TAKE NOTICE that P claims damages for breach of contract, interest and costs against D, as appears from the originating process and pleadings served with this notice.",
+                  "CLAIM — If, contrary to its Defence, D is held liable to P, D claims the supported indemnity or contribution from TP in respect of that liability; D also claims connected damages and pleaded interest on the following grounds.",
+                  "GROUNDS — Under the 16 January 2021 Agreement, TP agreed to manufacture and deliver to D’s client 10,000 t-shirts corresponding to the Sample provided on 12 January 2021. D alleges that a bulk of the manufactured and delivered shirts did not correspond to the Sample. State any further supported particulars needed for the actual cause of action.",
+                  "CONTEST WARNING — Use the chosen form’s applicable acknowledgement period, notice of intention to contest and default/binding consequences. Include the modified acknowledgement form and directions.",
+                  "FINISH — Correct date and signature; complete verification if seeking treatment as a statement of claim. This is an adapted structure, not a substitute for proving an indemnity basis or reading any further supplied contract terms."
+                ]
+              },
+              {
+                "heading": "Form 21 issue alternative",
+                "bullets": [
+                  "Retain the original title, recipient and summary of P’s claim. State the exact connected question and the party relationships between which it is to be determined.",
+                  "The issue-specific binding warning should say that a judgment or decision binds TP insofar as relevant to the stated issue. It should not invent a claim for payment absent from the notice."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "third-party-gateways",
+                "label": "Third-party gateways, indemnity and contribution"
+              },
+              {
+                "session": "LG10",
+                "issue": "co-defendant-directions",
+                "label": "Co-defendant notices and third-party directions"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-default-judgment",
+                "label": "Third-party default, judgment and execution"
+              }
+            ],
+            "citationAliases": [
+              "Form 14",
+              "Form 20",
+              "Form 21",
+              "Forms 20–21",
+              "Form 20 or 21"
+            ]
+          },
+          {
+            "id": "co-defendant-directions",
+            "title": "Co-defendant notices and third-party directions",
+            "summary": "Apply O.16 r.8 to an existing party only after excluding the Counterclaim route, then distinguish notice service from the court’s directions controlling the cross-proceedings.",
+            "triggers": {
+              "bullets": [
+                "A main contractor seeks an indemnity from a co-defendant under that party’s safety obligations in a purchase order.",
+                "A principal sued on ostensible authority wants recourse against the agent who allegedly contracted without actual authority.",
+                "The defendant has a qualifying Counterclaim against P and related relief against D2 but prepares a contribution notice instead.",
+                "The Third Party gives notice of intention to defend, and the issuing defendant takes no step to seek directions.",
+                "A co-defendant already acknowledged the original writ before receiving a notice under O.16 r.8.",
+                "The receiving party wants the notice set aside before trial."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Identify the existing-party gateway and apply the Counterclaim exclusion",
+                    "detail": "O.16 r.8(1) permits a defending defendant to issue and serve a notice without leave for contribution/indemnity, substantially similar connected relief or a connected issue against an existing party. Under r.8(2), that route is unavailable if the claim could be made by Counterclaim.",
+                    "points": [
+                      "Check that the issuing defendant has given notice of intention to defend and the recipient is already a party.",
+                      "Compare each limb with the proposed claim, not simply the document label.",
+                      "Test O.15 rr.2–3 first where the defendant has an affirmative claim against P and the additional person.",
+                      "An indemnity solely against a co-defendant on the supplied principal/agent facts is different from a Counterclaim against P plus D2."
+                    ],
+                    "why": "Existing-party procedure avoids adding someone twice, but it cannot bypass the Counterclaim structure prescribed for a claim that belongs there.",
+                    "exam": {
+                      "write": "[Recipient] is already a party and [claim/issue] falls within O.16 r.8(1). It cannot be made by Counterclaim on [facts], so r.8(2) does not bar the notice.",
+                      "trap": "Assuming every co-defendant claim qualifies without checking O.16 r.8(2)."
+                    }
+                  },
+                  {
+                    "label": "Draft and serve the existing-party notice accurately",
+                    "detail": "O.16 r.8(1) requires the nature and grounds of the claim or the question or issue. The notice retains the existing action title, is addressed to the relevant party, and needs no leave under this rule.",
+                    "points": [
+                      "For the contractor example, plead the procurement relationship, safety duties, indemnity wording relied on, alleged breach and the exposure sought to be passed on.",
+                      "For the principal example, distinguish actual authority allegedly absent from the ostensible authority on which P may establish the principal’s liability.",
+                      "The colloquial “Contribution Notice” covers an indemnity or connected issue too; the body must state the actual relief.",
+                      "Do not apply the outsider’s pre-Defence leave exception to the existing-party notice."
+                    ],
+                    "why": "The recipient already knows the original action but still needs to know the new inter-party case it must meet. Its existing designation should stay consistent.",
+                    "exam": {
+                      "write": "D serves an O.16 r.8 notice on [existing party], stating [claim/issue], [grounds] and [relief], without leave and under the original title.",
+                      "trap": "Titling D2 “Third Party” or omitting the separate substantive basis because D2 has already seen the main claim."
+                    }
+                  },
+                  {
+                    "label": "Check whether another acknowledgement is needed",
+                    "detail": "O.16 r.8(3) dispenses with acknowledgement of the notice where the recipient has acknowledged the original writ or originating summons or is a plaintiff. The rule adapts the third-party procedure, including deeming the appropriate defending position where the recipient defended the action or is P.",
+                    "points": [
+                      "Verify the existing acknowledgement rather than assuming party status alone means one was filed.",
+                      "Distinguish acknowledgement from notice of intention to defend and read the full r.8(3) adaptations.",
+                      "A fresh acknowledgement exemption does not remove the subsequent pleading or directions obligations.",
+                      "The r.8(2) Counterclaim exclusion still applies even though r.8(3) mentions a plaintiff as a possible existing recipient."
+                    ],
+                    "why": "An existing participant need not repeat an originating acknowledgement it has already made, but must still answer the cross-proceeding in the procedure appropriate to it.",
+                    "exam": {
+                      "write": "Under O.16 r.8(3), no fresh acknowledgement is needed because [recipient acknowledged original process/is P]; the adapted defending and directions procedure still applies.",
+                      "trap": "Equating no fresh acknowledgement with no need to participate in the cross-claim."
+                    }
+                  },
+                  {
+                    "label": "Once contested require the issuer’s directions summons",
+                    "detail": "Under O.16 r.4(1), where TP gives notice of intention to defend, the issuing defendant must apply by summons served on all other parties for directions. The same procedure applies to an O.16 r.8 notice through r.8(3).",
+                    "points": [
+                      "Identify the contested notice and the defendant responsible for issuing it.",
+                      "Serve the directions summons on all other parties, not only TP or the immediate co-defendant.",
+                      "Ask for the pleading sequence, the trial method, permitted participation, binding effect and any treatment of the notice as a statement of claim appropriate to the facts.",
+                      "Do not present an automatic Defence timetable for TP which the supplied O.16 provisions leave to directions."
+                    ],
+                    "why": "The court must coordinate the original action and the cross-proceedings. The notice introduces the claim; directions decide how the connected disputes will be adjudicated.",
+                    "exam": {
+                      "write": "Having received notice of intention to defend, D must apply under O.16 r.4(1) by summons served on all other parties for [appropriate directions].",
+                      "trap": "Waiting passively for TP to serve a Defence under an invented ordinary fixed period instead of obtaining directions."
+                    }
+                  },
+                  {
+                    "label": "Use the recipient’s fallback application at the correct time",
+                    "detail": "If the issuer has not served the directions summons, O.16 r.4(2) permits TP to apply for directions or to set aside the notice not earlier than 7 days after giving notice of intention to defend. For O.16 r.8 notices, r.8(4) substitutes 14 days after service of the notice on the recipient.",
+                    "points": [
+                      "For a true outsider notice, identify the date TP gave notice of intention to defend; the minimum waiting period runs from that step.",
+                      "For the existing-party notice, the substituted trigger is service of that notice, not the original writ or an old acknowledgement.",
+                      "The 7-day period is not a deadline within which D must invariably apply; it is the threshold for TP’s fallback application.",
+                      "Both fallback applications require a summons served on all other parties under the adapted rule."
+                    ],
+                    "why": "The recipient can move the proceeding forward or challenge it if the issuer does nothing. Existing-party acknowledgements may predate the notice, which explains the substituted service-based trigger.",
+                    "exam": {
+                      "write": "Because no issuer’s summons was served, [recipient] may apply under O.16 r.4(2) [after 7 days from notice of intention to defend / under r.8(4), after 14 days from notice service].",
+                      "trap": "Using 7 days for every notice or treating the period as an unconditional statutory deadline for the issuer."
+                    }
+                  },
+                  {
+                    "label": "Explain the court’s full directions powers",
+                    "detail": "O.16 r.4(3) permits judgment if TP’s liability is established at the hearing, trial directions, or dismissal of the application and termination of the notice proceedings. O.16 r.4(4) governs defending or participating in the original action, enforcement and how far TP is bound.",
+                    "points": [
+                      "Distinguish established liability at directions from merely arguable allegations in the notice.",
+                      "The court may allow TP to defend alone or jointly with D or participate at trial on appropriate terms.",
+                      "State which claims or issues should be tried together or in another convenient manner.",
+                      "Directions may be made before or after P signs judgment against D; the procedural stage is relevant but not an absolute bar.",
+                      "Under O.16 r.4(5), directions may be varied or rescinded; under r.6, proceedings on a third-party notice may be set aside at any stage."
+                    ],
+                    "why": "Connected proceedings can differ greatly in scope and maturity. Flexible directions let the court coordinate proof and avoid unnecessary or unfair participation.",
+                    "exam": {
+                      "write": "Under O.16 r.4(3)–(5), the Court may [appropriate judgment/trial/termination], regulate TP’s participation and binding effect, and later vary directions; r.6 also permits setting aside.",
+                      "trap": "Assuming a directions hearing can only timetable pleadings or must determine liability against TP."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The issuer’s mandatory application and the recipient’s permissive fallback are distinct obligations.",
+                "An existing party may have defended the main action before the notice existed, so r.8(4) uses the notice’s service date.",
+                "The purchase-order and principal/agent examples demonstrate routes, not adjudicated findings of breach or entitlement."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Give the recipient’s status, gateway, Counterclaim exclusion, acknowledgement and directions as separate checks.",
+                "Identify the correct start event before doing any 7-day or 14-day arithmetic.",
+                "Request directions addressing the real issue and participation rather than a generic order."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Apply r.8(1) and exclude an available Counterclaim under r.8(2).",
+                "Serve a reasoned notice under the existing title and check r.8(3).",
+                "If defended, issuer seeks r.4 directions on all-party service.",
+                "If issuer does nothing, apply the correct r.4(2)/r.8(4) fallback trigger.",
+                "Address court powers, participation, binding effect and variation."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Applying the outsider leave rule to an O.16 r.8 notice.",
+                "Treating the colloquial title as limited to contribution.",
+                "Serving a directions summons on only one participant.",
+                "Confusing the recipient’s fallback threshold with D’s deadline."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Existing-party claim",
+                    "O.16 r.8(1)–(2); O.15 rr.2–3",
+                    "Without-leave notice subject to the Counterclaim exclusion"
+                  ],
+                  [
+                    "Acknowledgement adaptation",
+                    "O.16 r.8(3)",
+                    "No repeat acknowledgement in the stated cases; adapted defending procedure"
+                  ],
+                  [
+                    "Issuer’s directions summons",
+                    "O.16 r.4(1); r.8(3)",
+                    "After contested notice, issuer applies and serves all other parties"
+                  ],
+                  [
+                    "Recipient’s fallback",
+                    "O.16 r.4(2); r.8(4)",
+                    "Outsider: 7 days from intention to defend; existing-party notice: substituted 14 days from service"
+                  ],
+                  [
+                    "Directions outcomes",
+                    "O.16 r.4(3)–(5)",
+                    "Established-liability judgment, trial or termination, participation, binding effect and variation"
+                  ],
+                  [
+                    "Setting aside",
+                    "O.16 r.6",
+                    "Notice proceedings can be set aside at any stage"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "Where a defendant makes such a claim as is mentioned in paragraph (1) and that claim could be made by him by counterclaim in the action, paragraph (1) shall not apply in relation to the claim.",
+                  "cite": "O.16 r.8(2), LG10 Reference Material"
+                }
+              ]
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "counterclaim-parties",
+                "label": "Counterclaims against the plaintiff and additional parties"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-notice",
+                "label": "Issuing, serving and drafting the third-party notice"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-default-judgment",
+                "label": "Third-party default, judgment and execution"
+              }
+            ]
+          },
+          {
+            "id": "third-party-default-judgment",
+            "title": "Third-party default, judgment and execution",
+            "summary": "Distinguish the consequences of not defending, the route to judgment and the separate restriction on executing a contribution or indemnity award.",
+            "triggers": {
+              "bullets": [
+                "The Third Party does not give notice of intention to defend after valid service.",
+                "The Third Party acknowledged but then failed to serve the Defence ordered at directions.",
+                "P obtains default judgment against D, and D seeks judgment over before paying P.",
+                "D seeks automatic full indemnity on the basis of TP’s silence alone.",
+                "The action settles rather than going to trial, and D seeks a judgment against TP.",
+                "D has a contribution judgment but has not yet discharged its liability for the same damage."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Identify the default and the claims actually in the notice",
+                    "detail": "O.16 r.5(1) applies where TP gives no notice of intention to defend or, after being ordered to serve a Defence, fails to do so. The default consequences concern the claim, question or issue stated in the notice, not every possible dispute involving TP.",
+                    "points": [
+                      "Check the valid notice and service package, the applicable acknowledgement/defending step, and any directions order for a Defence.",
+                      "Failure to serve a Defence is the stated default only once such service has been ordered.",
+                      "Identify the contribution, indemnity, connected relief or issue actually pleaded; default cannot supply an omitted cause or remedy.",
+                      "A Form 21 issue-only notice should be analysed within the specified issue rather than as an unpleaded payment claim."
+                    ],
+                    "why": "The consequence of default follows the case TP was required to answer. A court order for pleading is not interchangeable with informal expectations of a Defence.",
+                    "exam": {
+                      "write": "TP defaulted by [no notice of intention to defend / failure to serve the ordered Defence], engaging O.16 r.5(1) in respect of [stated claim/issue].",
+                      "trap": "Treating any delay or silence as an ordered-Defence default, or seeking relief absent from the notice."
+                    }
+                  },
+                  {
+                    "label": "State the deemed admission and relevant binding effect",
+                    "detail": "Under O.16 r.5(1)(a), TP is deemed to admit claims stated in the notice and is bound by a judgment, including consent judgment, or decision in the action insofar as relevant to the notice’s claims, questions or issues.",
+                    "points": [
+                      "State both consequences but keep their scope tied to the notice.",
+                      "Distinguish admission and binding effect from entering a judgment capable of enforcement.",
+                      "A consent judgment in the main action is expressly included; it is not excluded merely because the court did not try P’s claim.",
+                      "Do not convert D’s proceedings against TP into a judgment for P against TP."
+                    ],
+                    "why": "Default removes TP’s ability to treat the relevant original outcome as wholly open, but the procedural route to a judgment over still has its own requirements.",
+                    "exam": {
+                      "write": "Under O.16 r.5(1)(a), TP is deemed to admit [notice claim] and bound by [main judgment/decision] insofar as relevant; D must still use the appropriate judgment route.",
+                      "trap": "Equating deemed admission with an immediately executable judgment for every remedy."
+                    }
+                  },
+                  {
+                    "label": "Apply the specific default-judgment-over mechanism",
+                    "detail": "O.16 r.5(1)(b) addresses a case where judgment in default is given against D in the main action. After satisfaction, or with leave before satisfaction, D may enter judgment against TP for contribution; other relief or remedy requires leave under the text supplied in the Reference Material.",
+                    "points": [
+                      "Confirm that the main judgment against D is itself in default; TP’s default alone is not the stated main-action trigger.",
+                      "Identify whether D has satisfied that judgment or requires leave to act before satisfaction.",
+                      "For relief beyond contribution, address the additional leave requirement rather than asserting automatic recovery.",
+                      "The outline’s abbreviated statement that only contribution follows under r.5 is incomplete: the supplied r.5(1)(b) also expressly mentions other relief with leave. Read it with r.7 rather than inventing an automatic indemnity."
+                    ],
+                    "why": "The rule distinguishes contribution, other relief and the stage of satisfaction. Those qualifications prevent the default mechanism being expanded beyond its wording.",
+                    "exam": {
+                      "write": "P obtained default judgment against D. Under O.16 r.5(1)(b), D may seek [contribution / other pleaded relief with leave] [after satisfaction / with leave beforehand].",
+                      "trap": "Applying r.5(1)(b) to every main-action outcome or claiming full indemnity without the necessary leave analysis."
+                    }
+                  },
+                  {
+                    "label": "Address defaults in ordered pleadings and the power to reopen judgment",
+                    "detail": "O.16 r.5(2) applies when TP or the issuing D defaults in serving an ordered pleading. On the other’s summons application, the Court may enter the judgment justified by the pleadings or another order necessary to do justice. Under r.5(3), a judgment under r.5(1)(b) or (2) may be set aside or varied on just terms.",
+                    "points": [
+                      "Identify which party was ordered to serve what and whether it defaulted.",
+                      "State what judgment the applicant is entitled to on the pleadings rather than assuming the whole notice prayer follows automatically.",
+                      "The provision is reciprocal: D as well as TP may default.",
+                      "Separate varying a default judgment under r.5(3), setting aside notice proceedings under r.6, and varying directions under r.4(5)."
+                    ],
+                    "why": "The cross-proceeding places D in the claimant’s position as well as TP in the defendant’s. Procedural obligations and remedies therefore operate both ways.",
+                    "exam": {
+                      "write": "[Party] failed to serve the ordered [pleading]; [other party] may apply by summons under O.16 r.5(2) for [justified judgment/order], subject to r.5(3).",
+                      "trap": "Treating only TP as capable of pleading default or conflating judgment relief with setting aside the whole notice."
+                    }
+                  },
+                  {
+                    "label": "Use the general judgment route for trial and non-trial outcomes",
+                    "detail": "O.16 r.7(1) permits the Court at or after trial, or where the main action is decided otherwise than by trial on a summons application, to order judgment for D against TP or TP against D as the nature of the case requires. O.16 r.4(3)(a) separately permits judgment at directions if liability is established there.",
+                    "points": [
+                      "Distinguish adjudication after trial, a non-trial main-action disposal and the limited established-liability directions route.",
+                      "Identify the evidence and pleaded basis supporting the requested judgment.",
+                      "A settlement or other non-trial outcome does not itself remove the r.7 route, but it does not prove TP’s substantive liability either.",
+                      "State that judgment may favour either cross-proceeding party, not invariably D."
+                    ],
+                    "why": "The judgment machinery accommodates connected disputes which mature at different stages or after a settlement. It does not guarantee the issuing defendant a favourable outcome.",
+                    "exam": {
+                      "write": "The main action was [tried/disposed of otherwise]; under O.16 r.7(1), [party] seeks [appropriate judgment], by summons if decided otherwise than by trial.",
+                      "trap": "Assuming a non-trial disposal prevents any third-party judgment or makes it automatic."
+                    }
+                  },
+                  {
+                    "label": "Apply the separate execution restriction and its leave exception",
+                    "detail": "Under O.16 r.7(2), a contribution or indemnity judgment in favour of someone liable to make a payment for the same debt or damage cannot be executed without leave until that liability is discharged. O.16 r.7(3) includes the specified judgment and Cap.377 s.3(4) agreement liabilities.",
+                    "points": [
+                      "Identify the award, the beneficiary’s corresponding liability, whether it has been discharged and any application for leave.",
+                      "Distinguish obtaining judgment from issuing execution: a judgment can exist while enforcement remains restricted.",
+                      "The restriction is for contribution or indemnity for the same debt or damage; do not automatically apply it to every independent damages claim against TP.",
+                      "A qualifying settlement liability falls within the supplied definition; do not assume the provision is confined to a judgment in the main action."
+                    ],
+                    "why": "The rule controls premature reimbursement before the beneficiary pays the liability being passed on, while allowing the Court to permit earlier execution where appropriate.",
+                    "exam": {
+                      "write": "D has judgment for [contribution/indemnity], but has not discharged [same-debt/damage liability]; execution requires leave under O.16 r.7(2), read with r.7(3).",
+                      "trap": "Saying D cannot obtain judgment until payment, or omitting the court’s power to allow execution before discharge."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "A non-contesting acknowledgement may leave the party within the no-intention-to-defend consequences; the form’s warning is not limited to complete failure to file a form.",
+                "The notice defines the potential default and binding scope; a badly drafted notice cannot be repaired by expanding its prayer after TP defaults.",
+                "Read the actual supplied rule over shorthand lecture descriptions of “automatic” consequences."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Use separate headings in the answer for default effect, entry of judgment and execution.",
+                "Identify the main-action judgment type before applying r.5(1)(b).",
+                "Give both the ordinary satisfaction rule and the leave exception."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify the notice and exact default.",
+                "State deemed admission and relevant binding effect under r.5(1)(a).",
+                "Select r.5(1)(b), r.5(2), r.4(3)(a) or r.7(1) for the actual procedural situation.",
+                "Address leave, relief scope and reopening powers.",
+                "Analyse discharge and leave separately before execution under r.7(2)–(3)."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Jumping from TP’s silence directly to executable indemnity.",
+                "Confusing main default judgment with TP’s default.",
+                "Forgetting that D can default on an ordered pleading.",
+                "Applying the contribution/indemnity execution restriction indiscriminately to all remedies."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Default and effect",
+                    "O.16 r.5(1)(a)",
+                    "Specified defending/ordered-Defence defaults; deemed notice admission and relevant binding judgments including consent"
+                  ],
+                  [
+                    "Judgment in default over",
+                    "O.16 r.5(1)(b)",
+                    "Main default judgment, satisfaction or leave before it, contribution and other relief with leave"
+                  ],
+                  [
+                    "Ordered-pleading default",
+                    "O.16 r.5(2)–(3)",
+                    "Reciprocal summons route, justified judgment or just order, and set-aside/variation power"
+                  ],
+                  [
+                    "Other judgment routes",
+                    "O.16 r.4(3)(a), O.16 r.7(1)",
+                    "Established-liability directions judgment; trial or non-trial judgment in either direction"
+                  ],
+                  [
+                    "Execution",
+                    "O.16 r.7(2)–(3); Cap.377 s.3(4) as referred to there",
+                    "Contribution/indemnity execution waits for discharge unless leave; specified agreement liability included"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "Where judgment is given for the payment of any contribution or indemnity to a person who is under a liability to make a payment in respect of the same debt or damage, execution shall not issue on the judgment without the leave of the Court until that liability has been discharged.",
+                  "cite": "O.16 r.7(2), LG10 Reference Material"
+                }
+              ]
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "co-defendant-directions",
+                "label": "Co-defendant notices and third-party directions"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-survival-costs",
+                "label": "Settlement, direct joinder and third-party costs"
+              }
+            ],
+            "citationAliases": [
+              "Form 21"
+            ]
+          },
+          {
+            "id": "third-party-survival-costs",
+            "title": "Settlement, direct joinder and third-party costs",
+            "summary": "Explain procedural independence without assuming substantive survival, identify the plaintiff’s separate joinder route, and analyse third-party costs as a discretionary consequence.",
+            "triggers": {
+              "bullets": [
+                "P settles with D without an admission of liability while D’s claim against TP remains contested.",
+                "P’s claim is dismissed and D’s only cross-claim seeks reimbursement of liability to P.",
+                "D’s notice also contains a distinct damages claim against the manufacturer.",
+                "P wants damages directly from TP after concluding that D is not responsible.",
+                "P loses the main action but D’s unsupported notice caused TP to incur substantial costs.",
+                "The court is asked to order discovery between P and TP although P is not claimant in D’s third-party proceedings."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Distinguish the common action from the separate claim relationships",
+                    "detail": "The outline states that P is not a party to D’s third-party proceedings as a claimant, while Eden v Weardale (1887) 35 Ch D 287 permits court-ordered discovery or interrogatories between P and TP. O.16 r.4(4) regulates TP’s participation and the extent of binding effect in the main action.",
+                    "points": [
+                      "Maintain the P–D claim and D–TP cross-claim as separate arrows even though the parties are before the same court.",
+                      "Identify what information or participation is needed to determine the connected issue.",
+                      "Do not infer a direct cause of action or judgment for P merely from disclosure between P and TP.",
+                      "A party’s involvement in directions is not proof of liability to every other participant."
+                    ],
+                    "why": "Coordination of evidence and trial avoids inconsistent findings while preserving the substantive claims actually asserted. Procedural cooperation does not merge the causes of action.",
+                    "exam": {
+                      "write": "The Court may coordinate P–TP disclosure under Eden v Weardale (1887) 35 Ch D 287 and TP’s participation under O.16 r.4(4), without treating D’s notice as P’s direct claim.",
+                      "trap": "Equating court-ordered disclosure or TP’s participation with direct liability to P."
+                    }
+                  },
+                  {
+                    "label": "Apply procedural independence after settlement",
+                    "detail": "In Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651, P settled an injury claim against the bus defendant for £10,000 without an admission of liability; the defendant’s proceedings against the van owner/driver could continue. A new action was not required merely because the original action had settled.",
+                    "points": [
+                      "Identify the continued pleaded dispute against TP and why the settlement leaves it to be decided.",
+                      "O.16 r.7(1) accommodates judgment on a summons application where the main action is decided otherwise than by trial.",
+                      "Do not treat a no-admission settlement as a determination that D or TP was not liable.",
+                      "The settlement’s existence and amount do not themselves establish TP’s liability or the recoverable extent against TP."
+                    ],
+                    "why": "Third-party proceedings have their own procedural life. Ending the original trial does not make the already commenced cross-action procedurally nonexistent.",
+                    "exam": {
+                      "write": "Under Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651, settlement of P’s claim does not itself terminate the third-party proceedings; [surviving issue] may proceed under the appropriate O.16 directions and judgment machinery.",
+                      "trap": "Arguing that a settled main action leaves nothing on which third-party procedure can operate in every case."
+                    }
+                  },
+                  {
+                    "label": "Test whether the substantive cross-claim still has anything to recover",
+                    "detail": "Procedural independence does not guarantee substantive survival. The outline distinguishes a claim solely to pass on liability to P from an independent claim against TP; if P loses and no liability remains to pass on, the former may have no remaining subject matter.",
+                    "points": [
+                      "Read the notice’s actual cause and remedy: conditional indemnity/contribution for P’s recovery, independent damages, or a specified issue.",
+                      "For a pure pass-through claim, identify whether D has any liability or qualifying loss after the main claim’s failure.",
+                      "For a separate supported claim for defective manufacture, determine its own elements rather than dismissing it solely because P failed.",
+                      "Do not invent damages or third-party-cost indemnity absent a pleaded and sourced foundation."
+                    ],
+                    "why": "Procedure keeps a cross-action available; the pleaded substantive right decides whether it is worth pursuing. These are different reasons why a claim may continue or end.",
+                    "exam": {
+                      "write": "Although procedurally independent, [claim] depends on D’s liability to P; because [outcome] removes that liability, [consequence for the pleaded remedy]. [Independent claim] requires separate analysis.",
+                      "trap": "Treating Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651 as authority that every indemnity remains viable after D owes P nothing."
+                    }
+                  },
+                  {
+                    "label": "For P’s direct relief use proper defendant joinder",
+                    "detail": "The outline and slide 68 require P to join TP as a defendant under O.15 r.6(2) before obtaining direct relief. O.15 r.6(2)(b) permits addition where necessary for complete adjudication or where a connected issue with a party is just and convenient to determine.",
+                    "points": [
+                      "Identify P’s proposed cause of action against TP and why the joinder gateway is met; D’s third-party claim is not a substitute pleading.",
+                      "State the changed capacity: the outsider is now an additional defendant to P’s claim, not merely TP to D’s claim.",
+                      "O.15 r.6(1) prevents misjoinder or nonjoinder defeating a cause automatically, but does not award unpleaded relief against a person in the wrong relationship.",
+                      "Under O.15 r.6(3), a person’s own application to be added normally needs an affidavit showing interest; do not state that paragraph as the universal form of every joinder application.",
+                      "Where limitation has expired, apply the separate restrictions in O.15 r.6(5)–(6) rather than treating “at any stage” as unrestricted permission."
+                    ],
+                    "why": "P must assert and bring its own claim against the intended judgment debtor. Joinder ensures that person is before the court in the capacity in which liability is sought.",
+                    "exam": {
+                      "write": "For direct relief P must seek to add [TP] as [additional defendant] under O.15 r.6(2)(b), on [necessary/just-and-convenient connected issue], and plead its own claim.",
+                      "trap": "Obtaining judgment for P against TP solely because D served a notice."
+                    }
+                  },
+                  {
+                    "label": "Apply costs discretion to the original and cross-proceedings",
+                    "detail": "O.62 r.3(3) states the normal costs-follow-the-event approach subject to discretion. Thomas v Times Book Co Ltd [1966] 1 WLR 911 illustrates the Court’s complete discretion over third and further-party costs: a losing P may bear costs inevitably caused by its action, but D may bear the costs of a misguided or unarguable notice.",
+                    "points": [
+                      "Identify the successful and unsuccessful parties separately in each claim relationship.",
+                      "Explain whether P’s action made the third-party proceeding reasonably necessary.",
+                      "Examine whether D’s choice to issue the notice was justified, rather than awarding TP’s costs against P automatically.",
+                      "If D’s own third-party claim was misguided, explain why winning the main action does not immunise D from TP’s costs.",
+                      "State the proposed payer and recipient and the reason; do not treat the number of parties as a formula for allocation."
+                    ],
+                    "why": "Costs respond to who reasonably caused each part of the litigation as well as its result. A defendant can successfully resist P yet have unnecessarily drawn another person into court.",
+                    "exam": {
+                      "write": "Applying O.62 r.3(3) and Thomas v Times Book Co Ltd [1966] 1 WLR 911, [party] should bear [specified costs] because [necessary consequence of P’s claim / unjustified third-party proceeding], subject to the Court’s discretion.",
+                      "trap": "Assuming the losing plaintiff necessarily pays every third-party cost or that D’s main-action win determines its cross-proceeding costs."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The independence proposition and the no-liability-to-pass-on qualification should appear together in an answer.",
+                "A no-admission settlement leaves liability issues open; it does not by itself decide TP’s liability.",
+                "A costs order and a contribution or indemnity entitlement are distinct; source and plead each asserted recovery."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Draw the party arrows before discussing judgment.",
+                "Classify the surviving cross-claim by remedy rather than simply writing “third-party proceedings survive”.",
+                "Give a reasoned costs allocation for the actual sequence of justified or unjustified claims."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify separate original and third-party claim relationships.",
+                "Apply Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651 to procedural continuation, then assess the substantive surviving right.",
+                "If P seeks direct relief, apply O.15 r.6 and plead the new defendant claim.",
+                "Analyse cross-proceeding costs separately under O.62 and Thomas v Times Book Co Ltd [1966] 1 WLR 911."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Conflating procedure and merits after settlement.",
+                "Applying Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651 without checking the cross-claim’s substantive dependence.",
+                "Awarding direct plaintiff relief without joining TP as defendant.",
+                "Using costs-follow-the-event as an automatic all-party formula."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Coordination without direct claim",
+                    "Eden v Weardale (1887) 35 Ch D 287; O.16 r.4(4)",
+                    "Court-controlled disclosure and participation preserve distinct claim relationships"
+                  ],
+                  [
+                    "Settlement independence",
+                    "Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651; O.16 r.7(1)",
+                    "Settled main action need not terminate the cross-action or require a new action"
+                  ],
+                  [
+                    "Substantive dependence",
+                    "LG10 outline Part 3, discussion following Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651",
+                    "Pure pass-through liability may fall away when P fails; independent supported claims need separate analysis"
+                  ],
+                  [
+                    "Direct plaintiff joinder",
+                    "O.15 r.6(1)–(3), (5)–(6)",
+                    "Proper defendant capacity, complete or convenient connected determination, and limitation restrictions"
+                  ],
+                  [
+                    "Costs",
+                    "O.62 r.3(3); Thomas v Times Book Co Ltd [1966] 1 WLR 911",
+                    "Normal event-based starting point with separate discretion for necessary or misguided cross-proceedings"
+                  ]
+                ]
+              }
+            },
+            "notes": [
+              {
+                "heading": "Joinder after limitation has expired",
+                "bullets": [
+                  "O.15 r.6(5): addition or substitution after expiry is restricted to the stated original-current-and-necessary route or the specified Limitation Ordinance (Cap.347) ss.27–28 route and court direction. It is not enough to call a proposed defendant convenient.",
+                  "O.15 r.6(6) defines necessity for r.6(5)(a) by the listed categories: property vested in the new party affecting an equitable-interest claim; a jointly but not severally vested cause; required Secretary for Justice relator proceedings; the company on whose behalf a shareholder enforces its right; or a joint-but-not-several defendant whose omission could make the claim unenforceable.",
+                  "These are special post-limitation tests in the supplied Reference Material, distinct from the broader ordinary joinder gateway. Apply them only when the facts actually raise expiry."
+                ]
+              }
+            ],
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "third-party-gateways",
+                "label": "Third-party gateways, indemnity and contribution"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-default-judgment",
+                "label": "Third-party default, judgment and execution"
+              },
+              {
+                "session": "LG10",
+                "issue": "further-parties-offers",
+                "label": "Further parties, contribution offers and counterclaim adaptations"
+              }
+            ],
+            "citationAliases": [
+              "Eden v Weardale (1887) 35 Ch D 287",
+              "Stott v West Yorkshire Road Car Co Ltd [1971] 2 QB 651",
+              "Thomas v Times Book Co Ltd [1966] 1 WLR 911"
+            ]
+          },
+          {
+            "id": "further-parties-offers",
+            "title": "Further parties, contribution offers and counterclaim adaptations",
+            "summary": "Apply the special further-party leave clock, adapt O.16 to a Counterclaim and keep contribution-offer amounts from the judge until the prescribed stage.",
+            "triggers": {
+              "bullets": [
+                "A Third Party sued by a purchaser wants to claim against its own vendor as Fourth Party.",
+                "The Third Party has already served a Defence but is still within 14 days after its acknowledgement deadline.",
+                "The Third Party seeks onward notice after that special period has expired.",
+                "A party offers a specified contribution while reserving its defence and asks to show the amount to the trial judge.",
+                "Liability has been tried separately and costs on that issue are considered before quantum.",
+                "The original plaintiff, now defendant to a Counterclaim, seeks contribution from another person."
+              ]
+            },
+            "answering": {
+              "flowchart": {
+                "steps": [
+                  {
+                    "label": "Apply O.16 to the onward claim with the party roles adapted",
+                    "detail": "O.16 r.9(1) applies where TP makes a claim or requirement of the type in r.1 or r.8: treat TP as a defendant with the necessary adaptations, and apply the procedure similarly to further parties.",
+                    "points": [
+                      "Identify the onward substantive claim, whether the proposed recipient is outside or already in the action, and the corresponding r.1 or r.8 gateway.",
+                      "In the conversion example, P asserts ownership against D; D claims against its vendor TP; TP may make a supported onward claim against its own vendor FP.",
+                      "Do not treat “Fourth Party” as a separate substantive cause of action or presume a right merely from the sales chain.",
+                      "Further-party proceedings remain subject to the relevant service, directions, judgment and costs machinery."
+                    ],
+                    "why": "The same connected-claim problem can recur further down the transaction chain. Role adaptation permits coordination without losing the need for a pleaded right at each link.",
+                    "exam": {
+                      "write": "Under O.16 r.9(1), TP is treated as a defendant for its proposed [r.1/r.8] claim against [FP], subject to the necessary procedural adaptations.",
+                      "trap": "Assuming a Fourth Party can be added solely because it sold goods earlier in the chain."
+                    }
+                  },
+                  {
+                    "label": "Use the special further-party leave period rather than the original defendant’s rule",
+                    "detail": "O.16 r.9(2)–(3) substitutes a special rule for r.1(2): TP may issue an outsider notice without leave only if the action began by writ and it issues before expiry of 14 days after the time limited for acknowledging service of the notice against it.",
+                    "points": [
+                      "Identify the original action’s process and the acknowledgement time limit for the notice served on TP.",
+                      "Calculate the additional 14-day period from that time limit, not from TP’s actual early acknowledgement.",
+                      "Do not substitute the original D’s pre-Defence-service rule; serving TP’s Defence is not the special r.9(3) trigger.",
+                      "After the period, or in a non-writ action, seek leave and apply the necessary O.16 r.2 adaptations."
+                    ],
+                    "why": "An onward claimant enters litigation at a different time from D. The substituted clock gives TP a defined window from the notice it received rather than tying it to the original Defence stage.",
+                    "exam": {
+                      "write": "The writ-action TP’s acknowledgement time limit was [date]; O.16 r.9(3) allows issue without leave before expiry of 14 days thereafter, so [timely issue / leave required].",
+                      "trap": "Applying “before serving the Defence” to the Third Party’s onward notice."
+                    }
+                  },
+                  {
+                    "label": "Apply O.16 within a Counterclaim without reversing substantive rights",
+                    "detail": "O.16 r.11 treats the Counterclaim’s subject matter as the original subject matter, the counterclaimant as plaintiff and the person Counterclaimed against as defendant for O.16 purposes.",
+                    "points": [
+                      "Redraw the roles: original D is P on the Counterclaim; original P is D on that cross-action.",
+                      "The person defending the Counterclaim must satisfy the adapted r.1 or r.8 requirements for its proposed notice.",
+                      "The notice must state the Counterclaim now being answered, rather than incorrectly summarising only the original claim.",
+                      "Do not assume role adaptation makes a cross-demand substantively valid or removes the relevant leave or service requirement."
+                    ],
+                    "why": "A Counterclaim is an affirmative action and can produce the same need for recourse against others. The rules therefore follow the claim being defended, not the party’s original label.",
+                    "exam": {
+                      "write": "Under O.16 r.11, [counterclaimant] is treated as P and [counterclaim defendant] as D; the proposed notice concerns [Counterclaim subject matter] and [adapted gateway].",
+                      "trap": "Treating the original plaintiff as incapable of invoking third-party procedure when defending a Counterclaim."
+                    }
+                  },
+                  {
+                    "label": "Recognise a qualifying written contribution offer and keep its amount out of trial",
+                    "detail": "O.16 r.10(1) concerns a party, after acknowledgement, which may be liable to another party to contribute towards a debt or damages recovered against that other party. A written offer to contribute to a specified extent, without prejudice to the defence, is not shown to the judge until both liability and amount are decided, subject to r.10(2).",
+                    "points": [
+                      "Identify the offeror, recipient, contribution exposure, acknowledgement and written specified extent.",
+                      "The offer can preserve the defence; its existence is not a pleaded admission of liability.",
+                      "Do not reveal it during the liability or quantum decision merely because the offeror reserved a right to bring it to the judge’s attention.",
+                      "The supplied rule controls disclosure; it does not state an automatic costs sanction or replace other settlement regimes."
+                    ],
+                    "why": "An offer intended to settle allocation should not influence the judge’s liability or damages findings. Preserving the defence and postponing disclosure perform separate functions.",
+                    "exam": {
+                      "write": "The written contribution offer falls within O.16 r.10(1); its amount must not be brought to the judge’s attention until liability and quantum are determined, subject to r.10(2).",
+                      "trap": "Treating a reserved right to mention the offer as permission to show its amount during trial."
+                    }
+                  },
+                  {
+                    "label": "Apply the narrow split-trial costs exception",
+                    "detail": "Under O.16 r.10(2), if liability has been tried and costs of that issue are being considered while quantum remains for separate trial, a party may mention whether a written contribution offer was made and its date, but not its amount; if several offers, the first offer’s date is the stated reference.",
+                    "points": [
+                      "Check that liability has actually been tried and that the question is costs of that issue, with amount still unresolved.",
+                      "Keep the offer’s extent and amount out of the judge’s consideration at that stage.",
+                      "Distinguish this limited fact-and-date exception from the general post-liability-and-quantum disclosure point.",
+                      "Do not import an automatic costs consequence from the mere existence or absence of an offer."
+                    ],
+                    "why": "The judge deciding interim liability costs may know whether a contribution offer existed without being influenced on the unresolved quantum by its monetary content.",
+                    "exam": {
+                      "write": "As liability costs are considered before the separate quantum trial, O.16 r.10(2) permits disclosure of [existence and date], but not the offer’s amount.",
+                      "trap": "Revealing the proposed contribution percentage or amount under the exception."
+                    }
+                  }
+                ]
+              }
+            },
+            "lookOut": {
+              "bullets": [
+                "The original defendant’s r.1(2) leave exception and the Third Party’s substituted r.9(3) exception must not be conflated.",
+                "An adapted Counterclaim notice needs its own party map and claim summary.",
+                "O.16 r.10 offers are not the same as an admission of the underlying claim or an automatic rule for who pays costs."
+              ]
+            },
+            "skills": {
+              "bullets": [
+                "Mark acknowledgement deadline, actual acknowledgement and onward issue date separately.",
+                "Redraw capacities when the relevant main claim is a Counterclaim.",
+                "State the general disclosure prohibition before the fact-and-date exception."
+              ]
+            },
+            "skeleton": {
+              "bullets": [
+                "Identify the onward r.1/r.8 claim and adapt the parties under r.9.",
+                "Apply the writ and acknowledgement-deadline-plus-14-days leave test.",
+                "If defending a Counterclaim, adapt subject matter and roles under r.11.",
+                "For an offer, apply r.10(1)’s deferred disclosure and r.10(2)’s limited exception."
+              ]
+            },
+            "mistakes": {
+              "bullets": [
+                "Counting the onward period from actual early acknowledgement.",
+                "Using the original defendant’s Defence-service trigger.",
+                "Disclosing the amount while only liability has been determined.",
+                "Inventing a mandatory costs penalty absent from the supplied rule."
+              ]
+            },
+            "authorities": {
+              "table": {
+                "headers": [
+                  "Point",
+                  "Authority",
+                  "What it establishes"
+                ],
+                "rows": [
+                  [
+                    "Onward proceedings",
+                    "O.16 r.9(1)–(2)",
+                    "Third and subsequent parties use adapted r.1/r.8 claim gateways"
+                  ],
+                  [
+                    "Special leave clock",
+                    "O.16 r.9(3)",
+                    "Writ and issue within 14 days after the time limited to acknowledge the notice against TP"
+                  ],
+                  [
+                    "Counterclaim roles",
+                    "O.16 r.11",
+                    "Counterclaim subject matter and party roles supply the adapted original action"
+                  ],
+                  [
+                    "Contribution offers",
+                    "O.16 r.10(1)",
+                    "Written specified-extent offer after acknowledgement, preserved defence and delayed judicial disclosure"
+                  ],
+                  [
+                    "Split-trial exception",
+                    "O.16 r.10(2)",
+                    "Liability-costs stage allows fact and date, but not amount, while quantum remains"
+                  ]
+                ]
+              },
+              "statutes": [
+                {
+                  "text": "A third party may not issue a notice under rule 1 without the leave of the Court unless the action in question was begun by writ and he issues the notice before the expiration of 14 days after the time limited for acknowledging service of the notice issued against him.",
+                  "cite": "O.16 r.9(3), LG10 Reference Material"
+                }
+              ]
+            },
+            "crossRefs": [
+              {
+                "session": "LG10",
+                "issue": "third-party-notice",
+                "label": "Issuing, serving and drafting the third-party notice"
+              },
+              {
+                "session": "LG10",
+                "issue": "co-defendant-directions",
+                "label": "Co-defendant notices and third-party directions"
+              },
+              {
+                "session": "LG10",
+                "issue": "third-party-survival-costs",
+                "label": "Settlement, direct joinder and third-party costs"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
     SG1: {
       kind: 'SG',
       date: '2026-09-09/10',
